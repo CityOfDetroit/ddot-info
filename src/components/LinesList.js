@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import LineLink from './LineLink';
 
@@ -12,6 +13,20 @@ class LinesList extends Component {
       </ul>
     )
   }
+}
+
+LinesList.propTypes = {
+  lines: PropTypes.arrayOf(PropTypes.shape({
+    agencyId: PropTypes.string,
+    color: PropTypes.string,
+    description: PropTypes.string,
+    id: PropTypes.string,
+    longName: PropTypes.string.isRequired,
+    shortName: PropTypes.string.isRequired,
+    textColor: PropTypes.string,
+    type: PropTypes.number,
+    url: PropTypes.string,
+  })).isRequired,
 }
 
 export default LinesList;

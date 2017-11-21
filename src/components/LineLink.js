@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class LineLink extends Component {
   render() {
@@ -14,6 +15,11 @@ class LineLink extends Component {
       </li>
     )
   }
+}
+
+LineLink.propTypes = {
+  short: PropTypes.string.isRequired,
+  long: PropTypes.string.isRequired,
 }
 
 export default LineLink;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import TopNav from './TopNav';
 
@@ -10,5 +11,16 @@ const LineInfo = ({ match }) => (
     <p>Coming soon!</p>
   </div>
 )
+
+LineInfo.propTypes = {
+  match: PropTypes.shape({
+    isExact: PropTypes.bool,
+    params: PropTypes.shape({
+      name: PropTypes.string,
+    }),
+    path: PropTypes.string,
+    url: PropTypes.string,
+  }).isRequired,
+}
 
 export default LineInfo;

@@ -2,7 +2,9 @@
 
 A web-based interface for accessing bus schedules and real-time data.
 
-We're using React, React Router and [Tachyons](http://tachyons.io/).
+We're using React, React Router and [Tachyons](http://tachyons.io/). 
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Features
 

@@ -104,7 +104,7 @@ const ddotRoutes = {
   48: {
     description: 'Route 48-Van Dyke-Lafayette runs 7 days a week between the Bel Air Center and Rosa Parks Transit Center.',
     transferlessTransfer: 'On weekday and Saturday nights, this bus departs Rosa Parks Transit Center after a layover as Route 25-Jefferson. Riders remaining on the bus through the layover may continue without using a transfer.'
-  } 
+  },
   49: {
     description: 'Route 49-Vernor runs 7 days a week between Michigan & Schaefer and Rosa Parks Transit Center.',
     transferlessTransfer: 'On Sundays, this bus departs Rosa Parks Transit Center after a layover as Route 19-Fort. Riders remaining on the bus through the layover may continue without using a transfer.'

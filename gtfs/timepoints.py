@@ -173,7 +173,7 @@ def get_route(id):
     # cleanup
     del route['timepoints']
     with open("{}.json".format(route['id']), 'w') as f:
-        f.write(json.dumps(route, indent=2))
+        f.write(json.dumps(route))
 
 if __name__ == "__main__":
     import sys

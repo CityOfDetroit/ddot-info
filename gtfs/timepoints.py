@@ -134,31 +134,35 @@ def get_schedule(id, service='1', direction='0'):
         if str(stop) in schedule.columns:
             stops.append(stop)
     schedule = schedule[[str(i) for i in stops]]
-    schedule = schedule.sort_values(by=schedule.columns[0],axis=0)
+    try:
+        for i, c in enumerate(schedule.columns):
+            if '-' not in schedule[c]:
+                schedule = schedule.sort_values(by=schedule.columns[i],axis=0)
+    except ValueError:
+        pass
     schedule.columns = [stop_desc_from_stop_id(int(c))[0] for c in schedule.columns]
     schedule.index = schedule.index.map(lambda x: x[3:])
     pprint(schedule.columns)
     return schedule.applymap(format_hms_nicely)
 
-def get_route(id):
-    for r in routes:
-        if int(r['rt_id']) == int(id):
-            route = r
+def get_route(route):
     services = {
         1: [],
         2: [],
         3: []
     }
-    if route:
-        for i, dir in enumerate(r['timepoints'].keys()):
-            for svc in [1, 2, 3]:
-                sched_json = json.loads(get_schedule(id, svc, i).to_json(orient='split'))
-                sched_json['stops'] = sched_json['columns']
-                sched_json['trips'] = dict(zip(sched_json['index'], sched_json['data']))
-                del sched_json['columns']
-                del sched_json['index']
-                del sched_json['data']
-                services[svc].append({ dir: sched_json })
+    for i, dir in enumerate(route['timepoints'].keys()):
+        for svc in [1, 2, 3]:
+            try: 
+                sched_json = json.loads(get_schedule(route['rt_id'], svc, i).to_json(orient='split'))
+            except IndexError:
+                continue
+            sched_json['stops'] = sched_json['columns']
+            sched_json['trips'] = dict(zip(sched_json['index'], sched_json['data']))
+            del sched_json['columns']
+            del sched_json['index']
+            del sched_json['data']
+            services[svc].append({ dir: sched_json })
     route['schedules'] = services
     for s in [1,2,3]:
         if len(services[s]) > 0:
@@ -172,10 +176,14 @@ def get_route(id):
     
     # cleanup
     del route['timepoints']
-    with open("{}.json".format(route['id']), 'w') as f:
-        f.write(json.dumps(route))
+    return route
 
 if __name__ == "__main__":
-    import sys
-    print(sys.argv)
-    get_route(sys.argv[1])
+    file_object = {}
+    for r in routes:
+        print(r)
+        route_json = get_route(r)
+        file_object[r['id']] = route_json
+        # file_object[r['id']] = get_route(r)
+        with open("all.json", 'w') as f:
+            f.write(json.dumps(file_object))

@@ -1,24 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 import TopNav from './TopNav';
 import ScheduleTable from './ScheduleTable';
-import Helpers from '../helpers';
 
-import moment from 'moment';
+import Helpers from '../helpers';
 
 class LineInfo extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
-    let info = Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))
-    console.log(info)
-
-    let directions = Object.keys(info.schedules.weekday)
-
-    let services = Object.keys(info.schedules)
-
-    let today = Helpers.dowToService(moment().day())
+    let info = Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10));
+    let directions = Object.keys(info.schedules.weekday);
+    let services = Object.keys(info.schedules);
+    let today = Helpers.dowToService(moment().day());
 
     this.state = {
       description: info.description,
@@ -37,19 +33,19 @@ class LineInfo extends React.Component {
     fetch(`https://ddot-proxy-test.herokuapp.com/api/where/stops-for-route/${this.props.location.state.id}.json?key=BETA&includePolylines=false`)
       .then(response => response.json())
       .then(d => {
-        console.log(d)
-        this.setState({ realTime: JSON.stringify(d.data) })
+        // console.log(d);
+        this.setState({ realTime: JSON.stringify(d.data) });
       })
+      .catch(e => console.log(e));
   }
 
-  render = () => {
+  render() {
     return (
       <div>
         <TopNav />
         <h1>{this.props.match.params.name}</h1>
-        <p>{Helpers.getDescByRouteId(this.props.location.state.id)}</p>
-        <h3>Route map, schedule & real-time data for this route:</h3>
-        <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection}/>
+        <h3>Schedule: {this.state.currentSvc} {this.state.currentDirection}</h3>
+        <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} />
       </div>
     )
   }

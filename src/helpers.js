@@ -1,37 +1,37 @@
 import _ from 'lodash';
 
 import ddotRoutes from './data/routes';
-
 import Schedules from './data/schedules';
 
 const Helpers = {
-  getDescByRouteId: function(id) {
-    const desc = _.map(ddotRoutes, function(i) {
-      if (i.routeId === id) {
-        return i.description;
-      }
-    });
-      
-    return _.without(desc, undefined)[0];
-  },
-
+  /**
+   * Merge routes and schedules into the same object by route number key
+   */
   combineData: function(routes=ddotRoutes, schedules=Schedules) {
-    return _.merge(routes, schedules)
+    return _.merge(routes, schedules);
   },
 
+  /*
+   * Lookup a schedule for a single route by id
+   */
   getRouteSchedule: function(routeId) {
     let routes = this.combineData()
-    return routes[routeId]
+    return routes[routeId];
   },
 
+  /**
+   * Translate a day of the week to its service range
+   * @param {int}
+   * @returns {string}
+   */
   dowToService: function(dow) {
-    if(dow == 0) {
-      return 'sunday'
+    if (dow === 0) {
+      return 'sunday';
+    } else if (dow === 6) {
+      return 'saturday';
+    } else { 
+      return 'weekday';
     }
-    else if(dow == 6) {
-      return 'saturday'
-    }
-    else { return 'weekday'}
   }
 }
 

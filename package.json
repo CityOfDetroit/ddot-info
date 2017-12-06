@@ -23,5 +23,6 @@
   },
   "devDependencies": {
     "tachyons-flexbox": "^2.1.0"
-  }
+  },
+  "homepage": "https://cityofdetroit.github.io/route-explorer"
 }

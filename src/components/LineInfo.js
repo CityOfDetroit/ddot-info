@@ -2,14 +2,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import TopNav from './TopNav';
+import ScheduleTable from './ScheduleTable';
 import Helpers from '../helpers';
+
+import moment from 'moment';
 
 class LineInfo extends React.Component {
   constructor(props) {
     super(props)
 
+    let info = Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))
+    console.log(info)
+
+    let directions = Object.keys(info.schedules.weekday)
+
+    let services = Object.keys(info.schedules)
+
+    let today = Helpers.dowToService(moment().day())
+
     this.state = {
-      info: '',
+      description: info.description,
+      weekday: info.schedules.weekday,
+      saturday: info.schedules.saturday,
+      sunday: info.schedules["sunday-holiday"],
+      currentSvc: today,
+      currentDirection: directions[0],
+      availableServices: services,
+      availableDirections: directions,
+      realTime: '',
     }
   }
 
@@ -18,7 +38,7 @@ class LineInfo extends React.Component {
       .then(response => response.json())
       .then(d => {
         console.log(d)
-        this.setState({ info: JSON.stringify(d.data) })
+        this.setState({ realTime: JSON.stringify(d.data) })
       })
   }
 
@@ -29,7 +49,7 @@ class LineInfo extends React.Component {
         <h1>{this.props.match.params.name}</h1>
         <p>{Helpers.getDescByRouteId(this.props.location.state.id)}</p>
         <h3>Route map, schedule & real-time data for this route:</h3>
-        <span className='w-100'>{this.state.info}</span>
+        <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection}/>
       </div>
     )
   }

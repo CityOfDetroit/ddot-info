@@ -137,7 +137,7 @@ def get_schedule(id, service='1', direction='0'):
     try:
         for i, c in enumerate(schedule.columns):
             if '-' not in schedule[c]:
-                schedule = schedule.sort_values(by=schedule.columns[i],axis=0)
+                schedule = schedule.sort_values(by=schedule.columns[i], axis=0)
     except ValueError:
         pass
     schedule.columns = [stop_desc_from_stop_id(int(c))[0] for c in schedule.columns]
@@ -147,9 +147,9 @@ def get_schedule(id, service='1', direction='0'):
 
 def get_route(route):
     services = {
-        1: [],
-        2: [],
-        3: []
+        1: {},
+        2: {},
+        3: {}
     }
     for i, dir in enumerate(route['timepoints'].keys()):
         for svc in [1, 2, 3]:
@@ -158,11 +158,14 @@ def get_route(route):
             except IndexError:
                 continue
             sched_json['stops'] = sched_json['columns']
-            sched_json['trips'] = dict(zip(sched_json['index'], sched_json['data']))
+            trips = []
+            for index, trip in enumerate(sched_json['index']):
+                trips.append({"trip_id": trip, "timepoints": sched_json['data'][index]})
+            sched_json['trips'] = trips
             del sched_json['columns']
             del sched_json['index']
             del sched_json['data']
-            services[svc].append({ dir: sched_json })
+            services[svc][dir] = sched_json
     route['schedules'] = services
     for s in [1,2,3]:
         if len(services[s]) > 0:

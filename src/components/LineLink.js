@@ -11,7 +11,7 @@ class LineLink extends Component {
         </span> 
         <span className='tr pl1 f6 fw5 pl2'>
           <Link to={{pathname: `/${this.props.short}-${this.props.long}`, 
-                    state: { id: this.props.id }}}>{this.props.long}</Link>
+                    state: { id: this.props.id, short: this.props.short }}}>{this.props.long}</Link>
         </span>
       </li>
     )

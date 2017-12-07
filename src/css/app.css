@@ -1,1 +1,5 @@
 @import "tachyons";
+
+.rotate {
+  transform: rotate(45deg);
+}

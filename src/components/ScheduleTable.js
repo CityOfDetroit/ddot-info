@@ -6,14 +6,14 @@ const ScheduleTable = ({schedule, direction}) => (
     <tbody>
     <tr>
       {schedule[direction].stops.map(s => (
-        <th key={s}>{s}</th>
+        <th class="pa3 rotate" key={s}>{s}</th>
       ))}
     </tr>
 
     {schedule[direction].trips.map(t => (
-      <tr key={t.trip_id}>
+      <tr class="striped--moon-gray" key={t.trip_id}>
         {t.timepoints.map(tp => (
-          <td key={tp}>{tp}</td>
+          <td class="pa1" key={tp}>{tp}</td>
         ))}
       </tr>
     ))}

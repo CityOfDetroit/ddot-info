@@ -136,7 +136,9 @@ def get_schedule(id, service='1', direction='0'):
     schedule = schedule[[str(i) for i in stops]]
     try:
         for i, c in enumerate(schedule.columns):
-            if '-' not in schedule[c]:
+            if schedule[c].isnull().any():
+                pass
+            else:
                 schedule = schedule.sort_values(by=schedule.columns[i], axis=0)
     except ValueError:
         pass
@@ -184,9 +186,8 @@ def get_route(route):
 if __name__ == "__main__":
     file_object = {}
     for r in routes:
-        print(r)
+        print("{} - {}".format(r['id'], r['rt_name']))
         route_json = get_route(r)
         file_object[r['id']] = route_json
-        # file_object[r['id']] = get_route(r)
         with open("all.json", 'w') as f:
             f.write(json.dumps(file_object))

@@ -397,6 +397,27 @@ const Schedules = {
             "trip_id": "9705",
             "timepoints": ["8:45am", "8:53am", "8:56am", "9:07am", "9:15am"]
           }, {
+            "trip_id": "9706",
+            "timepoints": ["9:15am", "9:22am", "9:25am", "9:35am", "-"]
+          }, {
+            "trip_id": "9707",
+            "timepoints": ["9:50am", "9:57am", "-", "-", "-"]
+          }, {
+            "trip_id": "9708",
+            "timepoints": ["10:15am", "10:22am", "10:25am", "10:35am", "-"]
+          }, {
+            "trip_id": "9709",
+            "timepoints": ["11:15am", "11:22am", "11:25am", "11:35am", "-"]
+          }, {
+            "trip_id": "9710",
+            "timepoints": ["12:15pm", "12:22pm", "12:25pm", "12:35pm", "-"]
+          }, {
+            "trip_id": "9711",
+            "timepoints": ["1:15pm", "1:22pm", "1:25pm", "1:35pm", "-"]
+          }, {
+            "trip_id": "9712",
+            "timepoints": ["-", "2:06pm", "2:09pm", "2:17pm", "-"]
+          }, {
             "trip_id": "9713",
             "timepoints": ["2:15pm", "2:23pm", "2:26pm", "2:37pm", "2:45pm"]
           }, {
@@ -415,24 +436,6 @@ const Schedules = {
             "trip_id": "9718",
             "timepoints": ["5:40pm", "5:48pm", "5:51pm", "6:02pm", "6:10pm"]
           }, {
-            "trip_id": "9706",
-            "timepoints": ["9:15am", "9:22am", "9:25am", "9:35am", "-"]
-          }, {
-            "trip_id": "9708",
-            "timepoints": ["10:15am", "10:22am", "10:25am", "10:35am", "-"]
-          }, {
-            "trip_id": "9709",
-            "timepoints": ["11:15am", "11:22am", "11:25am", "11:35am", "-"]
-          }, {
-            "trip_id": "9710",
-            "timepoints": ["12:15pm", "12:22pm", "12:25pm", "12:35pm", "-"]
-          }, {
-            "trip_id": "9711",
-            "timepoints": ["1:15pm", "1:22pm", "1:25pm", "1:35pm", "-"]
-          }, {
-            "trip_id": "9712",
-            "timepoints": ["-", "2:06pm", "2:09pm", "2:17pm", "-"]
-          }, {
             "trip_id": "9719",
             "timepoints": ["6:20pm", "6:27pm", "6:30pm", "6:40pm", "-"]
           }, {
@@ -441,9 +444,6 @@ const Schedules = {
           }, {
             "trip_id": "9721",
             "timepoints": ["8:00pm", "8:07pm", "8:10pm", "8:20pm", "-"]
-          }, {
-            "trip_id": "9707",
-            "timepoints": ["9:50am", "9:57am", "-", "-", "-"]
           }, {
             "trip_id": "9722",
             "timepoints": ["8:45pm", "8:52pm", "-", "-", "-"]
@@ -512,14 +512,14 @@ const Schedules = {
             "trip_id": "9739",
             "timepoints": ["6:20pm", "6:27pm", "6:36pm", "6:40pm", "6:50pm"]
           }, {
+            "trip_id": "9745",
+            "timepoints": ["-", "6:40pm", "6:46pm", "6:50pm", "-"]
+          }, {
             "trip_id": "9740",
             "timepoints": ["-", "7:27pm", "7:33pm", "7:36pm", "7:45pm"]
           }, {
             "trip_id": "9741",
             "timepoints": ["-", "8:27pm", "8:33pm", "8:36pm", "8:45pm"]
-          }, {
-            "trip_id": "9745",
-            "timepoints": ["-", "6:40pm", "6:46pm", "6:50pm", "-"]
           }]
         }
       },
@@ -1497,6 +1497,9 @@ const Schedules = {
         "southbound": {
           "stops": ["Bel Air Shopping Center", "EIGHT MILE & HOOVER", "Gunston & McNichols", "Conner & Gratiot", "Conner & Harper", "Conner & Warren", "Conner & Jefferson", "Essex & Continental", "Korte & Phillip"],
           "trips": [{
+            "trip_id": "0026",
+            "timepoints": ["-", "-", "-", "-", "-", "6:59am", "-", "-", "-"]
+          }, {
             "trip_id": "0044",
             "timepoints": ["6:40am", "6:42am", "6:48am", "6:55am", "6:58am", "7:02am", "7:08am", "7:13am", "7:19am"]
           }, {
@@ -1511,24 +1514,6 @@ const Schedules = {
           }, {
             "trip_id": "0040",
             "timepoints": ["9:20am", "9:22am", "9:28am", "9:35am", "9:38am", "9:42am", "9:48am", "9:53am", "9:59am"]
-          }, {
-            "trip_id": "0034",
-            "timepoints": ["3:00pm", "3:02pm", "3:08pm", "3:15pm", "3:18pm", "3:22pm", "3:28pm", "3:33pm", "3:39pm"]
-          }, {
-            "trip_id": "0033",
-            "timepoints": ["4:00pm", "4:02pm", "4:08pm", "4:15pm", "4:18pm", "4:22pm", "4:28pm", "4:33pm", "4:39pm"]
-          }, {
-            "trip_id": "0032",
-            "timepoints": ["4:40pm", "4:42pm", "4:48pm", "4:55pm", "4:58pm", "5:02pm", "5:08pm", "5:13pm", "5:19pm"]
-          }, {
-            "trip_id": "0031",
-            "timepoints": ["5:20pm", "5:22pm", "5:28pm", "5:35pm", "5:38pm", "5:42pm", "5:48pm", "5:53pm", "5:59pm"]
-          }, {
-            "trip_id": "0030",
-            "timepoints": ["6:00pm", "6:02pm", "6:08pm", "6:15pm", "6:18pm", "6:22pm", "6:28pm", "6:33pm", "6:39pm"]
-          }, {
-            "trip_id": "0026",
-            "timepoints": ["-", "-", "-", "-", "-", "6:59am", "-", "-", "-"]
           }, {
             "trip_id": "0039",
             "timepoints": ["10:00am", "10:02am", "10:08am", "10:14am", "10:17am", "10:20am", "-", "-", "-"]
@@ -1551,8 +1536,23 @@ const Schedules = {
             "trip_id": "0025",
             "timepoints": ["-", "-", "-", "-", "-", "3:04pm", "-", "-", "-"]
           }, {
+            "trip_id": "0034",
+            "timepoints": ["3:00pm", "3:02pm", "3:08pm", "3:15pm", "3:18pm", "3:22pm", "3:28pm", "3:33pm", "3:39pm"]
+          }, {
             "trip_id": "0028",
             "timepoints": ["3:30pm", "3:32pm", "3:38pm", "3:44pm", "3:47pm", "3:50pm", "-", "-", "-"]
+          }, {
+            "trip_id": "0033",
+            "timepoints": ["4:00pm", "4:02pm", "4:08pm", "4:15pm", "4:18pm", "4:22pm", "4:28pm", "4:33pm", "4:39pm"]
+          }, {
+            "trip_id": "0032",
+            "timepoints": ["4:40pm", "4:42pm", "4:48pm", "4:55pm", "4:58pm", "5:02pm", "5:08pm", "5:13pm", "5:19pm"]
+          }, {
+            "trip_id": "0031",
+            "timepoints": ["5:20pm", "5:22pm", "5:28pm", "5:35pm", "5:38pm", "5:42pm", "5:48pm", "5:53pm", "5:59pm"]
+          }, {
+            "trip_id": "0030",
+            "timepoints": ["6:00pm", "6:02pm", "6:08pm", "6:15pm", "6:18pm", "6:22pm", "6:28pm", "6:33pm", "6:39pm"]
           }, {
             "trip_id": "0029",
             "timepoints": ["6:30pm", "6:32pm", "6:38pm", "6:44pm", "6:47pm", "6:50pm", "-", "-", "-"]
@@ -1591,6 +1591,9 @@ const Schedules = {
             "trip_id": "0052",
             "timepoints": ["9:45am", "9:51am", "9:55am", "9:58am", "10:03am", "10:12am", "10:15am"]
           }, {
+            "trip_id": "0066",
+            "timepoints": ["10:11am", "10:15am", "-", "-", "-", "-", "-"]
+          }, {
             "trip_id": "0053",
             "timepoints": ["10:30am", "10:34am", "10:37am", "10:40am", "10:44am", "10:52am", "10:55am"]
           }, {
@@ -1624,6 +1627,12 @@ const Schedules = {
             "trip_id": "0061",
             "timepoints": ["6:00pm", "6:04pm", "6:07pm", "6:10pm", "6:14pm", "6:22pm", "6:25pm"]
           }, {
+            "trip_id": "0069",
+            "timepoints": ["6:11pm", "6:15pm", "-", "-", "-", "-", "-"]
+          }, {
+            "trip_id": "0067",
+            "timepoints": ["6:51pm", "6:55pm", "-", "-", "-", "-", "-"]
+          }, {
             "trip_id": "0062",
             "timepoints": ["7:00pm", "7:04pm", "7:07pm", "7:10pm", "7:14pm", "7:22pm", "7:25pm"]
           }, {
@@ -1632,15 +1641,6 @@ const Schedules = {
           }, {
             "trip_id": "0047",
             "timepoints": ["9:00pm", "9:04pm", "9:07pm", "9:10pm", "9:14pm", "9:22pm", "9:25pm"]
-          }, {
-            "trip_id": "0066",
-            "timepoints": ["10:11am", "10:15am", "-", "-", "-", "-", "-"]
-          }, {
-            "trip_id": "0069",
-            "timepoints": ["6:11pm", "6:15pm", "-", "-", "-", "-", "-"]
-          }, {
-            "trip_id": "0067",
-            "timepoints": ["6:51pm", "6:55pm", "-", "-", "-", "-", "-"]
           }]
         }
       },
@@ -3158,92 +3158,182 @@ const Schedules = {
             "trip_id": "7084",
             "timepoints": ["4:56am", "5:00am", "5:08am", "5:17am", "5:25am", "5:39am", "5:44am", "5:49am", "6:03am", "5:59am", "6:10am", "6:18am"]
           }, {
+            "trip_id": "7073",
+            "timepoints": ["5:27am", "-", "5:39am", "5:52am", "6:02am", "6:16am", "6:23am", "6:28am", "-", "6:42am", "-", "-"]
+          }, {
             "trip_id": "7093",
             "timepoints": ["5:59am", "-", "6:11am", "6:24am", "6:34am", "6:48am", "6:55am", "7:00am", "7:09am", "-", "7:17am", "7:27am"]
+          }, {
+            "trip_id": "7082",
+            "timepoints": ["6:14am", "-", "6:26am", "6:39am", "6:49am", "7:03am", "7:10am", "7:15am", "-", "7:29am", "-", "-"]
           }, {
             "trip_id": "7087",
             "timepoints": ["6:29am", "-", "6:41am", "6:54am", "7:04am", "7:18am", "7:25am", "7:30am", "7:39am", "-", "7:47am", "7:57am"]
           }, {
+            "trip_id": "7086",
+            "timepoints": ["6:39am", "-", "6:51am", "7:04am", "7:14am", "7:28am", "7:35am", "7:40am", "-", "7:54am", "-", "-"]
+          }, {
             "trip_id": "7094",
             "timepoints": ["6:49am", "-", "7:01am", "7:14am", "7:24am", "7:38am", "7:45am", "7:50am", "7:59am", "-", "8:07am", "8:17am"]
+          }, {
+            "trip_id": "7097",
+            "timepoints": ["7:01am", "-", "7:13am", "7:26am", "7:36am", "7:50am", "7:57am", "8:02am", "-", "8:16am", "-", "-"]
           }, {
             "trip_id": "7080",
             "timepoints": ["7:16am", "-", "7:28am", "7:41am", "7:51am", "8:05am", "8:12am", "8:17am", "8:26am", "-", "8:34am", "8:44am"]
           }, {
+            "trip_id": "7106",
+            "timepoints": ["7:28am", "-", "7:40am", "7:53am", "8:03am", "8:17am", "8:24am", "8:29am", "-", "8:43am", "-", "-"]
+          }, {
             "trip_id": "7063",
             "timepoints": ["7:40am", "-", "7:52am", "8:05am", "8:15am", "8:29am", "8:36am", "8:41am", "8:50am", "-", "8:58am", "9:08am"]
+          }, {
+            "trip_id": "7109",
+            "timepoints": ["7:52am", "-", "8:04am", "8:17am", "8:27am", "8:41am", "8:48am", "8:53am", "-", "9:06am", "-", "-"]
           }, {
             "trip_id": "7085",
             "timepoints": ["8:07am", "-", "8:19am", "8:32am", "8:42am", "8:56am", "9:03am", "9:08am", "9:17am", "-", "9:25am", "9:35am"]
           }, {
+            "trip_id": "7074",
+            "timepoints": ["8:19am", "-", "8:31am", "8:44am", "8:54am", "9:08am", "9:15am", "9:20am", "-", "9:33am", "-", "-"]
+          }, {
             "trip_id": "7091",
             "timepoints": ["8:31am", "-", "8:43am", "8:56am", "9:06am", "9:20am", "9:27am", "9:32am", "9:41am", "-", "9:49am", "9:59am"]
+          }, {
+            "trip_id": "7105",
+            "timepoints": ["8:43am", "-", "8:55am", "9:08am", "9:18am", "9:32am", "9:39am", "9:44am", "-", "9:57am", "-", "-"]
           }, {
             "trip_id": "7101",
             "timepoints": ["8:55am", "-", "9:07am", "9:20am", "9:30am", "9:44am", "9:51am", "9:56am", "10:05am", "-", "10:13am", "10:23am"]
           }, {
+            "trip_id": "7083",
+            "timepoints": ["9:07am", "-", "9:19am", "9:32am", "9:42am", "9:56am", "10:03am", "10:08am", "-", "10:21am", "-", "-"]
+          }, {
             "trip_id": "7064",
             "timepoints": ["9:19am", "-", "9:31am", "9:44am", "9:54am", "10:08am", "10:15am", "10:20am", "10:29am", "-", "10:37am", "10:47am"]
+          }, {
+            "trip_id": "7088",
+            "timepoints": ["9:31am", "-", "9:43am", "9:56am", "10:06am", "10:20am", "10:27am", "10:32am", "-", "10:45am", "-", "-"]
           }, {
             "trip_id": "7098",
             "timepoints": ["9:43am", "-", "9:55am", "10:08am", "10:18am", "10:32am", "10:39am", "10:44am", "10:53am", "-", "11:01am", "11:11am"]
           }, {
+            "trip_id": "7095",
+            "timepoints": ["9:55am", "-", "10:07am", "10:20am", "10:30am", "10:44am", "10:51am", "10:56am", "-", "11:09am", "-", "-"]
+          }, {
             "trip_id": "7107",
             "timepoints": ["10:10am", "-", "10:22am", "10:35am", "10:45am", "10:59am", "11:06am", "11:11am", "11:20am", "-", "11:28am", "11:38am"]
+          }, {
+            "trip_id": "7081",
+            "timepoints": ["10:25am", "-", "10:37am", "10:50am", "11:00am", "11:14am", "11:21am", "11:26am", "-", "11:39am", "-", "-"]
           }, {
             "trip_id": "7110",
             "timepoints": ["10:40am", "-", "10:52am", "11:05am", "11:15am", "11:29am", "11:36am", "11:41am", "11:50am", "-", "11:58am", "12:08pm"]
           }, {
+            "trip_id": "7065",
+            "timepoints": ["10:55am", "-", "11:07am", "11:20am", "11:30am", "11:44am", "11:51am", "11:56am", "-", "12:09pm", "-", "-"]
+          }, {
             "trip_id": "7075",
             "timepoints": ["11:10am", "-", "11:22am", "11:35am", "11:45am", "11:59am", "12:06pm", "12:11pm", "12:20pm", "-", "12:28pm", "12:38pm"]
+          }, {
+            "trip_id": "7092",
+            "timepoints": ["11:25am", "-", "11:37am", "11:50am", "12:00pm", "12:14pm", "12:21pm", "12:26pm", "-", "12:39pm", "-", "-"]
           }, {
             "trip_id": "7066",
             "timepoints": ["11:40am", "-", "11:52am", "12:05pm", "12:15pm", "12:29pm", "12:36pm", "12:41pm", "12:50pm", "-", "12:58pm", "1:08pm"]
           }, {
+            "trip_id": "7102",
+            "timepoints": ["11:55am", "-", "12:07pm", "12:20pm", "12:30pm", "12:44pm", "12:51pm", "12:56pm", "-", "1:09pm", "-", "-"]
+          }, {
             "trip_id": "7089",
             "timepoints": ["12:10pm", "-", "12:22pm", "12:35pm", "12:45pm", "12:59pm", "1:06pm", "1:11pm", "1:20pm", "-", "1:28pm", "1:38pm"]
+          }, {
+            "trip_id": "7067",
+            "timepoints": ["12:25pm", "-", "12:37pm", "12:50pm", "1:00pm", "1:14pm", "1:21pm", "1:26pm", "-", "1:39pm", "-", "-"]
           }, {
             "trip_id": "7096",
             "timepoints": ["12:40pm", "-", "12:52pm", "1:05pm", "1:15pm", "1:29pm", "1:36pm", "1:41pm", "1:50pm", "-", "1:58pm", "2:08pm"]
           }, {
+            "trip_id": "7099",
+            "timepoints": ["12:55pm", "-", "1:07pm", "1:20pm", "1:30pm", "1:44pm", "1:51pm", "1:56pm", "-", "2:09pm", "-", "-"]
+          }, {
             "trip_id": "7123",
             "timepoints": ["1:10pm", "-", "1:22pm", "1:35pm", "1:45pm", "1:59pm", "2:06pm", "2:11pm", "2:20pm", "-", "2:28pm", "2:38pm"]
+          }, {
+            "trip_id": "7108",
+            "timepoints": ["1:25pm", "-", "1:37pm", "1:50pm", "2:00pm", "2:14pm", "2:21pm", "2:26pm", "-", "2:39pm", "-", "-"]
           }, {
             "trip_id": "7068",
             "timepoints": ["1:40pm", "-", "1:52pm", "2:05pm", "2:15pm", "2:29pm", "2:36pm", "2:41pm", "2:50pm", "-", "2:58pm", "3:08pm"]
           }, {
+            "trip_id": "7111",
+            "timepoints": ["1:55pm", "-", "2:07pm", "2:20pm", "2:30pm", "2:44pm", "2:51pm", "2:56pm", "-", "3:09pm", "-", "-"]
+          }, {
             "trip_id": "7125",
             "timepoints": ["2:10pm", "-", "2:22pm", "2:35pm", "2:45pm", "2:59pm", "3:06pm", "3:11pm", "3:20pm", "-", "3:28pm", "3:38pm"]
+          }, {
+            "trip_id": "7113",
+            "timepoints": ["2:25pm", "-", "2:37pm", "2:50pm", "3:00pm", "3:14pm", "3:21pm", "3:26pm", "-", "3:39pm", "-", "-"]
           }, {
             "trip_id": "7076",
             "timepoints": ["2:40pm", "-", "2:52pm", "3:05pm", "3:15pm", "3:29pm", "3:36pm", "3:41pm", "3:50pm", "-", "3:58pm", "4:08pm"]
           }, {
+            "trip_id": "7069",
+            "timepoints": ["2:55pm", "-", "3:07pm", "3:20pm", "3:30pm", "3:44pm", "3:51pm", "3:56pm", "-", "4:09pm", "-", "-"]
+          }, {
             "trip_id": "7070",
             "timepoints": ["3:10pm", "-", "3:22pm", "3:35pm", "3:45pm", "3:59pm", "4:06pm", "4:11pm", "4:20pm", "-", "4:28pm", "4:38pm"]
+          }, {
+            "trip_id": "7121",
+            "timepoints": ["3:25pm", "-", "3:37pm", "3:50pm", "4:00pm", "4:14pm", "4:21pm", "4:26pm", "-", "4:39pm", "-", "-"]
           }, {
             "trip_id": "7090",
             "timepoints": ["3:40pm", "-", "3:52pm", "4:05pm", "4:15pm", "4:29pm", "4:36pm", "4:41pm", "4:50pm", "-", "4:58pm", "5:08pm"]
           }, {
+            "trip_id": "7100",
+            "timepoints": ["3:55pm", "-", "4:07pm", "4:20pm", "4:30pm", "4:44pm", "4:51pm", "4:56pm", "-", "5:09pm", "-", "-"]
+          }, {
             "trip_id": "7129",
             "timepoints": ["4:10pm", "-", "4:22pm", "4:35pm", "4:45pm", "4:59pm", "5:06pm", "5:11pm", "5:20pm", "-", "5:28pm", "5:38pm"]
+          }, {
+            "trip_id": "7150",
+            "timepoints": ["4:25pm", "-", "4:37pm", "4:50pm", "5:00pm", "5:14pm", "5:21pm", "5:26pm", "-", "5:39pm", "-", "-"]
           }, {
             "trip_id": "7112",
             "timepoints": ["4:40pm", "-", "4:52pm", "5:05pm", "5:15pm", "5:29pm", "5:36pm", "5:41pm", "5:50pm", "-", "5:58pm", "6:08pm"]
           }, {
+            "trip_id": "7114",
+            "timepoints": ["4:55pm", "-", "5:07pm", "5:20pm", "5:30pm", "5:44pm", "5:51pm", "5:56pm", "-", "6:08pm", "-", "-"]
+          }, {
             "trip_id": "7156",
             "timepoints": ["5:10pm", "-", "5:22pm", "5:35pm", "5:45pm", "5:59pm", "6:06pm", "6:11pm", "6:20pm", "-", "6:27pm", "6:36pm"]
+          }, {
+            "trip_id": "7157",
+            "timepoints": ["5:25pm", "-", "5:37pm", "5:50pm", "6:00pm", "6:14pm", "6:20pm", "6:25pm", "-", "6:37pm", "-", "-"]
           }, {
             "trip_id": "7134",
             "timepoints": ["5:40pm", "-", "5:52pm", "6:03pm", "6:11pm", "6:25pm", "6:31pm", "6:36pm", "6:45pm", "-", "6:52pm", "7:01pm"]
           }, {
+            "trip_id": "7104",
+            "timepoints": ["5:55pm", "-", "6:06pm", "6:17pm", "6:25pm", "6:39pm", "6:45pm", "6:50pm", "-", "7:02pm", "-", "-"]
+          }, {
             "trip_id": "7158",
             "timepoints": ["6:10pm", "-", "6:21pm", "6:32pm", "6:40pm", "6:54pm", "7:00pm", "7:05pm", "7:14pm", "-", "7:21pm", "7:30pm"]
+          }, {
+            "trip_id": "7159",
+            "timepoints": ["6:25pm", "-", "6:36pm", "6:47pm", "6:55pm", "7:09pm", "7:15pm", "7:20pm", "-", "7:32pm", "-", "-"]
           }, {
             "trip_id": "7071",
             "timepoints": ["6:40pm", "-", "6:51pm", "7:02pm", "7:10pm", "7:24pm", "7:30pm", "7:35pm", "7:44pm", "-", "7:51pm", "8:00pm"]
           }, {
+            "trip_id": "7127",
+            "timepoints": ["6:55pm", "-", "7:06pm", "7:17pm", "7:25pm", "7:39pm", "7:45pm", "7:50pm", "-", "8:02pm", "-", "-"]
+          }, {
             "trip_id": "7160",
             "timepoints": ["7:10pm", "-", "7:21pm", "7:32pm", "7:40pm", "7:54pm", "8:00pm", "8:05pm", "8:14pm", "-", "8:21pm", "8:30pm"]
+          }, {
+            "trip_id": "7161",
+            "timepoints": ["7:30pm", "-", "7:41pm", "7:52pm", "8:00pm", "8:14pm", "8:20pm", "8:25pm", "-", "8:37pm", "-", "-"]
           }, {
             "trip_id": "7119",
             "timepoints": ["7:56pm", "8:00pm", "8:08pm", "8:17pm", "8:25pm", "8:39pm", "8:44pm", "8:49pm", "9:03pm", "8:59pm", "9:10pm", "9:18pm"]
@@ -3280,96 +3370,6 @@ const Schedules = {
           }, {
             "trip_id": "7138",
             "timepoints": ["2:56am", "3:00am", "3:08am", "3:17am", "3:25am", "3:39am", "3:44am", "3:49am", "4:01am", "3:58am", "4:08am", "4:16am"]
-          }, {
-            "trip_id": "7073",
-            "timepoints": ["5:27am", "-", "5:39am", "5:52am", "6:02am", "6:16am", "6:23am", "6:28am", "-", "6:42am", "-", "-"]
-          }, {
-            "trip_id": "7082",
-            "timepoints": ["6:14am", "-", "6:26am", "6:39am", "6:49am", "7:03am", "7:10am", "7:15am", "-", "7:29am", "-", "-"]
-          }, {
-            "trip_id": "7086",
-            "timepoints": ["6:39am", "-", "6:51am", "7:04am", "7:14am", "7:28am", "7:35am", "7:40am", "-", "7:54am", "-", "-"]
-          }, {
-            "trip_id": "7097",
-            "timepoints": ["7:01am", "-", "7:13am", "7:26am", "7:36am", "7:50am", "7:57am", "8:02am", "-", "8:16am", "-", "-"]
-          }, {
-            "trip_id": "7106",
-            "timepoints": ["7:28am", "-", "7:40am", "7:53am", "8:03am", "8:17am", "8:24am", "8:29am", "-", "8:43am", "-", "-"]
-          }, {
-            "trip_id": "7109",
-            "timepoints": ["7:52am", "-", "8:04am", "8:17am", "8:27am", "8:41am", "8:48am", "8:53am", "-", "9:06am", "-", "-"]
-          }, {
-            "trip_id": "7074",
-            "timepoints": ["8:19am", "-", "8:31am", "8:44am", "8:54am", "9:08am", "9:15am", "9:20am", "-", "9:33am", "-", "-"]
-          }, {
-            "trip_id": "7105",
-            "timepoints": ["8:43am", "-", "8:55am", "9:08am", "9:18am", "9:32am", "9:39am", "9:44am", "-", "9:57am", "-", "-"]
-          }, {
-            "trip_id": "7083",
-            "timepoints": ["9:07am", "-", "9:19am", "9:32am", "9:42am", "9:56am", "10:03am", "10:08am", "-", "10:21am", "-", "-"]
-          }, {
-            "trip_id": "7088",
-            "timepoints": ["9:31am", "-", "9:43am", "9:56am", "10:06am", "10:20am", "10:27am", "10:32am", "-", "10:45am", "-", "-"]
-          }, {
-            "trip_id": "7095",
-            "timepoints": ["9:55am", "-", "10:07am", "10:20am", "10:30am", "10:44am", "10:51am", "10:56am", "-", "11:09am", "-", "-"]
-          }, {
-            "trip_id": "7081",
-            "timepoints": ["10:25am", "-", "10:37am", "10:50am", "11:00am", "11:14am", "11:21am", "11:26am", "-", "11:39am", "-", "-"]
-          }, {
-            "trip_id": "7065",
-            "timepoints": ["10:55am", "-", "11:07am", "11:20am", "11:30am", "11:44am", "11:51am", "11:56am", "-", "12:09pm", "-", "-"]
-          }, {
-            "trip_id": "7092",
-            "timepoints": ["11:25am", "-", "11:37am", "11:50am", "12:00pm", "12:14pm", "12:21pm", "12:26pm", "-", "12:39pm", "-", "-"]
-          }, {
-            "trip_id": "7102",
-            "timepoints": ["11:55am", "-", "12:07pm", "12:20pm", "12:30pm", "12:44pm", "12:51pm", "12:56pm", "-", "1:09pm", "-", "-"]
-          }, {
-            "trip_id": "7067",
-            "timepoints": ["12:25pm", "-", "12:37pm", "12:50pm", "1:00pm", "1:14pm", "1:21pm", "1:26pm", "-", "1:39pm", "-", "-"]
-          }, {
-            "trip_id": "7099",
-            "timepoints": ["12:55pm", "-", "1:07pm", "1:20pm", "1:30pm", "1:44pm", "1:51pm", "1:56pm", "-", "2:09pm", "-", "-"]
-          }, {
-            "trip_id": "7108",
-            "timepoints": ["1:25pm", "-", "1:37pm", "1:50pm", "2:00pm", "2:14pm", "2:21pm", "2:26pm", "-", "2:39pm", "-", "-"]
-          }, {
-            "trip_id": "7111",
-            "timepoints": ["1:55pm", "-", "2:07pm", "2:20pm", "2:30pm", "2:44pm", "2:51pm", "2:56pm", "-", "3:09pm", "-", "-"]
-          }, {
-            "trip_id": "7113",
-            "timepoints": ["2:25pm", "-", "2:37pm", "2:50pm", "3:00pm", "3:14pm", "3:21pm", "3:26pm", "-", "3:39pm", "-", "-"]
-          }, {
-            "trip_id": "7069",
-            "timepoints": ["2:55pm", "-", "3:07pm", "3:20pm", "3:30pm", "3:44pm", "3:51pm", "3:56pm", "-", "4:09pm", "-", "-"]
-          }, {
-            "trip_id": "7121",
-            "timepoints": ["3:25pm", "-", "3:37pm", "3:50pm", "4:00pm", "4:14pm", "4:21pm", "4:26pm", "-", "4:39pm", "-", "-"]
-          }, {
-            "trip_id": "7100",
-            "timepoints": ["3:55pm", "-", "4:07pm", "4:20pm", "4:30pm", "4:44pm", "4:51pm", "4:56pm", "-", "5:09pm", "-", "-"]
-          }, {
-            "trip_id": "7150",
-            "timepoints": ["4:25pm", "-", "4:37pm", "4:50pm", "5:00pm", "5:14pm", "5:21pm", "5:26pm", "-", "5:39pm", "-", "-"]
-          }, {
-            "trip_id": "7114",
-            "timepoints": ["4:55pm", "-", "5:07pm", "5:20pm", "5:30pm", "5:44pm", "5:51pm", "5:56pm", "-", "6:08pm", "-", "-"]
-          }, {
-            "trip_id": "7157",
-            "timepoints": ["5:25pm", "-", "5:37pm", "5:50pm", "6:00pm", "6:14pm", "6:20pm", "6:25pm", "-", "6:37pm", "-", "-"]
-          }, {
-            "trip_id": "7104",
-            "timepoints": ["5:55pm", "-", "6:06pm", "6:17pm", "6:25pm", "6:39pm", "6:45pm", "6:50pm", "-", "7:02pm", "-", "-"]
-          }, {
-            "trip_id": "7159",
-            "timepoints": ["6:25pm", "-", "6:36pm", "6:47pm", "6:55pm", "7:09pm", "7:15pm", "7:20pm", "-", "7:32pm", "-", "-"]
-          }, {
-            "trip_id": "7127",
-            "timepoints": ["6:55pm", "-", "7:06pm", "7:17pm", "7:25pm", "7:39pm", "7:45pm", "7:50pm", "-", "8:02pm", "-", "-"]
-          }, {
-            "trip_id": "7161",
-            "timepoints": ["7:30pm", "-", "7:41pm", "7:52pm", "8:00pm", "8:14pm", "8:20pm", "8:25pm", "-", "8:37pm", "-", "-"]
           }]
         }
       },
@@ -9379,15 +9379,6 @@ const Schedules = {
         "northbound": {
           "stops": ["West Jefferson & Brennan Loop", "Dragoon & West Jefferson", "Livernois & Michigan", "Livernois & Warren", "Livernois & Grand River", "Livernois & Ewald Circle", "Livernois & McNichols", "Livernois & Eight Mile", "State Fairgrounds Transit Center"],
           "trips": [{
-            "trip_id": "2498",
-            "timepoints": ["6:58pm", "7:03pm", "7:12pm", "7:16pm", "7:23pm", "7:30pm", "7:38pm", "7:45pm", "7:51pm"]
-          }, {
-            "trip_id": "2499",
-            "timepoints": ["7:58pm", "8:03pm", "8:12pm", "8:16pm", "8:23pm", "8:30pm", "8:38pm", "8:45pm", "8:51pm"]
-          }, {
-            "trip_id": "2500",
-            "timepoints": ["8:58pm", "9:03pm", "9:11pm", "9:15pm", "9:21pm", "9:28pm", "9:35pm", "9:42pm", "9:48pm"]
-          }, {
             "trip_id": "2501",
             "timepoints": ["5:48am", "5:53am", "6:01am", "6:05am", "6:12am", "6:19am", "6:27am", "6:35am", "-"]
           }, {
@@ -9441,6 +9432,15 @@ const Schedules = {
           }, {
             "trip_id": "2497",
             "timepoints": ["5:58pm", "6:03pm", "6:12pm", "6:16pm", "6:23pm", "6:30pm", "6:38pm", "6:45pm", "-"]
+          }, {
+            "trip_id": "2498",
+            "timepoints": ["6:58pm", "7:03pm", "7:12pm", "7:16pm", "7:23pm", "7:30pm", "7:38pm", "7:45pm", "7:51pm"]
+          }, {
+            "trip_id": "2499",
+            "timepoints": ["7:58pm", "8:03pm", "8:12pm", "8:16pm", "8:23pm", "8:30pm", "8:38pm", "8:45pm", "8:51pm"]
+          }, {
+            "trip_id": "2500",
+            "timepoints": ["8:58pm", "9:03pm", "9:11pm", "9:15pm", "9:21pm", "9:28pm", "9:35pm", "9:42pm", "9:48pm"]
           }]
         }
       },
@@ -10185,33 +10185,6 @@ const Schedules = {
         "eastbound": {
           "stops": ["Mc Nichols & Telegraph", "MC NICHOLS & EVERGREEN", "McNichols & Schaefer", "McNichols & Livernois", "McNichols & Woodward", "McNichols & Van Dyke", "Seymour & Gratiot", "Mack & Cadieux", "Moross & Mack"],
           "trips": [{
-            "trip_id": "2754",
-            "timepoints": ["5:50pm", "5:57pm", "6:09pm", "6:18pm", "6:25pm", "6:43pm", "6:59pm", "7:19pm", "7:25pm"]
-          }, {
-            "trip_id": "2755",
-            "timepoints": ["6:30pm", "6:37pm", "6:49pm", "6:58pm", "7:05pm", "7:23pm", "7:39pm", "7:59pm", "8:05pm"]
-          }, {
-            "trip_id": "2756",
-            "timepoints": ["7:15pm", "7:22pm", "7:34pm", "7:43pm", "7:49pm", "8:06pm", "8:21pm", "8:41pm", "8:47pm"]
-          }, {
-            "trip_id": "2757",
-            "timepoints": ["8:05pm", "8:12pm", "8:24pm", "8:33pm", "8:39pm", "8:56pm", "9:11pm", "9:31pm", "9:37pm"]
-          }, {
-            "trip_id": "2758",
-            "timepoints": ["8:55pm", "9:02pm", "9:14pm", "9:23pm", "9:29pm", "9:46pm", "10:01pm", "10:19pm", "10:25pm"]
-          }, {
-            "trip_id": "2759",
-            "timepoints": ["9:46pm", "9:53pm", "10:05pm", "10:13pm", "10:19pm", "10:36pm", "10:49pm", "11:07pm", "11:13pm"]
-          }, {
-            "trip_id": "2760",
-            "timepoints": ["10:35pm", "10:41pm", "10:52pm", "11:00pm", "11:06pm", "11:23pm", "11:36pm", "11:54pm", "12:00am"]
-          }, {
-            "trip_id": "2761",
-            "timepoints": ["11:25pm", "11:31pm", "11:42pm", "11:50pm", "11:56pm", "12:13am", "12:26am", "12:44am", "12:50am"]
-          }, {
-            "trip_id": "2762",
-            "timepoints": ["12:15am", "12:21am", "12:32am", "12:40am", "12:46am", "1:03am", "1:16am", "1:34am", "1:40am"]
-          }, {
             "trip_id": "2746",
             "timepoints": ["4:55am", "5:01am", "5:12am", "5:20am", "5:26am", "5:43am", "5:56am", "6:15am", "-"]
           }, {
@@ -10280,6 +10253,33 @@ const Schedules = {
           }, {
             "trip_id": "2753",
             "timepoints": ["5:15pm", "5:22pm", "5:34pm", "5:44pm", "5:51pm", "6:09pm", "6:25pm", "6:45pm", "-"]
+          }, {
+            "trip_id": "2754",
+            "timepoints": ["5:50pm", "5:57pm", "6:09pm", "6:18pm", "6:25pm", "6:43pm", "6:59pm", "7:19pm", "7:25pm"]
+          }, {
+            "trip_id": "2755",
+            "timepoints": ["6:30pm", "6:37pm", "6:49pm", "6:58pm", "7:05pm", "7:23pm", "7:39pm", "7:59pm", "8:05pm"]
+          }, {
+            "trip_id": "2756",
+            "timepoints": ["7:15pm", "7:22pm", "7:34pm", "7:43pm", "7:49pm", "8:06pm", "8:21pm", "8:41pm", "8:47pm"]
+          }, {
+            "trip_id": "2757",
+            "timepoints": ["8:05pm", "8:12pm", "8:24pm", "8:33pm", "8:39pm", "8:56pm", "9:11pm", "9:31pm", "9:37pm"]
+          }, {
+            "trip_id": "2758",
+            "timepoints": ["8:55pm", "9:02pm", "9:14pm", "9:23pm", "9:29pm", "9:46pm", "10:01pm", "10:19pm", "10:25pm"]
+          }, {
+            "trip_id": "2759",
+            "timepoints": ["9:46pm", "9:53pm", "10:05pm", "10:13pm", "10:19pm", "10:36pm", "10:49pm", "11:07pm", "11:13pm"]
+          }, {
+            "trip_id": "2760",
+            "timepoints": ["10:35pm", "10:41pm", "10:52pm", "11:00pm", "11:06pm", "11:23pm", "11:36pm", "11:54pm", "12:00am"]
+          }, {
+            "trip_id": "2761",
+            "timepoints": ["11:25pm", "11:31pm", "11:42pm", "11:50pm", "11:56pm", "12:13am", "12:26am", "12:44am", "12:50am"]
+          }, {
+            "trip_id": "2762",
+            "timepoints": ["12:15am", "12:21am", "12:32am", "12:40am", "12:46am", "1:03am", "1:16am", "1:34am", "1:40am"]
           }]
         },
         "westbound": {
@@ -10387,24 +10387,6 @@ const Schedules = {
         "eastbound": {
           "stops": ["MC NICHOLS & EVERGREEN", "McNichols & Schaefer", "McNichols & Livernois", "McNichols & Woodward", "McNichols & Van Dyke", "Seymour & Gratiot", "Mack & Cadieux", "Moross & Mack"],
           "trips": [{
-            "trip_id": "2814",
-            "timepoints": ["6:59pm", "7:10pm", "7:18pm", "7:25pm", "7:41pm", "7:56pm", "8:15pm", "8:20pm"]
-          }, {
-            "trip_id": "2815",
-            "timepoints": ["7:39pm", "7:50pm", "7:58pm", "8:05pm", "8:21pm", "8:36pm", "8:55pm", "9:00pm"]
-          }, {
-            "trip_id": "2818",
-            "timepoints": ["8:39pm", "8:50pm", "8:58pm", "9:05pm", "9:20pm", "9:33pm", "9:52pm", "9:57pm"]
-          }, {
-            "trip_id": "2816",
-            "timepoints": ["9:39pm", "9:49pm", "9:56pm", "10:02pm", "10:17pm", "10:30pm", "10:49pm", "10:54pm"]
-          }, {
-            "trip_id": "2817",
-            "timepoints": ["10:39pm", "10:49pm", "10:56pm", "11:02pm", "11:17pm", "11:30pm", "11:49pm", "11:54pm"]
-          }, {
-            "trip_id": "2819",
-            "timepoints": ["11:39pm", "11:49pm", "11:56pm", "12:02am", "12:17am", "12:30am", "12:49am", "12:54am"]
-          }, {
             "trip_id": "2795",
             "timepoints": ["5:49am", "5:59am", "6:06am", "6:12am", "6:27am", "6:40am", "6:59am", "-"]
           }, {
@@ -10461,6 +10443,24 @@ const Schedules = {
           }, {
             "trip_id": "2813",
             "timepoints": ["6:19pm", "6:30pm", "6:38pm", "6:45pm", "7:01pm", "7:16pm", "7:35pm", "-"]
+          }, {
+            "trip_id": "2814",
+            "timepoints": ["6:59pm", "7:10pm", "7:18pm", "7:25pm", "7:41pm", "7:56pm", "8:15pm", "8:20pm"]
+          }, {
+            "trip_id": "2815",
+            "timepoints": ["7:39pm", "7:50pm", "7:58pm", "8:05pm", "8:21pm", "8:36pm", "8:55pm", "9:00pm"]
+          }, {
+            "trip_id": "2818",
+            "timepoints": ["8:39pm", "8:50pm", "8:58pm", "9:05pm", "9:20pm", "9:33pm", "9:52pm", "9:57pm"]
+          }, {
+            "trip_id": "2816",
+            "timepoints": ["9:39pm", "9:49pm", "9:56pm", "10:02pm", "10:17pm", "10:30pm", "10:49pm", "10:54pm"]
+          }, {
+            "trip_id": "2817",
+            "timepoints": ["10:39pm", "10:49pm", "10:56pm", "11:02pm", "11:17pm", "11:30pm", "11:49pm", "11:54pm"]
+          }, {
+            "trip_id": "2819",
+            "timepoints": ["11:39pm", "11:49pm", "11:56pm", "12:02am", "12:17am", "12:30am", "12:49am", "12:54am"]
           }]
         },
         "westbound": {
@@ -11997,6 +11997,12 @@ const Schedules = {
         "westbound": {
           "stops": ["ROSA PARKS TRANSIT 37 EB", "Michigan & 14th", "Michigan & Livernois", "Michigan & Wyoming", "MICHIGAN & SCHAEFER", "Fairlane Town Center"],
           "trips": [{
+            "trip_id": "3351",
+            "timepoints": ["4:00am", "4:06am", "4:14am", "4:20am", "-", "-"]
+          }, {
+            "trip_id": "3352",
+            "timepoints": ["4:35am", "4:41am", "4:49am", "4:55am", "-", "-"]
+          }, {
             "trip_id": "3353",
             "timepoints": ["5:10am", "5:16am", "5:24am", "5:30am", "5:33am", "5:43am"]
           }, {
@@ -12138,12 +12144,6 @@ const Schedules = {
             "trip_id": "3360",
             "timepoints": ["12:15am", "12:21am", "12:29am", "12:35am", "12:38am", "12:48am"]
           }, {
-            "trip_id": "3351",
-            "timepoints": ["4:00am", "4:06am", "4:14am", "4:20am", "-", "-"]
-          }, {
-            "trip_id": "3352",
-            "timepoints": ["4:35am", "4:41am", "4:49am", "4:55am", "-", "-"]
-          }, {
             "trip_id": "3336",
             "timepoints": ["1:00am", "1:06am", "1:14am", "1:20am", "-", "-"]
           }, {
@@ -12283,6 +12283,12 @@ const Schedules = {
         "westbound": {
           "stops": ["ROSA PARKS TRANSIT 37 EB", "Michigan & 14th", "Michigan & Livernois", "Michigan & Wyoming", "MICHIGAN & SCHAEFER", "Fairlane Town Center"],
           "trips": [{
+            "trip_id": "3428",
+            "timepoints": ["4:00am", "4:06am", "4:13am", "4:19am", "-", "-"]
+          }, {
+            "trip_id": "3429",
+            "timepoints": ["5:00am", "5:06am", "5:13am", "5:19am", "-", "-"]
+          }, {
             "trip_id": "3430",
             "timepoints": ["6:00am", "6:06am", "6:13am", "6:19am", "6:22am", "6:31am"]
           }, {
@@ -12390,12 +12396,6 @@ const Schedules = {
           }, {
             "trip_id": "3438",
             "timepoints": ["12:00am", "12:06am", "12:13am", "12:19am", "12:22am", "12:31am"]
-          }, {
-            "trip_id": "3428",
-            "timepoints": ["4:00am", "4:06am", "4:13am", "4:19am", "-", "-"]
-          }, {
-            "trip_id": "3429",
-            "timepoints": ["5:00am", "5:06am", "5:13am", "5:19am", "-", "-"]
           }, {
             "trip_id": "3439",
             "timepoints": ["1:00am", "1:06am", "1:13am", "1:19am", "-", "-"]
@@ -12521,6 +12521,15 @@ const Schedules = {
         "westbound": {
           "stops": ["ROSA PARKS TRANSIT 37 EB", "Michigan & 14th", "Michigan & Livernois", "Michigan & Wyoming", "MICHIGAN & SCHAEFER", "Fairlane Town Center"],
           "trips": [{
+            "trip_id": "3493",
+            "timepoints": ["4:00am", "4:05am", "4:11am", "4:17am", "-", "-"]
+          }, {
+            "trip_id": "3494",
+            "timepoints": ["5:00am", "5:05am", "5:11am", "5:17am", "-", "-"]
+          }, {
+            "trip_id": "3495",
+            "timepoints": ["6:00am", "6:05am", "6:11am", "6:17am", "-", "-"]
+          }, {
             "trip_id": "3496",
             "timepoints": ["7:00am", "7:05am", "7:11am", "7:17am", "7:21am", "7:30am"]
           }, {
@@ -12602,15 +12611,6 @@ const Schedules = {
             "trip_id": "3506",
             "timepoints": ["11:10pm", "11:15pm", "11:21pm", "11:27pm", "11:31pm", "11:40pm"]
           }, {
-            "trip_id": "3493",
-            "timepoints": ["4:00am", "4:05am", "4:11am", "4:17am", "-", "-"]
-          }, {
-            "trip_id": "3494",
-            "timepoints": ["5:00am", "5:05am", "5:11am", "5:17am", "-", "-"]
-          }, {
-            "trip_id": "3495",
-            "timepoints": ["6:00am", "6:05am", "6:11am", "6:17am", "-", "-"]
-          }, {
             "trip_id": "3507",
             "timepoints": ["12:05am", "12:10am", "12:16am", "12:22am", "-", "-"]
           }, {
@@ -12637,6 +12637,9 @@ const Schedules = {
         "eastbound": {
           "stops": ["MIDDLEBELT & SCHOOLCRAFT", "PLYMOUTH & HARRISON", "Plymouth & Telegraph", "Plymouth & W.Outer Drive", "Plymouth & Schaefer", "Plymouth & Grand River", "LaSalle - Webb", "Trowbridge & Woodward", "Van Dyke & Miller (Curt)", "French Road & Gratiot", "East Outer Drive & Gratiot", "East Outer Drive & Chalmers", "Hayes & Seymour", "Hayes & Eight Mile"],
           "trips": [{
+            "trip_id": "3511",
+            "timepoints": ["4:10am", "4:20am", "4:28am", "4:31am", "4:46am", "4:51am", "5:02am", "5:10am", "-", "-", "-", "-", "-", "-"]
+          }, {
             "trip_id": "3512",
             "timepoints": ["4:40am", "4:50am", "4:58am", "5:01am", "5:16am", "5:21am", "5:32am", "5:40am", "5:57am", "6:03am", "6:05am", "6:07am", "6:12am", "6:19am"]
           }, {
@@ -12658,6 +12661,21 @@ const Schedules = {
             "trip_id": "3518",
             "timepoints": ["9:05am", "-", "9:16am", "9:19am", "9:34am", "9:39am", "9:50am", "9:58am", "10:15am", "10:21am", "10:23am", "10:27am", "10:32am", "10:39am"]
           }, {
+            "trip_id": "3519",
+            "timepoints": ["9:50am", "-", "10:01am", "10:04am", "10:19am", "10:24am", "10:35am", "10:43am", "11:01am", "-", "-", "-", "-", "-"]
+          }, {
+            "trip_id": "3520",
+            "timepoints": ["10:35am", "-", "10:46am", "10:49am", "11:04am", "11:09am", "11:20am", "11:28am", "11:46am", "-", "-", "-", "-", "-"]
+          }, {
+            "trip_id": "3521",
+            "timepoints": ["11:20am", "-", "11:31am", "11:34am", "11:49am", "11:54am", "12:05pm", "12:13pm", "12:31pm", "-", "-", "-", "-", "-"]
+          }, {
+            "trip_id": "3522",
+            "timepoints": ["12:05pm", "-", "12:16pm", "12:19pm", "12:34pm", "12:39pm", "12:50pm", "12:58pm", "1:16pm", "-", "-", "-", "-", "-"]
+          }, {
+            "trip_id": "3523",
+            "timepoints": ["1:00pm", "-", "1:11pm", "1:14pm", "1:29pm", "1:34pm", "1:45pm", "1:53pm", "2:11pm", "-", "-", "-", "-", "-"]
+          }, {
             "trip_id": "3524",
             "timepoints": ["1:45pm", "-", "1:56pm", "1:59pm", "2:14pm", "2:19pm", "2:30pm", "2:38pm", "2:55pm", "3:01pm", "3:03pm", "3:07pm", "3:12pm", "3:19pm"]
           }, {
@@ -12676,21 +12694,6 @@ const Schedules = {
             "trip_id": "3529",
             "timepoints": ["5:30pm", "5:40pm", "5:48pm", "5:51pm", "6:06pm", "6:11pm", "6:22pm", "6:30pm", "6:47pm", "6:53pm", "6:55pm", "6:57pm", "7:02pm", "7:09pm"]
           }, {
-            "trip_id": "3519",
-            "timepoints": ["9:50am", "-", "10:01am", "10:04am", "10:19am", "10:24am", "10:35am", "10:43am", "11:01am", "-", "-", "-", "-", "-"]
-          }, {
-            "trip_id": "3520",
-            "timepoints": ["10:35am", "-", "10:46am", "10:49am", "11:04am", "11:09am", "11:20am", "11:28am", "11:46am", "-", "-", "-", "-", "-"]
-          }, {
-            "trip_id": "3521",
-            "timepoints": ["11:20am", "-", "11:31am", "11:34am", "11:49am", "11:54am", "12:05pm", "12:13pm", "12:31pm", "-", "-", "-", "-", "-"]
-          }, {
-            "trip_id": "3522",
-            "timepoints": ["12:05pm", "-", "12:16pm", "12:19pm", "12:34pm", "12:39pm", "12:50pm", "12:58pm", "1:16pm", "-", "-", "-", "-", "-"]
-          }, {
-            "trip_id": "3523",
-            "timepoints": ["1:00pm", "-", "1:11pm", "1:14pm", "1:29pm", "1:34pm", "1:45pm", "1:53pm", "2:11pm", "-", "-", "-", "-", "-"]
-          }, {
             "trip_id": "3530",
             "timepoints": ["6:00pm", "-", "6:11pm", "6:14pm", "6:29pm", "6:34pm", "6:45pm", "6:53pm", "7:11pm", "-", "-", "-", "-", "-"]
           }, {
@@ -12708,9 +12711,6 @@ const Schedules = {
           }, {
             "trip_id": "3535",
             "timepoints": ["11:00pm", "-", "11:11pm", "11:14pm", "11:29pm", "11:34pm", "11:45pm", "11:53pm", "12:11am", "-", "-", "-", "-", "-"]
-          }, {
-            "trip_id": "3511",
-            "timepoints": ["4:10am", "4:20am", "4:28am", "4:31am", "4:46am", "4:51am", "5:02am", "5:10am", "-", "-", "-", "-", "-", "-"]
           }]
         },
         "westbound": {
@@ -12797,6 +12797,9 @@ const Schedules = {
         "eastbound": {
           "stops": ["MIDDLEBELT & SCHOOLCRAFT", "PLYMOUTH & HARRISON", "Plymouth & Telegraph", "Plymouth & W.Outer Drive", "Plymouth & Schaefer", "Plymouth & Grand River", "LaSalle - Webb", "Trowbridge & Woodward", "Van Dyke & Miller (Curt)"],
           "trips": [{
+            "trip_id": "3573",
+            "timepoints": ["-", "4:22am", "4:29am", "4:31am", "4:39am", "4:42am", "-", "-", "-"]
+          }, {
             "trip_id": "3574",
             "timepoints": ["-", "5:22am", "5:34am", "5:44am", "5:58am", "6:03am", "6:13am", "6:21am", "6:42am"]
           }, {
@@ -12847,14 +12850,23 @@ const Schedules = {
           }, {
             "trip_id": "3578",
             "timepoints": ["9:00pm", "-", "9:14pm", "9:17pm", "9:31pm", "9:36pm", "9:46pm", "9:54pm", "10:15pm"]
-          }, {
-            "trip_id": "3573",
-            "timepoints": ["-", "4:22am", "4:29am", "4:31am", "4:39am", "4:42am", "-", "-", "-"]
           }]
         },
         "westbound": {
           "stops": ["French Road & Gratiot", "Miller & Van Dyke", "Collingwood & Woodward", "LaSalle & Webb", "Plymouth & Grand River", "Plymouth & Schaefer", "Plymouth & W.Outer Drive", "Plymouth & Telegraph (Woodbine)", "PLYMOUTH & HARRISON", "MIDDLEBELT & SCHOOLCRAFT"],
           "trips": [{
+            "trip_id": "3592",
+            "timepoints": ["-", "-", "-", "-", "3:45am", "3:51am", "4:04am", "4:07am", "4:22am", "-"]
+          }, {
+            "trip_id": "3593",
+            "timepoints": ["-", "-", "-", "-", "4:45am", "4:51am", "5:04am", "5:07am", "5:22am", "-"]
+          }, {
+            "trip_id": "3594",
+            "timepoints": ["4:58am", "5:02am", "5:19am", "5:28am", "5:35am", "5:41am", "5:54am", "-", "-", "-"]
+          }, {
+            "trip_id": "3595",
+            "timepoints": ["6:54am", "6:58am", "7:15am", "7:24am", "7:31am", "7:37am", "7:50am", "-", "-", "-"]
+          }, {
             "trip_id": "3579",
             "timepoints": ["7:44am", "7:48am", "8:05am", "8:14am", "8:21am", "8:27am", "8:40am", "8:43am", "-", "8:57am"]
           }, {
@@ -12899,18 +12911,6 @@ const Schedules = {
           }, {
             "trip_id": "3597",
             "timepoints": ["9:35pm", "9:39pm", "9:56pm", "10:05pm", "10:12pm", "10:18pm", "10:31pm", "10:34pm", "-", "10:48pm"]
-          }, {
-            "trip_id": "3592",
-            "timepoints": ["-", "-", "-", "-", "3:45am", "3:51am", "4:04am", "4:07am", "4:22am", "-"]
-          }, {
-            "trip_id": "3593",
-            "timepoints": ["-", "-", "-", "-", "4:45am", "4:51am", "5:04am", "5:07am", "5:22am", "-"]
-          }, {
-            "trip_id": "3594",
-            "timepoints": ["4:58am", "5:02am", "5:19am", "5:28am", "5:35am", "5:41am", "5:54am", "-", "-", "-"]
-          }, {
-            "trip_id": "3595",
-            "timepoints": ["6:54am", "6:58am", "7:15am", "7:24am", "7:31am", "7:37am", "7:50am", "-", "-", "-"]
           }]
         }
       },
@@ -12918,6 +12918,9 @@ const Schedules = {
         "eastbound": {
           "stops": ["MIDDLEBELT & SCHOOLCRAFT", "PLYMOUTH & HARRISON", "Plymouth & Telegraph", "Plymouth & W.Outer Drive", "Plymouth & Schaefer", "Plymouth & Grand River", "LaSalle - Webb", "Trowbridge & Woodward", "Van Dyke & Miller (Curt)"],
           "trips": [{
+            "trip_id": "3610",
+            "timepoints": ["-", "4:22am", "4:29am", "4:31am", "4:39am", "4:42am", "-", "-", "-"]
+          }, {
             "trip_id": "3611",
             "timepoints": ["-", "5:22am", "5:33am", "5:43am", "5:57am", "6:02am", "6:12am", "6:20am", "6:41am"]
           }, {
@@ -12962,14 +12965,26 @@ const Schedules = {
           }, {
             "trip_id": "3598",
             "timepoints": ["7:05pm", "-", "7:19pm", "7:22pm", "7:36pm", "7:41pm", "7:51pm", "7:59pm", "8:20pm"]
-          }, {
-            "trip_id": "3610",
-            "timepoints": ["-", "4:22am", "4:29am", "4:31am", "4:39am", "4:42am", "-", "-", "-"]
           }]
         },
         "westbound": {
           "stops": ["French Road & Gratiot", "Miller & Van Dyke", "Collingwood & Woodward", "LaSalle & Webb", "Plymouth & Grand River", "Plymouth & Schaefer", "Plymouth & W.Outer Drive", "Plymouth & Telegraph (Woodbine)", "PLYMOUTH & HARRISON", "MIDDLEBELT & SCHOOLCRAFT"],
           "trips": [{
+            "trip_id": "3627",
+            "timepoints": ["-", "-", "-", "-", "3:45am", "3:51am", "4:04am", "4:07am", "4:22am", "-"]
+          }, {
+            "trip_id": "3628",
+            "timepoints": ["-", "-", "-", "-", "4:45am", "4:51am", "5:04am", "5:07am", "5:22am", "-"]
+          }, {
+            "trip_id": "3629",
+            "timepoints": ["5:03am", "5:07am", "5:24am", "5:33am", "5:40am", "5:46am", "5:59am", "-", "-", "-"]
+          }, {
+            "trip_id": "3630",
+            "timepoints": ["6:59am", "7:03am", "7:20am", "7:29am", "7:36am", "7:42am", "7:55am", "-", "-", "-"]
+          }, {
+            "trip_id": "3614",
+            "timepoints": ["7:49am", "7:53am", "8:10am", "8:19am", "8:26am", "8:32am", "8:45am", "-", "-", "-"]
+          }, {
             "trip_id": "3615",
             "timepoints": ["8:39am", "8:43am", "9:00am", "9:09am", "9:16am", "9:22am", "9:35am", "9:38am", "-", "9:52am"]
           }, {
@@ -12999,21 +13014,6 @@ const Schedules = {
           }, {
             "trip_id": "3624",
             "timepoints": ["5:40pm", "5:44pm", "6:01pm", "6:10pm", "6:17pm", "6:23pm", "6:36pm", "6:39pm", "-", "6:53pm"]
-          }, {
-            "trip_id": "3627",
-            "timepoints": ["-", "-", "-", "-", "3:45am", "3:51am", "4:04am", "4:07am", "4:22am", "-"]
-          }, {
-            "trip_id": "3628",
-            "timepoints": ["-", "-", "-", "-", "4:45am", "4:51am", "5:04am", "5:07am", "5:22am", "-"]
-          }, {
-            "trip_id": "3629",
-            "timepoints": ["5:03am", "5:07am", "5:24am", "5:33am", "5:40am", "5:46am", "5:59am", "-", "-", "-"]
-          }, {
-            "trip_id": "3630",
-            "timepoints": ["6:59am", "7:03am", "7:20am", "7:29am", "7:36am", "7:42am", "7:55am", "-", "-", "-"]
-          }, {
-            "trip_id": "3614",
-            "timepoints": ["7:49am", "7:53am", "8:10am", "8:19am", "8:26am", "8:32am", "8:45am", "-", "-", "-"]
           }, {
             "trip_id": "3625",
             "timepoints": ["6:40pm", "6:44pm", "7:01pm", "7:10pm", "7:17pm", "-", "-", "-", "-", "-"]
@@ -13894,6 +13894,12 @@ const Schedules = {
         "eastbound": {
           "stops": ["Redford Plaza", "Schoolcraft & Dale", "Schoolcraft & Southfield", "Schoolcraft & Grand River", "Schoolcraft & Schaefer", "Ewald Circle & Livernois", "Oakman & Hamilton", "Manchester & Woodward", "Oakland & Manchester", "Oakland & Nevada", "Conant & Dequindre (Eight Mile)", "CONANT & OUTER DRIVE", "Eight Mile & Ryan"],
           "trips": [{
+            "trip_id": "3872",
+            "timepoints": ["5:10am", "5:14am", "5:23am", "5:29am", "5:31am", "5:41am", "5:48am", "5:54am", "-", "-", "-", "-", "-"]
+          }, {
+            "trip_id": "3873",
+            "timepoints": ["6:00am", "6:04am", "6:13am", "6:19am", "6:21am", "6:31am", "6:38am", "6:44am", "-", "-", "-", "-", "-"]
+          }, {
             "trip_id": "3890",
             "timepoints": ["6:50am", "6:54am", "7:03am", "7:09am", "7:11am", "7:21am", "7:28am", "7:34am", "7:36am", "7:39am", "7:47am", "7:49am", "7:55am"]
           }, {
@@ -13902,24 +13908,6 @@ const Schedules = {
           }, {
             "trip_id": "3885",
             "timepoints": ["8:20am", "8:24am", "8:33am", "8:39am", "8:41am", "8:51am", "8:58am", "9:04am", "9:06am", "9:09am", "9:17am", "9:19am", "9:25am"]
-          }, {
-            "trip_id": "3886",
-            "timepoints": ["2:55pm", "2:59pm", "3:08pm", "3:14pm", "3:16pm", "3:26pm", "3:33pm", "3:39pm", "3:41pm", "3:44pm", "3:52pm", "3:54pm", "4:00pm"]
-          }, {
-            "trip_id": "3887",
-            "timepoints": ["3:40pm", "3:44pm", "3:53pm", "3:59pm", "4:01pm", "4:11pm", "4:18pm", "4:24pm", "4:26pm", "4:29pm", "4:37pm", "4:39pm", "4:45pm"]
-          }, {
-            "trip_id": "3888",
-            "timepoints": ["4:25pm", "4:29pm", "4:38pm", "4:44pm", "4:46pm", "4:56pm", "5:03pm", "5:09pm", "5:11pm", "5:14pm", "5:22pm", "5:24pm", "5:30pm"]
-          }, {
-            "trip_id": "3889",
-            "timepoints": ["5:08pm", "5:12pm", "5:21pm", "5:27pm", "5:29pm", "5:39pm", "5:46pm", "5:52pm", "5:54pm", "5:57pm", "6:05pm", "6:07pm", "6:13pm"]
-          }, {
-            "trip_id": "3872",
-            "timepoints": ["5:10am", "5:14am", "5:23am", "5:29am", "5:31am", "5:41am", "5:48am", "5:54am", "-", "-", "-", "-", "-"]
-          }, {
-            "trip_id": "3873",
-            "timepoints": ["6:00am", "6:04am", "6:13am", "6:19am", "6:21am", "6:31am", "6:38am", "6:44am", "-", "-", "-", "-", "-"]
           }, {
             "trip_id": "3874",
             "timepoints": ["9:15am", "9:19am", "9:28am", "9:34am", "9:36am", "9:46am", "9:53am", "9:59am", "-", "-", "-", "-", "-"]
@@ -13941,6 +13929,18 @@ const Schedules = {
           }, {
             "trip_id": "3880",
             "timepoints": ["2:05pm", "2:09pm", "2:18pm", "2:24pm", "2:26pm", "2:36pm", "2:43pm", "2:49pm", "-", "-", "-", "-", "-"]
+          }, {
+            "trip_id": "3886",
+            "timepoints": ["2:55pm", "2:59pm", "3:08pm", "3:14pm", "3:16pm", "3:26pm", "3:33pm", "3:39pm", "3:41pm", "3:44pm", "3:52pm", "3:54pm", "4:00pm"]
+          }, {
+            "trip_id": "3887",
+            "timepoints": ["3:40pm", "3:44pm", "3:53pm", "3:59pm", "4:01pm", "4:11pm", "4:18pm", "4:24pm", "4:26pm", "4:29pm", "4:37pm", "4:39pm", "4:45pm"]
+          }, {
+            "trip_id": "3888",
+            "timepoints": ["4:25pm", "4:29pm", "4:38pm", "4:44pm", "4:46pm", "4:56pm", "5:03pm", "5:09pm", "5:11pm", "5:14pm", "5:22pm", "5:24pm", "5:30pm"]
+          }, {
+            "trip_id": "3889",
+            "timepoints": ["5:08pm", "5:12pm", "5:21pm", "5:27pm", "5:29pm", "5:39pm", "5:46pm", "5:52pm", "5:54pm", "5:57pm", "6:05pm", "6:07pm", "6:13pm"]
           }, {
             "trip_id": "3881",
             "timepoints": ["5:55pm", "5:59pm", "6:08pm", "6:14pm", "6:16pm", "6:26pm", "6:33pm", "6:39pm", "-", "-", "-", "-", "-"]
@@ -15089,18 +15089,6 @@ const Schedules = {
             "trip_id": "4260",
             "timepoints": ["8:30am", "8:36am", "8:39am", "8:46am", "8:56am", "9:03am", "9:10am", "9:13am"]
           }, {
-            "trip_id": "4267",
-            "timepoints": ["2:20pm", "2:26pm", "2:29pm", "2:36pm", "2:46pm", "2:53pm", "3:00pm", "3:03pm"]
-          }, {
-            "trip_id": "4268",
-            "timepoints": ["3:10pm", "3:16pm", "3:19pm", "3:26pm", "3:36pm", "3:43pm", "3:50pm", "3:53pm"]
-          }, {
-            "trip_id": "4269",
-            "timepoints": ["4:00pm", "4:06pm", "4:09pm", "4:16pm", "4:26pm", "4:33pm", "4:40pm", "4:43pm"]
-          }, {
-            "trip_id": "4270",
-            "timepoints": ["4:50pm", "4:56pm", "4:59pm", "5:06pm", "5:16pm", "5:23pm", "5:30pm", "5:33pm"]
-          }, {
             "trip_id": "4261",
             "timepoints": ["9:20am", "9:26am", "9:29am", "9:36am", "9:47am", "-", "-", "-"]
           }, {
@@ -15118,6 +15106,18 @@ const Schedules = {
           }, {
             "trip_id": "4266",
             "timepoints": ["-", "1:20pm", "1:22pm", "1:29pm", "1:40pm", "-", "-", "-"]
+          }, {
+            "trip_id": "4267",
+            "timepoints": ["2:20pm", "2:26pm", "2:29pm", "2:36pm", "2:46pm", "2:53pm", "3:00pm", "3:03pm"]
+          }, {
+            "trip_id": "4268",
+            "timepoints": ["3:10pm", "3:16pm", "3:19pm", "3:26pm", "3:36pm", "3:43pm", "3:50pm", "3:53pm"]
+          }, {
+            "trip_id": "4269",
+            "timepoints": ["4:00pm", "4:06pm", "4:09pm", "4:16pm", "4:26pm", "4:33pm", "4:40pm", "4:43pm"]
+          }, {
+            "trip_id": "4270",
+            "timepoints": ["4:50pm", "4:56pm", "4:59pm", "5:06pm", "5:16pm", "5:23pm", "5:30pm", "5:33pm"]
           }, {
             "trip_id": "4271",
             "timepoints": ["5:40pm", "5:46pm", "5:49pm", "5:56pm", "6:07pm", "-", "-", "-"]
@@ -15144,21 +15144,6 @@ const Schedules = {
             "trip_id": "4277",
             "timepoints": ["8:30am", "8:34am", "8:39am", "8:45am", "8:53am", "9:01am", "9:04am", "9:10am"]
           }, {
-            "trip_id": "4283",
-            "timepoints": ["-", "-", "-", "1:46pm", "1:53pm", "2:01pm", "2:04pm", "2:10pm"]
-          }, {
-            "trip_id": "4284",
-            "timepoints": ["-", "-", "-", "2:36pm", "2:43pm", "2:51pm", "2:54pm", "3:00pm"]
-          }, {
-            "trip_id": "4285",
-            "timepoints": ["3:10pm", "3:14pm", "3:19pm", "3:25pm", "3:33pm", "3:41pm", "3:44pm", "3:50pm"]
-          }, {
-            "trip_id": "4286",
-            "timepoints": ["4:00pm", "4:04pm", "4:09pm", "4:15pm", "4:23pm", "4:31pm", "4:34pm", "4:40pm"]
-          }, {
-            "trip_id": "4287",
-            "timepoints": ["4:50pm", "4:54pm", "4:59pm", "5:05pm", "5:13pm", "5:21pm", "5:24pm", "5:30pm"]
-          }, {
             "trip_id": "4278",
             "timepoints": ["9:20am", "9:24am", "9:29am", "9:35am", "9:43am", "9:51am", "9:54am", "-"]
           }, {
@@ -15173,6 +15158,21 @@ const Schedules = {
           }, {
             "trip_id": "4282",
             "timepoints": ["-", "-", "-", "12:56pm", "1:03pm", "1:11pm", "1:15pm", "-"]
+          }, {
+            "trip_id": "4283",
+            "timepoints": ["-", "-", "-", "1:46pm", "1:53pm", "2:01pm", "2:04pm", "2:10pm"]
+          }, {
+            "trip_id": "4284",
+            "timepoints": ["-", "-", "-", "2:36pm", "2:43pm", "2:51pm", "2:54pm", "3:00pm"]
+          }, {
+            "trip_id": "4285",
+            "timepoints": ["3:10pm", "3:14pm", "3:19pm", "3:25pm", "3:33pm", "3:41pm", "3:44pm", "3:50pm"]
+          }, {
+            "trip_id": "4286",
+            "timepoints": ["4:00pm", "4:04pm", "4:09pm", "4:15pm", "4:23pm", "4:31pm", "4:34pm", "4:40pm"]
+          }, {
+            "trip_id": "4287",
+            "timepoints": ["4:50pm", "4:54pm", "4:59pm", "5:05pm", "5:13pm", "5:21pm", "5:24pm", "5:30pm"]
           }, {
             "trip_id": "4288",
             "timepoints": ["5:40pm", "5:44pm", "5:49pm", "5:55pm", "6:03pm", "6:11pm", "6:14pm", "-"]
@@ -18295,18 +18295,6 @@ const Schedules = {
         "northbound": {
           "stops": ["West Jefferson & WEST END", "Ford Gate #2", "Wyoming & Michigan", "Wyoming & Warren", "Wyoming & Joy Rd.", "Wyoming & Grand River", "Wyoming & Fenkell", "Wyoming & Eight Mile", "Eight Mile & Livernois", "State Fairgrounds Transit Center"],
           "trips": [{
-            "trip_id": "5292",
-            "timepoints": ["6:00pm", "6:08pm", "6:13pm", "6:17pm", "6:20pm", "6:26pm", "6:33pm", "6:43pm", "6:46pm", "6:52pm"]
-          }, {
-            "trip_id": "5293",
-            "timepoints": ["7:00pm", "7:08pm", "7:13pm", "7:17pm", "7:20pm", "7:26pm", "7:33pm", "7:43pm", "7:46pm", "7:52pm"]
-          }, {
-            "trip_id": "5294",
-            "timepoints": ["8:00pm", "8:08pm", "8:13pm", "8:17pm", "8:20pm", "8:26pm", "8:33pm", "8:43pm", "8:46pm", "8:52pm"]
-          }, {
-            "trip_id": "5295",
-            "timepoints": ["9:00pm", "9:08pm", "9:13pm", "9:17pm", "9:20pm", "9:26pm", "9:33pm", "9:43pm", "9:46pm", "9:52pm"]
-          }, {
             "trip_id": "5279",
             "timepoints": ["5:00am", "5:09am", "5:14am", "5:18am", "5:21am", "5:27am", "5:34am", "5:47am", "-", "-"]
           }, {
@@ -18345,6 +18333,18 @@ const Schedules = {
           }, {
             "trip_id": "5291",
             "timepoints": ["5:00pm", "5:09pm", "5:14pm", "5:19pm", "5:23pm", "5:29pm", "5:37pm", "5:50pm", "-", "-"]
+          }, {
+            "trip_id": "5292",
+            "timepoints": ["6:00pm", "6:08pm", "6:13pm", "6:17pm", "6:20pm", "6:26pm", "6:33pm", "6:43pm", "6:46pm", "6:52pm"]
+          }, {
+            "trip_id": "5293",
+            "timepoints": ["7:00pm", "7:08pm", "7:13pm", "7:17pm", "7:20pm", "7:26pm", "7:33pm", "7:43pm", "7:46pm", "7:52pm"]
+          }, {
+            "trip_id": "5294",
+            "timepoints": ["8:00pm", "8:08pm", "8:13pm", "8:17pm", "8:20pm", "8:26pm", "8:33pm", "8:43pm", "8:46pm", "8:52pm"]
+          }, {
+            "trip_id": "5295",
+            "timepoints": ["9:00pm", "9:08pm", "9:13pm", "9:17pm", "9:20pm", "9:26pm", "9:33pm", "9:43pm", "9:46pm", "9:52pm"]
           }]
         }
       },

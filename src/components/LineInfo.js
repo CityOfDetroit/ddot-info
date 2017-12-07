@@ -11,24 +11,15 @@ class LineInfo extends React.Component {
   constructor(props) {
     super(props);
 
-    let info, directions, services;
-    if (this.props.location.state.short) {
-      info = Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10));
-      directions = Object.keys(info.schedules.weekday);
-      services = Object.keys(info.schedules);
-    }
-
-    let today = Helpers.dowToService(moment().day());
-
     this.state = {
-      description: info.description,
-      weekday: info.schedules.weekday,
-      saturday: info.schedules.saturday,
-      sunday: info.schedules["sunday-holiday"],
-      currentSvc: today,
-      currentDirection: directions[0],
-      availableServices: services,
-      availableDirections: directions,
+      description: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).description),
+      weekday: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).schedules.weekday),
+      saturday: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).schedules.saturday),
+      sunday: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).schedules["sunday-holiday"]),
+      currentSvc: (Helpers.dowToService(moment().day())),
+      currentDirection: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules.weekday)[0]),
+      availableServices: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules)),
+      availableDirections: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules.weekday)),
       realTime: '',
     }
   }

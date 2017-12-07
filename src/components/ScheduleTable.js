@@ -6,15 +6,15 @@ const ScheduleTable = ({schedule, direction}) => (
     <table className="h3 overflow-auto">
       <tbody className="">
       <tr>
-        {schedule[direction].stops.map(s => (
-          <th className="pv1 ph2 rotate f6 bg-moon-gray fw5" key={s}>{s}</th>
+        {schedule[direction].stops.map((s, i) => (
+          <th className="pv1 ph2 rotate f6 bg-moon-gray fw5" key={i}>{s}</th>
         ))}
       </tr>
 
-      {schedule[direction].trips.map(t => (
-        <tr className="striped--light-gray" key={t.trip_id}>
-          {t.timepoints.map(tp => (
-            <td className="pa1 w7rem tc f6 fw4" key={tp}>{tp}</td>
+      {schedule[direction].trips.map((t, j) => (
+        <tr className="striped--light-gray" key={j}>
+          {t.timepoints.map((tp, k) => (
+            <td className="pa1 w7rem tc f6 fw4" key={k}>{tp}</td>
           ))}
         </tr>
       ))}

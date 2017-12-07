@@ -77,7 +77,6 @@ def get_stops(route):
         (select trip_id from gtfs.trips
             where route_id = '{}')
     order by
-        trip_id asc,
         arrival_time asc,
         stop_sequence asc;
     """.format(route)
@@ -111,9 +110,9 @@ def format_hms_nicely(hms):
         elif h > 24:
             return "{}{}am".format(h - 24, ms)
         else:
-            return '-'
+            return '–'
     else:
-        return '-'
+        return '–'
 
 def stop_desc_from_stop_id(id):
     query = "select stop_name, stop_desc from gtfs.stops where stop_id = '{}'".format(id)
@@ -127,7 +126,6 @@ def get_schedule(id, service='1', direction='0'):
     for r in routes:
         if int(r['rt_id']) == int(id):
             route = r
-            pprint(r)
     stops = []
     timepoint_list = route['timepoints'][list(route['timepoints'])[int(direction)]]
     for stop in timepoint_list:
@@ -144,7 +142,6 @@ def get_schedule(id, service='1', direction='0'):
         pass
     schedule.columns = [stop_desc_from_stop_id(int(c))[0] for c in schedule.columns]
     schedule.index = schedule.index.map(lambda x: x[3:])
-    pprint(schedule.columns)
     return schedule.applymap(format_hms_nicely)
 
 def get_route(route):

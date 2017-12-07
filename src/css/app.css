@@ -1,5 +1,13 @@
 @import "tachyons";
 
 .rotate {
-  transform: rotate(45deg);
+  /* transform: translate(-10px) rotate(15deg); */
+}
+
+.w7rem {
+  width: 7rem;
+}
+
+table {
+  border-collapse: collapse;
 }

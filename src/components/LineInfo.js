@@ -11,9 +11,13 @@ class LineInfo extends React.Component {
   constructor(props) {
     super(props);
 
-    let info = Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10));
-    let directions = Object.keys(info.schedules.weekday);
-    let services = Object.keys(info.schedules);
+    let info, directions, services;
+    if (this.props.location.state.short) {
+      info = Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10));
+      directions = Object.keys(info.schedules.weekday);
+      services = Object.keys(info.schedules);
+    }
+
     let today = Helpers.dowToService(moment().day());
 
     this.state = {

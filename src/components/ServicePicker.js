@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const ServicePicker = ({services, currentSvc, onChange}) => (
   <form>
@@ -18,5 +18,11 @@ const ServicePicker = ({services, currentSvc, onChange}) => (
     ))}
   </form>
 )
+
+ServicePicker.PropTypes = {
+  services: PropTypes.array,
+  currentSvc: PropTypes.string,
+  onChange: PropTypes.func.isRequired
+}
 
 export default ServicePicker;

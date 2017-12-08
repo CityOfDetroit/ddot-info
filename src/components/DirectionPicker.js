@@ -10,14 +10,14 @@ class DirectionPicker extends React.Component {
 
   render() {
     return (
-      <div class="ml5 dib">
-        <span class="f3 ml3 fw5">Direction of Travel</span>
+      <div className="ml5 dib">
+        <span className="f3 ml3 fw5">Direction of Travel</span>
         <form>
         {this.props.directions.map(d => (
-          <div class="dib pa2" key={d}>
-            <label class="f3">
+          <div className="dib pa2" key={d}>
+            <label className="f3">
             <input 
-              class="ma2"
+              className="ma2"
               type="radio" 
               name="direction" 
               onChange={(e) => {

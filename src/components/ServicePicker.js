@@ -11,7 +11,7 @@ const ServicePicker = ({services, currentSvc, onChange}) => (
           name="direction" 
           onChange={(e) => onChange(e)} 
           value={s}
-          checked={currentSvc == {s}} 
+          checked={currentSvc === {s}} 
         />
         {s}</label>
       </div>
@@ -19,7 +19,7 @@ const ServicePicker = ({services, currentSvc, onChange}) => (
   </form>
 )
 
-ServicePicker.PropTypes = {
+ServicePicker.propTypes = {
   services: PropTypes.array,
   currentSvc: PropTypes.string,
   onChange: PropTypes.func.isRequired

@@ -19,7 +19,7 @@ const DirectionPicker = ({directions, currentDirection, onChange}) => (
   </form>
 )
 
-DirectionPicker.PropTypes = {
+DirectionPicker.propTypes = {
   directions: PropTypes.array,
   currentDirection: PropTypes.string,
   onChange:PropTypes.func.isRequired

@@ -10,7 +10,7 @@ class ServicePicker extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="dib ml3">
         <span class="f3 ml3 fw5">Service Day</span>
         <form>
         {this.props.services.map(s => (

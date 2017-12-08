@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ScheduleTable = ({schedule, direction}) => (
-  <div className="h4 ma4">
+  <div className="h4 mh4 mt1">
     <table className="h3 overflow-auto">
       <tbody className="">
       <tr>

@@ -10,7 +10,7 @@ class DirectionPicker extends React.Component {
 
   render() {
     return (
-      <div class="mt3">
+      <div class="ml5 dib">
         <span class="f3 ml3 fw5">Direction of Travel</span>
         <form>
         {this.props.directions.map(d => (

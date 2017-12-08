@@ -273,7 +273,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["ROSA PARKS TRANSIT BAY 12", "Larned & Chene", "McClellan & Kercheval", "Cadillac & Warren", "Cadillac & Harper", "Harper & Chalmers", "Harper & Morang", "Moross & Mack"],
           "trips": [{
@@ -617,7 +617,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "southbound": {
           "stops": ["Jefferson and Maryland", "Chalmers & Warren", "Chalmers & Harper", "Seven Mile & Gratiot"],
           "trips": [{
@@ -927,7 +927,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "southbound": {
           "stops": ["ROSA PARKS TRANSIT 10 SB", "Chene & Gratiot", "East Grand Blvd. & Chene", "Jos Campau & Holbrook", "Jos Campau & Davison", "Jos Campau & Nevada", "Nevada & Van Dyke"],
           "trips": [{
@@ -1159,7 +1159,7 @@ const Schedules = {
           "trips": []
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": [],
           "trips": []
@@ -1406,7 +1406,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "southbound": {
           "stops": ["State Fairgrounds Transit Center", "Outer Drive & Dequindre", "Conant & Seven Mile", "Conant & McNichols", "CONANT & CANIFF", "Mount Elliott & Edsel Ford Fwy", "Mt. Elliott & Gratiot", "E Grand Blvd and Jeffrson", "Loiter Way Bus Stop"],
           "trips": [{
@@ -1747,7 +1747,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "southbound": {
           "stops": ["Bel Air Shopping Center", "EIGHT MILE & HOOVER", "Gunston & McNichols", "Conner & Gratiot", "Conner & Harper", "Conner & Warren"],
           "trips": [{
@@ -2324,7 +2324,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["Warren & Telegraph", "Warren & Evergreen", "Warren & Greenfield", "Warren & Schaefer", "Warren & Livernois", "Fourteenth & Warren", "Warren & Woodward", "Forest & Van Dyke", "Warren & St. Jean", "Warren & Chalmers", "Moross & Mack"],
           "trips": [{
@@ -2802,7 +2802,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["Orangelawn & Burt", "West Chicago & Greenfield", "West Chicago & Schaefer", "West Chicago & Wyoming", "Oakman & Grand River", "Davison & Livernois", "Davison & Fourteenth", "Manchester & Woodward"],
           "trips": [{
@@ -3620,7 +3620,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "southbound": {
           "stops": ["JL HUDSON DR & GREENFIELD", "Northland Dr & Northwestern Hwy", "West Outer Drive & Southfield", "West Outer Drive & Greenfield", "Curtis & Wyoming", "McNichols & Livernois", "Dexter & Fenkell", "Dexter & Lothrop", "W. Grand Blvd. & Second", "Cass & Temple", "ROSA PARKS TRANSIT 16 SB"],
           "trips": [{
@@ -4360,7 +4360,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["Seven Mile & Grand River", "Eight Mile & Evergreen", "Northland Dr & Northwestern Hwy", "Eight Mile & Schaefer", "Fairgrounds", "Eight Mile & Dequindre", "Eight Mile & Gratiot", "Eastland Center", "Moross & Mack"],
           "trips": [{
@@ -4805,7 +4805,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["Fenkell & Dale", "Fenkell & Southfield", "Fenkell & Schaefer", "Fenkell & Dexter", "Fourteenth & Oakman", "Fourteenth & West Grand Blvd", "Fourteenth & Grand River", "Fourteeth & Fisher Fwy", "Rosa Parks Transit Bay 3"],
           "trips": [{
@@ -5292,7 +5292,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["ROSA PARKS TRANSIT 19", "Fort & Rosa Park", "FORT & CLARK", "FORT & LIVERNOIS", "Fort & Schaefer", "Fort & West Outer Drive"],
           "trips": [{
@@ -6263,7 +6263,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["Grand River & Seven Mile (Grandview", "Grand River & McNichols (nearside)", "Grand River & Southfield", "Grand River & Schaefer", "Grand River & Wyoming", "Grand River & Oakman", "Grand River & Scotten", "Grand River & Warren", "Grand River & Fisher Ser. Dr.", "ROSA PARKS TRANSIT 21EB"],
           "trips": [{
@@ -7189,7 +7189,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "northbound": {
           "stops": ["Providence Hospital", "Northland Dr & Northwestern Hwy", "Greenfield & McNichols", "Greenfield & Grand River", "Greenfield & Plymouth", "Greenfield & Warren", "Michigan & Greenfield"],
           "trips": [{
@@ -7631,7 +7631,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "southbound": {
           "stops": ["ROSA PARKS TRANSIT 23 SB", "Anthony Wayne Drive & Warren", "Second & West Grand Blvd", "J.C.Lodge & Clairmount", "Hamilton & Six Mile", "JOHN R. & E.AST 7 MILE", "MEIJER GATEWAY"],
           "trips": [{
@@ -8391,7 +8391,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["ROSA PARKS TRANSIT 25", "Jefferson & St Antoine", "Jefferson & E. Grand Blvd", "Jefferson & St. Jean", "Jefferson & Dickerson", "Jefferson and Maryland"],
           "trips": [{
@@ -8875,7 +8875,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["Redford Plaza", "Joy Road & Spinoza", "Joy Rd & Greenfield", "Joy Road & Schaefer", "Joy Rd & Livernois", "Tireman & Beechwood", "Grand River & W.Grand Blvd", "W.Grand Blvd & Michigan", "Lafayette & Trumbull", "ROSA PARKS TRANSIT 27 EB"],
           "trips": [{
@@ -9215,7 +9215,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "southbound": {
           "stops": ["LIVERNOIS & FLORENCE", "Linwood & Fenkell", "Linwood & West Grand Blvd.", "Trumbull & Warren", "Trumbull & Michigan", "ROSA PARKS TRANSIT 29 SB"],
           "trips": [{
@@ -9544,7 +9544,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "southbound": {
           "stops": ["State Fairgrounds Transit Center", "Livernois & Eight Mile", "Livernois & McNichols", "Livernois & Ewald Circle", "Livernois & Grand River", "Livernois & Warren", "Livernois & Michigan", "WEST JEFFERSON & LIVERNOIS", "West Jefferson & Brennan Loop"],
           "trips": [{
@@ -10061,7 +10061,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "westbound": {
           "stops": ["Moross & Mack", "Mack & Cadieux", "Mack & Alter", "Mack & Conner", "MACK & VAN DYKE", "Mack & Gratiot", "Mack & John R", "ROSA PARKS TRANSIT 31 WB"],
           "trips": [{
@@ -10540,7 +10540,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["MC NICHOLS & EVERGREEN", "McNichols & Schaefer", "McNichols & Livernois", "McNichols & Woodward", "McNichols & Van Dyke", "Seymour & Gratiot", "Mack & Cadieux"],
           "trips": [{
@@ -11564,7 +11564,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "northbound": {
           "stops": ["Third & Michigan", "ROSA PARKS TRANSIT 34 EB", "Gratiot & Russell", "Gratiot & East Grand Blvd", "Gratiot & Harper (I - 94)", "Gratiot & East Outer Dr", "Gratiot & East Seven Mile", "Eight Mile & Gratiot"],
           "trips": [{
@@ -12408,7 +12408,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["Fairlane Town Center", "Michigan & Schaefer", "Michigan & Wyoming", "Michigan & Livernois", "Michigan & 14th", "ROSA PARKS TRANSIT 37 EB"],
           "trips": [{
@@ -12914,7 +12914,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["MIDDLEBELT & SCHOOLCRAFT", "PLYMOUTH & HARRISON", "Plymouth & Telegraph", "Plymouth & W.Outer Drive", "Plymouth & Schaefer", "Plymouth & Grand River", "LaSalle - Webb", "Trowbridge & Woodward", "Van Dyke & Miller (Curt)"],
           "trips": [{
@@ -13209,7 +13209,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["SOUTHFIELD & FENKELL", "Puritan & Wyoming", "Puritan & Wyoming", "Puritan & Livernois", "HAMILTON & PURITAN", "Manchester & Woodward"],
           "trips": [{
@@ -13375,7 +13375,7 @@ const Schedules = {
           "trips": []
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "northbound": {
           "stops": [],
           "trips": []
@@ -13604,7 +13604,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "southbound": {
           "stops": ["Schaefer & Eight Mile", "Schaefer & West Outer Drive", "Schaefer & Grand River", "Schaefer & Joy Road", "SCHAEFER & WARREN", "Schaefer & Michigan", "Ford Gate #9", "Schaefer & Fort", "Brennan & West Jefferson"],
           "trips": [{
@@ -13846,7 +13846,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "clockwise": {
           "stops": ["Manchester & Woodward", "Oakland & Owen", "Beaubien & East Grand Blvd", "ST ANTOINE & WARREN", "ANTHONY WAYNE & KIRBY", "W GRAND BLVD & LODGE", "HAMILTON & GLENDALE", "Manchester & Woodward"],
           "trips": [{
@@ -14117,7 +14117,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["Redford Plaza", "Schoolcraft & Dale", "Schoolcraft & Southfield", "Schoolcraft & Grand River", "Schoolcraft & Schaefer", "Ewald Circle & Livernois", "Oakman & Hamilton", "Manchester & Woodward"],
           "trips": [{
@@ -14772,7 +14772,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["MEIJER OLD REDFORD", "Seven Mile & Evergreen", "7 MILE & GREENFIELD", "Seven Mile & Livernois", "7MILE & WOODWARD", "Seven Mile & Ryan", "Seven Mile & Van Dyke", "Seven Mile & Gratiot", "Harper & Morang", "Moross & Mack"],
           "trips": [{
@@ -15052,7 +15052,7 @@ const Schedules = {
           "trips": []
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "southbound": {
           "stops": [],
           "trips": []
@@ -15279,7 +15279,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": [],
           "trips": []
@@ -15781,7 +15781,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "northbound": {
           "stops": ["ROSA PARKS TRANSIT BAY 11", "Lafayette & East Grand Blvd.", "Van Dyke & Kercheval", "Van Dyke & Warren", "Van Dyke & Harper", "Van Dyke & Lynch", "Van Dyke & Seven Mile", "Van Dyke & Eight Mile", "Bel Air Shopping Center"],
           "trips": [{
@@ -16451,7 +16451,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": ["Michigan & Schaefer", "VERNOR & SALINA", "Vernor & Springwells", "Vernor & Livernois", "Vernor & W. Grand Blvd", "Trumbull - Bagley", "ROSA PARKS TRANSIT 49 EB"],
           "trips": [{
@@ -17817,7 +17817,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "southbound": {
           "stops": ["State Fairgrounds Transit Center", "WOODWARD & 7 MILE", "Woodward & McNichols", "Woodward & Manchester", "Woodward & Clairmount", "Woodward & Grand Blvd.", "Woodward & Warren", "Woodward & Martin Luther King"],
           "trips": [{
@@ -18442,7 +18442,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "southbound": {
           "stops": ["State Fairgrounds Transit Center", "Eight Mile & Livernois", "Wyoming & Eight Mile", "Wyoming & Six Mile", "Wyoming & Fenkell", "Wyoming & Grand River", "Wyoming & Joy Rd.", "Wyoming & Warren", "Wyoming & Michigan", "Ford Gate #2", "West Jefferson & WEST END"],
           "trips": [{
@@ -18944,7 +18944,7 @@ const Schedules = {
           }]
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "northbound": {
           "stops": ["Evergreen & Ten Mile", "Evergreen & Eight Mile", "Evergreen & Seven Mile", "Evergreen & Grand River", "EVERGREEN & PLYMOUTH", "Evergreen & Warren", "Henry Ford Community College", "Fairlane Town Center"],
           "trips": [{
@@ -19131,7 +19131,7 @@ const Schedules = {
           "trips": []
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "westbound": {
           "stops": [],
           "trips": []
@@ -19216,7 +19216,7 @@ const Schedules = {
           "trips": []
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "southbound": {
           "stops": [],
           "trips": []
@@ -19286,7 +19286,7 @@ const Schedules = {
           "trips": []
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": [],
           "trips": []
@@ -19353,7 +19353,7 @@ const Schedules = {
           "trips": []
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "northbound": {
           "stops": [],
           "trips": []
@@ -19426,7 +19426,7 @@ const Schedules = {
           "trips": []
         }
       },
-      "sunday-holiday": {
+      "sunday": {
         "eastbound": {
           "stops": [],
           "trips": []

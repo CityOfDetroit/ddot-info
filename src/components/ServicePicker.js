@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-const ServicePicker = ({services, currentService, onChange}) => (
+const ServicePicker = ({services, currentSvc, onChange}) => (
   <form>
     {services.map(s => (
       <div key={s}>
@@ -10,8 +10,8 @@ const ServicePicker = ({services, currentService, onChange}) => (
           type="radio" 
           name="direction" 
           onChange={(e) => onChange(e)} 
-          value={s} 
-          checked={currentService == {s}} 
+          value={s}
+          checked={currentSvc == {s}} 
         />
         {s}</label>
       </div>

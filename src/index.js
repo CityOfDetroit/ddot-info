@@ -15,6 +15,6 @@ ReactDOM.render(
       <Route path='/about' component={About}/>
       <Route path="/:name" render={({match, location}) => <LineInfo match={match} location={location} />} />
     </Switch>
-  </Router>, 
+  </Router>,
   document.getElementById('root'));
 registerServiceWorker();

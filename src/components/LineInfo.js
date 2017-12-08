@@ -23,10 +23,10 @@ class LineInfo extends React.Component {
       availableServices: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules)),
       availableDirections: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules.weekday)),
       realTime: '',
-    }
+    };
 
-    this.handleDirectionChange = this.handleDirectionChange.bind(this)
-    this.handleServiceChange = this.handleServiceChange.bind(this)
+    this.handleDirectionChange = this.handleDirectionChange.bind(this);
+    this.handleServiceChange = this.handleServiceChange.bind(this);
   }
 
   componentDidMount() {
@@ -40,17 +40,17 @@ class LineInfo extends React.Component {
   }
 
   handleDirectionChange(event) {
-    console.log(event.target.value)
+    console.log(event.target.value);;
     this.setState({
       currentDirection: event.target.value
-    })
+    });
   }
 
   handleServiceChange(event) {
-    console.log(event.target.value)
+    console.log(event.target.value);
     this.setState({
       currentSvc: event.target.value
-    })
+    });
   }
 
   render() {
@@ -58,7 +58,6 @@ class LineInfo extends React.Component {
       <div>
         <TopNav />
         <h1>{this.props.match.params.name}</h1>
-        <h3>Schedule: {this.state.currentSvc} {this.state.currentDirection}</h3>
         <ServicePicker 
           services={this.state.availableServices} 
           currentSvc={this.state.currentSvc}

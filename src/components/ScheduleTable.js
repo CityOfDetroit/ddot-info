@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 
 const ScheduleTable = ({schedule, direction}) => (
   <div className="h4 mh4 mt1">
@@ -7,7 +8,7 @@ const ScheduleTable = ({schedule, direction}) => (
       <tbody className="">
       <tr>
         {schedule[direction].stops.map((s, i) => (
-          <th className="pv1 ph2 rotate f6 bg-moon-gray fw5" key={i}>{s}</th>
+          <th className="pv1 ph2 rotate f6 bg-moon-gray fw5" key={i}>{_.toUpper(s)}</th>
         ))}
       </tr>
 

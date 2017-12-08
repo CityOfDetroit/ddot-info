@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 
 class DirectionPicker extends React.Component {
   constructor(props) {
-    console.log(props.currentDirection)
-    super(props)
-    this.state = {selectedOption: props.currentDirection}
+    console.log(props.currentDirection);
+    super(props);
+    this.state = { selectedOption: props.currentDirection };
   }
 
   render() {
@@ -23,11 +24,11 @@ class DirectionPicker extends React.Component {
               onChange={(e) => {
                 this.props.onChange(e);
                 this.setState({selectedOption: d});
-                }} 
+              }} 
               value={d} 
               checked={this.state.selectedOption === d} 
             />
-            {d}</label>
+            {_.capitalize(d)}</label>
           </div>
         ))}
         </form>

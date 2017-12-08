@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 
 class ServicePicker extends React.Component {
   constructor(props) {
-    console.log(props.currentSvc)
-    super(props)
-    this.state = {selectedOption: props.currentSvc}
+    console.log(props.currentSvc);
+    super(props);
+    this.state = { selectedOption: props.currentSvc }
   }
 
   render() {
@@ -23,11 +24,11 @@ class ServicePicker extends React.Component {
               onChange={(e) => {
                 this.props.onChange(e);
                 this.setState({selectedOption: s});
-                }} 
+              }} 
               value={s} 
               checked={this.state.selectedOption === s} 
             />
-            {s}</label>
+            {_.capitalize(s)}</label>
           </div>
         ))}
         </form>

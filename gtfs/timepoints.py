@@ -165,7 +165,6 @@ def get_route(route):
             del sched_json['index']
             del sched_json['data']
             services[svc][dir] = sched_json
-    route['schedules'] = services
     for s in [1,2,3]:
         if len(services[s]) > 0:
             if s == 1:
@@ -173,9 +172,14 @@ def get_route(route):
             elif s == 2:
                 services['saturday'] = services[s]
             elif s == 3:
-                services['sunday-holiday'] = services[s]
+                services['sunday'] = services[s]
         del services[s]
-    
+    test_service = [k for k in route['timepoints'].keys()]
+    print(test_service[0])
+    for s in ['weekday', 'saturday', 'sunday']:
+        if len(services[s][test_service[0]]['stops']) == 0:
+            del services[s]
+    route['schedules'] = services
     # cleanup
     del route['timepoints']
     return route

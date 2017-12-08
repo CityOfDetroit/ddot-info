@@ -10,24 +10,28 @@ class DirectionPicker extends React.Component {
 
   render() {
     return (
-      <form>
-      {this.props.directions.map(d => (
-        <div key={d}>
-          <label>
-          <input 
-            type="radio" 
-            name="direction" 
-            onChange={(e) => {
-              this.props.onChange(e);
-              this.setState({selectedOption: d});
-              }} 
-            value={d} 
-            checked={this.state.selectedOption === d} 
-          />
-          {d}</label>
-        </div>
-      ))}
-      </form>
+      <div class="mt3">
+        <span class="f3 ml3 fw5">Direction of Travel</span>
+        <form>
+        {this.props.directions.map(d => (
+          <div class="dib pa2" key={d}>
+            <label class="f3">
+            <input 
+              class="ma2"
+              type="radio" 
+              name="direction" 
+              onChange={(e) => {
+                this.props.onChange(e);
+                this.setState({selectedOption: d});
+                }} 
+              value={d} 
+              checked={this.state.selectedOption === d} 
+            />
+            {d}</label>
+          </div>
+        ))}
+        </form>
+      </div>
     )
   }
 }

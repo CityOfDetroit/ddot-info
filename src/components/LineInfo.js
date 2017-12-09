@@ -57,9 +57,12 @@ class LineInfo extends React.Component {
     return (
       <div>
         <TopNav />
-        <h1>{this.props.match.params.name}</h1>
+        <div className="ml4">
+        <h1 className="fw7 dib">{this.props.match.params.name.split('-')[0].replace(/^[0]{1,}/,'')}</h1>
+        <h1 className="fw3 dib ml3">{this.props.match.params.name.split('-')[1]}</h1>
+        </div>
         <ServicePicker 
-          services={this.state.availableServices} 
+          services={this.state.availableServices}
           currentSvc={this.state.currentSvc}
           onChange={this.handleServiceChange} 
         />

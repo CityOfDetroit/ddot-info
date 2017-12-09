@@ -1,5 +1,9 @@
 @import "tachyons";
 
+h1 {
+  font-family: "Arimo";
+}
+
 .rotate {
   /* transform: translate(-10px) rotate(15deg); */
 }
@@ -10,4 +14,5 @@
 
 table {
   border-collapse: collapse;
+  font-family: "Work Sans";  
 }

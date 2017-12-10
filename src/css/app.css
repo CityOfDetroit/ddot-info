@@ -9,7 +9,8 @@ h1 {
 }
 
 .w7rem {
-  width: 7rem;
+  width: 10rem;
+  min-width: 7.5rem;
 }
 
 table {

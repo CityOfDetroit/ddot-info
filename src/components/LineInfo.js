@@ -18,7 +18,7 @@ class LineInfo extends React.Component {
       weekday: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).schedules.weekday),
       saturday: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).schedules.saturday),
       sunday: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).schedules.sunday),
-      currentSvc: (Helpers.dowToService(moment().day())),
+      currentSvc: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules).length > 1 ? Helpers.dowToService(moment().day()) : 'weekday'),
       currentDirection: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules.weekday)[0]),
       availableServices: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules)),
       availableDirections: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules.weekday)),

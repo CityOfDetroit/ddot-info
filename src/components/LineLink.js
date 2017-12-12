@@ -9,7 +9,7 @@ class LineLink extends Component {
         <span className='bg-dark-green white fw7 f5 w2 pv2 tc dib'>
           {this.props.short.replace(/^[0]{1,}/, '')}
         </span> 
-        <span className='tr pl1 f6 fw5 pl2'>
+        <span className='tr pl1 f5 fw6 pl2'>
           <Link to={{pathname: `/${this.props.short}-${this.props.long}`, 
                     state: { id: this.props.id, short: this.props.short }}}>{this.props.long}</Link>
         </span>

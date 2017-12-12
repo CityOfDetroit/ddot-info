@@ -44,7 +44,7 @@ class LineSearch extends Component {
 
   render () {
     return (
-      <div className="lineSearch">
+      <div className="ml4">
         <LineInput input={this.state.input} onSearchChange={this.handleSearchChange} />
         <LinesList lines={this.state.filteredLines} />
       </div>

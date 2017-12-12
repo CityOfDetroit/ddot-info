@@ -57,21 +57,27 @@ class LineInfo extends React.Component {
     return (
       <div>
         <TopNav />
-        <div className="ml4">
-        <h1 className="fw7 dib">{this.props.match.params.name.split('-')[0].replace(/^[0]{1,}/,'')}</h1>
-        <h1 className="fw3 dib ml3">{this.props.match.params.name.split('-')[1]}</h1>
+        <div className="flex w-100">
+          <div className="w-20 ml2">
+            <h2 className="dib pa2 mh2 white bg-dark-green">
+              {this.props.match.params.name.split('-')[0].replace(/^[0]{1,}/,'')}
+            </h2>
+            <h2 className="dib">
+              {this.props.match.params.name.split('-')[1]}
+            </h2>
+            <ServicePicker 
+              services={this.state.availableServices}
+              currentSvc={this.state.currentSvc}
+              onChange={this.handleServiceChange} 
+            />
+            <DirectionPicker 
+              directions={this.state.availableDirections}
+              currentDirection={this.state.currentDirection}
+              onChange={this.handleDirectionChange} 
+            />
+            </div>
+            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} />
         </div>
-        <ServicePicker 
-          services={this.state.availableServices}
-          currentSvc={this.state.currentSvc}
-          onChange={this.handleServiceChange} 
-        />
-        <DirectionPicker 
-          directions={this.state.availableDirections}
-          currentDirection={this.state.currentDirection}
-          onChange={this.handleDirectionChange} 
-        />
-        <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} />
       </div>
     )
   }

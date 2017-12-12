@@ -10,6 +10,7 @@
     "react-dom": "^16.1.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
+    "react-sticky-table": "^1.2.0",
     "tachyons": "^4.9.0",
     "tachyons-cli": "^1.2.0"
   },

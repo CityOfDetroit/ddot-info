@@ -1,8 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,700,900');
 @import "tachyons";
-
-h1, li {
-  font-family: "Arimo";
-}
+body{font-family: 'Montserrat', sans-serif; font-weight: lighter;}
+h1,h2,h3,h4,h5{font-weight: bold; margin: 0;}
 
 .rotate {
   transform: translate(2rem, -1rem) rotate(-45deg);
@@ -11,14 +10,14 @@ h1, li {
   text-align: left;
   border-bottom: 2px dotted black;
 }
-/* 
+/*
 .w7rem {
   min-width: 3rem;
 } */
 
 table {
   border-collapse: collapse;
-  font-family: "Work Sans";  
+  font-family: "Work Sans";
 }
 
 .sticky-table .sticky-table-cell {

@@ -5,6 +5,7 @@
   "dependencies": {
     "gh-pages": "^1.1.0",
     "moment": "^2.19.3",
+    "node-sass-chokidar": "0.0.3",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",

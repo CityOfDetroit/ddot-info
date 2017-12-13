@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Bus Routes",
+  "name": "Bus route viewer",
   "icons": [
     {
       "src": "favicon.ico",

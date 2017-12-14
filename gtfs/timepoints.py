@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sqlalchemy
 import pandas
 import json

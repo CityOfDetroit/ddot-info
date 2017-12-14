@@ -13,15 +13,18 @@ class LineInfo extends React.Component {
   constructor(props) {
     super(props);
 
+    let route = Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))
+
     this.state = {
-      description: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).description),
-      weekday: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).schedules.weekday),
-      saturday: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).schedules.saturday),
-      sunday: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).schedules.sunday),
-      currentSvc: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules).length > 1 ? Helpers.dowToService(moment().day()) : 'weekday'),
-      currentDirection: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules.weekday)[0]),
-      availableServices: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules)),
-      availableDirections: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules.weekday)),
+      description: (route.description),
+      weekday: (route.schedules.weekday),
+      saturday: (route.schedules.saturday),
+      sunday: (route.schedules.sunday),
+      color: (route.color),
+      currentSvc: (Object.keys(route.schedules).length > 1 ? Helpers.dowToService(moment().day()) : 'weekday'),
+      currentDirection: (Object.keys(route.schedules.weekday)[0]),
+      availableServices: (Object.keys(route.schedules)),
+      availableDirections: (Object.keys(route.schedules.weekday)),
       realTime: '',
     };
 
@@ -40,14 +43,12 @@ class LineInfo extends React.Component {
   }
 
   handleDirectionChange(event) {
-    console.log(event.target.value);;
     this.setState({
       currentDirection: event.target.value
     });
   }
 
   handleServiceChange(event) {
-    console.log(event.target.value);
     this.setState({
       currentSvc: event.target.value
     });
@@ -57,26 +58,30 @@ class LineInfo extends React.Component {
     return (
       <div>
         <TopNav />
-        <div className="flex w-100">
-          <div className="w-20 ml2">
-            <h2 className="dib pa2 mh2 white bg-dark-green">
-              {this.props.match.params.name.split('-')[0].replace(/^[0]{1,}/,'')}
-            </h2>
-            <h2 className="dib">
-              {this.props.match.params.name.split('-')[1]}
-            </h2>
-            <ServicePicker 
-              services={this.state.availableServices}
-              currentSvc={this.state.currentSvc}
-              onChange={this.handleServiceChange} 
-            />
-            <DirectionPicker 
-              directions={this.state.availableDirections}
-              currentDirection={this.state.currentDirection}
-              onChange={this.handleDirectionChange} 
-            />
+        <div className="flex-column v-mid">
+          <div className="flex justify-between v-mid">
+            <div className="tl v-mid">
+              <h2 className="dib f2 pa2 ma2 v-mid white" style={{ backgroundColor: this.state.color }}>
+                {this.props.match.params.name.split('-')[0].replace(/^[0]{1,}/,'')}
+              </h2>
+              <h2 className="dib f2 ml2 v-mid">
+                {this.props.match.params.name.split('-').slice(1).join(' ')}
+              </h2>
             </div>
-            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} />
+            <div>
+              <ServicePicker 
+                services={this.state.availableServices}
+                currentSvc={this.state.currentSvc}
+                onChange={this.handleServiceChange}
+              />
+              <DirectionPicker 
+                directions={this.state.availableDirections}
+                currentDirection={this.state.currentDirection}
+                onChange={this.handleDirectionChange} 
+              />
+            </div>
+          </div>
+          <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} />
         </div>
       </div>
     )

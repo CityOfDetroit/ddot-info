@@ -11,14 +11,14 @@ class ServicePicker extends React.Component {
 
   render() {
     return (
-      <div className="tl ml2">
-        <h4 className="mt1 mb1">Service Day</h4>
+      <div className="dib pa3 v-top">
+        <h3 className="mb1">Service Day</h3>
         <form>
         {this.props.services.map(s => (
-          <div className="" key={s}>
+          <div className="pa1 flex" key={s}>
             <label className="">
             <input
-              className=""
+              className="mr2"
               type="radio" 
               name="service" 
               onChange={(e) => {

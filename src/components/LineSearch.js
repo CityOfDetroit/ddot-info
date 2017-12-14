@@ -5,15 +5,15 @@ import LinesList from './LinesList';
 
 class LineSearch extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       allLines: [],
       filteredLines: [],
       input: ''
-    }
+    };
 
-    this.handleSearchChange = this.handleSearchChange.bind(this)
+    this.handleSearchChange = this.handleSearchChange.bind(this);
   }
 
   componentDidMount() {
@@ -21,9 +21,9 @@ class LineSearch extends Component {
       .then(response => response.json())
       .then(d => {
         let sorted = d.data.list.sort((a,b)=>{
-          return parseInt(a.shortName, 10) > parseInt(b.shortName, 10)
+          return parseInt(a.shortName, 10) > parseInt(b.shortName, 10);
         })
-        this.setState({ allLines: sorted, filteredLines: sorted })
+        this.setState({ allLines: sorted, filteredLines: sorted });
       })
   }
 
@@ -35,11 +35,11 @@ class LineSearch extends Component {
       if (
           (ln.shortName.indexOf(val) > -1) || 
           (ln.longName.indexOf(val.toUpperCase()) > -1)) {
-        matched.push(ln)
+        matched.push(ln);
       }
     })
 
-    this.setState({ input: event.target.value, filteredLines: matched })
+    this.setState({ input: event.target.value, filteredLines: matched });
   }
 
   render () {

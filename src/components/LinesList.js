@@ -8,7 +8,7 @@ class LinesList extends Component {
     return (
       <ul className="list pl0 ml0 w-25 ba b--light-silver br3 ma2 vh-75 overflow-scroll">
         {this.props.lines.map(line =>
-          <LineLink key={line.id} id={line.id} short={line.shortName} long={line.longName} />
+          <LineLink key={line.id} id={line.id} routeId={line.rt_id} name={line.rt_name} color={line.color} />
         )}
       </ul>
     )

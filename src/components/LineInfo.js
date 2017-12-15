@@ -13,9 +13,11 @@ class LineInfo extends React.Component {
   constructor(props) {
     super(props);
 
-    let route = Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))
+    let route = Helpers.getRoute(parseInt(this.props.match.params.name, 10))
 
     this.state = {
+      routeName: (route.rt_name),
+      routeId: (route.rt_id),
       description: (route.description),
       weekday: (route.schedules.weekday),
       saturday: (route.schedules.saturday),
@@ -33,10 +35,11 @@ class LineInfo extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/stops-for-route/${this.props.location.state.id}.json?key=BETA&includePolylines=false`)
+    console.log(`https://ddot-proxy-test.herokuapp.com/api/where/stops-for-route/DDOT_${this.state.routeId}.json?key=BETA&includePolylines=false`)
+    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/stops-for-route/DDOT_${this.state.routeId}.json?key=BETA&includePolylines=false`)
       .then(response => response.json())
       .then(d => {
-        // console.log(d);
+        console.log(d);
         this.setState({ realTime: JSON.stringify(d.data) });
       })
       .catch(e => console.log(e));
@@ -59,13 +62,13 @@ class LineInfo extends React.Component {
       <div>
         <TopNav />
         <div className="flex-column v-mid">
-          <div className="flex justify-between v-mid">
-            <div className="tl v-mid">
+          <div className="flex justify-center v-mid">
+            <div className="tl v-mid ph5">
               <h2 className="dib f2 pa2 ma2 v-mid white" style={{ backgroundColor: this.state.color }}>
-                {this.props.match.params.name.split('-')[0].replace(/^[0]{1,}/,'')}
+                {this.props.match.params.name}
               </h2>
               <h2 className="dib f2 ml2 v-mid">
-                {this.props.match.params.name.split('-').slice(1).join(' ')}
+                {this.state.routeName}
               </h2>
             </div>
             <div>
@@ -81,7 +84,9 @@ class LineInfo extends React.Component {
               />
             </div>
           </div>
-          <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} />
+          <div className="flex justify-center">
+            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} />
+          </div>  
         </div>
       </div>
     )

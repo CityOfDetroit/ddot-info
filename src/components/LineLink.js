@@ -6,12 +6,12 @@ class LineLink extends Component {
   render() {
     return (
       <li className="ph3 pv2 bb b--light-silver">
-        <span className='bg-dark-green white fw7 f5 w2 pv2 tc dib'>
-          {this.props.short.replace(/^[0]{1,}/, '')}
+        <span className='white fw7 f5 w2 pv2 tc dib' style={{backgroundColor: this.props.color}}>
+          {this.props.id}
         </span> 
         <span className='tr pl1 f5 fw6 pl2'>
-          <Link to={{pathname: `/${this.props.short}-${this.props.long}`, 
-                    state: { id: this.props.id, short: this.props.short }}}>{this.props.long}</Link>
+          <Link to={{pathname: `/route/${this.props.id}`, 
+                    state: { id: this.props.id, routeId: this.props.routeId, name: this.props.name }}}>{this.props.name}</Link>
         </span>
       </li>
     )

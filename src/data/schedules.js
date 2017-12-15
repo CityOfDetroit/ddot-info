@@ -373,7 +373,7 @@ const Schedules = {
     "9": {
         "id": "9",
         "rt_name": "Chalmers",
-        "color": "#44aa42",
+        "color": "#9b5ba5",
         "rt_id": 6607,
         "notes": "nonstandard schedule",
         "schedules": {
@@ -1158,7 +1158,7 @@ const Schedules = {
     "12": {
         "id": "12",
         "rt_name": "Conant",
-        "color": "#44aa42",
+        "color": "#9b5ba5",
         "rt_id": 6610,
         "schedules": {
             "weekday": {

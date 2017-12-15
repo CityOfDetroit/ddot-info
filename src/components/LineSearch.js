@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import LineInput from './LineInput';
 import LinesList from './LinesList';
-import Schedules from '../data/schedules'
+import Schedules from '../data/schedules';
 
 class LineSearch extends Component {
   constructor(props) {

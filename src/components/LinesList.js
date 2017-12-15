@@ -21,8 +21,6 @@ LinesList.propTypes = {
     color: PropTypes.string,
     description: PropTypes.string,
     id: PropTypes.string,
-    longName: PropTypes.string.isRequired,
-    shortName: PropTypes.string.isRequired,
     textColor: PropTypes.string,
     type: PropTypes.number,
     url: PropTypes.string,

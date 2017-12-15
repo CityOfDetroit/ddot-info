@@ -4,9 +4,11 @@ import _ from 'lodash';
 
 class DirectionPicker extends React.Component {
   constructor(props) {
-    console.log(props.currentDirection);
     super(props);
-    this.state = { selectedOption: props.currentDirection };
+
+    this.state = { 
+      selectedOption: props.currentDirection 
+    };
   }
 
   render() {

@@ -9,7 +9,7 @@ import About from './components/About';
 import LineInfo from './components/LineInfo';
 
 ReactDOM.render(
-  <Router>
+  <Router basename="/route-explorer">
     <Switch>
       <Route exact path='/' component={App} />
       <Route path='/about' component={About} />

@@ -10,8 +10,8 @@ class LineLink extends Component {
           {this.props.id}
         </span> 
         <span className='tr pl1 f5 fw6 pl2'>
-          <Link to={{pathname: `/route/${this.props.id}`, 
-                    state: { id: this.props.id, routeId: this.props.routeId, name: this.props.name }}}>{this.props.name}</Link>
+          <Link className="dim black hover-mid-gray" to={{pathname: `/route/${this.props.id}`, 
+            state: { id: this.props.id, routeId: this.props.routeId, name: this.props.name }}}>{this.props.name}</Link>
         </span>
       </li>
     )
@@ -19,9 +19,9 @@ class LineLink extends Component {
 }
 
 LineLink.propTypes = {
-  short: PropTypes.string.isRequired,
-  long: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  routeId: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired
 }
 
 export default LineLink;

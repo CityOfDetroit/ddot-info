@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import LineInput from './LineInput';
 import LinesList from './LinesList';
+import LineColorLegend from './LineColorLegend';
 import Schedules from '../data/schedules';
 
 class LineSearch extends Component {
@@ -49,6 +50,7 @@ class LineSearch extends Component {
       <div className="ml4">
         <LineInput input={this.state.input} onSearchChange={this.handleSearchChange} />
         { this.state.filteredLines.length > 0 ? <LinesList lines={this.state.filteredLines} /> : <p><strong>Loading...</strong></p> }
+        <LineColorLegend />
       </div>
     )
   }

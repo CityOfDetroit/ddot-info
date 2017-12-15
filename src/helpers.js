@@ -14,9 +14,17 @@ const Helpers = {
   /*
    * Lookup a schedule for a single route by id
    */
-  getRouteSchedule: function(routeId) {
+  getRoute: function(routeId) {
     let routes = this.combineData()
     return routes[routeId];
+  },
+
+  /*
+   * Lookup a schedule for a single route by id
+   */
+  getAllRoutes: function(routeId) {
+    let routes = this.combineData()
+    return routes;
   },
 
   /**

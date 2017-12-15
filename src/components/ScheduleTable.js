@@ -1,32 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { StickyTable, Row, Cell } from 'react-sticky-table';
 import _ from 'lodash';
 
-const ScheduleTable = ({schedule, direction}) => (
-  <div className="h4 overflow-auto mh4 mt1 w-60">
-    <table className="h3 overflow-auto">
-      <tr>
-        {schedule[direction].stops.map((s, i) => (
-          <th className="pa1 w7rem tc f6 fw4" key={i}>{_.toUpper(s)}</th>
-        ))}
-      </tr>
-      {schedule[direction].trips.map((t, j) => (
-        <tr className="striped--light-gray" key={j}>
-          {t.timepoints.map((tp, k) => (
-            <td className="pa1 w7rem tc f6 fw4" key={k}>{tp}</td>
+export default class ScheduleTable extends Component {
+  render() {
+    return (
+      <div className="" style={{height: '500px'}}>
+        <StickyTable className="" stickyColumnCount={0}>
+          <Row className="fw7">
+            {this.props.schedule[this.props.direction].stops.map((s, i) => (
+              <Cell className="pa2 fw6 f7 tc v-btm bg-gray white w4" key={i}>{_.toUpper(s)}</Cell>
+            ))}
+          </Row>
+          {this.props.schedule[this.props.direction].trips.map((t, j) => (
+            <Row className="striped--near-white" key={j}>
+              {t.timepoints.map((tp, k) => (
+                <Cell className="pa1 tc f6 fw4 w6 min-w3 v-btm" key={k}>{tp}</Cell>
+              ))}
+            </Row>
           ))}
-        </tr>
-      ))}
-    </table>
-  </div>
-); 
-
-ScheduleTable.propTypes = {
-  schedule: PropTypes.shape({
-    stops: PropTypes.array,
-    trips: PropTypes.array,
-  }).isRequired,
-  direction: PropTypes.string.isRequired,
+        </StickyTable>
+      </div>
+    );
+  }
 }
-
-export default ScheduleTable;

@@ -13,15 +13,20 @@ class LineInfo extends React.Component {
   constructor(props) {
     super(props);
 
+    let route = Helpers.getRoute(parseInt(this.props.match.params.name, 10))
+
     this.state = {
-      description: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).description),
-      weekday: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).schedules.weekday),
-      saturday: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).schedules.saturday),
-      sunday: (Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10)).schedules.sunday),
-      currentSvc: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules).length > 1 ? Helpers.dowToService(moment().day()) : 'weekday'),
-      currentDirection: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules.weekday)[0]),
-      availableServices: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules)),
-      availableDirections: (Object.keys((Helpers.getRouteSchedule(parseInt(this.props.location.state.short, 10))).schedules.weekday)),
+      routeName: (route.rt_name),
+      routeId: (route.rt_id),
+      description: (route.description),
+      weekday: (route.schedules.weekday),
+      saturday: (route.schedules.saturday),
+      sunday: (route.schedules.sunday),
+      color: (route.color),
+      currentSvc: (Object.keys(route.schedules).length > 1 ? Helpers.dowToService(moment().day()) : 'weekday'),
+      currentDirection: (Object.keys(route.schedules.weekday)[0]),
+      availableServices: (Object.keys(route.schedules)),
+      availableDirections: (Object.keys(route.schedules.weekday)),
       realTime: '',
     };
 
@@ -30,24 +35,23 @@ class LineInfo extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/stops-for-route/${this.props.location.state.id}.json?key=BETA&includePolylines=false`)
+    console.log(`https://ddot-proxy-test.herokuapp.com/api/where/stops-for-route/DDOT_${this.state.routeId}.json?key=BETA&includePolylines=false`)
+    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/stops-for-route/DDOT_${this.state.routeId}.json?key=BETA&includePolylines=false`)
       .then(response => response.json())
       .then(d => {
-        // console.log(d);
+        console.log(d);
         this.setState({ realTime: JSON.stringify(d.data) });
       })
       .catch(e => console.log(e));
   }
 
   handleDirectionChange(event) {
-    console.log(event.target.value);;
     this.setState({
       currentDirection: event.target.value
     });
   }
 
   handleServiceChange(event) {
-    console.log(event.target.value);
     this.setState({
       currentSvc: event.target.value
     });
@@ -57,21 +61,33 @@ class LineInfo extends React.Component {
     return (
       <div>
         <TopNav />
-        <div className="ml4">
-        <h1 className="fw7 dib">{this.props.match.params.name.split('-')[0].replace(/^[0]{1,}/,'')}</h1>
-        <h1 className="fw3 dib ml3">{this.props.match.params.name.split('-')[1]}</h1>
+        <div className="flex-column v-mid">
+          <div className="flex justify-center v-mid">
+            <div className="tl v-mid ph5">
+              <h2 className="dib f2 pa2 ma2 v-mid white" style={{ backgroundColor: this.state.color }}>
+                {this.props.match.params.name}
+              </h2>
+              <h2 className="dib f2 ml2 v-mid">
+                {this.state.routeName}
+              </h2>
+            </div>
+            <div>
+              <ServicePicker 
+                services={this.state.availableServices}
+                currentSvc={this.state.currentSvc}
+                onChange={this.handleServiceChange}
+              />
+              <DirectionPicker 
+                directions={this.state.availableDirections}
+                currentDirection={this.state.currentDirection}
+                onChange={this.handleDirectionChange} 
+              />
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} />
+          </div>  
         </div>
-        <ServicePicker 
-          services={this.state.availableServices}
-          currentSvc={this.state.currentSvc}
-          onChange={this.handleServiceChange} 
-        />
-        <DirectionPicker 
-          directions={this.state.availableDirections}
-          currentDirection={this.state.currentDirection}
-          onChange={this.handleDirectionChange} 
-        />
-        <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} />
       </div>
     )
   }

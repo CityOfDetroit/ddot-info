@@ -11,9 +11,9 @@ import LineInfo from './components/LineInfo';
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route exact path='/' component={App}/>
-      <Route path='/about' component={About}/>
-      <Route path="/:name" render={({match, location}) => <LineInfo match={match} location={location} />} />
+      <Route exact path='/' component={App} />
+      <Route path='/about' component={About} />
+      <Route path="/route/:name" component={LineInfo} />
     </Switch>
   </Router>,
   document.getElementById('root'));

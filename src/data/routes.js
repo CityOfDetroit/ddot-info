@@ -132,6 +132,12 @@ const ddotRoutes = {
   },
   96: {
     description: 'Route 96-Joy Express runs Monday-Friday between Jefferson & St Antoine and Evergreen & Capitol.'
+  },
+  98: {
+    description: 'RefleX is an express, limited-stop service operating in metro Detroit. It runs 7 days a week.'
+  },
+  498: {
+    description: 'RefleX is an express, limited-stop service operating in metro Detroit. It runs 7 days a week.'
   }
 };
 

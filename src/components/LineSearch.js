@@ -2,18 +2,20 @@ import React, { Component } from 'react';
 
 import LineInput from './LineInput';
 import LinesList from './LinesList';
+import Schedules from '../data/schedules'
 
 class LineSearch extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      allLines: [],
-      filteredLines: [],
+      allLines: (Object.values(Schedules)),
+      filteredLines: (Object.values(Schedules)),
+      realTime: '',
       input: ''
-    }
+    };
 
-    this.handleSearchChange = this.handleSearchChange.bind(this)
+    this.handleSearchChange = this.handleSearchChange.bind(this);
   }
 
   componentDidMount() {
@@ -21,9 +23,9 @@ class LineSearch extends Component {
       .then(response => response.json())
       .then(d => {
         let sorted = d.data.list.sort((a,b)=>{
-          return parseInt(a.shortName, 10) > parseInt(b.shortName, 10)
+          return parseInt(a.id, 10) > parseInt(b.id, 10);
         })
-        this.setState({ allLines: sorted, filteredLines: sorted })
+        this.setState({realTime: sorted})
       })
   }
 
@@ -33,20 +35,20 @@ class LineSearch extends Component {
 
     this.state.allLines.forEach(ln => {
       if (
-          (ln.shortName.indexOf(val) > -1) || 
-          (ln.longName.indexOf(val.toUpperCase()) > -1)) {
-        matched.push(ln)
+          (ln.id.indexOf(val) > -1) || 
+          (ln.rt_name.indexOf(val.toUpperCase()) > -1)) {
+        matched.push(ln);
       }
     })
 
-    this.setState({ input: event.target.value, filteredLines: matched })
+    this.setState({ input: event.target.value, filteredLines: matched });
   }
 
   render () {
     return (
-      <div className="lineSearch">
+      <div className="ml4">
         <LineInput input={this.state.input} onSearchChange={this.handleSearchChange} />
-        <LinesList lines={this.state.filteredLines} />
+        { this.state.filteredLines.length > 0 ? <LinesList lines={this.state.filteredLines} /> : <p><strong>Loading...</strong></p> }
       </div>
     )
   }

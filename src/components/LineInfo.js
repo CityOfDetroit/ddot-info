@@ -6,6 +6,7 @@ import TopNav from './TopNav';
 import ScheduleTable from './ScheduleTable';
 import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
+import RouteMap from './RouteMap';
 
 import Helpers from '../helpers';
 
@@ -86,7 +87,10 @@ class LineInfo extends React.Component {
           </div>
           <div className="flex justify-center">
             <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} />
-          </div>  
+          </div> 
+          <div className="flex justify-center pa3">
+            <RouteMap />
+          </div>
         </div>
       </div>
     )

@@ -89,7 +89,7 @@ class LineInfo extends React.Component {
             <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} />
           </div> 
           <div className="flex justify-center pa3">
-            <RouteMap />
+            <RouteMap routeId={this.props.match.params.name}/>
           </div>
         </div>
       </div>

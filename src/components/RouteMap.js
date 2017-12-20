@@ -12,19 +12,22 @@ class RouteMap extends Component {
   }
 
   drawMap() {
-    mapboxgl.accessToken = 'pk.eyJ1IjoiamVzc2ljYW1jaW5jaGFrIiwiYSI6ImNpcTB4Y2h2ODAwa3BmaG5uYW0xOHBlOGoifQ.VSD_IOgj6S1oVmrSamgZvw';
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2l0eW9mZGV0cm9pdCIsImEiOiJjaXZvOWhnM3QwMTQzMnRtdWhyYnk5dTFyIn0.FZMFi0-hvA60KYnI-KivWg';
 
     const map = new mapboxgl.Map({
       'container': 'route-map',
-      'style': 'mapbox://styles/mapbox/streets-v9',
+      'style': 'mapbox://styles/cityofdetroit/cjbenda5y98wy2rpghe2ry5jj',
       'center': [-83.0458, 42.3314],
       'zoom': 10
     });
 
-    // map.on('load', function() {
-    //   map.addSource();
-    //   map.addLayer();
-    // });
+    const route_id = this.props.routeId.toString()
+
+    console.log(route_id)
+
+    map.on('load', function() {
+      map.setFilter('ddot-routes', ["==", "route_num", route_id])
+    });
 
     this.setState({
       drewMap: true,

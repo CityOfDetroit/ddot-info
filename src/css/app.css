@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,700,900');
 @import "tachyons";
-body{font-family: 'Montserrat', sans-serif; font-weight: lighter;}
+body{font-family: 'Gibson Detroit', sans-serif; font-weight: lighter;}
 h1,h2,h3,h4,h5{font-weight: bold; margin: 0;}
 
 .rotate {
@@ -10,10 +10,6 @@ h1,h2,h3,h4,h5{font-weight: bold; margin: 0;}
   text-align: left;
   border-bottom: 2px dotted black;
 }
-/*
-.w7rem {
-  min-width: 3rem;
-} */
 
 table {
   border-collapse: collapse;

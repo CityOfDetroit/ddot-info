@@ -9306,7 +9306,7 @@ const Schedules = {
     "30": {
         "id": "30",
         "rt_name": "Livernois",
-        "color": "#44aa42",
+        "color": "#9b5ba5",
         "notes": "nonstandard schedule",
         "rt_id": 6624,
         "schedules": {
@@ -13376,7 +13376,7 @@ const Schedules = {
     "41": {
         "id": "41",
         "rt_name": "Schaefer",
-        "color": "#44aa42",
+        "color": "#9b5ba5",
         "rt_id": 6633,
         "schedules": {
             "weekday": {
@@ -18199,7 +18199,7 @@ const Schedules = {
     "54": {
         "id": "54",
         "rt_name": "Wyoming",
-        "color": "#44aa42",
+        "color": "#9b5ba5",
         "rt_id": 6642,
         "schedules": {
             "weekday": {

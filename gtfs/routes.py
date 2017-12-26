@@ -13,7 +13,7 @@ routes = [
     {
         "id": "9",
         "rt_name": "Chalmers",
-        "color": "#44aa42",
+        "color": "#9b5ba5",
         "rt_id": 6607,
         "notes": "nonstandard schedule",
         "timepoints": {
@@ -47,7 +47,7 @@ routes = [
     {
         "id": "12",
         "rt_name": "Conant",        
-        "color": "#44aa42",
+        "color": "#9b5ba5",
         "rt_id": 6610,
         "timepoints": {
             "southbound": [127, 7864, 129, 130, 9034, 5525, 132, 10176, 10167],
@@ -58,7 +58,7 @@ routes = [
     {
         "id": "13",
         "rt_name": "Conner",
-        "color": "#44aa42",
+        "color": "#9b5ba5",
         "rt_id": 6611,
         "notes": "nonstandard schedule",
         "timepoints": {
@@ -206,7 +206,7 @@ routes = [
     {
         "id": "30",
         "rt_name": "Livernois",
-        "color": "#44aa42",
+        "color": "#9b5ba5",
         "notes": "nonstandard schedule",
         "rt_id": 6624,
         "timepoints": {
@@ -297,7 +297,7 @@ routes = [
     {
         "id": "41",
         "rt_name": "Schaefer",
-        "color": "#44aa42",
+        "color": "#9b5ba5",
         "rt_id": 6633,
         "timepoints": {
             "southbound": [656, 657, 659, 660, 6627, 661, 662, 663, 664],
@@ -396,7 +396,7 @@ routes = [
     {
         "id": "54",
         "rt_name": "Wyoming",
-        "color": "#44aa42",
+        "color": "#9b5ba5",
         "rt_id": 6642,
         "timepoints": {
             "southbound": [127, 250, 805, 807, 808, 809, 810, 811, 322, 323, 815],

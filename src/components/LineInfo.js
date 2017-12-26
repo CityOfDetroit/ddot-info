@@ -29,6 +29,10 @@ class LineInfo extends React.Component {
       availableServices: (Object.keys(route.schedules)),
       availableDirections: (Object.keys(route.schedules.weekday)),
       realTime: '',
+      tripIds: [],
+      liveTrips: '',
+      routeBbox: route.bbox,
+      timepointStops: route.timepoints[Object.keys(route.schedules.weekday)[0]]
     };
 
     this.handleDirectionChange = this.handleDirectionChange.bind(this);
@@ -36,12 +40,24 @@ class LineInfo extends React.Component {
   }
 
   componentDidMount() {
-    console.log(`https://ddot-proxy-test.herokuapp.com/api/where/stops-for-route/DDOT_${this.state.routeId}.json?key=BETA&includePolylines=false`)
-    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/stops-for-route/DDOT_${this.state.routeId}.json?key=BETA&includePolylines=false`)
+    console.log(`https://ddot-proxy-test.herokuapp.com/api/where/vehicles-for-agency/DDOT.json?key=BETA&includePolylines=false`)
+    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/vehicles-for-agency/DDOT.json?key=BETA&includePolylines=false`)
       .then(response => response.json())
       .then(d => {
-        console.log(d);
-        this.setState({ realTime: JSON.stringify(d.data) });
+        let tripIds = [];
+        this.state.availableDirections.forEach(dir => {
+          this.state.weekday[dir].trips.forEach(trip => {
+            tripIds.push("DDOT_116".concat(trip.trip_id.toString()))
+          })
+        })
+
+        let realTime = d.data.list.filter(li => {
+          return tripIds.indexOf(li.tripId) > -1
+        })
+        
+        let liveTrips = realTime.map(ti => { return ti.tripId })
+
+        this.setState({ realTime: realTime, tripIds: tripIds, liveTrips: liveTrips });
       })
       .catch(e => console.log(e));
   }
@@ -61,14 +77,13 @@ class LineInfo extends React.Component {
   render() {
     return (
       <div>
-        <TopNav />
         <div className="flex-column v-mid">
-          <div className="flex justify-center v-mid">
-            <div className="tl v-mid ph5">
+          <div className="flex v-mid">
+            <div className="tl v-mid ph5 mt3">
               <h2 className="dib f2 pa2 ma2 v-mid white" style={{ backgroundColor: this.state.color }}>
                 {this.props.match.params.name}
               </h2>
-              <h2 className="dib f2 ml2 v-mid">
+              <h2 className="dib f2 ml2 v-mid fw5">
                 {this.state.routeName}
               </h2>
             </div>
@@ -86,10 +101,12 @@ class LineInfo extends React.Component {
             </div>
           </div>
           <div className="flex justify-center">
-            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} />
-          </div> 
-          <div className="flex justify-center pa3">
-            <RouteMap routeId={this.props.match.params.name}/>
+            <div className='w-40'>
+              <RouteMap routeId={this.props.match.params.name} stops={this.state.timepointStops} bbox={this.state.routeBbox} />
+            </div>
+            <div className='w-60'>
+              <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} liveTrips={this.state.liveTrips} />
+            </div>
           </div>
         </div>
       </div>

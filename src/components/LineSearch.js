@@ -37,7 +37,7 @@ class LineSearch extends Component {
     this.state.allLines.forEach(ln => {
       if (
           (ln.id.indexOf(val) > -1) || 
-          (ln.rt_name.indexOf(val.toUpperCase()) > -1)) {
+          (ln.rt_name.toUpperCase().indexOf(val.toUpperCase()) > -1)) {
         matched.push(ln);
       }
     })
@@ -47,7 +47,7 @@ class LineSearch extends Component {
 
   render () {
     return (
-      <div className="ml4">
+      <div className="">
         <LineInput input={this.state.input} onSearchChange={this.handleSearchChange} />
         { this.state.filteredLines.length > 0 ? <LinesList lines={this.state.filteredLines} /> : <p><strong>Loading...</strong></p> }
         <LineColorLegend />

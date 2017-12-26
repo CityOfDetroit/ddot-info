@@ -14,7 +14,7 @@ class DirectionPicker extends React.Component {
   render() {
     return (
       <div className="dib pa3 v-top">
-        <h3 className="mb1">Direction</h3>
+        <h4 className="mb1">Direction</h4>
         <form>
         {this.props.directions.map(d => (
           <div className="pa1 flex" key={d}>

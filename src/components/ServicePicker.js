@@ -15,7 +15,7 @@ class ServicePicker extends React.Component {
         <h4 className="mb1">Service Day</h4>
         <form>
         {this.props.services.map(s => (
-          <div className="pa1 flex" key={s}>
+          <div className="pa1" key={s}>
             <label className="">
             <input
               className="mr2"

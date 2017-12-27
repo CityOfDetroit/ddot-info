@@ -10,22 +10,13 @@ export default class ScheduleTable extends Component {
   }
 
   componentDidMount() {
-    // console.log(this.props)
-    // console.log(moment().format('MMMM Do YYYY, h:mm:ss a'))
     const something = this.props.liveTrips
     console.log(something)
-    // something.forEach(element => {
-    //   let x = document.getElementById(element)
-    //   console.log(x)
-    //   x ? x.scrollIntoView() : console.log('none')
-    // });
   }
 
   render() {
     let width = window.innerWidth
-    console.log(this.props.liveTrips)
-    // .map(function(l) { return l[trip_id]}))
-    // .map(t=>{ t.tripId}))
+
     if (width < 600) {
       return (
         <div className="h6">

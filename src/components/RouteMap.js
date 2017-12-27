@@ -16,7 +16,7 @@ class RouteMap extends Component {
 
     const map = new mapboxgl.Map({
       'container': 'route-map',
-      'style': 'mapbox://styles/cityofdetroit/cjbhghm1sbvef2rpbegiwc1ff',
+      'style': 'mapbox://styles/cityofdetroit/cjbo6aw134a5j2rlucd3tkaxt',
       'center': [-83.0458, 42.3314],
       'zoom': 10,
       'attributionControl': false
@@ -29,7 +29,6 @@ class RouteMap extends Component {
     console.log(route_id)
 
     map.on('load', function() {
-      map.setLayoutProperty('ddot-routes copy 1', 'visibility', 'none')
       map.setFilter('ddot-routes', ["==", "route_num", route_id])
       map.setFilter('ddot-stops', ["in", "stop_id"].concat(stops.map(m => { return m.toString() })))
       map.setFilter('ddot-stops copy', ["in", "stop_id"].concat(stops.map(m => { return m.toString() })))

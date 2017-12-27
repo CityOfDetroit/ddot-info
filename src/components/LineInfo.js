@@ -87,25 +87,25 @@ class LineInfo extends React.Component {
                 {this.state.routeName}
               </h2>
             </div>
-            <div>
-              <ServicePicker 
-                services={this.state.availableServices}
-                currentSvc={this.state.currentSvc}
-                onChange={this.handleServiceChange}
-              />
-              <DirectionPicker 
-                directions={this.state.availableDirections}
-                currentDirection={this.state.currentDirection}
-                onChange={this.handleDirectionChange} 
-              />
-            </div>
           </div>
           <div className="flex justify-center">
             <div className='w-40'>
+            <div>
+                <ServicePicker 
+                  services={this.state.availableServices}
+                  currentSvc={this.state.currentSvc}
+                  onChange={this.handleServiceChange}
+                />
+                <DirectionPicker 
+                  directions={this.state.availableDirections}
+                  currentDirection={this.state.currentDirection}
+                  onChange={this.handleDirectionChange} 
+                />
+              </div>
               <RouteMap routeId={this.props.match.params.name} stops={this.state.timepointStops} bbox={this.state.routeBbox} />
             </div>
-            <div className='w-60'>
-              <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} liveTrips={this.state.liveTrips} />
+            <div className='w-60 h5'>
+                <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} liveTrips={this.state.liveTrips} />
             </div>
           </div>
         </div>

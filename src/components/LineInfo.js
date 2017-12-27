@@ -77,20 +77,15 @@ class LineInfo extends React.Component {
   render() {
     return (
       <div>
-        <div className="flex-column v-mid">
-          <div className="flex v-mid">
-            <div className="tl v-mid ph5 mt3">
-              <h2 className="dib f2 pa2 ma2 v-mid white" style={{ backgroundColor: this.state.color }}>
-                {this.props.match.params.name}
-              </h2>
-              <h2 className="dib f2 ml2 v-mid fw5">
-                {this.state.routeName}
-              </h2>
-            </div>
-          </div>
-          <div className="flex justify-center">
-            <div className='w-40'>
-            <div>
+        <TopNav />
+        <div>
+          <div className="tc v-mid">
+            <span className="dib f2 pa2 ma2 v-mid white fw7" style={{ backgroundColor: this.state.color }}>
+              {this.props.match.params.name}
+            </span>
+            <span className="dib f2 ml2 v-mid fw5">
+              {this.state.routeName}
+            </span>
                 <ServicePicker 
                   services={this.state.availableServices}
                   currentSvc={this.state.currentSvc}
@@ -101,12 +96,12 @@ class LineInfo extends React.Component {
                   currentDirection={this.state.currentDirection}
                   onChange={this.handleDirectionChange} 
                 />
-              </div>
-              <RouteMap routeId={this.props.match.params.name} stops={this.state.timepointStops} bbox={this.state.routeBbox} />
-            </div>
-            <div className='w-60 h5'>
-                <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} liveTrips={this.state.liveTrips} />
-            </div>
+          </div>
+          <div className='w-40-l w-40-m w-100-s dib'>
+            <RouteMap routeId={this.props.match.params.name} stops={this.state.timepointStops} bbox={this.state.routeBbox} realTime={this.state.realTime} />
+          </div>
+          <div className='w-60-l w-60-m w-100-s dib'>
+            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} liveTrips={this.state.liveTrips} />
           </div>
         </div>
       </div>

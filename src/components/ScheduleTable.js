@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { StickyTable, Row, Cell } from 'react-sticky-table';
 import _ from 'lodash';
-import moment from 'moment';
 
 export default class ScheduleTable extends Component {
   constructor(props) {
@@ -20,7 +19,7 @@ export default class ScheduleTable extends Component {
     if (width < 600) {
       return (
         <div className="h6">
-          <StickyTable className="h6" stickyRowCount={0}>
+          <StickyTable className="h6 w-100" stickyRowCount={0}>
             {this.props.schedule[this.props.direction].stops.map((s, i) => (
               <Row key={i} className="striped--near-white">
                 <Cell className="bg-gray white fw6 f7 pv2 tr pr2" style={{minWidth: '110px'}}>{_.toUpper(s)}</Cell>
@@ -36,7 +35,7 @@ export default class ScheduleTable extends Component {
     else {
       return (
         <div className="h6">
-          <StickyTable className="h6" stickyColumnCount={0}>
+          <StickyTable className="h6 w6" stickyColumnCount={0}>
             <Row className="fw7">
               {this.props.schedule[this.props.direction].stops.map((s, i) => (
                 <Cell className="pa2 fw6 f7 tc v-btm bg-gray white w4" key={i}>{_.toUpper(s)}</Cell>

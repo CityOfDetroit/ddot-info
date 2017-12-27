@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import LineInput from './LineInput';
 import LinesList from './LinesList';
-import LineColorLegend from './LineColorLegend';
 import Schedules from '../data/schedules';
 
 class LineSearch extends Component {
@@ -47,10 +46,9 @@ class LineSearch extends Component {
 
   render () {
     return (
-      <div className="">
+      <div className="w-50 mh3">
         <LineInput input={this.state.input} onSearchChange={this.handleSearchChange} />
         { this.state.filteredLines.length > 0 ? <LinesList lines={this.state.filteredLines} /> : <p><strong>Loading...</strong></p> }
-        <LineColorLegend />
       </div>
     )
   }

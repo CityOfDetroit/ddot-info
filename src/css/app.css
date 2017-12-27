@@ -23,7 +23,7 @@ table {
 .sticky-table .sticky-table-cell {
   display: table-cell;
   box-sizing: border-box;
-  min-width: 4rem;
+  min-width: 5rem;
 }
 .sticky-table .sticky-table-row {
   display: table-row;

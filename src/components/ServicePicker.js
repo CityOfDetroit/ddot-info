@@ -11,27 +11,13 @@ class ServicePicker extends React.Component {
 
   render() {
     return (
-      <div className="dib pa3 v-top">
-        <h3 className="mb1">Service Day</h3>
-        <form>
-        {this.props.services.map(s => (
-          <div className="pa1 flex" key={s}>
-            <label className="">
-            <input
-              className="mr2"
-              type="radio" 
-              name="service" 
-              onChange={(e) => {
-                this.props.onChange(e);
-                this.setState({selectedOption: s});
-              }} 
-              value={s} 
-              checked={this.state.selectedOption === s} 
-            />
-            {_.capitalize(s)}</label>
-          </div>
-        ))}
-        </form>
+      <div className="dib ph4 v-mid tl">
+        <h4 className="">Service Day</h4>
+        <select className="mt2 fw5" onChange={this.props.onChange}>
+          {this.props.services.map(s => (
+            <option className="fw5" value={s} key={s}>{_.capitalize(s)}</option>
+          ))}
+        </select>
       </div>
     )
   }

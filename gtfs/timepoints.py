@@ -146,6 +146,12 @@ def get_schedule(id, service='1', direction='0'):
     schedule.index = schedule.index.map(lambda x: x[3:])
     return schedule.applymap(format_hms_nicely)
 
+def get_route_bbox(route_id):
+    query = "select ST_AsGeoJSON(ST_Envelope(wkb_geometry)) from gtfs.route_map where route_num = '{}' order by ST_Length(wkb_geometry) desc".format(route_id)
+    res = conn.execute(query)
+    bbox = json.loads(res.fetchone()[0])
+    return [bbox['coordinates'][0][0], bbox['coordinates'][0][2]]
+
 def get_route(route):
     services = {
         1: {},
@@ -182,8 +188,7 @@ def get_route(route):
         if len(services[s][test_service[0]]['stops']) == 0:
             del services[s]
     route['schedules'] = services
-    # cleanup
-    del route['timepoints']
+    route['bbox'] = get_route_bbox(route['id'])
     return route
 
 if __name__ == "__main__":

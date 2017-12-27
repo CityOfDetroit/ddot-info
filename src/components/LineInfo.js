@@ -6,6 +6,7 @@ import TopNav from './TopNav';
 import ScheduleTable from './ScheduleTable';
 import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
+import RouteMap from './RouteMap';
 
 import Helpers from '../helpers';
 
@@ -28,6 +29,10 @@ class LineInfo extends React.Component {
       availableServices: (Object.keys(route.schedules)),
       availableDirections: (Object.keys(route.schedules.weekday)),
       realTime: '',
+      tripIds: [],
+      liveTrips: '',
+      routeBbox: route.bbox,
+      timepointStops: route.timepoints[Object.keys(route.schedules.weekday)[0]]
     };
 
     this.handleDirectionChange = this.handleDirectionChange.bind(this);
@@ -35,12 +40,24 @@ class LineInfo extends React.Component {
   }
 
   componentDidMount() {
-    console.log(`https://ddot-proxy-test.herokuapp.com/api/where/stops-for-route/DDOT_${this.state.routeId}.json?key=BETA&includePolylines=false`)
-    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/stops-for-route/DDOT_${this.state.routeId}.json?key=BETA&includePolylines=false`)
+    console.log(`https://ddot-proxy-test.herokuapp.com/api/where/vehicles-for-agency/DDOT.json?key=BETA&includePolylines=false`)
+    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/vehicles-for-agency/DDOT.json?key=BETA&includePolylines=false`)
       .then(response => response.json())
       .then(d => {
-        console.log(d);
-        this.setState({ realTime: JSON.stringify(d.data) });
+        let tripIds = [];
+        this.state.availableDirections.forEach(dir => {
+          this.state.weekday[dir].trips.forEach(trip => {
+            tripIds.push("DDOT_116".concat(trip.trip_id.toString()))
+          })
+        })
+
+        let realTime = d.data.list.filter(li => {
+          return tripIds.indexOf(li.tripId) > -1
+        })
+        
+        let liveTrips = realTime.map(ti => { return ti.tripId })
+
+        this.setState({ realTime: realTime, tripIds: tripIds, liveTrips: liveTrips });
       })
       .catch(e => console.log(e));
   }
@@ -61,32 +78,31 @@ class LineInfo extends React.Component {
     return (
       <div>
         <TopNav />
-        <div className="flex-column v-mid">
-          <div className="flex justify-center v-mid">
-            <div className="tl v-mid ph5">
-              <h2 className="dib f2 pa2 ma2 v-mid white" style={{ backgroundColor: this.state.color }}>
-                {this.props.match.params.name}
-              </h2>
-              <h2 className="dib f2 ml2 v-mid">
-                {this.state.routeName}
-              </h2>
-            </div>
-            <div>
-              <ServicePicker 
-                services={this.state.availableServices}
-                currentSvc={this.state.currentSvc}
-                onChange={this.handleServiceChange}
-              />
-              <DirectionPicker 
-                directions={this.state.availableDirections}
-                currentDirection={this.state.currentDirection}
-                onChange={this.handleDirectionChange} 
-              />
-            </div>
+        <div>
+          <div className="tc v-mid">
+            <span className="dib f2 pa2 ma2 v-mid white fw7" style={{ backgroundColor: this.state.color }}>
+              {this.props.match.params.name}
+            </span>
+            <span className="dib f2 ml2 v-mid fw5">
+              {this.state.routeName}
+            </span>
+                <ServicePicker 
+                  services={this.state.availableServices}
+                  currentSvc={this.state.currentSvc}
+                  onChange={this.handleServiceChange}
+                />
+                <DirectionPicker 
+                  directions={this.state.availableDirections}
+                  currentDirection={this.state.currentDirection}
+                  onChange={this.handleDirectionChange} 
+                />
           </div>
-          <div className="flex justify-center">
-            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} />
-          </div>  
+          <div className='w-40-l w-40-m w-100-s dib'>
+            <RouteMap routeId={this.props.match.params.name} stops={this.state.timepointStops} bbox={this.state.routeBbox} realTime={this.state.realTime} />
+          </div>
+          <div className='w-60-l w-60-m w-100-s dib'>
+            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} liveTrips={this.state.liveTrips} />
+          </div>
         </div>
       </div>
     )

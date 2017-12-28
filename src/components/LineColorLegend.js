@@ -6,11 +6,11 @@ let nsStyle = { backgroundColor: '#9b5ba5' };
 let specialStyle = { backgroundColor: '#d07c32' };
 
 const LineColorLegend = () => (
-  <div>
-    <div className="w-25 pa2 mv2 br2 b white" style={downtownStyle}>Routes that go downtown</div>
-    <div className="w-25 pa2 mv2 br2 b white" style={ewStyle}>Routes that go East-West, not downtown</div>
-    <div className="w-25 pa2 mv2 br2 b white" style={nsStyle}>Routes that go North-South, not downtown</div>
-    <div className="w-25 pa2 mv2 br2 b white" style={specialStyle}>Special routes</div>
+  <div className="absolute bottom-2 z-2 f5 fw7" style={{backgroundOpacity: '0.1'}}>
+    <div className="ma3 pa2 br2 white" style={downtownStyle}>Routes that go downtown</div>
+    <div className="ma3 pa2 br2 white" style={ewStyle}>Routes that go East-West, not downtown</div>
+    <div className="ma3 pa2 br2 white" style={nsStyle}>Routes that go North-South, not downtown</div>
+    <div className="ma3 pa2 br2 white" style={specialStyle}>Special routes</div>
   </div>
 );
 

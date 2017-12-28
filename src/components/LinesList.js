@@ -6,7 +6,7 @@ import LineLink from './LineLink';
 class LinesList extends Component {
   render() {
     return (
-      <ul className="list pl0 ml0 w-100-s w-50-m w-third-l ba b--light-silver br3 ma2 vh-75 overflow-scroll">
+      <ul className="list pa1 ba bg-white b--light-silver br3 ma2 vh-75 overflow-scroll">
         {this.props.lines.map(line =>
           <LineLink key={line.id} id={line.id} routeId={line.rt_id} name={line.rt_name} color={line.color} />
         )}

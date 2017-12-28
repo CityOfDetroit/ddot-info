@@ -9,36 +9,15 @@ export default class ScheduleTable extends Component {
   }
 
   componentDidMount() {
-    const something = this.props.liveTrips
-    console.log(something)
   }
 
   render() {
-    let width = window.innerWidth
-
-    if (width < 600) {
       return (
         <div className="h6">
-          <StickyTable className="h6 w-100" stickyRowCount={0}>
-            {this.props.schedule[this.props.direction].stops.map((s, i) => (
-              <Row key={i} className="striped--near-white">
-                <Cell className="bg-gray white fw6 f7 pv2 tr pr2" style={{minWidth: '110px'}}>{_.toUpper(s)}</Cell>
-                {this.props.schedule[this.props.direction].trips.map((t) => (
-                  <Cell className = "ph2 f7 fw5 v-mid" key={t.trip_id} id={ i === 1 ? "DDOT_116".concat(t.trip_id.toString()) : null }>{t.timepoints[i]}</Cell>
-                ))}
-              </Row>
-            ))}
-          </StickyTable>
-        </div>
-      );
-    }
-    else {
-      return (
-        <div className="h6">
-          <StickyTable className="h6 w6" stickyColumnCount={0}>
+          <StickyTable className="h6" stickyColumnCount={0}>
             <Row className="fw7">
               {this.props.schedule[this.props.direction].stops.map((s, i) => (
-                <Cell className="pa2 fw6 f7 tc v-btm bg-gray white w4" key={i}>{_.toUpper(s)}</Cell>
+                <Cell className="pa2 fw6 f7 tc v-btm bg-light-gray black w4" key={i}>{_.toUpper(s)}</Cell>
               ))}
             </Row>
             {this.props.schedule[this.props.direction].trips.map((t, j) => (
@@ -51,7 +30,7 @@ export default class ScheduleTable extends Component {
           </StickyTable>
         </div>
       );
-    }
+    // }
 
 
   }

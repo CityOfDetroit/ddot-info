@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 class LineInput extends Component {
   render() {
     return (
-      <input className='w-100-s w-50-m w-third-l'
-                value={this.props.input}
-                onChange={this.props.onSearchChange} />
+      <input  className="w-75 mt3 ml2 pa2 f4"
+              placeholder="Search for a line name or number."
+              value={this.props.input}
+              onChange={this.props.onSearchChange} />
     )
   }
 }

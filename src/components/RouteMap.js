@@ -9,12 +9,44 @@ class RouteMap extends Component {
 
     this.state = {
       drewMap: false,
-      realTime: [],
+      realTime: {},
       map: {}
     };
   }
 
-  drawMap(realTime) {
+  fetchData() {
+    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/vehicles-for-agency/DDOT.json?key=BETA&includePolylines=false`)
+    .then(response => response.json())
+    .then(d => {
+      let x = d.data.list.filter(trip => {
+        return this.props.tripIds.indexOf(trip.tripId.slice(-4)) > 0
+      })
+
+      let geojson = x.map(bus => {
+        return {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [bus.tripStatus.position.lon, bus.tripStatus.position.lat]
+          },
+          "properties": {
+            "nextStop": bus.tripStatus.nextStop
+          }
+        }
+      })
+
+      let fc = {
+        "type": "FeatureCollection",
+        "features": geojson
+      }
+
+      this.state.map.getSource('realtime').setData(fc)
+      this.state.map.getSource('realtime-background').setData(fc)
+    })
+    .catch(e => console.log(e));
+  }
+
+  drawMap() {
     mapboxgl.accessToken = 'pk.eyJ1IjoiY2l0eW9mZGV0cm9pdCIsImEiOiJjaXZvOWhnM3QwMTQzMnRtdWhyYnk5dTFyIn0.FZMFi0-hvA60KYnI-KivWg';
 
     const map = new mapboxgl.Map({
@@ -29,19 +61,6 @@ class RouteMap extends Component {
     const route_id = this.props.routeId.toString()
     const stops = this.props.stops
     const bounds = this.props.bbox
-
-    let geojson = realTime.map(bus => {
-      return {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [bus.tripStatus.position.lon, bus.tripStatus.position.lat]
-        },
-        "properties": {
-          "nextStop": bus.tripStatus.nextStop
-        }
-      }
-    })
 
     map.on('load', function() {
       map.setFilter('ddot-routes', ["==", "route_num", route_id])
@@ -58,7 +77,7 @@ class RouteMap extends Component {
           "type": "geojson",
           "data": {
             "type": "FeatureCollection",
-            "features": geojson
+            "features": []
           }
         },
         "paint": {
@@ -77,14 +96,13 @@ class RouteMap extends Component {
           "type": "geojson",
           "data": {
             "type": "FeatureCollection",
-            "features": geojson
+            "features": []
           }
         },
         "layout": {
           "icon-image": "bus-11"
         }
       })
-
     });
 
     this.setState({
@@ -95,16 +113,13 @@ class RouteMap extends Component {
 
 
   componentDidMount() {
-    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/vehicles-for-agency/DDOT.json?key=BETA&includePolylines=false`)
-    .then(response => response.json())
-    .then(d => {
-      let x = d.data.list.filter(trip => {
-        return this.props.tripIds.indexOf(trip.tripId.slice(-4)) > 0
-      })
-      this.drawMap(x);
-    })
-    .catch(e => console.log(e));
+    this.interval = setInterval(() => this.fetchData(), 3000);
+    this.drawMap()
+    this.fetchData()
+  }
 
+  componentWillUnmount() {
+    clearInterval(this.interval)
   }
 
   render() {

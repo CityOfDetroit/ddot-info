@@ -9,33 +9,12 @@ export default class ScheduleTable extends Component {
   }
 
   componentDidMount() {
-    const something = this.props.liveTrips
-    console.log(something)
   }
 
   render() {
-    let width = window.innerWidth
-
-    if (width < 600) {
-      return (
-        <div className="h5">
-          <StickyTable className="h6 overflow-x-auto" stickyRowCount={0}>
-            {this.props.schedule[this.props.direction].stops.map((s, i) => (
-              <Row key={i} className="striped--near-white">
-                <Cell className="bg-light-gray black fw6 f7 pv2 tr pr2">{_.toUpper(s)}</Cell>
-                {this.props.schedule[this.props.direction].trips.map((t) => (
-                  <Cell className = "ph2 f7 fw5 v-mid" key={t.trip_id} id={ i === 1 ? "DDOT_116".concat(t.trip_id.toString()) : null }>{t.timepoints[i]}</Cell>
-                ))}
-              </Row>
-            ))}
-          </StickyTable>
-        </div>
-      );
-    }
-    else {
       return (
         <div className="h6">
-          <StickyTable className="h6 w-100" stickyColumnCount={0}>
+          <StickyTable className="h6" stickyColumnCount={0}>
             <Row className="fw7">
               {this.props.schedule[this.props.direction].stops.map((s, i) => (
                 <Cell className="pa2 fw6 f7 tc v-btm bg-light-gray black w4" key={i}>{_.toUpper(s)}</Cell>
@@ -51,7 +30,7 @@ export default class ScheduleTable extends Component {
           </StickyTable>
         </div>
       );
-    }
+    // }
 
 
   }

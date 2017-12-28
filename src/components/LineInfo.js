@@ -16,6 +16,14 @@ class LineInfo extends React.Component {
 
     let route = Helpers.getRoute(parseInt(this.props.match.params.name, 10))
 
+    let tripIds = []
+    Object.keys(route.schedules).forEach(svc => {
+      console.log(svc)
+      Object.keys(route.schedules.weekday).forEach(dir => {
+        tripIds = tripIds.concat(route.schedules[svc][dir].trips.map(trip => trip.trip_id))
+      })
+    })
+
     this.state = {
       routeName: (route.rt_name),
       routeId: (route.rt_id),
@@ -23,43 +31,20 @@ class LineInfo extends React.Component {
       weekday: (route.schedules.weekday),
       saturday: (route.schedules.saturday),
       sunday: (route.schedules.sunday),
+      tripIds: tripIds,
       color: (route.color),
       currentSvc: (Object.keys(route.schedules).length > 1 ? Helpers.dowToService(moment().day()) : 'weekday'),
       currentDirection: (Object.keys(route.schedules.weekday)[0]),
       availableServices: (Object.keys(route.schedules)),
       availableDirections: (Object.keys(route.schedules.weekday)),
-      realTime: '',
-      tripIds: [],
-      liveTrips: '',
       routeBbox: route.bbox,
       timepointStops: route.timepoints[Object.keys(route.schedules.weekday)[0]]
     };
 
+
+
     this.handleDirectionChange = this.handleDirectionChange.bind(this);
     this.handleServiceChange = this.handleServiceChange.bind(this);
-  }
-
-  componentDidMount() {
-    console.log(`https://ddot-proxy-test.herokuapp.com/api/where/vehicles-for-agency/DDOT.json?key=BETA&includePolylines=false`)
-    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/vehicles-for-agency/DDOT.json?key=BETA&includePolylines=false`)
-      .then(response => response.json())
-      .then(d => {
-        let tripIds = [];
-        this.state.availableDirections.forEach(dir => {
-          this.state.weekday[dir].trips.forEach(trip => {
-            tripIds.push("DDOT_116".concat(trip.trip_id.toString()))
-          })
-        })
-
-        let realTime = d.data.list.filter(li => {
-          return tripIds.indexOf(li.tripId) > -1
-        })
-        
-        let liveTrips = realTime.map(ti => { return ti.tripId })
-
-        this.setState({ realTime: realTime, tripIds: tripIds, liveTrips: liveTrips });
-      })
-      .catch(e => console.log(e));
   }
 
   handleDirectionChange(event) {
@@ -97,11 +82,11 @@ class LineInfo extends React.Component {
               onChange={this.handleDirectionChange} 
             />
           </div>
-          <div className='w-50-l w-50-m w-100-s dib'>
-            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} liveTrips={this.state.liveTrips} />
+          <div className='w-50-l w-100-m dib'>
+            <RouteMap routeId={this.props.match.params.name} stops={this.state.timepointStops} bbox={this.state.routeBbox} tripIds={this.state.tripIds} />
           </div>
-          <div className='w-50-l w-50-m w-100-s dib'>
-            <RouteMap routeId={this.props.match.params.name} stops={this.state.timepointStops} bbox={this.state.routeBbox} realTime={this.state.realTime} />
+          <div className='w-50-l w-100-m w-100-s dib' >
+            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} liveTrips={this.state.liveTrips} />
           </div>
         </div>
       </div>

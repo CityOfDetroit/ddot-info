@@ -3,6 +3,7 @@
 body{font-family: 'Gibson Detroit', sans-serif; font-weight: lighter;}
 h1,h2,h3,h4,h5{font-weight: bold; margin: 0;}
 
+
 .rotate {
   transform: translate(2rem, -1rem) rotate(-45deg);
   padding-right: 1em;
@@ -118,3 +119,18 @@ Scrolling is probably 10-20x smoother.
 .sticky-table #y-scrollbar div {
   width: 100%;
 }
+
+.sticky-table {
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  height: 0px;
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+} */

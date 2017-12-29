@@ -102,7 +102,8 @@ class RouteMap extends Component {
           },
           "circle-opacity": 0.5,
           "circle-stroke-color": "black",
-          "circle-stroke-width": 2
+          "circle-stroke-width": 1.5,
+          "circle-stroke-opacity": 0.5
         }
       })
 
@@ -117,7 +118,8 @@ class RouteMap extends Component {
           }
         },
         "layout": {
-          "icon-image": "bus-11"
+          "icon-image": "bus-11",
+          "icon-allow-overlap": true
         },
         "paint": {
           "icon-opacity": 0.75

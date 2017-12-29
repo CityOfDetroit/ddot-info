@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
+import _ from 'lodash';
 
 class RouteMap extends Component {
   constructor(props) {
@@ -9,7 +10,6 @@ class RouteMap extends Component {
 
     this.state = {
       drewMap: false,
-      realTime: {},
       map: {}
     };
   }
@@ -18,8 +18,11 @@ class RouteMap extends Component {
     fetch(`https://ddot-proxy-test.herokuapp.com/api/where/vehicles-for-agency/DDOT.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
+
+      let allTripIds = _.flattenDeep(Object.values(this.props.tripIds))
+
       let x = d.data.list.filter(trip => {
-        return this.props.tripIds.indexOf(trip.tripId.slice(-4)) > 0
+        return allTripIds.indexOf(trip.tripId.slice(-4)) > 0
       })
 
       let geojson = x.map(bus => {
@@ -30,7 +33,9 @@ class RouteMap extends Component {
             "coordinates": [bus.tripStatus.position.lon, bus.tripStatus.position.lat]
           },
           "properties": {
-            "nextStop": bus.tripStatus.nextStop
+            "tripId": bus.tripStatus.activeTripId,
+            "nextStop": bus.tripStatus.nextStop,
+            "direction": _.findKey(this.props.tripIds, t => { return t.indexOf(bus.tripStatus.activeTripId.slice(-4)) > 0})
           }
         }
       })
@@ -39,6 +44,8 @@ class RouteMap extends Component {
         "type": "FeatureCollection",
         "features": geojson
       }
+
+      console.log(fc)
 
       this.state.map.getSource('realtime').setData(fc)
       this.state.map.getSource('realtime-background').setData(fc)
@@ -66,7 +73,7 @@ class RouteMap extends Component {
       map.setFilter('ddot-routes', ["==", "route_num", route_id])
       map.setFilter('ddot-stops', ["in", "stop_id"].concat(stops.map(m => { return m.toString() })))
       map.setFilter('ddot-stops copy', ["in", "stop_id"].concat(stops.map(m => { return m.toString() })))
-      map.setLayoutProperty('ddot-stops', 'visibility', 'visible')
+      // map.setLayoutProperty('ddot-stops', 'visibility', 'visible')
       map.setLayoutProperty('ddot-stops copy', 'visibility', 'visible')
       map.fitBounds(bounds, {'padding': 50})
 
@@ -82,8 +89,18 @@ class RouteMap extends Component {
         },
         "paint": {
           "circle-radius": 10,
-          "circle-color": "purple",
-          "circle-opacity": 0.35,
+          "circle-color": {
+            property: "direction",
+            type: "categorical",
+            stops: [
+              ['northbound', 'violet'],
+              ['eastbound', 'violet'],
+              ['southbound', 'orange'],
+              ['westbound', 'orange'],
+              ['clockwise', 'green']
+            ]
+          },
+          "circle-opacity": 0.5,
           "circle-stroke-color": "black",
           "circle-stroke-width": 2
         }
@@ -101,6 +118,9 @@ class RouteMap extends Component {
         },
         "layout": {
           "icon-image": "bus-11"
+        },
+        "paint": {
+          "icon-opacity": 0.75
         }
       })
     });

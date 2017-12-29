@@ -16,11 +16,13 @@ class LineInfo extends React.Component {
 
     let route = Helpers.getRoute(parseInt(this.props.match.params.name, 10))
 
-    let tripIds = []
+    let tripIds = {}
     Object.keys(route.schedules).forEach(svc => {
-      console.log(svc)
       Object.keys(route.schedules.weekday).forEach(dir => {
-        tripIds = tripIds.concat(route.schedules[svc][dir].trips.map(trip => trip.trip_id))
+        if (!tripIds[dir]) {
+          tripIds[dir] = []
+        }
+        tripIds[dir] = tripIds[dir].concat(route.schedules[svc][dir].trips.map(trip => trip.trip_id))
       })
     })
 
@@ -40,8 +42,6 @@ class LineInfo extends React.Component {
       routeBbox: route.bbox,
       timepointStops: route.timepoints[Object.keys(route.schedules.weekday)[0]]
     };
-
-
 
     this.handleDirectionChange = this.handleDirectionChange.bind(this);
     this.handleServiceChange = this.handleServiceChange.bind(this);

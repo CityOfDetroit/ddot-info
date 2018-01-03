@@ -12,6 +12,13 @@ h1,h2,h3,h4,h5{font-weight: bold; margin: 0;}
   border-bottom: 2px dotted black;
 }
 
+@media (max-width: 510px) {
+  .mapdiv {
+    width: 100%;
+    height: 10rem;
+  }
+}
+
 .stopHeader {
   border-right: 1px dotted #aaa;
 }

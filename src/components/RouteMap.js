@@ -75,7 +75,7 @@ class RouteMap extends Component {
       map.setFilter('ddot-stops copy', ["in", "stop_id"].concat(stops.map(m => { return m.toString() })))
       // map.setLayoutProperty('ddot-stops', 'visibility', 'visible')
       map.setLayoutProperty('ddot-stops copy', 'visibility', 'visible')
-      map.fitBounds(bounds, {'padding': 50})
+      map.fitBounds(bounds, {'padding': 25})
 
       map.addLayer({
         "id": "realtime-background",
@@ -146,7 +146,7 @@ class RouteMap extends Component {
 
   render() {
     return (
-        <div id="route-map" className="h6 z-1">
+        <div id="route-map" className="h6 z-1" style={{width: '100%'}}>
         </div>
     )
   }

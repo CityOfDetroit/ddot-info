@@ -82,7 +82,7 @@ class LineInfo extends React.Component {
               onChange={this.handleDirectionChange} 
             />
           </div>
-          <div className='w-50-l w-100-m dib'>
+          <div className='w-50-l w-100-m w-100-s dib mapdiv'>
             <RouteMap routeId={this.props.match.params.name} stops={this.state.timepointStops} bbox={this.state.routeBbox} tripIds={this.state.tripIds} />
           </div>
           <div className='w-50-l w-100-m w-100-s dib' >

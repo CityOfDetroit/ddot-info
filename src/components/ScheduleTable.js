@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StickyTable, Row, Cell } from 'react-sticky-table';
-import _ from 'lodash';
 
 export default class ScheduleTable extends Component {
   constructor(props) {
@@ -23,7 +22,7 @@ export default class ScheduleTable extends Component {
             {this.props.schedule[this.props.direction].trips.map((t, j) => (
               <Row className="striped--near-white" key={j} id={"DDOT_116".concat(t.trip_id.toString())}>
                 {t.timepoints.map((tp, k) => (
-                  <Cell className={(j+1) % 5 == 0 ? "pa1 bb stopTime fifthRow tc f6 fw4 v-btm w5" : "pa1 br stopTime tc f6 fw4 v-btm w5"} key={k}>{tp}</Cell>
+                  <Cell className={(j+1) % 5 === 0 ? "pa1 bb stopTime fifthRow tc f6 fw4 v-btm w5" : "pa1 br stopTime tc f6 fw4 v-btm w5"} key={k}>{tp}</Cell>
                 ))}
               </Row>
             ))}

@@ -46,7 +46,7 @@ class LineSearch extends Component {
 
   render () {
     return (
-      <div className="w-50 mh3">
+      <div className="w-50-l w-50-m w-80-s mh3">
         <LineInput input={this.state.input} onSearchChange={this.handleSearchChange} />
         { this.state.filteredLines.length > 0 ? <LinesList lines={this.state.filteredLines} /> : <p><strong>Loading...</strong></p> }
       </div>

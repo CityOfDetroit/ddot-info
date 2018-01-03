@@ -82,10 +82,10 @@ class LineInfo extends React.Component {
               onChange={this.handleDirectionChange} 
             />
           </div>
-          <div className='w-50-l w-100-m w-100-s dib mapdiv'>
+          <div className='w-50-l w-100-m w-100-s dib map'>
             <RouteMap routeId={this.props.match.params.name} stops={this.state.timepointStops} bbox={this.state.routeBbox} tripIds={this.state.tripIds} />
           </div>
-          <div className='w-50-l w-100-m w-100-s dib' >
+          <div className='w-50-l w-100-m w-100-s dib schedule' >
             <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} liveTrips={this.state.liveTrips} />
           </div>
         </div>

@@ -38,7 +38,7 @@ class RouteMap extends Component {
 
   render() {
     return (
-        <div id="system-map" className="w-60 z-1">        
+        <div id="system-map" className="w-50-l w-50-m w-100-s z-1">        
             <LineColorLegend />
         </div>
     )

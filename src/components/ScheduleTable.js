@@ -16,7 +16,7 @@ export default class ScheduleTable extends Component {
           <StickyTable className="h6" stickyColumnCount={0}>
             <Row className="fw7">
               {this.props.schedule[this.props.direction].stops.map((s, i) => (
-                <Cell className="pa2 stopHeader fw6 f7 tc v-btm bg-light-gray black" key={i}>{s}</Cell>
+                <Cell className="pa2 stopHeader fw6 f7 tc v-top black" key={i}>{s}</Cell>
               ))}
             </Row>
             {this.props.schedule[this.props.direction].trips.map((t, j) => (

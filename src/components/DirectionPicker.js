@@ -12,14 +12,36 @@ class DirectionPicker extends React.Component {
   }
 
   render() {
+
+    const colors = {
+      'northbound': 'violet',
+      'eastbound': 'violet',
+      'southbound': 'orange',
+      'westbound': 'orange',
+      'clockwise': 'green'   
+    }
+
     return (
-      <div className="dib ph4 v-mid tl">
-        <h4 className="">Direction</h4>
-        <select className="mt2" onChange={this.props.onChange}>
-          {this.props.directions.map(s => (
-            <option value={s} key={s}>{_.capitalize(s)}</option>
-          ))}
-        </select>
+      <div className="dib pa2">
+        <form>
+        {this.props.directions.map(d => (
+          <div className="fw7 dib pa2 mr2" key={d} style={{backgroundColor: colors[d]}}>
+            <label className="">
+            <input 
+              className="mr2"
+              type="radio" 
+              name="direction" 
+              onChange={(e) => {
+                this.props.onChange(e);
+                this.setState({selectedOption: d});
+              }} 
+              value={d} 
+              checked={this.state.selectedOption === d} 
+            />
+            {_.capitalize(d)}</label>
+          </div>
+        ))}
+        </form>
       </div>
     )
   }

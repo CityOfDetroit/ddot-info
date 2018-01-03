@@ -58,7 +58,7 @@ class RouteMap extends Component {
 
     const map = new mapboxgl.Map({
       'container': 'route-map',
-      'style': 'mapbox://styles/cityofdetroit/cjbo6aw134a5j2rlucd3tkaxt',
+      'style': 'mapbox://styles/cityofdetroit/cjbzk1bqwg9972spc0hcb804b',
       'center': [-83.0458, 42.3314],
       'zoom': 10,
       'attributionControl': false,
@@ -146,7 +146,7 @@ class RouteMap extends Component {
 
   render() {
     return (
-        <div id="route-map" className="h6 z-1" style={{width: '100%'}}>
+        <div id="route-map" className="h6 z-1 map" style={{width: '100%'}}>
         </div>
     )
   }

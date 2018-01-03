@@ -11,9 +11,8 @@ class ServicePicker extends React.Component {
 
   render() {
     return (
-      <div className="dib ph4 v-mid tl">
-        <h4 className="">Service Day</h4>
-        <select className="mt2 fw5" onChange={this.props.onChange}>
+      <div className="dib pa2">
+        <select className="fw5 f4" onChange={this.props.onChange}>
           {this.props.services.map(s => (
             <option className="fw5" value={s} key={s}>{_.capitalize(s)}</option>
           ))}

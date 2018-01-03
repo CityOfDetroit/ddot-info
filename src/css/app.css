@@ -12,6 +12,18 @@ h1,h2,h3,h4,h5{font-weight: bold; margin: 0;}
   border-bottom: 2px dotted black;
 }
 
+.stopHeader {
+  border-right: 1px dotted #aaa;
+}
+
+.stopTime {
+  border-right: 1px dotted #aaa;
+}
+
+.fifthRow {
+  border-bottom: .5em solid rgba(0,0,0,0.5);
+}
+
 .h6 {
   height: 32rem;
 }
@@ -24,8 +36,10 @@ table {
 .sticky-table .sticky-table-cell {
   display: table-cell;
   box-sizing: border-box;
-  min-width: 5rem;
+  min-width: 5.5rem;
 }
+
+
 .sticky-table .sticky-table-row {
   display: table-row;
 }

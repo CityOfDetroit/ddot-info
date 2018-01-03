@@ -1199,7 +1199,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["State Fairgrounds Transit Center", "Outer Drive & Dequindre", "Conant & Seven Mile", "Conant & McNichols", "CONANT & CANIFF", "Mount Elliott & Edsel Ford Fwy", "Mt. Elliott & Gratiot", "E Grand Blvd and Jeffrson", "Loiter Way Bus Stop"],
+          "stops": ["Fairgrounds", "Outer Dr & Dequindre", "Conant & 7 Mile", "Conant & McNichols", "Conant & Caniff", "Mt Elliott & 94", "Mt Elliott & Gratiot", "E Gd Blvd & Jefferson", "Belle Isle"],
           "trips": [{
             "trip_id": "9930",
             "timepoints": ["5:50am", "5:56am", "5:59am", "6:02am", "6:09am", "6:14am", "6:19am", "6:27am", "6:30am"]
@@ -1320,7 +1320,7 @@ const Schedules = {
       },
       "saturday": {
         "southbound": {
-          "stops": ["State Fairgrounds Transit Center", "Outer Drive & Dequindre", "Conant & Seven Mile", "Conant & McNichols", "CONANT & CANIFF", "Mount Elliott & Edsel Ford Fwy", "Mt. Elliott & Gratiot", "E Grand Blvd and Jeffrson", "Loiter Way Bus Stop"],
+          "stops": ["Fairgrounds", "Outer Dr & Dequindre", "Conant & 7 Mile", "Conant & McNichols", "Conant & Caniff", "Mt Elliott & 94", "Mt Elliott & Gratiot", "E Gd Blvd & Jefferson", "Belle Isle"],
           "trips": [{
             "trip_id": "9967",
             "timepoints": ["7:30am", "7:36am", "7:38am", "7:41am", "7:47am", "7:52am", "7:56am", "8:04am", "8:08am"]
@@ -1429,7 +1429,7 @@ const Schedules = {
       },
       "sunday": {
         "southbound": {
-          "stops": ["State Fairgrounds Transit Center", "Outer Drive & Dequindre", "Conant & Seven Mile", "Conant & McNichols", "CONANT & CANIFF", "Mount Elliott & Edsel Ford Fwy", "Mt. Elliott & Gratiot", "E Grand Blvd and Jeffrson", "Loiter Way Bus Stop"],
+          "stops": ["Fairgrounds", "Outer Dr & Dequindre", "Conant & 7 Mile", "Conant & McNichols", "Conant & Caniff", "Mt Elliott & 94", "Mt Elliott & Gratiot", "E Gd Blvd & Jefferson", "Belle Isle"],
           "trips": [{
             "trip_id": "0000",
             "timepoints": ["8:00am", "8:06am", "8:09am", "8:12am", "8:18am", "8:23am", "8:27am", "8:35am", "8:38am"]
@@ -2978,7 +2978,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["JL HUDSON DR & GREENFIELD", "Northland Dr & Northwestern Hwy", "West Outer Drive & Southfield", "West Outer Drive & Greenfield", "Curtis & Wyoming", "McNichols & Livernois", "Dexter & Fenkell", "Dexter & Lothrop", "W. Grand Blvd. & Second", "Cass & Temple", "Jefferson & Shelby"],
+          "stops": ["JL Hudson & Greenfield", "Northland & Northwestern", "W Outer Dr & Southfield", "W Outer Dr & Greenfield", "Curtis & Wyoming", "McNichols & Livernois", "Dexter & Fenkell", "Dexter & Lothrop", "W Grand Blvd & 2nd", "Cass & Temple", "Jefferson & Shelby"],
           "trips": [{
             "trip_id": "7048",
             "timepoints": ["4:00am", "4:04am", "4:15am", "4:18am", "4:27am", "4:32am", "4:38am", "4:53am", "5:01am", "5:10am", "5:21am"]
@@ -3204,7 +3204,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Jefferson & Shelby", "ROSA PARKS TRANSIT 16 SB", "Cass & Temple", "W. Grand Blvd. & Second", "Dexter & Lothrop", "Dexter & Fenkell", "Livernois & McNichols", "Curtis & Wyoming", "GREENFIELD & W.OUTER DR.", "W. OUTER DRIVE & SOUTHFIELD", "Northland Dr  & Northwestern Hwy", "JL HUDSON DR & GREENFIELD"],
+          "stops": ["Jefferson & Shelby", "Rosa Parks TC", "Cass & Temple", "W. Grand Blvd. & Second", "Dexter & Lothrop", "Dexter & Fenkell", "Livernois & McNichols", "Curtis & Wyoming", "Greenfield & W Outer Dr", "W Outer Dr & Southfield", "Northland & Nwestern", "JL Hudson & Greenfield"],
           "trips": [{
             "trip_id": "7079",
             "timepoints": ["3:56am", "4:00am", "4:08am", "4:17am", "4:25am", "4:39am", "4:44am", "4:49am", "5:03am", "4:59am", "5:10am", "5:18am"]
@@ -9460,7 +9460,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["State Fairgrounds Transit Center", "Livernois & Eight Mile", "Livernois & McNichols", "Livernois & Ewald Circle", "Livernois & Grand River", "Livernois & Warren", "Livernois & Michigan", "WEST JEFFERSON & LIVERNOIS", "West Jefferson & Brennan Loop"],
+          "stops": ["Fairgrounds", "Livernois & 8 Mile", "Livernois & McNichols", "Livernois & Ewald Cir", "Livernois & Grand River", "Livernois & Warren", "Livernois & Michigan", "W Jefferson & Livernois", "Brennan Loop"],
           "trips": [{
             "trip_id": "2466",
             "timepoints": ["\u2013", "6:00am", "6:08am", "6:15am", "6:23am", "6:29am", "6:34am", "6:43am", "6:51am"]
@@ -9524,7 +9524,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["West Jefferson & Brennan Loop", "Dragoon & West Jefferson", "Livernois & Michigan", "Livernois & Warren", "Livernois & Grand River", "Livernois & Ewald Circle", "Livernois & McNichols", "Livernois & Eight Mile", "State Fairgrounds Transit Center"],
+          "stops": ["Brennan Loop", "Dragoon & W Jefferson", "Livernois & Michigan", "Livernois & Warren", "Livernois & Grand River", "Livernois & Ewald Cir", "Livernois & McNichols", "Livernois & 8 Mile", "Fairgrounds"],
           "trips": [{
             "trip_id": "2501",
             "timepoints": ["5:48am", "5:53am", "6:01am", "6:05am", "6:12am", "6:19am", "6:27am", "6:35am", "\u2013"]
@@ -9593,7 +9593,7 @@ const Schedules = {
       },
       "saturday": {
         "southbound": {
-          "stops": ["State Fairgrounds Transit Center", "Livernois & Eight Mile", "Livernois & McNichols", "Livernois & Ewald Circle", "Livernois & Grand River", "Livernois & Warren", "Livernois & Michigan", "WEST JEFFERSON & LIVERNOIS", "West Jefferson & Brennan Loop"],
+          "stops": ["Fairgrounds", "Livernois & 8 Mile", "Livernois & McNichols", "Livernois & Ewald Cir", "Livernois & Grand River", "Livernois & Warren", "Livernois & Michigan", "W Jefferson & Livernois", "Brennan Loop"],
           "trips": [{
             "trip_id": "2521",
             "timepoints": ["6:57am", "7:01am", "7:07am", "7:13am", "7:20am", "7:25am", "7:29am", "7:37am", "7:44am"]
@@ -9642,7 +9642,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["West Jefferson & Brennan Loop", "Dragoon & West Jefferson", "Livernois & Michigan", "Livernois & Warren", "Livernois & Grand River", "Livernois & Ewald Circle", "Livernois & McNichols", "Livernois & Eight Mile", "State Fairgrounds Transit Center"],
+          "stops": ["Brennan Loop", "Dragoon & W Jefferson", "Livernois & Michigan", "Livernois & Warren", "Livernois & Grand River", "Livernois & Ewald Cir", "Livernois & McNichols", "Livernois & 8 Mile", "Fairgrounds"],
           "trips": [{
             "trip_id": "2522",
             "timepoints": ["6:57am", "7:02am", "7:10am", "7:14am", "7:20am", "7:26am", "7:32am", "7:39am", "7:43am"]
@@ -9693,7 +9693,7 @@ const Schedules = {
       },
       "sunday": {
         "southbound": {
-          "stops": ["State Fairgrounds Transit Center", "Livernois & Eight Mile", "Livernois & McNichols", "Livernois & Ewald Circle", "Livernois & Grand River", "Livernois & Warren", "Livernois & Michigan", "WEST JEFFERSON & LIVERNOIS", "West Jefferson & Brennan Loop"],
+          "stops": ["Fairgrounds", "Livernois & 8 Mile", "Livernois & McNichols", "Livernois & Ewald Cir", "Livernois & Grand River", "Livernois & Warren", "Livernois & Michigan", "W Jefferson & Livernois", "Brennan Loop"],
           "trips": [{
             "trip_id": "2537",
             "timepoints": ["7:00am", "7:04am", "7:10am", "7:16am", "7:23am", "7:28am", "7:32am", "7:39am", "7:45am"]
@@ -9736,7 +9736,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["West Jefferson & Brennan Loop", "Dragoon & West Jefferson", "Livernois & Michigan", "Livernois & Warren", "Livernois & Grand River", "Livernois & Ewald Circle", "Livernois & McNichols", "Livernois & Eight Mile", "State Fairgrounds Transit Center"],
+          "stops": ["Brennan Loop", "Dragoon & W Jefferson", "Livernois & Michigan", "Livernois & Warren", "Livernois & Grand River", "Livernois & Ewald Cir", "Livernois & McNichols", "Livernois & 8 Mile", "Fairgrounds"],
           "trips": [{
             "trip_id": "2550",
             "timepoints": ["7:00am", "7:05am", "7:13am", "7:17am", "7:23am", "7:29am", "7:34am", "7:41am", "7:45am"]
@@ -10823,7 +10823,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "northbound": {
-          "stops": ["Third & Michigan", "ROSA PARKS TRANSIT 34 EB", "Gratiot & Russell", "Gratiot & East Grand Blvd", "Gratiot & Harper (I - 94)", "Gratiot & East Outer Dr", "Gratiot & East Seven Mile", "Eight Mile & Gratiot"],
+          "stops": ["3rd & Michigan", "Rosa Parks TC", "Gratiot\n& Russell", "Gratiot & E Grand", "Gratiot & Harper", "Gratiot & Outer Dr", "Gratiot & 7 Mile", "8 Mile & Gratiot"],
           "trips": [{
             "trip_id": "2927",
             "timepoints": ["3:58am", "4:00am", "4:09am", "4:16am", "4:21am", "4:24am", "4:33am", "4:36am"]
@@ -11337,7 +11337,7 @@ const Schedules = {
       },
       "saturday": {
         "northbound": {
-          "stops": ["Third & Michigan", "ROSA PARKS TRANSIT 34 EB", "Gratiot & Russell", "Gratiot & East Grand Blvd", "Gratiot & Harper (I - 94)", "Gratiot & East Outer Dr", "Gratiot & East Seven Mile", "Eight Mile & Gratiot"],
+          "stops": ["3rd & Michigan", "Rosa Parks TC", "Gratiot & Russell", "Gratiot & E Grand", "Gratiot & Harper", "Gratiot & Outer Dr", "Gratiot & 7 Mile", "8 Mile & Gratiot"],
           "trips": [{
             "trip_id": "3098",
             "timepoints": ["3:58am", "4:00am", "4:09am", "4:16am", "4:21am", "4:24am", "4:33am", "4:36am"]
@@ -11740,7 +11740,7 @@ const Schedules = {
       },
       "sunday": {
         "northbound": {
-          "stops": ["Third & Michigan", "ROSA PARKS TRANSIT 34 EB", "Gratiot & Russell", "Gratiot & East Grand Blvd", "Gratiot & Harper (I - 94)", "Gratiot & East Outer Dr", "Gratiot & East Seven Mile", "Eight Mile & Gratiot"],
+          "stops": ["3rd & Michigan", "Rosa Parks TC", "Gratiot & Russell", "Gratiot & E Grand", "Gratiot & Harper", "Gratiot & Outer Dr", "Gratiot & 7 Mile", "8 Mile & Gratiot"],
           "trips": [{
             "trip_id": "3173",
             "timepoints": ["3:58am", "4:00am", "4:09am", "4:16am", "4:21am", "4:24am", "4:32am", "4:35am"]

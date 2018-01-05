@@ -77,11 +77,6 @@ class LineInfo extends React.Component {
         }
       })
 
-      let fc = {
-        "type": "FeatureCollection",
-        "features": geojson
-      }
-
       console.log(geojson)
       this.setState({realtimeTrips: geojson})
 
@@ -139,7 +134,7 @@ class LineInfo extends React.Component {
               currentDirection={this.state.currentDirection}
               onChange={this.handleDirectionChange} 
             />
-            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} liveTrips={this.state.liveTrips} color={this.state.color}/>
+            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} color={this.state.color}/>
           </div>
         </div>
       </div>

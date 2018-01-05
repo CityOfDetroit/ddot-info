@@ -16,25 +16,11 @@ class DirectionPicker extends React.Component {
   render() {
     return (
       <div className="dib pa2">
-        <form>
-        {this.props.directions.map(d => (
-          <div className="fw7 dib pa2 mr2" key={d} style={{backgroundColor: `rgba(${chroma(Colors[d]).alpha(0.5).rgba().toString()})`}}>
-            <label className="">
-            <input 
-              className="mr2"
-              type="radio" 
-              name="direction" 
-              onChange={(e) => {
-                this.props.onChange(e);
-                this.setState({selectedOption: d});
-              }} 
-              value={d} 
-              checked={this.state.selectedOption === d} 
-            />
-            {_.capitalize(d)}</label>
-          </div>
-        ))}
-        </form>
+        <select className="fw5 f4" onChange={this.props.onChange}>
+          {this.props.directions.map(s => (
+            <option className="fw5" value={s} key={s}>{_.capitalize(s)}</option>
+          ))}
+        </select>
       </div>
     )
   }

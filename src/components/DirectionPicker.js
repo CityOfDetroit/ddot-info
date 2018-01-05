@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import Colors from '../data/colors.js'
-import chroma from 'chroma-js'
 
 class DirectionPicker extends React.Component {
   constructor(props) {

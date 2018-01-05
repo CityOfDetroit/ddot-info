@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import _ from 'lodash';
 
+import RealtimeTripList from './RealtimeTripList'
+
 class RouteMap extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +12,8 @@ class RouteMap extends Component {
 
     this.state = {
       drewMap: false,
-      map: {}
+      map: {},
+      realtimeTrips: []
     };
   }
 
@@ -45,10 +48,11 @@ class RouteMap extends Component {
         "features": geojson
       }
 
-      console.log(fc)
-
+      console.log(geojson)
+      this.setState({realtimeTrips: geojson})
       this.state.map.getSource('realtime').setData(fc)
       this.state.map.getSource('realtime-background').setData(fc)
+
     })
     .catch(e => console.log(e));
   }
@@ -146,8 +150,10 @@ class RouteMap extends Component {
 
   render() {
     return (
-        <div id="route-map" className="h6 z-1 map" style={{width: '100%'}}>
-        </div>
+      <div className="h2 z-1 map">
+        <RealtimeTripList trips={this.state.realtimeTrips} />
+        <div id="route-map" className="map h6" style={{width: '100%'}}></div>
+      </div>
     )
   }
 }

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "chroma-js": "^1.3.5",
     "gh-pages": "^1.1.0",
     "mapbox-gl": "^0.42.2",
     "moment": "^2.19.3",

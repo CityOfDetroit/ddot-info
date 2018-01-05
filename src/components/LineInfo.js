@@ -89,7 +89,7 @@ class LineInfo extends React.Component {
               currentDirection={this.state.currentDirection}
               onChange={this.handleDirectionChange} 
             />
-            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} liveTrips={this.state.liveTrips} />
+            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} liveTrips={this.state.liveTrips} color={this.state.color}/>
           </div>
         </div>
       </div>

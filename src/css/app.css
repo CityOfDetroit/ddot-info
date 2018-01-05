@@ -23,19 +23,6 @@ h1,h2,h3,h4,h5{font-weight: bold; margin: 0;}
   }
 }
 
-.stopHeader {
-  border-right: 1px dotted #aaa;
-  background: rgba(68,170,66,0.25);
-}
-
-.stopTime {
-  border-right: 1px dotted #aaa;
-}
-
-.fifthRow {
-  border-bottom: .25em solid rgba(68, 170, 66, 0.5);
-}
-
 .h6 {
   height: 32rem;
 }

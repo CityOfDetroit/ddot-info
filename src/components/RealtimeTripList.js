@@ -16,7 +16,9 @@ export default class RealtimeTripList extends Component {
         </div> */}
         {Object.keys(byDirection).map(dir =>
           <div className="dib w-50-m w-50-l w-100-s fw7 v-top pa1">
-            {byDirection[dir].length > 0 ? byDirection[dir].length : 'no'} {dir} bus(es):
+            <span className="db pv1">
+              {byDirection[dir].length > 0 ? byDirection[dir].length : 'no'} {dir} bus(es):
+            </span>
             {byDirection[dir].map(t => 
               <RealtimeTrip trip={t} />
             )}

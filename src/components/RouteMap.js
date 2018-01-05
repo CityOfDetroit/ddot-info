@@ -147,8 +147,8 @@ class RouteMap extends Component {
   render() {
     return (
       <div className="h2 z-1 map">
+        <div id="route-map" className="map h5" style={{width: '100%'}}></div>
         <RealtimeTripList trips={this.state.realtimeTrips} />
-        <div id="route-map" className="map h6" style={{width: '100%'}}></div>
       </div>
     )
   }

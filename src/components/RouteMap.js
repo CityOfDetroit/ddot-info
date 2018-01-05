@@ -3,7 +3,6 @@ import mapboxgl from 'mapbox-gl';
 import _ from 'lodash';
 import Colors from '../data/colors.js';
 
-import RealtimeTripList from './RealtimeTripList'
 
 class RouteMap extends Component {
   constructor(props) {
@@ -14,48 +13,19 @@ class RouteMap extends Component {
     this.state = {
       drewMap: false,
       map: {},
-      realtimeTrips: []
     };
   }
 
-  fetchData() {
-    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/vehicles-for-agency/DDOT.json?key=BETA&includePolylines=false`)
-    .then(response => response.json())
-    .then(d => {
 
-      let allTripIds = _.flattenDeep(Object.values(this.props.tripIds))
-
-      let x = d.data.list.filter(trip => {
-        return allTripIds.indexOf(trip.tripId.slice(-4)) > 0
-      })
-
-      let geojson = x.map(bus => {
-        return {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [bus.tripStatus.position.lon, bus.tripStatus.position.lat]
-          },
-          "properties": {
-            "tripId": bus.tripStatus.activeTripId,
-            "nextStop": bus.tripStatus.nextStop,
-            "direction": _.findKey(this.props.tripIds, t => { return t.indexOf(bus.tripStatus.activeTripId.slice(-4)) > 0})
-          }
-        }
-      })
-
+  updateMap() {
+    if(this.state.drewMap){
       let fc = {
         "type": "FeatureCollection",
-        "features": geojson
+        "features": this.props.trips
       }
-
-      console.log(geojson)
-      this.setState({realtimeTrips: geojson})
       this.state.map.getSource('realtime').setData(fc)
       this.state.map.getSource('realtime-background').setData(fc)
-
-    })
-    .catch(e => console.log(e));
+    }
   }
 
   drawMap() {
@@ -74,6 +44,7 @@ class RouteMap extends Component {
     const route_id = this.props.routeId.toString()
     const stops = this.props.stops
     const bounds = this.props.bbox
+    const realtimeTrips = this.props.trips
 
     map.on('load', function() {
       map.setFilter('ddot-routes', ["==", "route_num", route_id])
@@ -125,6 +96,7 @@ class RouteMap extends Component {
           "icon-opacity": 0.75
         }
       })
+
     });
 
     this.setState({
@@ -135,20 +107,16 @@ class RouteMap extends Component {
 
 
   componentDidMount() {
-    this.interval = setInterval(() => this.fetchData(), 3000);
+    let map = this.state.map
     this.drawMap()
-    this.fetchData()
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval)
+    this.updateMap()
+    this.interval = setInterval(() => this.updateMap(), 3000);
   }
 
   render() {
     return (
-      <div className="h2 z-1 map">
+      <div className="h5 map">
         <div id="route-map" className="map h5" style={{width: '100%'}}></div>
-        <RealtimeTripList trips={this.state.realtimeTrips} />
       </div>
     )
   }

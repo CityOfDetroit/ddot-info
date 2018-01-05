@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import _ from 'lodash';
 
 import ScheduleTable from './ScheduleTable';
 import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
 import RouteMap from './RouteMap';
+import RealtimeTripList from './RealtimeTripList'
 
 import { Link } from 'react-router-dom';
 
@@ -35,6 +37,7 @@ class LineInfo extends React.Component {
       saturday: (route.schedules.saturday),
       sunday: (route.schedules.sunday),
       tripIds: tripIds,
+      realtimeTrips: [],
       color: (route.color),
       currentSvc: (Object.keys(route.schedules).length > 1 ? Helpers.dowToService(moment().day()) : 'weekday'),
       currentDirection: (Object.keys(route.schedules.weekday)[0]),
@@ -48,6 +51,44 @@ class LineInfo extends React.Component {
     this.handleServiceChange = this.handleServiceChange.bind(this);
   }
 
+  fetchData() {
+    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/vehicles-for-agency/DDOT.json?key=BETA&includePolylines=false`)
+    .then(response => response.json())
+    .then(d => {
+
+      let allTripIds = _.flattenDeep(Object.values(this.state.tripIds))
+
+      let x = d.data.list.filter(trip => {
+        return allTripIds.indexOf(trip.tripId.slice(-4)) > 0
+      })
+
+      let geojson = x.map(bus => {
+        return {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [bus.tripStatus.position.lon, bus.tripStatus.position.lat]
+          },
+          "properties": {
+            "tripId": bus.tripStatus.activeTripId,
+            "nextStop": bus.tripStatus.nextStop,
+            "direction": _.findKey(this.state.tripIds, t => { return t.indexOf(bus.tripStatus.activeTripId.slice(-4)) > 0})
+          }
+        }
+      })
+
+      let fc = {
+        "type": "FeatureCollection",
+        "features": geojson
+      }
+
+      console.log(geojson)
+      this.setState({realtimeTrips: geojson})
+
+    })
+    .catch(e => console.log(e));
+  }
+
   handleDirectionChange(event) {
     this.setState({
       currentDirection: event.target.value
@@ -58,6 +99,15 @@ class LineInfo extends React.Component {
     this.setState({
       currentSvc: event.target.value
     });
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => this.fetchData(), 3000);
+    this.fetchData()
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval)
   }
 
   render() {
@@ -73,10 +123,10 @@ class LineInfo extends React.Component {
             <span className="dib f4-s f2-ns ml2 v-mid fw5 mr5">
               {this.state.routeName}
             </span>
-
           </div>
           <div className='w-50-l w-100-m w-100-s pa3 dib map'>
-            <RouteMap routeId={this.props.match.params.name} stops={this.state.timepointStops} bbox={this.state.routeBbox} tripIds={this.state.tripIds} />
+            <RouteMap routeId={this.props.match.params.name} stops={this.state.timepointStops} bbox={this.state.routeBbox} trips={this.state.realtimeTrips} />
+            <RealtimeTripList trips={this.state.realtimeTrips} />
           </div>
           <div className='w-50-l w-100-m w-100-s v-top tc dib schedule' >
           <ServicePicker 

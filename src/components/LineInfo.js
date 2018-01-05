@@ -64,21 +64,21 @@ class LineInfo extends React.Component {
     return (
       <div>
         <div>
-          <div className="pl3 pv3 v-mid bg-light-gray">
+          <div className="pl3-ns pl2-s pv3-ns pv2-s v-mid bg-light-gray">
             
-            <span className="f2 fw7 v-mid"><Link className="link dim dark-gray" to={{pathname: `/`}}>&lt;</Link> </span>
-            <span className="dib f2 pa2 ma2 v-mid white fw7" style={{ backgroundColor: this.state.color }}>
+            <span className="f4-s f2-ns fw7 v-mid ml2"><Link className="link dim dark-gray" to={{pathname: `/`}}>&lt;</Link> </span>
+            <span className="dib f4-s f2-ns pa2 ma2 v-mid white fw7" style={{ backgroundColor: this.state.color }}>
               {this.props.match.params.name}
             </span>
-            <span className="dib f2 ml2 v-mid fw5 mr5">
+            <span className="dib f4-s f2-ns ml2 v-mid fw5 mr5">
               {this.state.routeName}
             </span>
 
           </div>
-          <div className='w-50-l w-100-m w-100-s dib map'>
+          <div className='w-50-l w-100-m w-100-s pa3 dib map'>
             <RouteMap routeId={this.props.match.params.name} stops={this.state.timepointStops} bbox={this.state.routeBbox} tripIds={this.state.tripIds} />
           </div>
-          <div className='w-50-l w-100-m w-100-s tc dib schedule' >
+          <div className='w-50-l w-100-m w-100-s v-top tc dib schedule' >
           <ServicePicker 
               services={this.state.availableServices}
               currentSvc={this.state.currentSvc}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import _ from 'lodash';
+import Colors from '../data/colors.js';
 
 import RealtimeTripList from './RealtimeTripList'
 
@@ -58,6 +59,7 @@ class RouteMap extends Component {
   }
 
   drawMap() {
+
     mapboxgl.accessToken = 'pk.eyJ1IjoiY2l0eW9mZGV0cm9pdCIsImEiOiJjaXZvOWhnM3QwMTQzMnRtdWhyYnk5dTFyIn0.FZMFi0-hvA60KYnI-KivWg';
 
     const map = new mapboxgl.Map({
@@ -96,13 +98,7 @@ class RouteMap extends Component {
           "circle-color": {
             property: "direction",
             type: "categorical",
-            stops: [
-              ['northbound', 'violet'],
-              ['eastbound', 'violet'],
-              ['southbound', 'orange'],
-              ['westbound', 'orange'],
-              ['clockwise', 'green']
-            ]
+            stops: _.toPairs(Colors),
           },
           "circle-opacity": 0.5,
           "circle-stroke-color": "black",

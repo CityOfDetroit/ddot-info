@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
+import Colors from '../data/colors.js'
+import chroma from 'chroma-js'
 
 class DirectionPicker extends React.Component {
   constructor(props) {
@@ -12,20 +14,11 @@ class DirectionPicker extends React.Component {
   }
 
   render() {
-
-    const colors = {
-      'northbound': 'violet',
-      'eastbound': 'violet',
-      'southbound': 'orange',
-      'westbound': 'orange',
-      'clockwise': 'green'   
-    }
-
     return (
       <div className="dib pa2">
         <form>
         {this.props.directions.map(d => (
-          <div className="fw7 dib pa2 mr2" key={d} style={{backgroundColor: colors[d]}}>
+          <div className="fw7 dib pa2 mr2" key={d} style={{backgroundColor: `rgba(${chroma(Colors[d]).alpha(0.5).rgba().toString()})`}}>
             <label className="">
             <input 
               className="mr2"

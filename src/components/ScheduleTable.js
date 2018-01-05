@@ -14,8 +14,8 @@ export default class ScheduleTable extends Component {
   render() {
     const background = `rgba(${chroma(this.props.color).darken().alpha(0.25).rgba().toString()}`
       return (
-        <div className="h6">
-          <StickyTable className="h6" stickyColumnCount={0}>
+        <div className="h6 v-top">
+          <StickyTable className="h6 v-top" stickyColumnCount={0}>
             <Row className="fw7">
               {this.props.schedule[this.props.direction].stops.map((s, i) => (
                 <Cell className="pa2 fw6 f7 tc v-top black" style={{backgroundColor: background}} key={i}>{s}</Cell>

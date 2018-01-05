@@ -102,8 +102,8 @@ class LineInfo extends React.Component {
   }
 
   componentDidMount() {
-    this.interval = setInterval(() => this.fetchData(), 3000);
     this.fetchData()
+    this.interval = setInterval(() => this.fetchData(), 3000);
   }
 
   componentWillUnmount() {
@@ -124,7 +124,7 @@ class LineInfo extends React.Component {
               {this.state.routeName}
             </span>
           </div>
-          <div className='w-50-l w-100-m w-100-s pa3 dib map'>
+          <div className='w-50-l w-100-m w-100-s dib map'>
             <RouteMap routeId={this.props.match.params.name} stops={this.state.timepointStops} bbox={this.state.routeBbox} trips={this.state.realtimeTrips} />
             <RealtimeTripList trips={this.state.realtimeTrips} />
           </div>

@@ -61,7 +61,7 @@ class RouteMap extends Component {
           "type": "geojson",
           "data": {
             "type": "FeatureCollection",
-            "features": []
+            "features": realtimeTrips
           }
         },
         "paint": {
@@ -85,7 +85,7 @@ class RouteMap extends Component {
           "type": "geojson",
           "data": {
             "type": "FeatureCollection",
-            "features": []
+            "features": realtimeTrips
           }
         },
         "layout": {
@@ -103,11 +103,12 @@ class RouteMap extends Component {
       drewMap: true,
       map: map,
     });
+
+    this.updateMap()
   }
 
 
   componentDidMount() {
-    let map = this.state.map
     this.drawMap()
     this.updateMap()
     this.interval = setInterval(() => this.updateMap(), 3000);
@@ -116,7 +117,7 @@ class RouteMap extends Component {
   render() {
     return (
       <div className="h5 map">
-        <div id="route-map" className="map h5" style={{width: '100%'}}></div>
+        <div id="route-map" className="map h5 ba" style={{width: '100%'}}></div>
       </div>
     )
   }

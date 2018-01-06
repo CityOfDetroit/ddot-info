@@ -18,6 +18,7 @@ export default class ScheduleTable extends Component {
       <div className="h6 v-top">
         <StickyTable className="h6 v-top" stickyColumnCount={0}>
           <Row className="fw7">
+          <Cell className="pa2 fw6 f7 tc v-top black" style={{backgroundColor: background}}>trip id</Cell>
             {this.props.schedule[this.props.direction].stops.map((s, i) => (
               <Cell className="pa2 fw6 f7 tc v-top black" style={{backgroundColor: background}} key={i}>{s}</Cell>
             ))}
@@ -26,8 +27,14 @@ export default class ScheduleTable extends Component {
             <Row 
               className="striped--near-white" 
               key={t.trip_id}
-              style={tripsToHighlight.indexOf(t.trip_id) > 0 ? {fontWeight: 'bold'} : {}}
+              style={tripsToHighlight.indexOf(t.trip_id) > -1 ? {fontWeight: 'bold'} : {}}
               >
+                <Cell 
+                  className={(j+1) % 5 === 0 ? "pa1 bb br tc f6 v-btm w5" : "pa1 br tc f6 v-btm w5"}  
+                  style={(j+1) % 5 === 0 ? {borderBottomColor: background, borderBottomWidth: '0.25em'} : {} }
+                >
+                  {t.trip_id}
+                </Cell>              
               {t.timepoints.map((tp, k) => (
                 <Cell 
                   className={(j+1) % 5 === 0 ? "pa1 bb br tc f6 v-btm w5" : "pa1 br tc f6 v-btm w5"}  

@@ -11,9 +11,6 @@ export default class RealtimeTripList extends Component {
 
     return (
       <div className="">
-        {/* <div className="fw7 f7">
-          {this.props.trips.length > 0 ? `${this.props.trips.length} bus(es) running:` : `no buses running`}
-        </div> */}
         {Object.keys(byDirection).map(dir =>
           <div className="dib w-50-m w-50-l w-100-s fw7 v-top">
             <span className="db pv2 pl1 bg-moon-gray">

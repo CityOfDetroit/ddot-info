@@ -6,14 +6,11 @@ import _ from 'lodash';
 import ScheduleTable from './ScheduleTable';
 import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
-import RouteMap from './RouteMap';
-import RealtimeTripList from './RealtimeTripList'
-
-import { Link } from 'react-router-dom';
+import LineHeader from './LineHeader';
 
 import Helpers from '../helpers';
 
-class LineInfo extends React.Component {
+class LineSchedule extends React.Component {
   constructor(props) {
     super(props);
 
@@ -108,41 +105,31 @@ class LineInfo extends React.Component {
   render() {
     return (
       <div>
+        <LineHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
         <div>
-          <div className="pl3-ns pl2-s pv3-ns pv2-s v-mid bg-light-gray">
-            
-            <span className="f4-s f2-ns fw7 v-mid ml2"><Link className="link dim dark-gray" to={{pathname: `/`}}>&lt;</Link> </span>
-            <span className="dib f4-s f2-ns pa2 ma2 v-mid white fw7" style={{ backgroundColor: this.state.color }}>
-              {this.props.match.params.name}
-            </span>
-            <span className="dib f4-s f2-ns ml2 v-mid fw5 mr5">
-              {this.state.routeName}
-            </span>
-          </div>
-          <div className='w-50-l w-100-m w-100-s dib map'>
-            <RouteMap routeId={this.props.match.params.name} stops={this.state.timepointStops} bbox={this.state.routeBbox} trips={this.state.realtimeTrips} />
-            <RealtimeTripList trips={this.state.realtimeTrips} />
-          </div>
-          <div className='w-50-l w-100-m w-100-s v-top tc dib schedule' >
           <ServicePicker 
-              services={this.state.availableServices}
-              currentSvc={this.state.currentSvc}
-              onChange={this.handleServiceChange}
-            />
-            <DirectionPicker 
-              directions={this.state.availableDirections}
-              currentDirection={this.state.currentDirection}
-              onChange={this.handleDirectionChange} 
-            />
-            <ScheduleTable schedule={this.state[this.state.currentSvc]} direction={this.state.currentDirection} liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} color={this.state.color}/>
-          </div>
+            services={this.state.availableServices}
+            currentSvc={this.state.currentSvc}
+            onChange={this.handleServiceChange}
+          />
+          <DirectionPicker 
+            directions={this.state.availableDirections}
+            currentDirection={this.state.currentDirection}
+            onChange={this.handleDirectionChange} 
+          />
+          <ScheduleTable 
+            schedule={this.state[this.state.currentSvc]} 
+            direction={this.state.currentDirection} 
+            liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
+            color={this.state.color}
+          />
         </div>
       </div>
     )
   }
 }
 
-LineInfo.propTypes = {
+LineSchedule.propTypes = {
   match: PropTypes.shape({
     isExact: PropTypes.bool,
     params: PropTypes.shape({
@@ -153,4 +140,4 @@ LineInfo.propTypes = {
   }).isRequired,
 }
 
-export default LineInfo;
+export default LineSchedule;

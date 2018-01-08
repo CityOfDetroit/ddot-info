@@ -33,7 +33,7 @@ class RouteMap extends Component {
     mapboxgl.accessToken = 'pk.eyJ1IjoiY2l0eW9mZGV0cm9pdCIsImEiOiJjaXZvOWhnM3QwMTQzMnRtdWhyYnk5dTFyIn0.FZMFi0-hvA60KYnI-KivWg';
 
     const map = new mapboxgl.Map({
-      'container': 'route-map',
+      'container': 'map',
       'style': 'mapbox://styles/cityofdetroit/cjbzk1bqwg9972spc0hcb804b',
       'center': [-83.0458, 42.3314],
       'zoom': 10,
@@ -116,9 +116,7 @@ class RouteMap extends Component {
 
   render() {
     return (
-      <div className="h5 map">
-        <div id="route-map" className="map h5 ba" style={{width: '100%'}}></div>
-      </div>
+      <div id="map" className="map h6" style={{width: '100%'}}></div>
     )
   }
 }

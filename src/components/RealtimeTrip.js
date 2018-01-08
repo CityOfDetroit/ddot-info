@@ -9,16 +9,27 @@ export default class RealtimeTrip extends Component {
 
     return (
       <div 
-        className="w-100 pa1" 
+        className="w-100 pa1 flex justify-between bb pa2" 
         style={{
           backgroundColor: `rgba(${chroma(Colors[this.props.trip.properties.direction]).alpha(0.5).rgba().toString()})`,
         }}
         >
-        <span className="fw1 dark-gray tr bb mb2 f7">
-        trip id {this.props.trip.properties.tripId.slice(-4)}, next stop:
-        </span> 
-        <span className="fw5 f6 db">
-        {Stops[this.props.trip.properties.nextStop.slice(5)]}
+        <div>
+          <span className="fw5 f6 db pb1">
+          next stop:
+          </span>
+          <span className="f6 dib fw7">
+          {Stops[this.props.trip.properties.nextStop.slice(5)]}
+          </span>
+          <span className="f6 dib fw5 ml1">
+          {this.props.trip.properties.nextStopOffset > 60 ? `in ${Math.floor(this.props.trip.properties.nextStopOffset/60)} minute(s)` : ` now`}
+          </span>
+          <span className="f6 db fw5">
+          { this.props.trip.properties.onTime < 0 ? `${Math.abs(this.props.trip.properties.onTime)} minutes behind` : `${this.props.trip.properties.onTime} minutes ahead` }
+          </span>
+        </div>
+        <span className="fw7 f7">
+        {this.props.trip.properties.tripId.slice(-4)}
         </span>
       </div>
     );

@@ -1,5 +1,13 @@
 @import "tachyons";
-/* body{font-family: 'Gibson Detroit', sans-serif; font-weight: lighter;} */
+
+@font-face{
+  font-family: "Gibson Detroit Regular";
+  src: url("./fonts/GibsonDetroit-Reg.eot");
+  src: url("./fonts/GibsonDetroit-Reg.woff") format("woff"),
+       url("./fonts/GibsonDetroit-Reg.svg#filename") format("svg")
+}
+
+body{font-family: 'Gibson Detroit Regular', sans-serif; font-weight: lighter;}
 h1,h2,h3,h4,h5{font-weight: bold; margin: 0;}
 
 .h6 {

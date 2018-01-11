@@ -1,0 +1,12 @@
+/* Webfont: GibsonDetroit-Reg */@font-face {
+    font-family: 'GibsonDetroit';
+    src: url('GibsonDetroit-Reg.eot'); /* IE9 Compat Modes */
+    src: url('GibsonDetroit-Reg.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('GibsonDetroit-Reg.woff') format('woff'), /* Modern Browsers */
+         url('GibsonDetroit-Reg.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('GibsonDetroit-Reg.svg#GibsonDetroit-Reg') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

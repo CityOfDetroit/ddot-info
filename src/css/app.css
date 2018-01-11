@@ -7,7 +7,9 @@
        url("./fonts/GibsonDetroit-Reg.svg#filename") format("svg")
 }
 
-body{font-family: 'Gibson Detroit Regular', sans-serif; font-weight: lighter;}
+body {
+  font-family: "Gibson Detroit Regular", sans-serif; 
+}
 h1,h2,h3,h4,h5{font-weight: bold; margin: 0;}
 
 .h6 {

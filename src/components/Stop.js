@@ -1,15 +1,17 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import moment from 'moment';
 // import _ from 'lodash';
 // import Helpers from '../helpers';
 
 import Stops from '../data/stops.js';
 
+import StopHeader from './StopHeader';
+
 class Stop extends React.Component {
 
   fetchData() {
-    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/vehicles-for-agency/DDOT.json?key=BETA&includePolylines=false`)
+    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/arrivals-and-departures-for-stop/DDOT_${this.props.match.params.name}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
       console.log(d)
@@ -28,23 +30,26 @@ class Stop extends React.Component {
 
   render() {
     const stopId = this.props.match.params.name
+    const stopName = Stops[stopId.toString()]
     return (
       <div>
-        {stopId} {Stops[stopId.toString()]}
+        <StopHeader id={stopId} name={stopName} />
+        {/* <StopMap /> */}
+        {/* <StopPredictions /> */}
       </div>
     )
   }
 }
 
-// LineRealTime.propTypes = {
-//   match: PropTypes.shape({
-//     isExact: PropTypes.bool,
-//     params: PropTypes.shape({
-//       name: PropTypes.string,
-//     }),
-//     path: PropTypes.string,
-//     url: PropTypes.string,
-//   }).isRequired,
-// }
+Stop.propTypes = {
+  match: PropTypes.shape({
+    isExact: PropTypes.bool,
+    params: PropTypes.shape({
+      name: PropTypes.string,
+    }),
+    path: PropTypes.string,
+    url: PropTypes.string,
+  }).isRequired,
+}
 
 export default Stop;

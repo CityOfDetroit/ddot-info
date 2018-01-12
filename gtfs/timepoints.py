@@ -142,7 +142,7 @@ def get_schedule(id, service='1', direction='0'):
                 schedule = schedule.sort_values(by=schedule.columns[i], axis=0)
     except ValueError:
         pass
-    schedule.columns = [stop_desc_from_stop_id(int(c))[0] for c in schedule.columns]
+    # schedule.columns = [stop_desc_from_stop_id(int(c))[0] for c in schedule.columns]
     schedule.index = schedule.index.map(lambda x: x[3:])
     return schedule.applymap(format_hms_nicely)
 

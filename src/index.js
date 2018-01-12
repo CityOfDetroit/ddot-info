@@ -8,12 +8,14 @@ import App from './App';
 import About from './components/About';
 import LineRealTime from './components/LineRealTime';
 import LineSchedule from './components/LineSchedule';
+import Stop from './components/Stop';
 
 ReactDOM.render(
   <Router basename="/route-explorer">
     <Switch>
       <Route exact path='/' component={App} />
       <Route path='/about' component={About} />
+      <Route path='/stop/:name' component={Stop} />
       <Route path="/route/:name/real-time" component={LineRealTime} />
       <Route path="/route/:name/schedule" component={LineSchedule} />
     </Switch>

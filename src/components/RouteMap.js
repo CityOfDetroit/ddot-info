@@ -30,7 +30,7 @@ class RouteMap extends Component {
 
   drawMap() {
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoiY2l0eW9mZGV0cm9pdCIsImEiOiJjaXZvOWhnM3QwMTQzMnRtdWhyYnk5dTFyIn0.FZMFi0-hvA60KYnI-KivWg';
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2l0eW9mZGV0cm9pdCIsImEiOiJjamNiY2RuZDcwMTV1MnF0MW9kbGo5YTlyIn0.5s818a6deB6YJJK4yFkMwQ';
 
     const map = new mapboxgl.Map({
       'container': 'map',
@@ -110,8 +110,8 @@ class RouteMap extends Component {
 
   componentDidMount() {
     this.drawMap()
-    this.updateMap()
     this.interval = setInterval(() => this.updateMap(), 3000);
+    this.updateMap()
   }
 
   render() {

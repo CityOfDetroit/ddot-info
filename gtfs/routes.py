@@ -17,8 +17,8 @@ routes = [
         "rt_id": 6607,
         "notes": "nonstandard schedule",
         "timepoints": {
-            "southbound": [10178, 74, 75, 76, 77],
-            "northbound": [77, 79, 80, 83, 10178]
+            "northbound": [10178, 74, 75, 76, 77],
+            "southbound": [77, 79, 80, 83, 10178]
         }
     },
 

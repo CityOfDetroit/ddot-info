@@ -390,7 +390,7 @@ const Schedules = {
     },
     "schedules": {
       "weekday": {
-        "southbound": {
+        "northbound": {
           "stops": ["Jefferson and Maryland", "Chalmers & Warren", "Chalmers & Harper", "Seven Mile & Gratiot", "Waltham & Eight Mile"],
           "trips": [{
             "trip_id": "9700",
@@ -463,7 +463,7 @@ const Schedules = {
             "timepoints": ["8:45pm", "8:52pm", "\u2013", "\u2013", "\u2013"]
           }]
         },
-        "northbound": {
+        "southbound": {
           "stops": ["Waltham & Eight Mile", "Seven Mile & Gratiot", "Chalmers & Harper", "Chalmers & Warren", "Jefferson and Maryland"],
           "trips": [{
             "trip_id": "9742",
@@ -538,7 +538,7 @@ const Schedules = {
         }
       },
       "saturday": {
-        "southbound": {
+        "northbound": {
           "stops": ["Jefferson and Maryland", "Chalmers & Warren", "Chalmers & Harper", "Seven Mile & Gratiot"],
           "trips": [{
             "trip_id": "9759",
@@ -584,7 +584,7 @@ const Schedules = {
             "timepoints": ["7:30pm", "7:40pm", "7:43pm", "7:52pm"]
           }]
         },
-        "northbound": {
+        "southbound": {
           "stops": ["Seven Mile & Gratiot", "Chalmers & Harper", "Chalmers & Warren", "Jefferson and Maryland"],
           "trips": [{
             "trip_id": "9760",
@@ -632,7 +632,7 @@ const Schedules = {
         }
       },
       "sunday": {
-        "southbound": {
+        "northbound": {
           "stops": ["Jefferson and Maryland", "Chalmers & Warren", "Chalmers & Harper", "Seven Mile & Gratiot"],
           "trips": [{
             "trip_id": "9782",
@@ -663,7 +663,7 @@ const Schedules = {
             "timepoints": ["4:30pm", "4:40pm", "4:43pm", "4:52pm"]
           }]
         },
-        "northbound": {
+        "southbound": {
           "stops": ["Seven Mile & Gratiot", "Chalmers & Harper", "Chalmers & Warren", "Jefferson and Maryland"],
           "trips": [{
             "trip_id": "9792",

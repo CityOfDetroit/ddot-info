@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import Stops from '../data/stops.js';
 import Colors from '../data/colors.js';
@@ -19,7 +20,9 @@ export default class RealtimeTrip extends Component {
           next stop:
           </span>
           <span className="f6 dib fw7">
-          {Stops[this.props.trip.properties.nextStop.slice(5)]}
+          <Link to={{pathname: `/stop/${this.props.trip.properties.nextStop.slice(5)}/`}} >
+            {Stops[this.props.trip.properties.nextStop.slice(5)].name}
+          </Link>
           </span>
           <span className="f6 dib fw5 ml1">
           {this.props.trip.properties.nextStopOffset > 60 ? `in ${Math.floor(this.props.trip.properties.nextStopOffset/60)} minute(s)` : ` now`}

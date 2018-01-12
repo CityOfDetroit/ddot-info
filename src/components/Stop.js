@@ -30,7 +30,7 @@ class Stop extends React.Component {
 
   render() {
     const stopId = this.props.match.params.name
-    const stopName = Stops[stopId.toString()]
+    const stopName = Stops[stopId.toString()].name
     return (
       <div>
         <StopHeader id={stopId} name={stopName} />

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { StickyTable, Row, Cell } from 'react-sticky-table';
+import { Link } from 'react-router-dom';
 import chroma from 'chroma-js';
+
+import Stops from '../data/stops.js';
 
 export default class ScheduleTable extends Component {
   constructor(props) {
@@ -21,7 +24,11 @@ export default class ScheduleTable extends Component {
           <Row className="fw7">
           <Cell className="pa2 fw6 f7 tc v-top black bb br tripid w2"></Cell>
             {this.props.schedule[this.props.direction].stops.map((s, i) => (
-              <Cell className="pa2 fw6 f7 tc v-top black bb w2 sched" style={{backgroundColor: background}} key={i}>{s}</Cell>
+              <Cell className="pa2 fw6 f7 tc v-top black bb w2 sched" style={{backgroundColor: background}} key={i}>
+                <Link to={{pathname: `/stop/${s}/`}} >
+                  {Stops[s].name}
+                </Link>
+              </Cell>
             ))}
           </Row>
           {this.props.schedule[this.props.direction].trips.map((t, j) => (

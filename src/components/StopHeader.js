@@ -9,7 +9,7 @@ const StopHeader = ({ id, name }) => (
         {name}
       </span>
       <span className=" f5-s f4-ns mh2 pv1 ph2 v-mid white fw7" style={{ backgroundColor: 'gray' }}>
-        Stop ID: {id}
+        #{id}
       </span>
     </div>
   </div>

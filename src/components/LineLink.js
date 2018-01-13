@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class LineLink extends Component {
   render() {
     return (
-      <li className="ph3 pv2 bb b--light-silver">
+      <div>
         <span className='white fw7 f5 w2 pv2 tc dib' style={{backgroundColor: this.props.color}}>
           {this.props.id}
         </span> 
@@ -13,7 +13,7 @@ class LineLink extends Component {
           <Link className="dim black hover-mid-gray" to={{pathname: `/route/${this.props.id}/real-time`, 
             state: { id: this.props.id, routeId: this.props.routeId, name: this.props.name }}}>{this.props.name}</Link>
         </span>
-      </li>
+      </div>
     )
   }
 }

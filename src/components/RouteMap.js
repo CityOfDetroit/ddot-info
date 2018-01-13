@@ -110,7 +110,7 @@ class RouteMap extends Component {
 
   componentDidMount() {
     this.drawMap()
-    this.interval = setInterval(() => this.updateMap(), 3000);
+    this.interval = setInterval(() => this.updateMap(), 5000);
     this.updateMap()
   }
 

@@ -7,14 +7,26 @@ import PropTypes from 'prop-types';
 import Stops from '../data/stops.js';
 
 import StopHeader from './StopHeader';
+import StopMap from './StopMap';
+import StopPredictions from './StopPredictions';
 
 class Stop extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      predictions: {},
+      fetchedPredictions: false
+    }
+  }
 
   fetchData() {
     fetch(`https://ddot-proxy-test.herokuapp.com/api/where/arrivals-and-departures-for-stop/DDOT_${this.props.match.params.name}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
       console.log(d)
+      this.setState({ predictions: d, fetchedPredictions: true })
     })
     .catch(e => console.log(e));
   }
@@ -31,11 +43,12 @@ class Stop extends React.Component {
   render() {
     const stopId = this.props.match.params.name
     const stopName = Stops[stopId.toString()].name
+    const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat]
     return (
       <div>
         <StopHeader id={stopId} name={stopName} />
-        {/* <StopMap /> */}
-        {/* <StopPredictions /> */}
+        <StopMap stopId={stopId} center={stopCoords}/>
+        {this.state.fetchedPredictions ? <StopPredictions predictions={this.state.predictions} /> : null }
       </div>
     )
   }

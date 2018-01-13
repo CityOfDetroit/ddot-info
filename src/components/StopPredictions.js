@@ -28,7 +28,7 @@ class StopPredictionList extends Component {
       <div className='ma2'>
         <h3>Next buses arriving at this stop:</h3>
         {stopArrDep.length > 0 ? `` : `<div className='pa1'>No buses predicted</div>`}
-        <div className="flex">
+        <div className="flex flex-wrap">
           {stopArrDep.map(m => 
             <StopPrediction prediction={m} key={m.vehicleId}/>
           )}

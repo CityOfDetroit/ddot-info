@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import moment from 'moment';
-// import _ from 'lodash';
-// import Helpers from '../helpers';
 
 import Stops from '../data/stops.js';
 
 import StopHeader from './StopHeader';
 import StopMap from './StopMap';
-import StopPredictions from './StopPredictions';
+import StopRouteList from './StopRouteList';
+
 
 class Stop extends React.Component {
 
@@ -43,12 +41,13 @@ class Stop extends React.Component {
   render() {
     const stopId = this.props.match.params.name
     const stopName = Stops[stopId.toString()].name
+    const stopRoutes = Stops[stopId.toString()].routes
     const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat]
     return (
-      <div>
+      <div className='stop'>
         <StopHeader id={stopId} name={stopName} />
         <StopMap stopId={stopId} center={stopCoords}/>
-        {this.state.fetchedPredictions ? <StopPredictions predictions={this.state.predictions} /> : null }
+        {this.state.fetchedPredictions ? <StopRouteList routes={stopRoutes} predictions={this.state.predictions} /> : null }
       </div>
     )
   }

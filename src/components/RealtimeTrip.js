@@ -28,7 +28,7 @@ export default class RealtimeTrip extends Component {
           {this.props.trip.properties.nextStopOffset > 60 ? `in ${Math.floor(this.props.trip.properties.nextStopOffset/60)} minute(s)` : ` now`}
           </span>
           <span className="f6 db fw5">
-          { this.props.trip.properties.onTime < 0 ? `${Math.abs(this.props.trip.properties.onTime)} minutes behind` : `${this.props.trip.properties.onTime} minutes ahead` }
+          { this.props.trip.properties.onTime < 0 ? `${Math.abs(this.props.trip.properties.onTime)} minutes ahead` : `${this.props.trip.properties.onTime} minutes behind` }
           </span>
         </div>
         <span className="fw7 f7">

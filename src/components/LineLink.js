@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class LineLink extends Component {
   render() {
     return (
-      <div>
+      <div style={{minWidth: '200px'}}>
         <span className='white fw7 f5 w2 pv2 tc dib' style={{backgroundColor: this.props.color}}>
           {this.props.id}
         </span> 

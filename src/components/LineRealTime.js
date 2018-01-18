@@ -15,6 +15,8 @@ class LineRealTime extends React.Component {
 
     let route = Helpers.getRoute(parseInt(this.props.match.params.name, 10))
 
+    console.log(Helpers.currentTripsForRoute(route.id))
+
     let tripIds = {}
     Object.keys(route.schedules).forEach(svc => {
       Object.keys(route.schedules.weekday).forEach(dir => {

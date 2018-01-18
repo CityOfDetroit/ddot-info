@@ -41,6 +41,12 @@ class RouteMap extends Component {
       'interactive': false
     });
 
+    map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: {
+          enableHighAccuracy: true
+      }
+    }));
+
     const route_id = this.props.routeId.toString()
     const stops = this.props.stops
     const bounds = this.props.bbox
@@ -96,13 +102,12 @@ class RouteMap extends Component {
           "icon-opacity": 0.75
         }
       })
-
     });
 
-    this.setState({
-      drewMap: true,
-      map: map,
-    });
+  this.setState({
+    drewMap: true,
+    map: map,
+  });
 
     this.updateMap()
   }
@@ -110,8 +115,7 @@ class RouteMap extends Component {
 
   componentDidMount() {
     this.drawMap()
-    this.interval = setInterval(() => this.updateMap(), 5000);
-    this.updateMap()
+    this.interval = setInterval(() => this.updateMap(), 3000);
   }
 
   render() {

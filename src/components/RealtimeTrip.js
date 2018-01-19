@@ -7,7 +7,6 @@ import chroma from 'chroma-js';
 
 export default class RealtimeTrip extends Component {
   render() {
-
     return (
       <div 
         className="w-100 pa1 flex justify-between bb pa2" 

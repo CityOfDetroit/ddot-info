@@ -5,7 +5,6 @@ import _ from 'lodash';
 
 export default class RealtimeTripList extends Component {
   render() {
-
     const byDirection = _.groupBy(this.props.trips, 'properties.direction')
 
     return (

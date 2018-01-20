@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import TopNav from './components/TopNav';
 import LineSearch from './components/LineSearch';
-import LineColorLegend from './components/LineColorLegend';
+import Geolocator from './components/Geolocator';
 
 class App extends Component {
   
@@ -10,10 +10,8 @@ class App extends Component {
     return (
       <div className="App">
         <TopNav />
-        <div className="bg-light-gray">
-          <LineSearch className="dib" />
-          <LineColorLegend />
-        </div>
+        <LineSearch />
+        <Geolocator />
       </div>
     );
   }

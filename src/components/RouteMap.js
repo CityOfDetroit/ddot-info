@@ -2,14 +2,11 @@ import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import _ from 'lodash';
 import Colors from '../data/colors.js';
-
+// import Schedules from '../data/schedules.js'
 
 class RouteMap extends Component {
   constructor(props) {
     super(props);
-
-    console.log(props)
-
     this.state = {
       drewMap: false,
       map: {},
@@ -23,8 +20,10 @@ class RouteMap extends Component {
         "type": "FeatureCollection",
         "features": this.props.trips
       }
-      this.state.map.getSource('realtime').setData(fc)
-      this.state.map.getSource('realtime-background').setData(fc)
+      if(this.state.map.isSourceLoaded('realtime')) {
+        this.state.map.getSource('realtime').setData(fc)
+        this.state.map.getSource('realtime-background').setData(fc)
+      }
     }
   }
 
@@ -38,10 +37,17 @@ class RouteMap extends Component {
       'center': [-83.0458, 42.3314],
       'zoom': 10,
       'attributionControl': false,
-      'interactive': false
+      'interactive': true
     });
 
+    map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: {
+          enableHighAccuracy: true
+      }
+    }));
+
     const route_id = this.props.routeId.toString()
+    // const route = Schedules[route_id]
     const stops = this.props.stops
     const bounds = this.props.bbox
     const realtimeTrips = this.props.trips
@@ -52,6 +58,8 @@ class RouteMap extends Component {
       map.setFilter('ddot-stops copy', ["in", "stop_id"].concat(stops.map(m => { return m.toString() })))
       // map.setLayoutProperty('ddot-stops', 'visibility', 'visible')
       map.setLayoutProperty('ddot-stops copy', 'visibility', 'visible')
+      // map.setLayoutProperty('road-label-large', 'visibility', 'visible')
+      // map.setFilter('road-label-large', ["in", "name"].concat(route.road_labels))
       map.fitBounds(bounds, {'padding': 25})
 
       map.addLayer({
@@ -96,13 +104,12 @@ class RouteMap extends Component {
           "icon-opacity": 0.75
         }
       })
-
     });
 
-    this.setState({
-      drewMap: true,
-      map: map,
-    });
+  this.setState({
+    drewMap: true,
+    map: map,
+  });
 
     this.updateMap()
   }
@@ -111,12 +118,11 @@ class RouteMap extends Component {
   componentDidMount() {
     this.drawMap()
     this.interval = setInterval(() => this.updateMap(), 3000);
-    this.updateMap()
   }
 
   render() {
     return (
-      <div id="map" className="map h6" style={{width: '100%'}}></div>
+      <div id="map" className="map h6"></div>
     )
   }
 }

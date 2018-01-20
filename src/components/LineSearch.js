@@ -46,7 +46,8 @@ class LineSearch extends Component {
 
   render () {
     return (
-      <div className="mh3">
+      <div className="search overflow-scroll pa2 br">
+        <span className="fw7 f4 pa2 dib">Already know what route you're looking for?</span>
         <LineInput input={this.state.input} onSearchChange={this.handleSearchChange} />
         { this.state.filteredLines.length > 0 ? <LinesList lines={this.state.filteredLines} /> : <p><strong>Loading...</strong></p> }
       </div>

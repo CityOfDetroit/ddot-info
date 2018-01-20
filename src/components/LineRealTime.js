@@ -48,36 +48,31 @@ class LineRealTime extends React.Component {
   }
 
   fetchData() {
-    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/vehicles-for-agency/DDOT.json?key=BETA&includePolylines=false`)
+    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
-
-      let allTripIds = _.flattenDeep(Object.values(this.state.tripIds))
-
-      let x = d.data.list.filter(trip => {
-        return allTripIds.indexOf(trip.tripId.slice(-4)) > 0
-      })
-
-      let geojson = x.map(bus => {
+      let geojson = d.data.list.map(bus => {
         return {
           "type": "Feature",
           "geometry": {
             "type": "Point",
-            "coordinates": [bus.tripStatus.position.lon, bus.tripStatus.position.lat]
+            "coordinates": [bus.status.position.lon, bus.status.position.lat]
           },
           "properties": {
-            "tripId": bus.tripStatus.activeTripId,
-            "nextStop": bus.tripStatus.nextStop,
-            "nextStopOffset": bus.tripStatus.nextStopTimeOffset,
-            "updateTime": moment(bus.tripStatus.lastUpdateTime).format("h:mm:ss a"),
-            "onTime": bus.tripStatus.scheduleDeviation / 60,
-            "direction": _.findKey(this.state.tripIds, t => { return t.indexOf(bus.tripStatus.activeTripId.slice(-4)) > 0})
+            "tripId": bus.status.activeTripId,
+            "nextStop": bus.status.nextStop,
+            "nextStopOffset": bus.status.nextStopTimeOffset,
+            "predicted": bus.status.predicted,
+            "updateTime": moment(bus.status.lastUpdateTime).format("h:mm:ss a"),
+            "onTime": bus.status.scheduleDeviation / 60,
+            "direction": _.findKey(this.state.tripIds, t => { return t.indexOf(bus.status.activeTripId.slice(-4)) > -1})
           }
         }
       })
 
-      console.log(geojson)
-      this.setState({realtimeTrips: geojson})
+      let realtimeTrips = _.filter(geojson, o => { return o.properties.direction !== undefined })
+
+      this.setState({realtimeTrips: realtimeTrips})
 
     })
     .catch(e => console.log(e));
@@ -106,19 +101,17 @@ class LineRealTime extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
         <LineHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
-        <div>
-          <RouteMap 
-            routeId={this.props.match.params.name} 
-            stops={this.state.timepointStops} 
-            bbox={this.state.routeBbox} 
-            trips={this.state.realtimeTrips} 
-          />
-          <RealtimeTripList 
-            trips={this.state.realtimeTrips} 
-          />
-        </div>
+        <RouteMap 
+          routeId={this.props.match.params.name} 
+          stops={this.state.timepointStops} 
+          bbox={this.state.routeBbox} 
+          trips={this.state.realtimeTrips} 
+        />
+        <RealtimeTripList
+          trips={this.state.realtimeTrips} 
+        />
       </div>
     )
   }

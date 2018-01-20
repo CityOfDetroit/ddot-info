@@ -11,7 +11,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["ROSA PARKS TRANSIT BAY 12", "Larned & Chene", "McClellan & Kercheval", "Cadillac & Warren", "Cadillac & Harper", "Harper & Chalmers", "Harper & Morang", "Moross & Mack"],
+          "stops": ["8911", "32", "34", "35", "36", "38", "42", "41"],
           "trips": [{
             "trip_id": "9589",
             "timepoints": ["6:00am", "6:11am", "6:21am", "6:30am", "6:33am", "6:41am", "6:51am", "6:57am"]
@@ -87,7 +87,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Moross & Mack", "Harper & Morang", "Harper & Chalmers", "Cadillac & Harper", "Cadillac & Warren", "Kercheval & McClellan", "Larned & Chene", "ROSA PARKS TRANSIT BAY 12"],
+          "stops": ["41", "8963", "44", "46", "47", "49", "51", "8911"],
           "trips": [{
             "trip_id": "9613",
             "timepoints": ["5:08am", "5:13am", "5:21am", "5:27am", "5:29am", "5:35am", "5:45am", "5:55am"]
@@ -168,7 +168,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["ROSA PARKS TRANSIT BAY 12", "Larned & Chene", "McClellan & Kercheval", "Cadillac & Warren", "Cadillac & Harper", "Harper & Chalmers", "Harper & Morang", "Moross & Mack"],
+          "stops": ["8911", "32", "34", "35", "36", "38", "42", "41"],
           "trips": [{
             "trip_id": "9638",
             "timepoints": ["6:55am", "7:06am", "7:16am", "7:23am", "7:25am", "7:32am", "7:40am", "7:44am"]
@@ -223,7 +223,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Moross & Mack", "Harper & Morang", "Harper & Chalmers", "Cadillac & Harper", "Cadillac & Warren", "Kercheval & McClellan", "Larned & Chene", "ROSA PARKS TRANSIT BAY 12"],
+          "stops": ["41", "8963", "44", "46", "47", "49", "51", "8911"],
           "trips": [{
             "trip_id": "9655",
             "timepoints": ["7:00am", "7:04am", "7:12am", "7:19am", "7:21am", "7:28am", "7:38am", "7:48am"]
@@ -280,7 +280,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["ROSA PARKS TRANSIT BAY 12", "Larned & Chene", "McClellan & Kercheval", "Cadillac & Warren", "Cadillac & Harper", "Harper & Chalmers", "Harper & Morang", "Moross & Mack"],
+          "stops": ["8911", "32", "34", "35", "36", "38", "42", "41"],
           "trips": [{
             "trip_id": "9672",
             "timepoints": ["7:00am", "7:10am", "7:20am", "7:26am", "7:28am", "7:35am", "7:42am", "7:47am"]
@@ -326,7 +326,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Moross & Mack", "Harper & Morang", "Harper & Chalmers", "Cadillac & Harper", "Cadillac & Warren", "Kercheval & McClellan", "Larned & Chene", "ROSA PARKS TRANSIT BAY 12"],
+          "stops": ["41", "8963", "44", "46", "47", "49", "51", "8911"],
           "trips": [{
             "trip_id": "9686",
             "timepoints": ["7:02am", "7:06am", "7:13am", "7:19am", "7:21am", "7:27am", "7:37am", "7:47am"]
@@ -385,13 +385,13 @@ const Schedules = {
     "rt_id": 6607,
     "notes": "nonstandard schedule",
     "timepoints": {
-      "southbound": [10178, 74, 75, 76, 77],
-      "northbound": [77, 79, 80, 83, 10178]
+      "northbound": [10178, 74, 75, 76, 77],
+      "southbound": [77, 79, 80, 83, 10178]
     },
     "schedules": {
       "weekday": {
         "northbound": {
-          "stops": ["Jefferson and Maryland", "Chalmers & Warren", "Chalmers & Harper", "Seven Mile & Gratiot", "Waltham & Eight Mile"],
+          "stops": ["10178", "74", "75", "76", "77"],
           "trips": [{
             "trip_id": "9700",
             "timepoints": ["5:25am", "5:32am", "5:35am", "5:45am", "5:53am"]
@@ -464,7 +464,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Waltham & Eight Mile", "Seven Mile & Gratiot", "Chalmers & Harper", "Chalmers & Warren", "Jefferson and Maryland"],
+          "stops": ["77", "79", "80", "83", "10178"],
           "trips": [{
             "trip_id": "9742",
             "timepoints": ["\u2013", "\u2013", "\u2013", "5:15am", "5:25am"]
@@ -539,7 +539,7 @@ const Schedules = {
       },
       "saturday": {
         "northbound": {
-          "stops": ["Jefferson and Maryland", "Chalmers & Warren", "Chalmers & Harper", "Seven Mile & Gratiot"],
+          "stops": ["10178", "74", "75", "76"],
           "trips": [{
             "trip_id": "9759",
             "timepoints": ["\u2013", "6:45am", "6:48am", "6:57am"]
@@ -585,7 +585,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Seven Mile & Gratiot", "Chalmers & Harper", "Chalmers & Warren", "Jefferson and Maryland"],
+          "stops": ["79", "80", "83", "10178"],
           "trips": [{
             "trip_id": "9760",
             "timepoints": ["7:00am", "7:10am", "7:13am", "7:23am"]
@@ -633,7 +633,7 @@ const Schedules = {
       },
       "sunday": {
         "northbound": {
-          "stops": ["Jefferson and Maryland", "Chalmers & Warren", "Chalmers & Harper", "Seven Mile & Gratiot"],
+          "stops": ["10178", "74", "75", "76"],
           "trips": [{
             "trip_id": "9782",
             "timepoints": ["8:30am", "8:40am", "8:43am", "8:52am"]
@@ -664,7 +664,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Seven Mile & Gratiot", "Chalmers & Harper", "Chalmers & Warren", "Jefferson and Maryland"],
+          "stops": ["79", "80", "83", "10178"],
           "trips": [{
             "trip_id": "9792",
             "timepoints": ["\u2013", "\u2013", "8:20am", "8:30am"]
@@ -716,7 +716,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["ROSA PARKS TRANSIT 10 SB", "Chene & Gratiot", "East Grand Blvd. & Chene", "Jos Campau & Holbrook", "Jos Campau & Davison", "Jos Campau & Nevada", "Nevada & Van Dyke"],
+          "stops": ["8892", "87", "118", "89", "90", "91", "92"],
           "trips": [{
             "trip_id": "9794",
             "timepoints": ["5:54am", "6:10am", "6:15am", "6:20am", "6:25am", "6:28am", "6:37am"]
@@ -780,7 +780,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Varjo & Van Dyke", "Jos Campau & Nevada", "Jos Campau & Davison", "Jos Campau & Holbrook", "Chene & Ford Fwy.", "Chene & Gratiot", "Lafayette & St. Aubin", "ROSA PARKS TRANSIT 10 SB"],
+          "stops": ["95", "96", "97", "98", "99", "100", "503", "8892"],
           "trips": [{
             "trip_id": "9831",
             "timepoints": ["5:00am", "5:09am", "5:12am", "5:19am", "5:26am", "5:32am", "5:39am", "5:46am"]
@@ -849,7 +849,7 @@ const Schedules = {
       },
       "saturday": {
         "southbound": {
-          "stops": ["ROSA PARKS TRANSIT 10 SB", "Chene & Gratiot", "East Grand Blvd. & Chene", "Jos Campau & Holbrook", "Jos Campau & Davison", "Jos Campau & Nevada", "Nevada & Van Dyke"],
+          "stops": ["8892", "87", "118", "89", "90", "91", "92"],
           "trips": [{
             "trip_id": "9834",
             "timepoints": ["7:00am", "7:17am", "7:21am", "7:32am", "7:38am", "7:41am", "7:50am"]
@@ -898,7 +898,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Varjo & Van Dyke", "Jos Campau & Nevada", "Jos Campau & Davison", "Jos Campau & Holbrook", "Chene & Ford Fwy.", "Chene & Gratiot", "Lafayette & St. Aubin", "ROSA PARKS TRANSIT 10 SB"],
+          "stops": ["95", "96", "97", "98", "99", "100", "503", "8892"],
           "trips": [{
             "trip_id": "9855",
             "timepoints": ["6:00am", "6:07am", "6:10am", "6:16am", "6:21am", "6:25am", "6:32am", "6:46am"]
@@ -952,7 +952,7 @@ const Schedules = {
       },
       "sunday": {
         "southbound": {
-          "stops": ["ROSA PARKS TRANSIT 10 SB", "Chene & Gratiot", "East Grand Blvd. & Chene", "Jos Campau & Holbrook", "Jos Campau & Davison", "Jos Campau & Nevada", "Nevada & Van Dyke"],
+          "stops": ["8892", "87", "118", "89", "90", "91", "92"],
           "trips": [{
             "trip_id": "9876",
             "timepoints": ["8:00am", "8:17am", "8:22am", "8:33am", "8:39am", "8:42am", "8:50am"]
@@ -992,7 +992,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Varjo & Van Dyke", "Jos Campau & Nevada", "Jos Campau & Davison", "Jos Campau & Holbrook", "Chene & Ford Fwy.", "Chene & Gratiot", "Lafayette & St. Aubin", "ROSA PARKS TRANSIT 10 SB"],
+          "stops": ["95", "96", "97", "98", "99", "100", "503", "8892"],
           "trips": [{
             "trip_id": "9877",
             "timepoints": ["8:00am", "8:07am", "8:10am", "8:16am", "8:21am", "8:26am", "8:31am", "8:44am"]
@@ -1050,7 +1050,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["Clark & Fort", "Junction & Warren", "Joy Rd. & Grand River", "Owen & Woodward", "East Grand Blvd. & Chene", "Harper & Gratiot", "Lycaste & Jefferson"],
+          "stops": ["103", "2491", "107", "800", "111", "112", "115"],
           "trips": [{
             "trip_id": "9889",
             "timepoints": ["5:30am", "5:38am", "5:45am", "5:58am", "6:06am", "6:15am", "6:27am"]
@@ -1114,7 +1114,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Lycaste & Jefferson", "Harper & Gratiot", "East Grand Blvd. & Chene", "CLAIRMOUNT & WOODWARD", "Joy Rd. & Grand River", "Junction & Warren", "Clark & Fort"],
+          "stops": ["115", "1236", "118", "8248", "122", "2492", "103"],
           "trips": [{
             "trip_id": "9909",
             "timepoints": ["5:10am", "5:20am", "5:29am", "5:39am", "5:50am", "5:56am", "6:07am"]
@@ -1199,7 +1199,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["Fairgrounds", "Outer Dr & Dequindre", "Conant & 7 Mile", "Conant & McNichols", "Conant & Caniff", "Mt Elliott & 94", "Mt Elliott & Gratiot", "E Gd Blvd & Jefferson", "Belle Isle"],
+          "stops": ["127", "7864", "129", "130", "9034", "5525", "132", "10176", "10167"],
           "trips": [{
             "trip_id": "9930",
             "timepoints": ["5:50am", "5:56am", "5:59am", "6:02am", "6:09am", "6:14am", "6:19am", "6:27am", "6:30am"]
@@ -1257,7 +1257,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Loiter Way Bus Stop", "Helen & Jefferson", "Mt. Elliott & Gratiot", "Mount Elliot & Harper", "CONANT & CANIFF", "Conant & McNichols", "Conant & Seven Mile", "STATE FAIR & DEQUINDRE", "State Fairgrounds Transit Center"],
+          "stops": ["10167", "135", "136", "5524", "9035", "138", "139", "140", "127"],
           "trips": [{
             "trip_id": "9948",
             "timepoints": ["\u2013", "5:50am", "5:59am", "6:03am", "6:08am", "6:15am", "6:19am", "6:22am", "6:29am"]
@@ -1320,7 +1320,7 @@ const Schedules = {
       },
       "saturday": {
         "southbound": {
-          "stops": ["Fairgrounds", "Outer Dr & Dequindre", "Conant & 7 Mile", "Conant & McNichols", "Conant & Caniff", "Mt Elliott & 94", "Mt Elliott & Gratiot", "E Gd Blvd & Jefferson", "Belle Isle"],
+          "stops": ["127", "7864", "129", "130", "9034", "5525", "132", "10176", "10167"],
           "trips": [{
             "trip_id": "9967",
             "timepoints": ["7:30am", "7:36am", "7:38am", "7:41am", "7:47am", "7:52am", "7:56am", "8:04am", "8:08am"]
@@ -1372,7 +1372,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Loiter Way Bus Stop", "Helen & Jefferson", "Mt. Elliott & Gratiot", "Mount Elliot & Harper", "CONANT & CANIFF", "Conant & McNichols", "Conant & Seven Mile", "STATE FAIR & DEQUINDRE", "State Fairgrounds Transit Center"],
+          "stops": ["10167", "135", "136", "5524", "9035", "138", "139", "140", "127"],
           "trips": [{
             "trip_id": "9983",
             "timepoints": ["\u2013", "7:32am", "7:41am", "7:45am", "7:50am", "7:56am", "7:59am", "8:02am", "8:09am"]
@@ -1429,7 +1429,7 @@ const Schedules = {
       },
       "sunday": {
         "southbound": {
-          "stops": ["Fairgrounds", "Outer Dr & Dequindre", "Conant & 7 Mile", "Conant & McNichols", "Conant & Caniff", "Mt Elliott & 94", "Mt Elliott & Gratiot", "E Gd Blvd & Jefferson", "Belle Isle"],
+          "stops": ["127", "7864", "129", "130", "9034", "5525", "132", "10176", "10167"],
           "trips": [{
             "trip_id": "0000",
             "timepoints": ["8:00am", "8:06am", "8:09am", "8:12am", "8:18am", "8:23am", "8:27am", "8:35am", "8:38am"]
@@ -1466,7 +1466,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Loiter Way Bus Stop", "Helen & Jefferson", "Mt. Elliott & Gratiot", "Mount Elliot & Harper", "CONANT & CANIFF", "Conant & McNichols", "Conant & Seven Mile", "STATE FAIR & DEQUINDRE", "State Fairgrounds Transit Center"],
+          "stops": ["10167", "135", "136", "5524", "9035", "138", "139", "140", "127"],
           "trips": [{
             "trip_id": "0011",
             "timepoints": ["\u2013", "8:02am", "8:11am", "8:15am", "8:20am", "8:26am", "8:29am", "8:32am", "8:38am"]
@@ -1525,7 +1525,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["Bel Air Shopping Center", "EIGHT MILE & HOOVER", "Gunston & McNichols", "Conner & Gratiot", "Conner & Harper", "Conner & Warren", "Conner & Jefferson", "Essex & Continental", "Korte & Phillip"],
+          "stops": ["93", "8552", "144", "145", "9033", "147", "148", "149", "150"],
           "trips": [{
             "trip_id": "0026",
             "timepoints": ["\u2013", "\u2013", "\u2013", "\u2013", "\u2013", "6:59am", "\u2013", "\u2013", "\u2013"]
@@ -1598,7 +1598,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Conner & Jefferson", "Conner & Warren", "Conner & Harper", "GUNSTON & GRATIOT", "Gunston & McNichols", "EIGHT MILE & HOOVER", "Bel Air Shopping Center"],
+          "stops": ["153", "154", "1989", "10031", "157", "8591", "93"],
           "trips": [{
             "trip_id": "0064",
             "timepoints": ["\u2013", "6:15am", "6:18am", "6:21am", "6:25am", "6:33am", "6:36am"]
@@ -1676,7 +1676,7 @@ const Schedules = {
       },
       "saturday": {
         "southbound": {
-          "stops": ["Bel Air Shopping Center", "EIGHT MILE & HOOVER", "Gunston & McNichols", "Conner & Gratiot", "Conner & Harper", "Conner & Warren"],
+          "stops": ["93", "8552", "144", "145", "9033", "147"],
           "trips": [{
             "trip_id": "0070",
             "timepoints": ["6:00am", "6:03am", "6:08am", "6:12am", "6:16am", "6:18am"]
@@ -1725,7 +1725,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Conner & Jefferson", "Conner & Warren", "Conner & Harper", "GUNSTON & GRATIOT", "Gunston & McNichols", "EIGHT MILE & HOOVER", "Bel Air Shopping Center"],
+          "stops": ["153", "154", "1989", "10031", "157", "8591", "93"],
           "trips": [{
             "trip_id": "0100",
             "timepoints": ["\u2013", "5:33am", "5:35am", "5:39am", "5:44am", "5:49am", "5:54am"]
@@ -1779,7 +1779,7 @@ const Schedules = {
       },
       "sunday": {
         "southbound": {
-          "stops": ["Bel Air Shopping Center", "EIGHT MILE & HOOVER", "Gunston & McNichols", "Conner & Gratiot", "Conner & Harper", "Conner & Warren"],
+          "stops": ["93", "8552", "144", "145", "9033", "147"],
           "trips": [{
             "trip_id": "0101",
             "timepoints": ["\u2013", "\u2013", "\u2013", "\u2013", "\u2013", "6:55am"]
@@ -1822,7 +1822,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Conner & Jefferson", "Conner & Warren", "Conner & Harper", "GUNSTON & GRATIOT", "Gunston & McNichols", "EIGHT MILE & HOOVER", "Bel Air Shopping Center"],
+          "stops": ["153", "154", "1989", "10031", "157", "8591", "93"],
           "trips": [{
             "trip_id": "0114",
             "timepoints": ["7:00am", "7:04am", "7:07am", "7:09am", "7:12am", "7:19am", "7:21am"]
@@ -1883,7 +1883,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["Warren & Telegraph", "Warren & Evergreen", "Warren & Greenfield", "Warren & Schaefer", "Warren & Livernois", "Fourteenth & Warren", "Warren & Woodward", "Forest & Van Dyke", "Warren & St. Jean", "Warren & Chalmers", "Moross & Mack"],
+          "stops": ["10187", "7141", "161", "162", "163", "164", "165", "169", "171", "172", "41"],
           "trips": [{
             "trip_id": "0170",
             "timepoints": ["4:00am", "4:05am", "4:12am", "4:15am", "4:22am", "4:30am", "4:37am", "4:46am", "4:52am", "4:57am", "5:10am"]
@@ -2025,7 +2025,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Moross & Mack", "Warren & Chalmers", "Warren & St. Jean", "Warren & Van Dyke", "WARREN & WOODWARD", "Warren & Fourteenth", "Warren & Livernois", "Warren & Schaefer", "Warren & Greenfield", "Warren & Evergreen", "Waverly & Warren"],
+          "stops": ["41", "175", "48", "177", "181", "182", "183", "184", "185", "7140", "10192"],
           "trips": [{
             "trip_id": "0217",
             "timepoints": ["4:25am", "4:37am", "4:42am", "4:48am", "4:58am", "5:03am", "5:11am", "5:18am", "5:21am", "5:28am", "5:34am"]
@@ -2172,7 +2172,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["Warren & Telegraph", "Warren & Evergreen", "Warren & Greenfield", "Warren & Schaefer", "Warren & Livernois", "Fourteenth & Warren", "Warren & Woodward", "Forest & Van Dyke", "Warren & St. Jean", "Warren & Chalmers", "Moross & Mack"],
+          "stops": ["10187", "7141", "161", "162", "163", "164", "165", "169", "171", "172", "41"],
           "trips": [{
             "trip_id": "0220",
             "timepoints": ["4:00am", "4:05am", "4:13am", "4:16am", "4:23am", "4:31am", "4:38am", "4:46am", "4:52am", "4:57am", "5:09am"]
@@ -2269,7 +2269,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Moross & Mack", "Warren & Chalmers", "Warren & St. Jean", "Warren & Van Dyke", "WARREN & WOODWARD", "Warren & Fourteenth", "Warren & Livernois", "Warren & Schaefer", "Warren & Greenfield", "Warren & Evergreen", "Waverly & Warren"],
+          "stops": ["41", "175", "48", "177", "181", "182", "183", "184", "185", "7140", "10192"],
           "trips": [{
             "trip_id": "0251",
             "timepoints": ["4:30am", "4:40am", "4:45am", "4:50am", "5:00am", "5:06am", "5:14am", "5:22am", "5:26am", "5:32am", "5:37am"]
@@ -2365,7 +2365,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["Warren & Telegraph", "Warren & Evergreen", "Warren & Greenfield", "Warren & Schaefer", "Warren & Livernois", "Fourteenth & Warren", "Warren & Woodward", "Forest & Van Dyke", "Warren & St. Jean", "Warren & Chalmers", "Moross & Mack"],
+          "stops": ["10187", "7141", "161", "162", "163", "164", "165", "169", "171", "172", "41"],
           "trips": [{
             "trip_id": "0281",
             "timepoints": ["4:15am", "4:20am", "4:27am", "4:30am", "4:36am", "4:44am", "4:51am", "5:01am", "5:07am", "5:12am", "5:24am"]
@@ -2456,7 +2456,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Moross & Mack", "Warren & Chalmers", "Warren & St. Jean", "Warren & Van Dyke", "WARREN & WOODWARD", "Warren & Fourteenth", "Warren & Livernois", "Warren & Schaefer", "Warren & Greenfield", "Warren & Evergreen", "Waverly & Warren"],
+          "stops": ["41", "175", "48", "177", "181", "182", "183", "184", "185", "7140", "10192"],
           "trips": [{
             "trip_id": "0310",
             "timepoints": ["4:15am", "4:24am", "4:29am", "4:34am", "4:46am", "4:51am", "4:59am", "5:07am", "5:10am", "5:16am", "5:22am"]
@@ -2565,7 +2565,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["Orangelawn & Burt", "West Chicago & Greenfield", "West Chicago & Schaefer", "West Chicago & Wyoming", "Oakman & Grand River", "Davison & Livernois", "Davison & Fourteenth", "Manchester & Woodward", "Jos Campau & Davison", "McNichols & Jos Campau"],
+          "stops": ["188", "190", "191", "192", "193", "194", "195", "196", "197", "198"],
           "trips": [{
             "trip_id": "0357",
             "timepoints": ["5:02am", "5:10am", "5:14am", "5:18am", "5:21am", "5:28am", "5:34am", "5:41am", "5:49am", "5:51am"]
@@ -2653,7 +2653,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["McNichols & Jos Campau", "Davison & Jos Campau", "Manchester & Woodward", "Davison & Fourteenth", "Davison & Livernois", "OAKMAN & GRAND RIVER", "West Chicago & Wyoming", "West Chicago & Schaefer", "West Chicago & Greenfield", "Orangelawn & Burt"],
+          "stops": ["198", "200", "201", "202", "203", "204", "205", "206", "207", "188"],
           "trips": [{
             "trip_id": "0367",
             "timepoints": ["5:58am", "5:59am", "6:07am", "6:16am", "6:21am", "6:28am", "6:31am", "6:35am", "6:41am", "6:51am"]
@@ -2734,7 +2734,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["Orangelawn & Burt", "West Chicago & Greenfield", "West Chicago & Schaefer", "West Chicago & Wyoming", "Oakman & Grand River", "Davison & Livernois", "Davison & Fourteenth", "Manchester & Woodward"],
+          "stops": ["188", "190", "191", "192", "193", "194", "195", "196"],
           "trips": [{
             "trip_id": "0392",
             "timepoints": ["6:55am", "7:03am", "7:07am", "7:11am", "7:14am", "7:20am", "7:26am", "7:33am"]
@@ -2792,7 +2792,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Manchester & Woodward", "Davison & Fourteenth", "Davison & Livernois", "OAKMAN & GRAND RIVER", "West Chicago & Wyoming", "West Chicago & Schaefer", "West Chicago & Greenfield", "Orangelawn & Burt"],
+          "stops": ["201", "202", "203", "204", "205", "206", "207", "188"],
           "trips": [{
             "trip_id": "0410",
             "timepoints": ["6:55am", "7:04am", "7:09am", "7:14am", "7:17am", "7:21am", "7:25am", "7:34am"]
@@ -2852,7 +2852,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["Orangelawn & Burt", "West Chicago & Greenfield", "West Chicago & Schaefer", "West Chicago & Wyoming", "Oakman & Grand River", "Davison & Livernois", "Davison & Fourteenth", "Manchester & Woodward"],
+          "stops": ["188", "190", "191", "192", "193", "194", "195", "196"],
           "trips": [{
             "trip_id": "0428",
             "timepoints": ["7:00am", "7:07am", "7:11am", "7:15am", "7:18am", "7:24am", "7:29am", "7:35am"]
@@ -2907,7 +2907,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Manchester & Woodward", "Davison & Fourteenth", "Davison & Livernois", "OAKMAN & GRAND RIVER", "West Chicago & Wyoming", "West Chicago & Schaefer", "West Chicago & Greenfield", "Orangelawn & Burt"],
+          "stops": ["201", "202", "203", "204", "205", "206", "207", "188"],
           "trips": [{
             "trip_id": "0445",
             "timepoints": ["7:45am", "7:54am", "7:59am", "8:04am", "8:06am", "8:10am", "8:15am", "8:24am"]
@@ -2978,7 +2978,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["JL Hudson & Greenfield", "Northland & Northwestern", "W Outer Dr & Southfield", "W Outer Dr & Greenfield", "Curtis & Wyoming", "McNichols & Livernois", "Dexter & Fenkell", "Dexter & Lothrop", "W Grand Blvd & 2nd", "Cass & Temple", "Jefferson & Shelby"],
+          "stops": ["10340", "10325", "212", "213", "214", "215", "216", "218", "220", "221", "223"],
           "trips": [{
             "trip_id": "7048",
             "timepoints": ["4:00am", "4:04am", "4:15am", "4:18am", "4:27am", "4:32am", "4:38am", "4:53am", "5:01am", "5:10am", "5:21am"]
@@ -3204,7 +3204,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Jefferson & Shelby", "Rosa Parks TC", "Cass & Temple", "W. Grand Blvd. & Second", "Dexter & Lothrop", "Dexter & Fenkell", "Livernois & McNichols", "Curtis & Wyoming", "Greenfield & W Outer Dr", "W Outer Dr & Southfield", "Northland & Nwestern", "JL Hudson & Greenfield"],
+          "stops": ["223", "8913", "224", "225", "227", "229", "230", "231", "6056", "233", "10326", "10340"],
           "trips": [{
             "trip_id": "7079",
             "timepoints": ["3:56am", "4:00am", "4:08am", "4:17am", "4:25am", "4:39am", "4:44am", "4:49am", "5:03am", "4:59am", "5:10am", "5:18am"]
@@ -3432,7 +3432,7 @@ const Schedules = {
       },
       "saturday": {
         "southbound": {
-          "stops": ["JL HUDSON DR & GREENFIELD", "Northland Dr & Northwestern Hwy", "West Outer Drive & Southfield", "West Outer Drive & Greenfield", "Curtis & Wyoming", "McNichols & Livernois", "Dexter & Fenkell", "Dexter & Lothrop", "W. Grand Blvd. & Second", "Cass & Temple", "ROSA PARKS TRANSIT 16 SB"],
+          "stops": ["10340", "10325", "212", "213", "214", "215", "216", "218", "220", "221", "8913"],
           "trips": [{
             "trip_id": "0617",
             "timepoints": ["4:04am", "4:08am", "\u2013", "4:18am", "4:27am", "4:32am", "4:37am", "4:52am", "5:01am", "5:10am", "5:18am"]
@@ -3553,7 +3553,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["ROSA PARKS TRANSIT 16 SB", "Cass & Temple", "W. Grand Blvd. & Second", "Dexter & Lothrop", "Dexter & Fenkell", "Livernois & McNichols", "Curtis & Wyoming", "GREENFIELD & W.OUTER DR.", "W. OUTER DRIVE & SOUTHFIELD", "Northland Dr  & Northwestern Hwy", "JL HUDSON DR & GREENFIELD"],
+          "stops": ["8913", "224", "225", "227", "229", "230", "231", "6056", "233", "10326", "10340"],
           "trips": [{
             "trip_id": "0667",
             "timepoints": ["4:00am", "4:07am", "4:15am", "4:22am", "4:33am", "4:37am", "4:42am", "4:50am", "\u2013", "4:56am", "5:02am"]
@@ -3679,7 +3679,7 @@ const Schedules = {
       },
       "sunday": {
         "southbound": {
-          "stops": ["JL HUDSON DR & GREENFIELD", "Northland Dr & Northwestern Hwy", "West Outer Drive & Southfield", "West Outer Drive & Greenfield", "Curtis & Wyoming", "McNichols & Livernois", "Dexter & Fenkell", "Dexter & Lothrop", "W. Grand Blvd. & Second", "Cass & Temple", "ROSA PARKS TRANSIT 16 SB"],
+          "stops": ["10340", "10325", "212", "213", "214", "215", "216", "218", "220", "221", "8913"],
           "trips": [{
             "trip_id": "0723",
             "timepoints": ["4:35am", "4:39am", "\u2013", "4:49am", "4:59am", "5:04am", "5:09am", "5:23am", "5:31am", "5:40am", "5:46am"]
@@ -3797,7 +3797,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["ROSA PARKS TRANSIT 16 SB", "Cass & Temple", "W. Grand Blvd. & Second", "Dexter & Lothrop", "Dexter & Fenkell", "Livernois & McNichols", "Curtis & Wyoming", "GREENFIELD & W.OUTER DR.", "W. OUTER DRIVE & SOUTHFIELD", "Northland Dr  & Northwestern Hwy", "JL HUDSON DR & GREENFIELD"],
+          "stops": ["8913", "224", "225", "227", "229", "230", "231", "6056", "233", "10326", "10340"],
           "trips": [{
             "trip_id": "0753",
             "timepoints": ["4:00am", "4:06am", "4:15am", "4:23am", "4:37am", "4:42am", "4:47am", "4:57am", "\u2013", "5:02am", "5:07am"]
@@ -3931,7 +3931,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["Seven Mile & Grand River", "Eight Mile & Evergreen", "Northland Dr & Northwestern Hwy", "Eight Mile & Schaefer", "Fairgrounds", "Eight Mile & Dequindre", "Eight Mile & Gratiot", "Eastland Center", "Moross & Mack"],
+          "stops": ["236", "238", "10325", "240", "242", "243", "62", "245", "40"],
           "trips": [{
             "trip_id": "0815",
             "timepoints": ["4:09am", "4:18am", "4:25am", "4:30am", "4:43am", "4:52am", "5:13am", "5:21am", "5:35am"]
@@ -4073,7 +4073,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Moross & Mack", "Eastland Center", "Eight Mile & Gratiot", "Eight Mile & Van Dyke", "Eight Mile & Dequindre", "Fairgrounds", "Eight Mile & Coolidge", "Northland Dr  & Northwestern Hwy", "Eight Mile & Evergreen", "Seven Mile & Grand River"],
+          "stops": ["41", "245", "63", "247", "248", "249", "251", "10326", "253", "236"],
           "trips": [{
             "trip_id": "0861",
             "timepoints": ["4:18am", "\u2013", "4:34am", "4:43am", "4:54am", "5:05am", "5:16am", "5:22am", "5:30am", "5:41am"]
@@ -4217,7 +4217,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["Seven Mile & Grand River", "Eight Mile & Evergreen", "Northland Dr & Northwestern Hwy", "Eight Mile & Schaefer", "Fairgrounds", "Eight Mile & Dequindre", "Eight Mile & Gratiot", "Eastland Center", "Moross & Mack"],
+          "stops": ["236", "238", "10325", "240", "242", "243", "62", "245", "40"],
           "trips": [{
             "trip_id": "0870",
             "timepoints": ["4:51am", "5:00am", "5:07am", "5:12am", "5:25am", "5:34am", "5:54am", "\u2013", "6:11am"]
@@ -4323,7 +4323,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Moross & Mack", "Eastland Center", "Eight Mile & Gratiot", "Eight Mile & Van Dyke", "Eight Mile & Dequindre", "Fairgrounds", "Eight Mile & Coolidge", "Northland Dr  & Northwestern Hwy", "Eight Mile & Evergreen", "Seven Mile & Grand River"],
+          "stops": ["41", "245", "63", "247", "248", "249", "251", "10326", "253", "236"],
           "trips": [{
             "trip_id": "0903",
             "timepoints": ["5:05am", "\u2013", "5:21am", "5:30am", "5:39am", "5:50am", "6:02am", "6:08am", "6:15am", "6:24am"]
@@ -4428,7 +4428,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["Seven Mile & Grand River", "Eight Mile & Evergreen", "Northland Dr & Northwestern Hwy", "Eight Mile & Schaefer", "Fairgrounds", "Eight Mile & Dequindre", "Eight Mile & Gratiot", "Eastland Center", "Moross & Mack"],
+          "stops": ["236", "238", "10325", "240", "242", "243", "62", "245", "40"],
           "trips": [{
             "trip_id": "0947",
             "timepoints": ["5:45am", "5:54am", "6:01am", "6:06am", "6:19am", "6:28am", "6:48am", "\u2013", "7:05am"]
@@ -4489,7 +4489,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Moross & Mack", "Eastland Center", "Eight Mile & Gratiot", "Eight Mile & Van Dyke", "Eight Mile & Dequindre", "Fairgrounds", "Eight Mile & Coolidge", "Northland Dr  & Northwestern Hwy", "Eight Mile & Evergreen", "Seven Mile & Grand River"],
+          "stops": ["41", "245", "63", "247", "248", "249", "251", "10326", "253", "236"],
           "trips": [{
             "trip_id": "0966",
             "timepoints": ["5:45am", "\u2013", "6:02am", "6:10am", "6:19am", "6:31am", "6:42am", "6:48am", "6:56am", "7:05am"]
@@ -4568,7 +4568,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["Fenkell & Dale", "Fenkell & Southfield", "Fenkell & Schaefer", "Fenkell & Dexter", "Fourteenth & Oakman", "Fourteenth & West Grand Blvd", "Fourteenth & Grand River", "Fourteeth & Fisher Fwy", "Rosa Parks Transit Bay 3"],
+          "stops": ["256", "258", "260", "262", "263", "265", "266", "267", "8928"],
           "trips": [{
             "trip_id": "0968",
             "timepoints": ["5:10am", "5:19am", "5:26am", "5:34am", "5:39am", "5:48am", "5:53am", "5:56am", "6:04am"]
@@ -4659,7 +4659,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Rosa Parks Transit Bay 3", "Rosa Parks Blvd. & Fisher Fwy.", "Rosa Parks Blvd. & Grand River", "Rosa Parks Blvd. & W.Grand Blvd.", "ROSA PARKS BLVD & GRAND", "Rosa Parks Blvd. & Oakman Blvd.", "Fenkell & Dexter", "Fenkell & Schaefer", "Fenkell & Southfield", "Fenkell & Dale"],
+          "stops": ["8928", "272", "273", "274", "3377", "276", "277", "279", "286", "288"],
           "trips": [{
             "trip_id": "1011",
             "timepoints": ["5:54am", "6:00am", "6:06am", "6:13am", "6:21am", "6:22am", "6:26am", "6:35am", "6:43am", "6:53am"]
@@ -4755,7 +4755,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["Fenkell & Dale", "Fenkell & Southfield", "Fenkell & Schaefer", "Fenkell & Dexter", "Fourteenth & Oakman", "Fourteenth & West Grand Blvd", "Fourteenth & Grand River", "Fourteeth & Fisher Fwy", "Rosa Parks Transit Bay 3"],
+          "stops": ["256", "258", "260", "262", "263", "265", "266", "267", "8928"],
           "trips": [{
             "trip_id": "1038",
             "timepoints": ["6:00am", "6:08am", "6:15am", "6:22am", "6:27am", "6:36am", "6:41am", "6:45am", "6:52am"]
@@ -4819,7 +4819,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Rosa Parks Transit Bay 3", "Rosa Parks Blvd. & Fisher Fwy.", "Rosa Parks Blvd. & Grand River", "Rosa Parks Blvd. & W.Grand Blvd.", "ROSA PARKS BLVD & GRAND", "Rosa Parks Blvd. & Oakman Blvd.", "Fenkell & Dexter", "Fenkell & Schaefer", "Fenkell & Southfield", "Fenkell & Dale"],
+          "stops": ["8928", "272", "273", "274", "3377", "276", "277", "279", "286", "288"],
           "trips": [{
             "trip_id": "1058",
             "timepoints": ["6:00am", "6:07am", "6:11am", "6:18am", "6:24am", "6:25am", "6:28am", "6:35am", "6:42am", "6:52am"]
@@ -4882,7 +4882,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["Fenkell & Dale", "Fenkell & Southfield", "Fenkell & Schaefer", "Fenkell & Dexter", "Fourteenth & Oakman", "Fourteenth & West Grand Blvd", "Fourteenth & Grand River", "Fourteeth & Fisher Fwy", "Rosa Parks Transit Bay 3"],
+          "stops": ["256", "258", "260", "262", "263", "265", "266", "267", "8928"],
           "trips": [{
             "trip_id": "1066",
             "timepoints": ["7:41am", "7:49am", "7:55am", "8:02am", "8:06am", "8:14am", "8:19am", "8:22am", "8:28am"]
@@ -4925,7 +4925,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Rosa Parks Transit Bay 3", "Rosa Parks Blvd. & Fisher Fwy.", "Rosa Parks Blvd. & Grand River", "Rosa Parks Blvd. & W.Grand Blvd.", "ROSA PARKS BLVD & GRAND", "Rosa Parks Blvd. & Oakman Blvd.", "Fenkell & Dexter", "Fenkell & Schaefer", "Fenkell & Southfield", "Fenkell & Dale"],
+          "stops": ["8928", "272", "273", "274", "3377", "276", "277", "279", "286", "288"],
           "trips": [{
             "trip_id": "1079",
             "timepoints": ["7:40am", "7:46am", "7:50am", "7:57am", "8:03am", "8:04am", "8:07am", "8:14am", "8:20am", "8:28am"]
@@ -4986,7 +4986,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["ROSA PARKS TRANSIT 19", "Fort & Rosa Park", "FORT & CLARK", "FORT & LIVERNOIS", "Fort & Schaefer", "Fort & West Outer Drive"],
+          "stops": ["8891", "290", "291", "2558", "294", "295"],
           "trips": [{
             "trip_id": "1101",
             "timepoints": ["4:00am", "4:05am", "4:09am", "4:12am", "4:21am", "4:25am"]
@@ -5101,7 +5101,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Fort & West Outer Drive", "Fort & Schaefer", "FORT & LIVERNOIS", "Fort & Clark", "Fort & Rosa Parks Blvd.", "ROSA PARKS TRANSIT 19"],
+          "stops": ["298", "299", "2561", "302", "303", "8891"],
           "trips": [{
             "trip_id": "1138",
             "timepoints": ["4:30am", "4:33am", "4:41am", "4:44am", "4:47am", "4:55am"]
@@ -5215,7 +5215,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["ROSA PARKS TRANSIT 19", "Fort & Rosa Park", "FORT & CLARK", "FORT & LIVERNOIS", "Fort & Schaefer", "Fort & West Outer Drive"],
+          "stops": ["8891", "290", "291", "2558", "294", "295"],
           "trips": [{
             "trip_id": "1164",
             "timepoints": ["5:00am", "5:05am", "5:08am", "5:11am", "5:20am", "5:24am"]
@@ -5297,7 +5297,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Fort & West Outer Drive", "Fort & Schaefer", "FORT & LIVERNOIS", "Fort & Clark", "Fort & Rosa Parks Blvd.", "ROSA PARKS TRANSIT 19"],
+          "stops": ["298", "299", "2561", "302", "303", "8891"],
           "trips": [{
             "trip_id": "1190",
             "timepoints": ["5:32am", "5:35am", "5:43am", "5:46am", "5:49am", "5:57am"]
@@ -5378,7 +5378,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["ROSA PARKS TRANSIT 19", "Fort & Rosa Park", "FORT & CLARK", "FORT & LIVERNOIS", "Fort & Schaefer", "Fort & West Outer Drive"],
+          "stops": ["8891", "290", "291", "2558", "294", "295"],
           "trips": [{
             "trip_id": "1215",
             "timepoints": ["5:03am", "5:07am", "5:10am", "5:13am", "5:22am", "5:26am"]
@@ -5445,7 +5445,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Fort & West Outer Drive", "Fort & Schaefer", "FORT & LIVERNOIS", "Fort & Clark", "Fort & Rosa Parks Blvd.", "ROSA PARKS TRANSIT 19"],
+          "stops": ["298", "299", "2561", "302", "303", "8891"],
           "trips": [{
             "trip_id": "1236",
             "timepoints": ["5:35am", "5:39am", "5:47am", "5:50am", "5:53am", "6:00am"]
@@ -5528,7 +5528,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["Grand River & Seven Mile (Grandview", "Grand River & McNichols (nearside)", "Grand River & Southfield", "Grand River & Schaefer", "Grand River & Wyoming", "Grand River & Oakman", "Grand River & Scotten", "Grand River & Warren", "Grand River & Fisher Ser. Dr.", "ROSA PARKS TRANSIT 21EB"],
+          "stops": ["324", "325", "328", "330", "331", "332", "334", "335", "337", "9972"],
           "trips": [{
             "trip_id": "1334",
             "timepoints": ["4:00am", "4:06am", "4:13am", "4:21am", "4:25am", "4:27am", "4:36am", "4:40am", "4:47am", "4:51am"]
@@ -5784,7 +5784,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["ROSA PARKS TRANSIT 21EB", "Grand River & Fisher Ser. Dr.", "Grand River & Warren", "Grand River & West Grand Blvd", "Grand River & Oakman", "Grand River & Wyoming", "Grand River & Schaefer", "Grand River & Southfield", "Grand River & McNichols", "Grand River & Seven Mile (Grandview"],
+          "stops": ["9972", "344", "346", "347", "349", "350", "351", "353", "356", "324"],
           "trips": [{
             "trip_id": "1385",
             "timepoints": ["4:00am", "4:03am", "4:09am", "4:13am", "4:21am", "4:23am", "4:27am", "4:36am", "4:43am", "4:50am"]
@@ -6051,7 +6051,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["Grand River & Seven Mile (Grandview", "Grand River & McNichols (nearside)", "Grand River & Southfield", "Grand River & Schaefer", "Grand River & Wyoming", "Grand River & Oakman", "Grand River & Scotten", "Grand River & Warren", "Grand River & Fisher Ser. Dr.", "ROSA PARKS TRANSIT 21EB"],
+          "stops": ["324", "325", "328", "330", "331", "332", "334", "335", "337", "9972"],
           "trips": [{
             "trip_id": "1475",
             "timepoints": ["4:00am", "4:05am", "4:13am", "4:20am", "4:24am", "4:26am", "4:34am", "4:38am", "4:43am", "4:47am"]
@@ -6205,7 +6205,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["ROSA PARKS TRANSIT 21EB", "Grand River & Fisher Ser. Dr.", "Grand River & Warren", "Grand River & West Grand Blvd", "Grand River & Oakman", "Grand River & Wyoming", "Grand River & Schaefer", "Grand River & Southfield", "Grand River & McNichols", "Grand River & Seven Mile (Grandview"],
+          "stops": ["9972", "344", "346", "347", "349", "350", "351", "353", "356", "324"],
           "trips": [{
             "trip_id": "1524",
             "timepoints": ["4:00am", "4:03am", "4:08am", "4:12am", "4:20am", "4:21am", "4:25am", "4:33am", "4:41am", "4:47am"]
@@ -6358,7 +6358,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["Grand River & Seven Mile (Grandview", "Grand River & McNichols (nearside)", "Grand River & Southfield", "Grand River & Schaefer", "Grand River & Wyoming", "Grand River & Oakman", "Grand River & Scotten", "Grand River & Warren", "Grand River & Fisher Ser. Dr.", "ROSA PARKS TRANSIT 21EB"],
+          "stops": ["324", "325", "328", "330", "331", "332", "334", "335", "337", "9972"],
           "trips": [{
             "trip_id": "1530",
             "timepoints": ["4:00am", "4:05am", "4:15am", "4:24am", "4:27am", "4:30am", "4:39am", "4:43am", "4:47am", "4:52am"]
@@ -6476,7 +6476,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["ROSA PARKS TRANSIT 21EB", "Grand River & Fisher Ser. Dr.", "Grand River & Warren", "Grand River & West Grand Blvd", "Grand River & Oakman", "Grand River & Wyoming", "Grand River & Schaefer", "Grand River & Southfield", "Grand River & McNichols", "Grand River & Seven Mile (Grandview"],
+          "stops": ["9972", "344", "346", "347", "349", "350", "351", "353", "356", "324"],
           "trips": [{
             "trip_id": "1568",
             "timepoints": ["4:00am", "4:04am", "4:09am", "4:13am", "4:23am", "4:26am", "4:29am", "4:38am", "4:46am", "4:52am"]
@@ -6613,7 +6613,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "northbound": {
-          "stops": ["Providence Hospital", "Northland Dr & Northwestern Hwy", "Greenfield & McNichols", "Greenfield & Grand River", "Greenfield & Plymouth", "Greenfield & Warren", "Michigan & Greenfield"],
+          "stops": ["210", "10325", "358", "359", "361", "363", "600"],
           "trips": [{
             "trip_id": "5879",
             "timepoints": ["4:29am", "4:34am", "4:42am", "4:47am", "4:52am", "5:00am", "5:06am"]
@@ -6812,7 +6812,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Fairlane Town Center", "Greenfield & Michigan", "Greenfield & Warren", "Greenfield & Plymouth", "Greenfield & Grand River", "Greenfield & McNichols", "Northland Dr  & Northwestern Hwy", "Providence Hospital"],
+          "stops": ["368", "372", "374", "376", "378", "379", "10326", "210"],
           "trips": [{
             "trip_id": "1726",
             "timepoints": ["\u2013", "4:22am", "4:27am", "4:35am", "4:41am", "4:46am", "4:55am", "5:00am"]
@@ -7010,7 +7010,7 @@ const Schedules = {
       },
       "saturday": {
         "northbound": {
-          "stops": ["Providence Hospital", "Northland Dr & Northwestern Hwy", "Greenfield & McNichols", "Greenfield & Grand River", "Greenfield & Plymouth", "Greenfield & Warren", "Michigan & Greenfield"],
+          "stops": ["210", "10325", "358", "359", "361", "363", "600"],
           "trips": [{
             "trip_id": "1771",
             "timepoints": ["5:13am", "5:18am", "5:26am", "5:31am", "5:36am", "5:44am", "5:49am"]
@@ -7149,7 +7149,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Fairlane Town Center", "Greenfield & Michigan", "Greenfield & Warren", "Greenfield & Plymouth", "Greenfield & Grand River", "Greenfield & McNichols", "Northland Dr  & Northwestern Hwy", "Providence Hospital"],
+          "stops": ["368", "372", "374", "376", "378", "379", "10326", "210"],
           "trips": [{
             "trip_id": "1814",
             "timepoints": ["\u2013", "5:20am", "5:25am", "5:33am", "5:38am", "5:43am", "5:52am", "5:57am"]
@@ -7293,7 +7293,7 @@ const Schedules = {
       },
       "sunday": {
         "northbound": {
-          "stops": ["Providence Hospital", "Northland Dr & Northwestern Hwy", "Greenfield & McNichols", "Greenfield & Grand River", "Greenfield & Plymouth", "Greenfield & Warren", "Michigan & Greenfield"],
+          "stops": ["210", "10325", "358", "359", "361", "363", "600"],
           "trips": [{
             "trip_id": "6206",
             "timepoints": ["6:08am", "6:12am", "6:20am", "6:25am", "6:29am", "6:37am", "6:42am"]
@@ -7381,7 +7381,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Fairlane Town Center", "Greenfield & Michigan", "Greenfield & Warren", "Greenfield & Plymouth", "Greenfield & Grand River", "Greenfield & McNichols", "Northland Dr  & Northwestern Hwy", "Providence Hospital"],
+          "stops": ["368", "372", "374", "376", "378", "379", "10326", "210"],
           "trips": [{
             "trip_id": "6201",
             "timepoints": ["6:15am", "6:23am", "6:28am", "6:36am", "6:41am", "6:46am", "6:54am", "6:58am"]
@@ -7487,7 +7487,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["ROSA PARKS TRANSIT 23 SB", "Anthony Wayne Drive & Warren", "Second & West Grand Blvd", "J.C.Lodge & Clairmount", "Hamilton & Six Mile", "JOHN R. & E.AST 7 MILE", "MEIJER GATEWAY"],
+          "stops": ["8933", "9474", "401", "402", "403", "9658", "10145"],
           "trips": [{
             "trip_id": "6550",
             "timepoints": ["5:45am", "5:55am", "5:59am", "6:03am", "6:14am", "6:20am", "6:28am"]
@@ -7563,7 +7563,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["JOHN R. & WEST 7 MILE", "Hamilton & Six Mile", "J.C.Lodge & Clairmount", "3RD & WEST GRAND BLVD", "Anthony Wayne Drive &  Warren", "ROSA PARKS TRANSIT 23 SB"],
+          "stops": ["9690", "386", "387", "10339", "9475", "8933"],
           "trips": [{
             "trip_id": "6824",
             "timepoints": ["5:37am", "5:43am", "5:54am", "5:59am", "6:03am", "6:13am"]
@@ -7644,7 +7644,7 @@ const Schedules = {
       },
       "saturday": {
         "southbound": {
-          "stops": ["ROSA PARKS TRANSIT 23 SB", "Anthony Wayne Drive & Warren", "Second & West Grand Blvd", "J.C.Lodge & Clairmount", "Hamilton & Six Mile", "JOHN R. & E.AST 7 MILE", "MEIJER GATEWAY"],
+          "stops": ["8933", "9474", "401", "402", "403", "9658", "10145"],
           "trips": [{
             "trip_id": "6601",
             "timepoints": ["7:00am", "7:10am", "7:14am", "7:18am", "7:28am", "7:34am", "7:42am"]
@@ -7693,7 +7693,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["JOHN R. & WEST 7 MILE", "Hamilton & Six Mile", "J.C.Lodge & Clairmount", "3RD & WEST GRAND BLVD", "Anthony Wayne Drive &  Warren", "ROSA PARKS TRANSIT 23 SB"],
+          "stops": ["9690", "386", "387", "10339", "9475", "8933"],
           "trips": [{
             "trip_id": "6616",
             "timepoints": ["7:08am", "7:14am", "7:24am", "7:29am", "7:33am", "7:43am"]
@@ -7744,7 +7744,7 @@ const Schedules = {
       },
       "sunday": {
         "southbound": {
-          "stops": ["ROSA PARKS TRANSIT 23 SB", "Anthony Wayne Drive & Warren", "Second & West Grand Blvd", "J.C.Lodge & Clairmount", "Hamilton & Six Mile", "JOHN R. & E.AST 7 MILE", "MEIJER GATEWAY"],
+          "stops": ["8933", "9474", "401", "402", "403", "9658", "10145"],
           "trips": [{
             "trip_id": "6631",
             "timepoints": ["7:00am", "7:10am", "7:14am", "7:18am", "7:28am", "7:34am", "7:42am"]
@@ -7790,7 +7790,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["JOHN R. & WEST 7 MILE", "Hamilton & Six Mile", "J.C.Lodge & Clairmount", "3RD & WEST GRAND BLVD", "Anthony Wayne Drive &  Warren", "ROSA PARKS TRANSIT 23 SB"],
+          "stops": ["9690", "386", "387", "10339", "9475", "8933"],
           "trips": [{
             "trip_id": "6645",
             "timepoints": ["7:08am", "7:14am", "7:24am", "7:29am", "7:33am", "7:43am"]
@@ -7854,7 +7854,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["ROSA PARKS TRANSIT 25", "Jefferson & St Antoine", "Jefferson & E. Grand Blvd", "Jefferson & St. Jean", "Jefferson & Dickerson", "Jefferson and Maryland"],
+          "stops": ["9970", "9021", "420", "421", "422", "10178"],
           "trips": [{
             "trip_id": "1980",
             "timepoints": ["4:15am", "4:21am", "4:28am", "4:36am", "4:39am", "4:43am"]
@@ -8047,7 +8047,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Jefferson and Maryland", "Jefferson & Dickerson", "Jefferson & St. Jean", "Jefferson & E. Grand Blvd", "Jefferson & St Antoine", "ROSA PARKS TRANSIT 25"],
+          "stops": ["10178", "425", "426", "427", "341", "9970"],
           "trips": [{
             "trip_id": "2045",
             "timepoints": ["4:10am", "4:13am", "4:16am", "4:24am", "4:32am", "4:38am"]
@@ -8242,7 +8242,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["ROSA PARKS TRANSIT 25", "Jefferson & St Antoine", "Jefferson & E. Grand Blvd", "Jefferson & St. Jean", "Jefferson & Dickerson", "Jefferson and Maryland"],
+          "stops": ["9970", "9021", "420", "421", "422", "10178"],
           "trips": [{
             "trip_id": "2127",
             "timepoints": ["4:30am", "4:35am", "4:42am", "4:49am", "4:53am", "4:56am"]
@@ -8375,7 +8375,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Jefferson and Maryland", "Jefferson & Dickerson", "Jefferson & St. Jean", "Jefferson & E. Grand Blvd", "Jefferson & St Antoine", "ROSA PARKS TRANSIT 25"],
+          "stops": ["10178", "425", "426", "427", "341", "9970"],
           "trips": [{
             "trip_id": "2180",
             "timepoints": ["4:00am", "4:03am", "4:06am", "4:13am", "4:20am", "4:25am"]
@@ -8513,7 +8513,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["ROSA PARKS TRANSIT 25", "Jefferson & St Antoine", "Jefferson & E. Grand Blvd", "Jefferson & St. Jean", "Jefferson & Dickerson", "Jefferson and Maryland"],
+          "stops": ["9970", "9021", "420", "421", "422", "10178"],
           "trips": [{
             "trip_id": "2224",
             "timepoints": ["4:00am", "4:05am", "4:11am", "4:18am", "4:22am", "4:26am"]
@@ -8616,7 +8616,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Jefferson and Maryland", "Jefferson & Dickerson", "Jefferson & St. Jean", "Jefferson & E. Grand Blvd", "Jefferson & St Antoine", "ROSA PARKS TRANSIT 25"],
+          "stops": ["10178", "425", "426", "427", "341", "9970"],
           "trips": [{
             "trip_id": "2257",
             "timepoints": ["4:32am", "4:35am", "4:39am", "4:46am", "4:52am", "4:57am"]
@@ -8737,7 +8737,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["Redford Plaza", "Joy Road & Spinoza", "Joy Rd & Greenfield", "Joy Road & Schaefer", "Joy Rd & Livernois", "Tireman & Beechwood", "Grand River & W.Grand Blvd", "W.Grand Blvd & Michigan", "Lafayette & Trumbull", "ROSA PARKS TRANSIT 27 EB"],
+          "stops": ["429", "432", "434", "435", "437", "438", "439", "441", "443", "8910"],
           "trips": [{
             "trip_id": "2266",
             "timepoints": ["5:21am", "5:27am", "5:37am", "5:41am", "5:49am", "5:55am", "5:57am", "6:06am", "6:17am", "6:22am"]
@@ -8819,7 +8819,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["ROSA PARKS TRANSIT 27 EB", "Lafayette & Trumbull", "W.Grand Blvd & Michigan", "West Grand Blvd & Grand River", "Beechwood & Tireman", "Joy Rd & Livernois", "Joy Road & Schaefer", "Joy Rd & Greenfield", "Joy Road & Spinoza", "Redford Plaza"],
+          "stops": ["8910", "444", "446", "737", "448", "449", "451", "452", "454", "429"],
           "trips": [{
             "trip_id": "2296",
             "timepoints": ["5:40am", "5:44am", "5:54am", "6:03am", "6:05am", "6:11am", "6:18am", "6:22am", "6:31am", "6:38am"]
@@ -8903,7 +8903,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["Redford Plaza", "Joy Road & Spinoza", "Joy Rd & Greenfield", "Joy Road & Schaefer", "Joy Rd & Livernois", "Tireman & Beechwood", "Grand River & W.Grand Blvd", "W.Grand Blvd & Michigan", "Lafayette & Trumbull", "ROSA PARKS TRANSIT 27 EB"],
+          "stops": ["429", "432", "434", "435", "437", "438", "439", "441", "443", "8910"],
           "trips": [{
             "trip_id": "7165",
             "timepoints": ["6:58am", "7:04am", "7:13am", "7:16am", "7:24am", "7:30am", "7:32am", "7:41am", "7:50am", "7:55am"]
@@ -8952,7 +8952,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["ROSA PARKS TRANSIT 27 EB", "Lafayette & Trumbull", "W.Grand Blvd & Michigan", "West Grand Blvd & Grand River", "Beechwood & Tireman", "Joy Rd & Livernois", "Joy Road & Schaefer", "Joy Rd & Greenfield", "Joy Road & Spinoza", "Redford Plaza"],
+          "stops": ["8910", "444", "446", "737", "448", "449", "451", "452", "454", "429"],
           "trips": [{
             "trip_id": "2323",
             "timepoints": ["6:40am", "6:44am", "6:53am", "7:02am", "7:04am", "7:09am", "7:15am", "7:18am", "7:27am", "7:33am"]
@@ -9006,7 +9006,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["Redford Plaza", "Joy Road & Spinoza", "Joy Rd & Greenfield", "Joy Road & Schaefer", "Joy Rd & Livernois", "Tireman & Beechwood", "Grand River & W.Grand Blvd", "W.Grand Blvd & Michigan", "Lafayette & Trumbull", "ROSA PARKS TRANSIT 27 EB"],
+          "stops": ["429", "432", "434", "435", "437", "438", "439", "441", "443", "8910"],
           "trips": [{
             "trip_id": "2339",
             "timepoints": ["\u2013", "7:01am", "7:10am", "7:13am", "7:20am", "7:26am", "7:28am", "7:37am", "7:46am", "7:51am"]
@@ -9049,7 +9049,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["ROSA PARKS TRANSIT 27 EB", "Lafayette & Trumbull", "W.Grand Blvd & Michigan", "West Grand Blvd & Grand River", "Beechwood & Tireman", "Joy Rd & Livernois", "Joy Road & Schaefer", "Joy Rd & Greenfield", "Joy Road & Spinoza", "Redford Plaza"],
+          "stops": ["8910", "444", "446", "737", "448", "449", "451", "452", "454", "429"],
           "trips": [{
             "trip_id": "2352",
             "timepoints": ["7:45am", "7:49am", "7:58am", "8:07am", "8:09am", "8:14am", "8:20am", "8:23am", "8:32am", "8:38am"]
@@ -9107,7 +9107,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["LIVERNOIS & FLORENCE", "Linwood & Fenkell", "Linwood & West Grand Blvd.", "Trumbull & Warren", "Trumbull & Michigan", "ROSA PARKS TRANSIT 29 SB"],
+          "stops": ["2781", "465", "467", "469", "470", "8912"],
           "trips": [{
             "trip_id": "2364",
             "timepoints": ["5:15am", "5:21am", "5:32am", "5:38am", "5:43am", "5:53am"]
@@ -9180,7 +9180,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["ROSA PARKS TRANSIT 29 SB", "Trumbull & Michigan", "Trumbull & Warren", "Linwood & West Grand Blvd.", "Linwood & Fenkell", "LIVERNOIS & FLORENCE"],
+          "stops": ["8912", "474", "475", "477", "479", "2781"],
           "trips": [{
             "trip_id": "2387",
             "timepoints": ["5:30am", "5:37am", "5:42am", "5:47am", "5:59am", "6:06am"]
@@ -9255,7 +9255,7 @@ const Schedules = {
       },
       "saturday": {
         "southbound": {
-          "stops": ["LIVERNOIS & FLORENCE", "Linwood & Fenkell", "Linwood & West Grand Blvd.", "Trumbull & Warren", "Trumbull & Michigan", "ROSA PARKS TRANSIT 29 SB"],
+          "stops": ["2781", "465", "467", "469", "470", "8912"],
           "trips": [{
             "trip_id": "2410",
             "timepoints": ["6:51am", "6:59am", "7:13am", "7:20am", "7:26am", "7:35am"]
@@ -9304,7 +9304,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["ROSA PARKS TRANSIT 29 SB", "Trumbull & Michigan", "Trumbull & Warren", "Linwood & West Grand Blvd.", "Linwood & Fenkell", "LIVERNOIS & FLORENCE"],
+          "stops": ["8912", "474", "475", "477", "479", "2781"],
           "trips": [{
             "trip_id": "2425",
             "timepoints": ["7:00am", "7:08am", "7:14am", "7:21am", "7:35am", "7:41am"]
@@ -9355,7 +9355,7 @@ const Schedules = {
       },
       "sunday": {
         "southbound": {
-          "stops": ["LIVERNOIS & FLORENCE", "Linwood & Fenkell", "Linwood & West Grand Blvd.", "Trumbull & Warren", "Trumbull & Michigan", "ROSA PARKS TRANSIT 29 SB"],
+          "stops": ["2781", "465", "467", "469", "470", "8912"],
           "trips": [{
             "trip_id": "2440",
             "timepoints": ["7:00am", "7:08am", "7:20am", "7:27am", "7:32am", "7:40am"]
@@ -9398,7 +9398,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["ROSA PARKS TRANSIT 29 SB", "Trumbull & Michigan", "Trumbull & Warren", "Linwood & West Grand Blvd.", "Linwood & Fenkell", "LIVERNOIS & FLORENCE"],
+          "stops": ["8912", "474", "475", "477", "479", "2781"],
           "trips": [{
             "trip_id": "2463",
             "timepoints": ["7:10am", "7:17am", "7:23am", "7:32am", "7:44am", "7:50am"]
@@ -9460,7 +9460,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["Fairgrounds", "Livernois & 8 Mile", "Livernois & McNichols", "Livernois & Ewald Cir", "Livernois & Grand River", "Livernois & Warren", "Livernois & Michigan", "W Jefferson & Livernois", "Brennan Loop"],
+          "stops": ["127", "481", "8987", "482", "483", "484", "486", "487", "488"],
           "trips": [{
             "trip_id": "2466",
             "timepoints": ["\u2013", "6:00am", "6:08am", "6:15am", "6:23am", "6:29am", "6:34am", "6:43am", "6:51am"]
@@ -9524,7 +9524,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Brennan Loop", "Dragoon & W Jefferson", "Livernois & Michigan", "Livernois & Warren", "Livernois & Grand River", "Livernois & Ewald Cir", "Livernois & McNichols", "Livernois & 8 Mile", "Fairgrounds"],
+          "stops": ["488", "490", "491", "493", "494", "495", "230", "496", "127"],
           "trips": [{
             "trip_id": "2501",
             "timepoints": ["5:48am", "5:53am", "6:01am", "6:05am", "6:12am", "6:19am", "6:27am", "6:35am", "\u2013"]
@@ -9593,7 +9593,7 @@ const Schedules = {
       },
       "saturday": {
         "southbound": {
-          "stops": ["Fairgrounds", "Livernois & 8 Mile", "Livernois & McNichols", "Livernois & Ewald Cir", "Livernois & Grand River", "Livernois & Warren", "Livernois & Michigan", "W Jefferson & Livernois", "Brennan Loop"],
+          "stops": ["127", "481", "8987", "482", "483", "484", "486", "487", "488"],
           "trips": [{
             "trip_id": "2521",
             "timepoints": ["6:57am", "7:01am", "7:07am", "7:13am", "7:20am", "7:25am", "7:29am", "7:37am", "7:44am"]
@@ -9642,7 +9642,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Brennan Loop", "Dragoon & W Jefferson", "Livernois & Michigan", "Livernois & Warren", "Livernois & Grand River", "Livernois & Ewald Cir", "Livernois & McNichols", "Livernois & 8 Mile", "Fairgrounds"],
+          "stops": ["488", "490", "491", "493", "494", "495", "230", "496", "127"],
           "trips": [{
             "trip_id": "2522",
             "timepoints": ["6:57am", "7:02am", "7:10am", "7:14am", "7:20am", "7:26am", "7:32am", "7:39am", "7:43am"]
@@ -9693,7 +9693,7 @@ const Schedules = {
       },
       "sunday": {
         "southbound": {
-          "stops": ["Fairgrounds", "Livernois & 8 Mile", "Livernois & McNichols", "Livernois & Ewald Cir", "Livernois & Grand River", "Livernois & Warren", "Livernois & Michigan", "W Jefferson & Livernois", "Brennan Loop"],
+          "stops": ["127", "481", "8987", "482", "483", "484", "486", "487", "488"],
           "trips": [{
             "trip_id": "2537",
             "timepoints": ["7:00am", "7:04am", "7:10am", "7:16am", "7:23am", "7:28am", "7:32am", "7:39am", "7:45am"]
@@ -9736,7 +9736,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Brennan Loop", "Dragoon & W Jefferson", "Livernois & Michigan", "Livernois & Warren", "Livernois & Grand River", "Livernois & Ewald Cir", "Livernois & McNichols", "Livernois & 8 Mile", "Fairgrounds"],
+          "stops": ["488", "490", "491", "493", "494", "495", "230", "496", "127"],
           "trips": [{
             "trip_id": "2550",
             "timepoints": ["7:00am", "7:05am", "7:13am", "7:17am", "7:23am", "7:29am", "7:34am", "7:41am", "7:45am"]
@@ -9797,7 +9797,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "westbound": {
-          "stops": ["Moross & Mack", "Mack & Cadieux", "Mack & Alter", "Mack & Conner", "MACK & VAN DYKE", "Mack & Gratiot", "Mack & John R", "ROSA PARKS TRANSIT 31 WB"],
+          "stops": ["41", "497", "498", "499", "6334", "502", "1616", "8918"],
           "trips": [{
             "trip_id": "2584",
             "timepoints": ["4:47am", "4:55am", "5:00am", "5:04am", "5:11am", "5:15am", "5:22am", "5:30am"]
@@ -9918,7 +9918,7 @@ const Schedules = {
           }]
         },
         "eastbound": {
-          "stops": ["ROSA PARKS TRANSIT 31 WB", "Mack & Woodward", "Mack & Gratiot", "MACK & VAN DYKE", "Mack & Conner", "Mack & Alter", "Mack & Cadieux", "Moross & Mack"],
+          "stops": ["8918", "21", "505", "6336", "508", "509", "510", "41"],
           "trips": [{
             "trip_id": "2621",
             "timepoints": ["5:00am", "5:08am", "5:14am", "5:19am", "5:26am", "5:30am", "5:35am", "5:42am"]
@@ -10041,7 +10041,7 @@ const Schedules = {
       },
       "saturday": {
         "westbound": {
-          "stops": ["Moross & Mack", "Mack & Cadieux", "Mack & Alter", "Mack & Conner", "MACK & VAN DYKE", "Mack & Gratiot", "Mack & John R", "ROSA PARKS TRANSIT 31 WB"],
+          "stops": ["41", "497", "498", "499", "6334", "502", "1616", "8918"],
           "trips": [{
             "trip_id": "2649",
             "timepoints": ["5:39am", "5:47am", "5:52am", "5:56am", "6:03am", "6:07am", "6:13am", "6:21am"]
@@ -10126,7 +10126,7 @@ const Schedules = {
           }]
         },
         "eastbound": {
-          "stops": ["ROSA PARKS TRANSIT 31 WB", "Mack & Woodward", "Mack & Gratiot", "MACK & VAN DYKE", "Mack & Conner", "Mack & Alter", "Mack & Cadieux", "Moross & Mack"],
+          "stops": ["8918", "21", "505", "6336", "508", "509", "510", "41"],
           "trips": [{
             "trip_id": "2675",
             "timepoints": ["5:50am", "5:58am", "6:04am", "6:08am", "6:15am", "6:19am", "6:24am", "6:31am"]
@@ -10219,7 +10219,7 @@ const Schedules = {
       },
       "sunday": {
         "westbound": {
-          "stops": ["Moross & Mack", "Mack & Cadieux", "Mack & Alter", "Mack & Conner", "MACK & VAN DYKE", "Mack & Gratiot", "Mack & John R", "ROSA PARKS TRANSIT 31 WB"],
+          "stops": ["41", "497", "498", "499", "6334", "502", "1616", "8918"],
           "trips": [{
             "trip_id": "2697",
             "timepoints": ["6:40am", "6:46am", "6:51am", "6:55am", "7:02am", "7:06am", "7:12am", "7:20am"]
@@ -10274,7 +10274,7 @@ const Schedules = {
           }]
         },
         "eastbound": {
-          "stops": ["ROSA PARKS TRANSIT 31 WB", "Mack & Woodward", "Mack & Gratiot", "MACK & VAN DYKE", "Mack & Conner", "Mack & Alter", "Mack & Cadieux", "Moross & Mack"],
+          "stops": ["8918", "21", "505", "6336", "508", "509", "510", "41"],
           "trips": [{
             "trip_id": "2714",
             "timepoints": ["6:45am", "6:52am", "6:58am", "7:02am", "7:09am", "7:12am", "7:17am", "7:24am"]
@@ -10348,7 +10348,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["Mc Nichols & Telegraph", "MC NICHOLS & EVERGREEN", "McNichols & Schaefer", "McNichols & Livernois", "McNichols & Woodward", "McNichols & Van Dyke", "Seymour & Gratiot", "Mack & Cadieux", "Moross & Mack"],
+          "stops": ["9860", "7230", "514", "515", "517", "519", "524", "510", "41"],
           "trips": [{
             "trip_id": "2746",
             "timepoints": ["4:55am", "5:01am", "5:12am", "5:20am", "5:26am", "5:43am", "5:56am", "6:15am", "\u2013"]
@@ -10448,7 +10448,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Moross & Mack", "Cadieux & Mack", "McNichols & Gratiot", "McNichols & Van Dyke", "McNichols & Woodward", "McNichols & Livernois", "McNichols & Schaefer", "Mc Nichols & Telegraph"],
+          "stops": ["41", "527", "529", "534", "536", "538", "539", "9860"],
           "trips": [{
             "trip_id": "2778",
             "timepoints": ["\u2013", "4:43am", "4:59am", "5:13am", "5:30am", "5:37am", "5:44am", "6:05am"]
@@ -10550,7 +10550,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["MC NICHOLS & EVERGREEN", "McNichols & Schaefer", "McNichols & Livernois", "McNichols & Woodward", "McNichols & Van Dyke", "Seymour & Gratiot", "Mack & Cadieux", "Moross & Mack"],
+          "stops": ["7230", "514", "515", "517", "519", "524", "510", "41"],
           "trips": [{
             "trip_id": "2795",
             "timepoints": ["5:49am", "5:59am", "6:06am", "6:12am", "6:27am", "6:40am", "6:59am", "\u2013"]
@@ -10629,7 +10629,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Moross & Mack", "Cadieux & Mack", "McNichols & Gratiot", "McNichols & Van Dyke", "McNichols & Woodward", "McNichols & Livernois", "McNichols & Schaefer", "MEIJER OLD REDFORD"],
+          "stops": ["41", "527", "529", "534", "536", "538", "539", "10157"],
           "trips": [{
             "trip_id": "2823",
             "timepoints": ["\u2013", "5:46am", "6:02am", "6:15am", "6:31am", "6:37am", "6:44am", "6:59am"]
@@ -10707,7 +10707,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["MC NICHOLS & EVERGREEN", "McNichols & Schaefer", "McNichols & Livernois", "McNichols & Woodward", "McNichols & Van Dyke", "Seymour & Gratiot", "Mack & Cadieux"],
+          "stops": ["7230", "514", "515", "517", "519", "524", "510"],
           "trips": [{
             "trip_id": "2844",
             "timepoints": ["7:04am", "7:14am", "7:21am", "7:27am", "7:42am", "7:55am", "8:13am"]
@@ -10756,7 +10756,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Cadieux & Mack", "McNichols & Gratiot", "McNichols & Van Dyke", "McNichols & Woodward", "McNichols & Livernois", "McNichols & Schaefer", "MEIJER OLD REDFORD"],
+          "stops": ["527", "529", "534", "536", "538", "539", "10157"],
           "trips": [{
             "trip_id": "2873",
             "timepoints": ["6:30am", "6:46am", "6:59am", "7:14am", "7:20am", "7:27am", "7:42am"]
@@ -10823,7 +10823,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "northbound": {
-          "stops": ["3rd & Michigan", "Rosa Parks TC", "Gratiot\n& Russell", "Gratiot & E Grand", "Gratiot & Harper", "Gratiot & Outer Dr", "Gratiot & 7 Mile", "8 Mile & Gratiot"],
+          "stops": ["9963", "8942", "167", "547", "549", "550", "552", "62"],
           "trips": [{
             "trip_id": "2927",
             "timepoints": ["3:58am", "4:00am", "4:09am", "4:16am", "4:21am", "4:24am", "4:33am", "4:36am"]
@@ -11079,7 +11079,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Gratiot & East Eight Mile", "Gratiot & East Seven Mile", "Gratiot & East Outer Dr", "Gratiot & Harper (I-94)", "Gratiot & East Grand Blvd.", "Gratiot & Russell", "Third & Michigan"],
+          "stops": ["554", "555", "557", "558", "178", "179", "9963"],
           "trips": [{
             "trip_id": "3012",
             "timepoints": ["4:16am", "4:20am", "4:27am", "4:30am", "4:36am", "4:43am", "4:52am"]
@@ -11337,7 +11337,7 @@ const Schedules = {
       },
       "saturday": {
         "northbound": {
-          "stops": ["3rd & Michigan", "Rosa Parks TC", "Gratiot & Russell", "Gratiot & E Grand", "Gratiot & Harper", "Gratiot & Outer Dr", "Gratiot & 7 Mile", "8 Mile & Gratiot"],
+          "stops": ["9963", "8942", "167", "547", "549", "550", "552", "62"],
           "trips": [{
             "trip_id": "3098",
             "timepoints": ["3:58am", "4:00am", "4:09am", "4:16am", "4:21am", "4:24am", "4:33am", "4:36am"]
@@ -11533,7 +11533,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Gratiot & East Eight Mile", "Gratiot & East Seven Mile", "Gratiot & East Outer Dr", "Gratiot & Harper (I-94)", "Gratiot & East Grand Blvd.", "Gratiot & Russell", "Third & Michigan"],
+          "stops": ["554", "555", "557", "558", "178", "179", "9963"],
           "trips": [{
             "trip_id": "3165",
             "timepoints": ["4:00am", "4:04am", "4:11am", "4:14am", "4:20am", "4:27am", "4:36am"]
@@ -11740,7 +11740,7 @@ const Schedules = {
       },
       "sunday": {
         "northbound": {
-          "stops": ["3rd & Michigan", "Rosa Parks TC", "Gratiot & Russell", "Gratiot & E Grand", "Gratiot & Harper", "Gratiot & Outer Dr", "Gratiot & 7 Mile", "8 Mile & Gratiot"],
+          "stops": ["9963", "8942", "167", "547", "549", "550", "552", "62"],
           "trips": [{
             "trip_id": "3173",
             "timepoints": ["3:58am", "4:00am", "4:09am", "4:16am", "4:21am", "4:24am", "4:32am", "4:35am"]
@@ -11870,7 +11870,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Gratiot & East Eight Mile", "Gratiot & East Seven Mile", "Gratiot & East Outer Dr", "Gratiot & Harper (I-94)", "Gratiot & East Grand Blvd.", "Gratiot & Russell", "Third & Michigan"],
+          "stops": ["554", "555", "557", "558", "178", "179", "9963"],
           "trips": [{
             "trip_id": "3256",
             "timepoints": ["3:51am", "3:55am", "4:02am", "4:05am", "4:11am", "4:18am", "4:27am"]
@@ -12018,7 +12018,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["Fairlane Town Center", "Michigan & Schaefer", "Michigan & Wyoming", "Michigan & Livernois", "Michigan & 14th", "ROSA PARKS TRANSIT 37 EB"],
+          "stops": ["368", "6578", "2287", "591", "1489", "8945"],
           "trips": [{
             "trip_id": "3299",
             "timepoints": ["\u2013", "\u2013", "4:32am", "4:39am", "4:46am", "4:53am"]
@@ -12178,7 +12178,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["ROSA PARKS TRANSIT 37 EB", "Michigan & 14th", "Michigan & Livernois", "Michigan & Wyoming", "MICHIGAN & SCHAEFER", "Fairlane Town Center"],
+          "stops": ["8945", "1490", "599", "9040", "6577", "368"],
           "trips": [{
             "trip_id": "3351",
             "timepoints": ["4:00am", "4:06am", "4:14am", "4:20am", "\u2013", "\u2013"]
@@ -12340,7 +12340,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["Fairlane Town Center", "Michigan & Schaefer", "Michigan & Wyoming", "Michigan & Livernois", "Michigan & 14th", "ROSA PARKS TRANSIT 37 EB"],
+          "stops": ["368", "6578", "2287", "591", "1489", "8945"],
           "trips": [{
             "trip_id": "3386",
             "timepoints": ["\u2013", "\u2013", "4:28am", "4:34am", "4:41am", "4:48am"]
@@ -12464,7 +12464,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["ROSA PARKS TRANSIT 37 EB", "Michigan & 14th", "Michigan & Livernois", "Michigan & Wyoming", "MICHIGAN & SCHAEFER", "Fairlane Town Center"],
+          "stops": ["8945", "1490", "599", "9040", "6577", "368"],
           "trips": [{
             "trip_id": "3428",
             "timepoints": ["4:00am", "4:06am", "4:13am", "4:19am", "\u2013", "\u2013"]
@@ -12593,7 +12593,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["Fairlane Town Center", "Michigan & Schaefer", "Michigan & Wyoming", "Michigan & Livernois", "Michigan & 14th", "ROSA PARKS TRANSIT 37 EB"],
+          "stops": ["368", "6578", "2287", "591", "1489", "8945"],
           "trips": [{
             "trip_id": "3457",
             "timepoints": ["\u2013", "\u2013", "4:25am", "4:30am", "4:36am", "4:43am"]
@@ -12702,7 +12702,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["ROSA PARKS TRANSIT 37 EB", "Michigan & 14th", "Michigan & Livernois", "Michigan & Wyoming", "MICHIGAN & SCHAEFER", "Fairlane Town Center"],
+          "stops": ["8945", "1490", "599", "9040", "6577", "368"],
           "trips": [{
             "trip_id": "3493",
             "timepoints": ["4:00am", "4:05am", "4:11am", "4:17am", "\u2013", "\u2013"]
@@ -12827,7 +12827,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["MIDDLEBELT & SCHOOLCRAFT", "PLYMOUTH & HARRISON", "Plymouth & Telegraph", "Plymouth & W.Outer Drive", "Plymouth & Schaefer", "Plymouth & Grand River", "LaSalle - Webb", "Trowbridge & Woodward", "Van Dyke & Miller (Curt)", "French Road & Gratiot", "East Outer Drive & Gratiot", "East Outer Drive & Chalmers", "Hayes & Seymour", "Hayes & Eight Mile"],
+          "stops": ["9776", "9572", "8874", "603", "607", "608", "54", "55", "1804", "59", "60", "61", "613", "1927"],
           "trips": [{
             "trip_id": "3511",
             "timepoints": ["4:10am", "4:20am", "4:28am", "4:31am", "4:46am", "4:51am", "5:02am", "5:10am", "\u2013", "\u2013", "\u2013", "\u2013", "\u2013", "\u2013"]
@@ -12906,7 +12906,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Hayes & Eight Mile", "Hayes & Seymour", "East Outer Drive & Gratiot", "French Road & Gratiot", "Miller & Van Dyke", "Collingwood & Woodward", "LaSalle & Webb", "Plymouth & Grand River", "Plymouth & Schaefer", "Plymouth & W.Outer Drive", "Plymouth & Telegraph (Woodbine)", "PLYMOUTH & HARRISON", "MIDDLEBELT & SCHOOLCRAFT"],
+          "stops": ["1927", "614", "65", "66", "67", "615", "71", "619", "620", "624", "626", "9549", "9776"],
           "trips": [{
             "trip_id": "3559",
             "timepoints": ["\u2013", "\u2013", "\u2013", "\u2013", "\u2013", "\u2013", "\u2013", "3:50am", "3:55am", "4:10am", "4:13am", "4:25am", "4:33am"]
@@ -12987,7 +12987,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["MIDDLEBELT & SCHOOLCRAFT", "PLYMOUTH & HARRISON", "Plymouth & Telegraph", "Plymouth & W.Outer Drive", "Plymouth & Schaefer", "Plymouth & Grand River", "LaSalle - Webb", "Trowbridge & Woodward", "Van Dyke & Miller (Curt)"],
+          "stops": ["9776", "9572", "8874", "603", "607", "608", "54", "55", "1804"],
           "trips": [{
             "trip_id": "3573",
             "timepoints": ["\u2013", "4:22am", "4:29am", "4:31am", "4:39am", "4:42am", "\u2013", "\u2013", "\u2013"]
@@ -13045,7 +13045,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["French Road & Gratiot", "Miller & Van Dyke", "Collingwood & Woodward", "LaSalle & Webb", "Plymouth & Grand River", "Plymouth & Schaefer", "Plymouth & W.Outer Drive", "Plymouth & Telegraph (Woodbine)", "PLYMOUTH & HARRISON", "MIDDLEBELT & SCHOOLCRAFT"],
+          "stops": ["66", "67", "615", "71", "619", "620", "624", "626", "9549", "9776"],
           "trips": [{
             "trip_id": "3592",
             "timepoints": ["\u2013", "\u2013", "\u2013", "\u2013", "3:45am", "3:51am", "4:04am", "4:07am", "4:22am", "\u2013"]
@@ -13108,7 +13108,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["MIDDLEBELT & SCHOOLCRAFT", "PLYMOUTH & HARRISON", "Plymouth & Telegraph", "Plymouth & W.Outer Drive", "Plymouth & Schaefer", "Plymouth & Grand River", "LaSalle - Webb", "Trowbridge & Woodward", "Van Dyke & Miller (Curt)"],
+          "stops": ["9776", "9572", "8874", "603", "607", "608", "54", "55", "1804"],
           "trips": [{
             "trip_id": "3610",
             "timepoints": ["\u2013", "4:22am", "4:29am", "4:31am", "4:39am", "4:42am", "\u2013", "\u2013", "\u2013"]
@@ -13160,7 +13160,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["French Road & Gratiot", "Miller & Van Dyke", "Collingwood & Woodward", "LaSalle & Webb", "Plymouth & Grand River", "Plymouth & Schaefer", "Plymouth & W.Outer Drive", "Plymouth & Telegraph (Woodbine)", "PLYMOUTH & HARRISON", "MIDDLEBELT & SCHOOLCRAFT"],
+          "stops": ["66", "67", "615", "71", "619", "620", "624", "626", "9549", "9776"],
           "trips": [{
             "trip_id": "3627",
             "timepoints": ["\u2013", "\u2013", "\u2013", "\u2013", "3:45am", "3:51am", "4:04am", "4:07am", "4:22am", "\u2013"]
@@ -13233,7 +13233,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["SOUTHFIELD & FENKELL", "Puritan & Wyoming", "Puritan & Wyoming", "Puritan & Livernois", "HAMILTON & PURITAN", "Manchester & Woodward"],
+          "stops": ["627", "629", "629", "630", "3032", "196"],
           "trips": [{
             "trip_id": "3631",
             "timepoints": ["6:00am", "6:11am", "6:11am", "6:15am", "6:21am", "6:27am"]
@@ -13282,7 +13282,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Manchester & Woodward", "Puritan & Hamilton", "Puritan & Livernois", "Puritan & Wyoming", "Puritan & Schaefer", "SOUTHFIELD & FENKELL"],
+          "stops": ["201", "634", "635", "636", "637", "638"],
           "trips": [{
             "trip_id": "3646",
             "timepoints": ["6:30am", "6:33am", "6:39am", "6:43am", "6:47am", "6:56am"]
@@ -13330,7 +13330,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["SOUTHFIELD & FENKELL", "Puritan & Wyoming", "Puritan & Wyoming", "Puritan & Livernois", "HAMILTON & PURITAN", "Manchester & Woodward"],
+          "stops": ["627", "629", "629", "630", "3032", "196"],
           "trips": [{
             "trip_id": "3671",
             "timepoints": ["7:00am", "7:10am", "7:10am", "7:13am", "7:18am", "7:24am"]
@@ -13370,7 +13370,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Manchester & Woodward", "Puritan & Hamilton", "Puritan & Livernois", "Puritan & Wyoming", "Puritan & Schaefer", "SOUTHFIELD & FENKELL"],
+          "stops": ["201", "634", "635", "636", "637", "638"],
           "trips": [{
             "trip_id": "3672",
             "timepoints": ["7:30am", "7:33am", "7:39am", "7:42am", "7:46am", "7:55am"]
@@ -13412,7 +13412,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["SOUTHFIELD & FENKELL", "Puritan & Wyoming", "Puritan & Wyoming", "Puritan & Livernois", "HAMILTON & PURITAN", "Manchester & Woodward"],
+          "stops": ["627", "629", "629", "630", "3032", "196"],
           "trips": [{
             "trip_id": "3689",
             "timepoints": ["8:00am", "8:11am", "8:11am", "8:15am", "8:20am", "8:25am"]
@@ -13440,7 +13440,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Manchester & Woodward", "Puritan & Hamilton", "Puritan & Livernois", "Puritan & Wyoming", "Puritan & Schaefer", "SOUTHFIELD & FENKELL"],
+          "stops": ["201", "634", "635", "636", "637", "638"],
           "trips": [{
             "trip_id": "3698",
             "timepoints": ["8:30am", "8:36am", "8:41am", "8:45am", "8:49am", "8:57am"]
@@ -13486,7 +13486,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "northbound": {
-          "stops": ["ROSA PARKS TRANSIT 40 NB", "Russell & Gratiot", "Russell & Warren", "Russell & Milwaukee", "Nevada & DEQUINDRE", "East Outer Drive & Sunset", "East Outer Drive & Van Dyke", "CHSD Building", "East Outer Drive & Van Dyke"],
+          "stops": ["8944", "8777", "7414", "641", "644", "645", "646", "647", "648"],
           "trips": [{
             "trip_id": "3700",
             "timepoints": ["6:00am", "6:10am", "6:16am", "6:20am", "6:35am", "6:43am", "6:49am", "6:51am", "6:53am"]
@@ -13529,7 +13529,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["East Outer Drive & Van Dyke", "East Outer Drive & Sunset", "Dequindre & Nevada", "St. Aubin & HOLBROOK", "Russell & Warren", "Gratiot & RUSSELL", "ROSA PARKS TRANSIT 40 NB"],
+          "stops": ["648", "649", "650", "652", "7415", "655", "8944"],
           "trips": [{
             "trip_id": "3726",
             "timepoints": ["5:00am", "5:04am", "5:11am", "5:22am", "5:32am", "5:41am", "5:53am"]
@@ -13593,7 +13593,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["Schaefer & Eight Mile", "Schaefer & West Outer Drive", "Schaefer & Grand River", "Schaefer & Joy Road", "SCHAEFER & WARREN", "Schaefer & Michigan", "Ford Gate #9", "Schaefer & Fort", "Brennan & West Jefferson"],
+          "stops": ["656", "657", "659", "660", "6627", "661", "662", "663", "664"],
           "trips": [{
             "trip_id": "3727",
             "timepoints": ["5:10am", "5:16am", "5:24am", "5:30am", "5:34am", "5:39am", "5:43am", "5:49am", "5:56am"]
@@ -13648,7 +13648,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Brennan & West Jefferson", "Schaefer & Fort", "Ford Gate #9", "Schaefer & Michigan", "Schaefer & Warren", "Schaefer & Joy Road", "Schaefer & Grand River", "Schaefer & West Outer Drive", "Schaefer & Eight Mile"],
+          "stops": ["664", "9561", "662", "668", "6630", "669", "670", "672", "673"],
           "trips": [{
             "trip_id": "3744",
             "timepoints": ["5:13am", "5:19am", "5:24am", "5:29am", "5:34am", "5:38am", "5:45am", "5:52am", "5:58am"]
@@ -13705,7 +13705,7 @@ const Schedules = {
       },
       "saturday": {
         "southbound": {
-          "stops": ["Schaefer & Eight Mile", "Schaefer & West Outer Drive", "Schaefer & Grand River", "Schaefer & Joy Road", "SCHAEFER & WARREN", "Schaefer & Michigan", "Ford Gate #9", "Schaefer & Fort", "Brennan & West Jefferson"],
+          "stops": ["656", "657", "659", "660", "6627", "661", "662", "663", "664"],
           "trips": [{
             "trip_id": "3761",
             "timepoints": ["7:00am", "7:05am", "7:13am", "7:19am", "7:23am", "7:28am", "7:32am", "7:37am", "7:44am"]
@@ -13754,7 +13754,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Brennan & West Jefferson", "Schaefer & Fort", "Ford Gate #9", "Schaefer & Michigan", "Schaefer & Warren", "Schaefer & Joy Road", "Schaefer & Grand River", "Schaefer & West Outer Drive", "Schaefer & Eight Mile"],
+          "stops": ["664", "9561", "662", "668", "6630", "669", "670", "672", "673"],
           "trips": [{
             "trip_id": "3776",
             "timepoints": ["7:00am", "7:06am", "7:10am", "7:14am", "7:19am", "7:23am", "7:29am", "7:37am", "7:44am"]
@@ -13805,7 +13805,7 @@ const Schedules = {
       },
       "sunday": {
         "southbound": {
-          "stops": ["Schaefer & Eight Mile", "Schaefer & West Outer Drive", "Schaefer & Grand River", "Schaefer & Joy Road", "SCHAEFER & WARREN", "Schaefer & Michigan", "Ford Gate #9", "Schaefer & Fort", "Brennan & West Jefferson"],
+          "stops": ["656", "657", "659", "660", "6627", "661", "662", "663", "664"],
           "trips": [{
             "trip_id": "3791",
             "timepoints": ["7:00am", "7:05am", "7:13am", "7:19am", "7:22am", "7:27am", "7:31am", "7:36am", "7:43am"]
@@ -13854,7 +13854,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Brennan & West Jefferson", "Schaefer & Fort", "Ford Gate #9", "Schaefer & Michigan", "Schaefer & Warren", "Schaefer & Joy Road", "Schaefer & Grand River", "Schaefer & West Outer Drive", "Schaefer & Eight Mile"],
+          "stops": ["664", "9561", "662", "668", "6630", "669", "670", "672", "673"],
           "trips": [{
             "trip_id": "3806",
             "timepoints": ["\u2013", "\u2013", "\u2013", "\u2013", "\u2013", "\u2013", "6:41am", "6:49am", "6:56am"]
@@ -13923,7 +13923,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "clockwise": {
-          "stops": ["Manchester & Woodward", "Oakland & Owen", "Beaubien & East Grand Blvd", "ST ANTOINE & WARREN", "ANTHONY WAYNE & KIRBY", "W GRAND BLVD & LODGE", "HAMILTON & GLENDALE", "Manchester & Woodward"],
+          "stops": ["571", "584", "568", "7831", "4388", "8263", "3381", "571"],
           "trips": [{
             "trip_id": "3822",
             "timepoints": ["5:15am", "5:23am", "5:27am", "5:31am", "5:37am", "5:41am", "5:53am", "5:15am"]
@@ -14013,7 +14013,7 @@ const Schedules = {
       },
       "saturday": {
         "clockwise": {
-          "stops": ["Manchester & Woodward", "Oakland & Owen", "Beaubien & East Grand Blvd", "ST ANTOINE & WARREN", "ANTHONY WAYNE & KIRBY", "W GRAND BLVD & LODGE", "HAMILTON & GLENDALE", "Manchester & Woodward"],
+          "stops": ["571", "584", "568", "7831", "4388", "8263", "3381", "571"],
           "trips": [{
             "trip_id": "3850",
             "timepoints": ["7:15am", "7:23am", "7:28am", "7:33am", "7:39am", "7:43am", "7:55am", "7:15am"]
@@ -14055,7 +14055,7 @@ const Schedules = {
       },
       "sunday": {
         "clockwise": {
-          "stops": ["Manchester & Woodward", "Oakland & Owen", "Beaubien & East Grand Blvd", "ST ANTOINE & WARREN", "ANTHONY WAYNE & KIRBY", "W GRAND BLVD & LODGE", "HAMILTON & GLENDALE", "Manchester & Woodward"],
+          "stops": ["571", "584", "568", "7831", "4388", "8263", "3381", "571"],
           "trips": [{
             "trip_id": "3862",
             "timepoints": ["8:15am", "8:23am", "8:28am", "8:33am", "8:39am", "8:43am", "8:55am", "8:15am"]
@@ -14108,7 +14108,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["Redford Plaza", "Schoolcraft & Dale", "Schoolcraft & Southfield", "Schoolcraft & Grand River", "Schoolcraft & Schaefer", "Ewald Circle & Livernois", "Oakman & Hamilton", "Manchester & Woodward", "Oakland & Manchester", "Oakland & Nevada", "Conant & Dequindre (Eight Mile)", "CONANT & OUTER DRIVE", "Eight Mile & Ryan"],
+          "stops": ["429", "674", "676", "677", "678", "679", "680", "196", "570", "572", "574", "9609", "576"],
           "trips": [{
             "trip_id": "3872",
             "timepoints": ["5:10am", "5:14am", "5:23am", "5:29am", "5:31am", "5:41am", "5:48am", "5:54am", "\u2013", "\u2013", "\u2013", "\u2013", "\u2013"]
@@ -14169,7 +14169,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["RYAN & 8 MILE", "Conant & East Outer Drive", "Eight Mile & Dequindre", "DEQUINDRE & STATE FAIR", "Oakland & Nevada", "Manchester & Woodward", "Oakman & Hamilton", "Ewald Circle & Livernois", "Schoolcraft & Schaefer", "Schoolcraft & Grand River", "Schoolcraft & Southfield", "Telegraph & Schoolcraft", "Redford Plaza"],
+          "stops": ["7828", "578", "579", "580", "581", "201", "681", "682", "683", "684", "685", "6936", "429"],
           "trips": [{
             "trip_id": "3891",
             "timepoints": ["\u2013", "\u2013", "\u2013", "\u2013", "\u2013", "\u2013", "\u2013", "\u2013", "\u2013", "4:40am", "4:46am", "4:55am", "5:00am"]
@@ -14235,7 +14235,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["Redford Plaza", "Schoolcraft & Dale", "Schoolcraft & Southfield", "Schoolcraft & Grand River", "Schoolcraft & Schaefer", "Ewald Circle & Livernois", "Oakman & Hamilton", "Manchester & Woodward"],
+          "stops": ["429", "674", "676", "677", "678", "679", "680", "196"],
           "trips": [{
             "trip_id": "3925",
             "timepoints": ["7:00am", "7:03am", "7:08am", "7:16am", "7:18am", "7:27am", "7:35am", "7:38am"]
@@ -14284,7 +14284,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Manchester & Woodward", "Oakman & Hamilton", "Ewald Circle & Livernois", "Schoolcraft & Schaefer", "Schoolcraft & Grand River", "Schoolcraft & Southfield", "Telegraph & Schoolcraft", "Redford Plaza"],
+          "stops": ["201", "681", "682", "683", "684", "685", "6936", "429"],
           "trips": [{
             "trip_id": "3926",
             "timepoints": ["7:00am", "7:03am", "7:11am", "7:20am", "7:22am", "7:28am", "7:33am", "7:36am"]
@@ -14335,7 +14335,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["Redford Plaza", "Schoolcraft & Dale", "Schoolcraft & Southfield", "Schoolcraft & Grand River", "Schoolcraft & Schaefer", "Ewald Circle & Livernois", "Oakman & Hamilton", "Manchester & Woodward"],
+          "stops": ["429", "674", "676", "677", "678", "679", "680", "196"],
           "trips": [{
             "trip_id": "3941",
             "timepoints": ["10:05am", "10:08am", "10:13am", "10:21am", "10:23am", "10:31am", "10:39am", "10:42am"]
@@ -14372,7 +14372,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Manchester & Woodward", "Oakman & Hamilton", "Ewald Circle & Livernois", "Schoolcraft & Schaefer", "Schoolcraft & Grand River", "Schoolcraft & Southfield", "Telegraph & Schoolcraft", "Redford Plaza"],
+          "stops": ["201", "681", "682", "683", "684", "685", "6936", "429"],
           "trips": [{
             "trip_id": "3952",
             "timepoints": ["10:00am", "10:03am", "10:11am", "10:20am", "10:22am", "10:28am", "10:33am", "10:36am"]
@@ -14427,7 +14427,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["MEIJER OLD REDFORD", "Seven Mile & Evergreen", "7 MILE & GREENFIELD", "Seven Mile & Livernois", "7MILE & WOODWARD", "Seven Mile & Ryan", "Seven Mile & Van Dyke", "Seven Mile & Gratiot", "Harper & Morang", "Moross & Mack"],
+          "stops": ["10157", "689", "6074", "384", "9635", "695", "520", "79", "42", "41"],
           "trips": [{
             "trip_id": "4013",
             "timepoints": ["4:00am", "4:07am", "4:14am", "4:25am", "4:29am", "4:39am", "4:47am", "4:57am", "5:06am", "5:11am"]
@@ -14608,7 +14608,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Moross & Mack", "Harper & Morang", "Seven Mile & Gratiot", "Seven Mile & Van Dyke", "Seven Mile & Ryan", "7MILE & WOODWARD(NEAR SIDE)", "Seven Mile & Livernois", "7 MILE & GREENFIELD", "Seven Mile & Evergreen", "MEIJER OLD REDFORD"],
+          "stops": ["41", "8963", "76", "533", "699", "9638", "405", "6073", "705", "10157"],
           "trips": [{
             "trip_id": "4045",
             "timepoints": ["4:02am", "4:06am", "4:18am", "4:27am", "4:34am", "4:44am", "4:48am", "4:58am", "5:06am", "5:15am"]
@@ -14788,7 +14788,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["MEIJER OLD REDFORD", "Seven Mile & Evergreen", "7 MILE & GREENFIELD", "Seven Mile & Livernois", "7MILE & WOODWARD", "Seven Mile & Ryan", "Seven Mile & Van Dyke", "Seven Mile & Gratiot", "Harper & Morang", "Moross & Mack"],
+          "stops": ["10157", "689", "6074", "384", "9635", "695", "520", "79", "42", "41"],
           "trips": [{
             "trip_id": "4098",
             "timepoints": ["4:10am", "4:16am", "4:23am", "4:34am", "4:38am", "4:47am", "4:55am", "5:04am", "5:13am", "5:19am"]
@@ -14891,7 +14891,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Moross & Mack", "Harper & Morang", "Seven Mile & Gratiot", "Seven Mile & Van Dyke", "Seven Mile & Ryan", "7MILE & WOODWARD(NEAR SIDE)", "Seven Mile & Livernois", "7 MILE & GREENFIELD", "Seven Mile & Evergreen", "MEIJER OLD REDFORD"],
+          "stops": ["41", "8963", "76", "533", "699", "9638", "405", "6073", "705", "10157"],
           "trips": [{
             "trip_id": "4131",
             "timepoints": ["4:02am", "4:06am", "4:16am", "4:25am", "4:30am", "4:39am", "4:43am", "4:54am", "5:01am", "5:10am"]
@@ -14999,7 +14999,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["MEIJER OLD REDFORD", "Seven Mile & Evergreen", "7 MILE & GREENFIELD", "Seven Mile & Livernois", "7MILE & WOODWARD", "Seven Mile & Ryan", "Seven Mile & Van Dyke", "Seven Mile & Gratiot", "Harper & Morang", "Moross & Mack"],
+          "stops": ["10157", "689", "6074", "384", "9635", "695", "520", "79", "42", "41"],
           "trips": [{
             "trip_id": "4160",
             "timepoints": ["4:03am", "4:09am", "4:16am", "4:27am", "4:31am", "4:40am", "4:48am", "4:57am", "5:06am", "5:12am"]
@@ -15087,7 +15087,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Moross & Mack", "Harper & Morang", "Seven Mile & Gratiot", "Seven Mile & Van Dyke", "Seven Mile & Ryan", "7MILE & WOODWARD(NEAR SIDE)", "Seven Mile & Livernois", "7 MILE & GREENFIELD", "Seven Mile & Evergreen", "MEIJER OLD REDFORD"],
+          "stops": ["41", "8963", "76", "533", "699", "9638", "405", "6073", "705", "10157"],
           "trips": [{
             "trip_id": "4203",
             "timepoints": ["4:13am", "4:17am", "4:27am", "4:36am", "4:41am", "4:50am", "4:54am", "5:04am", "5:12am", "5:20am"]
@@ -15196,7 +15196,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["9 MILE & RUTLAND", "Southfield & Eight Mile", "Southfield & McNichols", "Southfield & Grand River", "Southfield & Plymouth", "Southfield & Warren", "Henry Ford Community College", "Fairlane Town Center"],
+          "stops": ["7282", "707", "708", "709", "710", "712", "843", "368"],
           "trips": [{
             "trip_id": "5781",
             "timepoints": ["5:48am", "5:53am", "6:00am", "6:03am", "6:10am", "6:17am", "6:24am", "6:28am"]
@@ -15236,7 +15236,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Fairlane Town Center", "Henry Ford Community College", "Southfield & Warren", "Southfield & Plymouth", "Southfield & Grand River", "Southfield & McNichols", "SOUTHFIELD & NORTH PARK", "9 MILE & RUTLAND"],
+          "stops": ["368", "843", "715", "717", "718", "719", "10341", "7282"],
           "trips": [{
             "trip_id": "6416",
             "timepoints": ["5:46am", "5:50am", "5:57am", "6:04am", "6:10am", "6:14am", "6:21am", "6:26am"]
@@ -15295,7 +15295,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["PIERSON LOOP", "Tireman & Southfield", "Tireman & Greenfield", "Tireman & Wyoming", "Grand River & W.Grand Blvd", "M.L. King & West Grand Blvd", "M.L. King & Grand River", "Mack & John R"],
+          "stops": ["159", "721", "722", "724", "439", "727", "729", "1616"],
           "trips": [{
             "trip_id": "4258",
             "timepoints": ["5:10am", "5:16am", "5:19am", "5:26am", "5:36am", "5:43am", "5:50am", "5:53am"]
@@ -15353,7 +15353,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Mack & John R", "M.L. King & Grand River", "M.L.King & West Grand Blvd", "West Grand Blvd & Grand River", "Tireman & Wyoming", "Tireman & Greenfield", "Tireman & Southfield", "PIERSON LOOP"],
+          "stops": ["1616", "734", "736", "737", "739", "741", "742", "159"],
           "trips": [{
             "trip_id": "4274",
             "timepoints": ["6:00am", "6:04am", "6:09am", "6:15am", "6:23am", "6:31am", "6:34am", "6:40am"]
@@ -15410,7 +15410,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["Tireman & Southfield", "Tireman & Greenfield", "Tireman & Wyoming", "Grand River & W.Grand Blvd"],
+          "stops": ["721", "722", "724", "439"],
           "trips": [{
             "trip_id": "4301",
             "timepoints": ["7:40am", "7:43am", "7:50am", "7:59am"]
@@ -15456,7 +15456,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["West Grand Blvd & Grand River", "Tireman & Wyoming", "Tireman & Greenfield", "Tireman & Southfield"],
+          "stops": ["737", "739", "741", "742"],
           "trips": [{
             "trip_id": "4305",
             "timepoints": ["7:15am", "7:24am", "7:31am", "7:34am"]
@@ -15520,7 +15520,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "northbound": {
-          "stops": ["ROSA PARKS TRANSIT BAY 11", "Lafayette & East Grand Blvd.", "Van Dyke & Kercheval", "Van Dyke & Warren", "Van Dyke & Harper", "Van Dyke & Lynch", "Van Dyke & Seven Mile", "Van Dyke & Eight Mile", "Bel Air Shopping Center"],
+          "stops": ["8989", "745", "3757", "747", "749", "750", "752", "753", "93"],
           "trips": [{
             "trip_id": "4351",
             "timepoints": ["3:55am", "4:09am", "4:12am", "4:17am", "4:20am", "4:23am", "4:30am", "4:33am", "4:35am"]
@@ -15662,7 +15662,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Bel Air Shopping Center", "Van Dyke & Eight Mile", "Van Dyke & Seven Mile", "Van Dyke & Lynch", "Van Dyke & Harper", "Van Dyke & Warren", "Van Dyke & Kercheval", "Lafayette & East Grant Blvd.", "ROSA PARKS TRANSIT BAY 11"],
+          "stops": ["93", "754", "755", "757", "758", "760", "3759", "762", "8989"],
           "trips": [{
             "trip_id": "4401",
             "timepoints": ["4:30am", "4:32am", "4:36am", "4:41am", "4:45am", "4:49am", "4:53am", "4:57am", "5:13am"]
@@ -15803,7 +15803,7 @@ const Schedules = {
       },
       "saturday": {
         "northbound": {
-          "stops": ["ROSA PARKS TRANSIT BAY 11", "Lafayette & East Grand Blvd.", "Van Dyke & Kercheval", "Van Dyke & Warren", "Van Dyke & Harper", "Van Dyke & Lynch", "Van Dyke & Seven Mile", "Van Dyke & Eight Mile", "Bel Air Shopping Center"],
+          "stops": ["8989", "745", "3757", "747", "749", "750", "752", "753", "93"],
           "trips": [{
             "trip_id": "4442",
             "timepoints": ["3:55am", "4:09am", "4:12am", "4:17am", "4:21am", "4:24am", "4:31am", "4:34am", "4:35am"]
@@ -15906,7 +15906,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Bel Air Shopping Center", "Van Dyke & Eight Mile", "Van Dyke & Seven Mile", "Van Dyke & Lynch", "Van Dyke & Harper", "Van Dyke & Warren", "Van Dyke & Kercheval", "Lafayette & East Grant Blvd.", "ROSA PARKS TRANSIT BAY 11"],
+          "stops": ["93", "754", "755", "757", "758", "760", "3759", "762", "8989"],
           "trips": [{
             "trip_id": "4444",
             "timepoints": ["4:45am", "4:47am", "4:50am", "4:55am", "4:59am", "5:03am", "5:07am", "5:11am", "5:25am"]
@@ -16005,7 +16005,7 @@ const Schedules = {
       },
       "sunday": {
         "northbound": {
-          "stops": ["ROSA PARKS TRANSIT BAY 11", "Lafayette & East Grand Blvd.", "Van Dyke & Kercheval", "Van Dyke & Warren", "Van Dyke & Harper", "Van Dyke & Lynch", "Van Dyke & Seven Mile", "Van Dyke & Eight Mile", "Bel Air Shopping Center"],
+          "stops": ["8989", "745", "3757", "747", "749", "750", "752", "753", "93"],
           "trips": [{
             "trip_id": "4485",
             "timepoints": ["4:40am", "4:54am", "4:57am", "5:01am", "5:04am", "5:07am", "5:13am", "5:16am", "5:17am"]
@@ -16087,7 +16087,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Bel Air Shopping Center", "Van Dyke & Eight Mile", "Van Dyke & Seven Mile", "Van Dyke & Lynch", "Van Dyke & Harper", "Van Dyke & Warren", "Van Dyke & Kercheval", "Lafayette & East Grant Blvd.", "ROSA PARKS TRANSIT BAY 11"],
+          "stops": ["93", "754", "755", "757", "758", "760", "3759", "762", "8989"],
           "trips": [{
             "trip_id": "4500",
             "timepoints": ["4:38am", "4:39am", "4:41am", "4:46am", "4:49am", "4:53am", "4:56am", "5:00am", "5:14am"]
@@ -16190,7 +16190,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["Michigan & Schaefer", "VERNOR & SALINA", "Vernor & Springwells", "Vernor & Livernois", "Vernor & W. Grand Blvd", "Trumbull - Bagley", "ROSA PARKS TRANSIT 49 EB"],
+          "stops": ["6578", "10264", "765", "766", "767", "768", "8915"],
           "trips": [{
             "trip_id": "4557",
             "timepoints": ["4:40am", "4:50am", "4:54am", "4:57am", "5:02am", "5:08am", "5:14am"]
@@ -16317,7 +16317,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["ROSA PARKS TRANSIT 49 EB", "Bagley & Trumbull", "Vernor & W. Grand Blvd", "Vernor & Livernois", "Vernor & Springwells", "SALINA & VERNOR", "Michigan & Schaefer"],
+          "stops": ["8915", "770", "8774", "772", "773", "10265", "6578"],
           "trips": [{
             "trip_id": "4600",
             "timepoints": ["4:35am", "4:41am", "4:46am", "4:51am", "4:55am", "4:59am", "5:08am"]
@@ -16449,7 +16449,7 @@ const Schedules = {
       },
       "saturday": {
         "eastbound": {
-          "stops": ["Michigan & Schaefer", "VERNOR & SALINA", "Vernor & Springwells", "Vernor & Livernois", "Vernor & W. Grand Blvd", "Trumbull - Bagley", "ROSA PARKS TRANSIT 49 EB"],
+          "stops": ["6578", "10264", "765", "766", "767", "768", "8915"],
           "trips": [{
             "trip_id": "4630",
             "timepoints": ["4:59am", "5:08am", "5:12am", "5:15am", "5:20am", "5:26am", "5:33am"]
@@ -16564,7 +16564,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["ROSA PARKS TRANSIT 49 EB", "Bagley & Trumbull", "Vernor & W. Grand Blvd", "Vernor & Livernois", "Vernor & Springwells", "SALINA & VERNOR", "Michigan & Schaefer"],
+          "stops": ["8915", "770", "8774", "772", "773", "10265", "6578"],
           "trips": [{
             "trip_id": "4668",
             "timepoints": ["5:05am", "5:11am", "5:16am", "5:21am", "5:24am", "5:28am", "5:37am"]
@@ -16684,7 +16684,7 @@ const Schedules = {
       },
       "sunday": {
         "eastbound": {
-          "stops": ["Michigan & Schaefer", "VERNOR & SALINA", "Vernor & Springwells", "Vernor & Livernois", "Vernor & W. Grand Blvd", "Trumbull - Bagley", "ROSA PARKS TRANSIT 49 EB"],
+          "stops": ["6578", "10264", "765", "766", "767", "768", "8915"],
           "trips": [{
             "trip_id": "4704",
             "timepoints": ["6:03am", "6:12am", "6:16am", "6:19am", "6:24am", "6:29am", "6:35am"]
@@ -16748,7 +16748,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["ROSA PARKS TRANSIT 49 EB", "Bagley & Trumbull", "Vernor & W. Grand Blvd", "Vernor & Livernois", "Vernor & Springwells", "SALINA & VERNOR", "Michigan & Schaefer"],
+          "stops": ["8915", "770", "8774", "772", "773", "10265", "6578"],
           "trips": [{
             "trip_id": "4705",
             "timepoints": ["6:18am", "6:24am", "6:29am", "6:34am", "6:37am", "6:41am", "6:50am"]
@@ -16830,7 +16830,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["State Fairgrounds Transit Center", "WOODWARD & 7 MILE", "Woodward & McNichols", "Woodward & Manchester", "Woodward & Clairmount", "Woodward & Grand Blvd.", "Woodward & Warren", "Woodward & Martin Luther King", "Beaubien & Jefferson"],
+          "stops": ["127", "4604", "784", "785", "787", "788", "1064", "1608", "394"],
           "trips": [{
             "trip_id": "4801",
             "timepoints": ["4:00am", "4:03am", "4:06am", "4:08am", "4:14am", "4:19am", "4:23am", "4:27am", "4:39am"]
@@ -17155,7 +17155,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Beaubien & Jefferson", "Rosa Parks Transit 53", "Woodward & Mack", "Woodward & Warren", "WOODWARD & OWEN", "Woodward & Manchester", "Woodward & McNichols", "Woodward & Seven Mile", "State Fairgrounds Transit Center"],
+          "stops": ["394", "8926", "1611", "1061", "8848", "802", "803", "4603", "127"],
           "trips": [{
             "trip_id": "4929",
             "timepoints": ["3:57am", "4:00am", "4:09am", "4:12am", "4:20am", "4:28am", "4:30am", "4:33am", "4:36am"]
@@ -17479,7 +17479,7 @@ const Schedules = {
       },
       "saturday": {
         "southbound": {
-          "stops": ["State Fairgrounds Transit Center", "WOODWARD & 7 MILE", "Woodward & McNichols", "Woodward & Manchester", "Woodward & Clairmount", "Woodward & Grand Blvd.", "Woodward & Warren", "Woodward & Martin Luther King"],
+          "stops": ["127", "4604", "784", "785", "787", "788", "1064", "1608"],
           "trips": [{
             "trip_id": "5017",
             "timepoints": ["4:15am", "4:17am", "4:19am", "4:21am", "4:27am", "4:30am", "4:34am", "4:38am"]
@@ -17765,7 +17765,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Rosa Parks Transit 53", "Woodward & Mack", "Woodward & Warren", "WOODWARD & OWEN", "Woodward & Manchester", "Woodward & McNichols", "Woodward & Seven Mile", "State Fairgrounds Transit Center"],
+          "stops": ["8926", "1611", "1061", "8848", "802", "803", "4603", "127"],
           "trips": [{
             "trip_id": "5123",
             "timepoints": ["4:00am", "4:05am", "4:08am", "4:15am", "4:22am", "4:25am", "4:29am", "4:34am"]
@@ -18059,7 +18059,7 @@ const Schedules = {
       },
       "sunday": {
         "southbound": {
-          "stops": ["State Fairgrounds Transit Center", "WOODWARD & 7 MILE", "Woodward & McNichols", "Woodward & Manchester", "Woodward & Clairmount", "Woodward & Grand Blvd.", "Woodward & Warren", "Woodward & Martin Luther King"],
+          "stops": ["127", "4604", "784", "785", "787", "788", "1064", "1608"],
           "trips": [{
             "trip_id": "5164",
             "timepoints": ["4:15am", "4:17am", "4:20am", "4:22am", "4:29am", "4:32am", "4:35am", "4:38am"]
@@ -18264,7 +18264,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Rosa Parks Transit 53", "Woodward & Mack", "Woodward & Warren", "WOODWARD & OWEN", "Woodward & Manchester", "Woodward & McNichols", "Woodward & Seven Mile", "State Fairgrounds Transit Center"],
+          "stops": ["8926", "1611", "1061", "8848", "802", "803", "4603", "127"],
           "trips": [{
             "trip_id": "5229",
             "timepoints": ["4:00am", "4:06am", "4:09am", "4:16am", "4:24am", "4:26am", "4:29am", "4:32am"]
@@ -18487,7 +18487,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["State Fairgrounds Transit Center", "Eight Mile & Livernois", "Wyoming & Eight Mile", "Wyoming & Six Mile", "Wyoming & Fenkell", "Wyoming & Grand River", "Wyoming & Joy Rd.", "Wyoming & Warren", "Wyoming & Michigan", "Ford Gate #2", "West Jefferson & WEST END"],
+          "stops": ["127", "250", "805", "807", "808", "809", "810", "811", "322", "323", "815"],
           "trips": [{
             "trip_id": "5278",
             "timepoints": ["\u2013", "\u2013", "5:00am", "5:06am", "5:10am", "5:17am", "5:22am", "5:26am", "5:30am", "5:35am", "5:47am"]
@@ -18542,7 +18542,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["West Jefferson & WEST END", "Ford Gate #2", "Wyoming & Michigan", "Wyoming & Warren", "Wyoming & Joy Rd.", "Wyoming & Grand River", "Wyoming & Fenkell", "Wyoming & Eight Mile", "Eight Mile & Livernois", "State Fairgrounds Transit Center"],
+          "stops": ["815", "304", "15", "820", "821", "823", "824", "826", "241", "127"],
           "trips": [{
             "trip_id": "5279",
             "timepoints": ["5:00am", "5:09am", "5:14am", "5:18am", "5:21am", "5:27am", "5:34am", "5:47am", "\u2013", "\u2013"]
@@ -18599,7 +18599,7 @@ const Schedules = {
       },
       "saturday": {
         "southbound": {
-          "stops": ["State Fairgrounds Transit Center", "Eight Mile & Livernois", "Wyoming & Eight Mile", "Wyoming & Six Mile", "Wyoming & Fenkell", "Wyoming & Grand River", "Wyoming & Joy Rd.", "Wyoming & Warren", "Wyoming & Michigan", "Ford Gate #2", "West Jefferson & WEST END"],
+          "stops": ["127", "250", "805", "807", "808", "809", "810", "811", "322", "323", "815"],
           "trips": [{
             "trip_id": "5296",
             "timepoints": ["7:00am", "7:05am", "7:07am", "7:13am", "7:17am", "7:25am", "7:30am", "7:34am", "7:37am", "7:43am", "7:52am"]
@@ -18645,7 +18645,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["West Jefferson & WEST END", "Ford Gate #2", "Wyoming & Michigan", "Wyoming & Warren", "Wyoming & Joy Rd.", "Wyoming & Grand River", "Wyoming & Fenkell", "Wyoming & Eight Mile", "Eight Mile & Livernois", "State Fairgrounds Transit Center"],
+          "stops": ["815", "304", "15", "820", "821", "823", "824", "826", "241", "127"],
           "trips": [{
             "trip_id": "5310",
             "timepoints": ["7:00am", "7:09am", "7:15am", "7:18am", "7:22am", "7:27am", "7:35am", "7:45am", "7:47am", "7:52am"]
@@ -18693,7 +18693,7 @@ const Schedules = {
       },
       "sunday": {
         "southbound": {
-          "stops": ["State Fairgrounds Transit Center", "Eight Mile & Livernois", "Wyoming & Eight Mile", "Wyoming & Six Mile", "Wyoming & Fenkell", "Wyoming & Grand River", "Wyoming & Joy Rd.", "Wyoming & Warren", "Wyoming & Michigan", "Ford Gate #2", "West Jefferson & WEST END"],
+          "stops": ["127", "250", "805", "807", "808", "809", "810", "811", "322", "323", "815"],
           "trips": [{
             "trip_id": "5329",
             "timepoints": ["8:00am", "8:02am", "8:07am", "8:13am", "8:17am", "8:25am", "8:30am", "8:34am", "8:37am", "8:43am", "8:52am"]
@@ -18733,7 +18733,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["West Jefferson & WEST END", "Ford Gate #2", "Wyoming & Michigan", "Wyoming & Warren", "Wyoming & Joy Rd.", "Wyoming & Grand River", "Wyoming & Fenkell", "Wyoming & Eight Mile", "Eight Mile & Livernois", "State Fairgrounds Transit Center"],
+          "stops": ["815", "304", "15", "820", "821", "823", "824", "826", "241", "127"],
           "trips": [{
             "trip_id": "5336",
             "timepoints": ["8:00am", "8:09am", "8:15am", "8:18am", "8:22am", "8:27am", "8:35am", "8:45am", "8:50am", "8:52am"]
@@ -18791,7 +18791,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "northbound": {
-          "stops": ["Evergreen & Ten Mile", "Evergreen & Eight Mile", "Evergreen & Seven Mile", "Evergreen & Grand River", "EVERGREEN & PLYMOUTH", "Evergreen & Warren", "Henry Ford Community College", "Fairlane Town Center"],
+          "stops": ["10329", "380", "838", "839", "7154", "842", "843", "368"],
           "trips": [{
             "trip_id": "6543",
             "timepoints": ["5:35am", "5:41am", "5:45am", "5:50am", "5:58am", "6:05am", "6:10am", "6:16am"]
@@ -18903,7 +18903,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Fairlane Town Center", "Henry Ford Community College", "Evergreen & Warren", "EVERGREEN & PLYMOUTH", "Evergreen & Schoolcraft", "Evergreen & Grand River", "Evergreen & Seven Mile", "Evergreen & Eight Mile", "Northwestern Hwy & Ten Mile"],
+          "stops": ["368", "843", "844", "7156", "846", "847", "848", "849", "10328"],
           "trips": [{
             "trip_id": "6337",
             "timepoints": ["5:10am", "5:15am", "5:19am", "5:25am", "5:29am", "5:34am", "5:39am", "5:43am", "5:50am"]
@@ -19023,7 +19023,7 @@ const Schedules = {
       },
       "saturday": {
         "northbound": {
-          "stops": ["Evergreen & Ten Mile", "Evergreen & Eight Mile", "Evergreen & Seven Mile", "Evergreen & Grand River", "EVERGREEN & PLYMOUTH", "Evergreen & Warren", "Henry Ford Community College", "Fairlane Town Center"],
+          "stops": ["10329", "380", "838", "839", "7154", "842", "843", "368"],
           "trips": [{
             "trip_id": "6511",
             "timepoints": ["5:55am", "6:01am", "6:05am", "6:10am", "6:18am", "6:25am", "6:29am", "6:35am"]
@@ -19111,7 +19111,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Fairlane Town Center", "Henry Ford Community College", "Evergreen & Warren", "EVERGREEN & PLYMOUTH", "Evergreen & Schoolcraft", "Evergreen & Grand River", "Evergreen & Seven Mile", "Evergreen & Eight Mile", "Northwestern Hwy & Ten Mile"],
+          "stops": ["368", "843", "844", "7156", "846", "847", "848", "849", "10328"],
           "trips": [{
             "trip_id": "6447",
             "timepoints": ["6:10am", "6:15am", "6:19am", "6:26am", "6:29am", "6:33am", "6:39am", "6:42am", "6:49am"]
@@ -19204,7 +19204,7 @@ const Schedules = {
       },
       "sunday": {
         "northbound": {
-          "stops": ["Evergreen & Ten Mile", "Evergreen & Eight Mile", "Evergreen & Seven Mile", "Evergreen & Grand River", "EVERGREEN & PLYMOUTH", "Evergreen & Warren", "Henry Ford Community College", "Fairlane Town Center"],
+          "stops": ["10329", "380", "838", "839", "7154", "842", "843", "368"],
           "trips": [{
             "trip_id": "6443",
             "timepoints": ["7:17am", "7:24am", "7:28am", "7:33am", "7:39am", "7:45am", "7:50am", "7:57am"]
@@ -19253,7 +19253,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["Fairlane Town Center", "Henry Ford Community College", "Evergreen & Warren", "EVERGREEN & PLYMOUTH", "Evergreen & Schoolcraft", "Evergreen & Grand River", "Evergreen & Seven Mile", "Evergreen & Eight Mile", "Northwestern Hwy & Ten Mile"],
+          "stops": ["368", "843", "844", "7156", "846", "847", "848", "849", "10328"],
           "trips": [{
             "trip_id": "6440",
             "timepoints": ["7:15am", "7:21am", "7:25am", "7:31am", "7:34am", "7:38am", "7:44am", "7:48am", "7:54am"]
@@ -19320,7 +19320,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "westbound": {
-          "stops": ["Jefferson and Maryland", "JEFFERSON & CADILLAC", "LAFAYETTE & VAN DYKE", "LAFAYETTE & RIVARD", "CANFIELD & BRUSH", "W GRAND BLVD & LODGE"],
+          "stops": ["10178", "8167", "8148", "4841", "10258", "8263"],
           "trips": [{
             "trip_id": "5489",
             "timepoints": ["5:37am", "5:45am", "5:50am", "5:58am", "6:05am", "6:15am"]
@@ -19351,7 +19351,7 @@ const Schedules = {
           }]
         },
         "eastbound": {
-          "stops": ["W GRAND BLVD & TRUMBULL", "CANFIELD & BRUSH", "LAFAYETTE & RIVARD", "LAFAYETTE & SEYBURN", "JEFFERSON & CADILLAC", "MARYLAND & JEFFERSON"],
+          "stops": ["2507", "10259", "4838", "8147", "8166", "10267"],
           "trips": [{
             "trip_id": "5498",
             "timepoints": ["2:55pm", "3:05pm", "3:13pm", "3:23pm", "3:29pm", "3:38pm"]
@@ -19406,7 +19406,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "southbound": {
-          "stops": ["W GRAND BLVD & TRUMBULL", "WARREN & CASS", "Michigan & 14th", "Vernor & Livernois", "SPRINGWELLS & LAFAYETTE", "Fort & West Outer Drive"],
+          "stops": ["2507", "3412", "1490", "772", "10260", "295"],
           "trips": [{
             "trip_id": "5509",
             "timepoints": ["2:48pm", "2:56pm", "3:04pm", "3:14pm", "3:21pm", "3:36pm"]
@@ -19437,7 +19437,7 @@ const Schedules = {
           }]
         },
         "northbound": {
-          "stops": ["Fort & West Outer Drive", "SPRINGWELLS & LAFAYETTE", "Vernor & Livernois", "Michigan & 14th", "CASS & WARREN", "W GRAND BLVD & LODGE"],
+          "stops": ["295", "10261", "766", "1489", "3411", "8263"],
           "trips": [{
             "trip_id": "5524",
             "timepoints": ["5:34am", "5:46am", "5:52am", "5:59am", "6:08am", "6:15am"]
@@ -19480,7 +19480,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["Pembroke and Vaughan", "Grand River & Evergreen", "Grand River & Schaefer", "Grand River & Times Square", "Larned & St Antoine"],
+          "stops": ["10253", "327", "330", "10231", "8100"],
           "trips": [{
             "trip_id": "5525",
             "timepoints": ["5:35am", "5:45am", "5:56am", "6:09am", "6:15am"]
@@ -19499,7 +19499,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Jefferson & St Antoine", "Michigan & Washington Blvd", "Grand River & Schaefer", "Evergreen & Grand River", "EVERGREEN & PEMBROKE"],
+          "stops": ["341", "8441", "351", "847", "7258"],
           "trips": [{
             "trip_id": "5535",
             "timepoints": ["3:15pm", "3:22pm", "3:37pm", "3:48pm", "4:00pm"]
@@ -19539,7 +19539,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "northbound": {
-          "stops": ["LARNED & SHELBY", "BRUSH & MECHANIC", "LUMPKIN & BERNARD", "CANIFF & CONANT", "RYAN & NEVADA", "East Outer Drive & Van Dyke"],
+          "stops": ["10204", "10205", "7328", "10207", "10208", "646"],
           "trips": [{
             "trip_id": "5540",
             "timepoints": ["3:35pm", "3:40pm", "3:49pm", "3:55pm", "4:05pm", "4:14pm"]
@@ -19558,7 +19558,7 @@ const Schedules = {
           }]
         },
         "southbound": {
-          "stops": ["East Outer Drive & Van Dyke", "NEVADA & RYAN", "CONANT &CANIFF", "LUMPKIN & HOLBROOK", "GRATIOT & BEAUBIEN", "CONGRRESS & WASHINGTON"],
+          "stops": ["648", "4931", "10200", "10201", "10202", "10203"],
           "trips": [{
             "trip_id": "5541",
             "timepoints": ["5:51am", "6:00am", "6:07am", "6:13am", "6:20am", "6:25am"]
@@ -19595,7 +19595,7 @@ const Schedules = {
     "schedules": {
       "weekday": {
         "eastbound": {
-          "stops": ["Evergreen & Capitol", "Joy Rd & Evergreen", "Joy Rd & Greenfield", "Joy Rd & Livernois", "Grand River & Times Square", "Larned & St Antoine"],
+          "stops": ["7158", "7214", "434", "437", "10231", "8100"],
           "trips": [{
             "trip_id": "5546",
             "timepoints": ["5:43am", "5:47am", "5:54am", "6:05am", "6:18am", "6:25am"]
@@ -19617,7 +19617,7 @@ const Schedules = {
           }]
         },
         "westbound": {
-          "stops": ["Jefferson & St Antoine", "Michigan & Washington Blvd", "Joy Rd & Livernois", "Joy Rd & Greenfield", "Evergreen & Joy Rd", "Evergreen & CApitol"],
+          "stops": ["341", "8441", "449", "452", "845", "7151"],
           "trips": [{
             "trip_id": "5552",
             "timepoints": ["3:10pm", "3:17pm", "3:31pm", "3:42pm", "3:50pm", "3:55pm"]

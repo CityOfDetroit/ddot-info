@@ -10,10 +10,50 @@
 body {
   font-family: "Gibson Detroit Regular", sans-serif; 
 }
-h1,h2,h3,h4,h5{font-weight: bold; margin: 0;}
 
-.h6 {
-  height: 24em;
+@media screen and (max-width: 650px) {
+  .map {
+    height: 50vh;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .App {
+    display: grid;
+    grid-template: 50px 50px repeat(4, 1fr) / repeat(8, 1fr);
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .nav {
+    grid-row: 1;
+    grid-column: 1 / 9;
+  }
+  
+  .header {
+    grid-row: 1/3;
+    grid-column: 1/9;
+  }
+
+  .map {
+    grid-column: 1/5;
+    grid-row: 3/9;
+  }
+
+  .list {
+    grid-column: 5/9;
+    grid-row: 3/9;
+  }
+
+  .search {
+    grid-column: 1/5;
+    grid-row: 2/7;
+  }
+
+  .geolocate {
+    grid-column: 5/9;
+    grid-row: 2/7;
+  }
 }
 
 .sticky-table .sticky-table-cell{

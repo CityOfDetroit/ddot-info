@@ -20,8 +20,10 @@ class RouteMap extends Component {
         "type": "FeatureCollection",
         "features": this.props.trips
       }
-      this.state.map.getSource('realtime').setData(fc)
-      this.state.map.getSource('realtime-background').setData(fc)
+      if(this.state.map.isSourceLoaded('realtime')) {
+        this.state.map.getSource('realtime').setData(fc)
+        this.state.map.getSource('realtime-background').setData(fc)
+      }
     }
   }
 

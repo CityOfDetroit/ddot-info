@@ -51,8 +51,6 @@ class LineRealTime extends React.Component {
     fetch(`https://ddot-proxy-test.herokuapp.com/api/where/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
-      console.log(d)
-
       let geojson = d.data.list.map(bus => {
         return {
           "type": "Feature",
@@ -74,7 +72,6 @@ class LineRealTime extends React.Component {
 
       let realtimeTrips = _.filter(geojson, o => { return o.properties.direction !== undefined })
 
-      console.log(realtimeTrips)
       this.setState({realtimeTrips: realtimeTrips})
 
     })

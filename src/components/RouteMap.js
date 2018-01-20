@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import _ from 'lodash';
 import Colors from '../data/colors.js';
-
+import Schedules from '../data/schedules.js'
 
 class RouteMap extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class RouteMap extends Component {
       'center': [-83.0458, 42.3314],
       'zoom': 10,
       'attributionControl': false,
-      'interactive': false
+      'interactive': true
     });
 
     map.addControl(new mapboxgl.GeolocateControl({
@@ -48,6 +48,7 @@ class RouteMap extends Component {
     }));
 
     const route_id = this.props.routeId.toString()
+    const route = Schedules[route_id]
     const stops = this.props.stops
     const bounds = this.props.bbox
     const realtimeTrips = this.props.trips
@@ -58,6 +59,8 @@ class RouteMap extends Component {
       map.setFilter('ddot-stops copy', ["in", "stop_id"].concat(stops.map(m => { return m.toString() })))
       // map.setLayoutProperty('ddot-stops', 'visibility', 'visible')
       map.setLayoutProperty('ddot-stops copy', 'visibility', 'visible')
+      // map.setLayoutProperty('road-label-large', 'visibility', 'visible')
+      // map.setFilter('road-label-large', ["in", "name"].concat(route.road_labels))
       map.fitBounds(bounds, {'padding': 25})
 
       map.addLayer({

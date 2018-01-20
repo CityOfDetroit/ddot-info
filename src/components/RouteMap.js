@@ -2,14 +2,11 @@ import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import _ from 'lodash';
 import Colors from '../data/colors.js';
-import Schedules from '../data/schedules.js'
+// import Schedules from '../data/schedules.js'
 
 class RouteMap extends Component {
   constructor(props) {
     super(props);
-
-    console.log(props)
-
     this.state = {
       drewMap: false,
       map: {},
@@ -48,7 +45,7 @@ class RouteMap extends Component {
     }));
 
     const route_id = this.props.routeId.toString()
-    const route = Schedules[route_id]
+    // const route = Schedules[route_id]
     const stops = this.props.stops
     const bounds = this.props.bbox
     const realtimeTrips = this.props.trips

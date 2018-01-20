@@ -4,9 +4,6 @@ import mapboxgl from 'mapbox-gl';
 class StopMap extends Component {
   constructor(props) {
     super(props);
-
-    console.log(props)
-
     this.state = {
       drewMap: false,
       map: {},

@@ -72,7 +72,7 @@ class LineRealTime extends React.Component {
         }
       })
 
-      let realtimeTrips = _.filter(geojson, o => { return o.properties.direction != undefined })
+      let realtimeTrips = _.filter(geojson, o => { return o.properties.direction !== undefined })
 
       console.log(realtimeTrips)
       this.setState({realtimeTrips: realtimeTrips})

@@ -6,17 +6,12 @@ import chroma from 'chroma-js';
 import Stops from '../data/stops.js';
 
 export default class ScheduleTable extends Component {
-  constructor(props) {
-    super(props);
-    console.log(props)
-  }
 
   render() {
     const background = `rgba(${chroma(this.props.color).darken().alpha(0.25).rgba().toString()}`;
     const active = `rgba(${chroma(this.props.color).darken(2).rgba().toString()}`;
 
     let tripsToHighlight = this.props.liveTrips.map(t => t.slice(8))
-    console.log(tripsToHighlight)
 
     return (
       <div className="h6 v-top">

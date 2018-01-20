@@ -15,7 +15,6 @@ class StopSchedule extends Component {
     fetch(`https://ddot-proxy-test.herokuapp.com/api/where/schedule-for-stop/DDOT_${this.props.stopId}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
-      console.log(d)
       this.setState({ schedule: d, fetchedSchedule: true })
     })
     .catch(e => console.log(e));

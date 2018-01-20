@@ -4,7 +4,6 @@ import _ from 'lodash';
 
 class ServicePicker extends React.Component {
   constructor(props) {
-    console.log(props.currentSvc);
     super(props);
     this.state = { selectedOption: props.currentSvc }
   }

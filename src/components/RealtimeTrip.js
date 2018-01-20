@@ -17,7 +17,11 @@ export default class RealtimeTrip extends Component {
         }}
         >
         <div style={{display: 'flex', alignItems: 'center'}}>
-          <img src={this.props.trip.properties.predicted ? LiveSVG : SchedSVG} />
+          {this.props.trip.properties.predicted ?
+            <img src={LiveSVG} alt="Showing real-time prediction" />
+            :
+            <img src={SchedSVG} alt="Showing scheduled time" />
+          }
           <div className="ml2 pa1">
             <span className="fw5 f6 db">
               next stop:

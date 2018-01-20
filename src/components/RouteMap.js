@@ -122,7 +122,7 @@ class RouteMap extends Component {
 
   render() {
     return (
-      <div id="map" className="map h6" style={{width: '100%'}}></div>
+      <div id="map" className="map h6"></div>
     )
   }
 }

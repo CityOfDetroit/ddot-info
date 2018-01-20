@@ -10,7 +10,7 @@ class StopRouteList extends Component {
     const predictions = this.props.predictions
     const routes = this.props.routes
     return (
-      <div className='ma2 stopRouteList'>
+      <div className='list overflow-scroll'>
         {routes.map(r => (
           <div className="pa2 bb" style={{display: 'flex', alignItems: 'center'}}>
             <LineLink name={Schedules[r].rt_name} id={r} color={Schedules[r].color} />

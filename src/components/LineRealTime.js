@@ -26,6 +26,7 @@ class LineRealTime extends React.Component {
     })
 
     this.state = {
+      route: (route),
       routeName: (route.rt_name),
       routeId: (route.rt_id),
       description: (route.description),
@@ -51,7 +52,7 @@ class LineRealTime extends React.Component {
     fetch(`https://ddot-proxy-test.herokuapp.com/api/where/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
-      let geojson = d.data.list.map(bus => {
+      let geojson = _.sortBy(d.data.list, 'status.tripId').map((bus, i) => {
         return {
           "type": "Feature",
           "geometry": {
@@ -59,7 +60,9 @@ class LineRealTime extends React.Component {
             "coordinates": [bus.status.position.lon, bus.status.position.lat]
           },
           "properties": {
+            // "letter": _.capitalize(String.fromCharCode(97 + i)),
             "tripId": bus.status.activeTripId,
+            "displayTripId": bus.status.activeTripId.slice(-4,),
             "scheduledDistanceAlongTrip": bus.status.scheduledDistanceAlongTrip,
             "nextStop": bus.status.nextStop,
             "nextStopOffset": bus.status.nextStopTimeOffset,
@@ -111,7 +114,8 @@ class LineRealTime extends React.Component {
           trips={this.state.realtimeTrips} 
         />
         <RealtimeTripList
-          trips={this.state.realtimeTrips} 
+          trips={this.state.realtimeTrips}
+          route={this.state.route}
         />
       </div>
     )

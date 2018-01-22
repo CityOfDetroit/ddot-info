@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import RealtimeTrip from './RealtimeTrip';
+import chroma from 'chroma-js';
+import Colors from '../data/colors.js'
+
+import Stops from '../data/stops.js'
 
 import _ from 'lodash';
 
@@ -11,8 +15,15 @@ export default class RealtimeTripList extends Component {
       <div className="list overflow-scroll">
         {Object.keys(byDirection).map(dir =>
           <div className="" key={dir}>
-            <span className="db pv1 pl1 fw7 f7 bg-moon-gray">
-              {byDirection[dir].length > 0 ? byDirection[dir].length : 'no'} {dir} bus(es):
+            <span 
+              className="db pa2 f5 f4-ns fw7 white"
+              style={{
+                backgroundColor: `rgba(${chroma(Colors[dir]).rgba().toString()})`,
+              }}
+              >
+               {_.capitalize(dir)} to {Stops[this.props.route.schedules.weekday[dir].stops.slice(-1,)].name}
+               <br />
+               {byDirection[dir].length > 0 ? byDirection[dir].length : 'no'} {byDirection[dir].length == 1 ? `bus` : `buses`}
             </span>
             {_.sortBy(byDirection[dir], 'properties.scheduledDistanceAlongTrip').map((t, i) =>
               <div>

@@ -61,10 +61,10 @@ class RouteMap extends Component {
       // map.setLayoutProperty('road-label-large', 'visibility', 'visible')
       // map.setFilter('road-label-large', ["in", "name"].concat(route.road_labels))
       map.fitBounds(bounds, {'padding': 25})
-
+      
       map.addLayer({
         "id": "realtime-background",
-        "type": "circle",
+        "type": "symbol",
         "source": {
           "type": "geojson",
           "data": {
@@ -72,19 +72,38 @@ class RouteMap extends Component {
             "features": realtimeTrips
           }
         },
+        "layout": {
+          "icon-image": "bus-15",
+          "icon-allow-overlap": true
+        },
         "paint": {
-          "circle-radius": 10,
-          "circle-color": {
-            property: "direction",
-            type: "categorical",
-            stops: _.toPairs(Colors),
-          },
-          "circle-opacity": 0.5,
-          "circle-stroke-color": "black",
-          "circle-stroke-width": 1.5,
-          "circle-stroke-opacity": 0.5
+          "icon-opacity": 0.75
         }
-      })
+      });
+
+      // map.addLayer({
+      //   "id": "realtime-background",
+      //   "type": "circle",
+      //   "source": {
+      //     "type": "geojson",
+      //     "data": {
+      //       "type": "FeatureCollection",
+      //       "features": realtimeTrips
+      //     }
+      //   },
+      //   "paint": {
+      //     "circle-radius": 0,
+      //     "circle-color": {
+      //       property: "direction",
+      //       type: "categorical",
+      //       stops: _.toPairs(Colors),
+      //     },
+      //     "circle-opacity": 0.75,
+      //     "circle-stroke-color": "black",
+      //     "circle-stroke-width": 1.5,
+      //     "circle-stroke-opacity": 0.5
+      //   }
+      // })
 
       map.addLayer({
         "id": "realtime",
@@ -97,11 +116,42 @@ class RouteMap extends Component {
           }
         },
         "layout": {
-          "icon-image": "bus-11",
-          "icon-allow-overlap": true
+          "text-field": '{displayTripId}',
+          "text-font": ["Gibson Detroit SemiBold"],
+          "text-size": 13,
+          "text-allow-overlap": true,
+          "text-padding": 3,
+          "text-anchor": {
+            property: "direction",
+            type: "categorical",
+            stops: [
+              ["northbound", "right"],
+              ["southbound", "left"],
+              ["westbound", "top"],
+              ["eastbound", "bottom"],
+              ["clockwise", "top"]
+            ]
+          },
+          "text-offset": {
+            property: "direction",
+            type: "categorical",
+            stops: [
+              ["northbound", [-1,.2]],
+              ["southbound", [1,.2]],
+              ["westbound", [0,.75]],
+              ["eastbound", [0,-.5]],
+              ["clockwise", [0,0.75]]
+            ]
+          }
         },
         "paint": {
-          "icon-opacity": 0.75
+          "text-color": "white",
+          "text-halo-color": {
+            property: "direction",
+            type: "categorical",
+            stops: _.toPairs(Colors),
+          },
+          "text-halo-width": 8,
         }
       })
     });

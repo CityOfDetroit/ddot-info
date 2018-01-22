@@ -14,7 +14,7 @@ export default class ScheduleTable extends Component {
     let tripsToHighlight = this.props.liveTrips.map(t => t.slice(8))
 
     return (
-      <div className="h6 v-top">
+      <div className="v-top schedule">
         <StickyTable className="h6 v-top">
           <Row className="fw7">
           <Cell className="pa2 fw6 f7 tc v-top black bb br tripid w2"></Cell>

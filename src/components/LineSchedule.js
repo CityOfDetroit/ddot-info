@@ -7,6 +7,7 @@ import ScheduleTable from './ScheduleTable';
 import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
 import LineHeader from './LineHeader';
+import BusRouteStopList from './BusRouteStopList'
 
 import Helpers from '../helpers';
 
@@ -38,10 +39,10 @@ class LineSchedule extends React.Component {
       color: (route.color),
       currentSvc: (Object.keys(route.schedules).length > 1 ? Helpers.dowToService(moment().day()) : 'weekday'),
       currentDirection: (Object.keys(route.schedules.weekday)[0]),
+      currentStops: [],
       availableServices: (Object.keys(route.schedules)),
       availableDirections: (Object.keys(route.schedules.weekday)),
       routeBbox: route.bbox,
-      timepointStops: route.timepoints[Object.keys(route.schedules.weekday)[0]]
     };
 
     this.handleDirectionChange = this.handleDirectionChange.bind(this);
@@ -101,9 +102,9 @@ class LineSchedule extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
         <LineHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
-        <div>
+        <div className="pickers">
           <ServicePicker 
             services={this.state.availableServices}
             currentSvc={this.state.currentSvc}
@@ -114,13 +115,19 @@ class LineSchedule extends React.Component {
             currentDirection={this.state.currentDirection}
             onChange={this.handleDirectionChange} 
           />
-          <ScheduleTable 
-            schedule={this.state[this.state.currentSvc]} 
-            direction={this.state.currentDirection} 
-            liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
-            color={this.state.color}
-          />
+                  <h2>Stops on this schedule</h2>
+
         </div>
+        <BusRouteStopList
+          id={this.state.routeId}
+          timepoints={this.state[this.state.currentSvc][this.state.currentDirection].stops}
+          />
+        <ScheduleTable 
+          schedule={this.state[this.state.currentSvc]} 
+          direction={this.state.currentDirection} 
+          liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
+          color={this.state.color}
+        />
       </div>
     )
   }

@@ -29,10 +29,15 @@ class BusRouteStopList extends Component {
   }
 
   render() {
-    const stops = _.filter(this.state.stops, ['stopIds[0]', `DDOT_${this.props.timepoints[0]}`])
+    // const stops = _.filter(this.state.stops, ['stopIds[0]', `DDOT_${this.props.timepoints[0]}`])
+    const first_timepoint = this.props.timepoints[2]
+    console.log(_.filter(this.state.stops, o => { return o.stopIds.indexOf(`DDOT_${first_timepoint}`) > -1 }))
+    const stops = _.filter(this.state.stops, o => { return o.stopIds.indexOf(`DDOT_${first_timepoint}`) > -1 })
+    console.log(first_timepoint)
+    // const stops = _.filter(this.state.stops, function(o) { return o.stopIds.indexOf(`DDOT_${this.props.timepoints[0]}`) > -1 })
     return (
       <div className='stopList overflow-scroll'>
-        <div className="overflow-scroll">
+        <div className="">
           {stops.length > 0 ? stops[0].stopIds.map((stop, i) =>
             <div className="pa1 bb b--light-silver" style={{display: 'flex', alignItems: 'center'}}>
               <span className="f7 fw7 pa1">{i+1}.</span>

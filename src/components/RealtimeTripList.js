@@ -14,7 +14,7 @@ export default class RealtimeTripList extends Component {
             <span className="db pv1 pl1 fw7 f7 bg-moon-gray">
               {byDirection[dir].length > 0 ? byDirection[dir].length : 'no'} {dir} bus(es):
             </span>
-            {byDirection[dir].map(t => 
+            {_.sortBy(byDirection[dir], 'properties.distanceAlongTrip').map(t => 
               <RealtimeTrip trip={t} key={t.properties.tripId} />
             )}
           </div>

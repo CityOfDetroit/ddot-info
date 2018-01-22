@@ -60,6 +60,7 @@ class LineRealTime extends React.Component {
           },
           "properties": {
             "tripId": bus.status.activeTripId,
+            "distanceAlongTrip": bus.status.distanceAlongTrip,
             "nextStop": bus.status.nextStop,
             "nextStopOffset": bus.status.nextStopTimeOffset,
             "predicted": bus.status.predicted,

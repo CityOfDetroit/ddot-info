@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
-// import PropTypes from 'prop-types';
-import StopLink from './StopLink';
-import LineLink from './LineLink';
-// import Schedules from '../data/schedules.js';
-import Stops from '../data/stops.js'
+
+import StopLink from './StopLink'
+import LineLink from './LineLink'
 
 class StopsNearLocation extends Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -21,7 +17,10 @@ class StopsNearLocation extends Component {
     .then(response => response.json())
     .then(d => {
       console.log(d)
-      this.setState({data: d, fetchedData: true})
+      this.setState({
+        data: d, 
+        fetchedData: true
+      })
     })
     .catch(e => console.log(e));
   }
@@ -32,6 +31,7 @@ class StopsNearLocation extends Component {
 
   render() {
     let data = this.state.fetchedData ? this.state.data : null
+
     return (
       <div>
         <div>
@@ -57,4 +57,4 @@ class StopsNearLocation extends Component {
   }
 }
 
-export default StopsNearLocation;
+export default StopsNearLocation

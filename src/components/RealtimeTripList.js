@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-import RealtimeTrip from './RealtimeTrip';
-import chroma from 'chroma-js';
+import React, { Component } from 'react'
+import chroma from 'chroma-js'
+import _ from 'lodash'
+
+import RealtimeTrip from './RealtimeTrip'
 import Colors from '../data/colors.js'
-
 import Stops from '../data/stops.js'
-
-import _ from 'lodash';
 
 export default class RealtimeTripList extends Component {
   render() {
@@ -17,22 +16,19 @@ export default class RealtimeTripList extends Component {
           <div className="" key={dir}>
             <span 
               className="db pa2 f5 f4-ns fw7 white"
-              style={{
-                backgroundColor: `rgba(${chroma(Colors[dir]).rgba().toString()})`,
-              }}
-              >
-               {_.capitalize(dir)} to {Stops[this.props.route.schedules.weekday[dir].stops.slice(-1,)].name}
-               <br />
-               {byDirection[dir].length > 0 ? byDirection[dir].length : 'no'} {byDirection[dir].length == 1 ? `bus` : `buses`}
+              style={{ backgroundColor: `rgba(${chroma(Colors[dir]).rgba().toString()})` }}>
+                {_.capitalize(dir)} to {Stops[this.props.route.schedules.weekday[dir].stops.slice(-1,)].name}
+                <br />
+                {byDirection[dir].length > 0 ? byDirection[dir].length : 'no'} {byDirection[dir].length === 1 ? `bus` : `buses`}
             </span>
             {_.sortBy(byDirection[dir], 'properties.scheduledDistanceAlongTrip').map((t, i) =>
               <div>
-              <RealtimeTrip trip={t} key={t.properties.tripId} />
+                <RealtimeTrip trip={t} key={t.properties.tripId} />
               </div>
             )}
           </div>
         )}
       </div>
-    );
+    )
   }
 }

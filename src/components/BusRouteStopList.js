@@ -41,7 +41,7 @@ class BusRouteStopList extends Component {
           {stops.length > 0 ? stops[0].stopIds.map((stop, i) =>
             <div className="pa1 bb b--light-silver" style={{display: 'flex', alignItems: 'center'}}>
               <span className="f7 fw7 pa1">{i+1}.</span>
-              <StopLink id={stop.slice(5,)} name={Stops[stop.slice(5,)].name} />
+              <StopLink id={stop.slice(5,)} name={Stops[stop.slice(5,)].name} exclude={this.props.routeNumber}/>
             </div>
           ) : ``}
         </div>

@@ -36,11 +36,13 @@ class StopsNearLocation extends Component {
       <div>
         <div>
           <h4>Nearby routes:</h4>
-          {this.state.fetchedData ? data.data.references.routes.map(r => (
-            <div className="bg-light-gray ma2 pa2">
-              <LineLink id={parseInt(r.shortName, 10)}/>
-            </div>
-          )) : ``}
+          <div className="h5 overflow-scroll">
+            {this.state.fetchedData ? data.data.references.routes.map(r => (
+              <div className="bg-light-gray ma2 pa2">
+                <LineLink id={parseInt(r.shortName, 10)}/>
+              </div>
+            )) : ``}
+          </div>
         </div>
         <div>
           <h4>Nearby stops:</h4>

@@ -6,4 +6,12 @@ const Colors = {
   'clockwise': 'rgb(23, 214, 42)'   
 }
 
+// const Colors = {
+//   'northbound': '#ddd',
+//   'eastbound': '#ddd',
+//   'southbound': '#222',
+//   'westbound': '#222',
+//   'clockwise': 'rgb(23, 214, 42)'   
+// }
+
 export default Colors;

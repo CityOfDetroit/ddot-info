@@ -19583,6 +19583,11 @@ const Schedules = {
       [-83.0243340005268, 42.4411909998977]
     ]
   },
+  "498": {
+    "id": "498",
+    "rt_name": "Reflex",
+    "color": "red"
+  },
   "96": {
     "id": "96",
     "rt_name": "Joy Express",

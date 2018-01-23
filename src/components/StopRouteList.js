@@ -9,7 +9,8 @@ import RoutePredictionList from './RoutePredictionList';
 class StopRouteList extends Component {
   render () {
     const predictions = this.props.predictions
-    const goodPredictions = _.filter(this.props.predictions.data.entry.arrivalsAndDepartures, a => { return a.predictedArrivalTime > 0 })
+    const goodPredictions = this.props.predictions.data.entry.arrivalsAndDepartures
+    // const goodPredictions = _.filter(this.props.predictions.data.entry.arrivalsAndDepartures, a => { return a.predictedArrivalTime > 0 })
     const routes = this.props.routes
     return (
       <div className='list overflow-scroll'>

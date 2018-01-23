@@ -30,6 +30,7 @@ class LineSchedule extends React.Component {
     this.state = {
       routeName: (route.rt_name),
       routeId: (route.rt_id),
+      routeNumber: parseInt(this.props.match.params.name, 10),
       description: (route.description),
       weekday: (route.schedules.weekday),
       saturday: (route.schedules.saturday),
@@ -120,6 +121,7 @@ class LineSchedule extends React.Component {
         </div>
         <BusRouteStopList
           id={this.state.routeId}
+          routeNumber={this.state.routeNumber}
           timepoints={this.state[this.state.currentSvc][this.state.currentDirection].stops}
           />
         <ScheduleTable 

@@ -30,7 +30,7 @@ class Stop extends React.Component {
 
   componentDidMount() {
     this.fetchData()
-    this.interval = setInterval(() => this.fetchData(), 3000);
+    this.interval = setInterval(() => this.fetchData(), 20000);
   }
 
   componentWillUnmount() {

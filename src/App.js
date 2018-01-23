@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import TopNav from './components/TopNav';
 import LineSearch from './components/LineSearch';
-import Geolocator from './components/Geolocator';
+import Nearby from './components/Nearby'
 
 class App extends Component {
   
@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
         <TopNav />
         <LineSearch />
-        <Geolocator />
+        <Nearby />
       </div>
     );
   }

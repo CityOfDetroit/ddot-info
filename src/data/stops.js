@@ -947,36 +947,6 @@ const Stops = {
     "lon": -82.938168,
     "routes": ["25", "80", "9"]
   },
-  "10179": {
-    "name": "SOMERSET MALL",
-    "lat": 42.561396,
-    "lon": -83.181507,
-    "routes": ["498"]
-  },
-  "10181": {
-    "name": "Woodward & Adams",
-    "lat": 42.337383,
-    "lon": -83.050756,
-    "routes": ["498"]
-  },
-  "10182": {
-    "name": "Woodward & Milwaukee",
-    "lat": 42.369281,
-    "lon": -83.072611,
-    "routes": ["498"]
-  },
-  "10185": {
-    "name": "Woodward & 13 Mile",
-    "lat": 42.517606,
-    "lon": -83.185864,
-    "routes": ["498"]
-  },
-  "10186": {
-    "name": "Adams & Bowers",
-    "lat": 42.543961,
-    "lon": -83.205289,
-    "routes": ["498"]
-  },
   "10187": {
     "name": "Warren & Telegraph",
     "lat": 42.341236,
@@ -1012,30 +982,6 @@ const Stops = {
     "lat": 42.341516,
     "lon": -83.26683,
     "routes": ["14"]
-  },
-  "10194": {
-    "name": "Farmer & Monroe",
-    "lat": 42.33312,
-    "lon": -83.045537,
-    "routes": ["498"]
-  },
-  "10196": {
-    "name": "Woodward & Milwaukee",
-    "lat": 42.368977,
-    "lon": -83.07266,
-    "routes": ["498"]
-  },
-  "10197": {
-    "name": "Woodward & 13 Mile",
-    "lat": 42.517258,
-    "lon": -83.185852,
-    "routes": ["498"]
-  },
-  "10198": {
-    "name": "Adams & Bowers",
-    "lat": 42.543004,
-    "lon": -83.205522,
-    "routes": ["498"]
   },
   "10200": {
     "name": "CONANT &CANIFF",
@@ -1637,12 +1583,6 @@ const Stops = {
     "lon": -83.055469,
     "routes": ["53"]
   },
-  "1037": {
-    "name": "WOODWARD & ADAMS",
-    "lat": 42.337007,
-    "lon": -83.050757,
-    "routes": ["498"]
-  },
   "104": {
     "name": "Junction & Fort",
     "lat": 42.310104,
@@ -1707,13 +1647,13 @@ const Stops = {
     "name": "Woodward & Warren",
     "lat": 42.357109,
     "lon": -83.064337,
-    "routes": ["498", "53"]
+    "routes": ["53"]
   },
   "1064": {
     "name": "Woodward & Warren",
     "lat": 42.356904,
     "lon": -83.064704,
-    "routes": ["498", "53"]
+    "routes": ["53"]
   },
   "1066": {
     "name": "WOODWARD & CANFIELD",
@@ -2361,7 +2301,7 @@ const Stops = {
     "name": "State Fairgrounds Transit Center",
     "lat": 42.441954,
     "lon": -83.121827,
-    "routes": ["12", "30", "498", "53", "54"]
+    "routes": ["12", "30", "53", "54"]
   },
   "1271": {
     "name": "GRATIOT & GITRE",
@@ -3549,7 +3489,7 @@ const Stops = {
     "name": "Woodward & Martin Luther King",
     "lat": 42.346602,
     "lon": -83.057541,
-    "routes": ["498", "53"]
+    "routes": ["53"]
   },
   "161": {
     "name": "Warren & Greenfield",
@@ -3561,7 +3501,7 @@ const Stops = {
     "name": "Woodward & Mack",
     "lat": 42.347631,
     "lon": -83.05799,
-    "routes": ["498", "53"]
+    "routes": ["53"]
   },
   "1614": {
     "name": "MACK & JOHN R",
@@ -3945,13 +3885,13 @@ const Stops = {
     "name": "WOODWARD & TROWBRIDGE",
     "lat": 42.389595,
     "lon": -83.08613,
-    "routes": ["498", "53"]
+    "routes": ["53"]
   },
   "1716": {
     "name": "WOODWARD & CALVERT",
     "lat": 42.389193,
     "lon": -83.086229,
-    "routes": ["498", "53"]
+    "routes": ["53"]
   },
   "1719": {
     "name": "HARMON & WOODWARD",
@@ -14829,13 +14769,13 @@ const Stops = {
     "name": "Woodward & Seven Mile",
     "lat": 42.432353,
     "lon": -83.115392,
-    "routes": ["498", "53"]
+    "routes": ["53"]
   },
   "4604": {
     "name": "WOODWARD & 7 MILE",
     "lat": 42.431959,
     "lon": -83.115404,
-    "routes": ["498", "53"]
+    "routes": ["53"]
   },
   "4609": {
     "name": "7MILE & WOODWARD(NEAR SIDE)",
@@ -28599,7 +28539,7 @@ const Stops = {
     "name": "Woodward & Manchester",
     "lat": 42.406984,
     "lon": -83.098304,
-    "routes": ["498", "53"]
+    "routes": ["53"]
   },
   "7850": {
     "name": "MC NICHOLS & CARDONI",
@@ -31685,18 +31625,6 @@ const Stops = {
     "lon": -83.103466,
     "routes": ["53"]
   },
-  "8950": {
-    "name": "Woodward & Nine Mile Road",
-    "lat": 42.460629,
-    "lon": -83.134752,
-    "routes": ["498"]
-  },
-  "8952": {
-    "name": "Woodward & Nine Mile Road",
-    "lat": 42.460164,
-    "lon": -83.134691,
-    "routes": ["498"]
-  },
   "8955": {
     "name": "WARREN & STEADMAN",
     "lat": 42.343771,
@@ -32645,12 +32573,6 @@ const Stops = {
     "lon": -83.048089,
     "routes": ["92", "96"]
   },
-  "9485": {
-    "name": "WOODWARD & 11 MILE ROAD",
-    "lat": 42.488547,
-    "lon": -83.158535,
-    "routes": ["498"]
-  },
   "9488": {
     "name": "Plymouth & Inkster Rd.",
     "lat": 42.369584,
@@ -32668,12 +32590,6 @@ const Stops = {
     "lat": 42.412138,
     "lon": -83.101733,
     "routes": ["53"]
-  },
-  "9532": {
-    "name": "WOODWARD & 11MILE",
-    "lat": 42.488833,
-    "lon": -83.158462,
-    "routes": ["498"]
   },
   "9535": {
     "name": "PLYMOUTH & DIXIE",
@@ -33502,12 +33418,6 @@ const Stops = {
     "lat": 42.414317,
     "lon": -83.272185,
     "routes": ["32"]
-  },
-  "993": {
-    "name": "WOODWARD & MANCHESTER",
-    "lat": 42.407476,
-    "lon": -83.098365,
-    "routes": ["498"]
   },
   "9936": {
     "name": "WEST JEFFERSON & VICTORIA",

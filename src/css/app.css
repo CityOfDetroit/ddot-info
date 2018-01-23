@@ -35,6 +35,11 @@ body {
     grid-column: 1/9;
   }
 
+  .nearby {
+    grid-row: 2/7;
+    grid-column: 4/9;
+  }
+
   /* Stop, LineRealTime */
   .map {
     grid-column: 1/5;
@@ -47,7 +52,7 @@ body {
 
   /* / */
   .search {
-    grid-column: 1/5;
+    grid-column: 1/4;
     grid-row: 2/9;
   }
   .geolocate {

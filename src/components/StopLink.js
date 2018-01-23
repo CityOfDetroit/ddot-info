@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Stops from '../data/stops.js';
+import Schedules from '../data/schedules.js'
+import _ from 'lodash';
 
 class StopLink extends Component {
   render() {
     return (
-      <span className='f7 fw3 glow'>
-        <Link className="dim black hover-mid-gray glow" to={{pathname: `/stop/${this.props.id}/`}}>{this.props.name}</Link>
-      </span>
+      <div style={{display: 'flex', alignItems: 'center', justifyContent:'justify-between'}}>
+        <Link className="dim black hover-mid-gray glow" to={{pathname: `/stop/${this.props.id}/`}}>{(Stops[this.props.id].name)}</Link>
+        {Stops[this.props.id].routes.map(r => (
+          <span className="pa1 dib white fw7 f7 ma1" style={{backgroundColor: Schedules[r].color}}>{r}</span>
+        ))}
+      </div>
     )
   }
 }

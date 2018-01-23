@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Schedules from '../data/schedules.js'
 
 class LineLink extends Component {
   render() {
+    const route = Schedules[this.props.id]
     return (
-      <div style={{minWidth: '200px'}}>
-        <span className='white fw7 f5 w2 pv2 tc dib' style={{backgroundColor: this.props.color}}>
+      <div style={{display: 'flex', alignItems:'center'}}>
+        <span className='white fw7 f5 w2 pv2 tc' style={{backgroundColor: route.color}}>
           {this.props.id}
         </span> 
         <span className='tr pl1 f5 fw6 pl2 glow'>
           <Link className="dim black hover-mid-gray glow" to={{pathname: `/route/${this.props.id}/real-time`, 
-            state: { id: this.props.id, routeId: this.props.routeId, name: this.props.name }}}>{this.props.name}</Link>
+            state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name }}}>{route.rt_name}</Link>
         </span>
       </div>
     )
@@ -19,9 +21,7 @@ class LineLink extends Component {
 }
 
 LineLink.propTypes = {
-  id: PropTypes.string.isRequired,
-  routeId: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired
 }
 
 export default LineLink;

@@ -1,21 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import moment from 'moment';
-import _ from 'lodash';
+import React from 'react'
+import PropTypes from 'prop-types'
+import moment from 'moment'
+import _ from 'lodash'
 
-import RouteMap from './RouteMap';
-import RealtimeTripList from './RealtimeTripList';
-import LineHeader from './LineHeader';
-
-import Helpers from '../helpers';
+import RouteMap from './RouteMap'
+import RealtimeTripList from './RealtimeTripList'
+import LineHeader from './LineHeader'
+import Helpers from '../helpers'
 
 class LineRealTime extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     let route = Helpers.getRoute(parseInt(this.props.match.params.name, 10))
-
     let tripIds = {}
+    
     Object.keys(route.schedules).forEach(svc => {
       Object.keys(route.schedules.weekday).forEach(dir => {
         if (!tripIds[dir]) {
@@ -42,10 +41,10 @@ class LineRealTime extends React.Component {
       availableDirections: (Object.keys(route.schedules.weekday)),
       routeBbox: route.bbox,
       timepointStops: route.timepoints[Object.keys(route.schedules.weekday)[0]]
-    };
+    }
 
-    this.handleDirectionChange = this.handleDirectionChange.bind(this);
-    this.handleServiceChange = this.handleServiceChange.bind(this);
+    this.handleDirectionChange = this.handleDirectionChange.bind(this)
+    this.handleServiceChange = this.handleServiceChange.bind(this)
   }
 
   fetchData() {
@@ -60,7 +59,6 @@ class LineRealTime extends React.Component {
             "coordinates": [bus.status.position.lon, bus.status.position.lat]
           },
           "properties": {
-            // "letter": _.capitalize(String.fromCharCode(97 + i)),
             "tripId": bus.status.activeTripId,
             "displayTripId": bus.status.activeTripId.slice(-4,),
             "scheduledDistanceAlongTrip": bus.status.scheduledDistanceAlongTrip,
@@ -73,30 +71,29 @@ class LineRealTime extends React.Component {
           }
         }
       })
-
       let realtimeTrips = _.filter(geojson, o => { return o.properties.direction !== undefined })
-
-      this.setState({realtimeTrips: realtimeTrips})
-
+      this.setState({ 
+        realtimeTrips: realtimeTrips 
+      })
     })
-    .catch(e => console.log(e));
+    .catch(e => console.log(e))
   }
 
   handleDirectionChange(event) {
     this.setState({
       currentDirection: event.target.value
-    });
+    })
   }
 
   handleServiceChange(event) {
     this.setState({
       currentSvc: event.target.value
-    });
+    })
   }
 
   componentDidMount() {
     this.fetchData()
-    this.interval = setInterval(() => this.fetchData(), 3000);
+    this.interval = setInterval(() => this.fetchData(), 3000)
   }
 
   componentWillUnmount() {
@@ -133,4 +130,4 @@ LineRealTime.propTypes = {
   }).isRequired,
 }
 
-export default LineRealTime;
+export default LineRealTime

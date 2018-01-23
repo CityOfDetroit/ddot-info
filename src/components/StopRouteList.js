@@ -13,8 +13,8 @@ class StopRouteList extends Component {
 
     return (
       <div className='list overflow-scroll'>
-        {routes.map(r => (
-          <div className="pa2 bb" style={{ display: 'flex', alignItems: 'center' }}>
+        {routes.map((r, i) => (
+          <div className="pa2 bb" style={{ display: 'flex', alignItems: 'center' }} key={i}>
             <LineLink name={Schedules[r].rt_name} id={r} color={Schedules[r].color} />
             <RoutePredictionList predictions={_.filter(goodPredictions, function(o) { 
               return o.routeShortName === r.padStart(3, '0')})} route={r} />

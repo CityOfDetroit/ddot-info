@@ -12,8 +12,8 @@ export default class RealtimeTripList extends Component {
 
     return (
       <div className="list overflow-scroll">
-        {Object.keys(byDirection).map(dir =>
-          <div className="" key={dir}>
+        {Object.keys(byDirection).map((dir, i) =>
+          <div key={i}>
             <span 
               className="db pa2 f5 f4-ns fw7 white"
               style={{ backgroundColor: `rgba(${chroma(Colors[dir]).rgba().toString()})` }}>
@@ -22,7 +22,7 @@ export default class RealtimeTripList extends Component {
                 {byDirection[dir].length > 0 ? byDirection[dir].length : 'no'} {byDirection[dir].length === 1 ? `bus` : `buses`}
             </span>
             {_.sortBy(byDirection[dir], 'properties.scheduledDistanceAlongTrip').map((t, i) =>
-              <div>
+              <div key={i}>
                 <RealtimeTrip trip={t} key={t.properties.tripId} />
               </div>
             )}

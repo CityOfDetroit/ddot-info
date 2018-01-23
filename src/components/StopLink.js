@@ -16,9 +16,11 @@ class StopLink extends Component {
           to={{ pathname: `/stop/${this.props.id}/` }}>
           {Stops[this.props.id] ? Stops[this.props.id].name : ``}
         </Link>
-        {Stops[this.props.id] ? Stops[this.props.id].routes.map(r => (
-          <span className={exclude.toString() === r.toString() ? "dn" : "pa1 dib white fw7 f7 ma1"} style={{backgroundColor: Schedules[r].color}}>
-            <Link className="white dim glow" to={{pathname: `/route/${r}`}}>{r}</Link>
+        {Stops[this.props.id] ? Stops[this.props.id].routes.map((r, i) => (
+          <span className={exclude.toString() === r.toString() ? "dn" : "pa1 dib white fw7 f7 ma1"} 
+            style={{ backgroundColor: Schedules[r].color }}
+            key={i}>
+              <Link className="white dim glow" to={{pathname: `/route/${r}`}}>{r}</Link>
           </span>
         )) : `FAILED`}
       </div>

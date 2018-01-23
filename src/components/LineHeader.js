@@ -1,11 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+
 import ddotRoutes from '../data/routes.js'
 
 const LineHeader = ({ color, number, name }) => (
   <div className="pv3 ph3 bg-white bg-o-50 header bb">
-    <div style={{display: 'flex', alignItems: 'center'}}>
-      <Link className="link dim dark-gray v-mid mr2" to={{pathname: `/`}}><div className="fw7 f7 f6-ns pa2 bg-moon-gray ba">&lt;</div></Link>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <Link className="link dim dark-gray v-mid mr2" to={{pathname: `/`}}>
+        <div className="fw7 f7 f6-ns pa2 bg-moon-gray ba">&lt;</div>
+      </Link>
       <span className="dib f3-s f2-ns mh2 pa2 v-mid white fw7" style={{ backgroundColor: color }}>
         {number}
       </span>

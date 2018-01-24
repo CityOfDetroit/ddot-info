@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import _ from 'lodash';
 
-import RouteMap from './RouteMap';
-import RealtimeTripList from './RealtimeTripList';
-import LineHeader from './LineHeader';
+import ScheduleTable from './ScheduleTable';
+import ServicePicker from './ServicePicker';
+import DirectionPicker from './DirectionPicker';
+import RouteHeader from './RouteHeader';
+import RouteStopList from './RouteStopList'
 
 import Helpers from '../helpers';
 
-class LineRealTime extends React.Component {
+class RouteSchedule extends React.Component {
   constructor(props) {
     super(props);
 
@@ -26,9 +28,9 @@ class LineRealTime extends React.Component {
     })
 
     this.state = {
-      route: (route),
       routeName: (route.rt_name),
       routeId: (route.rt_id),
+      routeNumber: parseInt(this.props.match.params.name, 10),
       description: (route.description),
       weekday: (route.schedules.weekday),
       saturday: (route.schedules.saturday),
@@ -38,10 +40,10 @@ class LineRealTime extends React.Component {
       color: (route.color),
       currentSvc: (Object.keys(route.schedules).length > 1 ? Helpers.dowToService(moment().day()) : 'weekday'),
       currentDirection: (Object.keys(route.schedules.weekday)[0]),
+      currentStops: [],
       availableServices: (Object.keys(route.schedules)),
       availableDirections: (Object.keys(route.schedules.weekday)),
       routeBbox: route.bbox,
-      timepointStops: route.timepoints[Object.keys(route.schedules.weekday)[0]]
     };
 
     this.handleDirectionChange = this.handleDirectionChange.bind(this);
@@ -52,7 +54,7 @@ class LineRealTime extends React.Component {
     fetch(`https://ddot-proxy-test.herokuapp.com/api/where/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
-      let geojson = _.sortBy(d.data.list, 'status.tripId').map((bus, i) => {
+      let geojson = d.data.list.map(bus => {
         return {
           "type": "Feature",
           "geometry": {
@@ -60,10 +62,7 @@ class LineRealTime extends React.Component {
             "coordinates": [bus.status.position.lon, bus.status.position.lat]
           },
           "properties": {
-            // "letter": _.capitalize(String.fromCharCode(97 + i)),
             "tripId": bus.status.activeTripId,
-            "displayTripId": bus.status.activeTripId.slice(-4,),
-            "scheduledDistanceAlongTrip": bus.status.scheduledDistanceAlongTrip,
             "nextStop": bus.status.nextStop,
             "nextStopOffset": bus.status.nextStopTimeOffset,
             "predicted": bus.status.predicted,
@@ -75,7 +74,6 @@ class LineRealTime extends React.Component {
       })
 
       let realtimeTrips = _.filter(geojson, o => { return o.properties.direction !== undefined })
-
       this.setState({realtimeTrips: realtimeTrips})
 
     })
@@ -106,23 +104,37 @@ class LineRealTime extends React.Component {
   render() {
     return (
       <div className="App">
-        <LineHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
-        <RouteMap 
-          routeId={this.props.match.params.name} 
-          stops={this.state.timepointStops} 
-          bbox={this.state.routeBbox} 
-          trips={this.state.realtimeTrips} 
-        />
-        <RealtimeTripList
-          trips={this.state.realtimeTrips}
-          route={this.state.route}
+        <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
+        <div className="pickers">
+          <ServicePicker 
+            services={this.state.availableServices}
+            currentSvc={this.state.currentSvc}
+            onChange={this.handleServiceChange}
+          />
+          <DirectionPicker 
+            directions={this.state.availableDirections}
+            currentDirection={this.state.currentDirection}
+            onChange={this.handleDirectionChange} 
+          />
+          <h2>Stops on this schedule</h2>
+        </div>
+        <RouteStopList
+          id={this.state.routeId}
+          routeNumber={this.state.routeNumber}
+          timepoints={this.state[this.state.currentSvc][this.state.currentDirection].stops}
+          />
+        <ScheduleTable 
+          schedule={this.state[this.state.currentSvc]} 
+          direction={this.state.currentDirection} 
+          liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
+          color={this.state.color}
         />
       </div>
     )
   }
 }
 
-LineRealTime.propTypes = {
+RouteSchedule.propTypes = {
   match: PropTypes.shape({
     isExact: PropTypes.bool,
     params: PropTypes.shape({
@@ -133,4 +145,4 @@ LineRealTime.propTypes = {
   }).isRequired,
 }
 
-export default LineRealTime;
+export default RouteSchedule;

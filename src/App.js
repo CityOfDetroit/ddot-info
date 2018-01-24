@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import TopNav from './components/TopNav';
-import LineSearch from './components/LineSearch';
-import Nearby from './components/Nearby'
+import RouteSearch from './components/RouteSearch';
+import Nearby from './components/Nearby';
 
 class App extends Component {
   
@@ -10,10 +10,10 @@ class App extends Component {
     return (
       <div className="App">
         <TopNav />
-        <LineSearch />
+        <RouteSearch />
         <Nearby />
       </div>
-    );
+    )
   }
 }
 

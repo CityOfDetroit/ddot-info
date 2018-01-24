@@ -1,23 +1,23 @@
-import React, { Component } from 'react';
-import Schedules from '../data/schedules.js';
-import LineLink from './LineLink'
-import _ from 'lodash';
-import moment from 'moment';
+import React, { Component } from 'react'
+import _ from 'lodash'
 
-import RoutePredictionList from './RoutePredictionList';
+import Schedules from '../data/schedules.js'
+import RouteLink from './RouteLink'
+import RoutePredictionList from './RoutePredictionList'
 
 class StopRouteList extends Component {
-  render () {
+  render() {
     const predictions = this.props.predictions
-    const goodPredictions = this.props.predictions.data.entry.arrivalsAndDepartures
-    // const goodPredictions = _.filter(this.props.predictions.data.entry.arrivalsAndDepartures, a => { return a.predictedArrivalTime > 0 })
+    const goodPredictions = predictions.data.entry.arrivalsAndDepartures
     const routes = this.props.routes
+
     return (
       <div className='list overflow-scroll'>
-        {routes.map(r => (
-          <div className="pa2 bb" style={{display: 'flex', alignItems: 'center'}}>
-            <LineLink name={Schedules[r].rt_name} id={r} color={Schedules[r].color} />
-            <RoutePredictionList predictions={_.filter(goodPredictions, function(o) { return o.routeShortName === r.padStart(3, '0')})} route={r} />
+        {routes.map((r, i) => (
+          <div className="pa2 bb" style={{ display: 'flex', alignItems: 'center' }} key={i}>
+            <RouteLink name={Schedules[r].rt_name} id={r} color={Schedules[r].color} />
+            <RoutePredictionList predictions={_.filter(goodPredictions, function(o) { 
+              return o.routeShortName === r.padStart(3, '0')})} route={r} />
           </div>
         ))}
       </div>
@@ -25,4 +25,4 @@ class StopRouteList extends Component {
   }
 }
 
-export default StopRouteList;
+export default StopRouteList

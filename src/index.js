@@ -7,8 +7,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './css/index.css';
 import App from './App';
 import About from './components/About';
-import LineRealTime from './components/LineRealTime';
-import LineSchedule from './components/LineSchedule';
+import RouteRealtime from './components/RouteRealtime';
+import RouteSchedule from './components/RouteSchedule';
 import Stop from './components/Stop';
 import Nearby from './components/Nearby';
 
@@ -43,8 +43,8 @@ ReactDOM.render(
         <Route path='/about' component={About} />
         <Route path='/nearby' component={Nearby} />
         <Route path='/stop/:name' component={Stop} />
-        <Route path="/route/:name/real-time" component={LineRealTime} />
-        <Route path="/route/:name/schedule" component={LineSchedule} />
+        <Route path="/route/:name/real-time" component={RouteRealtime} />
+        <Route path="/route/:name/schedule" component={RouteSchedule} />
       </Switch>
     </GAListener>
   </Router>,

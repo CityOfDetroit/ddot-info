@@ -9,7 +9,6 @@ import StopRouteList from './StopRouteList';
 
 
 class Stop extends React.Component {
-
   constructor(props) {
     super(props)
 
@@ -23,7 +22,10 @@ class Stop extends React.Component {
     fetch(`https://ddot-proxy-test.herokuapp.com/api/where/arrivals-and-departures-for-stop/DDOT_${this.props.match.params.name}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
-      this.setState({ predictions: d, fetchedPredictions: true })
+      this.setState({ 
+        predictions: d, 
+        fetchedPredictions: true 
+      })
     })
     .catch(e => console.log(e));
   }

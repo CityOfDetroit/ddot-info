@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import Schedules from '../data/schedules.js'
 
-class LineLink extends Component {
+class RouteLink extends Component {
   render() {
     const route = Schedules[this.props.id]
 
@@ -24,8 +24,8 @@ class LineLink extends Component {
   }
 }
 
-LineLink.propTypes = {
+RouteLink.propTypes = {
   id: PropTypes.string.isRequired,
 }
 
-export default LineLink
+export default RouteLink

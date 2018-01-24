@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import RouteInput from './RouteInput';
-import LinesList from './LinesList';
+import RoutesList from './RoutesList';
 import Schedules from '../data/schedules';
 
 class RouteSearch extends Component {
@@ -52,7 +52,7 @@ class RouteSearch extends Component {
       <div className="search overflow-scroll pa2 br">
         <span className="fw7 f4 pa2 dib">Already know what route you're looking for?</span>
         <RouteInput input={this.state.input} onSearchChange={this.handleSearchChange} />
-        { this.state.filteredLines.length > 0 ? <LinesList lines={this.state.filteredLines} /> : <p><strong>Loading...</strong></p> }
+        { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : <p><strong>Loading...</strong></p> }
       </div>
     )
   }

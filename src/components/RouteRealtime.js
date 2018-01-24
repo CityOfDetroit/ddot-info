@@ -1,23 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import moment from 'moment';
-import _ from 'lodash';
+import React from 'react'
+import PropTypes from 'prop-types'
+import moment from 'moment'
+import _ from 'lodash'
 
-import ScheduleTable from './ScheduleTable';
-import ServicePicker from './ServicePicker';
-import DirectionPicker from './DirectionPicker';
-import RouteHeader from './RouteHeader';
-import RouteStopList from './RouteStopList'
+import RouteMap from './RouteMap'
+import RealtimeTripList from './RealtimeTripList'
+import RouteHeader from './RouteHeader'
+import Helpers from '../helpers'
 
-import Helpers from '../helpers';
-
-class LineSchedule extends React.Component {
+class RouteRealtime extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     let route = Helpers.getRoute(parseInt(this.props.match.params.name, 10))
-
     let tripIds = {}
+    
     Object.keys(route.schedules).forEach(svc => {
       Object.keys(route.schedules.weekday).forEach(dir => {
         if (!tripIds[dir]) {
@@ -28,9 +25,9 @@ class LineSchedule extends React.Component {
     })
 
     this.state = {
+      route: (route),
       routeName: (route.rt_name),
       routeId: (route.rt_id),
-      routeNumber: parseInt(this.props.match.params.name, 10),
       description: (route.description),
       weekday: (route.schedules.weekday),
       saturday: (route.schedules.saturday),
@@ -40,21 +37,21 @@ class LineSchedule extends React.Component {
       color: (route.color),
       currentSvc: (Object.keys(route.schedules).length > 1 ? Helpers.dowToService(moment().day()) : 'weekday'),
       currentDirection: (Object.keys(route.schedules.weekday)[0]),
-      currentStops: [],
       availableServices: (Object.keys(route.schedules)),
       availableDirections: (Object.keys(route.schedules.weekday)),
       routeBbox: route.bbox,
-    };
+      timepointStops: route.timepoints[Object.keys(route.schedules.weekday)[0]]
+    }
 
-    this.handleDirectionChange = this.handleDirectionChange.bind(this);
-    this.handleServiceChange = this.handleServiceChange.bind(this);
+    this.handleDirectionChange = this.handleDirectionChange.bind(this)
+    this.handleServiceChange = this.handleServiceChange.bind(this)
   }
 
   fetchData() {
     fetch(`https://ddot-proxy-test.herokuapp.com/api/where/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
-      let geojson = d.data.list.map(bus => {
+      let geojson = _.sortBy(d.data.list, 'status.tripId').map((bus, i) => {
         return {
           "type": "Feature",
           "geometry": {
@@ -63,6 +60,8 @@ class LineSchedule extends React.Component {
           },
           "properties": {
             "tripId": bus.status.activeTripId,
+            "displayTripId": bus.status.activeTripId.slice(-4,),
+            "scheduledDistanceAlongTrip": bus.status.scheduledDistanceAlongTrip,
             "nextStop": bus.status.nextStop,
             "nextStopOffset": bus.status.nextStopTimeOffset,
             "predicted": bus.status.predicted,
@@ -72,29 +71,29 @@ class LineSchedule extends React.Component {
           }
         }
       })
-
       let realtimeTrips = _.filter(geojson, o => { return o.properties.direction !== undefined })
-      this.setState({realtimeTrips: realtimeTrips})
-
+      this.setState({ 
+        realtimeTrips: realtimeTrips 
+      })
     })
-    .catch(e => console.log(e));
+    .catch(e => console.log(e))
   }
 
   handleDirectionChange(event) {
     this.setState({
       currentDirection: event.target.value
-    });
+    })
   }
 
   handleServiceChange(event) {
     this.setState({
       currentSvc: event.target.value
-    });
+    })
   }
 
   componentDidMount() {
     this.fetchData()
-    this.interval = setInterval(() => this.fetchData(), 3000);
+    this.interval = setInterval(() => this.fetchData(), 3000)
   }
 
   componentWillUnmount() {
@@ -105,36 +104,22 @@ class LineSchedule extends React.Component {
     return (
       <div className="App">
         <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
-        <div className="pickers">
-          <ServicePicker 
-            services={this.state.availableServices}
-            currentSvc={this.state.currentSvc}
-            onChange={this.handleServiceChange}
-          />
-          <DirectionPicker 
-            directions={this.state.availableDirections}
-            currentDirection={this.state.currentDirection}
-            onChange={this.handleDirectionChange} 
-          />
-          <h2>Stops on this schedule</h2>
-        </div>
-        <RouteStopList
-          id={this.state.routeId}
-          routeNumber={this.state.routeNumber}
-          timepoints={this.state[this.state.currentSvc][this.state.currentDirection].stops}
-          />
-        <ScheduleTable 
-          schedule={this.state[this.state.currentSvc]} 
-          direction={this.state.currentDirection} 
-          liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
-          color={this.state.color}
+        <RouteMap 
+          routeId={this.props.match.params.name} 
+          stops={this.state.timepointStops} 
+          bbox={this.state.routeBbox} 
+          trips={this.state.realtimeTrips} 
+        />
+        <RealtimeTripList
+          trips={this.state.realtimeTrips}
+          route={this.state.route}
         />
       </div>
     )
   }
 }
 
-LineSchedule.propTypes = {
+RouteRealtime.propTypes = {
   match: PropTypes.shape({
     isExact: PropTypes.bool,
     params: PropTypes.shape({
@@ -145,4 +130,4 @@ LineSchedule.propTypes = {
   }).isRequired,
 }
 
-export default LineSchedule;
+export default RouteRealtime

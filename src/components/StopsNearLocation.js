@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import StopLink from './StopLink'
-import LineLink from './LineLink'
+import RouteLink from './RouteLink'
 
 class StopsNearLocation extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class StopsNearLocation extends Component {
           <div className="h5 overflow-scroll">
             {this.state.fetchedData ? data.data.references.routes.map((r, i) => (
               <div className="bg-light-gray ma2 pa2" key={i}>
-                <LineLink id={parseInt(r.shortName, 10)}/>
+                <RouteLink id={parseInt(r.shortName, 10)}/>
               </div>
             )) : ``}
           </div>

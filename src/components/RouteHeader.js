@@ -5,7 +5,7 @@ import ddotRoutes from '../data/routes.js'
 
 const RouteHeader = ({ color, number, name }) => (
   <div className="pv3 ph3 bg-white bg-o-50 header bb">
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div className="ml4" style={{ display: 'flex', alignItems: 'center' }}>
       <Link className="link dim dark-gray v-mid mr2" to={{ pathname: `/` }}>
         <div className="fw7 f7 f6-ns pa2 bg-moon-gray ba">&lt;</div>
       </Link>

@@ -6,8 +6,8 @@ import _ from 'lodash';
 import ScheduleTable from './ScheduleTable';
 import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
-import LineHeader from './LineHeader';
-import BusRouteStopList from './BusRouteStopList'
+import RouteHeader from './RouteHeader';
+import RouteStopList from './RouteStopList'
 
 import Helpers from '../helpers';
 
@@ -104,7 +104,7 @@ class LineSchedule extends React.Component {
   render() {
     return (
       <div className="App">
-        <LineHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
+        <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
         <div className="pickers">
           <ServicePicker 
             services={this.state.availableServices}
@@ -116,10 +116,9 @@ class LineSchedule extends React.Component {
             currentDirection={this.state.currentDirection}
             onChange={this.handleDirectionChange} 
           />
-                  <h2>Stops on this schedule</h2>
-
+          <h2>Stops on this schedule</h2>
         </div>
-        <BusRouteStopList
+        <RouteStopList
           id={this.state.routeId}
           routeNumber={this.state.routeNumber}
           timepoints={this.state[this.state.currentSvc][this.state.currentDirection].stops}

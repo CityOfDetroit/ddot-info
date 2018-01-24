@@ -4,7 +4,7 @@ import _ from 'lodash'
 import StopLink from './StopLink'
 import Stops from '../data/stops.js'
 
-class BusRouteStopList extends Component {
+class RouteStopList extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -47,4 +47,4 @@ class BusRouteStopList extends Component {
   }
 }
 
-export default BusRouteStopList
+export default RouteStopList

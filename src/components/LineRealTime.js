@@ -5,7 +5,7 @@ import _ from 'lodash'
 
 import RouteMap from './RouteMap'
 import RealtimeTripList from './RealtimeTripList'
-import LineHeader from './LineHeader'
+import RouteHeader from './RouteHeader'
 import Helpers from '../helpers'
 
 class LineRealTime extends React.Component {
@@ -103,7 +103,7 @@ class LineRealTime extends React.Component {
   render() {
     return (
       <div className="App">
-        <LineHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
+        <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
         <RouteMap 
           routeId={this.props.match.params.name} 
           stops={this.state.timepointStops} 

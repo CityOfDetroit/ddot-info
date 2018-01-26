@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import moment from 'moment'
 import _ from 'lodash'
 
-import RouteMap from './RouteMap'
+import RealtimeRouteMap from './RealtimeRouteMap'
 import RealtimeTripList from './RealtimeTripList'
 import RouteHeader from './RouteHeader'
 import Helpers from '../helpers'
@@ -104,7 +104,7 @@ class RouteRealtime extends React.Component {
     return (
       <div className="App">
         <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
-        <RouteMap 
+        <RealtimeRouteMap 
           routeId={this.props.match.params.name} 
           stops={this.state.timepointStops} 
           bbox={this.state.routeBbox} 

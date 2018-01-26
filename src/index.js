@@ -9,6 +9,7 @@ import App from './App';
 import About from './components/About';
 import RouteRealtime from './components/RouteRealtime';
 import RouteSchedule from './components/RouteSchedule';
+import BusRoute from './components/BusRoute'
 import Stop from './components/Stop';
 import Nearby from './components/Nearby';
 
@@ -43,8 +44,10 @@ ReactDOM.render(
         <Route path='/about' component={About} />
         <Route path='/nearby' component={Nearby} />
         <Route path='/stop/:name' component={Stop} />
+        <Route path='/route/:name' component={BusRoute} />
         <Route path="/route/:name/real-time" component={RouteRealtime} />
         <Route path="/route/:name/schedule" component={RouteSchedule} />
+        {/* <Route path="/route/:name/stops" component={RouteStops} /> */}
       </Switch>
     </GAListener>
   </Router>,

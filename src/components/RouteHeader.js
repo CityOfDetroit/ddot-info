@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import ddotRoutes from '../data/routes.js'
-
 const RouteHeader = ({ color, number, name }) => (
   <div className="pv3 ph3 bg-white bg-o-50 header bb">
     <div className="ml4" style={{ display: 'flex', alignItems: 'center' }}>
@@ -15,9 +13,6 @@ const RouteHeader = ({ color, number, name }) => (
       <div className="dib">
         <span className="db f4-s f3-ns v-mid fw5 mr2">
           {name}
-        </span>
-        <span className="dn db-ns f7">
-          {ddotRoutes[number].description}
         </span>
       </div>
     <Link className="link dim dark-gray ma2" to={{ pathname: `/route/${number}/real-time` }}>

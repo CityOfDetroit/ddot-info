@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import _ from 'lodash';
 import Colors from '../data/colors.js';
-// import Schedules from '../data/schedules.js'
 
-class RouteMap extends Component {
+class RealtimeRouteMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +11,6 @@ class RouteMap extends Component {
       map: {},
     };
   }
-
 
   updateMap() {
     if(this.state.drewMap){
@@ -47,7 +45,6 @@ class RouteMap extends Component {
     }));
 
     const route_id = this.props.routeId.toString()
-    // const route = Schedules[route_id]
     const stops = this.props.stops
     const bounds = this.props.bbox
     const realtimeTrips = this.props.trips
@@ -56,10 +53,7 @@ class RouteMap extends Component {
       map.setFilter('ddot-routes', ["==", "route_num", route_id])
       map.setFilter('ddot-stops', ["in", "stop_id"].concat(stops.map(m => { return m.toString() })))
       map.setFilter('ddot-stops copy', ["in", "stop_id"].concat(stops.map(m => { return m.toString() })))
-      // map.setLayoutProperty('ddot-stops', 'visibility', 'visible')
       map.setLayoutProperty('ddot-stops copy', 'visibility', 'visible')
-      // map.setLayoutProperty('road-label-large', 'visibility', 'visible')
-      // map.setFilter('road-label-large', ["in", "name"].concat(route.road_labels))
       map.fitBounds(bounds, {'padding': 25})
       
       map.addLayer({
@@ -80,30 +74,6 @@ class RouteMap extends Component {
           "icon-opacity": 0.75
         }
       });
-
-      // map.addLayer({
-      //   "id": "realtime-background",
-      //   "type": "circle",
-      //   "source": {
-      //     "type": "geojson",
-      //     "data": {
-      //       "type": "FeatureCollection",
-      //       "features": realtimeTrips
-      //     }
-      //   },
-      //   "paint": {
-      //     "circle-radius": 0,
-      //     "circle-color": {
-      //       property: "direction",
-      //       type: "categorical",
-      //       stops: _.toPairs(Colors),
-      //     },
-      //     "circle-opacity": 0.75,
-      //     "circle-stroke-color": "black",
-      //     "circle-stroke-width": 1.5,
-      //     "circle-stroke-opacity": 0.5
-      //   }
-      // })
 
       map.addLayer({
         "id": "realtime",
@@ -177,4 +147,4 @@ class RouteMap extends Component {
   }
 }
 
-export default RouteMap;
+export default RealtimeRouteMap;

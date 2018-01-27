@@ -3,19 +3,17 @@ import PropTypes from 'prop-types';
 
 import Schedules from '../data/schedules.js';
 import RouteHeader from './RouteHeader';
-import BusRouteMap from './BusRouteMap';
+import RouteMap from './RouteMap';
+import RouteDetails from './RouteDetails';
 
 class BusRoute extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const thisRoute = Schedules[this.props.match.params.name]
     return (
-      <div className="App">
+      <div className="BusRoute">
         <RouteHeader color={thisRoute.color} number={this.props.match.params.name} name={thisRoute.rt_name} />
-        <BusRouteMap route={thisRoute} />
+        {/* <RouteDetails route={thisRoute} /> */}
+        <RouteMap route={thisRoute} />
       </div>
     )
   }

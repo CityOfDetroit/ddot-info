@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 
-class BusRouteMap extends Component {
+class RouteMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,9 +27,6 @@ class BusRouteMap extends Component {
 
     map.on('load', function () {
       map.setFilter('ddot-routes', ["==", "route_num", route.id])
-      // // map.setFilter('ddot-stops', ["in", "stop_id"].concat(stops.map(m => { return m.toString() })))
-      // // map.setFilter('ddot-stops copy', ["in", "stop_id"].concat(stops.map(m => { return m.toString() })))
-      // // map.setLayoutProperty('ddot-stops copy', 'visibility', 'visible')
       map.fitBounds(route.bbox, {
         'padding': 25
       })
@@ -48,11 +45,10 @@ class BusRouteMap extends Component {
   }
 
   render() {
-    return ( <
-      div id = "map"
-      className = "map h6" > < /div>
+    return ( 
+      <div id = "map" className = "map h6"> </div>
     )
   }
 }
 
-export default BusRouteMap;
+export default RouteMap;

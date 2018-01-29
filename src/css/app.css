@@ -63,6 +63,11 @@ body:after{
     grid-column: 4/9;
   }
 
+  .details {
+    grid-row: 3/11;
+    grid-column: 5/9;
+  }
+
   /* Stop, LineRealTime */
   .map {
     grid-column: 1/5;

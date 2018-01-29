@@ -44,10 +44,10 @@ ReactDOM.render(
         <Route path='/about' component={About} />
         <Route path='/nearby' component={Nearby} />
         <Route path='/stop/:name' component={Stop} />
-        <Route path='/route/:name' component={BusRoute} />
         <Route path="/route/:name/real-time" component={RouteRealtime} />
         <Route path="/route/:name/schedule" component={RouteSchedule} />
         {/* <Route path="/route/:name/stops" component={RouteStops} /> */}
+        <Route path='/route/:name' component={BusRoute} />
       </Switch>
     </GAListener>
   </Router>,

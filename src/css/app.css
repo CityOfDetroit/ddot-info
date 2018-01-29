@@ -41,7 +41,7 @@ body:after{
 }
 
 @media screen and (min-width: 650px) {
-  .App {
+  .App, .BusRoute {
     display: grid;
     grid-template: 50px 50px repeat(8, 1fr) / repeat(8, 1fr);
     height: 100vh;

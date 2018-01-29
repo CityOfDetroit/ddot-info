@@ -1,8 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Schedules from '../data/schedules.js'
 
-const RouteHeader = ({ color, number, name }) => (
-  <div className="pv3 ph3 bg-white bg-o-50 header bb">
+const RouteHeader = ({ number }) => {
+  const thisRoute = Schedules[number]
+  const color = thisRoute.color
+  const name = thisRoute.rt_name
+  return (
+    <div className="pv3 ph3 bg-white bg-o-50 header bb">
     <div className="ml4" style={{ display: 'flex', alignItems: 'center' }}>
       <Link className="link dim dark-gray v-mid mr2" to={{ pathname: `/` }}>
         <div className="fw7 f7 f6-ns pa2 bg-moon-gray ba">&lt;</div>
@@ -21,8 +26,12 @@ const RouteHeader = ({ color, number, name }) => (
     <Link className="link dim dark-gray ma2" to={{ pathname: `/route/${number}/schedule` }}>
       <div className="fw7 f7 f6-ns pa2 bg-moon-gray ba">Schedule</div>
     </Link>
+    <Link className="link dim dark-gray ma2" to={{ pathname: `/route/${number}/stops` }}>
+      <div className="fw7 f7 f6-ns pa2 bg-moon-gray ba">Stops</div>
+    </Link>
     </div>
   </div>
-)
+  )
+}
 
 export default RouteHeader

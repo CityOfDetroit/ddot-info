@@ -18,7 +18,7 @@ class RouteMap extends Component {
 
     const map = new mapboxgl.Map({
       'container': 'map',
-      'style': 'mapbox://styles/cityofdetroit/cjbzk1bqwg9972spc0hcb804b',
+      'style': 'mapbox://styles/cityofdetroit/cjd0iccnv1k7r2rnun0sbvxab',
       'center': [-83.0458, 42.3314],
       'zoom': 10,
       'attributionControl': false,
@@ -28,7 +28,7 @@ class RouteMap extends Component {
     map.on('load', function () {
       map.setFilter('ddot-routes', ["==", "route_num", route.id])
       map.fitBounds(route.bbox, {
-        'padding': 25
+        'padding': 75
       })
     });
 

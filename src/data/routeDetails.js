@@ -38,7 +38,7 @@ const routeDetails = [{
     },
     {
         number: 10,
-        name: '',
+        name: 'Chene',
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
@@ -53,13 +53,13 @@ const routeDetails = [{
             'Saturday': ['8am', '8pm'],
             'Sunday': ['10am', '8pm']
         },
-        notes: ""
+        notes: "On Saturdays, this bus departs Rosa Parks Transit Center after a layover as Route 7-Cadillac-Harper. Riders remaining on the bus through the layover may continue without using a transfer."
     },
     {
         number: 11,
-        name: '',
-        orientation: 'NS',
-        downtown: true,
+        name: 'Clairmount',
+        orientation: 'EW',
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -76,9 +76,9 @@ const routeDetails = [{
     },
     {
         number: 12,
-        name: '',
+        name: 'Conant',
         orientation: 'NS',
-        downtown: true,
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -95,9 +95,9 @@ const routeDetails = [{
     },
     {
         number: 13,
-        name: '',
+        name: 'Conner',
         orientation: 'NS',
-        downtown: true,
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -114,9 +114,9 @@ const routeDetails = [{
     },
     {
         number: 14,
-        name: '',
-        orientation: 'NS',
-        downtown: true,
+        name: 'Crosstown',
+        orientation: 'EW',
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -133,9 +133,9 @@ const routeDetails = [{
     },
     {
         number: 15,
-        name: '',
-        orientation: 'NS',
-        downtown: true,
+        name: 'Chicago Davison',
+        orientation: 'EW',
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -152,7 +152,7 @@ const routeDetails = [{
     },
     {
         number: 16,
-        name: '',
+        name: 'Dexter',
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
@@ -171,9 +171,9 @@ const routeDetails = [{
     },
     {
         number: 17,
-        name: '',
-        orientation: 'NS',
-        downtown: true,
+        name: 'Eight Mile',
+        orientation: 'EW',
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -190,7 +190,7 @@ const routeDetails = [{
     },
     {
         number: 18,
-        name: '',
+        name: 'Fenkell',
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
@@ -209,8 +209,8 @@ const routeDetails = [{
     },
     {
         number: 19,
-        name: '',
-        orientation: 'NS',
+        name: 'Fort',
+        orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
@@ -224,12 +224,12 @@ const routeDetails = [{
             'Saturday': ['8am', '8pm'],
             'Sunday': ['10am', '8pm']
         },
-        notes: ""
+        notes: "On Sundays, this bus departs Rosa Parks Transit Center after a layover as Route 49-Vernor. Riders remaining on the bus through the layover may continue without using a transfer."
     },
     {
         number: 21,
-        name: '',
-        orientation: 'NS',
+        name: 'Grand River',
+        orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
@@ -247,9 +247,9 @@ const routeDetails = [{
     },
     {
         number: 22,
-        name: '',
+        name: 'Greenfield',
         orientation: 'NS',
-        downtown: true,
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -266,7 +266,7 @@ const routeDetails = [{
     },
     {
         number: 23,
-        name: '',
+        name: 'Hamilton',
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
@@ -285,8 +285,8 @@ const routeDetails = [{
     },
     {
         number: 25,
-        name: '',
-        orientation: 'NS',
+        name: 'Jefferson',
+        orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
@@ -304,8 +304,8 @@ const routeDetails = [{
     },
     {
         number: 27,
-        name: '',
-        orientation: 'NS',
+        name: 'Joy',
+        orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
@@ -323,7 +323,7 @@ const routeDetails = [{
     },
     {
         number: 29,
-        name: '',
+        name: 'Linwood',
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
@@ -338,13 +338,13 @@ const routeDetails = [{
             'Saturday': ['8am', '8pm'],
             'Sunday': ['10am', '8pm']
         },
-        notes: ""
+        notes: "On Saturdays, Sundays and weekday nights, this bus departs Rosa Parks Transit Center after a layover as Route 27-Joy. Riders remaining on the bus through the layover may continue without using a transfer."
     },
     {
         number: 30,
-        name: '',
+        name: 'Livernois',
         orientation: 'NS',
-        downtown: true,
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -361,8 +361,8 @@ const routeDetails = [{
     },
     {
         number: 31,
-        name: '',
-        orientation: 'NS',
+        name: 'Mack',
+        orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
@@ -380,9 +380,9 @@ const routeDetails = [{
     },
     {
         number: 32,
-        name: '',
-        orientation: 'NS',
-        downtown: true,
+        name: 'McNichols',
+        orientation: 'EW',
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -399,7 +399,7 @@ const routeDetails = [{
     },
     {
         number: 34,
-        name: '',
+        name: 'Gratiot',
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
@@ -418,8 +418,8 @@ const routeDetails = [{
     },
     {
         number: 37,
-        name: '',
-        orientation: 'NS',
+        name: 'Michigan',
+        orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
@@ -437,9 +437,9 @@ const routeDetails = [{
     },
     {
         number: 38,
-        name: '',
-        orientation: 'NS',
-        downtown: true,
+        name: 'Plymouth',
+        orientation: 'EW',
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -456,9 +456,9 @@ const routeDetails = [{
     },
     {
         number: 39,
-        name: '',
-        orientation: 'NS',
-        downtown: true,
+        name: 'Puritan',
+        orientation: 'EW',
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -475,7 +475,7 @@ const routeDetails = [{
     },
     {
         number: 40,
-        name: '',
+        name: 'Russell',
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
@@ -494,9 +494,9 @@ const routeDetails = [{
     },
     {
         number: 41,
-        name: '',
+        name: 'Schaefer',
         orientation: 'NS',
-        downtown: true,
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -513,9 +513,9 @@ const routeDetails = [{
     },
     {
         number: 42,
-        name: '',
-        orientation: 'NS',
-        downtown: true,
+        name: 'Mid City Loop',
+        orientation: 'CW',
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -532,9 +532,9 @@ const routeDetails = [{
     },
     {
         number: 43,
-        name: '',
-        orientation: 'NS',
-        downtown: true,
+        name: 'Schoolcraft',
+        orientation: 'EW',
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -551,9 +551,9 @@ const routeDetails = [{
     },
     {
         number: 45,
-        name: '',
-        orientation: 'NS',
-        downtown: true,
+        name: 'Seven Mile',
+        orientation: 'EW',
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -570,9 +570,9 @@ const routeDetails = [{
     },
     {
         number: 46,
-        name: '',
+        name: 'Southfield',
         orientation: 'NS',
-        downtown: true,
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -589,9 +589,9 @@ const routeDetails = [{
     },
     {
         number: 47,
-        name: '',
-        orientation: 'NS',
-        downtown: true,
+        name: 'Tireman',
+        orientation: 'EW',
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -608,7 +608,7 @@ const routeDetails = [{
     },
     {
         number: 48,
-        name: '',
+        name: 'Van Dyke-Lafayette',
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
@@ -623,12 +623,12 @@ const routeDetails = [{
             'Saturday': ['8am', '8pm'],
             'Sunday': ['10am', '8pm']
         },
-        notes: ""
+        notes: "On weekday and Saturday nights, this bus departs Rosa Parks Transit Center after a layover as Route 25-Jefferson. Riders remaining on the bus through the layover may continue without using a transfer."
     },
     {
         number: 49,
-        name: '',
-        orientation: 'NS',
+        name: 'Vernor',
+        orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
@@ -642,11 +642,11 @@ const routeDetails = [{
             'Saturday': ['8am', '8pm'],
             'Sunday': ['10am', '8pm']
         },
-        notes: ""
+        notes: "On Sundays, this bus departs Rosa Parks Transit Center after a layover as Route 19-Fort. Riders remaining on the bus through the layover may continue without using a transfer."
     },
     {
         number: 53,
-        name: '',
+        name: 'Woodward',
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
@@ -665,9 +665,9 @@ const routeDetails = [{
     },
     {
         number: 54,
-        name: '',
+        name: 'Wyoming',
         orientation: 'NS',
-        downtown: true,
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -684,9 +684,9 @@ const routeDetails = [{
     },
     {
         number: 60,
-        name: '',
+        name: 'Evergreen',
         orientation: 'NS',
-        downtown: true,
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -703,8 +703,8 @@ const routeDetails = [{
     },
     {
         number: 80,
-        name: '',
-        orientation: 'NS',
+        name: 'Villages Direct',
+        orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
@@ -722,9 +722,9 @@ const routeDetails = [{
     },
     {
         number: 89,
-        name: '',
+        name: 'Southwest Direct',
         orientation: 'NS',
-        downtown: true,
+        downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         frequency: [
@@ -741,96 +741,46 @@ const routeDetails = [{
     },
     {
         number: 92,
-        name: '',
-        orientation: 'NS',
+        name: 'Rosedale Express',
+        orientation: 'EW',
         downtown: true,
-        days_per_week: ['Monday', 'Sunday'],
+        days_per_week: ['Monday', 'Friday'],
         between: ['', ''],
         frequency: [
             ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
         ],
         service_hours: {
             'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
         },
         notes: ""
     },
     {
         number: 95,
-        name: '',
+        name: 'Ryan Express',
         orientation: 'NS',
         downtown: true,
-        days_per_week: ['Monday', 'Sunday'],
+        days_per_week: ['Monday', 'Friday'],
         between: ['', ''],
         frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
+            ['Monday-Friday', 'peak', 60]
         ],
         service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+            'Monday-Friday': ['6am', '11pm']
         },
         notes: ""
     },
     {
         number: 96,
-        name: '',
-        orientation: 'NS',
+        name: 'Joy Express',
+        orientation: 'EW',
         downtown: true,
-        days_per_week: ['Monday', 'Sunday'],
+        days_per_week: ['Monday', 'Friday'],
         between: ['', ''],
         frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
+            ['Monday-Friday', 'peak', 60]
         ],
         service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
-        },
-        notes: ""
-    },
-    {
-        number: 98,
-        name: '',
-        orientation: 'NS',
-        downtown: true,
-        days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
-        },
-        notes: ""
-    },
-    {
-        number: 498,
-        name: '',
-        orientation: 'NS',
-        downtown: true,
-        days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+            'Monday-Friday': ['6am', '11pm']
         },
         notes: ""
     }

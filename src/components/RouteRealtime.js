@@ -7,12 +7,13 @@ import RealtimeRouteMap from './RealtimeRouteMap'
 import RealtimeTripList from './RealtimeTripList'
 import RouteHeader from './RouteHeader'
 import Helpers from '../helpers'
+import Schedules from '../data/schedules.js'
 
 class RouteRealtime extends React.Component {
   constructor(props) {
     super(props)
 
-    let route = Helpers.getRoute(parseInt(this.props.match.params.name, 10))
+    let route = Schedules[parseInt(this.props.match.params.name, 10)]
     let tripIds = {}
     
     Object.keys(route.schedules).forEach(svc => {

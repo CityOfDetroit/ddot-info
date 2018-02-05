@@ -5,6 +5,9 @@ import Schedules from './data/schedules';
 import moment from 'moment';
 
 const Helpers = {
+
+  endpoint: `http://ec2-54-81-243-178.compute-1.amazonaws.com:8080/api/api/where`,
+  
   /**
    * Merge routes and schedules into the same object by route number key
    */

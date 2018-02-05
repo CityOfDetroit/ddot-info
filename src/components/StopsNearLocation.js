@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 import StopLink from './StopLink'
 import RouteLink from './RouteLink'
 
+import Helpers from '../helpers';
+
+
 class StopsNearLocation extends Component {
   constructor(props) {
     super(props)
@@ -13,7 +16,7 @@ class StopsNearLocation extends Component {
   }
 
   fetchData() {
-    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/stops-for-location.json?key=BETA&radius=500&lat=${this.props.coords.latitude}&lon=${this.props.coords.longitude}`)
+    fetch(`${Helpers.endpoint}/stops-for-location.json?key=BETA&radius=500&lat=${this.props.coords.latitude}&lon=${this.props.coords.longitude}`)
     .then(response => response.json())
     .then(d => {
       this.setState({

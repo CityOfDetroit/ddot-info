@@ -4,6 +4,9 @@ import _ from 'lodash'
 import StopLink from './StopLink'
 import Stops from '../data/stops.js'
 
+import Helpers from '../helpers';
+
+
 class RouteStopList extends Component {
   constructor(props) {
     super(props)
@@ -13,7 +16,7 @@ class RouteStopList extends Component {
   }
 
   fetchData() {
-    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/stops-for-route/DDOT_${this.props.id}.json?key=BETA`)
+    fetch(`${Helpers.endpoint}/stops-for-route/DDOT_${this.props.id}.json?key=BETA`)
     .then(response => response.json())
     .then(d => {
       this.setState({ 

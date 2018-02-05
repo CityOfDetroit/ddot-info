@@ -7,6 +7,7 @@ import StopHeader from './StopHeader';
 import StopMap from './StopMap';
 import StopRouteList from './StopRouteList';
 
+import Helpers from '../helpers';
 
 class Stop extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class Stop extends React.Component {
   }
 
   fetchData() {
-    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/arrivals-and-departures-for-stop/DDOT_${this.props.match.params.name}.json?key=BETA&includePolylines=false`)
+    fetch(`${Helpers.endpoint}/arrivals-and-departures-for-stop/DDOT_${this.props.match.params.name}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
       this.setState({ 

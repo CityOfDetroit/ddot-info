@@ -4,6 +4,8 @@ import RouteInput from './RouteInput';
 import RoutesList from './RoutesList';
 import Schedules from '../data/schedules';
 
+import Helpers from '../helpers.js'
+
 class RouteSearch extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +21,7 @@ class RouteSearch extends Component {
   }
 
   componentDidMount() {
-    fetch('https://ddot-proxy-test.herokuapp.com/api/where/routes-for-agency/DDOT.json?key=BETA')
+    fetch(`${Helpers.endpoint}/routes-for-agency/DDOT.json?key=BETA`)
       .then(response => response.json())
       .then(d => {
         let sorted = d.data.list.sort((a,b) => {

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import Helpers from '../helpers';
+
+
 class StopSchedule extends Component {
 
   constructor(props){
@@ -12,7 +15,7 @@ class StopSchedule extends Component {
   }
 
   fetchData() {
-    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/schedule-for-stop/DDOT_${this.props.stopId}.json?key=BETA&includePolylines=false`)
+    fetch(`${Helpers.endpoint}/schedule-for-stop/DDOT_${this.props.stopId}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
       this.setState({ schedule: d, fetchedSchedule: true })

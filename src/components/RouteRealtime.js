@@ -3,16 +3,17 @@ import PropTypes from 'prop-types'
 import moment from 'moment'
 import _ from 'lodash'
 
-import RouteMap from './RouteMap'
+import RealtimeRouteMap from './RealtimeRouteMap'
 import RealtimeTripList from './RealtimeTripList'
 import RouteHeader from './RouteHeader'
 import Helpers from '../helpers'
+import Schedules from '../data/schedules.js'
 
 class RouteRealtime extends React.Component {
   constructor(props) {
     super(props)
 
-    let route = Helpers.getRoute(parseInt(this.props.match.params.name, 10))
+    let route = Schedules[parseInt(this.props.match.params.name, 10)]
     let tripIds = {}
     
     Object.keys(route.schedules).forEach(svc => {
@@ -48,7 +49,7 @@ class RouteRealtime extends React.Component {
   }
 
   fetchData() {
-    fetch(`https://ddot-proxy-test.herokuapp.com/api/where/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
+    fetch(`${Helpers.endpoint}/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
       let geojson = _.sortBy(d.data.list, 'status.tripId').map((bus, i) => {
@@ -104,7 +105,7 @@ class RouteRealtime extends React.Component {
     return (
       <div className="App">
         <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
-        <RouteMap 
+        <RealtimeRouteMap 
           routeId={this.props.match.params.name} 
           stops={this.state.timepointStops} 
           bbox={this.state.routeBbox} 

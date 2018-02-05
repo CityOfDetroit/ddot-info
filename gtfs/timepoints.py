@@ -5,7 +5,7 @@ import pandas
 import json
 from routes import routes
 from pprint import pprint
-engine = sqlalchemy.create_engine('postgresql://localhost/iet')
+engine = sqlalchemy.create_engine('postgresql://localhost/gtfs')
 conn = engine.connect()
 
 
@@ -95,7 +95,7 @@ def set_all_timepoints():
 
             # loop through all service_id
             for service in [1, 2, 3]:
-                print(set_timepoints( r["rt_id"], service, int(dir), r['timepoints'][dir] ) )
+                print(set_timepoints( r["rt_id"], service, dir, r['timepoints'][dir] ) )
 
 
 def format_hms_nicely(hms):
@@ -121,6 +121,17 @@ def stop_desc_from_stop_id(id):
     res = conn.execute(query)
     return res.fetchone()
 
+def timedelta_to_value(td):
+    try:
+        if td.value == -9223372036854775808:
+            return None
+        if td.components.days == 0:
+            return "{}:{}:{}".format(str(td.components.hours).zfill(2), str(td.components.minutes).zfill(2), str(td.components.seconds).zfill(2))
+        if td.components.days == 1:
+            return "{}:{}:{}".format(str(td.components.hours + 24).zfill(2), str(td.components.minutes).zfill(2), str(td.components.seconds).zfill(2))
+    except:
+        print(td)
+        
 def get_schedule(id, service='1', direction='0'):
     df = get_stops(id)
     stop_times = df[df.direction_id == int(direction)][df.service_id == str(service)][df.timepoint == 1]
@@ -134,6 +145,10 @@ def get_schedule(id, service='1', direction='0'):
         if str(stop) in schedule.columns:
             stops.append(stop)
     schedule = schedule[[str(i) for i in stops]]
+    
+    for c in schedule.columns:
+        schedule[c] = schedule[c].apply(lambda x: timedelta_to_value(x))
+
     try:
         for i, c in enumerate(schedule.columns):
             if schedule[c].isnull().any():
@@ -142,7 +157,7 @@ def get_schedule(id, service='1', direction='0'):
                 schedule = schedule.sort_values(by=schedule.columns[i], axis=0)
     except ValueError:
         pass
-    # schedule.columns = [stop_desc_from_stop_id(int(c))[0] for c in schedule.columns]
+    schedule.columns = [stop_desc_from_stop_id(int(c))[0] for c in schedule.columns]
     schedule.index = schedule.index.map(lambda x: x[3:])
     return schedule.applymap(format_hms_nicely)
 

@@ -16,7 +16,7 @@ class RouteLink extends Component {
         <span className='tr pl1 f5 fw6 pl2 glow'>
           <Link 
             className="dim black hover-mid-gray glow" 
-            to={{ pathname: `/route/${this.props.id}/real-time`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}>
+            to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}>
               {route.rt_name}</Link>
         </span>
       </div>

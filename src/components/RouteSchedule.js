@@ -3,19 +3,21 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import _ from 'lodash';
 
+import Helpers from '../helpers.js'
+import Schedules from '../data/schedules.js'
+
 import ScheduleTable from './ScheduleTable';
 import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
 import RouteStopList from './RouteStopList'
 
-import Helpers from '../helpers';
 
 class RouteSchedule extends React.Component {
   constructor(props) {
     super(props);
 
-    let route = Helpers.getRoute(parseInt(this.props.match.params.name, 10))
+    let route = Schedules[parseInt(this.props.match.params.name, 10)]
 
     let tripIds = {}
     Object.keys(route.schedules).forEach(svc => {
@@ -116,13 +118,7 @@ class RouteSchedule extends React.Component {
             currentDirection={this.state.currentDirection}
             onChange={this.handleDirectionChange} 
           />
-          <h2>Stops on this schedule</h2>
         </div>
-        <RouteStopList
-          id={this.state.routeId}
-          routeNumber={this.state.routeNumber}
-          timepoints={this.state[this.state.currentSvc][this.state.currentDirection].stops}
-          />
         <ScheduleTable 
           schedule={this.state[this.state.currentSvc]} 
           direction={this.state.currentDirection} 

@@ -36,7 +36,7 @@ body:after{
 
 @media screen and (max-width: 650px) {
   .map {
-    height: 50vh;
+    height: 30vh;
   }
 }
 
@@ -63,6 +63,17 @@ body:after{
     grid-column: 4/9;
   }
 
+  .details {
+    grid-row: 3/11;
+    grid-column: 5/9;
+  }
+
+  .stopList {
+    grid-column: 5/9;
+    grid-row: 3/11;
+    overflow-y: scroll;
+  }
+
   /* Stop, LineRealTime */
   .map {
     grid-column: 1/5;
@@ -85,11 +96,7 @@ body:after{
 
   /* LineSchedule */
   .schedule {
-    grid-column: 1/6;
-    grid-row: 3/11;
-  }
-  .stopList {
-    grid-column: 6/9;
+    grid-column: 1/9;
     grid-row: 4/11;
   }
   .pickers {

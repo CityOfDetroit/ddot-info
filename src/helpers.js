@@ -1,6 +1,6 @@
 const Helpers = {
 
-  endpoint: `http://ec2-54-81-243-178.compute-1.amazonaws.com:8080/api/api/where`,
+  endpoint: `https://ec2-54-81-243-178.compute-1.amazonaws.com:8080/api/api/where`,
 
   /**
    * Translate a day of the week to its service range

@@ -4,7 +4,7 @@ import RouteInput from './RouteInput';
 import RoutesList from './RoutesList';
 import Schedules from '../data/schedules';
 
-import Helpers from '../helpers.js'
+import Helpers from '../helpers.js';
 
 class RouteSearch extends Component {
   constructor(props) {

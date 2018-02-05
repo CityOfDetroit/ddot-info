@@ -1,18 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import _ from 'lodash';
 
-import ScheduleTable from './ScheduleTable';
-import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
-import RouteStopList from './RouteStopList'
-import RouteMap from './RouteMap'
-import StopInput from './StopInput'
+import RouteStopList from './RouteStopList';
+import RouteMap from './RouteMap';
 
 import Helpers from '../helpers';
-import Schedules from '../data/schedules.js'
+import Schedules from '../data/schedules.js';
 
 class RouteStops extends React.Component {
   constructor(props) {

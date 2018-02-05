@@ -3,15 +3,13 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import _ from 'lodash';
 
-import Helpers from '../helpers.js'
-import Schedules from '../data/schedules.js'
+import Helpers from '../helpers.js';
+import Schedules from '../data/schedules.js';
 
 import ScheduleTable from './ScheduleTable';
 import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
-import RouteStopList from './RouteStopList'
-
 
 class RouteSchedule extends React.Component {
   constructor(props) {

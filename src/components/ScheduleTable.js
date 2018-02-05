@@ -6,7 +6,6 @@ import chroma from 'chroma-js';
 import Stops from '../data/stops.js';
 
 export default class ScheduleTable extends Component {
-
   render() {
     const background = `rgba(${chroma(this.props.color).darken().alpha(0.25).rgba().toString()}`;
     const active = `rgba(${chroma(this.props.color).darken(2).rgba().toString()}`;

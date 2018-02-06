@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import Stops from '../data/stops.js'
-import SchedSVG from '../img/schedule.svg'
-import LiveSVG from '../img/speaker_phone.svg'
+import Stops from '../data/stops.js';
+import SchedSVG from '../img/schedule.svg';
+import LiveSVG from '../img/speaker_phone.svg';
 
-export default class RealtimeTrip extends Component {
+class RealtimeTrip extends Component {
   render() {
     return (
       <div className="w-100 pa1 flex justify-between bb pa2" >
@@ -33,3 +34,17 @@ export default class RealtimeTrip extends Component {
     )
   }
 }
+
+RealtimeTrip.propTypes = {
+  trip: PropTypes.shape({
+    properties: PropTypes.shape({
+      predicted: PropTypes.bool,
+      tripId: PropTypes.string,
+      nextStop: PropTypes.string,
+      nextStopOffset: PropTypes.number,
+      onTime: PropTypes.number,
+    })
+  })
+}
+
+export default RealtimeTrip;

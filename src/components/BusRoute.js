@@ -8,7 +8,8 @@ import RouteDetails from './RouteDetails';
 
 class BusRoute extends React.Component {
   render() {
-    const thisRoute = Schedules[this.props.match.params.name]
+    const thisRoute = Schedules[this.props.match.params.name];
+    
     return (
       <div className="BusRoute">
         <RouteHeader color={thisRoute.color} number={this.props.match.params.name} name={thisRoute.rt_name} />
@@ -30,4 +31,4 @@ BusRoute.propTypes = {
   }).isRequired,
 }
 
-export default BusRoute
+export default BusRoute;

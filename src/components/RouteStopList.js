@@ -7,7 +7,6 @@ import StopInput from './StopInput'
 
 import Helpers from '../helpers';
 
-
 class RouteStopList extends Component {
   constructor(props) {
     super(props)
@@ -21,7 +20,7 @@ class RouteStopList extends Component {
   }
 
   fetchData() {
-    fetch(`${Helpers.endpoint}/stops-for-route/DDOT_${this.props.id}.json?key=BETA`)
+    fetch(Helpers.proxyUrl + `${Helpers.endpoint}/stops-for-route/DDOT_${this.props.id}.json?key=BETA`)
     .then(response => response.json())
     .then(d => {
       this.setState({ 
@@ -64,7 +63,7 @@ class RouteStopList extends Component {
           {filteredStops.length > 0 ? filteredStops.map((stop, i) =>
             <div className="pa1 bb b--light-silver overflow-scroll" style={{ display: 'flex', alignItems: 'center' }} key={i}>
               <span className="f7 fw7 pa1">{stops[0].stopIds.indexOf(stop) + 1}.</span>
-              <StopLink id={stop.slice(5,)} name={Stops[stop.slice(5,)].name} exclude={this.props.routeNumber}/>
+              <StopLink id={stop.slice(5,)} exclude={this.props.routeNumber}/>
             </div>
           ) : ``}
         </div>

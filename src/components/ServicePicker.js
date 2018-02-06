@@ -5,7 +5,10 @@ import _ from 'lodash';
 class ServicePicker extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { selectedOption: props.currentSvc }
+    
+    this.state = { 
+      selectedOption: props.currentSvc 
+    }
   }
 
   render() {

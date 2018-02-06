@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import mapboxgl from 'mapbox-gl';
 import _ from 'lodash';
+
 import Colors from '../data/colors.js';
 
 class RealtimeRouteMap extends Component {
@@ -145,6 +147,13 @@ class RealtimeRouteMap extends Component {
       <div id="map" className="map h6"></div>
     )
   }
+}
+
+RealtimeRouteMap.propTypes = {
+  routeId: PropTypes.number,
+  stops: PropTypes.array,
+  bbox: PropTypes.array,
+  trips: PropTypes.array,
 }
 
 export default RealtimeRouteMap;

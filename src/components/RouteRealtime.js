@@ -49,7 +49,7 @@ class RouteRealtime extends React.Component {
   }
 
   fetchData() {
-    fetch(`${Helpers.endpoint}/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
+    fetch(Helpers.proxyUrl + `${Helpers.endpoint}/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
       let geojson = _.sortBy(d.data.list, 'status.tripId').map((bus, i) => {

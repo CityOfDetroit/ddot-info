@@ -2,11 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Stops from '../data/stops.js';
-
 import StopHeader from './StopHeader';
 import StopMap from './StopMap';
 import StopRouteList from './StopRouteList';
-
 import Helpers from '../helpers';
 
 class Stop extends React.Component {
@@ -20,7 +18,7 @@ class Stop extends React.Component {
   }
 
   fetchData() {
-    fetch(`${Helpers.endpoint}/arrivals-and-departures-for-stop/DDOT_${this.props.match.params.name}.json?key=BETA&includePolylines=false`)
+    fetch(Helpers.proxyUrl + `${Helpers.endpoint}/arrivals-and-departures-for-stop/DDOT_${this.props.match.params.name}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
       this.setState({ 

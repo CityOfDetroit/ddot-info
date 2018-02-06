@@ -7,7 +7,6 @@ import StopInput from './StopInput'
 
 import Helpers from '../helpers';
 
-
 class RouteStopList extends Component {
   constructor(props) {
     super(props)
@@ -21,7 +20,7 @@ class RouteStopList extends Component {
   }
 
   fetchData() {
-    fetch(`${Helpers.endpoint}/stops-for-route/DDOT_${this.props.id}.json?key=BETA`)
+    fetch(Helpers.proxyUrl + `${Helpers.endpoint}/stops-for-route/DDOT_${this.props.id}.json?key=BETA`)
     .then(response => response.json())
     .then(d => {
       this.setState({ 

@@ -15,7 +15,7 @@ class StopSchedule extends Component {
   }
 
   fetchData() {
-    fetch(`${Helpers.endpoint}/schedule-for-stop/DDOT_${this.props.stopId}.json?key=BETA&includePolylines=false`)
+    fetch(Helpers.proxyUrl + `${Helpers.endpoint}/schedule-for-stop/DDOT_${this.props.stopId}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
       this.setState({ schedule: d, fetchedSchedule: true })

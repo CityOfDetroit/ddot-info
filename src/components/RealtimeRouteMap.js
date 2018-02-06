@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import _ from 'lodash';
+
 import Colors from '../data/colors.js';
 
 class RealtimeRouteMap extends Component {

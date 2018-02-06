@@ -1,7 +1,8 @@
-import React from 'react'
-import { geolocated } from 'react-geolocated'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { geolocated } from 'react-geolocated';
 
-import StopsNearLocation from './StopsNearLocation'
+import StopsNearLocation from './StopsNearLocation';
 
 class Nearby extends React.Component {
   render() {
@@ -19,7 +20,12 @@ class Nearby extends React.Component {
     )
   }
 }
- 
+
+Nearby.propTypes = {
+  isGeolocationAvailable: PropTypes.bool,
+  isGeolocationEnabled: PropTypes.bool,
+}
+
 export default geolocated({
   positionOptions: {
     enableHighAccuracy: false,

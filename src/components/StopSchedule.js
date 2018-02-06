@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Helpers from '../helpers';
 
-
 class StopSchedule extends Component {
-
   constructor(props){
     super(props);
     
@@ -18,7 +17,10 @@ class StopSchedule extends Component {
     fetch(Helpers.proxyUrl + `${Helpers.endpoint}/schedule-for-stop/DDOT_${this.props.stopId}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
-      this.setState({ schedule: d, fetchedSchedule: true })
+      this.setState({ 
+        schedule: d, 
+        fetchedSchedule: true 
+      })
     })
     .catch(e => console.log(e));
   }
@@ -36,4 +38,8 @@ class StopSchedule extends Component {
   }
 }
 
-export default StopSchedule
+StopSchedule.propTypes = {
+  stopId: PropTypes.string,
+}
+
+export default StopSchedule;

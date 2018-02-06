@@ -27,7 +27,6 @@ class RouteSearch extends Component {
         let sorted = d.data.list.sort((a,b) => {
           return parseInt(a.id, 10) > parseInt(b.id, 10);
         })
-        console.log('fetched data: ', sorted)
         this.setState({
           realTime: sorted
         })

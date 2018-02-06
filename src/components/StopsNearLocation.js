@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import StopLink from './StopLink'
-import RouteLink from './RouteLink'
-
+import StopLink from './StopLink';
+import RouteLink from './RouteLink';
 import Helpers from '../helpers';
-
 
 class StopsNearLocation extends Component {
   constructor(props) {
@@ -59,4 +58,11 @@ class StopsNearLocation extends Component {
   }
 }
 
-export default StopsNearLocation
+StopsNearLocation.propTypes = {
+  coords: PropTypes.shape({
+    latitude: PropTypes.number,
+    longitude: PropTypes.number,
+  })
+}
+
+export default StopsNearLocation;

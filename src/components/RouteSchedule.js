@@ -15,7 +15,7 @@ class RouteSchedule extends React.Component {
   constructor(props) {
     super(props);
 
-    let route = Schedules[parseInt(this.props.match.params.name, 10)]
+    let route = Schedules[parseInt(this.props.match.params.name, 10)];
 
     let tripIds = {}
     Object.keys(route.schedules).forEach(svc => {
@@ -74,8 +74,9 @@ class RouteSchedule extends React.Component {
       })
 
       let realtimeTrips = _.filter(geojson, o => { return o.properties.direction !== undefined })
-      this.setState({realtimeTrips: realtimeTrips})
-
+      this.setState({ 
+        realtimeTrips: realtimeTrips 
+      });
     })
     .catch(e => console.log(e));
   }
@@ -93,12 +94,12 @@ class RouteSchedule extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchData()
+    this.fetchData();
     this.interval = setInterval(() => this.fetchData(), 3000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.interval)
+    clearInterval(this.interval);
   }
 
   render() {

@@ -8,7 +8,7 @@ import RouteDetails from './RouteDetails';
 
 class BusRoute extends React.Component {
   render() {
-    const thisRoute = Schedules[this.props.match.params.name]
+    const thisRoute = Schedules[this.props.match.params.name];
     
     return (
       <div className="BusRoute">
@@ -31,4 +31,4 @@ BusRoute.propTypes = {
   }).isRequired,
 }
 
-export default BusRoute
+export default BusRoute;

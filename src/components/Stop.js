@@ -2,11 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Stops from '../data/stops.js';
-
 import StopHeader from './StopHeader';
 import StopMap from './StopMap';
 import StopRouteList from './StopRouteList';
-
 import Helpers from '../helpers';
 
 class Stop extends React.Component {

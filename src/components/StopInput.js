@@ -6,7 +6,7 @@ class StopInput extends Component {
     return (
       <div  className="f5 ml2 w-75">
       <input className="w-90 pa2"
-        placeholder="Search for a stop name or number"
+        placeholder="Search for a stop name or number..."
         value={this.props.input}
         onChange={this.props.onSearchChange} />
       </div>

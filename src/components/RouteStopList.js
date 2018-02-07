@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import _ from 'lodash'
+import React, { Component } from 'react';
+import _ from 'lodash';
 
-import StopLink from './StopLink'
-import Stops from '../data/stops.js'
-import StopInput from './StopInput'
+import StopLink from './StopLink';
+import Stops from '../data/stops.js';
+import StopInput from './StopInput';
 
 import Helpers from '../helpers';
 
@@ -32,7 +32,7 @@ class RouteStopList extends Component {
   }
 
   componentDidMount() {
-    this.fetchData()
+    this.fetchData();
   }
 
   handleSearchChange(event) {
@@ -42,27 +42,28 @@ class RouteStopList extends Component {
   }
 
   render() {
-    let filteredStops = []
-    let stops = []
-    const first_timepoint = this.props.timepoints[2]
-    if(this.state.fetchedStops) {
+    let filteredStops = [];
+    let stops = [];
+    const first_timepoint = this.props.timepoints[2];
+
+    if (this.state.fetchedStops) {
       stops = _.filter(this.state.allStops, o => { 
         return o.stopIds.indexOf(`DDOT_${first_timepoint}`) > -1 })
       filteredStops = stops[0]['stopIds']
-      if(this.state.input.length > 0) {
+      if (this.state.input.length > 0) {
         filteredStops = _.filter(filteredStops, s => { return Stops[s.slice(5,)].name.toLowerCase().indexOf(this.state.input)  > -1 })
       }
     }
 
-
-    
     return (
       <div>
-        <StopInput input={this.state.input} onSearchChange={this.handleSearchChange}/>
+        <div className="h3 bb b--black">
+          <StopInput input={this.state.input} onSearchChange={this.handleSearchChange}/>
+        </div>
         <div className="overflow-scroll">
           {filteredStops.length > 0 ? filteredStops.map((stop, i) =>
             <div className="pa1 bb b--light-silver" style={{ display: 'flex', alignItems: 'center' }} key={i}>
-              <span className="f7 fw7 pa1">{stops[0].stopIds.indexOf(stop) + 1}.</span>
+              <span className="f7 fw7 pa1 ma1" style={{ backgroundColor: 'black', borderRadius: '3em', height: '15px', width: '15px', marginRight: '1em', }}></span>
               <StopLink id={stop.slice(5,)} exclude={this.props.routeNumber}/>
             </div>
           ) : ``}
@@ -72,4 +73,4 @@ class RouteStopList extends Component {
   }
 }
 
-export default RouteStopList
+export default RouteStopList;

@@ -10,7 +10,6 @@ const RouteDetails = ({ id }) => {
   return (
     <div className="details ph3">
       <div className="f5 pv3">{obj.description}</div>
-
       {["Monday-Friday", "Saturday", "Sunday/Holiday"].map((d, i) => (
       <div className="pt1 w-100 bt mb3">
           <div key={i} className="f4 w-100">
@@ -23,12 +22,14 @@ const RouteDetails = ({ id }) => {
           </div>
           <div className="mt2">
             <table className="w-100">
-              {obj.services[d].frequency.map((f, i) => (
+              <tbody>
+                {obj.services[d].frequency.map((f, i) => (
                   <tr>
                     <td className='w-50 bg-moon-gray fw7 pa2'>{f[0]}</td>
                     <td className='w-50 bg-moon-gray pa2'>every <span className='fw7'>{f[1]}</span> minutes</td>
                   </tr>
-              ))}
+                ))}
+              </tbody>
             </table>
             </div></div> )
           : `No service.`}

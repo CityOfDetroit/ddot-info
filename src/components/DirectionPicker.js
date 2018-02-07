@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
+import Stops from '../data/stops.js'
+
 class DirectionPicker extends React.Component {
   constructor(props) {
     super(props);
@@ -12,11 +14,13 @@ class DirectionPicker extends React.Component {
   }
 
   render() {
+    console.log(this.props.route)
+
     return (
       <div className="dib pa2">
-        <select className="fw5 f4" onChange={this.props.onChange}>
+        <select className="fw7 f5 pa2" onChange={this.props.onChange} style={{border: '3px solid #ddd'}}>
           {this.props.directions.map(s => (
-            <option className="fw5" value={s} key={s}>{_.capitalize(s)}</option>
+            <option className="fw5" value={s} key={s}>{_.capitalize(s)} to {Stops[this.props.route.timepoints[s].slice(-1)].name}</option>
           ))}
         </select>
       </div>

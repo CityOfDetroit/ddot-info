@@ -28,7 +28,9 @@ class RouteMap extends Component {
     map.on('load', function () {
       map.setFilter('ddot-routes', ["==", "route_num", route.id])
       map.fitBounds(route.bbox, {
-        'padding': 75
+        'padding': 75,
+        'easing': (function() { return 1; }),
+        'duration': 0
       })
     });
 

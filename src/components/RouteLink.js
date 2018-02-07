@@ -10,10 +10,10 @@ class RouteLink extends Component {
 
     return (
       <div style={{ display: 'flex', alignItems:'center' }}>
-        <span className='white fw7 f5 w2 pv2 tc' style={{ backgroundColor: route.color }}>
+        <span className='white fw7 f5 mw2 pa2 tc' style={{ backgroundColor: route.color }}>
           {this.props.id}
         </span> 
-        <span className='tr pl1 f5 fw6 pl2 glow'>
+        <span className='tl pl1 f5 fw6 pl2 glow'>
           <Link 
             className="dim black hover-mid-gray glow" 
             to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}>

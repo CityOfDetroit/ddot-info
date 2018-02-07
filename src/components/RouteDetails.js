@@ -8,52 +8,34 @@ const RouteDetails = ({ id }) => {
   console.log(obj)
 
   return (
-    <div className="details pa2">
-      {/* <div><span className="fw7 f4">{obj.number} {obj.name}</span></div> */}
-      {/* <div className="f5 pa2">{`Runs from ${obj.between[0]} to ${obj.between[1]}`}</div> */}
-      <div className="pa2 f4">Operating {`${obj.days_per_week[1] === 'Sunday' ? `daily` : `${obj.days_per_week[0]} through ${obj.days_per_week[1]}`}`} from {obj.between[0]} to {obj.between[1]}</div>
+    <div className="details ph3">
+      <div className="f5 pv3">{obj.description}</div>
+      {["Monday-Friday", "Saturday", "Sunday/Holiday"].map((d, i) => (
+      <div className="pt1 w-100 bt mb3">
+          <div key={i} className="f4 w-100">
+            <span className="dib fw7 pb1">{d}</span>
+          </div>
+          {obj.services[d] ?
+          (
+          <div><div key={i} className="f5">
+            <span className="fw5">{obj.services[d].service_hours[0]} - {obj.services[d].service_hours[1]}</span>
+          </div>
+          <div className="mt2">
+            <table className="w-100">
+              <tbody>
+                {obj.services[d].frequency.map((f, i) => (
+                  <tr>
+                    <td className='w-50 bg-moon-gray fw7 pa2'>{f[0]}</td>
+                    <td className='w-50 bg-moon-gray pa2'>every <span className='fw7'>{f[1]}</span> minutes</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            </div></div> )
+          : `No service.`}
+        </div>
 
-      <table className="pa2">
-        <thead>
-          <tr>
-            <th className="tl">Service hours:</th>
-          </tr>
-        </thead>
-      {Object.keys(obj.service_hours).map((d, i) => (
-        <tbody key={i}>
-          <tr key={i} className="striped--near-white f4">
-            <td className="pa2 fw7">{d}</td>
-            <td className="pa2">{obj.service_hours[d][0]}-{obj.service_hours[d][1]}</td>
-          </tr>
-        </tbody>
       ))}
-      </table>
-
-      <table className="pa2">
-        <thead>
-          <tr>
-            <th className="tl">Frequency of service</th>
-          </tr>
-        </thead>
-        {obj.frequency.map(f => (
-          <tbody key={f}>
-            <tr className="striped--near-white f4">
-              {f.map((c, i)=> (
-                <td key={i} className={i === 0 ? "fw7 pa2" : "pa2"}>
-                  {i === 2 ? `every ${c} minutes`: `${c}`}
-                </td>
-              ))}
-            </tr>
-          </tbody>
-        ))}
-      </table>
-  
-    {obj.notes ? <div>{obj.notes}</div> : ``}
-
-    {/* <div>Serving these locations:</div>
-    {obj.serving.map(l => (
-      <div>{l}</div>
-    ))} */}
   </div>
   )
 

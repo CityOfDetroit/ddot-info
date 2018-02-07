@@ -35,6 +35,7 @@ class RouteRealtime extends React.Component {
       sunday: (route.schedules.sunday),
       tripIds: tripIds,
       realtimeTrips: [],
+      fetched: false,
       color: (route.color),
       currentSvc: (Object.keys(route.schedules).length > 1 ? Helpers.dowToService(moment().day()) : 'weekday'),
       currentDirection: (Object.keys(route.schedules.weekday)[0]),
@@ -74,7 +75,8 @@ class RouteRealtime extends React.Component {
       })
       let realtimeTrips = _.filter(geojson, o => { return o.properties.direction !== undefined })
       this.setState({ 
-        realtimeTrips: realtimeTrips 
+        realtimeTrips: realtimeTrips ,
+        fetched: true
       })
     })
     .catch(e => console.log(e))
@@ -111,10 +113,13 @@ class RouteRealtime extends React.Component {
           bbox={this.state.routeBbox} 
           trips={this.state.realtimeTrips} 
         />
-        <RealtimeTripList
-          trips={this.state.realtimeTrips}
-          route={this.state.route}
-        />
+        {this.state.fetched ?
+          <RealtimeTripList
+                trips={this.state.realtimeTrips}
+                route={this.state.route}
+            /> : `Loading real-time arrival data...`
+      }
+
       </div>
     )
   }

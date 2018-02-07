@@ -710,12 +710,12 @@ const Schedules = {
     "color": "#44aa42",
     "rt_id": 6659,
     "timepoints": {
-      "southbound": [8892, 87, 118, 89, 90, 91, 92],
-      "northbound": [95, 96, 97, 98, 99, 100, 503, 8892]
+      "northbound": [8892, 87, 118, 89, 90, 91, 92],
+      "southbound": [95, 96, 97, 98, 99, 100, 503, 8892]
     },
     "schedules": {
       "weekday": {
-        "southbound": {
+        "northbound": {
           "stops": ["8892", "87", "118", "89", "90", "91", "92"],
           "trips": [{
             "trip_id": "7995",
@@ -779,7 +779,7 @@ const Schedules = {
             "timepoints": ["10:00pm", "10:17pm", "10:23pm", "10:28pm", "10:34pm", "10:37pm", "10:46pm"]
           }]
         },
-        "northbound": {
+        "southbound": {
           "stops": ["95", "96", "97", "98", "99", "100", "503", "8892"],
           "trips": [{
             "trip_id": "8032",
@@ -848,7 +848,7 @@ const Schedules = {
         }
       },
       "saturday": {
-        "southbound": {
+        "northbound": {
           "stops": ["8892", "87", "118", "89", "90", "91", "92"],
           "trips": [{
             "trip_id": "8035",
@@ -897,7 +897,7 @@ const Schedules = {
             "timepoints": ["9:00pm", "9:17pm", "9:21pm", "9:31pm", "9:36pm", "9:39pm", "9:48pm"]
           }]
         },
-        "northbound": {
+        "southbound": {
           "stops": ["95", "96", "97", "98", "99", "100", "503", "8892"],
           "trips": [{
             "trip_id": "8056",
@@ -951,7 +951,7 @@ const Schedules = {
         }
       },
       "sunday": {
-        "southbound": {
+        "northbound": {
           "stops": ["8892", "87", "118", "89", "90", "91", "92"],
           "trips": [{
             "trip_id": "8077",
@@ -991,7 +991,7 @@ const Schedules = {
             "timepoints": ["7:00pm", "7:17pm", "7:22pm", "7:33pm", "7:39pm", "7:42pm", "7:50pm"]
           }]
         },
-        "northbound": {
+        "southbound": {
           "stops": ["95", "96", "97", "98", "99", "100", "503", "8892"],
           "trips": [{
             "trip_id": "8078",
@@ -5519,8 +5519,8 @@ const Schedules = {
     "rt_id": 6669,
     "notes": "nonstandard schedule",
     "timepoints": {
-      "eastbound": [324, 325, 328, 330, 331, 332, 334, 335, 337, 9972],
-      "westbound": [9972, 344, 346, 347, 349, 350, 351, 353, 356, 324]
+      "eastbound": [324, 325, 328, 330, 331, 332, 334, 335, 337, 8100],
+      "westbound": [397, 346, 347, 349, 350, 351, 353, 356, 324]
     },
     "schedules": {
       "weekday": {
@@ -7454,12 +7454,12 @@ const Schedules = {
     "color": "#44aa42",
     "rt_id": 6671,
     "timepoints": {
-      "southbound": [8933, 9474, 401, 402, 403, 9658, 10145],
-      "northbound": [1045, 9690, 386, 387, 10339, 9475, 8933]
+      "northbound": [8933, 9474, 401, 402, 403, 9658, 10145],
+      "southbound": [1045, 9690, 386, 387, 10339, 9475, 8933]
     },
     "schedules": {
       "weekday": {
-        "southbound": {
+        "northbound": {
           "stops": ["8933", "9474", "401", "402", "403", "9658", "10145"],
           "trips": [{
             "trip_id": "0072",
@@ -7535,7 +7535,7 @@ const Schedules = {
             "timepoints": ["10:40pm", "10:50pm", "10:54pm", "10:58pm", "11:09pm", "11:15pm", "11:23pm"]
           }]
         },
-        "northbound": {
+        "southbound": {
           "stops": ["9690", "386", "387", "10339", "9475", "8933"],
           "trips": [{
             "trip_id": "0120",
@@ -7616,7 +7616,7 @@ const Schedules = {
         }
       },
       "saturday": {
-        "southbound": {
+        "northbound": {
           "stops": ["8933", "9474", "401", "402", "403", "9658", "10145"],
           "trips": [{
             "trip_id": "0121",
@@ -7665,7 +7665,7 @@ const Schedules = {
             "timepoints": ["9:00pm", "9:10pm", "9:14pm", "9:18pm", "9:28pm", "9:35pm", "9:44pm"]
           }]
         },
-        "northbound": {
+        "southbound": {
           "stops": ["9690", "386", "387", "10339", "9475", "8933"],
           "trips": [{
             "trip_id": "0136",
@@ -7716,7 +7716,7 @@ const Schedules = {
         }
       },
       "sunday": {
-        "southbound": {
+        "northbound": {
           "stops": ["8933", "9474", "401", "402", "403", "9658", "10145"],
           "trips": [{
             "trip_id": "0151",
@@ -7762,7 +7762,7 @@ const Schedules = {
             "timepoints": ["8:00pm", "8:10pm", "8:14pm", "8:18pm", "8:28pm", "8:34pm", "8:42pm"]
           }]
         },
-        "northbound": {
+        "southbound": {
           "stops": ["9690", "386", "387", "10339", "9475", "8933"],
           "trips": [{
             "trip_id": "0165",

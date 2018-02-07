@@ -15,7 +15,7 @@ class StopsNearLocation extends Component {
   }
 
   fetchData() {
-    fetch(`${Helpers.endpoint}/stops-for-location.json?key=BETA&radius=500&lat=${this.props.coords.latitude}&lon=${this.props.coords.longitude}`)
+    fetch(Helpers.proxyUrl + `${Helpers.endpoint}/stops-for-location.json?key=BETA&radius=500&lat=${this.props.coords.latitude}&lon=${this.props.coords.longitude}`)
     .then(response => response.json())
     .then(d => {
       this.setState({
@@ -42,7 +42,7 @@ class StopsNearLocation extends Component {
               <div className="bg-light-gray ma2 pa2" key={i}>
                 <RouteLink id={parseInt(r.shortName, 10)}/>
               </div>
-            )) : ``}
+            )) : `Loading nearby routes...`}
           </div>
         </div>
         <div>
@@ -50,7 +50,7 @@ class StopsNearLocation extends Component {
           <div className="h4 overflow-scroll">
             {this.state.fetchedData ? data.data.list.map((a, i) => (
               <StopLink id={a.id.slice(5,)} key={i} />
-            )) : ``}
+            )) : `Loading nearby stops...`}
           </div>
         </div>
       </div>

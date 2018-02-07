@@ -5,15 +5,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['Mack and Moross', 'Rosa Parks Transit Center'],
-        frequency: [
-            ['Monday-Friday', 'peak', 35],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60],
-        ],
-        service_hours: {
-            'Monday-Friday': ["5am", "11pm"],
-            'Saturday': ["7am", "11pm"],
-            'Sunday': ["7am", "8pm"]
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: "On Saturdays from 7AM-8PM, this bus departs Rosa Parks Transit Center after a layover as Route 10-Chene. Riders remaining on the bus through the layover may continue without using a transfer."
     },
@@ -24,15 +36,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['Jefferson/Maryland', '7 Mile and Gratiot'],
-        frequency: [
-            ['Monday-Friday', 'peak', 40],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['5:30am', '9pm'],
-            'Saturday': ['6:45am', '8pm'],
-            'Sunday': ['8:30am', '5pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -43,15 +67,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: "On Saturdays, this bus departs Rosa Parks Transit Center after a layover as Route 7-Cadillac-Harper. Riders remaining on the bus through the layover may continue without using a transfer."
     },
@@ -62,15 +98,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -81,15 +129,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -100,15 +160,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -119,15 +191,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -138,15 +222,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -157,15 +253,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -176,15 +284,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -195,15 +315,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -214,15 +346,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: "On Sundays, this bus departs Rosa Parks Transit Center after a layover as Route 49-Vernor. Riders remaining on the bus through the layover may continue without using a transfer."
     },
@@ -233,15 +377,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -252,15 +408,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -271,15 +439,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -290,15 +470,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -309,15 +501,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -328,15 +532,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: "On Saturdays, Sundays and weekday nights, this bus departs Rosa Parks Transit Center after a layover as Route 27-Joy. Riders remaining on the bus through the layover may continue without using a transfer."
     },
@@ -347,15 +563,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -366,15 +594,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -385,15 +625,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -404,15 +656,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -423,15 +687,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -442,15 +718,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -461,15 +749,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -480,15 +780,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -499,15 +811,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -518,15 +842,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -537,15 +873,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -556,15 +904,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -575,15 +935,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -594,15 +966,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -613,15 +997,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: "On weekday and Saturday nights, this bus departs Rosa Parks Transit Center after a layover as Route 25-Jefferson. Riders remaining on the bus through the layover may continue without using a transfer."
     },
@@ -632,15 +1028,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5:07am", "1:45am"],
+                frequency: [
+                    ["Peak", 35],
+                    ["Off-Peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: "On Sundays, this bus departs Rosa Parks Transit Center after a layover as Route 19-Fort. Riders remaining on the bus through the layover may continue without using a transfer."
     },
@@ -651,15 +1059,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -670,6 +1090,7 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         frequency: [
             ['Monday-Friday', 'peak', 60],
             ['Monday-Friday', 'off-peak', 60],
@@ -689,15 +1110,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -708,15 +1141,27 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -727,15 +1172,27 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
         },
         notes: ""
     },
@@ -746,11 +1203,15 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Friday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            }
         },
         notes: ""
     },
@@ -761,11 +1222,15 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Friday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            }
         },
         notes: ""
     },
@@ -776,11 +1241,15 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Friday'],
         between: ['', ''],
-        frequency: [
-            ['Monday-Friday', 'peak', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm']
+        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            }
         },
         notes: ""
     }

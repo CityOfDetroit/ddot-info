@@ -80,7 +80,7 @@ class RouteStopList extends Component {
               <span className="f7 fw7 pa1 ma1" style={{ border: '.25em solid white', backgroundColor: 'black', borderRadius: '3em', height: '10px', width: '10px', marginRight: '1em', marginLeft: '-2.55em', zIndex: 2 }}></span>
               <StopLink id={stop.slice(5,)} exclude={this.props.routeNumber}/>
             </div>
-          ) : ``}
+          ) : `Loading stops...`}
         </div>
       </div>
     )

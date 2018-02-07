@@ -47,7 +47,7 @@ class Stop extends React.Component {
       <div className='App'>
         <StopHeader id={stopId} name={stopName} />
         <StopMap stopId={stopId} center={stopCoords}/>
-        {this.state.fetchedPredictions ? <StopRouteList routes={stopRoutes} predictions={this.state.predictions} /> : null }
+        {this.state.fetchedPredictions ? <StopRouteList routes={stopRoutes} predictions={this.state.predictions} /> : `Loading real-time arrival data...` }
       </div>
     )
   }

@@ -15,7 +15,7 @@ class StopsNearLocation extends Component {
   }
 
   fetchData() {
-    fetch(`${Helpers.endpoint}/stops-for-location.json?key=BETA&radius=500&lat=${this.props.coords.latitude}&lon=${this.props.coords.longitude}`)
+    fetch(Helpers.proxyUrl + `${Helpers.endpoint}/stops-for-location.json?key=BETA&radius=500&lat=${this.props.coords.latitude}&lon=${this.props.coords.longitude}`)
     .then(response => response.json())
     .then(d => {
       this.setState({

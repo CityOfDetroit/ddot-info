@@ -11,12 +11,14 @@ const RouteDetails = ({ id }) => {
     <div className="details ph3">
       <div className="f5 pv3">{obj.description}</div>
 
-      {Object.keys(obj.services).map((d, i) => (
+      {["Monday-Friday", "Saturday", "Sunday/Holiday"].map((d, i) => (
       <div className="pt1 w-100 bt mb3">
           <div key={i} className="f4 w-100">
             <span className="dib fw7 pb1">{d}</span>
           </div>
-          <div key={i} className="f5">
+          {obj.services[d] ?
+          (
+          <div><div key={i} className="f5">
             <span className="fw5">{obj.services[d].service_hours[0]} - {obj.services[d].service_hours[1]}</span>
           </div>
           <div className="mt2">
@@ -28,7 +30,8 @@ const RouteDetails = ({ id }) => {
                   </tr>
               ))}
             </table>
-          </div>
+            </div></div> )
+          : `No service.`}
         </div>
 
       ))}

@@ -28,6 +28,7 @@ class RouteSchedule extends React.Component {
     })
 
     this.state = {
+      route: route,
       routeName: (route.rt_name),
       routeId: (route.rt_id),
       routeNumber: parseInt(this.props.match.params.name, 10),
@@ -115,7 +116,8 @@ class RouteSchedule extends React.Component {
           <DirectionPicker 
             directions={this.state.availableDirections}
             currentDirection={this.state.currentDirection}
-            onChange={this.handleDirectionChange} 
+            onChange={this.handleDirectionChange}
+            route={this.state.route} 
           />
         </div>
         <ScheduleTable 

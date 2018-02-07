@@ -9,7 +9,7 @@ const RoutePredictionList = ({ predictions, route }) => (
     {predictions.map((p, i) => (
       <div className="pa2 ma1 bg-moon-gray dib" style={{ display: 'flex', alignItems: 'center' }} key={i}>
         <span className="dib">
-          arriving at {p.predicted ? moment(p.predictedArrivalTime).format('h:mma') : moment(p.scheduledArrivalTime).format('h:mma')}
+          at {p.predicted ? moment(p.predictedArrivalTime).format('h:mma') : moment(p.scheduledArrivalTime).format('h:mma')}
         </span>
         {p.predicted ?
           <img className="ml1" src={LiveSVG} alt="Showing real-time prediction" />

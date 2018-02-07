@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { geolocated } from 'react-geolocated';
 
+import TopNav from './TopNav';
 import StopsNearLocation from './StopsNearLocation';
 
 class Nearby extends React.Component {
@@ -12,6 +13,8 @@ class Nearby extends React.Component {
         ? <div>Geolocation is not enabled</div> : this.props.coords
           ? 
           <div className="nearby">
+                <TopNav />
+
             <div className="pa3 schedule">
               <StopsNearLocation coords={this.props.coords} />
             </div>

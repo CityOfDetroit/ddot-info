@@ -6,6 +6,7 @@ import Stops from '../data/stops.js';
 import StopInput from './StopInput';
 
 import Helpers from '../helpers';
+import Schedules from '../data/schedules.js'
 
 class RouteStopList extends Component {
   constructor(props) {
@@ -51,19 +52,32 @@ class RouteStopList extends Component {
         return o.stopIds.indexOf(`DDOT_${first_timepoint}`) > -1 })
       filteredStops = stops[0]['stopIds']
       if (this.state.input.length > 0) {
-        filteredStops = _.filter(filteredStops, s => { return Stops[s.slice(5,)].name.toLowerCase().indexOf(this.state.input)  > -1 })
+        filteredStops = _.filter(filteredStops, s => { return (Stops[s.slice(5,)].name.toLowerCase().indexOf(this.state.input)  > -1 || s.slice(5,).indexOf(this.state.input) > -1) })
       }
     }
 
+    const color = Schedules[this.props.routeNumber].color
+
     return (
       <div>
-        <div className="h3 bb b--black">
+        <div className="h3">
           <StopInput input={this.state.input} onSearchChange={this.handleSearchChange}/>
         </div>
-        <div className="overflow-scroll">
+        <div className="w-100 pa3 f4 fw7" style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', borderBottom: '1px solid #000', }}>
+          <div className="w-30 ml3">
+            <span className='db'>Bus Stops</span>
+            <span className='db f7 fw5 i w5'>In order of arrival</span>
+          </div>
+          <div className="w-70 ml3">
+            <span className='db'>Transfers</span>
+            <span className='db f7 fw5 i w5'>Transfer routes board at nearby stops or at the same stop. Check bus stop signs.</span>
+          </div>
+        </div>
+        <div className="overflow-scroll" style={{height: '60vh'}}>
           {filteredStops.length > 0 ? filteredStops.map((stop, i) =>
-            <div className="pa1 bb b--light-silver" style={{ display: 'flex', alignItems: 'center' }} key={i}>
-              <span className="f7 fw7 pa1 ma1" style={{ backgroundColor: 'black', borderRadius: '3em', height: '15px', width: '15px', marginRight: '1em', }}></span>
+            <div className="" style={{ display: 'flex', alignItems: 'center', zIndex: 0 }} key={i}>
+              <span className="ml3 tc" style={{ backgroundColor: color, height: '4em', width: '6px', marginRight: '1em', zIndex: 1 }}></span>
+              <span className="f7 fw7 pa1 ma1" style={{ border: '.25em solid white', backgroundColor: 'black', borderRadius: '3em', height: '10px', width: '10px', marginRight: '1em', marginLeft: '-2.55em', zIndex: 2 }}></span>
               <StopLink id={stop.slice(5,)} exclude={this.props.routeNumber}/>
             </div>
           ) : ``}

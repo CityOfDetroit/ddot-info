@@ -10,24 +10,26 @@ class StopLink extends Component {
     const exclude = this.props.exclude || ''
 
     return (
-      <div className="h3" style={{ display: 'flex', justifyContent: 'center', verticalAlign: 'center', flexDirection: 'column', }}>
-        <div>
-          <Link 
-            className="dim black hover-mid-gray glow mr1" 
-            to={{ pathname: `/stop/${this.props.id}/` }}>
-            <strong>{Stops[this.props.id] ? Stops[this.props.id].name : ``}</strong>
-          </Link>
+      <div className="h3 w-100" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', borderBottom: '1px dashed #ccc', }}>
+          <div className="w-30">
+            <Link 
+              className="dim black hover-mid-gray glow mr1 db" 
+              to={{ pathname: `/stop/${this.props.id}/` }}>
+              <strong>{Stops[this.props.id] ? Stops[this.props.id].name : ``}</strong>
+            </Link>
+            <span className="db">STOP ID {this.props.id}</span>
+          </div>
+          <div className="w-70">
           {Stops[this.props.id] ? Stops[this.props.id].routes.map((r, i) => (
-            <span className={exclude.toString() === r.toString() ? "dn" : "pa1 dib white fw7 f7 ma1"} 
+            <Link className="white dim glow" to={{pathname: `/route/${r}`}}>
+            <span className={exclude.toString() === r.toString() ? "dn" : "pa2 dib white fw7 f6 ma1"} 
               style={{ backgroundColor: Schedules[r].color }}
               key={i}>
-                <Link className="white dim glow" to={{pathname: `/route/${r}`}}>{r}</Link>
-            </span>
+                {r}
+            </span></Link>
           )) : `FAILED`}
-        </div>
-        <div>
-          <span>STOP ID {this.props.id}</span>
-        </div>
+          </div>
+
       </div>
     )
   }

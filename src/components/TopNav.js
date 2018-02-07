@@ -18,6 +18,7 @@ const TopNav = () => (
     </span>
     <Link to="/" className="link dim gray fw7 f6 f5-ns ma2 pa2" style={{border: '3px solid #ddd'}}>Home</Link>
     <Link to="/about" className="link dim gray fw7 f6 f5-ns ma2 pa2" style={{border: '3px solid #ddd'}}>About</Link>
+    <Link to="/nearby" className="link dim gray fw7 f6 f5-ns ma2 pa2" style={{border: '3px solid #ddd'}}>Search Nearby</Link>
   </div>
 )
 

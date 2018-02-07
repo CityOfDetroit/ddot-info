@@ -42,7 +42,7 @@ class StopsNearLocation extends Component {
               <div className="bg-light-gray ma2 pa2" key={i}>
                 <RouteLink id={parseInt(r.shortName, 10)}/>
               </div>
-            )) : ``}
+            )) : `Loading nearby routes...`}
           </div>
         </div>
         <div>
@@ -50,7 +50,7 @@ class StopsNearLocation extends Component {
           <div className="h4 overflow-scroll">
             {this.state.fetchedData ? data.data.list.map((a, i) => (
               <StopLink id={a.id.slice(5,)} key={i} />
-            )) : ``}
+            )) : `Loading nearby stops...`}
           </div>
         </div>
       </div>

@@ -61,7 +61,7 @@ class RouteStopList extends Component {
         <StopInput input={this.state.input} onSearchChange={this.handleSearchChange}/>
         <div className="overflow-scroll">
           {filteredStops.length > 0 ? filteredStops.map((stop, i) =>
-            <div className="pa1 bb b--light-silver overflow-scroll" style={{ display: 'flex', alignItems: 'center' }} key={i}>
+            <div className="pa1 bb b--light-silver" style={{ display: 'flex', alignItems: 'center' }} key={i}>
               <span className="f7 fw7 pa1">{stops[0].stopIds.indexOf(stop) + 1}.</span>
               <StopLink id={stop.slice(5,)} exclude={this.props.routeNumber}/>
             </div>

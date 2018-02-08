@@ -2,20 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-import Stops from '../data/stops.js'
+import Stops from '../data/stops.js';
 
 class DirectionPicker extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = { 
       selectedOption: props.currentDirection 
-    };
+    }
   }
 
   render() {
-    console.log(this.props.route)
-
     return (
       <div className="dib pa2">
         <select className="fw7 f5 pa2" onChange={this.props.onChange} style={{border: '3px solid #ddd'}}>

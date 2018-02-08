@@ -4,24 +4,26 @@ import mapboxgl from 'mapbox-gl';
 import _ from 'lodash';
 
 import Colors from '../data/colors.js';
-import Helpers from '../helpers.js'
+import Helpers from '../helpers.js';
 
 class RealtimeRouteMap extends Component {
   constructor(props) {
-    super(props);
+    super(props)
+
     this.state = {
       drewMap: false,
       map: {},
-    };
+    }
   }
 
   updateMap() {
-    if(this.state.drewMap){
+    if (this.state.drewMap) {
       let fc = {
         "type": "FeatureCollection",
         "features": this.props.trips
       }
-      if(this.state.map.isSourceLoaded('realtime')) {
+
+      if (this.state.map.isSourceLoaded('realtime')) {
         this.state.map.getSource('realtime').setData(fc)
         this.state.map.getSource('realtime-background').setData(fc)
       }
@@ -29,7 +31,6 @@ class RealtimeRouteMap extends Component {
   }
 
   drawMap() {
-
     mapboxgl.accessToken = 'pk.eyJ1IjoiY2l0eW9mZGV0cm9pdCIsImEiOiJjamNiY2RuZDcwMTV1MnF0MW9kbGo5YTlyIn0.5s818a6deB6YJJK4yFkMwQ';
 
     const map = new mapboxgl.Map({
@@ -129,14 +130,13 @@ class RealtimeRouteMap extends Component {
       })
     });
 
-  this.setState({
-    drewMap: true,
-    map: map,
-  });
+    this.setState({
+      drewMap: true,
+      map: map,
+    });
 
     this.updateMap()
   }
-
 
   componentDidMount() {
     this.drawMap()
@@ -151,7 +151,7 @@ class RealtimeRouteMap extends Component {
 }
 
 RealtimeRouteMap.propTypes = {
-  routeId: PropTypes.number,
+  routeId: PropTypes.string,
   stops: PropTypes.array,
   bbox: PropTypes.array,
   trips: PropTypes.array,

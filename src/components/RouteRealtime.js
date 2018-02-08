@@ -116,10 +116,8 @@ class RouteRealtime extends React.Component {
         {this.state.fetched ?
           <RealtimeTripList
                 trips={this.state.realtimeTrips}
-                route={this.state.route}
-            /> : `Loading real-time arrival data...`
-      }
-
+                route={this.state.route} /> 
+        : `Loading real-time arrival data...` }
       </div>
     )
   }
@@ -136,4 +134,4 @@ RouteRealtime.propTypes = {
   }).isRequired,
 }
 
-export default RouteRealtime
+export default RouteRealtime;

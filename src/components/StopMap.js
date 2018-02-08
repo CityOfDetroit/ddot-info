@@ -52,14 +52,12 @@ class StopMap extends Component {
 
   componentWillReceiveProps(nextProps) {
     if(this.props.stopId !== nextProps.stopId) {
-
+      this.state.map.setCenter([ Stops[nextProps.stopId].lon, Stops[nextProps.stopId].lat] )
       const transferIds = Stops[nextProps.stopId].transfers.map(t => t[0])
       this.state.map.setFilter('ddot-stops', ["in", "stop_id"].concat(transferIds))
       this.state.map.setFilter('ddot-stops copy', ["in", "stop_id"].concat(transferIds))
       this.state.map.setFilter('ddot-stops-highlight', ["in", "stop_id", nextProps.stopId])
       this.state.map.setFilter('ddot-stops-label-highlight', ["in", "stop_id", nextProps.stopId])
-
-
     }
   }
 

@@ -3,7 +3,7 @@ const Stops = {
     "name": "Chene & Gratiot",
     "lat": "42.35216032",
     "lon": "-83.031894233",
-    "routes": ["10"]
+    "routes": ["10", "34"]
   },
   "1000": {
     "name": "Woodward & Arden Park",
@@ -93,19 +93,19 @@ const Stops = {
     "name": "Tireman & Beechwood",
     "lat": "42.353067",
     "lon": "-83.119585",
-    "routes": ["47"]
+    "routes": ["27", "47"]
   },
   "10014": {
     "name": "Tireman & Archdale",
     "lat": "42.350713",
     "lon": "-83.215271",
-    "routes": ["47"]
+    "routes": ["46", "47"]
   },
   "10015": {
     "name": "Tireman & Evergreen",
     "lat": "42.350407",
     "lon": "-83.236228",
-    "routes": ["47"]
+    "routes": ["47", "60"]
   },
   "10016": {
     "name": "FAUST & CATHEDRAL",
@@ -123,7 +123,7 @@ const Stops = {
     "name": "Evergreen & 7 Mile",
     "lat": "42.430288",
     "lon": "-83.239008",
-    "routes": ["60"]
+    "routes": ["45", "60", "92"]
   },
   "1002": {
     "name": "Woodward & Boston",
@@ -201,7 +201,7 @@ const Stops = {
     "name": "Gunston & Gratiot",
     "lat": "42.408893",
     "lon": "-82.995551",
-    "routes": ["13"]
+    "routes": ["13", "34"]
   },
   "10033": {
     "name": "Gunston & Flanders",
@@ -249,7 +249,7 @@ const Stops = {
     "name": "Puritan & Southfield",
     "lat": "42.408425",
     "lon": "-83.217792",
-    "routes": ["39"]
+    "routes": ["39", "46"]
   },
   "10041": {
     "name": "Schoolcraft & W Outer Dr",
@@ -261,13 +261,13 @@ const Stops = {
     "name": "Ewald Cir & Livernois",
     "lat": "42.39117187",
     "lon": "-83.140319687",
-    "routes": ["43"]
+    "routes": ["30", "43"]
   },
   "10043": {
     "name": "Ewald Cir & Livernois",
     "lat": "42.391758",
     "lon": "-83.139298",
-    "routes": ["43"]
+    "routes": ["30", "43"]
   },
   "10044": {
     "name": "Schoolcraft & Northlawn",
@@ -321,13 +321,13 @@ const Stops = {
     "name": "Wyoming & Castle",
     "lat": "42.345912",
     "lon": "-83.157414",
-    "routes": ["54"]
+    "routes": ["14", "54"]
   },
   "10052": {
     "name": "Dearborn & Fort",
     "lat": "42.293603",
     "lon": "-83.135922",
-    "routes": ["54"]
+    "routes": ["19", "54"]
   },
   "10053": {
     "name": "Dearborn & Harbaugh",
@@ -387,7 +387,7 @@ const Stops = {
     "name": "Michigan & Campbell",
     "lat": "42.331294",
     "lon": "-83.114322",
-    "routes": ["37"]
+    "routes": ["11", "37"]
   },
   "10067": {
     "name": "Michigan & Cecil",
@@ -399,7 +399,7 @@ const Stops = {
     "name": "Michigan & Calhoun",
     "lat": "42.322691",
     "lon": "-83.174462",
-    "routes": ["37"]
+    "routes": ["37", "41", "49"]
   },
   "10069": {
     "name": "Michigan & Walwit",
@@ -417,7 +417,7 @@ const Stops = {
     "name": "Rivard & Mack",
     "lat": "42.352438",
     "lon": "-83.046211",
-    "routes": ["40"]
+    "routes": ["31", "40"]
   },
   "10071": {
     "name": "I-75 Service Dr & Leland",
@@ -429,19 +429,19 @@ const Stops = {
     "name": "E Outer Dr & Moenart",
     "lat": "42.440526",
     "lon": "-83.050139",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "10073": {
     "name": "E Outer Dr & Dwyer",
     "lat": "42.441045",
     "lon": "-83.042047",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "10074": {
     "name": "Clay & I-75 Service Dr",
     "lat": "42.37883",
     "lon": "-83.061643",
-    "routes": ["40"]
+    "routes": ["11", "40"]
   },
   "10075": {
     "name": "I-75 Service Dr @ 3901",
@@ -543,7 +543,7 @@ const Stops = {
     "name": "Vernor & Cavalry",
     "lat": "42.316258667",
     "lon": "-83.105430279",
-    "routes": ["49"]
+    "routes": ["49", "89"]
   },
   "10094": {
     "name": "Bagley & Rosa Parks",
@@ -555,7 +555,7 @@ const Stops = {
     "name": "TRUMBULL & PORTER",
     "lat": "42.328374",
     "lon": "-83.06438",
-    "routes": ["49"]
+    "routes": ["29", "49"]
   },
   "10096": {
     "name": "Bagley & 20th",
@@ -567,7 +567,7 @@ const Stops = {
     "name": "VERNOR & MILITARY",
     "lat": "42.316293",
     "lon": "-83.10753",
-    "routes": ["49"]
+    "routes": ["30", "49", "89"]
   },
   "10098": {
     "name": "Vernor @ 9200 W",
@@ -609,7 +609,7 @@ const Stops = {
     "name": "Tireman & Longacre",
     "lat": "42.350724",
     "lon": "-83.214126",
-    "routes": ["47"]
+    "routes": ["46", "47"]
   },
   "10104": {
     "name": "Southfield & Vassar",
@@ -693,7 +693,7 @@ const Stops = {
     "name": "EVERGREEN & KIRKWOOD",
     "lat": "42.331826",
     "lon": "-83.235225",
-    "routes": ["46"]
+    "routes": ["46", "60"]
   },
   "10117": {
     "name": "Southfield & Whitlock",
@@ -747,7 +747,7 @@ const Stops = {
     "name": "Southfield & W Outer Dr",
     "lat": "42.418575",
     "lon": "-83.218545",
-    "routes": ["46"]
+    "routes": ["16", "46"]
   },
   "10125": {
     "name": "Southfield & Clarita",
@@ -771,7 +771,7 @@ const Stops = {
     "name": "Coolidge & Bassett",
     "lat": "42.275770964",
     "lon": "-83.144198302",
-    "routes": ["41"]
+    "routes": ["41", "89"]
   },
   "10129": {
     "name": "Millennium Park",
@@ -783,7 +783,7 @@ const Stops = {
     "name": "Plymouth & Southfield",
     "lat": "42.372138",
     "lon": "-83.217411",
-    "routes": ["38"]
+    "routes": ["38", "46"]
   },
   "10131": {
     "name": "Mt Elliott & Edwin",
@@ -813,7 +813,7 @@ const Stops = {
     "name": "Elmhurst & Dexter",
     "lat": "42.381335",
     "lon": "-83.12485",
-    "routes": ["38"]
+    "routes": ["16", "38"]
   },
   "10136": {
     "name": "Elmhurst & Otsego",
@@ -849,19 +849,19 @@ const Stops = {
     "name": "Elmhurst & Oakman",
     "lat": "42.375998",
     "lon": "-83.15012",
-    "routes": ["38"]
+    "routes": ["15", "38"]
   },
   "10141": {
     "name": "Plymouth & Prest",
     "lat": "42.372681",
     "lon": "-83.196971",
-    "routes": ["38"]
+    "routes": ["22", "38"]
   },
   "10142": {
     "name": "Plymouth & Southfield",
     "lat": "42.372423",
     "lon": "-83.21592",
-    "routes": ["38"]
+    "routes": ["38", "46"]
   },
   "10143": {
     "name": "Plymouth & Brennan Pool Dr",
@@ -885,13 +885,13 @@ const Stops = {
     "name": "ARRIVING FAIRGROUND",
     "lat": "42.442061",
     "lon": "-83.120787",
-    "routes": ["17"]
+    "routes": ["12", "17", "23", "30", "498", "53", "54"]
   },
   "10149": {
     "name": "ARRIVING FAIRGROUND",
     "lat": "42.442123",
     "lon": "-83.120383",
-    "routes": ["17"]
+    "routes": ["12", "17", "23", "30", "498", "53", "54"]
   },
   "1015": {
     "name": "Woodward & Blaine",
@@ -903,19 +903,19 @@ const Stops = {
     "name": "Meijer Old Redford",
     "lat": "42.413517",
     "lon": "-83.251511",
-    "routes": ["32", "45"]
+    "routes": ["21", "32", "45"]
   },
   "10158": {
     "name": "Report  Gratiot &  8 Mile",
     "lat": "42.449601",
     "lon": "-82.968098",
-    "routes": ["34"]
+    "routes": ["17", "34"]
   },
   "10163": {
     "name": "Grand River & Adams",
     "lat": "42.33521",
     "lon": "-83.05569",
-    "routes": ["21", "96"]
+    "routes": ["21", "92", "96"]
   },
   "10167": {
     "name": "Inselruhe & Loiter Way",
@@ -927,13 +927,13 @@ const Stops = {
     "name": "E Grand Bl & Jefferson",
     "lat": "42.346396",
     "lon": "-83.001519",
-    "routes": ["12"]
+    "routes": ["12", "25"]
   },
   "10177": {
     "name": "E Grand Bl & Jefferson",
     "lat": "42.34759",
     "lon": "-83.002399",
-    "routes": ["12"]
+    "routes": ["12", "25"]
   },
   "10178": {
     "name": "Jefferson & Maryland",
@@ -957,7 +957,7 @@ const Stops = {
     "name": "Woodward & Milwaukee",
     "lat": "42.369281",
     "lon": "-83.072611",
-    "routes": ["498"]
+    "routes": ["498", "53"]
   },
   "10185": {
     "name": "Woodward & 13 Mile",
@@ -1017,7 +1017,7 @@ const Stops = {
     "name": "Woodward & Milwaukee",
     "lat": "42.368977",
     "lon": "-83.07266",
-    "routes": ["498"]
+    "routes": ["16", "498", "53", "80", "89"]
   },
   "10197": {
     "name": "Woodward & 13 Mile",
@@ -1035,19 +1035,19 @@ const Stops = {
     "name": "CONANT &CANIFF",
     "lat": "42.402657",
     "lon": "-83.052843",
-    "routes": ["95"]
+    "routes": ["12", "38", "95"]
   },
   "10201": {
     "name": "LUMPKIN & HOLBROOK",
     "lat": "42.390976",
     "lon": "-83.061399",
-    "routes": ["95"]
+    "routes": ["40", "95"]
   },
   "10202": {
     "name": "GRATIOT & BEAUBIEN",
     "lat": "42.33699",
     "lon": "-83.044088",
-    "routes": ["95"]
+    "routes": ["34", "40", "95"]
   },
   "10203": {
     "name": "Congress & Washington",
@@ -1059,13 +1059,13 @@ const Stops = {
     "name": "LARNED & SHELBY",
     "lat": "42.328891",
     "lon": "-83.046829",
-    "routes": ["95"]
+    "routes": ["10", "16", "21", "25", "34", "48", "7", "92", "95", "96"]
   },
   "10205": {
     "name": "Madison & Brush",
     "lat": "42.33754",
     "lon": "-83.04523",
-    "routes": ["95"]
+    "routes": ["34", "40", "95"]
   },
   "10206": {
     "name": "Holbrook & I-75 Service Dr",
@@ -1077,127 +1077,127 @@ const Stops = {
     "name": "CANIFF & CONANT",
     "lat": "42.402844",
     "lon": "-83.052635",
-    "routes": ["95"]
+    "routes": ["12", "38", "95"]
   },
   "10208": {
     "name": "RYAN & NEVADA",
     "lat": "42.426012",
     "lon": "-83.062456",
-    "routes": ["95"]
+    "routes": ["10", "40", "95"]
   },
   "10209": {
     "name": "CONANT & HAROLD ST",
     "lat": "42.40433",
     "lon": "-83.053659",
-    "routes": ["95"]
+    "routes": ["12", "95"]
   },
   "10210": {
     "name": "CONANT & MINNESOTA",
     "lat": "42.423789",
     "lon": "-83.066814",
-    "routes": ["95"]
+    "routes": ["12", "95"]
   },
   "10211": {
     "name": "NEVADA & CONANT",
     "lat": "42.425892",
     "lon": "-83.068192",
-    "routes": ["95"]
+    "routes": ["10", "12", "40", "95"]
   },
   "10212": {
     "name": "EAST OUTER DRIVER & JUSTINE",
     "lat": "42.440472",
     "lon": "-83.05915",
-    "routes": ["95"]
+    "routes": ["40", "95"]
   },
   "10213": {
     "name": "EAST OUTER DRIVE & HASSE",
     "lat": "42.440577",
     "lon": "-83.057192",
-    "routes": ["95"]
+    "routes": ["40", "95"]
   },
   "10214": {
     "name": "EAST OUTER DRIVE & MOUND RD",
     "lat": "42.440624",
     "lon": "-83.043871",
-    "routes": ["95"]
+    "routes": ["40", "95"]
   },
   "10216": {
     "name": "EAST OTER DRIVE & ROGGE ST",
     "lat": "42.44092",
     "lon": "-83.02973",
-    "routes": ["95"]
+    "routes": ["40", "95"]
   },
   "10218": {
     "name": "EAST OUTER DRIVE & ROGGE",
     "lat": "42.441206",
     "lon": "-83.029399",
-    "routes": ["95"]
+    "routes": ["40", "95"]
   },
   "10219": {
     "name": "EAST OUTER DRIVE & MT ELLIOTT",
     "lat": "42.440816",
     "lon": "-83.039455",
-    "routes": ["95"]
+    "routes": ["40", "95"]
   },
   "10220": {
     "name": "EAST OUTER DRIVE & MOUND",
     "lat": "42.440929",
     "lon": "-83.044519",
-    "routes": ["95"]
+    "routes": ["40", "95"]
   },
   "10221": {
     "name": "EAST OUTER DRIVE & HEALY ST",
     "lat": "42.440835",
     "lon": "-83.056323",
-    "routes": ["95"]
+    "routes": ["40", "95"]
   },
   "10222": {
     "name": "EAST OUTER DRIVE & EUREKA ST",
     "lat": "42.440685",
     "lon": "-83.057804",
-    "routes": ["95"]
+    "routes": ["40", "95"]
   },
   "10223": {
     "name": "CONANT & NEVADA",
     "lat": "42.425588",
     "lon": "-83.068388",
-    "routes": ["95"]
+    "routes": ["10", "12", "40", "95"]
   },
   "10224": {
     "name": "CONANT & MINNESOTA",
     "lat": "42.4237",
     "lon": "-83.067181",
-    "routes": ["95"]
+    "routes": ["12", "95"]
   },
   "10225": {
     "name": "CONANT & 6MILE RD",
     "lat": "42.418509",
     "lon": "-83.063547",
-    "routes": ["95"]
+    "routes": ["12", "32", "95"]
   },
   "10226": {
     "name": "CONANT & CARPENTER",
     "lat": "42.408762",
     "lon": "-83.057232",
-    "routes": ["95"]
+    "routes": ["12", "95"]
   },
   "10227": {
     "name": "CONANT & CASMERE",
     "lat": "42.404671",
     "lon": "-83.054416",
-    "routes": ["95"]
+    "routes": ["12", "95"]
   },
   "10228": {
     "name": "CANIFF & CHAREST ST",
     "lat": "42.401195",
     "lon": "-83.057003",
-    "routes": ["95"]
+    "routes": ["38", "95"]
   },
   "10229": {
     "name": "Lumpkin & Caniff",
     "lat": "42.397311",
     "lon": "-83.065646",
-    "routes": ["95"]
+    "routes": ["38", "95"]
   },
   "1023": {
     "name": "Woodward & Edison",
@@ -1209,19 +1209,19 @@ const Stops = {
     "name": "CHRYSLER DRIVE & HOLBROOK",
     "lat": "42.385858",
     "lon": "-83.068242",
-    "routes": ["95"]
+    "routes": ["11", "95"]
   },
   "10231": {
     "name": "Grand River & Times Square",
     "lat": "42.333771",
     "lon": "-83.051936",
-    "routes": ["21", "53", "92", "96"]
+    "routes": ["10", "16", "18", "19", "21", "23", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "10246": {
     "name": "Lumpkin & Poland",
     "lat": "42.393233",
     "lon": "-83.062739",
-    "routes": ["95"]
+    "routes": ["40", "95"]
   },
   "10247": {
     "name": "Lumpkin & Edwin",
@@ -1233,7 +1233,7 @@ const Stops = {
     "name": "Lumpkin & Belmont",
     "lat": "42.396629",
     "lon": "-83.06503",
-    "routes": ["95"]
+    "routes": ["38", "95"]
   },
   "10249": {
     "name": "Lumpkin & Evaline",
@@ -1251,7 +1251,7 @@ const Stops = {
     "name": "Lumpkin & Norwalk",
     "lat": "42.393651",
     "lon": "-83.063182",
-    "routes": ["95"]
+    "routes": ["40", "95"]
   },
   "10253": {
     "name": "Pembroke & Vaughan",
@@ -1305,7 +1305,7 @@ const Stops = {
     "name": "MARYLAND & JEFFERSON",
     "lat": "42.376156",
     "lon": "-82.938044",
-    "routes": ["80"]
+    "routes": ["25", "80", "9"]
   },
   "1027": {
     "name": "Woodward & Bethune",
@@ -1317,7 +1317,7 @@ const Stops = {
     "name": "Springwells & Whittaker",
     "lat": "42.310339",
     "lon": "-83.126515953",
-    "routes": ["89"]
+    "routes": ["49", "89"]
   },
   "10271": {
     "name": "Springwells & Navy",
@@ -1359,7 +1359,7 @@ const Stops = {
     "name": "Springwells & Senator",
     "lat": "42.31031",
     "lon": "-83.126319",
-    "routes": ["89"]
+    "routes": ["49", "89"]
   },
   "10278": {
     "name": "Pembroke & Kentfield",
@@ -1395,13 +1395,13 @@ const Stops = {
     "name": "Burt & 8 Mile",
     "lat": "42.442957537",
     "lon": "-83.249021093",
-    "routes": ["92"]
+    "routes": ["17", "92"]
   },
   "10283": {
     "name": "Victor & Victor",
     "lat": "42.407446",
     "lon": "-83.094107",
-    "routes": ["42"]
+    "routes": ["15", "42", "43"]
   },
   "10284": {
     "name": "Victor & Victor",
@@ -1413,7 +1413,7 @@ const Stops = {
     "name": "Oakland & Davison",
     "lat": "42.405827218",
     "lon": "-83.086493193",
-    "routes": ["42"]
+    "routes": ["15", "42"]
   },
   "10286": {
     "name": "Oakland & McLean",
@@ -1431,13 +1431,13 @@ const Stops = {
     "name": "Lodge Service Dr & Warren",
     "lat": "42.352999",
     "lon": "-83.073626",
-    "routes": ["89"]
+    "routes": ["14", "89"]
   },
   "10289": {
     "name": "Oakland & Belmont",
     "lat": "42.391701",
     "lon": "-83.076634",
-    "routes": ["42"]
+    "routes": ["38", "42"]
   },
   "10290": {
     "name": "Oakland & Bethune",
@@ -1461,25 +1461,25 @@ const Stops = {
     "name": "ROSA PARKS BLVD AND SEWARD",
     "lat": "42.368879",
     "lon": "-83.094326",
-    "routes": ["42"]
+    "routes": ["18", "42"]
   },
   "10295": {
     "name": "ROSA PARKS BLVD AND PINGREE",
     "lat": "42.372244",
     "lon": "-83.096606",
-    "routes": ["42"]
+    "routes": ["18", "42"]
   },
   "10296": {
     "name": "ROSA PARKS BLVD AND EDISON",
     "lat": "42.378409",
     "lon": "-83.100667",
-    "routes": ["42"]
+    "routes": ["18", "42"]
   },
   "10297": {
     "name": "ROSA PARKS AND CALVERT",
     "lat": "42.383197",
     "lon": "-83.103936",
-    "routes": ["42"]
+    "routes": ["18", "38", "42"]
   },
   "10298": {
     "name": "Rosa Parks & Burlingame",
@@ -1497,19 +1497,19 @@ const Stops = {
     "name": "Clark & Fort",
     "lat": "42.312889",
     "lon": "-83.090679",
-    "routes": ["11"]
+    "routes": ["11", "19"]
   },
   "1030": {
     "name": "Woodward & Parsons",
     "lat": "42.348245961",
     "lon": "-83.058606339",
-    "routes": ["53"]
+    "routes": ["31", "42", "47", "498", "53"]
   },
   "10300": {
     "name": "MANCHESTER AND 3RD",
     "lat": "42.40511",
     "lon": "-83.103943",
-    "routes": ["42"]
+    "routes": ["15", "39", "42", "43"]
   },
   "1031": {
     "name": "Woodward & Selden",
@@ -1521,13 +1521,13 @@ const Stops = {
     "name": "STATE FAIR TRANSIT CENTER - Report",
     "lat": "42.44199",
     "lon": "-83.121668",
-    "routes": ["53"]
+    "routes": ["12", "17", "23", "30", "498", "53", "54"]
   },
   "10316": {
     "name": "Washington & Lafayette",
     "lat": "42.330963",
     "lon": "-83.050669",
-    "routes": ["16", "21", "92", "96"]
+    "routes": ["10", "16", "19", "21", "25", "27", "29", "40", "48", "49", "53", "7", "92", "96"]
   },
   "1032": {
     "name": "Woodward & Alexandrine",
@@ -1611,13 +1611,13 @@ const Stops = {
     "name": "Woodward & Adams",
     "lat": "42.336607905",
     "lon": "-83.050739618",
-    "routes": ["498"]
+    "routes": ["498", "53"]
   },
   "104": {
     "name": "Junction & Fort",
     "lat": "42.310157",
     "lon": "-83.096172",
-    "routes": ["11"]
+    "routes": ["11", "19"]
   },
   "1041": {
     "name": "Woodward & Columbia",
@@ -1635,19 +1635,19 @@ const Stops = {
     "name": "Junction & Michigan",
     "lat": "42.331542",
     "lon": "-83.111957",
-    "routes": ["11"]
+    "routes": ["11", "37"]
   },
   "1052": {
     "name": "Woodward & Erskine",
     "lat": "42.345467907",
     "lon": "-83.0564799",
-    "routes": ["53"]
+    "routes": ["498", "53"]
   },
   "1057": {
     "name": "Woodward & Putnam",
     "lat": "42.357606248",
     "lon": "-83.064905939",
-    "routes": ["53"]
+    "routes": ["14", "498", "53"]
   },
   "1059": {
     "name": "Woodward & Kirby",
@@ -1659,13 +1659,13 @@ const Stops = {
     "name": "Woodward & Warren",
     "lat": "42.35736549",
     "lon": "-83.06440505",
-    "routes": ["498", "53"]
+    "routes": ["14", "498", "53"]
   },
   "1064": {
     "name": "Woodward & Warren",
     "lat": "42.35613149",
     "lon": "-83.06412105",
-    "routes": ["498", "53"]
+    "routes": ["14", "498", "53"]
   },
   "1066": {
     "name": "Woodward & Canfield",
@@ -1677,7 +1677,7 @@ const Stops = {
     "name": "Woodward & Gerald",
     "lat": "42.405783",
     "lon": "-83.097025",
-    "routes": ["53"]
+    "routes": ["498", "53"]
   },
   "1069": {
     "name": "Woodward & Grand",
@@ -1689,19 +1689,19 @@ const Stops = {
     "name": "Joy & Grand River",
     "lat": "42.365464",
     "lon": "-83.129843",
-    "routes": ["11"]
+    "routes": ["11", "21"]
   },
   "108": {
     "name": "Clairmount & Rosa Parks",
     "lat": "42.376552",
     "lon": "-83.098875",
-    "routes": ["11"]
+    "routes": ["11", "18", "42"]
   },
   "1080": {
     "name": "Woodward & Ford",
     "lat": "42.405525",
     "lon": "-83.097135",
-    "routes": ["53"]
+    "routes": ["498", "53"]
   },
   "1081": {
     "name": "Woodward & Winona",
@@ -1725,73 +1725,73 @@ const Stops = {
     "name": "Michigan & Third",
     "lat": "42.33155349",
     "lon": "-83.05675705",
-    "routes": ["37"]
+    "routes": ["34", "37"]
   },
   "1087": {
     "name": "Michigan & Third",
     "lat": "42.33177749",
     "lon": "-83.05806205",
-    "routes": ["37"]
+    "routes": ["34", "37"]
   },
   "1091": {
     "name": "LAFAYETTE & 2ND",
     "lat": "42.329265",
     "lon": "-83.053643",
-    "routes": ["27", "49"]
+    "routes": ["19", "27", "29", "49"]
   },
   "1092": {
     "name": "LAFAYETTE & 2ND",
     "lat": "42.329346",
     "lon": "-83.054143",
-    "routes": ["27"]
+    "routes": ["19", "27", "29", "49"]
   },
   "1096": {
     "name": "LAFAYETTE & 1ST",
     "lat": "42.329846",
     "lon": "-83.052958",
-    "routes": ["27", "49"]
+    "routes": ["19", "27", "29", "49"]
   },
   "1098": {
     "name": "Michigan & First",
     "lat": "42.33157249",
     "lon": "-83.05445105",
-    "routes": ["34", "37"]
+    "routes": ["21", "34", "37"]
   },
   "110": {
     "name": "I-75 Service Dr & Holbrook",
     "lat": "42.385944",
     "lon": "-83.068524",
-    "routes": ["11"]
+    "routes": ["11", "95"]
   },
   "1101": {
     "name": "Michigan & Cass",
     "lat": "42.331568682",
     "lon": "-83.052102033",
-    "routes": ["34"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "48", "49", "53", "7", "92", "96"]
   },
   "1102": {
     "name": "Michigan & Cass",
     "lat": "42.331789311",
     "lon": "-83.053404368",
-    "routes": ["21", "34", "37"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "48", "49", "53", "7", "92", "96"]
   },
   "1105": {
     "name": "Cass & Lafayette",
     "lat": "42.330329",
     "lon": "-83.05144",
-    "routes": ["29"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "1106": {
     "name": "Lafayette & Cass",
     "lat": "42.33009265",
     "lon": "-83.051788875",
-    "routes": ["27", "49"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "1108": {
     "name": "LAFAYETTE & CASS",
     "lat": "42.330631",
     "lon": "-83.051442",
-    "routes": ["49"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "111": {
     "name": "E Grand Bl & Chene",
@@ -1803,55 +1803,55 @@ const Stops = {
     "name": "Lafayette & Washington",
     "lat": "42.330521998",
     "lon": "-83.0507376",
-    "routes": ["27", "49"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "1118": {
     "name": "Washington & Michigan",
     "lat": "42.331398851",
     "lon": "-83.051226162",
-    "routes": ["10", "16", "19", "21", "25", "27", "29", "48", "49", "53", "7", "92", "96"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "112": {
     "name": "Harper & Gratiot",
     "lat": "42.393045",
     "lon": "-83.004898",
-    "routes": ["11"]
+    "routes": ["11", "34", "7"]
   },
   "113": {
     "name": "St Jean & Warren",
     "lat": "42.387031",
     "lon": "-82.983833",
-    "routes": ["11"]
+    "routes": ["11", "14"]
   },
   "1132": {
     "name": "JEFFERSON & WOODWARD",
     "lat": "42.329263",
     "lon": "-83.044092",
-    "routes": ["92", "96"]
+    "routes": ["10", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "1142": {
     "name": "Randolph & Monroe",
     "lat": "42.333600711",
     "lon": "-83.044332897",
-    "routes": ["34", "40", "95"]
+    "routes": ["10", "34", "40", "48", "95"]
   },
   "1147": {
     "name": "Randolph & Monroe",
     "lat": "42.33354349",
     "lon": "-83.04456305",
-    "routes": ["34", "40"]
+    "routes": ["10", "34", "40", "48", "95"]
   },
   "1148": {
     "name": "Gratiot & Brush",
     "lat": "42.33551749",
     "lon": "-83.04465905",
-    "routes": ["34", "40"]
+    "routes": ["34", "40", "95"]
   },
   "115": {
     "name": "Lycaste & Jefferson",
     "lat": "42.36877249",
     "lon": "-82.96789105",
-    "routes": ["11"]
+    "routes": ["11", "25", "80"]
   },
   "1152": {
     "name": "Warren & University",
@@ -1863,19 +1863,19 @@ const Stops = {
     "name": "Gratiot & Beaubien",
     "lat": "42.33673849",
     "lon": "-83.04415605",
-    "routes": ["34", "40"]
+    "routes": ["34", "40", "95"]
   },
   "1158": {
     "name": "Gratiot & Beaubien",
     "lat": "42.33688049",
     "lon": "-83.04364405",
-    "routes": ["34", "40"]
+    "routes": ["34", "40", "95"]
   },
   "116": {
     "name": "St Jean & Warren",
     "lat": "42.387679",
     "lon": "-82.984016",
-    "routes": ["11"]
+    "routes": ["11", "14"]
   },
   "1162": {
     "name": "Gratiot & St Antoine",
@@ -1887,13 +1887,13 @@ const Stops = {
     "name": "Gratiot & St Antoine",
     "lat": "42.33809449",
     "lon": "-83.04311905",
-    "routes": ["34", "40"]
+    "routes": ["34", "40", "95"]
   },
   "1167": {
     "name": "GRATIOT & MID BLOCK",
     "lat": "42.340904",
     "lon": "-83.041099",
-    "routes": ["40"]
+    "routes": ["34", "40"]
   },
   "1168": {
     "name": "Gratiot & Antietam",
@@ -1905,31 +1905,31 @@ const Stops = {
     "name": "Gratiot & Rivard",
     "lat": "42.34206",
     "lon": "-83.039654",
-    "routes": ["34"]
+    "routes": ["34", "40"]
   },
   "1171": {
     "name": "Gratiot & Rivard",
     "lat": "42.342248",
     "lon": "-83.03994",
-    "routes": ["40"]
+    "routes": ["34", "40"]
   },
   "1175": {
     "name": "GRATIOT & STROH DRIVE",
     "lat": "42.341771",
     "lon": "-83.0404",
-    "routes": ["34"]
+    "routes": ["34", "40"]
   },
   "1176": {
     "name": "Gratiot & I-75 Service Dr",
     "lat": "42.345112",
     "lon": "-83.037735",
-    "routes": ["34"]
+    "routes": ["10", "34"]
   },
   "1177": {
     "name": "Gratiot & Jay",
     "lat": "42.345032",
     "lon": "-83.037374",
-    "routes": ["34"]
+    "routes": ["10", "34"]
   },
   "1179": {
     "name": "Gratiot & Adelaide",
@@ -1971,31 +1971,31 @@ const Stops = {
     "name": "Gratiot & McDougall",
     "lat": "42.357245677",
     "lon": "-83.028805869",
-    "routes": ["34"]
+    "routes": ["31", "34"]
   },
   "119": {
     "name": "Holbrook & I-75 Service Dr",
     "lat": "42.386111927",
     "lon": "-83.06897083",
-    "routes": ["11"]
+    "routes": ["11", "95"]
   },
   "1190": {
     "name": "Gratiot & McDougall",
     "lat": "42.357002",
     "lon": "-83.029304",
-    "routes": ["34"]
+    "routes": ["31", "34"]
   },
   "1193": {
     "name": "Mack & Elmwood",
     "lat": "42.35929",
     "lon": "-83.026879",
-    "routes": ["31"]
+    "routes": ["31", "34"]
   },
   "1194": {
     "name": "Mack & Elmwood",
     "lat": "42.359495",
     "lon": "-83.026836",
-    "routes": ["31"]
+    "routes": ["31", "34"]
   },
   "1197": {
     "name": "Gratiot & Moran",
@@ -2013,13 +2013,13 @@ const Stops = {
     "name": "Gratiot & Mt Elliott",
     "lat": "42.364276",
     "lon": "-83.024526",
-    "routes": ["34"]
+    "routes": ["12", "34"]
   },
   "1204": {
     "name": "Gratiot & Mt Elliott",
     "lat": "42.365051927",
     "lon": "-83.023651504",
-    "routes": ["34"]
+    "routes": ["12", "34"]
   },
   "1205": {
     "name": "Gratiot & Beaufait",
@@ -2037,19 +2037,19 @@ const Stops = {
     "name": "Gratiot & Concord",
     "lat": "42.36978",
     "lon": "-83.020517",
-    "routes": ["34"]
+    "routes": ["14", "34"]
   },
   "1209": {
     "name": "Gratiot & Helen",
     "lat": "42.371219",
     "lon": "-83.019505",
-    "routes": ["34"]
+    "routes": ["14", "34"]
   },
   "121": {
     "name": "Clairmount & Rosa Parks",
     "lat": "42.376205",
     "lon": "-83.100161",
-    "routes": ["11"]
+    "routes": ["11", "18", "42"]
   },
   "1210": {
     "name": "Gratiot & Baldwin",
@@ -2085,7 +2085,7 @@ const Stops = {
     "name": "Joy & Grand River",
     "lat": "42.365219",
     "lon": "-83.130747",
-    "routes": ["11"]
+    "routes": ["11", "21"]
   },
   "1220": {
     "name": "Gratiot & Burns",
@@ -2157,13 +2157,13 @@ const Stops = {
     "name": "Harper & Gratiot",
     "lat": "42.392908",
     "lon": "-83.006334",
-    "routes": ["11"]
+    "routes": ["11", "34", "7"]
   },
   "1236": {
     "name": "Harper & Gratiot",
     "lat": "42.39320049",
     "lon": "-83.00576905",
-    "routes": ["11"]
+    "routes": ["11", "34", "7"]
   },
   "1237": {
     "name": "Gratiot & Sterritt",
@@ -2175,7 +2175,7 @@ const Stops = {
     "name": "Gratiot & Peter Hunt",
     "lat": "42.394011987",
     "lon": "-83.004756796",
-    "routes": ["34"]
+    "routes": ["11", "34", "7"]
   },
   "1239": {
     "name": "Gratiot & Georgia",
@@ -2187,7 +2187,7 @@ const Stops = {
     "name": "Seymour & MacCrary",
     "lat": "42.42708049",
     "lon": "-82.96980605",
-    "routes": ["11"]
+    "routes": ["11", "32"]
   },
   "1240": {
     "name": "Gratiot & Marcus",
@@ -2211,7 +2211,7 @@ const Stops = {
     "name": "Gratiot & French",
     "lat": "42.400098",
     "lon": "-83.000847",
-    "routes": ["34"]
+    "routes": ["34", "38"]
   },
   "1247": {
     "name": "Gratiot & French",
@@ -2229,7 +2229,7 @@ const Stops = {
     "name": "Gratiot & Conner",
     "lat": "42.40458149",
     "lon": "-82.99750005",
-    "routes": ["34", "38"]
+    "routes": ["13", "34", "38"]
   },
   "125": {
     "name": "I-75 Service Dr & Junction",
@@ -2241,25 +2241,25 @@ const Stops = {
     "name": "Gratiot & Conner",
     "lat": "42.40478249",
     "lon": "-82.99782405",
-    "routes": ["34", "38"]
+    "routes": ["13", "34", "38"]
   },
   "1255": {
     "name": "Gratiot & E Outer Dr",
     "lat": "42.406652",
     "lon": "-82.996128",
-    "routes": ["13"]
+    "routes": ["13", "34", "38"]
   },
   "1258": {
     "name": "Gratiot & Gunston",
     "lat": "42.408888",
     "lon": "-82.994673",
-    "routes": ["34"]
+    "routes": ["13", "34"]
   },
   "1259": {
     "name": "GUNSTON & GRATIOT",
     "lat": "42.40783",
     "lon": "-82.995428",
-    "routes": ["13"]
+    "routes": ["13", "34", "38"]
   },
   "1262": {
     "name": "Gratiot & Glenfield",
@@ -2307,7 +2307,7 @@ const Stops = {
     "name": "State Fairgrounds Transit Center",
     "lat": "42.441954",
     "lon": "-83.121827",
-    "routes": ["12", "23", "30", "498", "53", "54"]
+    "routes": ["12", "17", "23", "30", "498", "53", "54"]
   },
   "1271": {
     "name": "Gratiot & Gitre",
@@ -2337,19 +2337,19 @@ const Stops = {
     "name": "Gratiot & Seymour",
     "lat": "42.4273",
     "lon": "-82.982601",
-    "routes": ["34"]
+    "routes": ["32", "34"]
   },
   "1278": {
     "name": "Gratiot & McNichols",
     "lat": "42.426647",
     "lon": "-82.983454",
-    "routes": ["34"]
+    "routes": ["32", "34"]
   },
   "1280": {
     "name": "Gratiot & Greiner",
     "lat": "42.428377",
     "lon": "-82.981907",
-    "routes": ["34"]
+    "routes": ["32", "34"]
   },
   "1281": {
     "name": "Gratiot & Glenwood",
@@ -2373,19 +2373,19 @@ const Stops = {
     "name": "Gratiot & Fordham",
     "lat": "42.434703",
     "lon": "-82.977727",
-    "routes": ["34"]
+    "routes": ["34", "45", "9"]
   },
   "1285": {
     "name": "Fordham & Gratiot",
     "lat": "42.434384",
     "lon": "-82.977689",
-    "routes": ["9"]
+    "routes": ["34", "45", "9"]
   },
   "129": {
     "name": "Conant & 7 Mile",
     "lat": "42.432758",
     "lon": "-83.073639",
-    "routes": ["12"]
+    "routes": ["12", "45"]
   },
   "1290": {
     "name": "Gratiot & Lappin",
@@ -2451,7 +2451,7 @@ const Stops = {
     "name": "Conant & McNichols",
     "lat": "42.418402",
     "lon": "-83.063509",
-    "routes": ["12"]
+    "routes": ["12", "32", "95"]
   },
   "1300": {
     "name": "Gratiot & Bringard",
@@ -2463,7 +2463,7 @@ const Stops = {
     "name": "Gratiot & Carlisle",
     "lat": "42.449167",
     "lon": "-82.968148",
-    "routes": ["34"]
+    "routes": ["17", "34"]
   },
   "131": {
     "name": "Conant & Dwyer",
@@ -2487,7 +2487,7 @@ const Stops = {
     "name": "Mt Elliott & Gratiot",
     "lat": "42.364375",
     "lon": "-83.023744",
-    "routes": ["12"]
+    "routes": ["12", "34"]
   },
   "1323": {
     "name": "8 Mile & Cordell",
@@ -2523,31 +2523,31 @@ const Stops = {
     "name": "Mt Elliott & Forest",
     "lat": "42.368663708",
     "lon": "-83.026346205",
-    "routes": ["12"]
+    "routes": ["12", "14"]
   },
   "135": {
     "name": "Helen & Jefferson",
     "lat": "42.347042247",
     "lon": "-83.003233918",
-    "routes": ["12"]
+    "routes": ["12", "25"]
   },
   "1350": {
     "name": "Forest & Mt Elliott",
     "lat": "42.368431",
     "lon": "-83.025889",
-    "routes": ["14"]
+    "routes": ["12", "14"]
   },
   "1351": {
     "name": "Mt Elliott & Forest",
     "lat": "42.368086",
     "lon": "-83.026181",
-    "routes": ["12"]
+    "routes": ["12", "14"]
   },
   "1352": {
     "name": "Mt Elliott & Sylvester",
     "lat": "42.363275",
     "lon": "-83.022993",
-    "routes": ["12"]
+    "routes": ["12", "34"]
   },
   "1353": {
     "name": "Mt Elliott & Canfield",
@@ -2565,19 +2565,19 @@ const Stops = {
     "name": "Warren & Mt Elliott",
     "lat": "42.370377",
     "lon": "-83.028106",
-    "routes": ["14"]
+    "routes": ["12", "14"]
   },
   "1356": {
     "name": "Mt Elliott & Warren",
     "lat": "42.370724",
     "lon": "-83.027705",
-    "routes": ["12"]
+    "routes": ["12", "14"]
   },
   "1357": {
     "name": "Mt Elliott & Warren",
     "lat": "42.370319",
     "lon": "-83.027653",
-    "routes": ["12"]
+    "routes": ["12", "14"]
   },
   "1358": {
     "name": "Forest & Beaufait",
@@ -2595,19 +2595,19 @@ const Stops = {
     "name": "Mt Elliott & Gratiot",
     "lat": "42.365283",
     "lon": "-83.024128",
-    "routes": ["12"]
+    "routes": ["12", "34"]
   },
   "1360": {
     "name": "Forest & Concord",
     "lat": "42.37014",
     "lon": "-83.021209",
-    "routes": ["14"]
+    "routes": ["14", "34"]
   },
   "1361": {
     "name": "Forest & Gratiot",
     "lat": "42.370801",
     "lon": "-83.019412",
-    "routes": ["14"]
+    "routes": ["14", "34"]
   },
   "1363": {
     "name": "Warren & Canton",
@@ -2619,19 +2619,19 @@ const Stops = {
     "name": "Gratiot & Warren",
     "lat": "42.373578",
     "lon": "-83.018376",
-    "routes": ["34"]
+    "routes": ["14", "34"]
   },
   "1368": {
     "name": "WARREN & GRATIOT",
     "lat": "42.3741",
     "lon": "-83.018318",
-    "routes": ["14"]
+    "routes": ["14", "34"]
   },
   "1369": {
     "name": "Gratiot & Warren",
     "lat": "42.37461",
     "lon": "-83.017286",
-    "routes": ["34"]
+    "routes": ["14", "34"]
   },
   "137": {
     "name": "Conant & Dwyer",
@@ -2643,13 +2643,13 @@ const Stops = {
     "name": "Warren & Townsend",
     "lat": "42.374724",
     "lon": "-83.016166",
-    "routes": ["14"]
+    "routes": ["14", "34"]
   },
   "1371": {
     "name": "Warren & Baldwin",
     "lat": "42.375173",
     "lon": "-83.015067",
-    "routes": ["14"]
+    "routes": ["14", "34"]
   },
   "1372": {
     "name": "Forest & Baldwin",
@@ -2667,19 +2667,19 @@ const Stops = {
     "name": "Van Dyke & Forest",
     "lat": "42.374082",
     "lon": "-83.011133",
-    "routes": ["48"]
+    "routes": ["14", "48"]
   },
   "1379": {
     "name": "Van Dyke & Forest",
     "lat": "42.37375696",
     "lon": "-83.011097194",
-    "routes": ["48"]
+    "routes": ["14", "48"]
   },
   "138": {
     "name": "Conant & McNichols",
     "lat": "42.419018",
     "lon": "-83.063725",
-    "routes": ["12", "95"]
+    "routes": ["12", "32", "95"]
   },
   "1380": {
     "name": "Warren & Maxwell",
@@ -2733,7 +2733,7 @@ const Stops = {
     "name": "Conant & 7 Mile",
     "lat": "42.43313949",
     "lon": "-83.07371205",
-    "routes": ["12"]
+    "routes": ["12", "45"]
   },
   "1390": {
     "name": "McNichols & Fairport",
@@ -2799,7 +2799,7 @@ const Stops = {
     "name": "State Fair & Dequindre",
     "lat": "42.440219",
     "lon": "-83.083405",
-    "routes": ["12"]
+    "routes": ["12", "43"]
   },
   "1400": {
     "name": "Seymour & Peoria",
@@ -2841,25 +2841,25 @@ const Stops = {
     "name": "Chalmers & Seymour",
     "lat": "42.426719",
     "lon": "-82.975159",
-    "routes": ["9"]
+    "routes": ["32", "9"]
   },
   "1407": {
     "name": "Chalmers & Seymour",
     "lat": "42.427222",
     "lon": "-82.974997",
-    "routes": ["9"]
+    "routes": ["32", "9"]
   },
   "1408": {
     "name": "Seymour & Chalmers",
     "lat": "42.427008",
     "lon": "-82.974724",
-    "routes": ["32"]
+    "routes": ["32", "9"]
   },
   "1409": {
     "name": "Seymour & Chalmers",
     "lat": "42.427094",
     "lon": "-82.975323",
-    "routes": ["32"]
+    "routes": ["32", "9"]
   },
   "1410": {
     "name": "Chalmers & Mapleridge",
@@ -2991,7 +2991,7 @@ const Stops = {
     "name": "Gunston & McNichols",
     "lat": "42.419994",
     "lon": "-83.003111",
-    "routes": ["13"]
+    "routes": ["13", "32"]
   },
   "1440": {
     "name": "Michigan & Trenton",
@@ -3057,7 +3057,7 @@ const Stops = {
     "name": "Conner & Gratiot",
     "lat": "42.404445",
     "lon": "-82.997084",
-    "routes": ["13"]
+    "routes": ["13", "34", "38"]
   },
   "1450": {
     "name": "Michigan & Chopin",
@@ -3099,7 +3099,7 @@ const Stops = {
     "name": "Michigan & Wesson",
     "lat": "42.331005",
     "lon": "-83.115315",
-    "routes": ["37"]
+    "routes": ["11", "37"]
   },
   "146": {
     "name": "Conner & Shoemaker",
@@ -3111,19 +3111,19 @@ const Stops = {
     "name": "35th & Michigan",
     "lat": "42.331455",
     "lon": "-83.113162",
-    "routes": ["11"]
+    "routes": ["11", "37"]
   },
   "1464": {
     "name": "Michigan & Junction",
     "lat": "42.331053",
     "lon": "-83.110989",
-    "routes": ["37"]
+    "routes": ["11", "37"]
   },
   "1465": {
     "name": "Michigan & Junction",
     "lat": "42.331295",
     "lon": "-83.112143",
-    "routes": ["37"]
+    "routes": ["11", "37"]
   },
   "1466": {
     "name": "Michigan & 31st",
@@ -3153,7 +3153,7 @@ const Stops = {
     "name": "Conner & Warren",
     "lat": "42.38905",
     "lon": "-82.975682",
-    "routes": ["13"]
+    "routes": ["13", "14"]
   },
   "1470": {
     "name": "Michigan & Clark",
@@ -3177,7 +3177,7 @@ const Stops = {
     "name": "Michigan & Vinewood",
     "lat": "42.331147",
     "lon": "-83.096305",
-    "routes": ["37"]
+    "routes": ["27", "37"]
   },
   "1479": {
     "name": "Michigan & 25th",
@@ -3189,7 +3189,7 @@ const Stops = {
     "name": "Conner & Jefferson",
     "lat": "42.370701",
     "lon": "-82.959525",
-    "routes": ["13"]
+    "routes": ["13", "25", "80"]
   },
   "1482": {
     "name": "Michigan & 22nd",
@@ -3273,7 +3273,7 @@ const Stops = {
     "name": "Wyoming & Michigan",
     "lat": "42.327178",
     "lon": "-83.156347",
-    "routes": ["54"]
+    "routes": ["37", "54"]
   },
   "150": {
     "name": "Korte & Philip",
@@ -3303,7 +3303,7 @@ const Stops = {
     "name": "Congress & Beaubien",
     "lat": "42.332288375",
     "lon": "-83.041110737",
-    "routes": ["7"]
+    "routes": ["10", "21", "48", "7"]
   },
   "152": {
     "name": "Essex & Kitchener",
@@ -3315,7 +3315,7 @@ const Stops = {
     "name": "W Grand Bl & Ash",
     "lat": "42.332879",
     "lon": "-83.096079",
-    "routes": ["27"]
+    "routes": ["27", "37", "47"]
   },
   "1525": {
     "name": "W Grand Bl & Risdon",
@@ -3333,7 +3333,7 @@ const Stops = {
     "name": "Conner & Jefferson",
     "lat": "42.37042149",
     "lon": "-82.95896605",
-    "routes": ["13"]
+    "routes": ["13", "25", "80"]
   },
   "1535": {
     "name": "Michigan & Military",
@@ -3345,7 +3345,7 @@ const Stops = {
     "name": "Conner & Warren",
     "lat": "42.389587",
     "lon": "-82.976544",
-    "routes": ["13"]
+    "routes": ["13", "14"]
   },
   "1541": {
     "name": "35th & Buchanan",
@@ -3381,7 +3381,7 @@ const Stops = {
     "name": "Gunston & McNichols",
     "lat": "42.42014486",
     "lon": "-83.002986242",
-    "routes": ["13"]
+    "routes": ["13", "32"]
   },
   "1571": {
     "name": "14th & Buchanan",
@@ -3465,7 +3465,7 @@ const Stops = {
     "name": "Third & Martin Luther King",
     "lat": "42.343866",
     "lon": "-83.065119",
-    "routes": ["23"]
+    "routes": ["23", "47"]
   },
   "1602": {
     "name": "Martin Luther King & Second",
@@ -3483,37 +3483,37 @@ const Stops = {
     "name": "Martin Luther King & Cass",
     "lat": "42.34559349",
     "lon": "-83.06037505",
-    "routes": ["31", "47"]
+    "routes": ["16", "31", "47"]
   },
   "1607": {
     "name": "Martin Luther King & Cass",
     "lat": "42.345601",
     "lon": "-83.061126",
-    "routes": ["47"]
+    "routes": ["16", "31", "47"]
   },
   "1608": {
     "name": "Woodward & Martin Luther King",
     "lat": "42.34655249",
     "lon": "-83.05751405",
-    "routes": ["498", "53"]
+    "routes": ["31", "42", "47", "498", "53"]
   },
   "161": {
     "name": "Warren & Greenfield",
     "lat": "42.343564",
     "lon": "-83.195886",
-    "routes": ["14"]
+    "routes": ["14", "22"]
   },
   "1611": {
     "name": "Woodward & Mack",
     "lat": "42.347749646",
     "lon": "-83.05798081",
-    "routes": ["498", "53"]
+    "routes": ["31", "42", "47", "498", "53"]
   },
   "1614": {
     "name": "Mack & John R",
     "lat": "42.348318566",
     "lon": "-83.055551082",
-    "routes": ["31"]
+    "routes": ["31", "42", "47"]
   },
   "1616": {
     "name": "Mack & John R",
@@ -3525,7 +3525,7 @@ const Stops = {
     "name": "Warren & Schaefer",
     "lat": "42.343916",
     "lon": "-83.17613",
-    "routes": ["14"]
+    "routes": ["14", "41"]
   },
   "1622": {
     "name": "Mack & Beaubien",
@@ -3549,7 +3549,7 @@ const Stops = {
     "name": "Martin Luther King & Third",
     "lat": "42.344209",
     "lon": "-83.065614",
-    "routes": ["47"]
+    "routes": ["23", "47"]
   },
   "1629": {
     "name": "Mack & St Antoine",
@@ -3561,13 +3561,13 @@ const Stops = {
     "name": "Warren & Livernois",
     "lat": "42.344473",
     "lon": "-83.129462",
-    "routes": ["14"]
+    "routes": ["14", "30"]
   },
   "1633": {
     "name": "I-75 Service Dr & Mack",
     "lat": "42.352099",
     "lon": "-83.04777",
-    "routes": ["40", "80"]
+    "routes": ["31", "40", "80"]
   },
   "1634": {
     "name": "Mack & I-75 Service Dr",
@@ -3579,13 +3579,13 @@ const Stops = {
     "name": "Mack & Rivard",
     "lat": "42.352041565",
     "lon": "-83.045449361",
-    "routes": ["31"]
+    "routes": ["31", "40"]
   },
   "1637": {
     "name": "Mack & Russell",
     "lat": "42.352731",
     "lon": "-83.044218",
-    "routes": ["31"]
+    "routes": ["31", "40"]
   },
   "1638": {
     "name": "Mack & Russell",
@@ -3597,13 +3597,13 @@ const Stops = {
     "name": "Russell & Mack",
     "lat": "42.35223",
     "lon": "-83.044647",
-    "routes": ["40"]
+    "routes": ["31", "40"]
   },
   "164": {
     "name": "Fourteenth & Warren",
     "lat": "42.34926",
     "lon": "-83.086732",
-    "routes": ["14"]
+    "routes": ["14", "18"]
   },
   "1640": {
     "name": "Mack & Riopelle",
@@ -3633,31 +3633,31 @@ const Stops = {
     "name": "Chene & Mack",
     "lat": "42.356672",
     "lon": "-83.034674",
-    "routes": ["10"]
+    "routes": ["10", "31"]
   },
   "1647": {
     "name": "Chene & Mack",
     "lat": "42.35626",
     "lon": "-83.03465",
-    "routes": ["10"]
+    "routes": ["10", "31"]
   },
   "1648": {
     "name": "Mack & Chene",
     "lat": "42.356597",
     "lon": "-83.03428",
-    "routes": ["31"]
+    "routes": ["10", "31"]
   },
   "1649": {
     "name": "Mack & Chene",
     "lat": "42.356491",
     "lon": "-83.034997",
-    "routes": ["31"]
+    "routes": ["10", "31"]
   },
   "165": {
     "name": "Warren & Woodward",
     "lat": "42.356815",
     "lon": "-83.063774",
-    "routes": ["14"]
+    "routes": ["14", "498", "53"]
   },
   "1653": {
     "name": "Mack & Grandy",
@@ -3669,7 +3669,7 @@ const Stops = {
     "name": "Mack & Grandy",
     "lat": "42.357178",
     "lon": "-83.033067",
-    "routes": ["31"]
+    "routes": ["10", "31"]
   },
   "1667": {
     "name": "Warren & 24th",
@@ -3693,7 +3693,7 @@ const Stops = {
     "name": "Gratiot & Russell",
     "lat": "42.343756475",
     "lon": "-83.038379237",
-    "routes": ["34"]
+    "routes": ["10", "34", "40"]
   },
   "1670": {
     "name": "Warren & I-96 Service Dr",
@@ -3705,37 +3705,37 @@ const Stops = {
     "name": "Forest & Trumbull",
     "lat": "42.350019",
     "lon": "-83.076796",
-    "routes": ["14"]
+    "routes": ["14", "29"]
   },
   "1672": {
     "name": "Trumbull & Forest",
     "lat": "42.350207",
     "lon": "-83.077517",
-    "routes": ["29"]
+    "routes": ["14", "29"]
   },
   "1673": {
     "name": "Trumbull & Forest",
     "lat": "42.349661",
     "lon": "-83.077449",
-    "routes": ["29"]
+    "routes": ["14", "29"]
   },
   "1676": {
     "name": "Cass & Peterboro",
     "lat": "42.34434449",
     "lon": "-83.05988505",
-    "routes": ["16", "31"]
+    "routes": ["16", "31", "47"]
   },
   "1677": {
     "name": "Cass & Peterboro",
     "lat": "42.343772",
     "lon": "-83.059771",
-    "routes": ["16", "31"]
+    "routes": ["16", "31", "47"]
   },
   "1679": {
     "name": "Cass & Martin Luther King",
     "lat": "42.34595293",
     "lon": "-83.061000767",
-    "routes": ["16"]
+    "routes": ["16", "31", "47"]
   },
   "1683": {
     "name": "Calvert & Lasalle",
@@ -3759,49 +3759,49 @@ const Stops = {
     "name": "Forest & Van Dyke",
     "lat": "42.37397949",
     "lon": "-83.01064505",
-    "routes": ["14"]
+    "routes": ["14", "48"]
   },
   "1690": {
     "name": "14th & Calvert",
     "lat": "42.381483",
     "lon": "-83.107137",
-    "routes": ["18"]
+    "routes": ["18", "38"]
   },
   "1691": {
     "name": "Calvert & 14th",
     "lat": "42.381665",
     "lon": "-83.107444",
-    "routes": ["38"]
+    "routes": ["18", "38"]
   },
   "1692": {
     "name": "Calvert & 14th",
     "lat": "42.381539",
     "lon": "-83.107446",
-    "routes": ["38"]
+    "routes": ["18", "38"]
   },
   "1694": {
     "name": "Rosa Parks & Calvert",
     "lat": "42.383152",
     "lon": "-83.10399",
-    "routes": ["18"]
+    "routes": ["18", "38", "42"]
   },
   "1696": {
     "name": "Calvert & Rosa Parks",
     "lat": "42.382809",
     "lon": "-83.104303",
-    "routes": ["38"]
+    "routes": ["18", "38", "42"]
   },
   "170": {
     "name": "Warren & Cadillac",
     "lat": "42.382367",
     "lon": "-82.996371",
-    "routes": ["14"]
+    "routes": ["14", "7"]
   },
   "1700": {
     "name": "ROSA PARKS BLVD & BOSTON",
     "lat": "42.3813",
     "lon": "-83.102729",
-    "routes": ["18"]
+    "routes": ["18", "42"]
   },
   "1703": {
     "name": "Calvert & Woodrow Wilson",
@@ -3825,25 +3825,25 @@ const Stops = {
     "name": "Calvert & Hamilton",
     "lat": "42.386186",
     "lon": "-83.094808",
-    "routes": ["38"]
+    "routes": ["23", "38"]
   },
   "1708": {
     "name": "Hamilton & Calvert",
     "lat": "42.385872",
     "lon": "-83.095161",
-    "routes": ["23"]
+    "routes": ["23", "38"]
   },
   "1709": {
     "name": "Hamilton & Calvert",
     "lat": "42.386376",
     "lon": "-83.095236",
-    "routes": ["23"]
+    "routes": ["23", "38"]
   },
   "171": {
     "name": "Warren & St Jean",
     "lat": "42.38737",
     "lon": "-82.98322",
-    "routes": ["14"]
+    "routes": ["11", "14"]
   },
   "1710": {
     "name": "Calvert & Third",
@@ -3873,43 +3873,43 @@ const Stops = {
     "name": "Calvert & Woodward",
     "lat": "42.389135",
     "lon": "-83.086856",
-    "routes": ["38"]
+    "routes": ["38", "498", "53"]
   },
   "1715": {
     "name": "Woodward & Trowbridge",
     "lat": "42.38966349",
     "lon": "-83.08617605",
-    "routes": ["498", "53"]
+    "routes": ["38", "498", "53"]
   },
   "1716": {
     "name": "Woodward & Calvert",
     "lat": "42.38983649",
     "lon": "-83.08660605",
-    "routes": ["498"]
+    "routes": ["38", "498", "53"]
   },
   "1719": {
     "name": "Harmon & Woodward",
     "lat": "42.390572",
     "lon": "-83.08623",
-    "routes": ["38"]
+    "routes": ["38", "498", "53"]
   },
   "172": {
     "name": "Warren & Chalmers",
     "lat": "42.395468",
     "lon": "-82.958456",
-    "routes": ["14"]
+    "routes": ["14", "9"]
   },
   "1720": {
     "name": "Woodward & Harmon",
     "lat": "42.390608",
     "lon": "-83.086807",
-    "routes": ["53"]
+    "routes": ["38", "498", "53"]
   },
   "1721": {
     "name": "WOODWARD & COLLINGWOOD",
     "lat": "42.390097",
     "lon": "-83.086851",
-    "routes": ["53"]
+    "routes": ["38", "498", "53"]
   },
   "1722": {
     "name": "Harmon & John R",
@@ -3939,19 +3939,19 @@ const Stops = {
     "name": "OAKLAND & TROWBRIDGE",
     "lat": "42.392879",
     "lon": "-83.07758",
-    "routes": ["42"]
+    "routes": ["38", "42"]
   },
   "1727": {
     "name": "Caniff & Oakland",
     "lat": "42.393295",
     "lon": "-83.077116",
-    "routes": ["38"]
+    "routes": ["38", "42"]
   },
   "1729": {
     "name": "Caniff & Oakland",
     "lat": "42.39304",
     "lon": "-83.076989",
-    "routes": ["38"]
+    "routes": ["38", "42"]
   },
   "173": {
     "name": "Warren & Guilford",
@@ -3963,7 +3963,7 @@ const Stops = {
     "name": "Harmon & Oakland",
     "lat": "42.393496",
     "lon": "-83.078401",
-    "routes": ["38"]
+    "routes": ["38", "42"]
   },
   "1731": {
     "name": "Caniff & Cameron",
@@ -3999,25 +3999,25 @@ const Stops = {
     "name": "Caniff & I-75 Service Dr",
     "lat": "42.396922",
     "lon": "-83.067484",
-    "routes": ["38"]
+    "routes": ["38", "40"]
   },
   "1740": {
     "name": "Caniff & I-75 Service Dr",
     "lat": "42.396367499",
     "lon": "-83.069302775",
-    "routes": ["38"]
+    "routes": ["38", "40"]
   },
   "1742": {
     "name": "Caniff & St Aubin",
     "lat": "42.397423",
     "lon": "-83.066576",
-    "routes": ["38"]
+    "routes": ["38", "40", "95"]
   },
   "1743": {
     "name": "Caniff & Lumpkin",
     "lat": "42.397665981",
     "lon": "-83.065503682",
-    "routes": ["38", "95"]
+    "routes": ["38", "40", "95"]
   },
   "1744": {
     "name": "Caniff & Brombach",
@@ -4029,43 +4029,43 @@ const Stops = {
     "name": "CANIFF & BROMBACH",
     "lat": "42.398589",
     "lon": "-83.062693",
-    "routes": ["95"]
+    "routes": ["38", "95"]
   },
   "1746": {
     "name": "Joseph Campau & Caniff",
     "lat": "42.400121",
     "lon": "-83.05991",
-    "routes": ["10"]
+    "routes": ["10", "38", "95"]
   },
   "1747": {
     "name": "Joseph Campau & Trowbridge",
     "lat": "42.399192",
     "lon": "-83.059498",
-    "routes": ["10"]
+    "routes": ["10", "38", "95"]
   },
   "1748": {
     "name": "Caniff & Joseph Campau",
     "lat": "42.399724904",
     "lon": "-83.060145047",
-    "routes": ["38", "95"]
+    "routes": ["10", "38", "95"]
   },
   "1749": {
     "name": "Caniff & Joseph Campau",
     "lat": "42.399904583",
     "lon": "-83.059403767",
-    "routes": ["38", "95"]
+    "routes": ["10", "38", "95"]
   },
   "175": {
     "name": "Warren & Chalmers",
     "lat": "42.395435",
     "lon": "-82.959263",
-    "routes": ["14"]
+    "routes": ["14", "9"]
   },
   "1750": {
     "name": "Caniff & Charest",
     "lat": "42.400922",
     "lon": "-83.057014",
-    "routes": ["38"]
+    "routes": ["38", "95"]
   },
   "1751": {
     "name": "Caniff & Gallagher",
@@ -4095,13 +4095,13 @@ const Stops = {
     "name": "Warren & Cadillac",
     "lat": "42.382334",
     "lon": "-82.997291",
-    "routes": ["14"]
+    "routes": ["14", "7"]
   },
   "177": {
     "name": "Warren & Van Dyke",
     "lat": "42.376015",
     "lon": "-83.012862",
-    "routes": ["14"]
+    "routes": ["14", "48"]
   },
   "1770": {
     "name": "Mack & Bellevue",
@@ -4125,7 +4125,7 @@ const Stops = {
     "name": "Gratiot & E Grand Bl",
     "lat": "42.372618",
     "lon": "-83.019028",
-    "routes": ["34"]
+    "routes": ["14", "34"]
   },
   "1780": {
     "name": "Miller & Mt Elliott",
@@ -4143,7 +4143,7 @@ const Stops = {
     "name": "Gratiot & Russell",
     "lat": "42.34362",
     "lon": "-83.039016",
-    "routes": ["34"]
+    "routes": ["10", "34", "40"]
   },
   "1790": {
     "name": "Caniff & Buffalo",
@@ -4197,19 +4197,19 @@ const Stops = {
     "name": "Miller & Baldwin",
     "lat": "42.390387",
     "lon": "-83.023193",
-    "routes": ["38"]
+    "routes": ["38", "48"]
   },
   "1803": {
     "name": "Van Dyke & Miller",
     "lat": "42.390172",
     "lon": "-83.022644",
-    "routes": ["48"]
+    "routes": ["38", "48"]
   },
   "1804": {
     "name": "Van Dyke & Curt",
     "lat": "42.391127",
     "lon": "-83.022443",
-    "routes": ["38"]
+    "routes": ["38", "48"]
   },
   "1805": {
     "name": "Van Dyke & Maywood",
@@ -4233,7 +4233,7 @@ const Stops = {
     "name": "Georgia & Van Dyke",
     "lat": "42.393182",
     "lon": "-83.022216",
-    "routes": ["38"]
+    "routes": ["38", "48"]
   },
   "1809": {
     "name": "Georgia & Maxwell",
@@ -4245,7 +4245,7 @@ const Stops = {
     "name": "Warren & Woodward",
     "lat": "42.356893",
     "lon": "-83.064859",
-    "routes": ["14"]
+    "routes": ["14", "498", "53"]
   },
   "1810": {
     "name": "Georgia & Maxwell",
@@ -4311,7 +4311,7 @@ const Stops = {
     "name": "Warren & 14th",
     "lat": "42.349441",
     "lon": "-83.087309",
-    "routes": ["14"]
+    "routes": ["14", "18"]
   },
   "1821": {
     "name": "Erwin & Grinnell",
@@ -4365,7 +4365,7 @@ const Stops = {
     "name": "Warren & Livernois",
     "lat": "42.344807",
     "lon": "-83.131175",
-    "routes": ["14"]
+    "routes": ["14", "30"]
   },
   "1830": {
     "name": "Erwin & Knodell",
@@ -4401,7 +4401,7 @@ const Stops = {
     "name": "Warren & Schaefer",
     "lat": "42.344122",
     "lon": "-83.175931",
-    "routes": ["14"]
+    "routes": ["14", "41"]
   },
   "1840": {
     "name": "Grinnell @ 9449",
@@ -4437,7 +4437,7 @@ const Stops = {
     "name": "Traverse & French",
     "lat": "42.400574",
     "lon": "-83.001082",
-    "routes": ["38"]
+    "routes": ["34", "38"]
   },
   "1847": {
     "name": "Van Dyke & Jordan",
@@ -4455,7 +4455,7 @@ const Stops = {
     "name": "Warren & Greenfield",
     "lat": "42.343777",
     "lon": "-83.196625",
-    "routes": ["14"]
+    "routes": ["14", "22"]
   },
   "1851": {
     "name": "Van Dyke & Tappan",
@@ -4515,7 +4515,7 @@ const Stops = {
     "name": "Warren & Pierson",
     "lat": "42.342917",
     "lon": "-83.242436",
-    "routes": ["14"]
+    "routes": ["14", "47"]
   },
   "1860": {
     "name": "E Outer Dr & Annsbury",
@@ -4587,13 +4587,13 @@ const Stops = {
     "name": "Chalmers & E Outer Dr",
     "lat": "42.41527",
     "lon": "-82.971173",
-    "routes": ["9"]
+    "routes": ["38", "9"]
   },
   "1874": {
     "name": "Chalmers & E Outer Dr",
     "lat": "42.41442",
     "lon": "-82.970841",
-    "routes": ["9"]
+    "routes": ["38", "9"]
   },
   "1876": {
     "name": "E Outer Dr & Queen",
@@ -4677,31 +4677,31 @@ const Stops = {
     "name": "Hayes & Cedargrove",
     "lat": "42.425768",
     "lon": "-82.965111",
-    "routes": ["38"]
+    "routes": ["32", "38"]
   },
   "1894": {
     "name": "Hayes & Cedargrove",
     "lat": "42.425423",
     "lon": "-82.965311",
-    "routes": ["38"]
+    "routes": ["32", "38"]
   },
   "1897": {
     "name": "Seymour & Hayes",
     "lat": "42.427251",
     "lon": "-82.965762",
-    "routes": ["32"]
+    "routes": ["32", "38"]
   },
   "190": {
     "name": "Chicago & Greenfield",
     "lat": "42.36529",
     "lon": "-83.196942",
-    "routes": ["15"]
+    "routes": ["15", "22"]
   },
   "1900": {
     "name": "SEYMOUR & HAYES",
     "lat": "42.427117",
     "lon": "-82.964944",
-    "routes": ["32"]
+    "routes": ["32", "38"]
   },
   "1901": {
     "name": "Hayes & Mapleridge",
@@ -4743,79 +4743,79 @@ const Stops = {
     "name": "Hayes & Eastwood",
     "lat": "42.434078",
     "lon": "-82.965344",
-    "routes": ["38"]
+    "routes": ["38", "45"]
   },
   "191": {
     "name": "Chicago & Schaefer",
     "lat": "42.365717",
     "lon": "-83.177305",
-    "routes": ["15"]
+    "routes": ["15", "41"]
   },
   "1910": {
     "name": "7 Mile & Hayes",
     "lat": "42.435309",
     "lon": "-82.965094",
-    "routes": ["45"]
+    "routes": ["38", "45"]
   },
   "1911": {
     "name": "Hayes & 7 Mile",
     "lat": "42.435765",
     "lon": "-82.96533",
-    "routes": ["38"]
+    "routes": ["38", "45"]
   },
   "1912": {
     "name": "Hayes & 7 Mile",
     "lat": "42.435196",
     "lon": "-82.965572",
-    "routes": ["38"]
+    "routes": ["38", "45"]
   },
   "1913": {
     "name": "Hayes & Lappin",
     "lat": "42.436901",
     "lon": "-82.965618",
-    "routes": ["38"]
+    "routes": ["38", "45"]
   },
   "1914": {
     "name": "Hayes & Coram",
     "lat": "42.43831659",
     "lon": "-82.965505767",
-    "routes": ["38"]
+    "routes": ["38", "45"]
   },
   "1915": {
     "name": "Hayes & Novara",
     "lat": "42.438869",
     "lon": "-82.965718",
-    "routes": ["38"]
+    "routes": ["38", "45"]
   },
   "1916": {
     "name": "Hayes & Liberal",
     "lat": "42.440138",
     "lon": "-82.965556",
-    "routes": ["38"]
+    "routes": ["38", "45"]
   },
   "1917": {
     "name": "Hayes & Manning",
     "lat": "42.440745",
     "lon": "-82.965722",
-    "routes": ["38"]
+    "routes": ["38", "45"]
   },
   "1918": {
     "name": "Hayes & Tacoma",
     "lat": "42.441939",
     "lon": "-82.965606",
-    "routes": ["38"]
+    "routes": ["38", "45"]
   },
   "1919": {
     "name": "Hayes & State Fair",
     "lat": "42.442416",
     "lon": "-82.965819",
-    "routes": ["38"]
+    "routes": ["38", "45"]
   },
   "192": {
     "name": "Chicago & Wyoming",
     "lat": "42.366125",
     "lon": "-83.157851",
-    "routes": ["15"]
+    "routes": ["15", "54"]
   },
   "1920": {
     "name": "Hayes & Rossini",
@@ -4857,49 +4857,49 @@ const Stops = {
     "name": "Hayes & Carlisle",
     "lat": "42.449347",
     "lon": "-82.965972",
-    "routes": ["38"]
+    "routes": ["17", "38"]
   },
   "1927": {
     "name": "Hayes & 8 Mile",
     "lat": "42.449522",
     "lon": "-82.966243",
-    "routes": ["38"]
+    "routes": ["17", "38"]
   },
   "1928": {
     "name": "8 Mile & Hayes",
     "lat": "42.449804",
     "lon": "-82.965724",
-    "routes": ["17"]
+    "routes": ["17", "38"]
   },
   "193": {
     "name": "Oakman & Grand River",
     "lat": "42.373702037",
     "lon": "-83.150561945",
-    "routes": ["15"]
+    "routes": ["15", "21", "38"]
   },
   "1930": {
     "name": "Hamilton & Collingwood",
     "lat": "42.386689",
     "lon": "-83.095717",
-    "routes": ["23"]
+    "routes": ["23", "38"]
   },
   "1931": {
     "name": "Collingwood & Hamilton",
     "lat": "42.386886",
     "lon": "-83.096127",
-    "routes": ["38"]
+    "routes": ["23", "38"]
   },
   "1932": {
     "name": "Hamilton & Collingwood",
     "lat": "42.387197",
     "lon": "-83.095803",
-    "routes": ["23"]
+    "routes": ["23", "38"]
   },
   "1933": {
     "name": "Hamilton & Webb",
     "lat": "42.389108",
     "lon": "-83.097345",
-    "routes": ["23"]
+    "routes": ["23", "42"]
   },
   "1934": {
     "name": "Hamilton & Webb",
@@ -4911,7 +4911,7 @@ const Stops = {
     "name": "Hamilton & Lawrence",
     "lat": "42.387950416",
     "lon": "-83.096325682",
-    "routes": ["23"]
+    "routes": ["23", "38"]
   },
   "1936": {
     "name": "Conant & Edwin",
@@ -4923,25 +4923,25 @@ const Stops = {
     "name": "Conant & Belmont",
     "lat": "42.40132",
     "lon": "-83.051773",
-    "routes": ["12"]
+    "routes": ["12", "38"]
   },
   "1938": {
     "name": "Conant & Belmont",
     "lat": "42.400846",
     "lon": "-83.051705",
-    "routes": ["12"]
+    "routes": ["12", "38"]
   },
   "1939": {
     "name": "Conant & Evaline",
     "lat": "42.40003",
     "lon": "-83.050934",
-    "routes": ["12"]
+    "routes": ["12", "38"]
   },
   "194": {
     "name": "Davison & Livernois",
     "lat": "42.386441",
     "lon": "-83.140272",
-    "routes": ["15"]
+    "routes": ["15", "30"]
   },
   "1940": {
     "name": "Conant & Doremus",
@@ -4989,13 +4989,13 @@ const Stops = {
     "name": "Conant & Harold",
     "lat": "42.404305",
     "lon": "-83.053806",
-    "routes": ["12"]
+    "routes": ["12", "95"]
   },
   "1948": {
     "name": "Conant & Casmere",
     "lat": "42.404503",
     "lon": "-83.054165",
-    "routes": ["12"]
+    "routes": ["12", "95"]
   },
   "1949": {
     "name": "Van Dyke & Montlieu",
@@ -5007,7 +5007,7 @@ const Stops = {
     "name": "Davison & 14th",
     "lat": "42.395296904",
     "lon": "-83.115570458",
-    "routes": ["15"]
+    "routes": ["15", "18"]
   },
   "1950": {
     "name": "Chalmers & Glenfield",
@@ -5031,19 +5031,19 @@ const Stops = {
     "name": "Chalmers & Wilshire",
     "lat": "42.413448",
     "lon": "-82.970015",
-    "routes": ["9"]
+    "routes": ["38", "9"]
   },
   "1955": {
     "name": "Chalmers & Wilshire",
     "lat": "42.41284649",
     "lon": "-82.96980605",
-    "routes": ["9"]
+    "routes": ["38", "9"]
   },
   "1956": {
     "name": "Chalmers & Rosemary",
     "lat": "42.415422",
     "lon": "-82.971469",
-    "routes": ["9"]
+    "routes": ["38", "9"]
   },
   "1957": {
     "name": "Chalmers & Kilbourne",
@@ -5067,7 +5067,7 @@ const Stops = {
     "name": "Manchester & Woodward",
     "lat": "42.407198",
     "lon": "-83.097998",
-    "routes": ["39", "43"]
+    "routes": ["15", "39", "43", "498", "53"]
   },
   "1960": {
     "name": "Chalmers & Alma",
@@ -5109,13 +5109,13 @@ const Stops = {
     "name": "Seymour & MacCrary",
     "lat": "42.427196",
     "lon": "-82.970399",
-    "routes": ["32"]
+    "routes": ["11", "32"]
   },
   "1967": {
     "name": "SEYMOUR & MAC CRARY",
     "lat": "42.426867",
     "lon": "-82.970008",
-    "routes": ["32"]
+    "routes": ["11", "32"]
   },
   "1968": {
     "name": "Whittier & Wayburn",
@@ -5133,7 +5133,7 @@ const Stops = {
     "name": "Joseph Campau & Davison",
     "lat": "42.413919",
     "lon": "-83.069291",
-    "routes": ["15"]
+    "routes": ["10", "15"]
   },
   "1970": {
     "name": "Whittier & Lakepointe",
@@ -5181,7 +5181,7 @@ const Stops = {
     "name": "McNichols & Jos Campau",
     "lat": "42.418581",
     "lon": "-83.07295",
-    "routes": ["15"]
+    "routes": ["10", "15", "32"]
   },
   "1980": {
     "name": "Seymour & Queen",
@@ -5229,7 +5229,7 @@ const Stops = {
     "name": "Conner & Harper",
     "lat": "42.397871",
     "lon": "-82.989937",
-    "routes": ["13"]
+    "routes": ["13", "7"]
   },
   "1992": {
     "name": "Morang & Worden",
@@ -5259,7 +5259,7 @@ const Stops = {
     "name": "Conner & Camden",
     "lat": "42.39866",
     "lon": "-82.991011",
-    "routes": ["13"]
+    "routes": ["13", "7"]
   },
   "1998": {
     "name": "Conner & Olga",
@@ -5277,31 +5277,31 @@ const Stops = {
     "name": "Davison & Joseph Campau",
     "lat": "42.413381",
     "lon": "-83.069774",
-    "routes": ["15"]
+    "routes": ["10", "15"]
   },
   "2002": {
     "name": "Conner & Frankfort",
     "lat": "42.39017",
     "lon": "-82.978961",
-    "routes": ["13"]
+    "routes": ["13", "14"]
   },
   "2003": {
     "name": "Conner & Frankfort",
     "lat": "42.390409",
     "lon": "-82.978834",
-    "routes": ["13"]
+    "routes": ["13", "14"]
   },
   "2004": {
     "name": "Warren & Conner",
     "lat": "42.389293",
     "lon": "-82.977066",
-    "routes": ["14"]
+    "routes": ["13", "14"]
   },
   "2005": {
     "name": "Conner & Eugene",
     "lat": "42.388707",
     "lon": "-82.974095",
-    "routes": ["13"]
+    "routes": ["13", "14"]
   },
   "2006": {
     "name": "Conner & Forest",
@@ -5331,7 +5331,7 @@ const Stops = {
     "name": "Manchester & Woodward",
     "lat": "42.40691749",
     "lon": "-83.09887205",
-    "routes": ["15", "39", "43"]
+    "routes": ["15", "39", "42", "43", "498", "53"]
   },
   "2010": {
     "name": "Gunston & Engleside",
@@ -5391,7 +5391,7 @@ const Stops = {
     "name": "Davison & 14th",
     "lat": "42.395298",
     "lon": "-83.1163",
-    "routes": ["15"]
+    "routes": ["15", "18"]
   },
   "2020": {
     "name": "Hoover & Park Grove",
@@ -5409,43 +5409,43 @@ const Stops = {
     "name": "Hoover & Eastwood",
     "lat": "42.432916",
     "lon": "-83.004513",
-    "routes": ["13"]
+    "routes": ["13", "45"]
   },
   "2023": {
     "name": "Hoover & Eastwood",
     "lat": "42.432432",
     "lon": "-83.004662",
-    "routes": ["13"]
+    "routes": ["13", "45"]
   },
   "2024": {
     "name": "Hoover & 7 Mile",
     "lat": "42.434716",
     "lon": "-83.00458",
-    "routes": ["13"]
+    "routes": ["13", "45"]
   },
   "2025": {
     "name": "7 Mile & Hoover",
     "lat": "42.434513",
     "lon": "-83.005078",
-    "routes": ["45"]
+    "routes": ["13", "45"]
   },
   "2026": {
     "name": "Hoover & 7 Mile",
     "lat": "42.43414",
     "lon": "-83.004811",
-    "routes": ["13"]
+    "routes": ["13", "45"]
   },
   "2027": {
     "name": "7 Mile & Hoover",
     "lat": "42.434321",
     "lon": "-83.004191",
-    "routes": ["45"]
+    "routes": ["13", "45"]
   },
   "203": {
     "name": "Davison & Livernois",
     "lat": "42.386744",
     "lon": "-83.139946",
-    "routes": ["15"]
+    "routes": ["15", "30"]
   },
   "2031": {
     "name": "Hoover & Lappin",
@@ -5487,7 +5487,7 @@ const Stops = {
     "name": "Oakman & Grand River",
     "lat": "42.373284074",
     "lon": "-83.151072038",
-    "routes": ["15"]
+    "routes": ["15", "21", "38"]
   },
   "2042": {
     "name": "Hoover & Bringard",
@@ -5499,13 +5499,13 @@ const Stops = {
     "name": "Jefferson & Helen",
     "lat": "42.346489",
     "lon": "-83.002682",
-    "routes": ["25"]
+    "routes": ["12", "25"]
   },
   "205": {
     "name": "Chicago & Wyoming",
     "lat": "42.366278",
     "lon": "-83.158831",
-    "routes": ["15"]
+    "routes": ["15", "54"]
   },
   "2051": {
     "name": "E Outer Dr & Conner",
@@ -5517,7 +5517,7 @@ const Stops = {
     "name": "Conner & Wilshire",
     "lat": "42.404152233",
     "lon": "-82.996331551",
-    "routes": ["13"]
+    "routes": ["13", "34", "38"]
   },
   "2053": {
     "name": "Conner & Longview",
@@ -5565,7 +5565,7 @@ const Stops = {
     "name": "Chicago & Schaefer",
     "lat": "42.365853",
     "lon": "-83.17814",
-    "routes": ["15"]
+    "routes": ["15", "41"]
   },
   "2060": {
     "name": "Gunston & Christy",
@@ -5607,7 +5607,7 @@ const Stops = {
     "name": "Chicago & Greenfield",
     "lat": "42.365449",
     "lon": "-83.197683",
-    "routes": ["15"]
+    "routes": ["15", "22"]
   },
   "2075": {
     "name": "Lenox & Avondale",
@@ -5703,7 +5703,7 @@ const Stops = {
     "name": "Mack & Woodward",
     "lat": "42.347309",
     "lon": "-83.057625",
-    "routes": ["31"]
+    "routes": ["31", "42", "47", "498", "53"]
   },
   "210": {
     "name": "9 Mile @ Providence Hospital",
@@ -5733,7 +5733,7 @@ const Stops = {
     "name": "Jefferson & Algonquin",
     "lat": "42.370301",
     "lon": "-82.957165",
-    "routes": ["25", "80"]
+    "routes": ["13", "25", "80"]
   },
   "2107": {
     "name": "Jefferson & Continental",
@@ -5751,25 +5751,25 @@ const Stops = {
     "name": "WARREN & R/R 2",
     "lat": "42.388959",
     "lon": "-82.979507",
-    "routes": ["14"]
+    "routes": ["13", "14"]
   },
   "2115": {
     "name": "Warren & Conner",
     "lat": "42.389539",
     "lon": "-82.974949",
-    "routes": ["14"]
+    "routes": ["13", "14"]
   },
   "2119": {
     "name": "Warren & Eugene",
     "lat": "42.389634",
     "lon": "-82.975386",
-    "routes": ["14"]
+    "routes": ["13", "14"]
   },
   "212": {
     "name": "W Outer Dr & Southfield",
     "lat": "42.419037",
     "lon": "-83.21788",
-    "routes": ["16"]
+    "routes": ["16", "46"]
   },
   "2121": {
     "name": "Warren & Maynard",
@@ -5787,7 +5787,7 @@ const Stops = {
     "name": "Warren @ 11870",
     "lat": "42.388862",
     "lon": "-82.978601",
-    "routes": ["14"]
+    "routes": ["13", "14"]
   },
   "2125": {
     "name": "Warren & Anderdon",
@@ -5811,7 +5811,7 @@ const Stops = {
     "name": "W Outer Dr & Greenfield",
     "lat": "42.419387",
     "lon": "-83.199806",
-    "routes": ["16"]
+    "routes": ["16", "22"]
   },
   "2133": {
     "name": "McNichols & Algonac",
@@ -5859,7 +5859,7 @@ const Stops = {
     "name": "Curtis & Wyoming",
     "lat": "42.424109",
     "lon": "-83.160378",
-    "routes": ["16"]
+    "routes": ["16", "54"]
   },
   "2145": {
     "name": "McNichols & Bradford",
@@ -5895,7 +5895,7 @@ const Stops = {
     "name": "McNichols & Livernois",
     "lat": "42.417018",
     "lon": "-83.140123",
-    "routes": ["16"]
+    "routes": ["16", "29", "30", "32"]
   },
   "2151": {
     "name": "Warren & Gray",
@@ -5937,37 +5937,37 @@ const Stops = {
     "name": "Dexter & Fenkell",
     "lat": "42.402528",
     "lon": "-83.135685",
-    "routes": ["16"]
+    "routes": ["16", "18"]
   },
   "2162": {
     "name": "Oakland & Holbrook",
     "lat": "42.384262",
     "lon": "-83.071651",
-    "routes": ["42"]
+    "routes": ["11", "42"]
   },
   "2163": {
     "name": "Oakland & Holbrook",
     "lat": "42.384686624",
     "lon": "-83.071701915",
-    "routes": ["11"]
+    "routes": ["11", "42"]
   },
   "217": {
     "name": "Dexter & Elmhurst",
     "lat": "42.380511925",
     "lon": "-83.124768038",
-    "routes": ["16"]
+    "routes": ["16", "38"]
   },
   "218": {
     "name": "Dexter & Lothrop",
     "lat": "42.357733",
     "lon": "-83.109389",
-    "routes": ["16"]
+    "routes": ["16", "21", "27", "47"]
   },
   "219": {
     "name": "W Grand Bl & Rosa Parks",
     "lat": "42.363653",
     "lon": "-83.090721",
-    "routes": ["16"]
+    "routes": ["16", "18", "29", "42"]
   },
   "22": {
     "name": "Mack & Mitchell",
@@ -5979,7 +5979,7 @@ const Stops = {
     "name": "W Grand Bl & Second",
     "lat": "42.36891644",
     "lon": "-83.076353011",
-    "routes": ["16", "80", "89"]
+    "routes": ["16", "23", "42", "80", "89"]
   },
   "221": {
     "name": "Cass & Temple",
@@ -6003,7 +6003,7 @@ const Stops = {
     "name": "Jefferson & Shelby",
     "lat": "42.32799649",
     "lon": "-83.04670005",
-    "routes": ["16", "25"]
+    "routes": ["10", "16", "21", "25", "34", "48", "7", "92", "95", "96"]
   },
   "224": {
     "name": "Cass & Temple",
@@ -6015,13 +6015,13 @@ const Stops = {
     "name": "W Grand Bl & Second",
     "lat": "42.368911322",
     "lon": "-83.077396326",
-    "routes": ["16"]
+    "routes": ["16", "23", "42", "80", "89"]
   },
   "226": {
     "name": "W Grand Bl & Rosa Parks",
     "lat": "42.36356",
     "lon": "-83.091513",
-    "routes": ["16"]
+    "routes": ["16", "18", "29", "42"]
   },
   "2269": {
     "name": "McNichols & Buffalo",
@@ -6033,7 +6033,7 @@ const Stops = {
     "name": "Dexter & Lothrop",
     "lat": "42.357519054",
     "lon": "-83.108994869",
-    "routes": ["16"]
+    "routes": ["16", "21", "27", "47"]
   },
   "2270": {
     "name": "McNichols & Caldwell",
@@ -6099,7 +6099,7 @@ const Stops = {
     "name": "Dexter & Elmhurst",
     "lat": "42.381385524",
     "lon": "-83.125114458",
-    "routes": ["16"]
+    "routes": ["16", "38"]
   },
   "2281": {
     "name": "McNichols & Sherwood",
@@ -6129,13 +6129,13 @@ const Stops = {
     "name": "Michigan & Wyoming",
     "lat": "42.327803",
     "lon": "-83.156148",
-    "routes": ["37"]
+    "routes": ["37", "54"]
   },
   "229": {
     "name": "Dexter & Fenkell",
     "lat": "42.402986",
     "lon": "-83.135476",
-    "routes": ["16"]
+    "routes": ["16", "18"]
   },
   "2291": {
     "name": "Wyoming & McGraw",
@@ -6147,13 +6147,13 @@ const Stops = {
     "name": "Livernois & McNichols",
     "lat": "42.417422",
     "lon": "-83.140644",
-    "routes": ["16", "30"]
+    "routes": ["16", "29", "30", "32"]
   },
   "231": {
     "name": "Curtis & Wyoming",
     "lat": "42.424246",
     "lon": "-83.161178",
-    "routes": ["16"]
+    "routes": ["16", "54"]
   },
   "2319": {
     "name": "Livernois & McGraw",
@@ -6165,7 +6165,7 @@ const Stops = {
     "name": "West Outer Drive & Greenfield",
     "lat": "42.419481",
     "lon": "-83.199785",
-    "routes": ["16"]
+    "routes": ["16", "22"]
   },
   "2321": {
     "name": "Livernois & McGraw",
@@ -6177,7 +6177,7 @@ const Stops = {
     "name": "W Outer Dr & Southfield",
     "lat": "42.419387",
     "lon": "-83.217225",
-    "routes": ["16"]
+    "routes": ["16", "46"]
   },
   "2332": {
     "name": "Warren & McGraw",
@@ -6219,37 +6219,37 @@ const Stops = {
     "name": "Linwood & Ferry Park",
     "lat": "42.35947",
     "lon": "-83.099107",
-    "routes": ["29"]
+    "routes": ["16", "29"]
   },
   "236": {
     "name": "Seven Mile & Grand River",
     "lat": "42.428423",
     "lon": "-83.285103",
-    "routes": ["17"]
+    "routes": ["17", "21"]
   },
   "2362": {
     "name": "Ferry Park & 16th",
     "lat": "42.360237",
     "lon": "-83.096045",
-    "routes": ["29"]
+    "routes": ["16", "29"]
   },
   "2364": {
     "name": "14th & Ferry Park",
     "lat": "42.360936",
     "lon": "-83.093672",
-    "routes": ["18"]
+    "routes": ["18", "29"]
   },
   "2365": {
     "name": "Ferry Park & 14th",
     "lat": "42.361268",
     "lon": "-83.093281",
-    "routes": ["29"]
+    "routes": ["16", "18", "29"]
   },
   "2366": {
     "name": "Ferry Park & 14th",
     "lat": "42.361118",
     "lon": "-83.094092",
-    "routes": ["29"]
+    "routes": ["16", "18", "29"]
   },
   "237": {
     "name": "8 Mile & Lahser",
@@ -6261,19 +6261,19 @@ const Stops = {
     "name": "Rosa Parks & Ferry Park",
     "lat": "42.362846073",
     "lon": "-83.090355187",
-    "routes": ["18"]
+    "routes": ["16", "18", "29", "42"]
   },
   "2372": {
     "name": "Ferry Park & Avery",
     "lat": "42.363295",
     "lon": "-83.088228",
-    "routes": ["29"]
+    "routes": ["16", "29", "42"]
   },
   "2373": {
     "name": "Holden & Ferry Park",
     "lat": "42.363382",
     "lon": "-83.087181",
-    "routes": ["29"]
+    "routes": ["16", "29", "42"]
   },
   "2374": {
     "name": "Holden & Trumbull",
@@ -6285,13 +6285,13 @@ const Stops = {
     "name": "8 Mile & Evergreen",
     "lat": "42.443677",
     "lon": "-83.238776",
-    "routes": ["17"]
+    "routes": ["17", "60", "92"]
   },
   "2380": {
     "name": "W Grand Bl & Lodge Service Dr",
     "lat": "42.366996",
     "lon": "-83.081542",
-    "routes": ["16", "80", "89"]
+    "routes": ["16", "42", "80", "89"]
   },
   "2383": {
     "name": "W Grand Bl & Third",
@@ -6303,25 +6303,25 @@ const Stops = {
     "name": "W Grand Bl & Third",
     "lat": "42.368112",
     "lon": "-83.078613",
-    "routes": ["16", "80", "89"]
+    "routes": ["16", "23", "42", "80", "89"]
   },
   "2385": {
     "name": "Second & W Grand Bl",
     "lat": "42.369519459",
     "lon": "-83.076444555",
-    "routes": ["23"]
+    "routes": ["16", "23", "42", "80", "89"]
   },
   "2389": {
     "name": "Second & Lothrop",
     "lat": "42.370715438",
     "lon": "-83.077217313",
-    "routes": ["23"]
+    "routes": ["16", "23", "42", "80", "89"]
   },
   "2390": {
     "name": "Second & Bethune",
     "lat": "42.371583",
     "lon": "-83.077867",
-    "routes": ["23"]
+    "routes": ["16", "23", "42", "80", "89"]
   },
   "2393": {
     "name": "CASS & GRAND BOULEVARD",
@@ -6333,13 +6333,13 @@ const Stops = {
     "name": "8 Mile & Schaefer",
     "lat": "42.445114",
     "lon": "-83.180594",
-    "routes": ["17"]
+    "routes": ["17", "41"]
   },
   "241": {
     "name": "8 Mile & Livernois",
     "lat": "42.446008",
     "lon": "-83.141312",
-    "routes": ["17", "54"]
+    "routes": ["17", "30", "54"]
   },
   "2416": {
     "name": "Milwaukee & Riopelle",
@@ -6357,13 +6357,13 @@ const Stops = {
     "name": "E Grand Bl & Trombly",
     "lat": "42.374659444",
     "lon": "-83.051568356",
-    "routes": ["11"]
+    "routes": ["10", "11"]
   },
   "242": {
     "name": "Fairgrounds",
     "lat": "42.441936",
     "lon": "-83.120763",
-    "routes": ["17"]
+    "routes": ["12", "17", "23", "30", "498", "53", "54"]
   },
   "2423": {
     "name": "Milwaukee & Riopelle",
@@ -6375,7 +6375,7 @@ const Stops = {
     "name": "E Grand Bl & Milwaukee",
     "lat": "42.376878",
     "lon": "-83.05254",
-    "routes": ["10"]
+    "routes": ["10", "11"]
   },
   "2425": {
     "name": "E Grand Bl & Milwaukee",
@@ -6387,19 +6387,19 @@ const Stops = {
     "name": "8 Mile & Dequindre",
     "lat": "42.446927",
     "lon": "-83.08271",
-    "routes": ["17"]
+    "routes": ["17", "43"]
   },
   "2435": {
     "name": "Lafayette & Concord",
     "lat": "42.349001898",
     "lon": "-83.007404764",
-    "routes": ["48", "80"]
+    "routes": ["12", "48", "80"]
   },
   "2436": {
     "name": "Concord & Lafayette",
     "lat": "42.349385277",
     "lon": "-83.007210446",
-    "routes": ["12"]
+    "routes": ["12", "48", "80"]
   },
   "2437": {
     "name": "Lafayette & Concord",
@@ -6417,7 +6417,7 @@ const Stops = {
     "name": "8 Mile & Van Dyke",
     "lat": "42.448063",
     "lon": "-83.024301",
-    "routes": ["17"]
+    "routes": ["17", "48"]
   },
   "245": {
     "name": "Eastland Center",
@@ -6447,43 +6447,43 @@ const Stops = {
     "name": "8 Mile & Van Dyke",
     "lat": "42.448556292",
     "lon": "-83.025233589",
-    "routes": ["17"]
+    "routes": ["17", "48"]
   },
   "248": {
     "name": "8 Mile & Dequindre",
     "lat": "42.4474",
     "lon": "-83.083996",
-    "routes": ["17"]
+    "routes": ["17", "43"]
   },
   "249": {
     "name": "Fairgrounds",
     "lat": "42.442115",
     "lon": "-83.120457",
-    "routes": ["17"]
+    "routes": ["12", "17", "23", "30", "498", "53", "54"]
   },
   "2490": {
     "name": "Warren & Junction",
     "lat": "42.34445",
     "lon": "-83.120876",
-    "routes": ["14"]
+    "routes": ["11", "14"]
   },
   "2491": {
     "name": "Junction & Warren",
     "lat": "42.344215",
     "lon": "-83.121056",
-    "routes": ["11"]
+    "routes": ["11", "14"]
   },
   "2492": {
     "name": "Junction & McGraw",
     "lat": "42.343352",
     "lon": "-83.120612",
-    "routes": ["11"]
+    "routes": ["11", "14"]
   },
   "2493": {
     "name": "Warren & Northfield",
     "lat": "42.344684",
     "lon": "-83.120842",
-    "routes": ["14"]
+    "routes": ["11", "14"]
   },
   "2494": {
     "name": "Warren & 28th",
@@ -6501,61 +6501,61 @@ const Stops = {
     "name": "W Grand Bl & 16th",
     "lat": "42.361330855",
     "lon": "-83.096974682",
-    "routes": ["16"]
+    "routes": ["16", "29"]
   },
   "2497": {
     "name": "W Grand Bl & Lasalle",
     "lat": "42.3613",
     "lon": "-83.097554",
-    "routes": ["16"]
+    "routes": ["16", "29"]
   },
   "25": {
     "name": "Mack & McDougall",
     "lat": "42.358219",
     "lon": "-83.030179",
-    "routes": ["31"]
+    "routes": ["31", "34"]
   },
   "250": {
     "name": "8 Mile & Livernois",
     "lat": "42.44649",
     "lon": "-83.142631",
-    "routes": ["17", "54"]
+    "routes": ["17", "30", "54"]
   },
   "2501": {
     "name": "W Grand Bl & Holden",
     "lat": "42.364016",
     "lon": "-83.089436",
-    "routes": ["16"]
+    "routes": ["16", "18", "29", "42"]
   },
   "2502": {
     "name": "W Grand Bl & Churchill",
     "lat": "42.36404349",
     "lon": "-83.09036805",
-    "routes": ["16"]
+    "routes": ["16", "18", "29", "42"]
   },
   "2503": {
     "name": "W Grand Bl & Woodrow Wilson",
     "lat": "42.364561218",
     "lon": "-83.089029131",
-    "routes": ["16", "42"]
+    "routes": ["16", "18", "29", "42"]
   },
   "2504": {
     "name": "W Grand Bl & Kipling",
     "lat": "42.364786",
     "lon": "-83.087342",
-    "routes": ["16"]
+    "routes": ["16", "29", "42"]
   },
   "2505": {
     "name": "W Grand Bl & Poe",
     "lat": "42.365296",
     "lon": "-83.087073",
-    "routes": ["16", "42"]
+    "routes": ["16", "29", "42"]
   },
   "2507": {
     "name": "W Grand Bl & Trumbull",
     "lat": "42.366036",
     "lon": "-83.084078",
-    "routes": ["16", "80", "89"]
+    "routes": ["16", "42", "80", "89"]
   },
   "2508": {
     "name": "Mt Elliott & Palmer",
@@ -6573,19 +6573,19 @@ const Stops = {
     "name": "8 Mile & Coolidge",
     "lat": "42.445605",
     "lon": "-83.181563",
-    "routes": ["17"]
+    "routes": ["17", "41"]
   },
   "2510": {
     "name": "Mt Elliott & Farnsworth",
     "lat": "42.371734",
     "lon": "-83.028576",
-    "routes": ["12"]
+    "routes": ["12", "14"]
   },
   "2511": {
     "name": "Mt Elliott & Farnsworth",
     "lat": "42.372234",
     "lon": "-83.028678",
-    "routes": ["12"]
+    "routes": ["12", "14"]
   },
   "2512": {
     "name": "Mt Elliott & Kirby",
@@ -6597,7 +6597,7 @@ const Stops = {
     "name": "Mt Elliott & Kirby",
     "lat": "42.373356",
     "lon": "-83.029648",
-    "routes": ["12"]
+    "routes": ["12", "14"]
   },
   "2514": {
     "name": "Mt Elliott & Medbury",
@@ -6621,7 +6621,7 @@ const Stops = {
     "name": "McNichols & Lahser",
     "lat": "42.414832",
     "lon": "-83.257764",
-    "routes": ["32"]
+    "routes": ["21", "32", "45"]
   },
   "2527": {
     "name": "McNichols & Syracuse",
@@ -6639,7 +6639,7 @@ const Stops = {
     "name": "8 Mile & Evergreen",
     "lat": "42.444182",
     "lon": "-83.239975",
-    "routes": ["17"]
+    "routes": ["17", "60", "92"]
   },
   "2532": {
     "name": "Gratiot @ 10755",
@@ -6651,7 +6651,7 @@ const Stops = {
     "name": "McNichols & Woodward",
     "lat": "42.417842",
     "lon": "-83.104431",
-    "routes": ["23", "32"]
+    "routes": ["23", "32", "53"]
   },
   "2534": {
     "name": "Gratiot & Goulburn",
@@ -6675,7 +6675,7 @@ const Stops = {
     "name": "GRAND RIVER & MC NICHOLS",
     "lat": "42.414737",
     "lon": "-83.253404",
-    "routes": ["45"]
+    "routes": ["21", "32", "45"]
   },
   "2555": {
     "name": "Livernois & Lafayette",
@@ -6687,7 +6687,7 @@ const Stops = {
     "name": "Fort & Livernois",
     "lat": "42.306583",
     "lon": "-83.103885",
-    "routes": ["19"]
+    "routes": ["19", "30"]
   },
   "256": {
     "name": "Fenkell & Dale",
@@ -6699,31 +6699,31 @@ const Stops = {
     "name": "Livernois & Fort",
     "lat": "42.306303",
     "lon": "-83.103326",
-    "routes": ["30"]
+    "routes": ["19", "30"]
   },
   "2561": {
     "name": "Fort & Livernois",
     "lat": "42.306654",
     "lon": "-83.103108",
-    "routes": ["19"]
+    "routes": ["19", "30"]
   },
   "2562": {
     "name": "Dragoon & Fort",
     "lat": "42.307466",
     "lon": "-83.102365",
-    "routes": ["30"]
+    "routes": ["19", "30"]
   },
   "2563": {
     "name": "Fort & Dragoon",
     "lat": "42.307203",
     "lon": "-83.101828",
-    "routes": ["19"]
+    "routes": ["19", "30"]
   },
   "2564": {
     "name": "Fort & Dragoon",
     "lat": "42.307168",
     "lon": "-83.102595",
-    "routes": ["19"]
+    "routes": ["19", "30"]
   },
   "2565": {
     "name": "Fort & Cavalry",
@@ -6741,19 +6741,19 @@ const Stops = {
     "name": "Fort & Junction",
     "lat": "42.309809111",
     "lon": "-83.0956615",
-    "routes": ["19"]
+    "routes": ["11", "19"]
   },
   "2569": {
     "name": "Fort & Junction",
     "lat": "42.309976521",
     "lon": "-83.095853557",
-    "routes": ["19"]
+    "routes": ["11", "19"]
   },
   "257": {
     "name": "Fenkell & Evergreen",
     "lat": "42.400611",
     "lon": "-83.237063",
-    "routes": ["18"]
+    "routes": ["18", "60"]
   },
   "2572": {
     "name": "Fort & Morrell",
@@ -6765,7 +6765,7 @@ const Stops = {
     "name": "Fort & Ferdinand",
     "lat": "42.310784",
     "lon": "-83.093397",
-    "routes": ["19"]
+    "routes": ["11", "19"]
   },
   "2579": {
     "name": "Fort & Scotten",
@@ -6777,13 +6777,13 @@ const Stops = {
     "name": "Fenkell & Southfield",
     "lat": "42.401066",
     "lon": "-83.217298",
-    "routes": ["18"]
+    "routes": ["18", "21", "39", "46", "92"]
   },
   "2580": {
     "name": "Jefferson & Walker",
     "lat": "42.340974",
     "lon": "-83.015921",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "2581": {
     "name": "Fort & Hubbard",
@@ -6801,13 +6801,13 @@ const Stops = {
     "name": "Fort & W Grand Bl",
     "lat": "42.315398",
     "lon": "-83.082699",
-    "routes": ["19"]
+    "routes": ["19", "27"]
   },
   "2587": {
     "name": "Fort & W Grand Bl",
     "lat": "42.315064",
     "lon": "-83.084047",
-    "routes": ["19"]
+    "routes": ["19", "27"]
   },
   "2588": {
     "name": "Fort & 25th",
@@ -6819,7 +6819,7 @@ const Stops = {
     "name": "Fenkell & Greenfield",
     "lat": "42.401452",
     "lon": "-83.198219",
-    "routes": ["18"]
+    "routes": ["18", "22"]
   },
   "2590": {
     "name": "Fort & 24th",
@@ -6849,7 +6849,7 @@ const Stops = {
     "name": "Fenkell & Schaefer",
     "lat": "42.402004",
     "lon": "-83.178746",
-    "routes": ["18"]
+    "routes": ["18", "41"]
   },
   "2603": {
     "name": "Fort & St Anne",
@@ -6861,97 +6861,97 @@ const Stops = {
     "name": "Lafayette & Baldwin",
     "lat": "42.352051872",
     "lon": "-82.999684307",
-    "routes": ["48"]
+    "routes": ["48", "80"]
   },
   "2608": {
     "name": "14th & Lafayette",
     "lat": "42.32142",
     "lon": "-83.070974",
-    "routes": ["27"]
+    "routes": ["19", "27"]
   },
   "261": {
     "name": "Fenkell & Wyoming",
     "lat": "42.402471",
     "lon": "-83.159227",
-    "routes": ["18"]
+    "routes": ["18", "54"]
   },
   "2611": {
     "name": "Lafayette & Rosa Parks",
     "lat": "42.323145",
     "lon": "-83.067961",
-    "routes": ["27"]
+    "routes": ["19", "27"]
   },
   "2612": {
     "name": "Lafayette & Rosa Parks",
     "lat": "42.322976",
     "lon": "-83.067886",
-    "routes": ["27"]
+    "routes": ["19", "27"]
   },
   "2613": {
     "name": "Lafayette & Tenth",
     "lat": "42.324945",
     "lon": "-83.063308",
-    "routes": ["27"]
+    "routes": ["19", "27", "29", "49"]
   },
   "2614": {
     "name": "Lafayette & Tenth",
     "lat": "42.324859",
     "lon": "-83.063982",
-    "routes": ["27"]
+    "routes": ["19", "27", "29", "49"]
   },
   "2615": {
     "name": "Trumbull & Lafayette",
     "lat": "42.32566549",
     "lon": "-83.06239705",
-    "routes": ["29", "49"]
+    "routes": ["19", "27", "29", "49"]
   },
   "2619": {
     "name": "Lafayette & Eighth",
     "lat": "42.32602149",
     "lon": "-83.06083405",
-    "routes": ["27", "49"]
+    "routes": ["19", "27", "29", "49"]
   },
   "262": {
     "name": "Fenkell & Dexter",
     "lat": "42.402724",
     "lon": "-83.135028",
-    "routes": ["18"]
+    "routes": ["16", "18"]
   },
   "2620": {
     "name": "Lafayette & Sixth",
     "lat": "42.32703149",
     "lon": "-83.05890705",
-    "routes": ["27", "49"]
+    "routes": ["19", "27", "29", "49"]
   },
   "2621": {
     "name": "Lafayette & Sixth",
     "lat": "42.327151352",
     "lon": "-83.058184076",
-    "routes": ["27", "49"]
+    "routes": ["19", "27", "29", "49"]
   },
   "2622": {
     "name": "Lafayette & Fifth",
     "lat": "42.32757049",
     "lon": "-83.05760505",
-    "routes": ["27", "49"]
+    "routes": ["19", "27", "29", "49"]
   },
   "2623": {
     "name": "Lafayette & Lodge Service Dr",
     "lat": "42.328085",
     "lon": "-83.055986",
-    "routes": ["27"]
+    "routes": ["19", "27", "29", "49"]
   },
   "2624": {
     "name": "Lafayette & Third",
     "lat": "42.32869849",
     "lon": "-83.05460305",
-    "routes": ["27", "49"]
+    "routes": ["19", "27", "29", "49"]
   },
   "2625": {
     "name": "Lafayette & Third",
     "lat": "42.32852049",
     "lon": "-83.05537505",
-    "routes": ["27", "49"]
+    "routes": ["19", "27", "29", "49"]
   },
   "2628": {
     "name": "W Grand Bl & Howard",
@@ -6963,25 +6963,25 @@ const Stops = {
     "name": "14th & Oakman",
     "lat": "42.399943",
     "lon": "-83.119309",
-    "routes": ["18"]
+    "routes": ["18", "43"]
   },
   "2634": {
     "name": "SEYMOUR & GRATIOT",
     "lat": "42.426799",
     "lon": "-82.982654",
-    "routes": ["32"]
+    "routes": ["32", "34"]
   },
   "264": {
     "name": "14th & Clairmount",
     "lat": "42.374874",
     "lon": "-83.102808",
-    "routes": ["18"]
+    "routes": ["11", "18"]
   },
   "2640": {
     "name": "Gratiot & Townsend",
     "lat": "42.375635",
     "lon": "-83.017027",
-    "routes": ["34"]
+    "routes": ["14", "34"]
   },
   "2647": {
     "name": "Jefferson @ 8631",
@@ -6999,19 +6999,19 @@ const Stops = {
     "name": "14th & W Grand Bl",
     "lat": "42.362004",
     "lon": "-83.09439",
-    "routes": ["18"]
+    "routes": ["16", "18", "29"]
   },
   "2651": {
     "name": "Jefferson & Dearborn",
     "lat": "42.290963",
     "lon": "-83.116413",
-    "routes": ["30"]
+    "routes": ["30", "54"]
   },
   "2652": {
     "name": "Jefferson & Dearborn",
     "lat": "42.29068",
     "lon": "-83.117482",
-    "routes": ["30"]
+    "routes": ["30", "54"]
   },
   "2653": {
     "name": "Thaddeus & Sloan",
@@ -7029,7 +7029,7 @@ const Stops = {
     "name": "Jefferson & West End",
     "lat": "42.2923",
     "lon": "-83.113774",
-    "routes": ["30"]
+    "routes": ["30", "54"]
   },
   "2659": {
     "name": "Jefferson & Anderson",
@@ -7041,7 +7041,7 @@ const Stops = {
     "name": "14th & Grand River",
     "lat": "42.346849",
     "lon": "-83.085457",
-    "routes": ["18"]
+    "routes": ["14", "18", "21"]
   },
   "2662": {
     "name": "Jefferson & Harrington",
@@ -7143,7 +7143,7 @@ const Stops = {
     "name": "Livernois & Buchanan",
     "lat": "42.332518",
     "lon": "-83.121543",
-    "routes": ["30"]
+    "routes": ["30", "37"]
   },
   "2679": {
     "name": "Livernois & Clayton",
@@ -7215,7 +7215,7 @@ const Stops = {
     "name": "Dragoon & Cadet",
     "lat": "42.314442",
     "lon": "-83.10742",
-    "routes": ["30"]
+    "routes": ["30", "49", "89"]
   },
   "2695": {
     "name": "Livernois & Federal",
@@ -7311,25 +7311,25 @@ const Stops = {
     "name": "Livernois & Joy",
     "lat": "42.359122",
     "lon": "-83.13856",
-    "routes": ["30"]
+    "routes": ["27", "30", "96"]
   },
   "2714": {
     "name": "Livernois & Joy",
     "lat": "42.359937",
     "lon": "-83.138222",
-    "routes": ["30"]
+    "routes": ["27", "30", "96"]
   },
   "2715": {
     "name": "Livernois & Van Buren",
     "lat": "42.357671",
     "lon": "-83.138486",
-    "routes": ["30"]
+    "routes": ["27", "30", "96"]
   },
   "2716": {
     "name": "Livernois & Van Buren",
     "lat": "42.357896",
     "lon": "-83.138144",
-    "routes": ["30"]
+    "routes": ["27", "30", "96"]
   },
   "2718": {
     "name": "Livernois & Ridgewood",
@@ -7371,13 +7371,13 @@ const Stops = {
     "name": "Grand River & Livernois",
     "lat": "42.369089",
     "lon": "-83.139512",
-    "routes": ["21"]
+    "routes": ["21", "30"]
   },
   "2727": {
     "name": "Livernois & Barr",
     "lat": "42.369825",
     "lon": "-83.139013",
-    "routes": ["30"]
+    "routes": ["21", "30"]
   },
   "2728": {
     "name": "Livernois & Collingwood",
@@ -7389,7 +7389,7 @@ const Stops = {
     "name": "Rosa Parks & Grand River",
     "lat": "42.345046",
     "lon": "-83.079692",
-    "routes": ["18"]
+    "routes": ["18", "21"]
   },
   "2730": {
     "name": "Livernois & Stearns",
@@ -7407,31 +7407,31 @@ const Stops = {
     "name": "Livernois & Webb",
     "lat": "42.374630018",
     "lon": "-83.138871712",
-    "routes": ["30"]
+    "routes": ["30", "38"]
   },
   "2733": {
     "name": "Livernois & Elmhurst",
     "lat": "42.375857",
     "lon": "-83.139256",
-    "routes": ["30"]
+    "routes": ["30", "38"]
   },
   "2734": {
     "name": "Livernois & Elmhurst",
     "lat": "42.376548",
     "lon": "-83.138933",
-    "routes": ["30"]
+    "routes": ["30", "38"]
   },
   "2735": {
     "name": "Elmhurst & Livernois",
     "lat": "42.37622",
     "lon": "-83.139564",
-    "routes": ["38"]
+    "routes": ["30", "38"]
   },
   "2736": {
     "name": "Elmhurst & Livernois",
     "lat": "42.376056",
     "lon": "-83.138685",
-    "routes": ["38"]
+    "routes": ["30", "38"]
   },
   "2737": {
     "name": "Livernois & Cortland",
@@ -7455,7 +7455,7 @@ const Stops = {
     "name": "Rosa Parks & W Grand Bl",
     "lat": "42.36400449",
     "lon": "-83.09115605",
-    "routes": ["18", "42"]
+    "routes": ["16", "18", "29", "42"]
   },
   "2740": {
     "name": "Livernois & Fullerton",
@@ -7479,19 +7479,19 @@ const Stops = {
     "name": "Livernois & Davison",
     "lat": "42.386126",
     "lon": "-83.139336482",
-    "routes": ["30"]
+    "routes": ["15", "30"]
   },
   "2745": {
     "name": "Livernois & Davison",
     "lat": "42.386108923",
     "lon": "-83.139685138",
-    "routes": ["30"]
+    "routes": ["15", "30"]
   },
   "2746": {
     "name": "Livernois & Davison",
     "lat": "42.386971",
     "lon": "-83.139379",
-    "routes": ["30"]
+    "routes": ["15", "30"]
   },
   "2747": {
     "name": "Livernois & Grand",
@@ -7515,7 +7515,7 @@ const Stops = {
     "name": "Rosa Parks & Clairmount",
     "lat": "42.37668349",
     "lon": "-83.09947805",
-    "routes": ["18", "42"]
+    "routes": ["11", "18", "42"]
   },
   "2750": {
     "name": "Livernois & Doris",
@@ -7581,7 +7581,7 @@ const Stops = {
     "name": "Rosa Parks & Oakman",
     "lat": "42.401688",
     "lon": "-83.116794",
-    "routes": ["18"]
+    "routes": ["18", "43"]
   },
   "2760": {
     "name": "Livernois & Hanson",
@@ -7599,49 +7599,49 @@ const Stops = {
     "name": "Livernois & Beechton",
     "lat": "42.345883",
     "lon": "-83.131467",
-    "routes": ["30"]
+    "routes": ["14", "30"]
   },
   "2763": {
     "name": "Livernois & Beechton",
     "lat": "42.346337",
     "lon": "-83.131409",
-    "routes": ["30"]
+    "routes": ["14", "30"]
   },
   "277": {
     "name": "Fenkell & Dexter",
     "lat": "42.402856",
     "lon": "-83.135913",
-    "routes": ["18"]
+    "routes": ["16", "18"]
   },
   "2772": {
     "name": "Fenkell & Livernois",
     "lat": "42.402745",
     "lon": "-83.140709",
-    "routes": ["18"]
+    "routes": ["18", "30"]
   },
   "2773": {
     "name": "Livernois & Fenkell",
     "lat": "42.402363",
     "lon": "-83.140401178",
-    "routes": ["30"]
+    "routes": ["18", "30"]
   },
   "2774": {
     "name": "Fenkell & Livernois",
     "lat": "42.402615",
     "lon": "-83.139783",
-    "routes": ["18"]
+    "routes": ["18", "30"]
   },
   "2775": {
     "name": "Livernois & Fenkell",
     "lat": "42.403009",
     "lon": "-83.140072",
-    "routes": ["30"]
+    "routes": ["18", "30"]
   },
   "2776": {
     "name": "Livernois & Lodge Service Dr",
     "lat": "42.404059",
     "lon": "-83.140483",
-    "routes": ["30"]
+    "routes": ["18", "30"]
   },
   "2777": {
     "name": "Livernois & Midland",
@@ -7659,13 +7659,13 @@ const Stops = {
     "name": "Fenkell & Wyoming",
     "lat": "42.402616",
     "lon": "-83.160139",
-    "routes": ["18"]
+    "routes": ["18", "54"]
   },
   "2780": {
     "name": "Livernois & Florence",
     "lat": "42.411975",
     "lon": "-83.140804",
-    "routes": ["30"]
+    "routes": ["29", "30"]
   },
   "2781": {
     "name": "Livernois & Florence",
@@ -7677,7 +7677,7 @@ const Stops = {
     "name": "Livernois & Grove",
     "lat": "42.414432901",
     "lon": "-83.140869674",
-    "routes": ["30"]
+    "routes": ["29", "30"]
   },
   "2783": {
     "name": "Livernois & Grove",
@@ -7695,7 +7695,7 @@ const Stops = {
     "name": "Livernois & Santa Maria",
     "lat": "42.41869549",
     "lon": "-83.14110605",
-    "routes": ["16", "30"]
+    "routes": ["16", "29", "30", "32"]
   },
   "2786": {
     "name": "Livernois & Santa Clara",
@@ -7719,13 +7719,13 @@ const Stops = {
     "name": "Livernois & Thatcher",
     "lat": "42.422823",
     "lon": "-83.140937",
-    "routes": ["30"]
+    "routes": ["16", "30"]
   },
   "279": {
     "name": "Fenkell & Schaefer",
     "lat": "42.402171",
     "lon": "-83.179663",
-    "routes": ["18"]
+    "routes": ["18", "41"]
   },
   "2790": {
     "name": "Livernois & Pickford",
@@ -7923,7 +7923,7 @@ const Stops = {
     "name": "Davison & Broadstreet",
     "lat": "42.386723",
     "lon": "-83.138485",
-    "routes": ["15"]
+    "routes": ["15", "30"]
   },
   "2833": {
     "name": "Davison & Petoskey",
@@ -7995,7 +7995,7 @@ const Stops = {
     "name": "McNichols & Stoepel",
     "lat": "42.417078",
     "lon": "-83.141627",
-    "routes": ["32"]
+    "routes": ["16", "29", "30", "32"]
   },
   "2845": {
     "name": "Dexter & Lodge Service Dr",
@@ -8007,7 +8007,7 @@ const Stops = {
     "name": "Dexter & Lodge Service Dr",
     "lat": "42.404245",
     "lon": "-83.135713",
-    "routes": ["16"]
+    "routes": ["16", "18"]
   },
   "2847": {
     "name": "Curtis & Pennington",
@@ -8031,7 +8031,7 @@ const Stops = {
     "name": "Fenkell & Greenfield",
     "lat": "42.401578",
     "lon": "-83.199669",
-    "routes": ["18"]
+    "routes": ["18", "22"]
   },
   "2850": {
     "name": "Curtis & Monica",
@@ -8049,25 +8049,25 @@ const Stops = {
     "name": "Livernois & Curtis",
     "lat": "42.42413698",
     "lon": "-83.141324636",
-    "routes": ["30"]
+    "routes": ["16", "30"]
   },
   "2853": {
     "name": "Curtis & Livernois",
     "lat": "42.424444181",
     "lon": "-83.141872187",
-    "routes": ["16"]
+    "routes": ["16", "30"]
   },
   "2854": {
     "name": "Livernois & Curtis",
     "lat": "42.424644",
     "lon": "-83.140987",
-    "routes": ["30"]
+    "routes": ["16", "30"]
   },
   "2855": {
     "name": "Curtis & Livernois",
     "lat": "42.42433",
     "lon": "-83.141552",
-    "routes": ["16"]
+    "routes": ["16", "30"]
   },
   "2857": {
     "name": "Southfield & Midland",
@@ -8091,7 +8091,7 @@ const Stops = {
     "name": "Fenkell & Southfield",
     "lat": "42.401009",
     "lon": "-83.218428",
-    "routes": ["18"]
+    "routes": ["18", "21", "39", "46", "92"]
   },
   "2860": {
     "name": "Southfield & Pilgrim",
@@ -8103,13 +8103,13 @@ const Stops = {
     "name": "Southfield & Puritan",
     "lat": "42.408695",
     "lon": "-83.218161",
-    "routes": ["46"]
+    "routes": ["39", "46"]
   },
   "2862": {
     "name": "Puritan & Southfield",
     "lat": "42.408299103",
     "lon": "-83.217870283",
-    "routes": ["39"]
+    "routes": ["39", "46"]
   },
   "2863": {
     "name": "Southfield & Puritan",
@@ -8121,7 +8121,7 @@ const Stops = {
     "name": "Puritan & Archdale",
     "lat": "42.408451",
     "lon": "-83.216735",
-    "routes": ["39"]
+    "routes": ["39", "46"]
   },
   "2865": {
     "name": "Puritan & Archdale",
@@ -8157,7 +8157,7 @@ const Stops = {
     "name": "Fenkell & Evergreen",
     "lat": "42.400763",
     "lon": "-83.237786",
-    "routes": ["18"]
+    "routes": ["18", "60"]
   },
   "2870": {
     "name": "Puritan & Biltmore",
@@ -8229,25 +8229,25 @@ const Stops = {
     "name": "Puritan & Greenfield",
     "lat": "42.408803466",
     "lon": "-83.199466569",
-    "routes": ["39"]
+    "routes": ["22", "39"]
   },
   "2881": {
     "name": "Greenfield & Puritan",
     "lat": "42.408385",
     "lon": "-83.19913",
-    "routes": ["22"]
+    "routes": ["22", "39"]
   },
   "2882": {
     "name": "Greenfield & Puritan",
     "lat": "42.409071",
     "lon": "-83.198887",
-    "routes": ["22"]
+    "routes": ["22", "39"]
   },
   "2883": {
     "name": "Puritan & Greenfield",
     "lat": "42.408708636",
     "lon": "-83.198565036",
-    "routes": ["39"]
+    "routes": ["22", "39"]
   },
   "2885": {
     "name": "Puritan & Whitcomb",
@@ -8295,7 +8295,7 @@ const Stops = {
     "name": "Fort & Rosa Parks",
     "lat": "42.322285",
     "lon": "-83.067288",
-    "routes": ["19"]
+    "routes": ["19", "27"]
   },
   "2901": {
     "name": "Puritan & Ardmore",
@@ -8427,13 +8427,13 @@ const Stops = {
     "name": "Wyoming & Puritan",
     "lat": "42.409903",
     "lon": "-83.159893",
-    "routes": ["54"]
+    "routes": ["39", "54"]
   },
   "2933": {
     "name": "Wyoming & Puritan",
     "lat": "42.409463726",
     "lon": "-83.160065953",
-    "routes": ["54"]
+    "routes": ["39", "54"]
   },
   "2934": {
     "name": "Puritan & Indiana",
@@ -8475,7 +8475,7 @@ const Stops = {
     "name": "Fort & Schaefer",
     "lat": "42.276178",
     "lon": "-83.155794",
-    "routes": ["19"]
+    "routes": ["19", "41", "89"]
   },
   "2940": {
     "name": "Puritan & Greenlawn",
@@ -8535,7 +8535,7 @@ const Stops = {
     "name": "Puritan & Stoepel",
     "lat": "42.409843",
     "lon": "-83.141448",
-    "routes": ["39"]
+    "routes": ["29", "30", "39"]
   },
   "295": {
     "name": "Fort & W Outer Dr",
@@ -8547,19 +8547,19 @@ const Stops = {
     "name": "Livernois & Puritan",
     "lat": "42.41010249",
     "lon": "-83.14036205",
-    "routes": ["29", "30"]
+    "routes": ["29", "30", "39"]
   },
   "2953": {
     "name": "Livernois & Puritan",
     "lat": "42.409559",
     "lon": "-83.140708",
-    "routes": ["30"]
+    "routes": ["29", "30", "39"]
   },
   "2955": {
     "name": "Puritan & Petoskey",
     "lat": "42.40996649",
     "lon": "-83.13993005",
-    "routes": ["29", "39"]
+    "routes": ["29", "30", "39"]
   },
   "2956": {
     "name": "Puritan & Holmur",
@@ -8571,13 +8571,13 @@ const Stops = {
     "name": "Puritan & Holmur",
     "lat": "42.409904965",
     "lon": "-83.137214939",
-    "routes": ["39"]
+    "routes": ["29", "39"]
   },
   "2959": {
     "name": "Puritan & Dexter",
     "lat": "42.41003249",
     "lon": "-83.13666705",
-    "routes": ["29", "39"]
+    "routes": ["16", "29", "39"]
   },
   "296": {
     "name": "Bassett & W Outer Dr",
@@ -8589,43 +8589,43 @@ const Stops = {
     "name": "Puritan & Dexter",
     "lat": "42.409928",
     "lon": "-83.136353",
-    "routes": ["39"]
+    "routes": ["16", "29", "39"]
   },
   "2961": {
     "name": "Fairfield & Puritan",
     "lat": "42.410303",
     "lon": "-83.134903",
-    "routes": ["16"]
+    "routes": ["16", "29", "39"]
   },
   "2962": {
     "name": "Puritan & Fairfield",
     "lat": "42.409970213",
     "lon": "-83.134297214",
-    "routes": ["29", "39"]
+    "routes": ["16", "29", "39"]
   },
   "2963": {
     "name": "PURITAN & FAIRFIELD",
     "lat": "42.409913",
     "lon": "-83.135055",
-    "routes": ["16"]
+    "routes": ["16", "29", "39"]
   },
   "2964": {
     "name": "Puritan & Muirland",
     "lat": "42.40996749",
     "lon": "-83.13321705",
-    "routes": ["29", "39"]
+    "routes": ["16", "29", "39"]
   },
   "2965": {
     "name": "Puritan & Muirland",
     "lat": "42.410081638",
     "lon": "-83.134271691",
-    "routes": ["29", "39"]
+    "routes": ["16", "29", "39"]
   },
   "2967": {
     "name": "Puritan & Wildemere",
     "lat": "42.41010749",
     "lon": "-83.13276205",
-    "routes": ["29", "39"]
+    "routes": ["16", "29", "39"]
   },
   "2968": {
     "name": "Puritan & Parkside",
@@ -8649,13 +8649,13 @@ const Stops = {
     "name": "Linwood & Puritan",
     "lat": "42.409847",
     "lon": "-83.12778",
-    "routes": ["29"]
+    "routes": ["29", "39"]
   },
   "2972": {
     "name": "Puritan & Linwood",
     "lat": "42.410113061",
     "lon": "-83.127276",
-    "routes": ["39"]
+    "routes": ["29", "39"]
   },
   "2973": {
     "name": "Puritan & Linwood",
@@ -8667,7 +8667,7 @@ const Stops = {
     "name": "Puritan & Normandy",
     "lat": "42.41024",
     "lon": "-83.12683",
-    "routes": ["39"]
+    "routes": ["29", "39"]
   },
   "2975": {
     "name": "Puritan & Lasalle",
@@ -8745,7 +8745,7 @@ const Stops = {
     "name": "Fort & Schaefer",
     "lat": "42.276435",
     "lon": "-83.15481",
-    "routes": ["19", "89"]
+    "routes": ["19", "41", "89"]
   },
   "2991": {
     "name": "Puritan & Moss",
@@ -8757,7 +8757,7 @@ const Stops = {
     "name": "Third & Kirby",
     "lat": "42.357543",
     "lon": "-83.07318",
-    "routes": ["23"]
+    "routes": ["23", "42"]
   },
   "300": {
     "name": "Fort & Miller",
@@ -8829,7 +8829,7 @@ const Stops = {
     "name": "Fort & Clark",
     "lat": "42.312439",
     "lon": "-83.089569",
-    "routes": ["19"]
+    "routes": ["11", "19"]
   },
   "3020": {
     "name": "McNichols & Pinehurst",
@@ -8847,7 +8847,7 @@ const Stops = {
     "name": "Belden & Puritan",
     "lat": "42.4097",
     "lon": "-83.135666",
-    "routes": ["16"]
+    "routes": ["16", "29", "39"]
   },
   "3026": {
     "name": "Hamilton & Florence",
@@ -8889,13 +8889,13 @@ const Stops = {
     "name": "Hamilton & Puritan",
     "lat": "42.410819",
     "lon": "-83.111684",
-    "routes": ["23"]
+    "routes": ["23", "39"]
   },
   "3037": {
     "name": "Evergreen & Ford",
     "lat": "42.332008",
     "lon": "-83.235085",
-    "routes": ["60"]
+    "routes": ["46", "60"]
   },
   "3039": {
     "name": "Evergreen & Kirkwood",
@@ -8913,7 +8913,7 @@ const Stops = {
     "name": "Evergreen & Paul",
     "lat": "42.336041",
     "lon": "-83.235034",
-    "routes": ["60"]
+    "routes": ["46", "60"]
   },
   "3044": {
     "name": "Evergreen & Paul",
@@ -8925,7 +8925,7 @@ const Stops = {
     "name": "Paul & Evergreen",
     "lat": "42.335815",
     "lon": "-83.234727",
-    "routes": ["46"]
+    "routes": ["46", "60"]
   },
   "3046": {
     "name": "Paul & Auburn",
@@ -9045,37 +9045,37 @@ const Stops = {
     "name": "Fitzpatrick & Ashton",
     "lat": "42.364355",
     "lon": "-83.217601",
-    "routes": ["46"]
+    "routes": ["15", "46"]
   },
   "3068": {
     "name": "Southfield & Fitzpatrick",
     "lat": "42.363545",
     "lon": "-83.216944",
-    "routes": ["46"]
+    "routes": ["15", "46"]
   },
   "3069": {
     "name": "TIREMAN & RUTLAND",
     "lat": "42.350647",
     "lon": "-83.212744",
-    "routes": ["47"]
+    "routes": ["46", "47"]
   },
   "307": {
     "name": "Ferry Park & Rosa Parks",
     "lat": "42.362554",
     "lon": "-83.08989",
-    "routes": ["29"]
+    "routes": ["16", "18", "29", "42"]
   },
   "3071": {
     "name": "Tireman & Rutland",
     "lat": "42.350621",
     "lon": "-83.212685",
-    "routes": ["47"]
+    "routes": ["46", "47"]
   },
   "3078": {
     "name": "Joy & Longacre",
     "lat": "42.358001",
     "lon": "-83.214656",
-    "routes": ["27", "96"]
+    "routes": ["27", "46", "96"]
   },
   "3085": {
     "name": "Joy & Abington",
@@ -9111,13 +9111,13 @@ const Stops = {
     "name": "Southfield & W Outer Dr",
     "lat": "42.418752",
     "lon": "-83.219263458",
-    "routes": ["46"]
+    "routes": ["16", "46"]
   },
   "3108": {
     "name": "Southfield & W Outer Dr",
     "lat": "42.419514",
     "lon": "-83.218588",
-    "routes": ["46"]
+    "routes": ["16", "46"]
   },
   "3109": {
     "name": "Southfield & Curtis",
@@ -9147,7 +9147,7 @@ const Stops = {
     "name": "Southfield & 7 Mile",
     "lat": "42.42967",
     "lon": "-83.219821",
-    "routes": ["46"]
+    "routes": ["45", "46"]
   },
   "3116": {
     "name": "Southfield & Pembroke",
@@ -9213,25 +9213,25 @@ const Stops = {
     "name": "Warren & Rosemont",
     "lat": "42.343264",
     "lon": "-83.218022",
-    "routes": ["14"]
+    "routes": ["14", "46"]
   },
   "3151": {
     "name": "Warren & Ashton",
     "lat": "42.343265",
     "lon": "-83.216863",
-    "routes": ["14"]
+    "routes": ["14", "46"]
   },
   "3152": {
     "name": "Warren & Southfield",
     "lat": "42.343279",
     "lon": "-83.215426",
-    "routes": ["14"]
+    "routes": ["14", "46"]
   },
   "3153": {
     "name": "Warren & Southfield",
     "lat": "42.343444",
     "lon": "-83.216857",
-    "routes": ["14"]
+    "routes": ["14", "46"]
   },
   "3157": {
     "name": "Joy & Artesian",
@@ -9285,37 +9285,37 @@ const Stops = {
     "name": "Joy & Southfield",
     "lat": "42.3577",
     "lon": "-83.217301",
-    "routes": ["27", "96"]
+    "routes": ["27", "46", "96"]
   },
   "3173": {
     "name": "Fitzpatrick & Chicago",
     "lat": "42.364821",
     "lon": "-83.218542",
-    "routes": ["46"]
+    "routes": ["15", "46"]
   },
   "3174": {
     "name": "Chicago & Fitzpatrick",
     "lat": "42.364954419",
     "lon": "-83.217988225",
-    "routes": ["15"]
+    "routes": ["15", "46"]
   },
   "3177": {
     "name": "Southfield & Chicago",
     "lat": "42.365877",
     "lon": "-83.216923",
-    "routes": ["46"]
+    "routes": ["15", "46"]
   },
   "3178": {
     "name": "Southfield & Chicago",
     "lat": "42.365544",
     "lon": "-83.216059",
-    "routes": ["46"]
+    "routes": ["15", "46"]
   },
   "3179": {
     "name": "Chicago & Archdale",
     "lat": "42.365303",
     "lon": "-83.215854",
-    "routes": ["15"]
+    "routes": ["15", "46"]
   },
   "3180": {
     "name": "Chicago & Longacre",
@@ -9327,7 +9327,7 @@ const Stops = {
     "name": "Warren & Archdale",
     "lat": "42.343495",
     "lon": "-83.214983",
-    "routes": ["14"]
+    "routes": ["14", "46"]
   },
   "3182": {
     "name": "Warren & Rutland",
@@ -9423,19 +9423,19 @@ const Stops = {
     "name": "Larned & Chene",
     "lat": "42.339001",
     "lon": "-83.022839",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "320": {
     "name": "Ferry Park & Rosa Parks",
     "lat": "42.362421",
     "lon": "-83.090555",
-    "routes": ["29"]
+    "routes": ["16", "18", "29", "42"]
   },
   "3200": {
     "name": "McNichols & Archdale",
     "lat": "42.415694",
     "lon": "-83.21705",
-    "routes": ["32"]
+    "routes": ["32", "46"]
   },
   "3201": {
     "name": "McNichols & Harlow",
@@ -9501,13 +9501,13 @@ const Stops = {
     "name": "Wyoming & Michigan",
     "lat": "42.32743",
     "lon": "-83.156677",
-    "routes": ["54"]
+    "routes": ["37", "54"]
   },
   "3227": {
     "name": "14th & Davison",
     "lat": "42.395012",
     "lon": "-83.11597",
-    "routes": ["18"]
+    "routes": ["15", "18"]
   },
   "3229": {
     "name": "14th & Pasadena",
@@ -9525,7 +9525,7 @@ const Stops = {
     "name": "14th & Clements",
     "lat": "42.395831",
     "lon": "-83.116507",
-    "routes": ["18"]
+    "routes": ["15", "18"]
   },
   "3231": {
     "name": "14th & Labelle",
@@ -9543,7 +9543,7 @@ const Stops = {
     "name": "Oakman & Rosa Parks",
     "lat": "42.401337",
     "lon": "-83.1163",
-    "routes": ["43"]
+    "routes": ["18", "43"]
   },
   "3238": {
     "name": "Oakman & Rosa Parks",
@@ -9561,7 +9561,7 @@ const Stops = {
     "name": "Grandview & Grand River",
     "lat": "42.428098",
     "lon": "-83.285378",
-    "routes": ["21"]
+    "routes": ["17", "21"]
   },
   "3245": {
     "name": "Rosa Parks & Monterey",
@@ -9591,7 +9591,7 @@ const Stops = {
     "name": "Grand River & McNichols",
     "lat": "42.41519049",
     "lon": "-83.25466805",
-    "routes": ["21", "45"]
+    "routes": ["21", "32", "45"]
   },
   "3250": {
     "name": "Rosa Parks & Ford",
@@ -9609,7 +9609,7 @@ const Stops = {
     "name": "Gratiot & Park Grove",
     "lat": "42.42944702",
     "lon": "-82.981575449",
-    "routes": ["34"]
+    "routes": ["32", "34"]
   },
   "3254": {
     "name": "7 Mile & Shaftsbury",
@@ -9627,13 +9627,13 @@ const Stops = {
     "name": "Grand River & Evergreen",
     "lat": "42.408216",
     "lon": "-83.237269",
-    "routes": ["21", "92"]
+    "routes": ["21", "60", "92"]
   },
   "3272": {
     "name": "Grand River & Northlawn",
     "lat": "42.373849",
     "lon": "-83.151949",
-    "routes": ["21"]
+    "routes": ["15", "21", "38"]
   },
   "3275": {
     "name": "McNichols & Inverness",
@@ -9651,7 +9651,7 @@ const Stops = {
     "name": "Grand River & Southfield",
     "lat": "42.400317",
     "lon": "-83.217677",
-    "routes": ["21", "92"]
+    "routes": ["18", "21", "39", "46", "92"]
   },
   "3286": {
     "name": "McNichols & Rosa Parks",
@@ -9669,13 +9669,13 @@ const Stops = {
     "name": "Rosa Parks & Seward",
     "lat": "42.36959",
     "lon": "-83.094476",
-    "routes": ["18"]
+    "routes": ["18", "42"]
   },
   "329": {
     "name": "Grand River & Greenfield",
     "lat": "42.392371126",
     "lon": "-83.197846349",
-    "routes": ["21", "92"]
+    "routes": ["21", "22", "92"]
   },
   "3290": {
     "name": "Second & Baltimore",
@@ -9699,7 +9699,7 @@ const Stops = {
     "name": "CASS & PUTNAM",
     "lat": "42.356504",
     "lon": "-83.06716",
-    "routes": ["80", "89"]
+    "routes": ["14", "16", "80", "89"]
   },
   "3297": {
     "name": "Cass & Kirby",
@@ -9723,7 +9723,7 @@ const Stops = {
     "name": "Grand River & Schaefer",
     "lat": "42.384729",
     "lon": "-83.178928",
-    "routes": ["21", "92"]
+    "routes": ["21", "41", "92"]
   },
   "3300": {
     "name": "Second & Antoinette",
@@ -9753,49 +9753,49 @@ const Stops = {
     "name": "Cass & Milwaukee",
     "lat": "42.367933",
     "lon": "-83.07371",
-    "routes": ["16", "80", "89"]
+    "routes": ["16", "498", "53", "80", "89"]
   },
   "3305": {
     "name": "Cass & Baltimore",
     "lat": "42.368107",
     "lon": "-83.073597",
-    "routes": ["16", "80", "89"]
+    "routes": ["16", "498", "53", "80", "89"]
   },
   "3306": {
     "name": "CASS & BALTIMORE",
     "lat": "42.367654",
     "lon": "-83.073567",
-    "routes": ["80", "89"]
+    "routes": ["16", "498", "53", "80", "89"]
   },
   "3307": {
     "name": "CASS & BURROUGHS",
     "lat": "42.365309",
     "lon": "-83.071909",
-    "routes": ["80", "89"]
+    "routes": ["16", "53", "80", "89"]
   },
   "3308": {
     "name": "CASS & BURROUGHS",
     "lat": "42.364898",
     "lon": "-83.072057",
-    "routes": ["80", "89"]
+    "routes": ["16", "53", "80", "89"]
   },
   "3309": {
     "name": "Cass & Amsterdam",
     "lat": "42.366328",
     "lon": "-83.07242",
-    "routes": ["16", "80", "89"]
+    "routes": ["16", "53", "80", "89"]
   },
   "331": {
     "name": "Grand River & Wyoming",
     "lat": "42.376269",
     "lon": "-83.157992",
-    "routes": ["21"]
+    "routes": ["21", "54"]
   },
   "3310": {
     "name": "Cass & Amsterdam",
     "lat": "42.365697",
     "lon": "-83.072313",
-    "routes": ["16", "80", "89"]
+    "routes": ["16", "53", "80", "89"]
   },
   "3312": {
     "name": "CASS & PALMER",
@@ -9807,13 +9807,13 @@ const Stops = {
     "name": "Cass @ Main Library",
     "lat": "42.357672",
     "lon": "-83.067756",
-    "routes": ["16", "80", "89"]
+    "routes": ["14", "16", "80", "89"]
   },
   "3315": {
     "name": "CASS & PALMER-FAR",
     "lat": "42.361166",
     "lon": "-83.069791",
-    "routes": ["80", "89"]
+    "routes": ["16", "80", "89"]
   },
   "3316": {
     "name": "Rosa Parks & Euclid",
@@ -9825,19 +9825,19 @@ const Stops = {
     "name": "Rosa Parks & Pingree",
     "lat": "42.372268",
     "lon": "-83.096247",
-    "routes": ["18"]
+    "routes": ["18", "42"]
   },
   "332": {
     "name": "Grand River & Oakman",
     "lat": "42.37313",
     "lon": "-83.150185",
-    "routes": ["21"]
+    "routes": ["15", "21", "38"]
   },
   "333": {
     "name": "Grand River & Joy",
     "lat": "42.365078",
     "lon": "-83.130205",
-    "routes": ["21"]
+    "routes": ["11", "21"]
   },
   "3338": {
     "name": "Lodge Service Dr & Seward",
@@ -9849,7 +9849,7 @@ const Stops = {
     "name": "Grand River & Scotten",
     "lat": "42.357146",
     "lon": "-83.11055",
-    "routes": ["21"]
+    "routes": ["16", "21", "27", "47"]
   },
   "3342": {
     "name": "Seward & Third",
@@ -9867,13 +9867,13 @@ const Stops = {
     "name": "Grand River & Warren",
     "lat": "42.348395254",
     "lon": "-83.088874096",
-    "routes": ["21"]
+    "routes": ["14", "21"]
   },
   "3352": {
     "name": "Greenfield & Grand River",
     "lat": "42.391978",
     "lon": "-83.198178",
-    "routes": ["22"]
+    "routes": ["21", "22", "92"]
   },
   "3354": {
     "name": "Warren & John R",
@@ -9897,7 +9897,7 @@ const Stops = {
     "name": "Harper & Hereford",
     "lat": "42.420222",
     "lon": "-82.931421",
-    "routes": ["45"]
+    "routes": ["45", "7"]
   },
   "3359": {
     "name": "Warren & Wetherby",
@@ -9921,7 +9921,7 @@ const Stops = {
     "name": "E Outer Dr & 7 Mile",
     "lat": "42.433613",
     "lon": "-83.014658",
-    "routes": ["32"]
+    "routes": ["32", "45"]
   },
   "3367": {
     "name": "St Antoine & Hancock",
@@ -9933,19 +9933,19 @@ const Stops = {
     "name": "Grand River & Fisher Ser. Dr.",
     "lat": "42.336004",
     "lon": "-83.057586",
-    "routes": ["21"]
+    "routes": ["18", "21", "92", "96"]
   },
   "3374": {
     "name": "Davison & Rosa Parks",
     "lat": "42.396345",
     "lon": "-83.112792",
-    "routes": ["15"]
+    "routes": ["15", "18"]
   },
   "3376": {
     "name": "Rosa Parks & Davison",
     "lat": "42.396553",
     "lon": "-83.113261",
-    "routes": ["18"]
+    "routes": ["15", "18"]
   },
   "3377": {
     "name": "Rosa Parks & Grand",
@@ -9957,31 +9957,31 @@ const Stops = {
     "name": "Hamilton & Cortland",
     "lat": "42.393765",
     "lon": "-83.100196",
-    "routes": ["42"]
+    "routes": ["23", "42"]
   },
   "3381": {
     "name": "Hamilton & Glendale",
     "lat": "42.39657749",
     "lon": "-83.10207005",
-    "routes": ["15", "42"]
+    "routes": ["15", "23", "42"]
   },
   "3382": {
     "name": "Hamilton & Glendale",
     "lat": "42.396044",
     "lon": "-83.102062",
-    "routes": ["23"]
+    "routes": ["15", "23", "42"]
   },
   "3383": {
     "name": "HAMILTON & HIGHLAND",
     "lat": "42.394714",
     "lon": "-83.100865",
-    "routes": ["23"]
+    "routes": ["23", "42"]
   },
   "3384": {
     "name": "Hamilton & Buena Vista",
     "lat": "42.397674",
     "lon": "-83.103166",
-    "routes": ["23"]
+    "routes": ["15", "23", "42"]
   },
   "3385": {
     "name": "McNichols & Linwood",
@@ -10011,7 +10011,7 @@ const Stops = {
     "name": "McClellan & Kercheval",
     "lat": "42.363562",
     "lon": "-82.987921",
-    "routes": ["7"]
+    "routes": ["7", "80"]
   },
   "3400": {
     "name": "Hamilton & Grove",
@@ -10041,7 +10041,7 @@ const Stops = {
     "name": "Warren & Second",
     "lat": "42.355253",
     "lon": "-83.068425",
-    "routes": ["14"]
+    "routes": ["14", "42", "89"]
   },
   "3409": {
     "name": "Warren & Second",
@@ -10053,31 +10053,31 @@ const Stops = {
     "name": "Jefferson & St Antoine",
     "lat": "42.331517",
     "lon": "-83.038606",
-    "routes": ["21", "25", "92", "96"]
+    "routes": ["21", "25", "7", "92", "96"]
   },
   "3410": {
     "name": "Warren & Cass",
     "lat": "42.356156",
     "lon": "-83.065746",
-    "routes": ["14"]
+    "routes": ["14", "16", "498", "53", "80", "89"]
   },
   "3411": {
     "name": "Cass & Warren",
     "lat": "42.356353749",
     "lon": "-83.066785402",
-    "routes": ["16", "80", "89"]
+    "routes": ["14", "16", "498", "53", "80", "89"]
   },
   "3412": {
     "name": "Warren & Cass",
     "lat": "42.356021",
     "lon": "-83.067073",
-    "routes": ["14", "89"]
+    "routes": ["14", "16", "498", "53", "80", "89"]
   },
   "3414": {
     "name": "Cass & Warren",
     "lat": "42.355645",
     "lon": "-83.066566",
-    "routes": ["16", "80"]
+    "routes": ["14", "16", "498", "53", "80", "89"]
   },
   "344": {
     "name": "Grand River & I-75 Service Dr",
@@ -10089,19 +10089,19 @@ const Stops = {
     "name": "Grand River & Warren",
     "lat": "42.348964832",
     "lon": "-83.089609737",
-    "routes": ["21"]
+    "routes": ["14", "21"]
   },
   "347": {
     "name": "Grand River & W Grand Bl",
     "lat": "42.357107",
     "lon": "-83.109845",
-    "routes": ["21"]
+    "routes": ["16", "21", "27", "47"]
   },
   "348": {
     "name": "Grand River & Riviera",
     "lat": "42.365769",
     "lon": "-83.131297",
-    "routes": ["21"]
+    "routes": ["11", "21"]
   },
   "3487": {
     "name": "7 Mile & Glenhurst",
@@ -10113,19 +10113,19 @@ const Stops = {
     "name": "Grand River & Oakman",
     "lat": "42.373243",
     "lon": "-83.149841",
-    "routes": ["21"]
+    "routes": ["15", "21", "38"]
   },
   "35": {
     "name": "Cadillac & Warren",
     "lat": "42.382688",
     "lon": "-82.996923",
-    "routes": ["7"]
+    "routes": ["14", "7"]
   },
   "350": {
     "name": "Grand River & Wyoming",
     "lat": "42.377001",
     "lon": "-83.159162",
-    "routes": ["21"]
+    "routes": ["21", "54"]
   },
   "3508": {
     "name": "Lahser & Vassar",
@@ -10143,7 +10143,7 @@ const Stops = {
     "name": "Grand River & Schaefer",
     "lat": "42.384849339",
     "lon": "-83.178739047",
-    "routes": ["21", "92"]
+    "routes": ["21", "41", "92"]
   },
   "3511": {
     "name": "Lahser & St Martins",
@@ -10197,7 +10197,7 @@ const Stops = {
     "name": "Grand River & Greenfield",
     "lat": "42.392988",
     "lon": "-83.19885",
-    "routes": ["21", "92"]
+    "routes": ["21", "22", "92"]
   },
   "3520": {
     "name": "Lahser & Hessel",
@@ -10221,7 +10221,7 @@ const Stops = {
     "name": "Grand River & Southfield",
     "lat": "42.400574",
     "lon": "-83.21761",
-    "routes": ["21", "92"]
+    "routes": ["18", "21", "39", "46", "92"]
   },
   "3539": {
     "name": "8 Mile & Greenview",
@@ -10233,7 +10233,7 @@ const Stops = {
     "name": "Grand River & Evergreen",
     "lat": "42.408822",
     "lon": "-83.238193",
-    "routes": ["21"]
+    "routes": ["21", "60", "92"]
   },
   "3541": {
     "name": "8 Mile & Oxley",
@@ -10245,13 +10245,13 @@ const Stops = {
     "name": "Grand River & McNichols",
     "lat": "42.414517",
     "lon": "-83.252319",
-    "routes": ["21"]
+    "routes": ["21", "32", "45"]
   },
   "358": {
     "name": "Greenfield & McNichols",
     "lat": "42.415752",
     "lon": "-83.199457",
-    "routes": ["22"]
+    "routes": ["22", "32"]
   },
   "3583": {
     "name": "Woodward & 8 Mile",
@@ -10263,37 +10263,37 @@ const Stops = {
     "name": "Greenfield & Grand River",
     "lat": "42.392307",
     "lon": "-83.19853",
-    "routes": ["22"]
+    "routes": ["21", "22", "92"]
   },
   "36": {
     "name": "Cadillac & Harper",
     "lat": "42.392871",
     "lon": "-83.00398",
-    "routes": ["7"]
+    "routes": ["11", "34", "7"]
   },
   "360": {
     "name": "Greenfield & Schoolcraft",
     "lat": "42.386765",
     "lon": "-83.198311",
-    "routes": ["22"]
+    "routes": ["22", "43"]
   },
   "361": {
     "name": "Greenfield & Plymouth",
     "lat": "42.372193",
     "lon": "-83.197687",
-    "routes": ["22"]
+    "routes": ["22", "38"]
   },
   "362": {
     "name": "Greenfield & Joy",
     "lat": "42.357801",
     "lon": "-83.197115",
-    "routes": ["22"]
+    "routes": ["22", "27", "96"]
   },
   "363": {
     "name": "Greenfield & Warren",
     "lat": "42.343426",
     "lon": "-83.196425",
-    "routes": ["22"]
+    "routes": ["14", "22"]
   },
   "364": {
     "name": "Greenfield & Ford",
@@ -10359,7 +10359,7 @@ const Stops = {
     "name": "Waltham & Collingham",
     "lat": "42.44757",
     "lon": "-82.995302",
-    "routes": ["9"]
+    "routes": ["17", "9"]
   },
   "3674": {
     "name": "State Fair & Westphalia",
@@ -10413,31 +10413,31 @@ const Stops = {
     "name": "Schoenherr & 8 Mile",
     "lat": "42.448841",
     "lon": "-82.985747",
-    "routes": ["9"]
+    "routes": ["17", "9"]
   },
   "3684": {
     "name": "Congress & Bates",
     "lat": "42.330946432",
     "lon": "-83.044264904",
-    "routes": ["10", "34", "40", "48", "7", "95"]
+    "routes": ["10", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "3688": {
     "name": "Congress & Randolph",
     "lat": "42.331409",
     "lon": "-83.043636",
-    "routes": ["40", "95"]
+    "routes": ["10", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "3689": {
     "name": "Congress & Brush",
     "lat": "42.331756",
     "lon": "-83.042427",
-    "routes": ["7"]
+    "routes": ["10", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "3690": {
     "name": "Congress & St Antoine",
     "lat": "42.332939",
     "lon": "-83.039645",
-    "routes": ["7"]
+    "routes": ["21", "7", "92", "96"]
   },
   "3691": {
     "name": "Larned & I-75 Service Dr",
@@ -10449,91 +10449,91 @@ const Stops = {
     "name": "Congress & I-75 Service Dr",
     "lat": "42.333253934",
     "lon": "-83.037128074",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3693": {
     "name": "Larned & Rivard",
     "lat": "42.334085",
     "lon": "-83.034302",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3694": {
     "name": "Larned & Rivard",
     "lat": "42.333992",
     "lon": "-83.035211",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3695": {
     "name": "Larned @ 1451",
     "lat": "42.334813",
     "lon": "-83.032566",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3696": {
     "name": "Larned @ Lafayette Central Park",
     "lat": "42.335599",
     "lon": "-83.031562",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3697": {
     "name": "Larned & Orleans",
     "lat": "42.336112",
     "lon": "-83.029572",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3698": {
     "name": "Larned & Orleans",
     "lat": "42.336354",
     "lon": "-83.029758",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "37": {
     "name": "Harper & Conner",
     "lat": "42.397361",
     "lon": "-82.988985",
-    "routes": ["7"]
+    "routes": ["13", "7"]
   },
   "3702": {
     "name": "Larned & St Aubin",
     "lat": "42.336812",
     "lon": "-83.027919",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3703": {
     "name": "Larned & St Aubin",
     "lat": "42.337303",
     "lon": "-83.027587",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3704": {
     "name": "Larned @ Blain Clinic",
     "lat": "42.338099",
     "lon": "-83.024914",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3705": {
     "name": "Larned @ Reuther Park",
     "lat": "42.338331",
     "lon": "-83.025192",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3706": {
     "name": "Larned @ Ralph Bunche Apts",
     "lat": "42.340244",
     "lon": "-83.019979",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3709": {
     "name": "Larned @ Ralph Bunche Apts",
     "lat": "42.339937",
     "lon": "-83.021423",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3710": {
     "name": "Larned & St Maron",
     "lat": "42.34104",
     "lon": "-83.018897",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3711": {
     "name": "Lafayette & McDougall",
@@ -10563,43 +10563,43 @@ const Stops = {
     "name": "Larned @ King HS",
     "lat": "42.342907",
     "lon": "-83.013746",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3717": {
     "name": "Larned & McDougall",
     "lat": "42.341783",
     "lon": "-83.016347",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3718": {
     "name": "Larned & McDougall",
     "lat": "42.341684",
     "lon": "-83.017419",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3719": {
     "name": "Larned @ King HS",
     "lat": "42.342337",
     "lon": "-83.015933",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "372": {
     "name": "Greenfield & Michigan",
     "lat": "42.317345",
     "lon": "-83.194991",
-    "routes": ["22"]
+    "routes": ["22", "37"]
   },
   "3720": {
     "name": "Mt Elliott & Larned",
     "lat": "42.344973",
     "lon": "-83.010724",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3721": {
     "name": "Larned & Mt Elliott",
     "lat": "42.344356",
     "lon": "-83.011249",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "3722": {
     "name": "Kercheval & Mt Elliott",
@@ -10611,7 +10611,7 @@ const Stops = {
     "name": "Mt Elliott & Kercheval",
     "lat": "42.352211241",
     "lon": "-83.015689277",
-    "routes": ["7"]
+    "routes": ["12", "7"]
   },
   "3725": {
     "name": "Mt Elliott & St Paul",
@@ -10629,19 +10629,19 @@ const Stops = {
     "name": "Lafayette & Mt Elliott",
     "lat": "42.346964",
     "lon": "-83.011782",
-    "routes": ["48", "80"]
+    "routes": ["48", "7", "80"]
   },
   "3728": {
     "name": "Mt Elliott & Lafayette",
     "lat": "42.346575",
     "lon": "-83.012187",
-    "routes": ["7"]
+    "routes": ["48", "7", "80"]
   },
   "3729": {
     "name": "Mt Elliott & Lafayette",
     "lat": "42.34722",
     "lon": "-83.012227",
-    "routes": ["7", "80"]
+    "routes": ["48", "7", "80"]
   },
   "373": {
     "name": "Greenfield & Ford",
@@ -10677,13 +10677,13 @@ const Stops = {
     "name": "Concord & Kercheval",
     "lat": "42.35418",
     "lon": "-83.010542",
-    "routes": ["12"]
+    "routes": ["12", "7"]
   },
   "3737": {
     "name": "Kercheval & Concord",
     "lat": "42.354495",
     "lon": "-83.010249",
-    "routes": ["7"]
+    "routes": ["12", "7"]
   },
   "3738": {
     "name": "Kercheval & Concord",
@@ -10695,7 +10695,7 @@ const Stops = {
     "name": "Greenfield & Warren",
     "lat": "42.344153",
     "lon": "-83.196147",
-    "routes": ["22"]
+    "routes": ["14", "22"]
   },
   "3743": {
     "name": "Kercheval & Sheridan",
@@ -10731,19 +10731,19 @@ const Stops = {
     "name": "Shoemaker & Cadillac",
     "lat": "42.389381",
     "lon": "-83.00097",
-    "routes": ["11"]
+    "routes": ["11", "7"]
   },
   "375": {
     "name": "Greenfield & Joy",
     "lat": "42.358390018",
     "lon": "-83.196865458",
-    "routes": ["22"]
+    "routes": ["22", "27", "96"]
   },
   "3750": {
     "name": "Cadillac & Harper",
     "lat": "42.392653",
     "lon": "-83.003619",
-    "routes": ["11"]
+    "routes": ["11", "34", "7"]
   },
   "3753": {
     "name": "Harper & Bewick",
@@ -10755,31 +10755,31 @@ const Stops = {
     "name": "Van Dyke & Lafayette",
     "lat": "42.35349",
     "lon": "-82.996283",
-    "routes": ["48"]
+    "routes": ["48", "80"]
   },
   "3757": {
     "name": "Van Dyke & Kercheval",
     "lat": "42.358633142",
     "lon": "-82.999991296",
-    "routes": ["48"]
+    "routes": ["48", "7"]
   },
   "3758": {
     "name": "Kercheval & Van Dyke",
     "lat": "42.358384868",
     "lon": "-83.000245717",
-    "routes": ["7"]
+    "routes": ["48", "7"]
   },
   "3759": {
     "name": "Van Dyke & Kercheval",
     "lat": "42.358185022",
     "lon": "-82.999856525",
-    "routes": ["48"]
+    "routes": ["48", "7"]
   },
   "376": {
     "name": "Greenfield & Plymouth",
     "lat": "42.372857",
     "lon": "-83.197379",
-    "routes": ["22"]
+    "routes": ["22", "38"]
   },
   "3760": {
     "name": "Van Dyke & St Paul",
@@ -10815,13 +10815,13 @@ const Stops = {
     "name": "Kercheval & Burns",
     "lat": "42.360685",
     "lon": "-82.993852",
-    "routes": ["7"]
+    "routes": ["7", "80"]
   },
   "3766": {
     "name": "Kercheval & Fischer",
     "lat": "42.361134",
     "lon": "-82.992713",
-    "routes": ["7"]
+    "routes": ["7", "80"]
   },
   "3767": {
     "name": "Kercheval & Fischer",
@@ -10833,7 +10833,7 @@ const Stops = {
     "name": "Kercheval & Hibbard",
     "lat": "42.36211",
     "lon": "-82.990228",
-    "routes": ["7"]
+    "routes": ["7", "80"]
   },
   "3769": {
     "name": "Kercheval & Holcomb",
@@ -10845,7 +10845,7 @@ const Stops = {
     "name": "Greenfield & Schoolcraft",
     "lat": "42.387455",
     "lon": "-83.198017",
-    "routes": ["22"]
+    "routes": ["22", "43"]
   },
   "3770": {
     "name": "McClellan & Marietta",
@@ -10887,7 +10887,7 @@ const Stops = {
     "name": "Greenfield & Grand River",
     "lat": "42.392995",
     "lon": "-83.198264",
-    "routes": ["22"]
+    "routes": ["21", "22", "92"]
   },
   "3780": {
     "name": "Cadillac & Canfield",
@@ -10929,7 +10929,7 @@ const Stops = {
     "name": "Greenfield & McNichols",
     "lat": "42.41661",
     "lon": "-83.199168",
-    "routes": ["22"]
+    "routes": ["22", "32"]
   },
   "3790": {
     "name": "Cadillac & Sylvester",
@@ -10941,25 +10941,25 @@ const Stops = {
     "name": "Mack & Cadillac",
     "lat": "42.373643",
     "lon": "-82.99048",
-    "routes": ["31"]
+    "routes": ["31", "7"]
   },
   "3792": {
     "name": "Cadillac & Mack",
     "lat": "42.373821",
     "lon": "-82.990962",
-    "routes": ["7"]
+    "routes": ["31", "7"]
   },
   "3793": {
     "name": "Cadillac & Mack",
     "lat": "42.37376",
     "lon": "-82.991116",
-    "routes": ["7"]
+    "routes": ["31", "7"]
   },
   "3794": {
     "name": "Mack & Cadillac",
     "lat": "42.373504",
     "lon": "-82.991201",
-    "routes": ["31"]
+    "routes": ["31", "7"]
   },
   "3796": {
     "name": "Cadillac & Chapin",
@@ -10983,13 +10983,13 @@ const Stops = {
     "name": "Harper & Chalmers",
     "lat": "42.404687",
     "lon": "-82.964204",
-    "routes": ["7"]
+    "routes": ["7", "9"]
   },
   "380": {
     "name": "Evergreen & 8 Mile",
     "lat": "42.443475",
     "lon": "-83.239473",
-    "routes": ["60", "92"]
+    "routes": ["17", "60", "92"]
   },
   "3800": {
     "name": "Harper & Garland",
@@ -11043,19 +11043,19 @@ const Stops = {
     "name": "Harper & Beniteau",
     "lat": "42.396819",
     "lon": "-82.990744",
-    "routes": ["7"]
+    "routes": ["13", "7"]
   },
   "381": {
     "name": "7 Mile & Southfield",
     "lat": "42.429915",
     "lon": "-83.218561",
-    "routes": ["45"]
+    "routes": ["45", "46"]
   },
   "3810": {
     "name": "Harper & Gunston",
     "lat": "42.397891",
     "lon": "-82.987893",
-    "routes": ["7"]
+    "routes": ["13", "7"]
   },
   "3811": {
     "name": "Harper @ 11820",
@@ -11205,7 +11205,7 @@ const Stops = {
     "name": "7 Mile & Livernois",
     "lat": "42.431541",
     "lon": "-83.141035",
-    "routes": ["45"]
+    "routes": ["30", "45"]
   },
   "3840": {
     "name": "Harper & Nottingham",
@@ -11289,55 +11289,55 @@ const Stops = {
     "name": "Harper & Grayton",
     "lat": "42.415306",
     "lon": "-82.938413",
-    "routes": ["32"]
+    "routes": ["32", "7"]
   },
   "3856": {
     "name": "HARPER & GRAYTON",
     "lat": "42.415189",
     "lon": "-82.938351",
-    "routes": ["7"]
+    "routes": ["32", "7"]
   },
   "3857": {
     "name": "Harper & Cadieux",
     "lat": "42.416334",
     "lon": "-82.937105",
-    "routes": ["32", "7"]
+    "routes": ["32", "45", "7"]
   },
   "3858": {
     "name": "HARPER & CADIEUX",
     "lat": "42.416696",
     "lon": "-82.936205",
-    "routes": ["45"]
+    "routes": ["32", "45", "7"]
   },
   "3859": {
     "name": "Harper & Cadieux",
     "lat": "42.416474",
     "lon": "-82.936214",
-    "routes": ["7"]
+    "routes": ["32", "45", "7"]
   },
   "386": {
     "name": "Hamilton & McNichols",
     "lat": "42.417242",
     "lon": "-83.116352",
-    "routes": ["23"]
+    "routes": ["23", "32"]
   },
   "3861": {
     "name": "Cadieux & Harper",
     "lat": "42.416149",
     "lon": "-82.93656",
-    "routes": ["32"]
+    "routes": ["32", "45", "7"]
   },
   "3862": {
     "name": "Harper & Guilford",
     "lat": "42.41723249",
     "lon": "-82.93519805",
-    "routes": ["45", "7"]
+    "routes": ["32", "45", "7"]
   },
   "3863": {
     "name": "Harper & Guilford",
     "lat": "42.417893",
     "lon": "-82.933836",
-    "routes": ["7"]
+    "routes": ["45", "7"]
   },
   "3869": {
     "name": "Chester & Hereford",
@@ -11349,7 +11349,7 @@ const Stops = {
     "name": "J.C.Lodge & Clairmount",
     "lat": "42.379314",
     "lon": "-83.09084",
-    "routes": ["23"]
+    "routes": ["11", "23"]
   },
   "3874": {
     "name": "Chester & Marseilles",
@@ -11379,13 +11379,13 @@ const Stops = {
     "name": "MOROSS & BERDEN",
     "lat": "42.421029",
     "lon": "-82.920952",
-    "routes": ["17", "31", "7"]
+    "routes": ["17", "31", "45", "7"]
   },
   "3885": {
     "name": "MOROSS & BERDEN",
     "lat": "42.42145",
     "lon": "-82.921097",
-    "routes": ["17", "45", "7"]
+    "routes": ["17", "31", "45", "7"]
   },
   "3886": {
     "name": "Moross & Rolandale",
@@ -11397,7 +11397,7 @@ const Stops = {
     "name": "Moross & Rolandale",
     "lat": "42.42106749",
     "lon": "-82.91988705",
-    "routes": ["17", "45", "7"]
+    "routes": ["17", "31", "45", "7"]
   },
   "3890": {
     "name": "Moross & Chester",
@@ -11409,19 +11409,19 @@ const Stops = {
     "name": "Moross & Chester",
     "lat": "42.422539",
     "lon": "-82.923517",
-    "routes": ["17"]
+    "routes": ["17", "31", "45", "7"]
   },
   "3893": {
     "name": "Chester & Moross",
     "lat": "42.42196649",
     "lon": "-82.92407705",
-    "routes": ["17", "45", "7"]
+    "routes": ["17", "31", "45", "7"]
   },
   "3895": {
     "name": "Moross & Linville",
     "lat": "42.42009949",
     "lon": "-82.91751405",
-    "routes": ["17", "7"]
+    "routes": ["17", "31", "45", "7"]
   },
   "3896": {
     "name": "Moross & Linville",
@@ -11433,7 +11433,7 @@ const Stops = {
     "name": "MOROSS & CHANDLER PARK DRIVE",
     "lat": "42.41949",
     "lon": "-82.916372",
-    "routes": ["45"]
+    "routes": ["17", "31", "45", "7"]
   },
   "3899": {
     "name": "Concord & St Paul",
@@ -11487,19 +11487,19 @@ const Stops = {
     "name": "Forest & Pennsylvania",
     "lat": "42.37972",
     "lon": "-82.996177",
-    "routes": ["14"]
+    "routes": ["14", "7"]
   },
   "3912": {
     "name": "Cadillac & Forest",
     "lat": "42.380026",
     "lon": "-82.99527",
-    "routes": ["7"]
+    "routes": ["14", "7"]
   },
   "3913": {
     "name": "Cadillac & Forest",
     "lat": "42.379936",
     "lon": "-82.995109",
-    "routes": ["7"]
+    "routes": ["14", "7"]
   },
   "3914": {
     "name": "Warren & Bewick",
@@ -11559,7 +11559,7 @@ const Stops = {
     "name": "Warren & Philip",
     "lat": "42.396035",
     "lon": "-82.957594",
-    "routes": ["14"]
+    "routes": ["14", "9"]
   },
   "3925": {
     "name": "Warren & Alter",
@@ -11637,7 +11637,7 @@ const Stops = {
     "name": "Beaubien & Jefferson",
     "lat": "42.331022328",
     "lon": "-83.04005274",
-    "routes": ["53"]
+    "routes": ["10", "21", "25", "48", "53", "7", "92", "96"]
   },
   "3940": {
     "name": "Chalmers & Maiden",
@@ -11763,7 +11763,7 @@ const Stops = {
     "name": "Harper & Whittier",
     "lat": "42.412299",
     "lon": "-82.942741",
-    "routes": ["7"]
+    "routes": ["32", "7"]
   },
   "3966": {
     "name": "Warren & Kensington",
@@ -11841,13 +11841,13 @@ const Stops = {
     "name": "Fort & Dearborn",
     "lat": "42.2939",
     "lon": "-83.135461",
-    "routes": ["19"]
+    "routes": ["19", "54"]
   },
   "3986": {
     "name": "Fort & Dearborn",
     "lat": "42.29395349",
     "lon": "-83.13605005",
-    "routes": ["19"]
+    "routes": ["19", "54"]
   },
   "3987": {
     "name": "Dearborn & Stone",
@@ -11883,7 +11883,7 @@ const Stops = {
     "name": "Moross & Mack",
     "lat": "42.416759",
     "lon": "-82.910832",
-    "routes": ["17"]
+    "routes": ["14", "17", "31", "32", "45", "7"]
   },
   "4000": {
     "name": "Wyoming & Ford",
@@ -11919,7 +11919,7 @@ const Stops = {
     "name": "Second & Milwaukee",
     "lat": "42.368029875",
     "lon": "-83.076047168",
-    "routes": ["23", "42"]
+    "routes": ["16", "23", "42", "80", "89"]
   },
   "4010": {
     "name": "Thaddeus & Dearborn",
@@ -11937,7 +11937,7 @@ const Stops = {
     "name": "Dearborn & Jefferson",
     "lat": "42.291028",
     "lon": "-83.116954",
-    "routes": ["54"]
+    "routes": ["30", "54"]
   },
   "4015": {
     "name": "Wyoming & Brandt",
@@ -11973,7 +11973,7 @@ const Stops = {
     "name": "Lodge Service Dr & Clairmount",
     "lat": "42.380126",
     "lon": "-83.089928",
-    "routes": ["23"]
+    "routes": ["11", "23"]
   },
   "4020": {
     "name": "WYOMING & COULTER",
@@ -11985,7 +11985,7 @@ const Stops = {
     "name": "Wyoming & Gould",
     "lat": "42.346545",
     "lon": "-83.15716",
-    "routes": ["54"]
+    "routes": ["14", "54"]
   },
   "4023": {
     "name": "Wyoming & Diversey",
@@ -11997,37 +11997,37 @@ const Stops = {
     "name": "Wyoming & Diversey",
     "lat": "42.34798",
     "lon": "-83.157489",
-    "routes": ["54"]
+    "routes": ["14", "54"]
   },
   "4025": {
     "name": "Wyoming & Morross",
     "lat": "42.350255",
     "lon": "-83.157316",
-    "routes": ["54"]
+    "routes": ["47", "54"]
   },
   "4026": {
     "name": "Wyoming & Morross",
     "lat": "42.349631",
     "lon": "-83.157547",
-    "routes": ["54"]
+    "routes": ["47", "54"]
   },
   "4027": {
     "name": "Wyoming & Tireman",
     "lat": "42.351402",
     "lon": "-83.157633",
-    "routes": ["54"]
+    "routes": ["47", "54"]
   },
   "403": {
     "name": "Hamilton & McNichols",
     "lat": "42.417206",
     "lon": "-83.11602",
-    "routes": ["23"]
+    "routes": ["23", "32"]
   },
   "4030": {
     "name": "Wyoming & Tireman",
     "lat": "42.351941",
     "lon": "-83.157414",
-    "routes": ["54"]
+    "routes": ["47", "54"]
   },
   "4031": {
     "name": "Wyoming & Belton",
@@ -12081,25 +12081,25 @@ const Stops = {
     "name": "Wyoming & Chicago",
     "lat": "42.366601",
     "lon": "-83.158121",
-    "routes": ["54"]
+    "routes": ["15", "54"]
   },
   "4046": {
     "name": "Wyoming & Chicago",
     "lat": "42.365798",
     "lon": "-83.158306",
-    "routes": ["54"]
+    "routes": ["15", "54"]
   },
   "4049": {
     "name": "WYOMING & VIOLETLAWN",
     "lat": "42.367331",
     "lon": "-83.15842",
-    "routes": ["54"]
+    "routes": ["15", "54"]
   },
   "405": {
     "name": "7 Mile & Livernois",
     "lat": "42.431673",
     "lon": "-83.141884",
-    "routes": ["45"]
+    "routes": ["30", "45"]
   },
   "4050": {
     "name": "Wyoming & Orangelawn",
@@ -12135,31 +12135,31 @@ const Stops = {
     "name": "Wyoming & Plymouth",
     "lat": "42.373833",
     "lon": "-83.158489",
-    "routes": ["54"]
+    "routes": ["38", "54"]
   },
   "4056": {
     "name": "Wyoming & Plymouth",
     "lat": "42.373167",
     "lon": "-83.158664",
-    "routes": ["54"]
+    "routes": ["38", "54"]
   },
   "4057": {
     "name": "Plymouth & Wyoming",
     "lat": "42.373597",
     "lon": "-83.158823",
-    "routes": ["38"]
+    "routes": ["38", "54"]
   },
   "4058": {
     "name": "Plymouth & Wyoming",
     "lat": "42.373428",
     "lon": "-83.158217",
-    "routes": ["38"]
+    "routes": ["38", "54"]
   },
   "406": {
     "name": "7 Mile & Schaefer",
     "lat": "42.431203",
     "lon": "-83.180838",
-    "routes": ["45"]
+    "routes": ["41", "45"]
   },
   "4063": {
     "name": "Wyoming & Cortland",
@@ -12249,13 +12249,13 @@ const Stops = {
     "name": "Wyoming & Desoto",
     "lat": "42.401306",
     "lon": "-83.159497",
-    "routes": ["54"]
+    "routes": ["18", "54"]
   },
   "4088": {
     "name": "Wyoming & Lodge Service Dr",
     "lat": "42.403843",
     "lon": "-83.159841",
-    "routes": ["54"]
+    "routes": ["18", "54"]
   },
   "4091": {
     "name": "Wyoming & Midland",
@@ -12273,13 +12273,13 @@ const Stops = {
     "name": "Wyoming & Pilgrim",
     "lat": "42.408134",
     "lon": "-83.159827",
-    "routes": ["54"]
+    "routes": ["39", "54"]
   },
   "4094": {
     "name": "Wyoming & Pilgrim",
     "lat": "42.407636",
     "lon": "-83.160011",
-    "routes": ["54"]
+    "routes": ["39", "54"]
   },
   "4095": {
     "name": "Wyoming & Florence",
@@ -12321,7 +12321,7 @@ const Stops = {
     "name": "Wyoming & Santa Maria",
     "lat": "42.41848696",
     "lon": "-83.160464775",
-    "routes": ["54"]
+    "routes": ["32", "54"]
   },
   "4101": {
     "name": "Wyoming & Santa Clara",
@@ -12369,37 +12369,37 @@ const Stops = {
     "name": "Wyoming & Clarita",
     "lat": "42.429814",
     "lon": "-83.16081",
-    "routes": ["54"]
+    "routes": ["45", "54"]
   },
   "4109": {
     "name": "Wyoming & Clarita",
     "lat": "42.429351",
     "lon": "-83.161013",
-    "routes": ["54"]
+    "routes": ["45", "54"]
   },
   "4110": {
     "name": "Wyoming & 7 Mile",
     "lat": "42.431671",
     "lon": "-83.160874",
-    "routes": ["54"]
+    "routes": ["45", "54"]
   },
   "4111": {
     "name": "Wyoming & 7 Mile",
     "lat": "42.431063",
     "lon": "-83.161095",
-    "routes": ["54"]
+    "routes": ["45", "54"]
   },
   "4112": {
     "name": "7 Mile & Wyoming",
     "lat": "42.431472",
     "lon": "-83.161271",
-    "routes": ["45"]
+    "routes": ["45", "54"]
   },
   "4113": {
     "name": "7 Mile & Wyoming",
     "lat": "42.431233",
     "lon": "-83.160572",
-    "routes": ["45"]
+    "routes": ["45", "54"]
   },
   "4114": {
     "name": "Wyoming & Cambridge",
@@ -12411,7 +12411,7 @@ const Stops = {
     "name": "Wyoming & Cambridge",
     "lat": "42.432796",
     "lon": "-83.16112",
-    "routes": ["54"]
+    "routes": ["45", "54"]
   },
   "4116": {
     "name": "Wyoming & St Martins",
@@ -12525,25 +12525,25 @@ const Stops = {
     "name": "Warren & Wyoming",
     "lat": "42.344403",
     "lon": "-83.156671",
-    "routes": ["14"]
+    "routes": ["14", "54"]
   },
   "4140": {
     "name": "Warren & Wyoming",
     "lat": "42.344599",
     "lon": "-83.157967",
-    "routes": ["14"]
+    "routes": ["14", "54"]
   },
   "4143": {
     "name": "Warren & Lonyo",
     "lat": "42.344438",
     "lon": "-83.155365",
-    "routes": ["14"]
+    "routes": ["14", "54"]
   },
   "4144": {
     "name": "Warren & Indiana",
     "lat": "42.344653",
     "lon": "-83.155514",
-    "routes": ["14"]
+    "routes": ["14", "54"]
   },
   "4145": {
     "name": "Joy & Mendota",
@@ -12687,7 +12687,7 @@ const Stops = {
     "name": "McNichols & Geneva",
     "lat": "42.417676",
     "lon": "-83.105981",
-    "routes": ["23", "32"]
+    "routes": ["23", "32", "53"]
   },
   "4171": {
     "name": "McNichols & Ilene",
@@ -12699,13 +12699,13 @@ const Stops = {
     "name": "McNichols & Wyoming",
     "lat": "42.41684",
     "lon": "-83.160845",
-    "routes": ["32"]
+    "routes": ["32", "54"]
   },
   "4175": {
     "name": "McNichols & Wyoming",
     "lat": "42.417024",
     "lon": "-83.16067",
-    "routes": ["32"]
+    "routes": ["32", "54"]
   },
   "4176": {
     "name": "McNichols & Wisconsin",
@@ -12759,31 +12759,31 @@ const Stops = {
     "name": "Curtis & Ilene",
     "lat": "42.424089",
     "lon": "-83.162458",
-    "routes": ["16"]
+    "routes": ["16", "54"]
   },
   "4185": {
     "name": "Wyoming & Curtis",
     "lat": "42.424598",
     "lon": "-83.160629",
-    "routes": ["54"]
+    "routes": ["16", "54"]
   },
   "4188": {
     "name": "Wyoming & Curtis",
     "lat": "42.423896",
     "lon": "-83.160802",
-    "routes": ["54"]
+    "routes": ["16", "54"]
   },
   "4189": {
     "name": "Curtis & Kentucky",
     "lat": "42.424264",
     "lon": "-83.159913",
-    "routes": ["16"]
+    "routes": ["16", "54"]
   },
   "419": {
     "name": "Jefferson & Adair",
     "lat": "42.342134",
     "lon": "-83.013211",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "4190": {
     "name": "Curtis & Indiana",
@@ -12855,7 +12855,7 @@ const Stops = {
     "name": "Jefferson & E Grand Bl",
     "lat": "42.347123",
     "lon": "-83.001249",
-    "routes": ["25"]
+    "routes": ["12", "25"]
   },
   "4200": {
     "name": "Tireman & Pierson",
@@ -12897,13 +12897,13 @@ const Stops = {
     "name": "Tireman & Vaughan",
     "lat": "42.350256",
     "lon": "-83.236538",
-    "routes": ["47"]
+    "routes": ["47", "60"]
   },
   "4208": {
     "name": "Tireman & Plainview",
     "lat": "42.350417",
     "lon": "-83.234675",
-    "routes": ["47"]
+    "routes": ["47", "60"]
   },
   "4209": {
     "name": "Tireman & Minock",
@@ -12915,7 +12915,7 @@ const Stops = {
     "name": "Jefferson & St Jean",
     "lat": "42.366973",
     "lon": "-82.970281",
-    "routes": ["25", "80"]
+    "routes": ["11", "25", "80"]
   },
   "4211": {
     "name": "Tireman & Westwood",
@@ -12975,7 +12975,7 @@ const Stops = {
     "name": "Jefferson & Dickerson",
     "lat": "42.370422",
     "lon": "-82.953254",
-    "routes": ["25", "80"]
+    "routes": ["13", "25", "80"]
   },
   "4220": {
     "name": "Tireman & Brace",
@@ -13011,13 +13011,13 @@ const Stops = {
     "name": "Tireman & Ashton",
     "lat": "42.350546",
     "lon": "-83.217102",
-    "routes": ["47"]
+    "routes": ["46", "47"]
   },
   "4227": {
     "name": "Southfield & Tireman",
     "lat": "42.350314",
     "lon": "-83.216814",
-    "routes": ["46"]
+    "routes": ["46", "47"]
   },
   "4232": {
     "name": "Tireman & Mettetal",
@@ -13065,7 +13065,7 @@ const Stops = {
     "name": "JOY RD & LIVERNOIS NEAR",
     "lat": "42.359838",
     "lon": "-83.13846",
-    "routes": ["96"]
+    "routes": ["27", "30", "96"]
   },
   "4243": {
     "name": "Tireman & Whitcomb",
@@ -13107,7 +13107,7 @@ const Stops = {
     "name": "Jefferson & Dickerson",
     "lat": "42.370685",
     "lon": "-82.953146",
-    "routes": ["25", "80"]
+    "routes": ["13", "25", "80"]
   },
   "4250": {
     "name": "Tireman & Strathmoor",
@@ -13143,19 +13143,19 @@ const Stops = {
     "name": "Schaefer & Tireman",
     "lat": "42.35101",
     "lon": "-83.177259",
-    "routes": ["41"]
+    "routes": ["41", "47"]
   },
   "4258": {
     "name": "Schaefer & Tireman",
     "lat": "42.351444",
     "lon": "-83.177065",
-    "routes": ["41"]
+    "routes": ["41", "47"]
   },
   "426": {
     "name": "Jefferson & St Jean",
     "lat": "42.366954",
     "lon": "-82.971024",
-    "routes": ["25", "80"]
+    "routes": ["11", "25", "80"]
   },
   "4260": {
     "name": "Tireman & Bingham",
@@ -13203,7 +13203,7 @@ const Stops = {
     "name": "Jefferson & E Grand Bl",
     "lat": "42.3469",
     "lon": "-83.002873",
-    "routes": ["25"]
+    "routes": ["12", "25"]
   },
   "4270": {
     "name": "Tireman & Theisen",
@@ -13233,7 +13233,7 @@ const Stops = {
     "name": "Tireman & Kentucky",
     "lat": "42.351824",
     "lon": "-83.156606",
-    "routes": ["47"]
+    "routes": ["47", "54"]
   },
   "4275": {
     "name": "Tireman & Indiana",
@@ -13335,37 +13335,37 @@ const Stops = {
     "name": "Livernois & Tireman",
     "lat": "42.351876",
     "lon": "-83.135791",
-    "routes": ["30"]
+    "routes": ["30", "47"]
   },
   "4293": {
     "name": "Livernois & Tireman",
     "lat": "42.352338",
     "lon": "-83.135651",
-    "routes": ["30"]
+    "routes": ["30", "47"]
   },
   "4296": {
     "name": "Epworth & Tireman",
     "lat": "42.352467",
     "lon": "-83.130008",
-    "routes": ["11"]
+    "routes": ["11", "47"]
   },
   "4297": {
     "name": "Tireman & Epworth",
     "lat": "42.351868",
     "lon": "-83.129253",
-    "routes": ["47"]
+    "routes": ["11", "47"]
   },
   "4298": {
     "name": "Epworth & Tireman",
     "lat": "42.35174",
     "lon": "-83.12971",
-    "routes": ["11"]
+    "routes": ["11", "47"]
   },
   "4299": {
     "name": "Tireman & Epworth",
     "lat": "42.352035",
     "lon": "-83.130279",
-    "routes": ["47"]
+    "routes": ["11", "47"]
   },
   "43": {
     "name": "Kelly & Seymour",
@@ -13419,7 +13419,7 @@ const Stops = {
     "name": "TIREMAN & BEECHWOOD",
     "lat": "42.353227",
     "lon": "-83.11882",
-    "routes": ["47"]
+    "routes": ["27", "47"]
   },
   "4311": {
     "name": "Tireman & Boxwood",
@@ -13491,7 +13491,7 @@ const Stops = {
     "name": "GRAND BLVD & WARREN",
     "lat": "42.345296",
     "lon": "-83.107872",
-    "routes": ["47"]
+    "routes": ["14", "27", "47"]
   },
   "4323": {
     "name": "Tireman & John E Hunter",
@@ -13533,13 +13533,13 @@ const Stops = {
     "name": "W Grand Bl & Martin Luther King",
     "lat": "42.333531",
     "lon": "-83.096688",
-    "routes": ["27"]
+    "routes": ["27", "37", "47"]
   },
   "433": {
     "name": "Joy & Southfield",
     "lat": "42.357767",
     "lon": "-83.215006",
-    "routes": ["27"]
+    "routes": ["27", "46", "96"]
   },
   "4333": {
     "name": "Martin Luther King & 25th",
@@ -13569,7 +13569,7 @@ const Stops = {
     "name": "Joy & Greenfield",
     "lat": "42.358026",
     "lon": "-83.197468",
-    "routes": ["27", "96"]
+    "routes": ["22", "27", "96"]
   },
   "4343": {
     "name": "Martin Luther King & Lawton",
@@ -13611,31 +13611,31 @@ const Stops = {
     "name": "Joy & Schaefer",
     "lat": "42.358473",
     "lon": "-83.177101",
-    "routes": ["27"]
+    "routes": ["27", "41"]
   },
   "4352": {
     "name": "Martin Luther King & 14th",
     "lat": "42.339212",
     "lon": "-83.080535",
-    "routes": ["47"]
+    "routes": ["18", "47"]
   },
   "4353": {
     "name": "14th & Martin Luther King",
     "lat": "42.338887",
     "lon": "-83.080901",
-    "routes": ["18"]
+    "routes": ["18", "47"]
   },
   "4354": {
     "name": "Martin Luther King & 14th",
     "lat": "42.339311",
     "lon": "-83.08136",
-    "routes": ["47"]
+    "routes": ["18", "47"]
   },
   "4355": {
     "name": "Martin Luther King & Rosa Parks",
     "lat": "42.340394",
     "lon": "-83.076735",
-    "routes": ["47"]
+    "routes": ["18", "47"]
   },
   "4356": {
     "name": "Rosa Parks & Magnolia",
@@ -13647,13 +13647,13 @@ const Stops = {
     "name": "Martin Luther King & Rosa Parks",
     "lat": "42.340526",
     "lon": "-83.07746",
-    "routes": ["47"]
+    "routes": ["18", "47"]
   },
   "4358": {
     "name": "Rosa Parks & Martin Luther King",
     "lat": "42.340772",
     "lon": "-83.077236",
-    "routes": ["18"]
+    "routes": ["18", "47"]
   },
   "4359": {
     "name": "Martin Luther King & Cochrane",
@@ -13665,7 +13665,7 @@ const Stops = {
     "name": "Joy & Wyoming",
     "lat": "42.358859",
     "lon": "-83.157304",
-    "routes": ["27", "96"]
+    "routes": ["27", "54", "96"]
   },
   "4360": {
     "name": "Martin Luther King & Cochrane",
@@ -13677,43 +13677,43 @@ const Stops = {
     "name": "Martin Luther King & Trumbull",
     "lat": "42.341821",
     "lon": "-83.073226",
-    "routes": ["47"]
+    "routes": ["21", "29", "47"]
   },
   "4362": {
     "name": "Trumbull & Martin Luther King",
     "lat": "42.341546",
     "lon": "-83.072523",
-    "routes": ["29"]
+    "routes": ["21", "29", "47"]
   },
   "4363": {
     "name": "Martin Luther King & Third",
     "lat": "42.344235",
     "lon": "-83.064742",
-    "routes": ["47"]
+    "routes": ["23", "47"]
   },
   "4364": {
     "name": "Trumbull & Martin Luther King",
     "lat": "42.341459",
     "lon": "-83.072792",
-    "routes": ["29"]
+    "routes": ["21", "29", "47"]
   },
   "4368": {
     "name": "Grand River & Gibson",
     "lat": "42.341317",
     "lon": "-83.070691",
-    "routes": ["21"]
+    "routes": ["21", "47"]
   },
   "437": {
     "name": "Joy & Livernois",
     "lat": "42.359718",
     "lon": "-83.138048",
-    "routes": ["27", "96"]
+    "routes": ["27", "30", "96"]
   },
   "4370": {
     "name": "Grand River & Ash",
     "lat": "42.340651",
     "lon": "-83.069662",
-    "routes": ["21"]
+    "routes": ["21", "47"]
   },
   "4371": {
     "name": "Grand River & Brooklyn",
@@ -13743,13 +13743,13 @@ const Stops = {
     "name": "Grand River & Third",
     "lat": "42.336854",
     "lon": "-83.060327",
-    "routes": ["21"]
+    "routes": ["21", "92", "96"]
   },
   "438": {
     "name": "Tireman & Beechwood",
     "lat": "42.353156",
     "lon": "-83.118914",
-    "routes": ["27"]
+    "routes": ["27", "47"]
   },
   "4380": {
     "name": "Jefferson & Van Dyke",
@@ -13773,13 +13773,13 @@ const Stops = {
     "name": "Grand River & W.Grand Blvd",
     "lat": "42.35704",
     "lon": "-83.10964",
-    "routes": ["27", "47"]
+    "routes": ["16", "21", "27", "47"]
   },
   "4393": {
     "name": "Fort & McKinstry",
     "lat": "42.311895",
     "lon": "-83.090805",
-    "routes": ["19"]
+    "routes": ["11", "19"]
   },
   "4397": {
     "name": "Warren & Dacosta",
@@ -13803,13 +13803,13 @@ const Stops = {
     "name": "Harper & Chalmers",
     "lat": "42.404669",
     "lon": "-82.965012",
-    "routes": ["7"]
+    "routes": ["7", "9"]
   },
   "440": {
     "name": "W.Grand Blvd & Warren",
     "lat": "42.344804",
     "lon": "-83.107799",
-    "routes": ["27"]
+    "routes": ["14", "27", "47"]
   },
   "4401": {
     "name": "Warren & W Outer Dr",
@@ -13833,7 +13833,7 @@ const Stops = {
     "name": "W Grand Bl & Michigan",
     "lat": "42.33107",
     "lon": "-83.095353",
-    "routes": ["27"]
+    "routes": ["27", "37"]
   },
   "4410": {
     "name": "Joy & Trinity",
@@ -13947,25 +13947,25 @@ const Stops = {
     "name": "Lafayette & Trumbull",
     "lat": "42.32554349",
     "lon": "-83.06193405",
-    "routes": ["27", "49"]
+    "routes": ["19", "27", "29", "49"]
   },
   "4430": {
     "name": "W Grand Bl & Warren",
     "lat": "42.344359",
     "lon": "-83.107901",
-    "routes": ["47"]
+    "routes": ["14", "27", "47"]
   },
   "4431": {
     "name": "Warren & E Grand Bl",
     "lat": "42.373543",
     "lon": "-83.019373",
-    "routes": ["14"]
+    "routes": ["14", "34"]
   },
   "4432": {
     "name": "Warren & W Grand Bl",
     "lat": "42.344689",
     "lon": "-83.108367",
-    "routes": ["14"]
+    "routes": ["14", "27", "47"]
   },
   "4433": {
     "name": "Warren & McKinley",
@@ -13983,25 +13983,25 @@ const Stops = {
     "name": "Grand River & Lahser",
     "lat": "42.416791",
     "lon": "-83.258138",
-    "routes": ["21"]
+    "routes": ["21", "45"]
   },
   "444": {
     "name": "Lafayette & Trumbull",
     "lat": "42.325374",
     "lon": "-83.062784",
-    "routes": ["27"]
+    "routes": ["19", "27", "29", "49"]
   },
   "4441": {
     "name": "LAHSER & GRAND RIVER",
     "lat": "42.416354",
     "lon": "-83.257722",
-    "routes": ["45"]
+    "routes": ["21", "32", "45"]
   },
   "4443": {
     "name": "Grand River & Lahser",
     "lat": "42.41607249",
     "lon": "-83.25700005",
-    "routes": ["21", "45"]
+    "routes": ["21", "32", "45"]
   },
   "4448": {
     "name": "Lahser & Willmarth",
@@ -14049,7 +14049,7 @@ const Stops = {
     "name": "W Grand Bl & Michigan",
     "lat": "42.331793",
     "lon": "-83.095193",
-    "routes": ["27"]
+    "routes": ["27", "37", "47"]
   },
   "4461": {
     "name": "Lahser & Clarita",
@@ -14067,31 +14067,31 @@ const Stops = {
     "name": "7 Mile & Lahser",
     "lat": "42.429239",
     "lon": "-83.25879",
-    "routes": ["17"]
+    "routes": ["17", "45"]
   },
   "4464": {
     "name": "7 Mile & Lahser",
     "lat": "42.429009",
     "lon": "-83.257834",
-    "routes": ["45"]
+    "routes": ["17", "45"]
   },
   "4465": {
     "name": "Lahser & 7 Mile",
     "lat": "42.42875",
     "lon": "-83.258382",
-    "routes": ["45"]
+    "routes": ["17", "45"]
   },
   "4466": {
     "name": "Lahser & 7 Mile",
     "lat": "42.429607",
     "lon": "-83.25815",
-    "routes": ["17"]
+    "routes": ["17", "45"]
   },
   "4467": {
     "name": "7 Mile & Burgess",
     "lat": "42.429281",
     "lon": "-83.256614",
-    "routes": ["45"]
+    "routes": ["17", "45"]
   },
   "4468": {
     "name": "7 Mile & Chapel",
@@ -14109,7 +14109,7 @@ const Stops = {
     "name": "W Grand Bl & Warren",
     "lat": "42.345099",
     "lon": "-83.107739",
-    "routes": ["27"]
+    "routes": ["14", "27", "47"]
   },
   "4470": {
     "name": "7 Mile & Westbrook",
@@ -14139,7 +14139,7 @@ const Stops = {
     "name": "7 Mile & Pelkey",
     "lat": "42.434804",
     "lon": "-82.985972",
-    "routes": ["45"]
+    "routes": ["45", "9"]
   },
   "4475": {
     "name": "7 Mile & Pierson",
@@ -14169,7 +14169,7 @@ const Stops = {
     "name": "Beechwood & Tireman",
     "lat": "42.353302",
     "lon": "-83.119408",
-    "routes": ["27"]
+    "routes": ["27", "47"]
   },
   "4481": {
     "name": "7 Mile & Heyden",
@@ -14181,7 +14181,7 @@ const Stops = {
     "name": "7 Mile & Heyden",
     "lat": "42.429422",
     "lon": "-83.240316",
-    "routes": ["45"]
+    "routes": ["45", "60", "92"]
   },
   "4484": {
     "name": "7 Mile & Westmoreland",
@@ -14217,7 +14217,7 @@ const Stops = {
     "name": "Joy & Livernois",
     "lat": "42.35941",
     "lon": "-83.139167",
-    "routes": ["27", "96"]
+    "routes": ["27", "30", "96"]
   },
   "4490": {
     "name": "7 Mile & Sunderland",
@@ -14271,31 +14271,31 @@ const Stops = {
     "name": "Harper & Conner",
     "lat": "42.397118",
     "lon": "-82.990552",
-    "routes": ["7"]
+    "routes": ["13", "7"]
   },
   "450": {
     "name": "Joy & Wyoming",
     "lat": "42.359046",
     "lon": "-83.158204",
-    "routes": ["27", "96"]
+    "routes": ["27", "54", "96"]
   },
   "4501": {
     "name": "Southfield & 7 Mile",
     "lat": "42.430456",
     "lon": "-83.218813",
-    "routes": ["46"]
+    "routes": ["45", "46"]
   },
   "4502": {
     "name": "7 Mile & Fenmore",
     "lat": "42.429943",
     "lon": "-83.217818",
-    "routes": ["45"]
+    "routes": ["45", "46"]
   },
   "4503": {
     "name": "7 Mile & Archdale",
     "lat": "42.430161",
     "lon": "-83.217621",
-    "routes": ["45"]
+    "routes": ["45", "46"]
   },
   "4504": {
     "name": "7 Mile & Harlow",
@@ -14331,7 +14331,7 @@ const Stops = {
     "name": "Joy & Schaefer",
     "lat": "42.358628",
     "lon": "-83.17799",
-    "routes": ["27"]
+    "routes": ["27", "41"]
   },
   "4510": {
     "name": "7 Mile & Ferguson",
@@ -14397,7 +14397,7 @@ const Stops = {
     "name": "Joy & Greenfield",
     "lat": "42.358242",
     "lon": "-83.197442",
-    "routes": ["27", "96"]
+    "routes": ["22", "27", "96"]
   },
   "4520": {
     "name": "7 Mile & Sussex",
@@ -14439,7 +14439,7 @@ const Stops = {
     "name": "Joy & Southfield",
     "lat": "42.357949",
     "lon": "-83.218052",
-    "routes": ["27", "96"]
+    "routes": ["27", "46", "96"]
   },
   "4536": {
     "name": "7 Mile & Strathmoor",
@@ -14463,19 +14463,19 @@ const Stops = {
     "name": "7 Mile & Tracey",
     "lat": "42.430998",
     "lon": "-83.181115",
-    "routes": ["45"]
+    "routes": ["41", "45"]
   },
   "4548": {
     "name": "Schaefer & 7 Mile",
     "lat": "42.430726",
     "lon": "-83.180595",
-    "routes": ["41"]
+    "routes": ["41", "45"]
   },
   "4549": {
     "name": "Schaefer & 7 Mile",
     "lat": "42.431399289",
     "lon": "-83.180391627",
-    "routes": ["41"]
+    "routes": ["41", "45"]
   },
   "4552": {
     "name": "7 Mile & Snowden",
@@ -14637,19 +14637,19 @@ const Stops = {
     "name": "7 Mile & Stoepel",
     "lat": "42.431566",
     "lon": "-83.142158",
-    "routes": ["45"]
+    "routes": ["30", "45"]
   },
   "4581": {
     "name": "Livernois & 7 Mile",
     "lat": "42.43129802",
     "lon": "-83.141631309",
-    "routes": ["30"]
+    "routes": ["30", "45"]
   },
   "4582": {
     "name": "Livernois & 7 Mile",
     "lat": "42.431853",
     "lon": "-83.14135",
-    "routes": ["30"]
+    "routes": ["30", "45"]
   },
   "4585": {
     "name": "7 Mile & Berkeley",
@@ -14715,31 +14715,31 @@ const Stops = {
     "name": "Cadillac & Harper",
     "lat": "42.392943",
     "lon": "-83.004008",
-    "routes": ["7"]
+    "routes": ["11", "34", "7"]
   },
   "4603": {
     "name": "Woodward & 7 Mile",
     "lat": "42.43248349",
     "lon": "-83.11504205",
-    "routes": ["498", "53"]
+    "routes": ["45", "498", "53"]
   },
   "4604": {
     "name": "Woodward & 7 Mile",
     "lat": "42.43172349",
     "lon": "-83.11528105",
-    "routes": ["498", "53"]
+    "routes": ["45", "498", "53"]
   },
   "4609": {
     "name": "7 Mile & Woodward",
     "lat": "42.43196",
     "lon": "-83.116461",
-    "routes": ["45"]
+    "routes": ["45", "498", "53"]
   },
   "4610": {
     "name": "7 Mile & Woodward",
     "lat": "42.432209",
     "lon": "-83.115946",
-    "routes": ["45"]
+    "routes": ["45", "498", "53"]
   },
   "4611": {
     "name": "7 Mile & Bauman",
@@ -14787,31 +14787,31 @@ const Stops = {
     "name": "7 Mile & John R",
     "lat": "42.432357",
     "lon": "-83.102729",
-    "routes": ["45"]
+    "routes": ["23", "45"]
   },
   "4621": {
     "name": "7 Mile & John R",
     "lat": "42.432225",
     "lon": "-83.101912",
-    "routes": ["45"]
+    "routes": ["23", "45"]
   },
   "4623": {
     "name": "7 Mile & Keating",
     "lat": "42.432371203",
     "lon": "-83.100695",
-    "routes": ["45"]
+    "routes": ["23", "45"]
   },
   "4624": {
     "name": "7 Mile & Keating",
     "lat": "42.432258",
     "lon": "-83.09957",
-    "routes": ["45"]
+    "routes": ["23", "45"]
   },
   "4625": {
     "name": "7 Mile & Andover",
     "lat": "42.432413",
     "lon": "-83.099504",
-    "routes": ["45"]
+    "routes": ["23", "45"]
   },
   "4627": {
     "name": "7 Mile & I-75 Service Dr",
@@ -14955,19 +14955,19 @@ const Stops = {
     "name": "Linwood & Fenkell",
     "lat": "42.402584",
     "lon": "-83.127113",
-    "routes": ["29"]
+    "routes": ["18", "29"]
   },
   "4651": {
     "name": "Ryan & 7 Mile",
     "lat": "42.432894",
     "lon": "-83.063007",
-    "routes": ["40", "95"]
+    "routes": ["40", "45", "95"]
   },
   "4653": {
     "name": "Ryan & 7 Mile",
     "lat": "42.432639",
     "lon": "-83.06317",
-    "routes": ["40", "95"]
+    "routes": ["40", "45", "95"]
   },
   "4654": {
     "name": "7 Mile & Sunset",
@@ -15009,7 +15009,7 @@ const Stops = {
     "name": "Linwood & Joy",
     "lat": "42.373695",
     "lon": "-83.109112",
-    "routes": ["29"]
+    "routes": ["11", "29"]
   },
   "4660": {
     "name": "7 Mile & Fenelon",
@@ -15075,7 +15075,7 @@ const Stops = {
     "name": "Linwood & W Grand Bl",
     "lat": "42.359861",
     "lon": "-83.099699",
-    "routes": ["29"]
+    "routes": ["16", "29"]
   },
   "4670": {
     "name": "7 Mile & Gable",
@@ -15153,19 +15153,19 @@ const Stops = {
     "name": "7 Mile & Van Dyke",
     "lat": "42.43392649",
     "lon": "-83.02304905",
-    "routes": ["45"]
+    "routes": ["32", "45", "48"]
   },
   "469": {
     "name": "Trumbull & Warren",
     "lat": "42.351828",
     "lon": "-83.078693",
-    "routes": ["29"]
+    "routes": ["14", "29"]
   },
   "4690": {
     "name": "7 Mile & Terrell",
     "lat": "42.43408449",
     "lon": "-83.02233405",
-    "routes": ["32", "45"]
+    "routes": ["32", "45", "48"]
   },
   "4691": {
     "name": "7 Mile & Veach",
@@ -15207,13 +15207,13 @@ const Stops = {
     "name": "Cadillac & Warren",
     "lat": "42.382623",
     "lon": "-82.997089",
-    "routes": ["7"]
+    "routes": ["14", "7"]
   },
   "470": {
     "name": "Trumbull & Michigan",
     "lat": "42.331159",
     "lon": "-83.066977",
-    "routes": ["29"]
+    "routes": ["29", "37", "89"]
   },
   "4700": {
     "name": "7 Mile & Beland",
@@ -15249,7 +15249,7 @@ const Stops = {
     "name": "Van Dyke & Suzanne",
     "lat": "42.435236738",
     "lon": "-83.024393192",
-    "routes": ["48"]
+    "routes": ["32", "45", "48"]
   },
   "4706": {
     "name": "Van Dyke & Bliss",
@@ -15261,7 +15261,7 @@ const Stops = {
     "name": "Van Dyke & Bliss",
     "lat": "42.436466106",
     "lon": "-83.024469299",
-    "routes": ["48"]
+    "routes": ["32", "45", "48"]
   },
   "4708": {
     "name": "7 Mile & Dresden",
@@ -15327,13 +15327,13 @@ const Stops = {
     "name": "Schoenherr & 7 Mile",
     "lat": "42.435279",
     "lon": "-82.985025",
-    "routes": ["9"]
+    "routes": ["45", "9"]
   },
   "4721": {
     "name": "7 Mile & Schoenherr",
     "lat": "42.435026",
     "lon": "-82.985528",
-    "routes": ["45"]
+    "routes": ["45", "9"]
   },
   "4722": {
     "name": "7 Mile & Schoenherr",
@@ -15363,7 +15363,7 @@ const Stops = {
     "name": "7 Mile & Chalmers",
     "lat": "42.43519649",
     "lon": "-82.97586705",
-    "routes": ["45", "9"]
+    "routes": ["34", "45", "9"]
   },
   "4729": {
     "name": "7 Mile & Celestine",
@@ -15375,7 +15375,7 @@ const Stops = {
     "name": "Chalmers & 7 Mile",
     "lat": "42.434827",
     "lon": "-82.975356",
-    "routes": ["9"]
+    "routes": ["34", "45", "9"]
   },
   "4732": {
     "name": "7 Mile & Monarch",
@@ -15393,7 +15393,7 @@ const Stops = {
     "name": "7 Mile & Hayes",
     "lat": "42.435525",
     "lon": "-82.96583",
-    "routes": ["45"]
+    "routes": ["38", "45"]
   },
   "4735": {
     "name": "7 Mile & Queen",
@@ -15429,7 +15429,7 @@ const Stops = {
     "name": "Trumbull & Michigan",
     "lat": "42.331706",
     "lon": "-83.066926",
-    "routes": ["29", "89"]
+    "routes": ["29", "37", "89"]
   },
   "4740": {
     "name": "Morang & Faircrest",
@@ -15489,7 +15489,7 @@ const Stops = {
     "name": "Trumbull & Warren",
     "lat": "42.352532",
     "lon": "-83.078839",
-    "routes": ["29"]
+    "routes": ["14", "29"]
   },
   "4750": {
     "name": "Morang & Lakepointe",
@@ -15579,7 +15579,7 @@ const Stops = {
     "name": "Linwood & W Grand Bl",
     "lat": "42.360667",
     "lon": "-83.100093",
-    "routes": ["29"]
+    "routes": ["16", "29"]
   },
   "4779": {
     "name": "Curtis & Meyers",
@@ -15591,7 +15591,7 @@ const Stops = {
     "name": "Linwood & Joy",
     "lat": "42.373781",
     "lon": "-83.108852",
-    "routes": ["29"]
+    "routes": ["11", "29"]
   },
   "4780": {
     "name": "Curtis & Meyers",
@@ -15609,7 +15609,7 @@ const Stops = {
     "name": "State Fair & Havana",
     "lat": "42.439385",
     "lon": "-83.110129",
-    "routes": ["12"]
+    "routes": ["12", "23"]
   },
   "4785": {
     "name": "State Fair & Exeter",
@@ -15621,7 +15621,7 @@ const Stops = {
     "name": "State Fair & Exeter",
     "lat": "42.43945",
     "lon": "-83.104993",
-    "routes": ["12"]
+    "routes": ["12", "23"]
   },
   "4787": {
     "name": "State Fair & John R",
@@ -15633,7 +15633,7 @@ const Stops = {
     "name": "Linwood & Fenkell",
     "lat": "42.402843",
     "lon": "-83.126515",
-    "routes": ["29"]
+    "routes": ["18", "29"]
   },
   "4790": {
     "name": "State Fair & Keating",
@@ -15645,13 +15645,13 @@ const Stops = {
     "name": "7 Mile & Conant",
     "lat": "42.432987",
     "lon": "-83.074485",
-    "routes": ["45"]
+    "routes": ["12", "45"]
   },
   "4794": {
     "name": "7 Mile & Conant",
     "lat": "42.432851",
     "lon": "-83.073133",
-    "routes": ["45"]
+    "routes": ["12", "45"]
   },
   "4796": {
     "name": "Conant & Robinwood",
@@ -15681,7 +15681,7 @@ const Stops = {
     "name": "Warren & St Jean",
     "lat": "42.387153",
     "lon": "-82.984503",
-    "routes": ["14"]
+    "routes": ["11", "14"]
   },
   "4800": {
     "name": "State Fair & Cameron",
@@ -15711,13 +15711,13 @@ const Stops = {
     "name": "Van Dyke & Hollywood",
     "lat": "42.43268649",
     "lon": "-83.02402905",
-    "routes": ["32", "48"]
+    "routes": ["32", "45", "48"]
   },
   "4806": {
     "name": "Van Dyke & Robinwood",
     "lat": "42.43201849",
     "lon": "-83.02435205",
-    "routes": ["32", "48"]
+    "routes": ["32", "45", "48"]
   },
   "4807": {
     "name": "E Outer Dr & Linnhurst",
@@ -15729,7 +15729,7 @@ const Stops = {
     "name": "E Outer Dr & Eastwood",
     "lat": "42.432501",
     "lon": "-83.014197",
-    "routes": ["32"]
+    "routes": ["32", "45"]
   },
   "4809": {
     "name": "Chalmers & Saratoga",
@@ -15741,13 +15741,13 @@ const Stops = {
     "name": "Livernois & 8 Mile",
     "lat": "42.445217",
     "lon": "-83.142177",
-    "routes": ["30"]
+    "routes": ["17", "30", "54"]
   },
   "4810": {
     "name": "Fordham & Chalmers",
     "lat": "42.43435249",
     "lon": "-82.97557605",
-    "routes": ["9"]
+    "routes": ["34", "45", "9"]
   },
   "4811": {
     "name": "Schoenherr & Lappin",
@@ -15801,7 +15801,7 @@ const Stops = {
     "name": "Livernois & Ewald Cir",
     "lat": "42.391118",
     "lon": "-83.139932",
-    "routes": ["30"]
+    "routes": ["30", "43"]
   },
   "4820": {
     "name": "Lafayette & Beaubien",
@@ -15825,7 +15825,7 @@ const Stops = {
     "name": "Livernois & Grand River",
     "lat": "42.368339",
     "lon": "-83.138951",
-    "routes": ["30"]
+    "routes": ["21", "30"]
   },
   "4831": {
     "name": "Lafayette & I-75 Service Dr",
@@ -15855,19 +15855,19 @@ const Stops = {
     "name": "Lafayette & Rivard",
     "lat": "42.336464",
     "lon": "-83.035825",
-    "routes": ["48", "80"]
+    "routes": ["10", "48", "80"]
   },
   "484": {
     "name": "Livernois & Warren",
     "lat": "42.344229",
     "lon": "-83.130232",
-    "routes": ["30"]
+    "routes": ["14", "30"]
   },
   "4840": {
     "name": "Rivard & Lafayette",
     "lat": "42.336726688",
     "lon": "-83.036330029",
-    "routes": ["10"]
+    "routes": ["10", "48", "80"]
   },
   "4841": {
     "name": "Lafayette & Rivard",
@@ -15879,43 +15879,43 @@ const Stops = {
     "name": "Rivard & Joliet",
     "lat": "42.33760874",
     "lon": "-83.036920627",
-    "routes": ["10"]
+    "routes": ["10", "48", "80"]
   },
   "4843": {
     "name": "Rivard & Joliet",
     "lat": "42.337171",
     "lon": "-83.036878",
-    "routes": ["10"]
+    "routes": ["10", "48", "80"]
   },
   "4844": {
     "name": "Rivard & Nicolet",
     "lat": "42.338517",
     "lon": "-83.03773",
-    "routes": ["10"]
+    "routes": ["10", "48", "80"]
   },
   "4845": {
     "name": "Rivard & Nicolet",
     "lat": "42.339142",
     "lon": "-83.03798",
-    "routes": ["10"]
+    "routes": ["10", "48", "80"]
   },
   "4846": {
     "name": "Antietam @ 1395",
     "lat": "42.340523",
     "lon": "-83.037554",
-    "routes": ["10"]
+    "routes": ["10", "48", "80"]
   },
   "4847": {
     "name": "Antietam &  @ 1600",
     "lat": "42.343164",
     "lon": "-83.037385",
-    "routes": ["10"]
+    "routes": ["10", "34", "40"]
   },
   "4849": {
     "name": "Antietam & Orleans",
     "lat": "42.344207",
     "lon": "-83.036783",
-    "routes": ["10"]
+    "routes": ["10", "34", "40"]
   },
   "485": {
     "name": "Livernois & I-94 Service Dr",
@@ -15927,7 +15927,7 @@ const Stops = {
     "name": "Orleans & Antietam",
     "lat": "42.344578",
     "lon": "-83.035539",
-    "routes": ["10"]
+    "routes": ["10", "34", "40"]
   },
   "4851": {
     "name": "Chene & Frederick",
@@ -15957,7 +15957,7 @@ const Stops = {
     "name": "Chene & Illinois",
     "lat": "42.357632",
     "lon": "-83.035535",
-    "routes": ["10"]
+    "routes": ["10", "31"]
   },
   "4857": {
     "name": "Chene & Canfield",
@@ -15981,25 +15981,25 @@ const Stops = {
     "name": "Livernois & Michigan",
     "lat": "42.330835",
     "lon": "-83.120273178",
-    "routes": ["30"]
+    "routes": ["30", "37"]
   },
   "4860": {
     "name": "RUSSELL & GRAND BLVD",
     "lat": "42.374758",
     "lon": "-83.059183",
-    "routes": ["11"]
+    "routes": ["11", "40"]
   },
   "4861": {
     "name": "I-75 Service Dr & E Grand Bl",
     "lat": "42.377066",
     "lon": "-83.061058",
-    "routes": ["40"]
+    "routes": ["11", "40"]
   },
   "4863": {
     "name": "Clay & I-75 Service Dr",
     "lat": "42.378652",
     "lon": "-83.061642",
-    "routes": ["40"]
+    "routes": ["11", "40"]
   },
   "4864": {
     "name": "I-75 Service Dr & Clay",
@@ -16017,7 +16017,7 @@ const Stops = {
     "name": "Clay & Hartwick",
     "lat": "42.379227",
     "lon": "-83.060437",
-    "routes": ["40"]
+    "routes": ["11", "40"]
   },
   "4869": {
     "name": "St Aubin & Denton",
@@ -16041,7 +16041,7 @@ const Stops = {
     "name": "Joseph Campau & Belmont",
     "lat": "42.398631846",
     "lon": "-83.058940627",
-    "routes": ["10"]
+    "routes": ["10", "38", "95"]
   },
   "4876": {
     "name": "Joseph Campau & Berres",
@@ -16065,7 +16065,7 @@ const Stops = {
     "name": "Jefferson & Brennan",
     "lat": "42.28201949",
     "lon": "-83.12722705",
-    "routes": ["30"]
+    "routes": ["30", "41"]
   },
   "4880": {
     "name": "Joseph Campau & Hewitt",
@@ -16155,13 +16155,13 @@ const Stops = {
     "name": "JOSEPH CAMPAU & DAVISON",
     "lat": "42.412763",
     "lon": "-83.068693",
-    "routes": ["10"]
+    "routes": ["10", "15"]
   },
   "4902": {
     "name": "JOSEPH CAMPAU & GRANT",
     "lat": "42.412476",
     "lon": "-83.067985",
-    "routes": ["10"]
+    "routes": ["10", "15"]
   },
   "4903": {
     "name": "Joseph Campau & Stender",
@@ -16197,7 +16197,7 @@ const Stops = {
     "name": "NEVADA & MID BLOCK",
     "lat": "42.425771",
     "lon": "-83.072534",
-    "routes": ["40"]
+    "routes": ["10", "40"]
   },
   "4909": {
     "name": "Nevada & Mitchell",
@@ -16209,43 +16209,43 @@ const Stops = {
     "name": "Livernois & Michigan",
     "lat": "42.331434",
     "lon": "-83.120269",
-    "routes": ["30"]
+    "routes": ["30", "37"]
   },
   "4911": {
     "name": "Nevada & Charest",
     "lat": "42.42575549",
     "lon": "-83.06973305",
-    "routes": ["10", "40"]
+    "routes": ["10", "12", "40", "95"]
   },
   "4912": {
     "name": "Conant & Nevada",
     "lat": "42.425432",
     "lon": "-83.068413",
-    "routes": ["12"]
+    "routes": ["10", "12", "40", "95"]
   },
   "4913": {
     "name": "Nevada & Conant",
     "lat": "42.42575149",
     "lon": "-83.06813605",
-    "routes": ["10", "40"]
+    "routes": ["10", "12", "40", "95"]
   },
   "4914": {
     "name": "Conant & Nevada",
     "lat": "42.426076",
     "lon": "-83.068638",
-    "routes": ["12"]
+    "routes": ["10", "12", "40", "95"]
   },
   "4916": {
     "name": "Nevada & Conant",
     "lat": "42.42590249",
     "lon": "-83.06913905",
-    "routes": ["10", "40"]
+    "routes": ["10", "12", "40", "95"]
   },
   "4917": {
     "name": "Nevada & Revere",
     "lat": "42.42589149",
     "lon": "-83.06785605",
-    "routes": ["10", "40", "95"]
+    "routes": ["10", "12", "40", "95"]
   },
   "4918": {
     "name": "Joseph Campau & Commor",
@@ -16329,13 +16329,13 @@ const Stops = {
     "name": "Livernois & Warren",
     "lat": "42.345082",
     "lon": "-83.130484",
-    "routes": ["30"]
+    "routes": ["14", "30"]
   },
   "4930": {
     "name": "Ryan & Nevada",
     "lat": "42.426218",
     "lon": "-83.062641",
-    "routes": ["40"]
+    "routes": ["10", "40", "95"]
   },
   "4931": {
     "name": "Nevada & Ryan",
@@ -16347,19 +16347,19 @@ const Stops = {
     "name": "Nevada & Ryan",
     "lat": "42.42584",
     "lon": "-83.062171",
-    "routes": ["10"]
+    "routes": ["10", "40", "95"]
   },
   "4933": {
     "name": "Nevada & Sunset",
     "lat": "42.426002",
     "lon": "-83.060849",
-    "routes": ["10"]
+    "routes": ["10", "40", "95"]
   },
   "4934": {
     "name": "Nevada & Sunset",
     "lat": "42.425901",
     "lon": "-83.060498",
-    "routes": ["10"]
+    "routes": ["10", "40", "95"]
   },
   "4936": {
     "name": "Nevada & Justine",
@@ -16383,7 +16383,7 @@ const Stops = {
     "name": "Livernois & Grand River",
     "lat": "42.368995",
     "lon": "-83.138612",
-    "routes": ["30"]
+    "routes": ["21", "30"]
   },
   "4940": {
     "name": "Nevada & Keystone",
@@ -16437,7 +16437,7 @@ const Stops = {
     "name": "Livernois & Ewald Cir",
     "lat": "42.391845",
     "lon": "-83.139589",
-    "routes": ["30"]
+    "routes": ["30", "43"]
   },
   "4950": {
     "name": "Nevada & St Louis",
@@ -16467,7 +16467,7 @@ const Stops = {
     "name": "Livernois & 8 Mile",
     "lat": "42.445736",
     "lon": "-83.141789",
-    "routes": ["30"]
+    "routes": ["17", "30", "54"]
   },
   "4964": {
     "name": "Chene & Vernor",
@@ -16485,13 +16485,13 @@ const Stops = {
     "name": "Chene & Hunt",
     "lat": "42.351106",
     "lon": "-83.03121",
-    "routes": ["10"]
+    "routes": ["10", "34"]
   },
   "497": {
     "name": "Mack & Cadieux",
     "lat": "42.394769",
     "lon": "-82.922863",
-    "routes": ["31"]
+    "routes": ["31", "32"]
   },
   "4972": {
     "name": "Chene & Antietam",
@@ -16581,43 +16581,43 @@ const Stops = {
     "name": "Chene & Forest",
     "lat": "42.363376",
     "lon": "-83.039357",
-    "routes": ["10"]
+    "routes": ["10", "14"]
   },
   "499": {
     "name": "Mack & Conner",
     "lat": "42.383795",
     "lon": "-82.968465",
-    "routes": ["31"]
+    "routes": ["13", "31"]
   },
   "4990": {
     "name": "Forest & Chene",
     "lat": "42.363678",
     "lon": "-83.03896",
-    "routes": ["14"]
+    "routes": ["10", "14"]
   },
   "4991": {
     "name": "Chene & Forest",
     "lat": "42.363782",
     "lon": "-83.039409",
-    "routes": ["10"]
+    "routes": ["10", "14"]
   },
   "4992": {
     "name": "Chene & Warren",
     "lat": "42.365968",
     "lon": "-83.040839",
-    "routes": ["10"]
+    "routes": ["10", "14"]
   },
   "4993": {
     "name": "Warren & Chene",
     "lat": "42.36567",
     "lon": "-83.04109",
-    "routes": ["14"]
+    "routes": ["10", "14"]
   },
   "4994": {
     "name": "Chene & Warren",
     "lat": "42.365476",
     "lon": "-83.040728",
-    "routes": ["10"]
+    "routes": ["10", "14"]
   },
   "4995": {
     "name": "Warren & Grandy",
@@ -16659,7 +16659,7 @@ const Stops = {
     "name": "Mack & St Jean",
     "lat": "42.379108",
     "lon": "-82.978962",
-    "routes": ["31"]
+    "routes": ["11", "31"]
   },
   "5000": {
     "name": "Davison & Arlington",
@@ -16671,19 +16671,19 @@ const Stops = {
     "name": "Joseph Campau & Gaylord",
     "lat": "42.41755449",
     "lon": "-83.07174905",
-    "routes": ["10", "15"]
+    "routes": ["10", "15", "32"]
   },
   "5002": {
     "name": "Davison & Maine",
     "lat": "42.412251",
     "lon": "-83.069828",
-    "routes": ["15"]
+    "routes": ["10", "15"]
   },
   "5003": {
     "name": "Davison & Maine",
     "lat": "42.412628",
     "lon": "-83.071054",
-    "routes": ["15"]
+    "routes": ["10", "15"]
   },
   "5004": {
     "name": "Joseph Campau & Victoria",
@@ -16713,7 +16713,7 @@ const Stops = {
     "name": "McNichols & Joseph Campau",
     "lat": "42.418525",
     "lon": "-83.072152",
-    "routes": ["32"]
+    "routes": ["10", "15", "32"]
   },
   "501": {
     "name": "Mack & E Grand Bl",
@@ -16725,19 +16725,19 @@ const Stops = {
     "name": "Joseph Campau & McNichols",
     "lat": "42.41896249",
     "lon": "-83.07269105",
-    "routes": ["10", "15"]
+    "routes": ["10", "15", "32"]
   },
   "5011": {
     "name": "Joseph Campau & McNichols",
     "lat": "42.418365",
     "lon": "-83.072545",
-    "routes": ["10"]
+    "routes": ["10", "15", "32"]
   },
   "5012": {
     "name": "McNichols & Joseph Campau",
     "lat": "42.418670199",
     "lon": "-83.073116225",
-    "routes": ["32"]
+    "routes": ["10", "15", "32"]
   },
   "5013": {
     "name": "McNichols & Mitchell",
@@ -16749,7 +16749,7 @@ const Stops = {
     "name": "McNichols & Mitchell",
     "lat": "42.41869698",
     "lon": "-83.071519458",
-    "routes": ["32"]
+    "routes": ["10", "15", "32"]
   },
   "5015": {
     "name": "McNichols & Charest",
@@ -16767,7 +16767,7 @@ const Stops = {
     "name": "Conant & Minnesota",
     "lat": "42.423959",
     "lon": "-83.067152",
-    "routes": ["12"]
+    "routes": ["12", "95"]
   },
   "5019": {
     "name": "Conant & Grixdale",
@@ -16779,7 +16779,7 @@ const Stops = {
     "name": "Mack & Gratiot",
     "lat": "42.358792874",
     "lon": "-83.028623566",
-    "routes": ["31"]
+    "routes": ["31", "34"]
   },
   "5020": {
     "name": "Conant & Grixdale",
@@ -16821,7 +16821,7 @@ const Stops = {
     "name": "Conant & Carpenter",
     "lat": "42.40912",
     "lon": "-83.057259",
-    "routes": ["12"]
+    "routes": ["12", "95"]
   },
   "5028": {
     "name": "Conant & Carpenter",
@@ -16929,7 +16929,7 @@ const Stops = {
     "name": "Mack & Gratiot",
     "lat": "42.358602",
     "lon": "-83.028747",
-    "routes": ["31"]
+    "routes": ["31", "34"]
   },
   "5050": {
     "name": "McNichols & Moenart",
@@ -16983,7 +16983,7 @@ const Stops = {
     "name": "Van Dyke & Tumey",
     "lat": "42.418847",
     "lon": "-83.023509",
-    "routes": ["48"]
+    "routes": ["32", "48"]
   },
   "5059": {
     "name": "Van Dyke & Davison",
@@ -17007,7 +17007,7 @@ const Stops = {
     "name": "Van Dyke & McNichols",
     "lat": "42.419198",
     "lon": "-83.023857",
-    "routes": ["48"]
+    "routes": ["32", "48"]
   },
   "5064": {
     "name": "Van Dyke & Davison",
@@ -17025,13 +17025,13 @@ const Stops = {
     "name": "Van Dyke & Iowa",
     "lat": "42.42486349",
     "lon": "-83.02407705",
-    "routes": ["32", "48"]
+    "routes": ["10", "32", "48"]
   },
   "507": {
     "name": "Mack & St Jean",
     "lat": "42.379149",
     "lon": "-82.978206",
-    "routes": ["31"]
+    "routes": ["11", "31"]
   },
   "5070": {
     "name": "Van Dyke & Stockton",
@@ -17073,7 +17073,7 @@ const Stops = {
     "name": "Mack & Conner",
     "lat": "42.38358",
     "lon": "-82.9672",
-    "routes": ["31"]
+    "routes": ["13", "31"]
   },
   "5080": {
     "name": "Fenkell & West Pkwy",
@@ -17181,7 +17181,7 @@ const Stops = {
     "name": "Larned & Chene",
     "lat": "42.338944",
     "lon": "-83.023747",
-    "routes": ["7"]
+    "routes": ["25", "7"]
   },
   "510": {
     "name": "Mack & Cadieux",
@@ -17223,25 +17223,25 @@ const Stops = {
     "name": "Fenkell & Heyden",
     "lat": "42.400591",
     "lon": "-83.239116",
-    "routes": ["18"]
+    "routes": ["18", "60"]
   },
   "5108": {
     "name": "Evergreen & Fenkell",
     "lat": "42.400383",
     "lon": "-83.237497",
-    "routes": ["60"]
+    "routes": ["18", "60"]
   },
   "5109": {
     "name": "Evergreen & Fenkell",
     "lat": "42.400979749",
     "lon": "-83.237330636",
-    "routes": ["60"]
+    "routes": ["18", "60"]
   },
   "511": {
     "name": "Kelly & Moross",
     "lat": "42.434953",
     "lon": "-82.952505",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "5111": {
     "name": "Fenkell & Auburn",
@@ -17289,7 +17289,7 @@ const Stops = {
     "name": "Rockdale & McNichols",
     "lat": "42.415386",
     "lon": "-83.258779",
-    "routes": ["32"]
+    "routes": ["21", "32", "45"]
   },
   "5120": {
     "name": "Fenkell & Glastonbury",
@@ -17307,49 +17307,49 @@ const Stops = {
     "name": "Fenkell & Faust",
     "lat": "42.401076",
     "lon": "-83.222755",
-    "routes": ["18"]
+    "routes": ["18", "21", "92"]
   },
   "5123": {
     "name": "Fenkell & Faust",
     "lat": "42.400949",
     "lon": "-83.22244",
-    "routes": ["18"]
+    "routes": ["18", "21", "92"]
   },
   "5124": {
     "name": "Fenkell & Rosemont",
     "lat": "42.400997",
     "lon": "-83.22036",
-    "routes": ["18"]
+    "routes": ["18", "21", "92"]
   },
   "5125": {
     "name": "Grand River & Bretton",
     "lat": "42.408204",
     "lon": "-83.236597",
-    "routes": ["21", "92"]
+    "routes": ["21", "60", "92"]
   },
   "5126": {
     "name": "Fenkell & Grand River",
     "lat": "42.40114",
     "lon": "-83.220568",
-    "routes": ["18"]
+    "routes": ["18", "21", "92"]
   },
   "5127": {
     "name": "Grand River & Ashton",
     "lat": "42.401262",
     "lon": "-83.219973",
-    "routes": ["21", "92"]
+    "routes": ["18", "21", "39", "46", "92"]
   },
   "513": {
     "name": "McNichols & Southfield",
     "lat": "42.41547",
     "lon": "-83.218069",
-    "routes": ["32"]
+    "routes": ["32", "46"]
   },
   "5130": {
     "name": "Fenkell & Archdale",
     "lat": "42.401281",
     "lon": "-83.216515",
-    "routes": ["18"]
+    "routes": ["18", "21", "39", "46", "92"]
   },
   "5132": {
     "name": "Fenkell & Oakfield",
@@ -17397,7 +17397,7 @@ const Stops = {
     "name": "McNichols & Schaefer",
     "lat": "42.416473",
     "lon": "-83.179307",
-    "routes": ["32"]
+    "routes": ["32", "41"]
   },
   "5140": {
     "name": "Fenkell & Mansfield",
@@ -17427,13 +17427,13 @@ const Stops = {
     "name": "Fenkell & Winthrop",
     "lat": "42.401414",
     "lon": "-83.199868",
-    "routes": ["18"]
+    "routes": ["18", "22"]
   },
   "5145": {
     "name": "Greenfield & Fenkell",
     "lat": "42.401243",
     "lon": "-83.198855",
-    "routes": ["22"]
+    "routes": ["18", "22"]
   },
   "5149": {
     "name": "Fenkell & Whitcomb",
@@ -17445,7 +17445,7 @@ const Stops = {
     "name": "McNichols & Livernois",
     "lat": "42.41708449",
     "lon": "-83.14012705",
-    "routes": ["29", "32"]
+    "routes": ["16", "29", "30", "32"]
   },
   "5150": {
     "name": "Fenkell & Whitcomb",
@@ -17475,7 +17475,7 @@ const Stops = {
     "name": "McNichols & Hamilton",
     "lat": "42.417538",
     "lon": "-83.115435",
-    "routes": ["32"]
+    "routes": ["23", "32"]
   },
   "5161": {
     "name": "Fenkell & Mark Twain",
@@ -17511,25 +17511,25 @@ const Stops = {
     "name": "Fenkell & Lesure",
     "lat": "42.40198",
     "lon": "-83.180987",
-    "routes": ["18"]
+    "routes": ["18", "41"]
   },
   "5168": {
     "name": "Schaefer & Fenkell",
     "lat": "42.401843",
     "lon": "-83.17919",
-    "routes": ["41"]
+    "routes": ["18", "41"]
   },
   "517": {
     "name": "McNichols & Woodward",
     "lat": "42.417698",
     "lon": "-83.104295",
-    "routes": ["23", "32"]
+    "routes": ["23", "32", "53"]
   },
   "5170": {
     "name": "Schaefer & Fenkell",
     "lat": "42.402357",
     "lon": "-83.179017",
-    "routes": ["41"]
+    "routes": ["18", "41"]
   },
   "5172": {
     "name": "Fenkell & Snowden",
@@ -17571,7 +17571,7 @@ const Stops = {
     "name": "McNichols & Conant",
     "lat": "42.418597",
     "lon": "-83.062958",
-    "routes": ["32"]
+    "routes": ["12", "32", "95"]
   },
   "5181": {
     "name": "Fenkell & Manor",
@@ -17613,19 +17613,19 @@ const Stops = {
     "name": "Clairmount & 14th",
     "lat": "42.375178",
     "lon": "-83.102583",
-    "routes": ["11"]
+    "routes": ["11", "18"]
   },
   "5189": {
     "name": "Clairmount & 14th",
     "lat": "42.375084",
     "lon": "-83.103201",
-    "routes": ["11"]
+    "routes": ["11", "18"]
   },
   "519": {
     "name": "McNichols & Van Dyke",
     "lat": "42.419347",
     "lon": "-83.023936",
-    "routes": ["32"]
+    "routes": ["32", "48"]
   },
   "5190": {
     "name": "14th & Boston",
@@ -17643,7 +17643,7 @@ const Stops = {
     "name": "14th & Collingwood",
     "lat": "42.382278",
     "lon": "-83.107647",
-    "routes": ["18"]
+    "routes": ["18", "38"]
   },
   "5193": {
     "name": "14th & Glendale",
@@ -17691,7 +17691,7 @@ const Stops = {
     "name": "Seven Mile & Van Dyke",
     "lat": "42.433784",
     "lon": "-83.024035",
-    "routes": ["32", "45"]
+    "routes": ["32", "45", "48"]
   },
   "5200": {
     "name": "Fenkell & Birwood",
@@ -17715,13 +17715,13 @@ const Stops = {
     "name": "Fenkell & Indiana",
     "lat": "42.402607",
     "lon": "-83.157738",
-    "routes": ["18"]
+    "routes": ["18", "54"]
   },
   "5204": {
     "name": "Fenkell & Wisconsin",
     "lat": "42.40248",
     "lon": "-83.15638",
-    "routes": ["18"]
+    "routes": ["18", "54"]
   },
   "5206": {
     "name": "Fenkell & Cherrylawn",
@@ -17745,7 +17745,7 @@ const Stops = {
     "name": "7 Mile & E Outer Dr",
     "lat": "42.434107",
     "lon": "-83.013647",
-    "routes": ["45"]
+    "routes": ["32", "45"]
   },
   "5210": {
     "name": "Fenkell & Greenlawn",
@@ -17799,7 +17799,7 @@ const Stops = {
     "name": "Fenkell & Quincy",
     "lat": "42.402791",
     "lon": "-83.138576",
-    "routes": ["18"]
+    "routes": ["18", "30"]
   },
   "522": {
     "name": "McNichols & Conner",
@@ -17811,7 +17811,7 @@ const Stops = {
     "name": "Fenkell & Muirland",
     "lat": "42.402902",
     "lon": "-83.133645",
-    "routes": ["18"]
+    "routes": ["16", "18"]
   },
   "5224": {
     "name": "Fenkell & Wildemere",
@@ -17835,19 +17835,19 @@ const Stops = {
     "name": "Fenkell & Linwood",
     "lat": "42.403021",
     "lon": "-83.127724",
-    "routes": ["18"]
+    "routes": ["18", "29"]
   },
   "523": {
     "name": "McNichols & Gunston",
     "lat": "42.420284",
     "lon": "-83.002762",
-    "routes": ["32"]
+    "routes": ["13", "32"]
   },
   "5232": {
     "name": "Fenkell & Normandy",
     "lat": "42.403067",
     "lon": "-83.125846",
-    "routes": ["18"]
+    "routes": ["18", "29"]
   },
   "5233": {
     "name": "Fenkell & Lasalle",
@@ -17883,7 +17883,7 @@ const Stops = {
     "name": "Seymour & Gratiot",
     "lat": "42.426918",
     "lon": "-82.982516",
-    "routes": ["32"]
+    "routes": ["32", "34"]
   },
   "5242": {
     "name": "Trumbull & I-75 Service Dr",
@@ -17895,13 +17895,13 @@ const Stops = {
     "name": "CONGRESS & WOODWARD",
     "lat": "42.330428",
     "lon": "-83.045885",
-    "routes": ["95"]
+    "routes": ["34", "7", "95", "96"]
   },
   "5247": {
     "name": "Larned & Woodward",
     "lat": "42.329638313",
     "lon": "-83.044392487",
-    "routes": ["10", "21", "25", "34", "40", "48", "53", "92", "95"]
+    "routes": ["10", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "5248": {
     "name": "Woodward & Cedarhurst",
@@ -17913,7 +17913,7 @@ const Stops = {
     "name": "LARNED & WOODWARD",
     "lat": "42.329711",
     "lon": "-83.044629",
-    "routes": ["7", "96"]
+    "routes": ["10", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "5251": {
     "name": "14th & Poplar",
@@ -17925,7 +17925,7 @@ const Stops = {
     "name": "Grand River & 14th",
     "lat": "42.347484",
     "lon": "-83.085978",
-    "routes": ["21"]
+    "routes": ["14", "18", "21"]
   },
   "5254": {
     "name": "14th & McGraw",
@@ -17961,19 +17961,19 @@ const Stops = {
     "name": "W Grand Bl & 14th",
     "lat": "42.362292",
     "lon": "-83.094968",
-    "routes": ["16"]
+    "routes": ["16", "18", "29"]
   },
   "5261": {
     "name": "W Grand Bl & 14th",
     "lat": "42.362466",
     "lon": "-83.093973",
-    "routes": ["16"]
+    "routes": ["16", "18", "29"]
   },
   "5262": {
     "name": "14th & Lothrop",
     "lat": "42.363372",
     "lon": "-83.095292",
-    "routes": ["18"]
+    "routes": ["16", "18", "29"]
   },
   "5263": {
     "name": "Rosa Parks & Bethune",
@@ -18015,7 +18015,7 @@ const Stops = {
     "name": "Cadieux & Mack",
     "lat": "42.395393",
     "lon": "-82.922647",
-    "routes": ["32"]
+    "routes": ["31", "32"]
   },
   "5270": {
     "name": "Rosa Parks & Temple",
@@ -18033,19 +18033,19 @@ const Stops = {
     "name": "I-75 Service Dr & Second",
     "lat": "42.336825",
     "lon": "-83.057959",
-    "routes": ["18"]
+    "routes": ["18", "21", "92", "96"]
   },
   "528": {
     "name": "Whittier & Harper",
     "lat": "42.412665",
     "lon": "-82.942535",
-    "routes": ["32"]
+    "routes": ["32", "7"]
   },
   "529": {
     "name": "McNichols & Gratiot",
     "lat": "42.426983",
     "lon": "-82.98357",
-    "routes": ["32"]
+    "routes": ["32", "34"]
   },
   "5296": {
     "name": "7 Mile & Queen",
@@ -18057,7 +18057,7 @@ const Stops = {
     "name": "McNichols & Gunston",
     "lat": "42.420425",
     "lon": "-83.002981",
-    "routes": ["32"]
+    "routes": ["13", "32"]
   },
   "5304": {
     "name": "Dexter & Chalfonte",
@@ -18075,7 +18075,7 @@ const Stops = {
     "name": "14th & Warren",
     "lat": "42.348885",
     "lon": "-83.086596",
-    "routes": ["18"]
+    "routes": ["14", "18", "21"]
   },
   "531": {
     "name": "E Outer Dr & McNichols",
@@ -18087,7 +18087,7 @@ const Stops = {
     "name": "FISHER FWY & CASS",
     "lat": "42.337656",
     "lon": "-83.055433",
-    "routes": ["18"]
+    "routes": ["18", "23"]
   },
   "5317": {
     "name": "I-75 Service Dr & Cass",
@@ -18117,7 +18117,7 @@ const Stops = {
     "name": "Junction & McMillan",
     "lat": "42.319039",
     "lon": "-83.10283",
-    "routes": ["11"]
+    "routes": ["11", "49", "89"]
   },
   "5323": {
     "name": "Junction & Konkel",
@@ -18135,7 +18135,7 @@ const Stops = {
     "name": "Junction & Jackson",
     "lat": "42.332882",
     "lon": "-83.11291",
-    "routes": ["11"]
+    "routes": ["11", "37"]
   },
   "5326": {
     "name": "Junction & Otis",
@@ -18165,7 +18165,7 @@ const Stops = {
     "name": "7 Mile & Van Dyke",
     "lat": "42.434053",
     "lon": "-83.024696",
-    "routes": ["45"]
+    "routes": ["32", "45", "48"]
   },
   "5330": {
     "name": "Junction & Toledo",
@@ -18201,25 +18201,25 @@ const Stops = {
     "name": "Epworth & Joy",
     "lat": "42.360451",
     "lon": "-83.135584",
-    "routes": ["11"]
+    "routes": ["11", "27", "96"]
   },
   "5336": {
     "name": "Epworth & Joy",
     "lat": "42.360427",
     "lon": "-83.135797",
-    "routes": ["11"]
+    "routes": ["11", "27", "96"]
   },
   "5337": {
     "name": "Joy & Howell",
     "lat": "42.360041",
     "lon": "-83.137578",
-    "routes": ["27", "96"]
+    "routes": ["27", "30", "96"]
   },
   "5338": {
     "name": "Joy & Epworth",
     "lat": "42.36077",
     "lon": "-83.135451",
-    "routes": ["27", "96"]
+    "routes": ["11", "27", "96"]
   },
   "5339": {
     "name": "Epworth & Linsdale",
@@ -18231,7 +18231,7 @@ const Stops = {
     "name": "McNichols & Van Dyke",
     "lat": "42.419586",
     "lon": "-83.024437",
-    "routes": ["32"]
+    "routes": ["32", "48"]
   },
   "5340": {
     "name": "Epworth & Linsdale",
@@ -18243,13 +18243,13 @@ const Stops = {
     "name": "Joy & Northfield",
     "lat": "42.362312",
     "lon": "-83.132705",
-    "routes": ["11", "96"]
+    "routes": ["11", "27", "96"]
   },
   "5343": {
     "name": "Joy & Northfield",
     "lat": "42.362106",
     "lon": "-83.133064",
-    "routes": ["11", "96"]
+    "routes": ["11", "27", "96"]
   },
   "5344": {
     "name": "Epworth & Milford",
@@ -18267,7 +18267,7 @@ const Stops = {
     "name": "Epworth & Cobb",
     "lat": "42.345643",
     "lon": "-83.125397",
-    "routes": ["11"]
+    "routes": ["11", "14"]
   },
   "5347": {
     "name": "35th & I-94 Service Dr",
@@ -18285,7 +18285,7 @@ const Stops = {
     "name": "McNichols & Conant",
     "lat": "42.418709",
     "lon": "-83.064401",
-    "routes": ["32"]
+    "routes": ["12", "32", "95"]
   },
   "5351": {
     "name": "Junction & Herbert",
@@ -18321,19 +18321,19 @@ const Stops = {
     "name": "McNichols & Woodward",
     "lat": "42.41783",
     "lon": "-83.106223",
-    "routes": ["23", "32"]
+    "routes": ["23", "32", "53"]
   },
   "5360": {
     "name": "Joy & Beechwood",
     "lat": "42.363402",
     "lon": "-83.1321",
-    "routes": ["11"]
+    "routes": ["11", "27", "96"]
   },
   "5363": {
     "name": "Joy & Grand River",
     "lat": "42.365625",
     "lon": "-83.129816",
-    "routes": ["11"]
+    "routes": ["11", "21"]
   },
   "5367": {
     "name": "Joy & Yellowstone",
@@ -18357,7 +18357,7 @@ const Stops = {
     "name": "McNichols & Pontchartrain",
     "lat": "42.417628",
     "lon": "-83.117008",
-    "routes": ["32"]
+    "routes": ["23", "32"]
   },
   "5370": {
     "name": "Joy & Martindale",
@@ -18405,31 +18405,31 @@ const Stops = {
     "name": "Joy & Dexter",
     "lat": "42.370236",
     "lon": "-83.117174",
-    "routes": ["11"]
+    "routes": ["11", "16"]
   },
   "5378": {
     "name": "Joy & Dexter",
     "lat": "42.370012",
     "lon": "-83.118247",
-    "routes": ["11"]
+    "routes": ["11", "16"]
   },
   "5379": {
     "name": "Dexter & Joy",
     "lat": "42.369974",
     "lon": "-83.117369",
-    "routes": ["16"]
+    "routes": ["11", "16"]
   },
   "538": {
     "name": "McNichols & Livernois",
     "lat": "42.417233",
     "lon": "-83.141533",
-    "routes": ["32"]
+    "routes": ["16", "29", "30", "32"]
   },
   "5380": {
     "name": "Dexter & Joy",
     "lat": "42.369903963",
     "lon": "-83.117542085",
-    "routes": ["16"]
+    "routes": ["11", "16"]
   },
   "5381": {
     "name": "Joy & Wildemere",
@@ -18459,25 +18459,25 @@ const Stops = {
     "name": "Linwood & Clairmount",
     "lat": "42.372926",
     "lon": "-83.108295",
-    "routes": ["29"]
+    "routes": ["11", "29"]
   },
   "5386": {
     "name": "Clairmount & Linwood",
     "lat": "42.373088",
     "lon": "-83.108126",
-    "routes": ["11"]
+    "routes": ["11", "29"]
   },
   "5387": {
     "name": "Linwood & Clairmount",
     "lat": "42.372452",
     "lon": "-83.108245",
-    "routes": ["29"]
+    "routes": ["11", "29"]
   },
   "539": {
     "name": "McNichols & Schaefer",
     "lat": "42.416703",
     "lon": "-83.180487",
-    "routes": ["32"]
+    "routes": ["32", "41"]
   },
   "5390": {
     "name": "Clairmount & Lasalle",
@@ -18501,7 +18501,7 @@ const Stops = {
     "name": "Rosa Parks & Edison",
     "lat": "42.378399",
     "lon": "-83.100777",
-    "routes": ["18"]
+    "routes": ["18", "42"]
   },
   "5394": {
     "name": "Junction & Porter",
@@ -18531,7 +18531,7 @@ const Stops = {
     "name": "McNichols & Southfield",
     "lat": "42.415644",
     "lon": "-83.219604",
-    "routes": ["32"]
+    "routes": ["32", "46"]
   },
   "5401": {
     "name": "Rosa Parks & Hazelwood",
@@ -18567,25 +18567,25 @@ const Stops = {
     "name": "Clairmount & Lodge Service Dr",
     "lat": "42.37938",
     "lon": "-83.090955",
-    "routes": ["11"]
+    "routes": ["11", "23"]
   },
   "5412": {
     "name": "Clairmount & Lodge Service Dr",
     "lat": "42.38004",
     "lon": "-83.089596",
-    "routes": ["11"]
+    "routes": ["11", "23"]
   },
   "5414": {
     "name": "Clairmount & Lodge Service Dr",
     "lat": "42.379476",
     "lon": "-83.091124",
-    "routes": ["11"]
+    "routes": ["11", "23"]
   },
   "5416": {
     "name": "Clairmount & Lodge Service Dr",
     "lat": "42.379937",
     "lon": "-83.089474",
-    "routes": ["11"]
+    "routes": ["11", "23"]
   },
   "5417": {
     "name": "Clairmount & Third",
@@ -18639,13 +18639,13 @@ const Stops = {
     "name": "Owen & Oakland",
     "lat": "42.385994",
     "lon": "-83.073198",
-    "routes": ["11"]
+    "routes": ["11", "42"]
   },
   "5428": {
     "name": "Owen & Oakland",
     "lat": "42.386117",
     "lon": "-83.072459",
-    "routes": ["11"]
+    "routes": ["11", "42"]
   },
   "5430": {
     "name": "I-75 Service Dr & Wellington",
@@ -18675,13 +18675,13 @@ const Stops = {
     "name": "I-75 Service Dr & Clay",
     "lat": "42.379004",
     "lon": "-83.062369",
-    "routes": ["11"]
+    "routes": ["11", "40"]
   },
   "5436": {
     "name": "Harper & Mt Elliott",
     "lat": "42.379123",
     "lon": "-83.032941",
-    "routes": ["11"]
+    "routes": ["11", "12"]
   },
   "5437": {
     "name": "I-94 Service Dr & Lucky",
@@ -18729,7 +18729,7 @@ const Stops = {
     "name": "Gratiot & Chene",
     "lat": "42.352701",
     "lon": "-83.031736",
-    "routes": ["34"]
+    "routes": ["10", "34"]
   },
   "5451": {
     "name": "Harper & Frontenac",
@@ -18771,19 +18771,19 @@ const Stops = {
     "name": "Van Dyke & I-94 Service Dr",
     "lat": "42.386872",
     "lon": "-83.020425",
-    "routes": ["48"]
+    "routes": ["11", "48"]
   },
   "5458": {
     "name": "Harper & Van Dyke",
     "lat": "42.388049",
     "lon": "-83.020936",
-    "routes": ["11"]
+    "routes": ["11", "48"]
   },
   "5460": {
     "name": "Harper & Van Dyke",
     "lat": "42.388365",
     "lon": "-83.0208",
-    "routes": ["11"]
+    "routes": ["11", "48"]
   },
   "5462": {
     "name": "Harper & Seminole",
@@ -18813,7 +18813,7 @@ const Stops = {
     "name": "Van Dyke & Whipple",
     "lat": "42.379632",
     "lon": "-83.015409",
-    "routes": ["48"]
+    "routes": ["34", "48"]
   },
   "5467": {
     "name": "Van Dyke & Hendrie",
@@ -18825,19 +18825,19 @@ const Stops = {
     "name": "JEFFERSON & ST JEAN",
     "lat": "42.367103",
     "lon": "-82.970325",
-    "routes": ["11"]
+    "routes": ["11", "25", "80"]
   },
   "547": {
     "name": "Gratiot & E Grand Bl",
     "lat": "42.373283",
     "lon": "-83.018162",
-    "routes": ["34"]
+    "routes": ["14", "34"]
   },
   "5470": {
     "name": "CHRYSLER & MID BLOCK",
     "lat": "42.376996",
     "lon": "-83.060901",
-    "routes": ["11"]
+    "routes": ["11", "40"]
   },
   "5471": {
     "name": "Shoemaker & Bewick",
@@ -18885,7 +18885,7 @@ const Stops = {
     "name": "Gratiot & Van Dyke",
     "lat": "42.37935",
     "lon": "-83.014166",
-    "routes": ["34"]
+    "routes": ["34", "48"]
   },
   "5480": {
     "name": "Shoemaker & Fairview",
@@ -18939,7 +18939,7 @@ const Stops = {
     "name": "Gratiot & Harper",
     "lat": "42.393853866",
     "lon": "-83.004554784",
-    "routes": ["34"]
+    "routes": ["11", "34", "7"]
   },
   "5491": {
     "name": "St Jean & Charlevoix",
@@ -18981,31 +18981,31 @@ const Stops = {
     "name": "Trowbridge & Woodward",
     "lat": "42.3895",
     "lon": "-83.085706",
-    "routes": ["38"]
+    "routes": ["38", "498", "53"]
   },
   "550": {
     "name": "Gratiot & East Outer Dr",
     "lat": "42.40632",
     "lon": "-82.996264",
-    "routes": ["34"]
+    "routes": ["13", "34", "38"]
   },
   "5500": {
     "name": "Dailey & Northfield",
     "lat": "42.361934457",
     "lon": "-83.132569939",
-    "routes": ["27"]
+    "routes": ["11", "27", "96"]
   },
   "5501": {
     "name": "Epworth & Warren",
     "lat": "42.344743",
     "lon": "-83.124498",
-    "routes": ["11"]
+    "routes": ["11", "14"]
   },
   "5503": {
     "name": "Warren & Epworth",
     "lat": "42.344591",
     "lon": "-83.125084",
-    "routes": ["14"]
+    "routes": ["11", "14"]
   },
   "5504": {
     "name": "Warren & Epworth",
@@ -19017,31 +19017,31 @@ const Stops = {
     "name": "Dailey & Beechwood",
     "lat": "42.363322",
     "lon": "-83.130806",
-    "routes": ["27"]
+    "routes": ["11", "27", "96"]
   },
   "5506": {
     "name": "Beechwood & Dailey",
     "lat": "42.363257",
     "lon": "-83.13047",
-    "routes": ["27"]
+    "routes": ["11", "27", "96"]
   },
   "5507": {
     "name": "Beechwood & Hillsboro",
     "lat": "42.363128",
     "lon": "-83.129852",
-    "routes": ["27"]
+    "routes": ["11", "27", "96"]
   },
   "5508": {
     "name": "Dexter & Taylor",
     "lat": "42.369135",
     "lon": "-83.116821",
-    "routes": ["16"]
+    "routes": ["11", "16"]
   },
   "5509": {
     "name": "Dexter & Hazelwood",
     "lat": "42.367915396",
     "lon": "-83.116202402",
-    "routes": ["16"]
+    "routes": ["11", "16"]
   },
   "5510": {
     "name": "Dexter & Blaine",
@@ -19065,7 +19065,7 @@ const Stops = {
     "name": "Dexter & Gladstone",
     "lat": "42.367754",
     "lon": "-83.1159",
-    "routes": ["16"]
+    "routes": ["11", "16"]
   },
   "5514": {
     "name": "Dexter & Boston",
@@ -19107,13 +19107,13 @@ const Stops = {
     "name": "Gratiot & 7 Mile",
     "lat": "42.435346",
     "lon": "-82.977305",
-    "routes": ["34"]
+    "routes": ["34", "45", "9"]
   },
   "5520": {
     "name": "Harper & Mt Elliott",
     "lat": "42.379376",
     "lon": "-83.034867",
-    "routes": ["11"]
+    "routes": ["11", "12"]
   },
   "5521": {
     "name": "Mt Elliott @ 6500",
@@ -19131,19 +19131,19 @@ const Stops = {
     "name": "Mt Elliott & Holborn",
     "lat": "42.37869",
     "lon": "-83.032968",
-    "routes": ["12"]
+    "routes": ["11", "12"]
   },
   "5524": {
     "name": "Mt Elliott & Harper",
     "lat": "42.379851",
     "lon": "-83.034502",
-    "routes": ["12"]
+    "routes": ["11", "12"]
   },
   "5525": {
     "name": "Mt Elliott & I-94 Service Dr",
     "lat": "42.378572",
     "lon": "-83.033105",
-    "routes": ["12"]
+    "routes": ["11", "12"]
   },
   "5526": {
     "name": "Warren & French",
@@ -19191,7 +19191,7 @@ const Stops = {
     "name": "Gratiot & 8 Mile",
     "lat": "42.449338",
     "lon": "-82.968511",
-    "routes": ["34"]
+    "routes": ["17", "34"]
   },
   "5542": {
     "name": "Bassett & Salliotte",
@@ -19239,7 +19239,7 @@ const Stops = {
     "name": "Gratiot & 7 Mile",
     "lat": "42.43479",
     "lon": "-82.978102",
-    "routes": ["34"]
+    "routes": ["34", "45", "9"]
   },
   "5550": {
     "name": "Fort & Visger",
@@ -19341,7 +19341,7 @@ const Stops = {
     "name": "Gratiot & E Outer Dr",
     "lat": "42.406033",
     "lon": "-82.996959",
-    "routes": ["34"]
+    "routes": ["13", "34", "38"]
   },
   "5570": {
     "name": "Fort & Miami",
@@ -19377,7 +19377,7 @@ const Stops = {
     "name": "Gratiot & Harper",
     "lat": "42.392592",
     "lon": "-83.005798",
-    "routes": ["34"]
+    "routes": ["11", "34", "7"]
   },
   "5582": {
     "name": "Schaefer & Annabelle",
@@ -19401,7 +19401,7 @@ const Stops = {
     "name": "SCHAEFER & BEATRICE",
     "lat": "42.275097",
     "lon": "-83.149392",
-    "routes": ["89"]
+    "routes": ["41", "89"]
   },
   "5588": {
     "name": "Fort & Northampton",
@@ -19419,7 +19419,7 @@ const Stops = {
     "name": "Gratiot & Van Dyke",
     "lat": "42.37868349",
     "lon": "-83.01500305",
-    "routes": ["34"]
+    "routes": ["34", "48"]
   },
   "5591": {
     "name": "FORT & PLEASANT",
@@ -19449,13 +19449,13 @@ const Stops = {
     "name": "SCHAEFER & DEACON",
     "lat": "42.275276",
     "lon": "-83.148709",
-    "routes": ["89"]
+    "routes": ["41", "89"]
   },
   "5596": {
     "name": "Schaefer & Beatrice",
     "lat": "42.27511549",
     "lon": "-83.14865005",
-    "routes": ["41"]
+    "routes": ["41", "89"]
   },
   "5597": {
     "name": "Schaefer & Deacon",
@@ -19467,25 +19467,25 @@ const Stops = {
     "name": "SCHAEFER & ETHEL",
     "lat": "42.275677",
     "lon": "-83.146878",
-    "routes": ["89"]
+    "routes": ["41", "89"]
   },
   "56": {
     "name": "Caniff & Conant",
     "lat": "42.402478",
     "lon": "-83.05233",
-    "routes": ["38"]
+    "routes": ["12", "38", "95"]
   },
   "560": {
     "name": "Gratiot & Mack",
     "lat": "42.358329",
     "lon": "-83.02841",
-    "routes": ["34"]
+    "routes": ["31", "34"]
   },
   "5600": {
     "name": "Schaefer & Bassett",
     "lat": "42.275929",
     "lon": "-83.144032",
-    "routes": ["41"]
+    "routes": ["41", "89"]
   },
   "5602": {
     "name": "Fort & Stocker",
@@ -19533,7 +19533,7 @@ const Stops = {
     "name": "Gratiot & Chene",
     "lat": "42.35243",
     "lon": "-83.032298",
-    "routes": ["34"]
+    "routes": ["10", "34"]
   },
   "5610": {
     "name": "Fort & Elsmere",
@@ -19611,19 +19611,19 @@ const Stops = {
     "name": "Fort & 15th",
     "lat": "42.320344",
     "lon": "-83.071217",
-    "routes": ["19"]
+    "routes": ["19", "27"]
   },
   "5628": {
     "name": "Fort & Vermont",
     "lat": "42.3216",
     "lon": "-83.068272",
-    "routes": ["19"]
+    "routes": ["19", "27"]
   },
   "5629": {
     "name": "14th & Fort",
     "lat": "42.321041",
     "lon": "-83.07054",
-    "routes": ["27"]
+    "routes": ["19", "27"]
   },
   "5630": {
     "name": "Fort & 14th",
@@ -19635,19 +19635,19 @@ const Stops = {
     "name": "Fort & Trumbull",
     "lat": "42.324402342",
     "lon": "-83.061720182",
-    "routes": ["19"]
+    "routes": ["19", "27", "29", "49"]
   },
   "5635": {
     "name": "Trumbull & Fort",
     "lat": "42.324971",
     "lon": "-83.061846",
-    "routes": ["29"]
+    "routes": ["19", "27", "29", "49"]
   },
   "5636": {
     "name": "Fort & Trumbull",
     "lat": "42.324441",
     "lon": "-83.062229",
-    "routes": ["19"]
+    "routes": ["19", "27", "29", "49"]
   },
   "5639": {
     "name": "Fort & Cabacier",
@@ -19659,67 +19659,67 @@ const Stops = {
     "name": "Fort & Cabacier",
     "lat": "42.32545949",
     "lon": "-83.05987505",
-    "routes": ["19", "29"]
+    "routes": ["19", "27", "29", "49"]
   },
   "5641": {
     "name": "Fort & Sixth",
     "lat": "42.32612449",
     "lon": "-83.05837105",
-    "routes": ["19", "29"]
+    "routes": ["19", "27", "29", "49"]
   },
   "5643": {
     "name": "Fort & Fifth",
     "lat": "42.32671749",
     "lon": "-83.05635605",
-    "routes": ["19", "29"]
+    "routes": ["19", "27", "29", "49"]
   },
   "5644": {
     "name": "Fort & Fifth",
     "lat": "42.32667749",
     "lon": "-83.05702305",
-    "routes": ["19", "29"]
+    "routes": ["19", "27", "29", "49"]
   },
   "5646": {
     "name": "Fort & Third",
     "lat": "42.327843081",
     "lon": "-83.053779554",
-    "routes": ["19", "29"]
+    "routes": ["19", "27", "29", "49"]
   },
   "5647": {
     "name": "Fort & Third",
     "lat": "42.32768849",
     "lon": "-83.05466805",
-    "routes": ["19", "29"]
+    "routes": ["19", "27", "29", "49"]
   },
   "5649": {
     "name": "Fort & Second",
     "lat": "42.32831149",
     "lon": "-83.05262505",
-    "routes": ["19", "29"]
+    "routes": ["19", "27", "29", "49"]
   },
   "5650": {
     "name": "Fort & Second",
     "lat": "42.32819549",
     "lon": "-83.05354205",
-    "routes": ["19", "29"]
+    "routes": ["19", "27", "29", "49"]
   },
   "5652": {
     "name": "FORT & 1ST",
     "lat": "42.328968",
     "lon": "-83.051812",
-    "routes": ["19", "29"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "5653": {
     "name": "Fort & First",
     "lat": "42.32873049",
     "lon": "-83.05233805",
-    "routes": ["19", "29"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "5657": {
     "name": "Fort & Cass",
     "lat": "42.329277833",
     "lon": "-83.051059763",
-    "routes": ["19", "29"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "5664": {
     "name": "Grand River & Wormer",
@@ -19737,19 +19737,19 @@ const Stops = {
     "name": "Grand River & Winston",
     "lat": "42.427535",
     "lon": "-83.284439",
-    "routes": ["21"]
+    "routes": ["17", "21"]
   },
   "5670": {
     "name": "Grand River & Fenton",
     "lat": "42.426985",
     "lon": "-83.283127",
-    "routes": ["21"]
+    "routes": ["17", "21"]
   },
   "5671": {
     "name": "Grand River & Fenton",
     "lat": "42.426214",
     "lon": "-83.282502",
-    "routes": ["21"]
+    "routes": ["17", "21"]
   },
   "5672": {
     "name": "GRAND RIVER & TELEGRAPH",
@@ -19827,13 +19827,13 @@ const Stops = {
     "name": "Grand River & Burgess",
     "lat": "42.41575049",
     "lon": "-83.25536205",
-    "routes": ["21", "45"]
+    "routes": ["21", "32", "45"]
   },
   "5690": {
     "name": "Grand River & Westbrook",
     "lat": "42.413775",
     "lon": "-83.251126",
-    "routes": ["21"]
+    "routes": ["21", "32", "45"]
   },
   "5691": {
     "name": "Grand River & Trinity",
@@ -19857,7 +19857,7 @@ const Stops = {
     "name": "Grand River & Heyden",
     "lat": "42.408882",
     "lon": "-83.238906",
-    "routes": ["21"]
+    "routes": ["21", "60", "92"]
   },
   "5696": {
     "name": "Grand River & Pierson",
@@ -19887,7 +19887,7 @@ const Stops = {
     "name": "Oakland & Manchester",
     "lat": "42.410887391",
     "lon": "-83.089279674",
-    "routes": ["43"]
+    "routes": ["15", "43"]
   },
   "5700": {
     "name": "Grand River & Stout",
@@ -19899,7 +19899,7 @@ const Stops = {
     "name": "Grand River & Bretton",
     "lat": "42.401387",
     "lon": "-83.219666",
-    "routes": ["21", "92"]
+    "routes": ["18", "21", "39", "46", "92"]
   },
   "5706": {
     "name": "Grand River & Auburn",
@@ -19911,7 +19911,7 @@ const Stops = {
     "name": "Grand River & W Outer Dr",
     "lat": "42.406704",
     "lon": "-83.232829",
-    "routes": ["21"]
+    "routes": ["21", "92"]
   },
   "5708": {
     "name": "Grand River & W Outer Dr",
@@ -19923,19 +19923,19 @@ const Stops = {
     "name": "GRAND RIVER & ARCHDALE",
     "lat": "42.400097",
     "lon": "-83.216826",
-    "routes": ["92"]
+    "routes": ["18", "21", "39", "46", "92"]
   },
   "571": {
     "name": "Manchester & Woodward",
     "lat": "42.406573",
     "lon": "-83.099638",
-    "routes": ["42"]
+    "routes": ["15", "39", "42", "43", "498", "53"]
   },
   "5710": {
     "name": "GRAND RIVER & ARCHDALE",
     "lat": "42.399731",
     "lon": "-83.216569",
-    "routes": ["92"]
+    "routes": ["18", "21", "39", "46", "92"]
   },
   "5711": {
     "name": "Grand River & Longacre",
@@ -19947,7 +19947,7 @@ const Stops = {
     "name": "Grand River & Archdale",
     "lat": "42.400049",
     "lon": "-83.216381",
-    "routes": ["21", "92"]
+    "routes": ["18", "21", "39", "46", "92"]
   },
   "5713": {
     "name": "Grand River & Rutland",
@@ -19983,7 +19983,7 @@ const Stops = {
     "name": "Grand River & Montrose",
     "lat": "42.393284",
     "lon": "-83.200187",
-    "routes": ["21", "92"]
+    "routes": ["21", "22", "92"]
   },
   "5719": {
     "name": "Grand River & St Marys",
@@ -20013,19 +20013,19 @@ const Stops = {
     "name": "Grand River & Whitcomb",
     "lat": "42.392049",
     "lon": "-83.196545",
-    "routes": ["21", "92"]
+    "routes": ["21", "22", "92"]
   },
   "5723": {
     "name": "Grand River & Whitcomb",
     "lat": "42.391536",
     "lon": "-83.195833",
-    "routes": ["21", "92"]
+    "routes": ["21", "22", "92"]
   },
   "5724": {
     "name": "Grand River & Sussex",
     "lat": "42.391431",
     "lon": "-83.195016",
-    "routes": ["21", "92"]
+    "routes": ["21", "22", "92"]
   },
   "5725": {
     "name": "Grand River & Lauder",
@@ -20055,13 +20055,13 @@ const Stops = {
     "name": "Dequindre & E Outer Dr",
     "lat": "42.440504",
     "lon": "-83.083046",
-    "routes": ["43"]
+    "routes": ["12", "43"]
   },
   "5732": {
     "name": "Grand River & Hubbell",
     "lat": "42.388374",
     "lon": "-83.188056",
-    "routes": ["21", "92"]
+    "routes": ["21", "43", "92"]
   },
   "5735": {
     "name": "Grand River & Stansbury",
@@ -20079,7 +20079,7 @@ const Stops = {
     "name": "Conant & Dequindre",
     "lat": "42.445496",
     "lon": "-83.082822",
-    "routes": ["43"]
+    "routes": ["17", "43"]
   },
   "5744": {
     "name": "Grand River & Cheyenne",
@@ -20145,7 +20145,7 @@ const Stops = {
     "name": "Grand River & Kentford",
     "lat": "42.402026",
     "lon": "-83.221868",
-    "routes": ["21", "92"]
+    "routes": ["18", "21", "92"]
   },
   "5758": {
     "name": "Grand River & Belleterre",
@@ -20163,7 +20163,7 @@ const Stops = {
     "name": "Eight Mile & Ryan",
     "lat": "42.447194",
     "lon": "-83.063602",
-    "routes": ["43"]
+    "routes": ["17", "43"]
   },
   "5760": {
     "name": "Grand River & Greenway",
@@ -20199,49 +20199,49 @@ const Stops = {
     "name": "Grand River & Indiana",
     "lat": "42.37574",
     "lon": "-83.156651",
-    "routes": ["21"]
+    "routes": ["21", "54"]
   },
   "5768": {
     "name": "Grand River & Wisconsin",
     "lat": "42.375723704",
     "lon": "-83.155977717",
-    "routes": ["21"]
+    "routes": ["21", "54"]
   },
   "5769": {
     "name": "Grand River & Ohio",
     "lat": "42.374626",
     "lon": "-83.153889",
-    "routes": ["21"]
+    "routes": ["21", "38"]
   },
   "5770": {
     "name": "Grand River & Cherrylawn",
     "lat": "42.374885",
     "lon": "-83.153878",
-    "routes": ["21"]
+    "routes": ["21", "38"]
   },
   "5771": {
     "name": "Cloverlawn & Grand River",
     "lat": "42.374098",
     "lon": "-83.151593",
-    "routes": ["38"]
+    "routes": ["15", "21", "38"]
   },
   "5774": {
     "name": "Grand River & Cloverlawn",
     "lat": "42.374009",
     "lon": "-83.15171",
-    "routes": ["21"]
+    "routes": ["15", "21", "38"]
   },
   "5776": {
     "name": "Oakman & Grand River",
     "lat": "42.372734014",
     "lon": "-83.150782553",
-    "routes": ["15"]
+    "routes": ["15", "21", "38"]
   },
   "578": {
     "name": "Conant & E Outer Dr",
     "lat": "42.440791",
     "lon": "-83.079199",
-    "routes": ["43"]
+    "routes": ["12", "43"]
   },
   "5783": {
     "name": "Grand River & Turner",
@@ -20277,31 +20277,31 @@ const Stops = {
     "name": "Grand River & Monica",
     "lat": "42.36942",
     "lon": "-83.140917",
-    "routes": ["21"]
+    "routes": ["21", "30"]
   },
   "5789": {
     "name": "GRAND RIVER & RAVENSWOOD",
     "lat": "42.365934",
     "lon": "-83.131819",
-    "routes": ["21"]
+    "routes": ["11", "21"]
   },
   "579": {
     "name": "Dequindre & Winchester",
     "lat": "42.444717",
     "lon": "-83.083404",
-    "routes": ["43"]
+    "routes": ["17", "43"]
   },
   "5790": {
     "name": "Grand River & Beverly",
     "lat": "42.364678",
     "lon": "-83.128653",
-    "routes": ["21"]
+    "routes": ["11", "21"]
   },
   "5791": {
     "name": "Grand River & Hillsboro",
     "lat": "42.364285",
     "lon": "-83.128295",
-    "routes": ["21"]
+    "routes": ["11", "21"]
   },
   "5792": {
     "name": "Grand River & Kimberly",
@@ -20349,13 +20349,13 @@ const Stops = {
     "name": "VAN DYKE & MILLER",
     "lat": "42.3905",
     "lon": "-83.022664",
-    "routes": ["48"]
+    "routes": ["38", "48"]
   },
   "580": {
     "name": "Dequindre & State Fair",
     "lat": "42.439882",
     "lon": "-83.0832",
-    "routes": ["43"]
+    "routes": ["12", "43"]
   },
   "5800": {
     "name": "Grand River & Hogarth",
@@ -20367,7 +20367,7 @@ const Stops = {
     "name": "Grand River & Vinewood",
     "lat": "42.356406139",
     "lon": "-83.108702411",
-    "routes": ["21"]
+    "routes": ["16", "21", "27", "47"]
   },
   "5802": {
     "name": "Grand River & Roosevelt",
@@ -20385,19 +20385,19 @@ const Stops = {
     "name": "GRAND RIVER & 2ND",
     "lat": "42.336013",
     "lon": "-83.057708",
-    "routes": ["92", "96"]
+    "routes": ["18", "21", "92", "96"]
   },
   "5808": {
     "name": "GRAND RIVER & ELIZABETH (nearside)",
     "lat": "42.335779",
     "lon": "-83.056561",
-    "routes": ["92", "96"]
+    "routes": ["18", "21", "92", "96"]
   },
   "5809": {
     "name": "GRAND RIVER & ELIZABETH",
     "lat": "42.335332",
     "lon": "-83.056281",
-    "routes": ["92", "96"]
+    "routes": ["18", "21", "92", "96"]
   },
   "581": {
     "name": "Oakland & Nevada",
@@ -20409,19 +20409,19 @@ const Stops = {
     "name": "Grand River & First",
     "lat": "42.334914",
     "lon": "-83.055572",
-    "routes": ["21", "92", "96"]
+    "routes": ["18", "21", "92", "96"]
   },
   "5815": {
     "name": "GRAND RIVER & CASS",
     "lat": "42.334883",
     "lon": "-83.05445",
-    "routes": ["92", "96"]
+    "routes": ["18", "21", "92", "96"]
   },
   "5827": {
     "name": "Griswold & Congress",
     "lat": "42.329578626",
     "lon": "-83.046586517",
-    "routes": ["34"]
+    "routes": ["10", "16", "21", "25", "34", "48", "7", "92", "95", "96"]
   },
   "5828": {
     "name": "Grand River & Hudson",
@@ -20457,19 +20457,19 @@ const Stops = {
     "name": "Grand River & Hancock",
     "lat": "42.34756",
     "lon": "-83.086816",
-    "routes": ["21"]
+    "routes": ["14", "18", "21"]
   },
   "5834": {
     "name": "Grand River & Forest",
     "lat": "42.34678",
     "lon": "-83.084826",
-    "routes": ["21"]
+    "routes": ["14", "18", "21"]
   },
   "5835": {
     "name": "Rosa Parks & Selden",
     "lat": "42.343222",
     "lon": "-83.078628",
-    "routes": ["18"]
+    "routes": ["18", "21"]
   },
   "5836": {
     "name": "Grand River & Avery",
@@ -20493,55 +20493,55 @@ const Stops = {
     "name": "Oakland & Owen",
     "lat": "42.38583112",
     "lon": "-83.072672969",
-    "routes": ["42"]
+    "routes": ["11", "42"]
   },
   "5840": {
     "name": "Rosa Parks & Ash",
     "lat": "42.339119",
     "lon": "-83.076304",
-    "routes": ["18"]
+    "routes": ["18", "47"]
   },
   "5841": {
     "name": "Grand River & Rosa Parks",
     "lat": "42.345098",
     "lon": "-83.080088",
-    "routes": ["21"]
+    "routes": ["18", "21"]
   },
   "5843": {
     "name": "Grand River & Rosa Parks",
     "lat": "42.344532228",
     "lon": "-83.079220644",
-    "routes": ["21"]
+    "routes": ["18", "21"]
   },
   "5844": {
     "name": "Trumbull & Brainard",
     "lat": "42.342903",
     "lon": "-83.073308",
-    "routes": ["29"]
+    "routes": ["21", "29", "47"]
   },
   "5845": {
     "name": "Grand River & Martin Luther King",
     "lat": "42.341693",
     "lon": "-83.072206",
-    "routes": ["21"]
+    "routes": ["21", "29", "47"]
   },
   "5846": {
     "name": "Grand River & Trumbull",
     "lat": "42.34251",
     "lon": "-83.07366",
-    "routes": ["21"]
+    "routes": ["21", "29", "47"]
   },
   "5847": {
     "name": "Trumbull & Grand River",
     "lat": "42.342588",
     "lon": "-83.073356",
-    "routes": ["29"]
+    "routes": ["21", "29", "47"]
   },
   "5850": {
     "name": "Grand River & Times Sq",
     "lat": "42.33361481",
     "lon": "-83.051981526",
-    "routes": ["16"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "29", "31", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "586": {
     "name": "Beaubien & I-94 Service Dr",
@@ -20553,19 +20553,19 @@ const Stops = {
     "name": "McNichols & Lahser",
     "lat": "42.414547",
     "lon": "-83.257128",
-    "routes": ["32"]
+    "routes": ["21", "32", "45"]
   },
   "5869": {
     "name": "McNichols & Chapel",
     "lat": "42.414637",
     "lon": "-83.253702",
-    "routes": ["32"]
+    "routes": ["21", "32", "45"]
   },
   "5874": {
     "name": "McNichols & Bentler",
     "lat": "42.41489",
     "lon": "-83.252341",
-    "routes": ["32"]
+    "routes": ["21", "32", "45"]
   },
   "5875": {
     "name": "McNichols & Trinity",
@@ -20685,25 +20685,25 @@ const Stops = {
     "name": "French & Gratiot",
     "lat": "42.401195",
     "lon": "-83.001438",
-    "routes": ["38"]
+    "routes": ["34", "38"]
   },
   "590": {
     "name": "Michigan & Greenfield",
     "lat": "42.316225",
     "lon": "-83.194049",
-    "routes": ["37"]
+    "routes": ["22", "37"]
   },
   "5900": {
     "name": "Dexter & Northwestern",
     "lat": "42.359083",
     "lon": "-83.110035",
-    "routes": ["16"]
+    "routes": ["16", "21", "27", "47"]
   },
   "5901": {
     "name": "W Grand Bl & Dexter",
     "lat": "42.35708",
     "lon": "-83.108099",
-    "routes": ["16"]
+    "routes": ["16", "21", "27", "47"]
   },
   "5902": {
     "name": "Dexter & Philadelphia",
@@ -20751,7 +20751,7 @@ const Stops = {
     "name": "Michigan & Livernois",
     "lat": "42.330977",
     "lon": "-83.119727",
-    "routes": ["37"]
+    "routes": ["30", "37"]
   },
   "5917": {
     "name": "Warren & Lawton",
@@ -20775,37 +20775,37 @@ const Stops = {
     "name": "Michigan & W Grand Bl",
     "lat": "42.331271",
     "lon": "-83.094643",
-    "routes": ["37"]
+    "routes": ["27", "37", "47"]
   },
   "5920": {
     "name": "Warren & Grand River",
     "lat": "42.348454",
     "lon": "-83.089806",
-    "routes": ["14"]
+    "routes": ["14", "21"]
   },
   "5921": {
     "name": "Warren & Grand River",
     "lat": "42.348616264",
     "lon": "-83.089959746",
-    "routes": ["14"]
+    "routes": ["14", "21"]
   },
   "5925": {
     "name": "Warren & 16th",
     "lat": "42.349113",
     "lon": "-83.088435",
-    "routes": ["14"]
+    "routes": ["14", "18", "21"]
   },
   "5926": {
     "name": "Forest & Wabash",
     "lat": "42.347695",
     "lon": "-83.084369",
-    "routes": ["14"]
+    "routes": ["14", "18", "21"]
   },
   "593": {
     "name": "Michigan & Trumbull",
     "lat": "42.33129",
     "lon": "-83.065757",
-    "routes": ["37"]
+    "routes": ["29", "37", "89"]
   },
   "5941": {
     "name": "Hubbard Dr & Southfield",
@@ -20913,7 +20913,7 @@ const Stops = {
     "name": "Michigan & Trumbull",
     "lat": "42.331534",
     "lon": "-83.067447",
-    "routes": ["37", "89"]
+    "routes": ["29", "37", "89"]
   },
   "5973": {
     "name": "Greenfield & Donald",
@@ -20955,7 +20955,7 @@ const Stops = {
     "name": "Michigan & W Grand Bl",
     "lat": "42.331476",
     "lon": "-83.095919",
-    "routes": ["37"]
+    "routes": ["27", "37", "47"]
   },
   "5980": {
     "name": "Greenfield & Kendall",
@@ -20973,13 +20973,13 @@ const Stops = {
     "name": "Greenfield & Lyndon",
     "lat": "42.394025",
     "lon": "-83.19858",
-    "routes": ["22"]
+    "routes": ["21", "22", "92"]
   },
   "5988": {
     "name": "Greenfield & Lyndon",
     "lat": "42.394631",
     "lon": "-83.198256",
-    "routes": ["22"]
+    "routes": ["21", "22", "92"]
   },
   "5989": {
     "name": "Greenfield & Eaton",
@@ -20991,7 +20991,7 @@ const Stops = {
     "name": "Michigan & Livernois",
     "lat": "42.331273862",
     "lon": "-83.121045583",
-    "routes": ["37"]
+    "routes": ["30", "37"]
   },
   "5990": {
     "name": "Greenfield & Chalfonte",
@@ -21033,7 +21033,7 @@ const Stops = {
     "name": "E Outer Dr & Gratiot",
     "lat": "42.406184",
     "lon": "-82.995679",
-    "routes": ["38"]
+    "routes": ["13", "34", "38"]
   },
   "600": {
     "name": "Michigan & Greenfield",
@@ -21069,13 +21069,13 @@ const Stops = {
     "name": "Greenfield & Tireman",
     "lat": "42.350662",
     "lon": "-83.196724",
-    "routes": ["22"]
+    "routes": ["22", "47"]
   },
   "6007": {
     "name": "Greenfield & Tireman",
     "lat": "42.351417107",
     "lon": "-83.196517372",
-    "routes": ["22"]
+    "routes": ["22", "47"]
   },
   "6008": {
     "name": "Greenfield & Belton",
@@ -21135,13 +21135,13 @@ const Stops = {
     "name": "Greenfield & Chicago",
     "lat": "42.365063",
     "lon": "-83.197397",
-    "routes": ["22"]
+    "routes": ["15", "22"]
   },
   "6025": {
     "name": "Greenfield & Chicago",
     "lat": "42.365785",
     "lon": "-83.197142",
-    "routes": ["22"]
+    "routes": ["15", "22"]
   },
   "6027": {
     "name": "Greenfield & Orangelawn",
@@ -21231,13 +21231,13 @@ const Stops = {
     "name": "Plymouth & Evergreen",
     "lat": "42.371778",
     "lon": "-83.235773",
-    "routes": ["38"]
+    "routes": ["15", "38", "60", "96"]
   },
   "6040": {
     "name": "Greenfield & Pilgrim",
     "lat": "42.407332",
     "lon": "-83.198833",
-    "routes": ["22"]
+    "routes": ["22", "39"]
   },
   "6041": {
     "name": "Greenfield & Florence",
@@ -21249,7 +21249,7 @@ const Stops = {
     "name": "Greenfield & Florence",
     "lat": "42.410333",
     "lon": "-83.199201",
-    "routes": ["22"]
+    "routes": ["22", "39"]
   },
   "6043": {
     "name": "Greenfield & Verne",
@@ -21261,43 +21261,43 @@ const Stops = {
     "name": "Greenfield & Grove",
     "lat": "42.414442",
     "lon": "-83.199384",
-    "routes": ["22"]
+    "routes": ["22", "32"]
   },
   "6045": {
     "name": "Greenfield & Grove",
     "lat": "42.414406",
     "lon": "-83.199132",
-    "routes": ["22"]
+    "routes": ["22", "32"]
   },
   "6046": {
     "name": "McNichols & Greenfield",
     "lat": "42.41585",
     "lon": "-83.198923",
-    "routes": ["32"]
+    "routes": ["22", "32"]
   },
   "6049": {
     "name": "McNichols & Greenfield",
     "lat": "42.416116",
     "lon": "-83.199812",
-    "routes": ["32"]
+    "routes": ["22", "32"]
   },
   "605": {
     "name": "Plymouth & Southfield",
     "lat": "42.372152",
     "lon": "-83.215963",
-    "routes": ["38"]
+    "routes": ["38", "46"]
   },
   "6050": {
     "name": "Greenfield & Santa Maria",
     "lat": "42.417555",
     "lon": "-83.199509",
-    "routes": ["22"]
+    "routes": ["22", "32"]
   },
   "6051": {
     "name": "Greenfield & Santa Maria",
     "lat": "42.418057",
     "lon": "-83.19925",
-    "routes": ["22"]
+    "routes": ["16", "22", "32"]
   },
   "6054": {
     "name": "W Outer Dr & Forrer",
@@ -21321,19 +21321,19 @@ const Stops = {
     "name": "Greenfield & W Outer Dr",
     "lat": "42.419113",
     "lon": "-83.199568",
-    "routes": ["22"]
+    "routes": ["16", "22", "32"]
   },
   "6058": {
     "name": "W Outer Dr & Greenfield",
     "lat": "42.419737",
     "lon": "-83.199907",
-    "routes": ["16"]
+    "routes": ["16", "22", "32"]
   },
   "606": {
     "name": "Plymouth & Greenfield",
     "lat": "42.372503",
     "lon": "-83.196998",
-    "routes": ["38"]
+    "routes": ["22", "38"]
   },
   "6060": {
     "name": "Greenfield & Thatcher",
@@ -21345,7 +21345,7 @@ const Stops = {
     "name": "Greenfield & Thatcher",
     "lat": "42.42087228",
     "lon": "-83.199557719",
-    "routes": ["16", "22"]
+    "routes": ["16", "22", "32"]
   },
   "6062": {
     "name": "Greenfield & Curtis",
@@ -21393,49 +21393,49 @@ const Stops = {
     "name": "Plymouth & Schaefer",
     "lat": "42.372988",
     "lon": "-83.177591",
-    "routes": ["38"]
+    "routes": ["38", "41"]
   },
   "6070": {
     "name": "Greenfield & Clarita",
     "lat": "42.428825",
     "lon": "-83.199704",
-    "routes": ["16", "22"]
+    "routes": ["16", "22", "45"]
   },
   "6071": {
     "name": "Greenfield & 7 Mile",
     "lat": "42.4301",
     "lon": "-83.200036",
-    "routes": ["16", "22"]
+    "routes": ["16", "22", "45"]
   },
   "6072": {
     "name": "Greenfield & 7 Mile",
     "lat": "42.430798",
     "lon": "-83.199727",
-    "routes": ["16", "22"]
+    "routes": ["16", "22", "45"]
   },
   "6073": {
     "name": "7 Mile & Greenfield",
     "lat": "42.430539",
     "lon": "-83.200391",
-    "routes": ["45"]
+    "routes": ["16", "22", "45"]
   },
   "6074": {
     "name": "7 Mile & Greenfield",
     "lat": "42.430305",
     "lon": "-83.199513",
-    "routes": ["45"]
+    "routes": ["16", "22", "45"]
   },
   "6075": {
     "name": "Greenfield & Cambridge",
     "lat": "42.431933",
     "lon": "-83.200087",
-    "routes": ["16", "22"]
+    "routes": ["16", "22", "45"]
   },
   "6076": {
     "name": "Greenfield & Cambridge",
     "lat": "42.432117",
     "lon": "-83.199807",
-    "routes": ["16", "22"]
+    "routes": ["16", "22", "45"]
   },
   "6077": {
     "name": "Greenfield & Vassar",
@@ -21453,7 +21453,7 @@ const Stops = {
     "name": "Plymouth & Grand River",
     "lat": "42.374064",
     "lon": "-83.151683",
-    "routes": ["38"]
+    "routes": ["15", "21", "38"]
   },
   "6080": {
     "name": "Greenfield & St Martins",
@@ -21507,7 +21507,7 @@ const Stops = {
     "name": "Elmhurst & Dexter",
     "lat": "42.380771",
     "lon": "-83.125451",
-    "routes": ["38"]
+    "routes": ["16", "38"]
   },
   "6090": {
     "name": "Greenfield & James Couzens",
@@ -21519,19 +21519,19 @@ const Stops = {
     "name": "Greenfield & James Couzens",
     "lat": "42.443259",
     "lon": "-83.200282",
-    "routes": ["16", "22"]
+    "routes": ["16", "17", "22"]
   },
   "6094": {
     "name": "Greenfield & 8 Mile",
     "lat": "42.444162545",
     "lon": "-83.200578402",
-    "routes": ["16", "22"]
+    "routes": ["16", "17", "22"]
   },
   "6096": {
     "name": "Greenfield & 8 Mile",
     "lat": "42.445761",
     "lon": "-83.200427",
-    "routes": ["16", "22"]
+    "routes": ["16", "17", "22"]
   },
   "6097": {
     "name": "Warren & St Marys",
@@ -21555,13 +21555,13 @@ const Stops = {
     "name": "E Outer Dr & Chalmers",
     "lat": "42.414748",
     "lon": "-82.970475",
-    "routes": ["38"]
+    "routes": ["38", "9"]
   },
   "610": {
     "name": "Calvert & Rosa Parks",
     "lat": "42.382961",
     "lon": "-83.10362",
-    "routes": ["38"]
+    "routes": ["18", "38", "42"]
   },
   "6100": {
     "name": "Warren & Montrose",
@@ -21603,19 +21603,19 @@ const Stops = {
     "name": "Chicago & Montrose",
     "lat": "42.365291",
     "lon": "-83.199085",
-    "routes": ["15"]
+    "routes": ["15", "22"]
   },
   "6110": {
     "name": "Chicago & Montrose",
     "lat": "42.365401",
     "lon": "-83.200078",
-    "routes": ["15"]
+    "routes": ["15", "22"]
   },
   "6111": {
     "name": "Warren & Coleman",
     "lat": "42.343775",
     "lon": "-83.194681",
-    "routes": ["14"]
+    "routes": ["14", "22"]
   },
   "6112": {
     "name": "Warren & Barrie",
@@ -21705,7 +21705,7 @@ const Stops = {
     "name": "Hayes & Seymour",
     "lat": "42.42734",
     "lon": "-82.965123",
-    "routes": ["38"]
+    "routes": ["32", "38"]
   },
   "6130": {
     "name": "Joy & Lauder",
@@ -21759,7 +21759,7 @@ const Stops = {
     "name": "Hayes & Seymour",
     "lat": "42.426956",
     "lon": "-82.965371",
-    "routes": ["38"]
+    "routes": ["32", "38"]
   },
   "6141": {
     "name": "W Outer Dr & St Marys",
@@ -21795,7 +21795,7 @@ const Stops = {
     "name": "Collingwood & Woodward",
     "lat": "42.390206",
     "lon": "-83.087113",
-    "routes": ["38"]
+    "routes": ["38", "498", "53"]
   },
   "6150": {
     "name": "McNichols & Sussex",
@@ -21885,7 +21885,7 @@ const Stops = {
     "name": "Elmhurst & Dexter",
     "lat": "42.380916",
     "lon": "-83.125301",
-    "routes": ["38"]
+    "routes": ["16", "38"]
   },
   "6180": {
     "name": "Linwood & Columbus",
@@ -21909,19 +21909,19 @@ const Stops = {
     "name": "Linwood & Elmhurst",
     "lat": "42.384772",
     "lon": "-83.116255",
-    "routes": ["29"]
+    "routes": ["29", "38"]
   },
   "6184": {
     "name": "Linwood & Elmhurst",
     "lat": "42.384208",
     "lon": "-83.116169",
-    "routes": ["29"]
+    "routes": ["29", "38"]
   },
   "6185": {
     "name": "Elmhurst & Linwood",
     "lat": "42.384418",
     "lon": "-83.116586",
-    "routes": ["38"]
+    "routes": ["29", "38"]
   },
   "6186": {
     "name": "Linwood & Oakman Ct",
@@ -21939,13 +21939,13 @@ const Stops = {
     "name": "Linwood & Oakman",
     "lat": "42.39777049",
     "lon": "-83.12532505",
-    "routes": ["29"]
+    "routes": ["29", "43"]
   },
   "619": {
     "name": "Plymouth & Grand River",
     "lat": "42.373758",
     "lon": "-83.152384",
-    "routes": ["38"]
+    "routes": ["15", "21", "38"]
   },
   "6190": {
     "name": "Linwood & Glendale",
@@ -21963,13 +21963,13 @@ const Stops = {
     "name": "Linwood & Tyler",
     "lat": "42.392047",
     "lon": "-83.121245",
-    "routes": ["29"]
+    "routes": ["15", "29"]
   },
   "6193": {
     "name": "Linwood & Tyler",
     "lat": "42.391298",
     "lon": "-83.121015",
-    "routes": ["29"]
+    "routes": ["15", "29"]
   },
   "6194": {
     "name": "Linwood & Cortland",
@@ -21993,7 +21993,7 @@ const Stops = {
     "name": "Linwood & Richton",
     "lat": "42.385753",
     "lon": "-83.117223",
-    "routes": ["29"]
+    "routes": ["29", "38"]
   },
   "6198": {
     "name": "Linwood & Grand",
@@ -22011,13 +22011,13 @@ const Stops = {
     "name": "8 Mile & Gratiot",
     "lat": "42.44974349",
     "lon": "-82.96720205",
-    "routes": ["17"]
+    "routes": ["17", "34", "38"]
   },
   "620": {
     "name": "Plymouth & Schaefer",
     "lat": "42.373142",
     "lon": "-83.178416",
-    "routes": ["38"]
+    "routes": ["38", "41"]
   },
   "6200": {
     "name": "Linwood & Ford",
@@ -22029,7 +22029,7 @@ const Stops = {
     "name": "Linwood & Taylor",
     "lat": "42.371936",
     "lon": "-83.107905",
-    "routes": ["29"]
+    "routes": ["11", "29"]
   },
   "6202": {
     "name": "Linwood & Chicago",
@@ -22047,19 +22047,19 @@ const Stops = {
     "name": "LINWOOD & ATKINSON",
     "lat": "42.374149",
     "lon": "-83.109008",
-    "routes": ["29"]
+    "routes": ["11", "29"]
   },
   "6205": {
     "name": "Linwood & Edison",
     "lat": "42.37503",
     "lon": "-83.109657",
-    "routes": ["29"]
+    "routes": ["11", "29"]
   },
   "6206": {
     "name": "Linwood & Edison",
     "lat": "42.37456",
     "lon": "-83.109622",
-    "routes": ["29"]
+    "routes": ["11", "29"]
   },
   "6207": {
     "name": "Linwood & Lawrence",
@@ -22083,7 +22083,7 @@ const Stops = {
     "name": "Plymouth & Greenfield",
     "lat": "42.372672",
     "lon": "-83.198215",
-    "routes": ["38"]
+    "routes": ["22", "38"]
   },
   "6210": {
     "name": "Linwood & Collingwood",
@@ -22119,13 +22119,13 @@ const Stops = {
     "name": "Fairfield & McNichols",
     "lat": "42.41675049",
     "lon": "-83.13536105",
-    "routes": ["29"]
+    "routes": ["16", "29", "32"]
   },
   "6216": {
     "name": "McNichols & Quincy",
     "lat": "42.417255",
     "lon": "-83.138603",
-    "routes": ["16", "32"]
+    "routes": ["16", "29", "32"]
   },
   "6217": {
     "name": "McNichols & Oak",
@@ -22137,7 +22137,7 @@ const Stops = {
     "name": "Fairfield & Florence",
     "lat": "42.412633",
     "lon": "-83.134996",
-    "routes": ["16"]
+    "routes": ["16", "29"]
   },
   "6219": {
     "name": "Fairfield & Florence",
@@ -22149,13 +22149,13 @@ const Stops = {
     "name": "Plymouth & Southfield",
     "lat": "42.372386",
     "lon": "-83.21759",
-    "routes": ["38"]
+    "routes": ["38", "46"]
   },
   "6220": {
     "name": "Fairfield & Grove",
     "lat": "42.415002",
     "lon": "-83.135107",
-    "routes": ["16"]
+    "routes": ["16", "29"]
   },
   "6221": {
     "name": "Fairfield & Grove",
@@ -22167,19 +22167,19 @@ const Stops = {
     "name": "McNichols & Fairfield",
     "lat": "42.417151",
     "lon": "-83.134729",
-    "routes": ["32"]
+    "routes": ["16", "29", "32"]
   },
   "6224": {
     "name": "McNichols & Fairfield",
     "lat": "42.41731",
     "lon": "-83.135654",
-    "routes": ["16", "32"]
+    "routes": ["16", "29", "32"]
   },
   "6225": {
     "name": "FAIRFIELD & MC NICHOLS",
     "lat": "42.416863",
     "lon": "-83.135391",
-    "routes": ["16", "29"]
+    "routes": ["16", "29", "32"]
   },
   "6226": {
     "name": "Linwood & Lodge Service Dr",
@@ -22191,7 +22191,7 @@ const Stops = {
     "name": "Linwood & Lodge Service Dr",
     "lat": "42.40447849",
     "lon": "-83.12749305",
-    "routes": ["29"]
+    "routes": ["18", "29"]
   },
   "6228": {
     "name": "Linwood & Midland",
@@ -22209,7 +22209,7 @@ const Stops = {
     "name": "Plymouth & Evergreen",
     "lat": "42.372039",
     "lon": "-83.236709",
-    "routes": ["15", "38"]
+    "routes": ["15", "38", "60", "96"]
   },
   "6230": {
     "name": "Trumbull & Cherry",
@@ -22227,7 +22227,7 @@ const Stops = {
     "name": "Trumbull & Howard",
     "lat": "42.326073",
     "lon": "-83.062937",
-    "routes": ["29"]
+    "routes": ["19", "27", "29", "49"]
   },
   "6235": {
     "name": "Trumbull & Abbott",
@@ -22239,7 +22239,7 @@ const Stops = {
     "name": "Trumbull & Church",
     "lat": "42.330639",
     "lon": "-83.06656",
-    "routes": ["29"]
+    "routes": ["29", "37", "49", "89"]
   },
   "6237": {
     "name": "Trumbull & Porter",
@@ -22257,7 +22257,7 @@ const Stops = {
     "name": "Rosa Parks & Putnam",
     "lat": "42.352038",
     "lon": "-83.083628",
-    "routes": ["18"]
+    "routes": ["14", "18"]
   },
   "6242": {
     "name": "Rosa Parks & Marquette",
@@ -22359,7 +22359,7 @@ const Stops = {
     "name": "Plymouth & Woodbine",
     "lat": "42.371369",
     "lon": "-83.277044",
-    "routes": ["38"]
+    "routes": ["38", "43"]
   },
   "6261": {
     "name": "W Grand Bl & Wildemere",
@@ -22371,13 +22371,13 @@ const Stops = {
     "name": "W Grand Bl & Linwood",
     "lat": "42.360328",
     "lon": "-83.100384",
-    "routes": ["16"]
+    "routes": ["16", "29"]
   },
   "6265": {
     "name": "W Grand Bl & Linwood",
     "lat": "42.360006",
     "lon": "-83.100225",
-    "routes": ["16"]
+    "routes": ["16", "29"]
   },
   "6266": {
     "name": "Davison & Wildemere",
@@ -22407,31 +22407,31 @@ const Stops = {
     "name": "Southfield & Fenkell",
     "lat": "42.401638",
     "lon": "-83.217816",
-    "routes": ["39", "46"]
+    "routes": ["18", "21", "39", "46", "92"]
   },
   "6270": {
     "name": "Davison & Linwood",
     "lat": "42.392942",
     "lon": "-83.122598",
-    "routes": ["15"]
+    "routes": ["15", "29"]
   },
   "6271": {
     "name": "Linwood & Davison",
     "lat": "42.393527",
     "lon": "-83.122231",
-    "routes": ["29"]
+    "routes": ["15", "29"]
   },
   "6272": {
     "name": "Linwood & Davison",
     "lat": "42.39258",
     "lon": "-83.121868",
-    "routes": ["29"]
+    "routes": ["15", "29"]
   },
   "6273": {
     "name": "Davison & Linwood",
     "lat": "42.393057504",
     "lon": "-83.12163528",
-    "routes": ["15"]
+    "routes": ["15", "29"]
   },
   "6274": {
     "name": "Davison & Lasalle",
@@ -22473,31 +22473,31 @@ const Stops = {
     "name": "Puritan & Schaefer",
     "lat": "42.409316",
     "lon": "-83.179165",
-    "routes": ["39"]
+    "routes": ["39", "41"]
   },
   "6280": {
     "name": "Forest & Rosa Parks",
     "lat": "42.348672",
     "lon": "-83.081306",
-    "routes": ["14"]
+    "routes": ["14", "18"]
   },
   "6281": {
     "name": "Rosa Parks & Forest",
     "lat": "42.3488",
     "lon": "-83.081801",
-    "routes": ["18"]
+    "routes": ["14", "18"]
   },
   "6282": {
     "name": "Warren & Rosa Parks",
     "lat": "42.350686",
     "lon": "-83.083466",
-    "routes": ["14"]
+    "routes": ["14", "18"]
   },
   "6283": {
     "name": "Rosa Parks & Warren",
     "lat": "42.351024",
     "lon": "-83.083048",
-    "routes": ["18"]
+    "routes": ["14", "18"]
   },
   "6284": {
     "name": "Forest & Avery",
@@ -22515,13 +22515,13 @@ const Stops = {
     "name": "Warren & Trumbull",
     "lat": "42.352032",
     "lon": "-83.079131",
-    "routes": ["14"]
+    "routes": ["14", "29"]
   },
   "629": {
     "name": "Puritan & Wyoming",
     "lat": "42.409648",
     "lon": "-83.159658",
-    "routes": ["39"]
+    "routes": ["39", "54"]
   },
   "6291": {
     "name": "Lafayette @ 1300",
@@ -22533,19 +22533,19 @@ const Stops = {
     "name": "Lafayette & Orleans",
     "lat": "42.338422",
     "lon": "-83.031123",
-    "routes": ["48", "80"]
+    "routes": ["10", "48", "80"]
   },
   "6293": {
     "name": "Lafayette & Orleans",
     "lat": "42.338448717",
     "lon": "-83.031892657",
-    "routes": ["48"]
+    "routes": ["10", "48", "80"]
   },
   "6295": {
     "name": "Lafayette & Stafford",
     "lat": "42.33983149",
     "lon": "-83.02791005",
-    "routes": ["10", "48"]
+    "routes": ["10", "48", "80"]
   },
   "6299": {
     "name": "Chene & Prince Hall Dr",
@@ -22557,13 +22557,13 @@ const Stops = {
     "name": "8 Mile & Gratiot",
     "lat": "42.45023",
     "lon": "-82.96849",
-    "routes": ["17"]
+    "routes": ["17", "34", "38"]
   },
   "630": {
     "name": "Puritan & Livernois",
     "lat": "42.409828",
     "lon": "-83.140018",
-    "routes": ["39"]
+    "routes": ["29", "30", "39"]
   },
   "6301": {
     "name": "Chene & Robert Bradby Dr",
@@ -22593,7 +22593,7 @@ const Stops = {
     "name": "Lafayette & Chene",
     "lat": "42.34140149",
     "lon": "-83.02431205",
-    "routes": ["48", "80"]
+    "routes": ["10", "48", "80"]
   },
   "6311": {
     "name": "Lafayette @ 2900",
@@ -22617,19 +22617,19 @@ const Stops = {
     "name": "Mt Elliott & Mack",
     "lat": "42.361586",
     "lon": "-83.021659",
-    "routes": ["12"]
+    "routes": ["12", "31"]
   },
   "6315": {
     "name": "Mt Elliott & Mack",
     "lat": "42.36104",
     "lon": "-83.021524",
-    "routes": ["12"]
+    "routes": ["12", "31"]
   },
   "6316": {
     "name": "Mack & Mt Elliott",
     "lat": "42.361344",
     "lon": "-83.021222",
-    "routes": ["31"]
+    "routes": ["12", "31"]
   },
   "6317": {
     "name": "Mack & Iroquois",
@@ -22641,19 +22641,19 @@ const Stops = {
     "name": "Mack & Mt Elliott",
     "lat": "42.361244",
     "lon": "-83.021981",
-    "routes": ["31"]
+    "routes": ["12", "31"]
   },
   "6319": {
     "name": "Mack & Meldrum",
     "lat": "42.361746",
     "lon": "-83.020605",
-    "routes": ["31"]
+    "routes": ["12", "31"]
   },
   "6320": {
     "name": "Mack & Beaufait",
     "lat": "42.361956",
     "lon": "-83.019564",
-    "routes": ["31"]
+    "routes": ["12", "31"]
   },
   "6321": {
     "name": "Mack & Canton",
@@ -22707,25 +22707,25 @@ const Stops = {
     "name": "Van Dyke & Mack",
     "lat": "42.366711",
     "lon": "-83.006027",
-    "routes": ["48"]
+    "routes": ["31", "48"]
   },
   "6334": {
     "name": "Mack & Van Dyke",
     "lat": "42.366898",
     "lon": "-83.006614",
-    "routes": ["31"]
+    "routes": ["31", "48"]
   },
   "6335": {
     "name": "Van Dyke & Mack",
     "lat": "42.36678",
     "lon": "-83.005843797",
-    "routes": ["48"]
+    "routes": ["31", "48"]
   },
   "6336": {
     "name": "Mack & Van Dyke",
     "lat": "42.36703",
     "lon": "-83.005746",
-    "routes": ["31"]
+    "routes": ["31", "48"]
   },
   "6337": {
     "name": "Van Dyke & Goethe",
@@ -22743,25 +22743,25 @@ const Stops = {
     "name": "Mack & Maxwell",
     "lat": "42.36768",
     "lon": "-83.004572",
-    "routes": ["31"]
+    "routes": ["31", "48"]
   },
   "634": {
     "name": "Puritan & Hamilton",
     "lat": "42.410451218",
     "lon": "-83.112255254",
-    "routes": ["39"]
+    "routes": ["23", "39"]
   },
   "6340": {
     "name": "Mack & Maxwell",
     "lat": "42.367823799",
     "lon": "-83.003815364",
-    "routes": ["31"]
+    "routes": ["31", "48"]
   },
   "6342": {
     "name": "Mack & Iroquois",
     "lat": "42.36843",
     "lon": "-83.002729",
-    "routes": ["31"]
+    "routes": ["31", "48"]
   },
   "6343": {
     "name": "Mack & Burns",
@@ -22797,13 +22797,13 @@ const Stops = {
     "name": "Puritan & Livernois",
     "lat": "42.409989",
     "lon": "-83.140949",
-    "routes": ["39"]
+    "routes": ["29", "30", "39"]
   },
   "6350": {
     "name": "Mack & McClellan",
     "lat": "42.371912",
     "lon": "-82.994627",
-    "routes": ["31"]
+    "routes": ["31", "7"]
   },
   "6351": {
     "name": "Mack & McClellan",
@@ -22815,7 +22815,7 @@ const Stops = {
     "name": "Pennsylvania & Mack",
     "lat": "42.372799852",
     "lon": "-82.991758775",
-    "routes": ["7"]
+    "routes": ["31", "7"]
   },
   "6354": {
     "name": "Mack & Bewick",
@@ -22851,7 +22851,7 @@ const Stops = {
     "name": "Puritan & Wyoming",
     "lat": "42.409766",
     "lon": "-83.160352",
-    "routes": ["39"]
+    "routes": ["39", "54"]
   },
   "6360": {
     "name": "Mack & Fairview",
@@ -22869,25 +22869,25 @@ const Stops = {
     "name": "St Jean & Mack",
     "lat": "42.378611",
     "lon": "-82.978333",
-    "routes": ["11"]
+    "routes": ["11", "31"]
   },
   "6364": {
     "name": "St Jean & Mack",
     "lat": "42.379743",
     "lon": "-82.978804",
-    "routes": ["11"]
+    "routes": ["11", "31"]
   },
   "6368": {
     "name": "Conner & Mack",
     "lat": "42.383364",
     "lon": "-82.9678",
-    "routes": ["13"]
+    "routes": ["13", "31"]
   },
   "637": {
     "name": "Puritan & Schaefer",
     "lat": "42.409436913",
     "lon": "-83.179816759",
-    "routes": ["39"]
+    "routes": ["39", "41"]
   },
   "6370": {
     "name": "Mack & Springle",
@@ -22935,31 +22935,31 @@ const Stops = {
     "name": "Mack & Chalmers",
     "lat": "42.386413773",
     "lon": "-82.952548682",
-    "routes": ["31"]
+    "routes": ["31", "9"]
   },
   "6379": {
     "name": "Mack & Chalmers",
     "lat": "42.386745486",
     "lon": "-82.952178883",
-    "routes": ["31"]
+    "routes": ["31", "9"]
   },
   "638": {
     "name": "Southfield & Fenkell",
     "lat": "42.401715",
     "lon": "-83.218664",
-    "routes": ["39", "46"]
+    "routes": ["18", "21", "39", "46", "92"]
   },
   "6380": {
     "name": "Chalmers & Mack",
     "lat": "42.386869",
     "lon": "-82.953119",
-    "routes": ["9"]
+    "routes": ["31", "9"]
   },
   "6381": {
     "name": "Chalmers & Mack",
     "lat": "42.386296208",
     "lon": "-82.952907055",
-    "routes": ["9"]
+    "routes": ["31", "9"]
   },
   "6382": {
     "name": "Mack & Philip",
@@ -23007,7 +23007,7 @@ const Stops = {
     "name": "E Outer Dr & Chalmers",
     "lat": "42.41497",
     "lon": "-82.971488",
-    "routes": ["38"]
+    "routes": ["38", "9"]
   },
   "6400": {
     "name": "Mack & Devonshire",
@@ -23037,7 +23037,7 @@ const Stops = {
     "name": "Russell & Milwaukee",
     "lat": "42.374431",
     "lon": "-83.059038",
-    "routes": ["40"]
+    "routes": ["11", "40"]
   },
   "6415": {
     "name": "Mack & Notre Dame",
@@ -23049,7 +23049,7 @@ const Stops = {
     "name": "MACK & LORAINE",
     "lat": "42.395522",
     "lon": "-82.921811",
-    "routes": ["31"]
+    "routes": ["31", "32"]
   },
   "6417": {
     "name": "Mack & Woodhall",
@@ -23073,7 +23073,7 @@ const Stops = {
     "name": "Holbrook & St Aubin",
     "lat": "42.390439",
     "lon": "-83.061734",
-    "routes": ["95"]
+    "routes": ["40", "95"]
   },
   "6420": {
     "name": "Mack & Hereford",
@@ -23091,25 +23091,25 @@ const Stops = {
     "name": "Nagel & Caniff",
     "lat": "42.397687",
     "lon": "-83.068176",
-    "routes": ["40"]
+    "routes": ["38", "40"]
   },
   "6439": {
     "name": "Moross & Beaconsfield",
     "lat": "42.430156",
     "lon": "-82.941635",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "644": {
     "name": "Nevada & Dequindre",
     "lat": "42.425326",
     "lon": "-83.082047",
-    "routes": ["40"]
+    "routes": ["40", "43"]
   },
   "6443": {
     "name": "Moross & Balfour",
     "lat": "42.428897",
     "lon": "-82.938537",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "645": {
     "name": "E Outer Dr & Sunset",
@@ -23121,7 +23121,7 @@ const Stops = {
     "name": "E Outer Dr & Van Dyke",
     "lat": "42.44109",
     "lon": "-83.023863",
-    "routes": ["40", "95"]
+    "routes": ["40", "48", "95"]
   },
   "647": {
     "name": "CHSD (4909 E Outer Dr)",
@@ -23133,37 +23133,37 @@ const Stops = {
     "name": "Moross & Sanilac",
     "lat": "42.425875",
     "lon": "-82.931141",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "6477": {
     "name": "Moross & Peerless",
     "lat": "42.427631",
     "lon": "-82.935483",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "648": {
     "name": "E Outer Dr & Van Dyke",
     "lat": "42.44141149",
     "lon": "-83.02495705",
-    "routes": ["40", "95"]
+    "routes": ["40", "48", "95"]
   },
   "6480": {
     "name": "Moross & Duprey",
     "lat": "42.426764",
     "lon": "-82.933321",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "6482": {
     "name": "MOROSS & ROCKCASTLE",
     "lat": "42.42352",
     "lon": "-82.927057",
-    "routes": ["17", "31", "7"]
+    "routes": ["17", "31", "45", "7"]
   },
   "6483": {
     "name": "Moross & Edgefield",
     "lat": "42.423655",
     "lon": "-82.926069",
-    "routes": ["17"]
+    "routes": ["17", "31", "45", "7"]
   },
   "6484": {
     "name": "Moross & Edgefield",
@@ -23211,13 +23211,13 @@ const Stops = {
     "name": "Mack & Cloverly",
     "lat": "42.41084549",
     "lon": "-82.91305505",
-    "routes": ["31", "32"]
+    "routes": ["14", "31", "32"]
   },
   "6494": {
     "name": "Mack & Calvin",
     "lat": "42.41232549",
     "lon": "-82.91235905",
-    "routes": ["31", "32"]
+    "routes": ["14", "31", "32"]
   },
   "6496": {
     "name": "Mt Elliott & Benson",
@@ -23241,19 +23241,19 @@ const Stops = {
     "name": "Mt Elliott & Pulford",
     "lat": "42.362655",
     "lon": "-83.022396",
-    "routes": ["12"]
+    "routes": ["12", "31", "34"]
   },
   "65": {
     "name": "East Outer Drive & Gratiot",
     "lat": "42.406249",
     "lon": "-82.996594",
-    "routes": ["38"]
+    "routes": ["13", "34", "38"]
   },
   "650": {
     "name": "Dequindre & Nevada",
     "lat": "42.424936",
     "lon": "-83.082599",
-    "routes": ["40"]
+    "routes": ["40", "43"]
   },
   "6500": {
     "name": "Van Dyke & Canfield",
@@ -23307,7 +23307,7 @@ const Stops = {
     "name": "Dequindre & Caniff",
     "lat": "42.397405",
     "lon": "-83.069424",
-    "routes": ["40"]
+    "routes": ["38", "40"]
   },
   "6514": {
     "name": "Cadieux & Denver",
@@ -23337,13 +23337,13 @@ const Stops = {
     "name": "Warren & Harvard",
     "lat": "42.40568",
     "lon": "-82.930583",
-    "routes": ["14"]
+    "routes": ["14", "32"]
   },
   "652": {
     "name": "St Aubin & Holbrook",
     "lat": "42.389679943",
     "lon": "-83.061543449",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "6520": {
     "name": "Cadieux & Cornwall",
@@ -23361,25 +23361,25 @@ const Stops = {
     "name": "Cadieux & Warren",
     "lat": "42.405694",
     "lon": "-82.92971",
-    "routes": ["32"]
+    "routes": ["14", "32"]
   },
   "6523": {
     "name": "Warren & Cadieux",
     "lat": "42.406097",
     "lon": "-82.929393",
-    "routes": ["14"]
+    "routes": ["14", "32"]
   },
   "6524": {
     "name": "Warren & Cadieux",
     "lat": "42.406053",
     "lon": "-82.930224",
-    "routes": ["14"]
+    "routes": ["14", "32"]
   },
   "6525": {
     "name": "Cadieux & Warren",
     "lat": "42.406483",
     "lon": "-82.929928",
-    "routes": ["32"]
+    "routes": ["14", "32"]
   },
   "6528": {
     "name": "Warren & Woodhall",
@@ -23397,7 +23397,7 @@ const Stops = {
     "name": "Russell & Milwaukee",
     "lat": "42.374432",
     "lon": "-83.059206",
-    "routes": ["40"]
+    "routes": ["11", "40"]
   },
   "6531": {
     "name": "Warren & Hereford",
@@ -23451,13 +23451,13 @@ const Stops = {
     "name": "Warren & Mack",
     "lat": "42.412134",
     "lon": "-82.913023",
-    "routes": ["14"]
+    "routes": ["14", "31", "32"]
   },
   "6548": {
     "name": "Warren & Mack",
     "lat": "42.412285",
     "lon": "-82.913219",
-    "routes": ["14"]
+    "routes": ["14", "31", "32"]
   },
   "6549": {
     "name": "MACK & ASHLEY",
@@ -23469,13 +23469,13 @@ const Stops = {
     "name": "Gratiot & Russell",
     "lat": "42.343478",
     "lon": "-83.039011",
-    "routes": ["40"]
+    "routes": ["10", "34", "40"]
   },
   "6550": {
     "name": "Lafayette @ 2900",
     "lat": "42.34285036",
     "lon": "-83.021660024",
-    "routes": ["48"]
+    "routes": ["48", "80"]
   },
   "6552": {
     "name": "Moross & Chandler Park Dr",
@@ -23487,7 +23487,7 @@ const Stops = {
     "name": "MOROSS & FRANKFORT",
     "lat": "42.417306",
     "lon": "-82.911649",
-    "routes": ["17", "31"]
+    "routes": ["14", "17", "31", "32", "45", "7"]
   },
   "6555": {
     "name": "Mack & Lannoo",
@@ -23499,13 +23499,13 @@ const Stops = {
     "name": "Schaefer & 8 Mile",
     "lat": "42.444641",
     "lon": "-83.181081",
-    "routes": ["41"]
+    "routes": ["17", "41"]
   },
   "657": {
     "name": "Schaefer & W Outer Dr",
     "lat": "42.41976",
     "lon": "-83.180043132",
-    "routes": ["41"]
+    "routes": ["16", "41"]
   },
   "6572": {
     "name": "Schaefer & Maple",
@@ -23529,13 +23529,13 @@ const Stops = {
     "name": "Michigan & Schaefer",
     "lat": "42.321962",
     "lon": "-83.176962",
-    "routes": ["37"]
+    "routes": ["37", "41", "49"]
   },
   "6578": {
     "name": "Michigan & Schaefer",
     "lat": "42.321844",
     "lon": "-83.176714",
-    "routes": ["37", "49"]
+    "routes": ["37", "41", "49"]
   },
   "6579": {
     "name": "Schaefer & Colson",
@@ -23571,7 +23571,7 @@ const Stops = {
     "name": "Schaefer & Grand River",
     "lat": "42.384098213",
     "lon": "-83.17848922",
-    "routes": ["41"]
+    "routes": ["21", "41", "92"]
   },
   "6592": {
     "name": "Schaefer & Donald",
@@ -23595,13 +23595,13 @@ const Stops = {
     "name": "French & Gratiot",
     "lat": "42.400886",
     "lon": "-83.000834",
-    "routes": ["38"]
+    "routes": ["34", "38"]
   },
   "660": {
     "name": "Schaefer & Joy",
     "lat": "42.358277",
     "lon": "-83.177563",
-    "routes": ["41"]
+    "routes": ["27", "41"]
   },
   "6600": {
     "name": "Schaefer & Oakwood",
@@ -23631,13 +23631,13 @@ const Stops = {
     "name": "Bassett & Bromley",
     "lat": "42.274749",
     "lon": "-83.144977",
-    "routes": ["89"]
+    "routes": ["41", "89"]
   },
   "6606": {
     "name": "Bassett & Schaefer",
     "lat": "42.275494",
     "lon": "-83.144919",
-    "routes": ["89"]
+    "routes": ["41", "89"]
   },
   "6608": {
     "name": "Coolidge & Frazier",
@@ -23655,7 +23655,7 @@ const Stops = {
     "name": "Schaefer & Michigan",
     "lat": "42.321868",
     "lon": "-83.176046",
-    "routes": ["41"]
+    "routes": ["37", "41", "49"]
   },
   "6611": {
     "name": "Coolidge & Division",
@@ -23697,37 +23697,37 @@ const Stops = {
     "name": "Schaefer & Blesser",
     "lat": "42.342565621",
     "lon": "-83.176670067",
-    "routes": ["41"]
+    "routes": ["14", "41"]
   },
   "6627": {
     "name": "Schaefer & Warren",
     "lat": "42.343449241",
     "lon": "-83.176954466",
-    "routes": ["41"]
+    "routes": ["14", "41"]
   },
   "663": {
     "name": "Schaefer & Fort",
     "lat": "42.275916939",
     "lon": "-83.154887759",
-    "routes": ["41", "89"]
+    "routes": ["19", "41", "89"]
   },
   "6630": {
     "name": "Schaefer & Warren",
     "lat": "42.344291",
     "lon": "-83.176753482",
-    "routes": ["41"]
+    "routes": ["14", "41"]
   },
   "6631": {
     "name": "Schaefer & Gould",
     "lat": "42.345518241",
     "lon": "-83.177056933",
-    "routes": ["41"]
+    "routes": ["14", "41"]
   },
   "6632": {
     "name": "Schaefer & Gould",
     "lat": "42.346046759",
     "lon": "-83.176861103",
-    "routes": ["41"]
+    "routes": ["14", "41"]
   },
   "6633": {
     "name": "Schaefer & Diversey",
@@ -23745,7 +23745,7 @@ const Stops = {
     "name": "Schaefer & Morross",
     "lat": "42.349625379",
     "lon": "-83.176995257",
-    "routes": ["41"]
+    "routes": ["41", "47"]
   },
   "6636": {
     "name": "Schaefer & Belton",
@@ -23775,7 +23775,7 @@ const Stops = {
     "name": "Brennan & West Jefferson",
     "lat": "42.282304",
     "lon": "-83.127151",
-    "routes": ["41"]
+    "routes": ["30", "41"]
   },
   "6640": {
     "name": "Schaefer & Westfield",
@@ -23901,25 +23901,25 @@ const Stops = {
     "name": "Schaefer & Keeler",
     "lat": "42.403732",
     "lon": "-83.179292",
-    "routes": ["41"]
+    "routes": ["18", "41"]
   },
   "6666": {
     "name": "Schaefer & Keeler",
     "lat": "42.404103",
     "lon": "-83.179105",
-    "routes": ["41"]
+    "routes": ["18", "41"]
   },
   "6667": {
     "name": "Schaefer & Midland",
     "lat": "42.405504579",
     "lon": "-83.179372589",
-    "routes": ["41"]
+    "routes": ["18", "41"]
   },
   "6668": {
     "name": "Schaefer & Midland",
     "lat": "42.406000855",
     "lon": "-83.17919482",
-    "routes": ["41"]
+    "routes": ["18", "41"]
   },
   "6669": {
     "name": "Schaefer & Pilgrim",
@@ -23931,13 +23931,13 @@ const Stops = {
     "name": "Schaefer & Puritan",
     "lat": "42.409623855",
     "lon": "-83.17936388",
-    "routes": ["41"]
+    "routes": ["39", "41"]
   },
   "6671": {
     "name": "Schaefer & Puritan",
     "lat": "42.40895",
     "lon": "-83.179543",
-    "routes": ["41"]
+    "routes": ["39", "41"]
   },
   "6674": {
     "name": "Schaefer & Florence",
@@ -23961,31 +23961,31 @@ const Stops = {
     "name": "Schaefer & McNichols",
     "lat": "42.416326",
     "lon": "-83.179912",
-    "routes": ["41"]
+    "routes": ["32", "41"]
   },
   "6679": {
     "name": "Schaefer & McNichols",
     "lat": "42.416872",
     "lon": "-83.179672",
-    "routes": ["41"]
+    "routes": ["32", "41"]
   },
   "668": {
     "name": "Schaefer & Michigan",
     "lat": "42.322671868",
     "lon": "-83.175836585",
-    "routes": ["41"]
+    "routes": ["37", "41", "49"]
   },
   "6681": {
     "name": "Schaefer & Thatcher",
     "lat": "42.421747",
     "lon": "-83.180121",
-    "routes": ["41"]
+    "routes": ["16", "41"]
   },
   "6682": {
     "name": "Schaefer & Thatcher",
     "lat": "42.422267",
     "lon": "-83.179979",
-    "routes": ["41"]
+    "routes": ["16", "41"]
   },
   "6683": {
     "name": "Schaefer & James Couzens",
@@ -24009,7 +24009,7 @@ const Stops = {
     "name": "Schaefer & Joy",
     "lat": "42.359123",
     "lon": "-83.177408862",
-    "routes": ["41"]
+    "routes": ["27", "41"]
   },
   "6691": {
     "name": "Schaefer & Margareta",
@@ -24039,13 +24039,13 @@ const Stops = {
     "name": "Miller & Van Dyke",
     "lat": "42.390497",
     "lon": "-83.022891",
-    "routes": ["38"]
+    "routes": ["38", "48"]
   },
   "670": {
     "name": "Schaefer & Grand River",
     "lat": "42.384898",
     "lon": "-83.178307",
-    "routes": ["41"]
+    "routes": ["21", "41", "92"]
   },
   "671": {
     "name": "Schaefer @ 14044",
@@ -24081,13 +24081,13 @@ const Stops = {
     "name": "Schaefer & W Outer Dr",
     "lat": "42.420523",
     "lon": "-83.179889",
-    "routes": ["41"]
+    "routes": ["16", "41"]
   },
   "673": {
     "name": "Schaefer & 8 Mile",
     "lat": "42.444458",
     "lon": "-83.180858",
-    "routes": ["41"]
+    "routes": ["17", "41"]
   },
   "674": {
     "name": "Schoolcraft & Dale",
@@ -24099,13 +24099,13 @@ const Stops = {
     "name": "Schoolcraft & Southfield",
     "lat": "42.38663",
     "lon": "-83.216857",
-    "routes": ["43"]
+    "routes": ["43", "46"]
   },
   "677": {
     "name": "Schoolcraft & Grand River",
     "lat": "42.387335",
     "lon": "-83.185458",
-    "routes": ["43"]
+    "routes": ["21", "43", "92"]
   },
   "6778": {
     "name": "Lasalle & Lawrence",
@@ -24117,13 +24117,13 @@ const Stops = {
     "name": "Schoolcraft & Schaefer",
     "lat": "42.387968",
     "lon": "-83.178177",
-    "routes": ["43"]
+    "routes": ["41", "43"]
   },
   "679": {
     "name": "Ewald Cir & Livernois",
     "lat": "42.391514964",
     "lon": "-83.139409051",
-    "routes": ["43"]
+    "routes": ["30", "43"]
   },
   "68": {
     "name": "Mt Elliott & Lynch",
@@ -24135,13 +24135,13 @@ const Stops = {
     "name": "Oakman & Hamilton",
     "lat": "42.404331009",
     "lon": "-83.108257868",
-    "routes": ["43"]
+    "routes": ["23", "39", "42", "43"]
   },
   "681": {
     "name": "Oakman & Hamilton",
     "lat": "42.404583",
     "lon": "-83.108252",
-    "routes": ["43"]
+    "routes": ["23", "39", "42", "43"]
   },
   "6812": {
     "name": "Warren & Chase",
@@ -24195,7 +24195,7 @@ const Stops = {
     "name": "Ewald Cir & Livernois",
     "lat": "42.391361945",
     "lon": "-83.140270125",
-    "routes": ["43"]
+    "routes": ["30", "43"]
   },
   "6820": {
     "name": "Joy & Meadowdale",
@@ -24249,7 +24249,7 @@ const Stops = {
     "name": "Schoolcraft & Schaefer",
     "lat": "42.388078",
     "lon": "-83.178967",
-    "routes": ["43"]
+    "routes": ["41", "43"]
   },
   "6830": {
     "name": "Warren & Jonathan",
@@ -24285,7 +24285,7 @@ const Stops = {
     "name": "Schoolcraft & Grand River",
     "lat": "42.387519",
     "lon": "-83.186432",
-    "routes": ["43"]
+    "routes": ["21", "43", "92"]
   },
   "6840": {
     "name": "Joy & Littlefield",
@@ -24321,13 +24321,13 @@ const Stops = {
     "name": "Schaefer & Chicago",
     "lat": "42.365979",
     "lon": "-83.177626",
-    "routes": ["41"]
+    "routes": ["15", "41"]
   },
   "685": {
     "name": "Schoolcraft & Southfield",
     "lat": "42.386791",
     "lon": "-83.218883",
-    "routes": ["43"]
+    "routes": ["43", "46"]
   },
   "6850": {
     "name": "Chicago & Littlefield",
@@ -24423,7 +24423,7 @@ const Stops = {
     "name": "McNichols & Lesure",
     "lat": "42.416476",
     "lon": "-83.18171",
-    "routes": ["32"]
+    "routes": ["32", "41"]
   },
   "6873": {
     "name": "W Outer Dr & Mark Twain",
@@ -24471,7 +24471,7 @@ const Stops = {
     "name": "Redford & Grand River",
     "lat": "42.417115",
     "lon": "-83.258255",
-    "routes": ["45"]
+    "routes": ["21", "32", "45"]
   },
   "6880": {
     "name": "McNichols & Ward",
@@ -24501,7 +24501,7 @@ const Stops = {
     "name": "7 Mile & Evergreen",
     "lat": "42.42947",
     "lon": "-83.238172",
-    "routes": ["45"]
+    "routes": ["45", "60", "92"]
   },
   "6892": {
     "name": "W Outer Dr & Thatcher",
@@ -24543,7 +24543,7 @@ const Stops = {
     "name": "Caniff & Conant",
     "lat": "42.40242",
     "lon": "-83.052907",
-    "routes": ["38"]
+    "routes": ["12", "38", "95"]
   },
   "691": {
     "name": "7 Mile & James Couzens",
@@ -24555,7 +24555,7 @@ const Stops = {
     "name": "7 Mile & Schaefer",
     "lat": "42.43099",
     "lon": "-83.180081",
-    "routes": ["45"]
+    "routes": ["41", "45"]
   },
   "6933": {
     "name": "Schoolcraft & Virgil",
@@ -24639,7 +24639,7 @@ const Stops = {
     "name": "7 Mile & Ryan",
     "lat": "42.433068",
     "lon": "-83.062736",
-    "routes": ["45"]
+    "routes": ["40", "45", "95"]
   },
   "6950": {
     "name": "Schoolcraft & Bentler",
@@ -24693,19 +24693,19 @@ const Stops = {
     "name": "Schoolcraft & Vaughan",
     "lat": "42.386139",
     "lon": "-83.237697",
-    "routes": ["43"]
+    "routes": ["43", "60"]
   },
   "6959": {
     "name": "Schoolcraft & Evergreen",
     "lat": "42.386175",
     "lon": "-83.236246",
-    "routes": ["43"]
+    "routes": ["43", "60"]
   },
   "6960": {
     "name": "Schoolcraft & Auburn",
     "lat": "42.386389",
     "lon": "-83.234816",
-    "routes": ["43"]
+    "routes": ["43", "60"]
   },
   "6961": {
     "name": "Schoolcraft & Minock",
@@ -24765,19 +24765,19 @@ const Stops = {
     "name": "Schoolcraft & Ashton",
     "lat": "42.386609",
     "lon": "-83.218412",
-    "routes": ["43"]
+    "routes": ["43", "46"]
   },
   "6975": {
     "name": "Southfield & Schoolcraft",
     "lat": "42.387176",
     "lon": "-83.2172",
-    "routes": ["46"]
+    "routes": ["43", "46"]
   },
   "6979": {
     "name": "Schoolcraft & Archdale",
     "lat": "42.386847",
     "lon": "-83.216413",
-    "routes": ["43"]
+    "routes": ["43", "46"]
   },
   "6980": {
     "name": "Schoolcraft & Longacre",
@@ -24843,7 +24843,7 @@ const Stops = {
     "name": "7 Mile & Ryan",
     "lat": "42.433211",
     "lon": "-83.062783",
-    "routes": ["45"]
+    "routes": ["40", "45", "95"]
   },
   "6990": {
     "name": "Schoolcraft & Rutherford",
@@ -24867,7 +24867,7 @@ const Stops = {
     "name": "Schoolcraft & Greenfield",
     "lat": "42.387001",
     "lon": "-83.197688",
-    "routes": ["43"]
+    "routes": ["22", "43"]
   },
   "6998": {
     "name": "Schoolcraft & Whitcomb",
@@ -24915,37 +24915,37 @@ const Stops = {
     "name": "Schoolcraft & Hubbell",
     "lat": "42.387445",
     "lon": "-83.188762",
-    "routes": ["43"]
+    "routes": ["21", "43", "92"]
   },
   "7006": {
     "name": "Schoolcraft & Hubbell",
     "lat": "42.387312",
     "lon": "-83.187957",
-    "routes": ["43"]
+    "routes": ["21", "43", "92"]
   },
   "7007": {
     "name": "Grand River & Schoolcraft",
     "lat": "42.387219",
     "lon": "-83.185176",
-    "routes": ["21", "92"]
+    "routes": ["21", "43", "92"]
   },
   "7010": {
     "name": "Grand River & Schoolcraft",
     "lat": "42.387201",
     "lon": "-83.184492",
-    "routes": ["21", "92"]
+    "routes": ["21", "43", "92"]
   },
   "7011": {
     "name": "Schoolcraft & Grand River",
     "lat": "42.38773",
     "lon": "-83.184101",
-    "routes": ["43"]
+    "routes": ["21", "43", "92"]
   },
   "7012": {
     "name": "Schoolcraft & Freeland",
     "lat": "42.387672",
     "lon": "-83.184669",
-    "routes": ["43"]
+    "routes": ["21", "43", "92"]
   },
   "7013": {
     "name": "Schoolcraft & Stansbury",
@@ -25047,55 +25047,55 @@ const Stops = {
     "name": "Schoolcraft & Wyoming",
     "lat": "42.388578",
     "lon": "-83.159414",
-    "routes": ["43"]
+    "routes": ["43", "54"]
   },
   "7036": {
     "name": "Schoolcraft & Wyoming",
     "lat": "42.388475",
     "lon": "-83.158647",
-    "routes": ["43"]
+    "routes": ["43", "54"]
   },
   "7037": {
     "name": "Wyoming & Schoolcraft",
     "lat": "42.388937",
     "lon": "-83.158961",
-    "routes": ["54"]
+    "routes": ["43", "54"]
   },
   "7038": {
     "name": "Wyoming & Schoolcraft",
     "lat": "42.388272",
     "lon": "-83.159106",
-    "routes": ["54"]
+    "routes": ["43", "54"]
   },
   "7039": {
     "name": "Schoolcraft & Indiana",
     "lat": "42.388624",
     "lon": "-83.157346",
-    "routes": ["43"]
+    "routes": ["43", "54"]
   },
   "704": {
     "name": "7 Mile & Southfield",
     "lat": "42.430106",
     "lon": "-83.220215",
-    "routes": ["45"]
+    "routes": ["45", "46"]
   },
   "7040": {
     "name": "Schoolcraft & Indiana",
     "lat": "42.388483625",
     "lon": "-83.156739822",
-    "routes": ["43"]
+    "routes": ["43", "54"]
   },
   "7041": {
     "name": "Schoolcraft & Ohio",
     "lat": "42.388652",
     "lon": "-83.155284",
-    "routes": ["43"]
+    "routes": ["43", "54"]
   },
   "7042": {
     "name": "Schoolcraft & Ohio",
     "lat": "42.388540227",
     "lon": "-83.154782",
-    "routes": ["43"]
+    "routes": ["43", "54"]
   },
   "7043": {
     "name": "Northlawn & Davison",
@@ -25137,7 +25137,7 @@ const Stops = {
     "name": "7 Mile & Evergreen",
     "lat": "42.429669",
     "lon": "-83.239299",
-    "routes": ["45"]
+    "routes": ["45", "60", "92"]
   },
   "7050": {
     "name": "Ewald Cir & Schoolcraft",
@@ -25167,7 +25167,7 @@ const Stops = {
     "name": "Ewald Cir & Santa Rosa",
     "lat": "42.390652077",
     "lon": "-83.141708051",
-    "routes": ["43"]
+    "routes": ["30", "43"]
   },
   "7060": {
     "name": "Ewald Cir & Holmur",
@@ -25185,25 +25185,25 @@ const Stops = {
     "name": "Ewald Cir & Dexter",
     "lat": "42.393717",
     "lon": "-83.134098",
-    "routes": ["43"]
+    "routes": ["16", "43"]
   },
   "7063": {
     "name": "Ewald Cir & Dexter",
     "lat": "42.39393",
     "lon": "-83.133064",
-    "routes": ["43"]
+    "routes": ["16", "43"]
   },
   "7064": {
     "name": "Dexter & Ewald Cir",
     "lat": "42.394251",
     "lon": "-83.133738",
-    "routes": ["16"]
+    "routes": ["16", "43"]
   },
   "7065": {
     "name": "Dexter & Ewald Cir",
     "lat": "42.394011",
     "lon": "-83.133864",
-    "routes": ["16"]
+    "routes": ["16", "43"]
   },
   "7066": {
     "name": "Ewald Cir & Wildemere",
@@ -25233,25 +25233,25 @@ const Stops = {
     "name": "Southfield & 8 Mile",
     "lat": "42.443871",
     "lon": "-83.220241",
-    "routes": ["46"]
+    "routes": ["17", "46"]
   },
   "7070": {
     "name": "Oakman & Linwood",
     "lat": "42.398067",
     "lon": "-83.125773",
-    "routes": ["43"]
+    "routes": ["29", "43"]
   },
   "7071": {
     "name": "Oakman & Linwood",
     "lat": "42.39807",
     "lon": "-83.125068",
-    "routes": ["43"]
+    "routes": ["29", "43"]
   },
   "7072": {
     "name": "Linwood & Oakman",
     "lat": "42.398385",
     "lon": "-83.125493",
-    "routes": ["29"]
+    "routes": ["29", "43"]
   },
   "7073": {
     "name": "Oakman & Lasalle",
@@ -25269,13 +25269,13 @@ const Stops = {
     "name": "Oakman & 14th",
     "lat": "42.400342",
     "lon": "-83.119045",
-    "routes": ["43"]
+    "routes": ["18", "43"]
   },
   "7077": {
     "name": "Oakman & 14th",
     "lat": "42.400363",
     "lon": "-83.119688",
-    "routes": ["43"]
+    "routes": ["18", "43"]
   },
   "7078": {
     "name": "Oakman & Woodrow Wilson",
@@ -25293,7 +25293,7 @@ const Stops = {
     "name": "Southfield & McNichols",
     "lat": "42.415407",
     "lon": "-83.21931",
-    "routes": ["46"]
+    "routes": ["32", "46"]
   },
   "7080": {
     "name": "Oakman & Sanders",
@@ -25311,13 +25311,13 @@ const Stops = {
     "name": "Hamilton & Oakman",
     "lat": "42.404349",
     "lon": "-83.107622",
-    "routes": ["23", "39"]
+    "routes": ["23", "39", "42", "43"]
   },
   "7085": {
     "name": "Hamilton & Oakman",
     "lat": "42.405129",
     "lon": "-83.107815",
-    "routes": ["23", "39"]
+    "routes": ["23", "39", "42", "43"]
   },
   "7086": {
     "name": "Hamilton @ 15045",
@@ -25335,7 +25335,7 @@ const Stops = {
     "name": "Southfield & Grand River",
     "lat": "42.400526",
     "lon": "-83.218659",
-    "routes": ["46"]
+    "routes": ["18", "21", "39", "46", "92"]
   },
   "7093": {
     "name": "Schoolcraft & Burt",
@@ -25359,7 +25359,7 @@ const Stops = {
     "name": "Southfield & Plymouth",
     "lat": "42.371972",
     "lon": "-83.217142",
-    "routes": ["46"]
+    "routes": ["38", "46"]
   },
   "7100": {
     "name": "Ewald Cir & Buena Vista",
@@ -25371,25 +25371,25 @@ const Stops = {
     "name": "Ewald Cir & Davison",
     "lat": "42.386838",
     "lon": "-83.145462",
-    "routes": ["43"]
+    "routes": ["15", "43"]
   },
   "7102": {
     "name": "Ewald Cir & Davison",
     "lat": "42.385849",
     "lon": "-83.14542",
-    "routes": ["15"]
+    "routes": ["15", "43"]
   },
   "7103": {
     "name": "Ewald Cir & Davison",
     "lat": "42.386766",
     "lon": "-83.145239",
-    "routes": ["43"]
+    "routes": ["15", "43"]
   },
   "7105": {
     "name": "Ewald Cir & Davison",
     "lat": "42.385930795",
     "lon": "-83.145201308",
-    "routes": ["15"]
+    "routes": ["15", "43"]
   },
   "7107": {
     "name": "Davison & Monica",
@@ -25413,7 +25413,7 @@ const Stops = {
     "name": "Southfield & Joy",
     "lat": "42.35756",
     "lon": "-83.216945",
-    "routes": ["46"]
+    "routes": ["27", "46", "96"]
   },
   "7110": {
     "name": "Davison & Holmur",
@@ -25443,19 +25443,19 @@ const Stops = {
     "name": "Dexter & Doris",
     "lat": "42.395176",
     "lon": "-83.13443",
-    "routes": ["16"]
+    "routes": ["16", "43"]
   },
   "7116": {
     "name": "Dexter & Tyler",
     "lat": "42.388836038",
     "lon": "-83.130141326",
-    "routes": ["16"]
+    "routes": ["15", "16"]
   },
   "7117": {
     "name": "Dexter & Tyler",
     "lat": "42.388076621",
     "lon": "-83.129840805",
-    "routes": ["16"]
+    "routes": ["15", "16"]
   },
   "7118": {
     "name": "Dexter & Grand",
@@ -25467,37 +25467,37 @@ const Stops = {
     "name": "Dexter & Clements",
     "lat": "42.390363",
     "lon": "-83.131419",
-    "routes": ["16"]
+    "routes": ["15", "16"]
   },
   "712": {
     "name": "Southfield & Warren",
     "lat": "42.342955",
     "lon": "-83.216576",
-    "routes": ["46"]
+    "routes": ["14", "46"]
   },
   "7120": {
     "name": "Dexter & Davison",
     "lat": "42.389366",
     "lon": "-83.130757",
-    "routes": ["16"]
+    "routes": ["15", "16"]
   },
   "7121": {
     "name": "Dexter & Davison",
     "lat": "42.390132361",
     "lon": "-83.130943047",
-    "routes": ["16"]
+    "routes": ["15", "16"]
   },
   "7122": {
     "name": "Davison & Dexter",
     "lat": "42.389805715",
     "lon": "-83.130451093",
-    "routes": ["15"]
+    "routes": ["15", "16"]
   },
   "7123": {
     "name": "Davison & Dexter",
     "lat": "42.389693",
     "lon": "-83.131453",
-    "routes": ["15"]
+    "routes": ["15", "16"]
   },
   "7124": {
     "name": "Hamilton & Grand",
@@ -25509,7 +25509,7 @@ const Stops = {
     "name": "Hamilton & Davison",
     "lat": "42.399725",
     "lon": "-83.10452",
-    "routes": ["23"]
+    "routes": ["15", "23", "42"]
   },
   "7126": {
     "name": "Hamilton & Davison",
@@ -25527,37 +25527,37 @@ const Stops = {
     "name": "Hamilton & Manchester",
     "lat": "42.404116",
     "lon": "-83.107139",
-    "routes": ["23", "42"]
+    "routes": ["15", "23", "39", "42", "43"]
   },
   "7130": {
     "name": "Hamilton & Pasadena",
     "lat": "42.401583",
     "lon": "-83.105778",
-    "routes": ["23"]
+    "routes": ["15", "23", "42"]
   },
   "7131": {
     "name": "Hamilton & Ford",
     "lat": "42.402756",
     "lon": "-83.10623",
-    "routes": ["15", "23", "42"]
+    "routes": ["15", "23", "42", "43"]
   },
   "7132": {
     "name": "Manchester & Hamilton",
     "lat": "42.403851",
     "lon": "-83.106521",
-    "routes": ["43"]
+    "routes": ["15", "23", "39", "42", "43"]
   },
   "7133": {
     "name": "Hamilton & Labelle",
     "lat": "42.402912",
     "lon": "-83.106666",
-    "routes": ["23"]
+    "routes": ["15", "23", "39", "42", "43"]
   },
   "7135": {
     "name": "Manchester & Third",
     "lat": "42.404644723",
     "lon": "-83.103377639",
-    "routes": ["15", "39", "43"]
+    "routes": ["15", "39", "42", "43"]
   },
   "7137": {
     "name": "Evergreen & Whitlock",
@@ -25575,13 +25575,13 @@ const Stops = {
     "name": "Warren & Evergreen",
     "lat": "42.343229",
     "lon": "-83.235772",
-    "routes": ["14"]
+    "routes": ["14", "60"]
   },
   "7141": {
     "name": "Warren & Evergreen",
     "lat": "42.343063",
     "lon": "-83.234757",
-    "routes": ["14"]
+    "routes": ["14", "60"]
   },
   "7143": {
     "name": "Evergreen & Sawyer",
@@ -25599,19 +25599,19 @@ const Stops = {
     "name": "Evergreen & Tireman",
     "lat": "42.351052",
     "lon": "-83.235529",
-    "routes": ["60"]
+    "routes": ["47", "60"]
   },
   "7146": {
     "name": "Tireman & Evergreen",
     "lat": "42.350263",
     "lon": "-83.235178",
-    "routes": ["47"]
+    "routes": ["47", "60"]
   },
   "7147": {
     "name": "Evergreen & Tireman",
     "lat": "42.350011",
     "lon": "-83.235692",
-    "routes": ["60"]
+    "routes": ["47", "60"]
   },
   "7148": {
     "name": "Evergreen & Constance",
@@ -25629,7 +25629,7 @@ const Stops = {
     "name": "Southfield & Warren",
     "lat": "42.343669",
     "lon": "-83.215626",
-    "routes": ["46"]
+    "routes": ["14", "46"]
   },
   "7150": {
     "name": "Evergreen & Cathedral",
@@ -25641,7 +25641,7 @@ const Stops = {
     "name": "Evergreen & CApitol",
     "lat": "42.376463",
     "lon": "-83.236373",
-    "routes": ["96"]
+    "routes": ["60", "96"]
   },
   "7152": {
     "name": "Evergreen & Orangelawn",
@@ -25659,13 +25659,13 @@ const Stops = {
     "name": "Evergreen & Plymouth",
     "lat": "42.371594",
     "lon": "-83.236422",
-    "routes": ["60", "96"]
+    "routes": ["15", "38", "60", "96"]
   },
   "7156": {
     "name": "Evergreen & Plymouth",
     "lat": "42.372211",
     "lon": "-83.236095",
-    "routes": ["60", "96"]
+    "routes": ["15", "38", "60", "96"]
   },
   "7158": {
     "name": "Evergreen & Capitol",
@@ -25677,19 +25677,19 @@ const Stops = {
     "name": "Evergreen & Capitol",
     "lat": "42.37666",
     "lon": "-83.236251",
-    "routes": ["60"]
+    "routes": ["60", "96"]
   },
   "716": {
     "name": "Southfield & Joy",
     "lat": "42.358296",
     "lon": "-83.216001",
-    "routes": ["46"]
+    "routes": ["27", "46", "96"]
   },
   "7162": {
     "name": "Schoolcraft & Evergreen",
     "lat": "42.38637",
     "lon": "-83.237256",
-    "routes": ["43"]
+    "routes": ["43", "60"]
   },
   "7165": {
     "name": "Evergreen & Kendall",
@@ -25725,7 +25725,7 @@ const Stops = {
     "name": "Southfield & Plymouth",
     "lat": "42.372676",
     "lon": "-83.216203",
-    "routes": ["46"]
+    "routes": ["38", "46"]
   },
   "7170": {
     "name": "Evergreen & W Outer Dr",
@@ -25791,7 +25791,7 @@ const Stops = {
     "name": "Southfield & Grand River",
     "lat": "42.400164",
     "lon": "-83.217865",
-    "routes": ["46"]
+    "routes": ["18", "21", "39", "46", "92"]
   },
   "7181": {
     "name": "Evergreen & Pickford",
@@ -25821,7 +25821,7 @@ const Stops = {
     "name": "Southfield & McNichols",
     "lat": "42.415938",
     "lon": "-83.218305",
-    "routes": ["46"]
+    "routes": ["32", "46"]
   },
   "7190": {
     "name": "Warren & Heyden",
@@ -25911,7 +25911,7 @@ const Stops = {
     "name": "Tireman & Southfield",
     "lat": "42.350588",
     "lon": "-83.215388",
-    "routes": ["47"]
+    "routes": ["46", "47"]
   },
   "7210": {
     "name": "Joy & Heyden",
@@ -25923,13 +25923,13 @@ const Stops = {
     "name": "Joy & Evergreen",
     "lat": "42.357664",
     "lon": "-83.236344",
-    "routes": ["27"]
+    "routes": ["27", "60", "96"]
   },
   "7214": {
     "name": "Joy & Evergreen",
     "lat": "42.357475",
     "lon": "-83.235601",
-    "routes": ["27", "96"]
+    "routes": ["27", "60", "96"]
   },
   "7215": {
     "name": "Joy & Auburn",
@@ -25959,19 +25959,19 @@ const Stops = {
     "name": "Tireman & Greenfield",
     "lat": "42.350809",
     "lon": "-83.197081",
-    "routes": ["47"]
+    "routes": ["22", "47"]
   },
   "7220": {
     "name": "Chicago & Evergreen",
     "lat": "42.36464",
     "lon": "-83.235759",
-    "routes": ["15"]
+    "routes": ["15", "60", "96"]
   },
   "7221": {
     "name": "Evergreen & Chicago",
     "lat": "42.364431",
     "lon": "-83.236140542",
-    "routes": ["60", "96"]
+    "routes": ["15", "60", "96"]
   },
   "7223": {
     "name": "Evergreen & Chicago",
@@ -25983,7 +25983,7 @@ const Stops = {
     "name": "Chicago & Plainview",
     "lat": "42.364805",
     "lon": "-83.235141",
-    "routes": ["15"]
+    "routes": ["15", "60", "96"]
   },
   "7225": {
     "name": "Chicago & Auburn",
@@ -26019,31 +26019,31 @@ const Stops = {
     "name": "Tireman & Schaefer",
     "lat": "42.351209",
     "lon": "-83.17757",
-    "routes": ["47"]
+    "routes": ["41", "47"]
   },
   "7230": {
     "name": "McNichols & Evergreen",
     "lat": "42.41492",
     "lon": "-83.239587",
-    "routes": ["32"]
+    "routes": ["32", "60", "92"]
   },
   "7231": {
     "name": "Evergreen & McNichols",
     "lat": "42.414829",
     "lon": "-83.238266",
-    "routes": ["60", "92"]
+    "routes": ["32", "60", "92"]
   },
   "7232": {
     "name": "McNichols & Evergreen",
     "lat": "42.415247",
     "lon": "-83.238533",
-    "routes": ["32"]
+    "routes": ["32", "60", "92"]
   },
   "7233": {
     "name": "Evergreen & McNichols",
     "lat": "42.415522",
     "lon": "-83.238137",
-    "routes": ["60", "92"]
+    "routes": ["32", "60", "92"]
   },
   "7234": {
     "name": "McNichols & Westmoreland",
@@ -26073,7 +26073,7 @@ const Stops = {
     "name": "Tireman & Wyoming",
     "lat": "42.351674",
     "lon": "-83.156908",
-    "routes": ["47"]
+    "routes": ["47", "54"]
   },
   "7248": {
     "name": "Evergreen & Vassar",
@@ -26085,7 +26085,7 @@ const Stops = {
     "name": "Tireman & Livernois",
     "lat": "42.351992",
     "lon": "-83.134952",
-    "routes": ["47"]
+    "routes": ["30", "47"]
   },
   "7251": {
     "name": "Evergreen & Vassar",
@@ -26109,7 +26109,7 @@ const Stops = {
     "name": "Evergreen & Pembroke",
     "lat": "42.437016",
     "lon": "-83.239042",
-    "routes": ["60"]
+    "routes": ["60", "92"]
   },
   "7260": {
     "name": "Evergreen & Trojan",
@@ -26121,13 +26121,13 @@ const Stops = {
     "name": "Evergreen & Trojan",
     "lat": "42.440083",
     "lon": "-83.239141",
-    "routes": ["60"]
+    "routes": ["60", "92"]
   },
   "727": {
     "name": "Martin Luther King & W Grand Bl",
     "lat": "42.333944",
     "lon": "-83.096269",
-    "routes": ["47"]
+    "routes": ["27", "37", "47"]
   },
   "7270": {
     "name": "Warren & Piedmont",
@@ -26223,13 +26223,13 @@ const Stops = {
     "name": "Martin Luther King & Grand River",
     "lat": "42.341948",
     "lon": "-83.071811",
-    "routes": ["47"]
+    "routes": ["21", "29", "47"]
   },
   "7291": {
     "name": "Dequindre & Belmont",
     "lat": "42.395643",
     "lon": "-83.067562",
-    "routes": ["40"]
+    "routes": ["38", "40"]
   },
   "7292": {
     "name": "Dequindre & Woodland",
@@ -26271,7 +26271,7 @@ const Stops = {
     "name": "Jefferson & Marlborough",
     "lat": "42.373537",
     "lon": "-82.943578",
-    "routes": ["80"]
+    "routes": ["25", "80", "9"]
   },
   "7300": {
     "name": "Russell & Ferry",
@@ -26283,7 +26283,7 @@ const Stops = {
     "name": "Russell & Eliot",
     "lat": "42.352065",
     "lon": "-83.044221",
-    "routes": ["40"]
+    "routes": ["31", "40"]
   },
   "7303": {
     "name": "Russell & Erskine",
@@ -26313,7 +26313,7 @@ const Stops = {
     "name": "Russell & I-75 Service Dr",
     "lat": "42.34447149",
     "lon": "-83.03936305",
-    "routes": ["40"]
+    "routes": ["10", "34", "40"]
   },
   "7310": {
     "name": "Russell & Winder",
@@ -26373,25 +26373,25 @@ const Stops = {
     "name": "St Aubin & Faber",
     "lat": "42.388590431",
     "lon": "-83.060580844",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "7324": {
     "name": "St Aubin & Faber",
     "lat": "42.388106",
     "lon": "-83.060477",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "7325": {
     "name": "Lumpkin & Holbrook",
     "lat": "42.391242",
     "lon": "-83.06157",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "7326": {
     "name": "Poland & Lumpkin",
     "lat": "42.392683",
     "lon": "-83.063515",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "7328": {
     "name": "Lumpkin & Bernard",
@@ -26403,19 +26403,19 @@ const Stops = {
     "name": "Davison & Dequindre",
     "lat": "42.409619608",
     "lon": "-83.077881962",
-    "routes": ["15"]
+    "routes": ["15", "40"]
   },
   "7333": {
     "name": "Davison & Dequindre",
     "lat": "42.408801",
     "lon": "-83.0764",
-    "routes": ["15"]
+    "routes": ["15", "40"]
   },
   "7334": {
     "name": "Dequindre & Lawley",
     "lat": "42.407851",
     "lon": "-83.076248",
-    "routes": ["40"]
+    "routes": ["15", "40"]
   },
   "7337": {
     "name": "Dequindre & Victor",
@@ -26439,7 +26439,7 @@ const Stops = {
     "name": "Martin Luther King & Grand River",
     "lat": "42.342217",
     "lon": "-83.071997",
-    "routes": ["47"]
+    "routes": ["21", "29", "47"]
   },
   "7340": {
     "name": "Dequindre & Modern",
@@ -26481,25 +26481,25 @@ const Stops = {
     "name": "Dequindre & McNichols",
     "lat": "42.41870549",
     "lon": "-83.08214505",
-    "routes": ["40"]
+    "routes": ["32", "40"]
   },
   "7347": {
     "name": "McNichols & Dequindre",
     "lat": "42.418494",
     "lon": "-83.0826",
-    "routes": ["32"]
+    "routes": ["32", "40"]
   },
   "7348": {
     "name": "McNichols & Dequindre",
     "lat": "42.418392",
     "lon": "-83.081795",
-    "routes": ["32"]
+    "routes": ["32", "40"]
   },
   "7349": {
     "name": "Dequindre & McNichols",
     "lat": "42.41814349",
     "lon": "-83.08232205",
-    "routes": ["40"]
+    "routes": ["32", "40"]
   },
   "7350": {
     "name": "Dequindre & Stender",
@@ -26523,13 +26523,13 @@ const Stops = {
     "name": "Dequindre & Minnesota",
     "lat": "42.423536",
     "lon": "-83.082384",
-    "routes": ["40"]
+    "routes": ["40", "43"]
   },
   "7354": {
     "name": "Dequindre & Minnesota",
     "lat": "42.423553",
     "lon": "-83.082561",
-    "routes": ["40"]
+    "routes": ["40", "43"]
   },
   "7355": {
     "name": "Nevada & Lumpkin",
@@ -26565,7 +26565,7 @@ const Stops = {
     "name": "M.L.King & West Grand Blvd",
     "lat": "42.334207",
     "lon": "-83.096796",
-    "routes": ["47"]
+    "routes": ["27", "37", "47"]
   },
   "7360": {
     "name": "Nevada & Maine",
@@ -26577,13 +26577,13 @@ const Stops = {
     "name": "Nevada & Anglin",
     "lat": "42.425699",
     "lon": "-83.07407",
-    "routes": ["40"]
+    "routes": ["10", "40"]
   },
   "7362": {
     "name": "Nevada & Brinker",
     "lat": "42.425843",
     "lon": "-83.07414",
-    "routes": ["40"]
+    "routes": ["10", "40"]
   },
   "7364": {
     "name": "Ryan & Hildale",
@@ -26601,13 +26601,13 @@ const Stops = {
     "name": "Ryan & Robinwood",
     "lat": "42.431222",
     "lon": "-83.062899",
-    "routes": ["40", "95"]
+    "routes": ["40", "45", "95"]
   },
   "7367": {
     "name": "Ryan & Robinwood",
     "lat": "42.431192",
     "lon": "-83.063098",
-    "routes": ["40", "95"]
+    "routes": ["40", "45", "95"]
   },
   "7368": {
     "name": "Ryan & Stockton",
@@ -26619,13 +26619,13 @@ const Stops = {
     "name": "Ryan & Stockton",
     "lat": "42.42714",
     "lon": "-83.062831504",
-    "routes": ["40", "95"]
+    "routes": ["10", "40", "95"]
   },
   "737": {
     "name": "W Grand Bl & Grand River",
     "lat": "42.35667149",
     "lon": "-83.11019505",
-    "routes": ["27", "47"]
+    "routes": ["16", "21", "27", "47"]
   },
   "7370": {
     "name": "Ryan & Emery",
@@ -26655,25 +26655,25 @@ const Stops = {
     "name": "E Outer Dr & Justine",
     "lat": "42.440368",
     "lon": "-83.058519",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "7376": {
     "name": "E Outer Dr & Eureka",
     "lat": "42.440708",
     "lon": "-83.058477",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "7377": {
     "name": "E Outer Dr & Hasse",
     "lat": "42.440381",
     "lon": "-83.056899",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "7378": {
     "name": "E Outer Dr & Healy",
     "lat": "42.440747",
     "lon": "-83.056132",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "7379": {
     "name": "E Outer Dr & Fenelon",
@@ -26685,7 +26685,7 @@ const Stops = {
     "name": "Tireman & Livernois",
     "lat": "42.352146",
     "lon": "-83.136307",
-    "routes": ["47"]
+    "routes": ["30", "47"]
   },
   "7380": {
     "name": "E Outer Dr & Fenelon",
@@ -26733,13 +26733,13 @@ const Stops = {
     "name": "E Outer Dr & Mound",
     "lat": "42.44067",
     "lon": "-83.043253",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "7388": {
     "name": "E Outer Dr & Mound",
     "lat": "42.440974",
     "lon": "-83.044572",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "7389": {
     "name": "E Outer Dr & Dwyer",
@@ -26751,19 +26751,19 @@ const Stops = {
     "name": "Tireman & Wyoming",
     "lat": "42.351772",
     "lon": "-83.157843",
-    "routes": ["47"]
+    "routes": ["47", "54"]
   },
   "7390": {
     "name": "E Outer Dr & Mt Elliott",
     "lat": "42.440791",
     "lon": "-83.038862",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "7392": {
     "name": "E Outer Dr & Mt Elliott",
     "lat": "42.441075",
     "lon": "-83.039675",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "7395": {
     "name": "E Outer Dr & Sherwood",
@@ -26793,31 +26793,31 @@ const Stops = {
     "name": "E Outer Dr & Rogge",
     "lat": "42.440972",
     "lon": "-83.029821",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "74": {
     "name": "Chalmers & Warren",
     "lat": "42.395761",
     "lon": "-82.959008",
-    "routes": ["9"]
+    "routes": ["14", "9"]
   },
   "740": {
     "name": "Tireman & Schaefer",
     "lat": "42.35134",
     "lon": "-83.177646",
-    "routes": ["47"]
+    "routes": ["41", "47"]
   },
   "7400": {
     "name": "E Outer Dr & Rogge",
     "lat": "42.44129",
     "lon": "-83.029682",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "7401": {
     "name": "E Outer Dr & Spencer",
     "lat": "42.44104",
     "lon": "-83.026252",
-    "routes": ["40", "95"]
+    "routes": ["40", "48", "95"]
   },
   "7402": {
     "name": "E Outer Dr & Spencer",
@@ -26841,19 +26841,19 @@ const Stops = {
     "name": "Van Dyke & E Outer Dr",
     "lat": "42.441672723",
     "lon": "-83.024345157",
-    "routes": ["48"]
+    "routes": ["40", "48", "95"]
   },
   "7406": {
     "name": "Van Dyke & E Outer Dr",
     "lat": "42.441718",
     "lon": "-83.025133",
-    "routes": ["48"]
+    "routes": ["40", "48", "95"]
   },
   "741": {
     "name": "Tireman & Greenfield",
     "lat": "42.350952",
     "lon": "-83.197592",
-    "routes": ["47"]
+    "routes": ["22", "47"]
   },
   "7410": {
     "name": "Van Dyke & Milbank",
@@ -26871,25 +26871,25 @@ const Stops = {
     "name": "Warren & Rivard",
     "lat": "42.361744",
     "lon": "-83.051547",
-    "routes": ["14"]
+    "routes": ["14", "40"]
   },
   "7414": {
     "name": "Russell & Warren",
     "lat": "42.362488",
     "lon": "-83.051018",
-    "routes": ["40"]
+    "routes": ["14", "40"]
   },
   "7415": {
     "name": "Russell & Warren",
     "lat": "42.362544",
     "lon": "-83.051306",
-    "routes": ["40"]
+    "routes": ["14", "40"]
   },
   "7416": {
     "name": "Warren & Russell",
     "lat": "42.361909",
     "lon": "-83.052068",
-    "routes": ["14"]
+    "routes": ["14", "40"]
   },
   "7419": {
     "name": "Warren & Riopelle",
@@ -26901,7 +26901,7 @@ const Stops = {
     "name": "Tireman & Southfield",
     "lat": "42.35067",
     "lon": "-83.217114",
-    "routes": ["47"]
+    "routes": ["46", "47"]
   },
   "7420": {
     "name": "McNichols & I-75 Service Dr",
@@ -26925,7 +26925,7 @@ const Stops = {
     "name": "Davison & St Aubin",
     "lat": "42.410245",
     "lon": "-83.07629",
-    "routes": ["15"]
+    "routes": ["15", "40"]
   },
   "7424": {
     "name": "Davison & Fleming",
@@ -26943,7 +26943,7 @@ const Stops = {
     "name": "McNichols & Lumpkin",
     "lat": "42.418538",
     "lon": "-83.080491",
-    "routes": ["32"]
+    "routes": ["32", "40"]
   },
   "7427": {
     "name": "McNichols & Fleming",
@@ -26961,7 +26961,7 @@ const Stops = {
     "name": "Lafayette & E Grand Bl",
     "lat": "42.350464293",
     "lon": "-83.003648164",
-    "routes": ["48", "80"]
+    "routes": ["12", "48", "80"]
   },
   "746": {
     "name": "Van Dyke & Vernor",
@@ -27003,7 +27003,7 @@ const Stops = {
     "name": "Plymouth & Vaughan",
     "lat": "42.371747",
     "lon": "-83.237169",
-    "routes": ["38"]
+    "routes": ["15", "38", "60", "96"]
   },
   "7469": {
     "name": "Plymouth & Auburn",
@@ -27015,7 +27015,7 @@ const Stops = {
     "name": "Van Dyke & Warren",
     "lat": "42.376308",
     "lon": "-83.012743",
-    "routes": ["48"]
+    "routes": ["14", "48"]
   },
   "7470": {
     "name": "Plymouth & Auburn",
@@ -27111,7 +27111,7 @@ const Stops = {
     "name": "Van Dyke & Harper",
     "lat": "42.388231362",
     "lon": "-83.021410253",
-    "routes": ["48"]
+    "routes": ["11", "48"]
   },
   "7490": {
     "name": "Plymouth & Grandmont",
@@ -27165,13 +27165,13 @@ const Stops = {
     "name": "Plymouth & Montrose",
     "lat": "42.372446",
     "lon": "-83.19932",
-    "routes": ["38"]
+    "routes": ["22", "38"]
   },
   "75": {
     "name": "Chalmers & Harper",
     "lat": "42.405053",
     "lon": "-82.96468",
-    "routes": ["9"]
+    "routes": ["7", "9"]
   },
   "750": {
     "name": "Van Dyke & Lynch",
@@ -27219,7 +27219,7 @@ const Stops = {
     "name": "Van Dyke & Nevada",
     "lat": "42.42665449",
     "lon": "-83.02380005",
-    "routes": ["32", "48"]
+    "routes": ["10", "32", "48"]
   },
   "7510": {
     "name": "Plymouth & Hubbell",
@@ -27261,19 +27261,19 @@ const Stops = {
     "name": "Schaefer & Plymouth",
     "lat": "42.372651",
     "lon": "-83.178074",
-    "routes": ["41"]
+    "routes": ["38", "41"]
   },
   "7518": {
     "name": "Schaefer & Plymouth",
     "lat": "42.373274",
     "lon": "-83.177886",
-    "routes": ["41"]
+    "routes": ["38", "41"]
   },
   "752": {
     "name": "Van Dyke & 7 Mile",
     "lat": "42.434245862",
     "lon": "-83.024115013",
-    "routes": ["48"]
+    "routes": ["32", "45", "48"]
   },
   "7521": {
     "name": "Plymouth & Littlefield",
@@ -27333,7 +27333,7 @@ const Stops = {
     "name": "Van Dyke & 8 Mile",
     "lat": "42.44776",
     "lon": "-83.024589",
-    "routes": ["48"]
+    "routes": ["17", "48"]
   },
   "7530": {
     "name": "Plymouth & Mendota",
@@ -27375,49 +27375,49 @@ const Stops = {
     "name": "Plymouth & Ohio",
     "lat": "42.373512",
     "lon": "-83.153929",
-    "routes": ["38"]
+    "routes": ["21", "38"]
   },
   "7539": {
     "name": "Plymouth & Northlawn",
     "lat": "42.373549",
     "lon": "-83.152405",
-    "routes": ["38"]
+    "routes": ["15", "21", "38"]
   },
   "754": {
     "name": "Van Dyke & 8 Mile",
     "lat": "42.447794",
     "lon": "-83.024912",
-    "routes": ["48"]
+    "routes": ["17", "48"]
   },
   "7543": {
     "name": "Oakman & Elmhurst",
     "lat": "42.376197",
     "lon": "-83.149426",
-    "routes": ["15"]
+    "routes": ["15", "38"]
   },
   "7544": {
     "name": "Elmhurst & Oakman",
     "lat": "42.375904",
     "lon": "-83.149339",
-    "routes": ["38"]
+    "routes": ["15", "38"]
   },
   "7545": {
     "name": "Oakman & Elmhurst",
     "lat": "42.375702",
     "lon": "-83.150135",
-    "routes": ["15"]
+    "routes": ["15", "38"]
   },
   "7546": {
     "name": "Elmhurst & Cloverdale",
     "lat": "42.37605",
     "lon": "-83.148211",
-    "routes": ["38"]
+    "routes": ["15", "38"]
   },
   "7547": {
     "name": "Elmhurst & Cloverdale",
     "lat": "42.375947",
     "lon": "-83.147712",
-    "routes": ["38"]
+    "routes": ["15", "38"]
   },
   "7548": {
     "name": "Elmhurst & American",
@@ -27435,7 +27435,7 @@ const Stops = {
     "name": "Van Dyke & 7 Mile",
     "lat": "42.433620633",
     "lon": "-83.024358499",
-    "routes": ["32", "48"]
+    "routes": ["32", "45", "48"]
   },
   "7550": {
     "name": "Elmhurst & Monica",
@@ -27471,7 +27471,7 @@ const Stops = {
     "name": "Van Dyke & Nevada",
     "lat": "42.42606149",
     "lon": "-83.02414105",
-    "routes": ["32", "48"]
+    "routes": ["10", "32", "48"]
   },
   "7560": {
     "name": "Elmhurst & Petoskey",
@@ -27519,13 +27519,13 @@ const Stops = {
     "name": "Tuxedo & Linwood",
     "lat": "42.38375",
     "lon": "-83.115252",
-    "routes": ["38"]
+    "routes": ["29", "38"]
   },
   "7569": {
     "name": "Linwood & Tuxedo",
     "lat": "42.383939",
     "lon": "-83.115668",
-    "routes": ["29"]
+    "routes": ["29", "38"]
   },
   "757": {
     "name": "Van Dyke & Lynch",
@@ -27537,7 +27537,7 @@ const Stops = {
     "name": "Linwood & Tuxedo",
     "lat": "42.383388",
     "lon": "-83.115589",
-    "routes": ["29"]
+    "routes": ["29", "38"]
   },
   "7572": {
     "name": "14th & Webb",
@@ -27567,7 +27567,7 @@ const Stops = {
     "name": "Van Dyke & Harper",
     "lat": "42.387752",
     "lon": "-83.021385",
-    "routes": ["48"]
+    "routes": ["11", "48"]
   },
   "7581": {
     "name": "Lodge Service Dr & Pingree",
@@ -27609,13 +27609,13 @@ const Stops = {
     "name": "7 Mile & Gratiot",
     "lat": "42.43515149",
     "lon": "-82.97815105",
-    "routes": ["45", "9"]
+    "routes": ["34", "45", "9"]
   },
   "760": {
     "name": "Van Dyke & Warren",
     "lat": "42.375658",
     "lon": "-83.012473",
-    "routes": ["48"]
+    "routes": ["14", "48"]
   },
   "7606": {
     "name": "Plymouth & Appleton",
@@ -27669,7 +27669,7 @@ const Stops = {
     "name": "Lafayette & E Grand Bl",
     "lat": "42.35024042",
     "lon": "-83.004514601",
-    "routes": ["48", "80"]
+    "routes": ["12", "48", "80"]
   },
   "7629": {
     "name": "Plymouth & Burt",
@@ -27699,7 +27699,7 @@ const Stops = {
     "name": "Oakman & I-96 Service Dr",
     "lat": "42.377078",
     "lon": "-83.147169",
-    "routes": ["15"]
+    "routes": ["15", "38"]
   },
   "7643": {
     "name": "Oakman & Ewald Cir",
@@ -27711,25 +27711,25 @@ const Stops = {
     "name": "Dexter & Webb",
     "lat": "42.379857336",
     "lon": "-83.124104551",
-    "routes": ["16"]
+    "routes": ["16", "38"]
   },
   "7649": {
     "name": "Dexter & Webb",
     "lat": "42.379387869",
     "lon": "-83.124013449",
-    "routes": ["16"]
+    "routes": ["16", "38"]
   },
   "765": {
     "name": "Vernor & Springwells",
     "lat": "42.311508826",
     "lon": "-83.126859672",
-    "routes": ["49"]
+    "routes": ["49", "89"]
   },
   "7650": {
     "name": "Tuxedo & Dexter",
     "lat": "42.380407",
     "lon": "-83.124235",
-    "routes": ["38"]
+    "routes": ["16", "38"]
   },
   "7651": {
     "name": "Dexter & Richton",
@@ -27759,7 +27759,7 @@ const Stops = {
     "name": "Dexter & Monterey",
     "lat": "42.38212185",
     "lon": "-83.125878449",
-    "routes": ["16"]
+    "routes": ["16", "38"]
   },
   "7657": {
     "name": "Dexter & Glynn",
@@ -27783,7 +27783,7 @@ const Stops = {
     "name": "Vernor & Dragoon",
     "lat": "42.31562253",
     "lon": "-83.107979145",
-    "routes": ["49", "89"]
+    "routes": ["30", "49", "89"]
   },
   "7660": {
     "name": "Dexter & Lawrence",
@@ -27795,13 +27795,13 @@ const Stops = {
     "name": "Dexter & Glendale",
     "lat": "42.387122435",
     "lon": "-83.128961047",
-    "routes": ["16"]
+    "routes": ["15", "16"]
   },
   "7662": {
     "name": "Dexter & Glendale",
     "lat": "42.386971019",
     "lon": "-83.129122852",
-    "routes": ["16"]
+    "routes": ["15", "16"]
   },
   "7663": {
     "name": "Michigan & Fifth",
@@ -27819,31 +27819,31 @@ const Stops = {
     "name": "Vernor & W Grand Bl",
     "lat": "42.322961067",
     "lon": "-83.088757636",
-    "routes": ["49", "89"]
+    "routes": ["27", "49", "89"]
   },
   "7670": {
     "name": "Bagley & Cass",
     "lat": "42.33365923",
     "lon": "-83.053439007",
-    "routes": ["29"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "29", "31", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "7672": {
     "name": "Forest & Lodge Service Dr",
     "lat": "42.35183",
     "lon": "-83.071211",
-    "routes": ["14", "89"]
+    "routes": ["14", "23", "89"]
   },
   "7673": {
     "name": "Forest & Third",
     "lat": "42.352374",
     "lon": "-83.069453",
-    "routes": ["14", "89"]
+    "routes": ["14", "23", "89"]
   },
   "7674": {
     "name": "Third & Forest",
     "lat": "42.351975",
     "lon": "-83.069854",
-    "routes": ["23"]
+    "routes": ["14", "23", "89"]
   },
   "7675": {
     "name": "Third & Calumet",
@@ -27867,19 +27867,19 @@ const Stops = {
     "name": "Trumbull - Bagley",
     "lat": "42.329511",
     "lon": "-83.065489",
-    "routes": ["49"]
+    "routes": ["29", "49"]
   },
   "7680": {
     "name": "Warren & Lodge Service Dr",
     "lat": "42.353671",
     "lon": "-83.074569",
-    "routes": ["14"]
+    "routes": ["14", "89"]
   },
   "7681": {
     "name": "Warren & Anthony Wayne Dr",
     "lat": "42.354572",
     "lon": "-83.071765",
-    "routes": ["14"]
+    "routes": ["14", "23", "42"]
   },
   "7684": {
     "name": "ANTHONY WAYNE DRIVE & MERRICK",
@@ -27891,7 +27891,7 @@ const Stops = {
     "name": "ANTHONY WAYNE DRIVE & MERRICK",
     "lat": "42.35607",
     "lon": "-83.072146",
-    "routes": ["23"]
+    "routes": ["23", "42"]
   },
   "7688": {
     "name": "Hamilton & Boston",
@@ -27927,7 +27927,7 @@ const Stops = {
     "name": "Hamilton & Monterey",
     "lat": "42.39151",
     "lon": "-83.099012",
-    "routes": ["23"]
+    "routes": ["23", "42"]
   },
   "7695": {
     "name": "Hamilton & Monterey",
@@ -27945,13 +27945,13 @@ const Stops = {
     "name": "Waltham & 8 Mile",
     "lat": "42.448888",
     "lon": "-82.995332",
-    "routes": ["9"]
+    "routes": ["17", "9"]
   },
   "770": {
     "name": "Bagley & Trumbull",
     "lat": "42.329423",
     "lon": "-83.065843",
-    "routes": ["49"]
+    "routes": ["29", "37", "49", "89"]
   },
   "7704": {
     "name": "Oakland & Euclid",
@@ -27999,13 +27999,13 @@ const Stops = {
     "name": "Vernor & Livernois",
     "lat": "42.315645",
     "lon": "-83.110811",
-    "routes": ["49", "89"]
+    "routes": ["30", "49", "89"]
   },
   "7721": {
     "name": "OAKLAND & ROSEDALE",
     "lat": "42.394159",
     "lon": "-83.078434",
-    "routes": ["42"]
+    "routes": ["38", "42"]
   },
   "7724": {
     "name": "Oakland & Kenilworth",
@@ -28023,7 +28023,7 @@ const Stops = {
     "name": "Vernor & Springwells",
     "lat": "42.311556",
     "lon": "-83.127451",
-    "routes": ["49"]
+    "routes": ["49", "89"]
   },
   "7732": {
     "name": "Beaubien & Ferry",
@@ -28059,7 +28059,7 @@ const Stops = {
     "name": "Oakland & Ferris",
     "lat": "42.416591",
     "lon": "-83.093254",
-    "routes": ["43"]
+    "routes": ["32", "43"]
   },
   "7766": {
     "name": "Oakland & Buena Vista",
@@ -28071,13 +28071,13 @@ const Stops = {
     "name": "Oakland & Davison",
     "lat": "42.407685",
     "lon": "-83.087114",
-    "routes": ["15"]
+    "routes": ["15", "42"]
   },
   "7769": {
     "name": "Davison & Oakland",
     "lat": "42.406263",
     "lon": "-83.085772",
-    "routes": ["15"]
+    "routes": ["15", "42"]
   },
   "7772": {
     "name": "Oakland & Dakota",
@@ -28143,19 +28143,19 @@ const Stops = {
     "name": "Nevada & Marx",
     "lat": "42.425175",
     "lon": "-83.083371",
-    "routes": ["43"]
+    "routes": ["40", "43"]
   },
   "7788": {
     "name": "Nevada & Dequindre",
     "lat": "42.425358201",
     "lon": "-83.082971364",
-    "routes": ["43"]
+    "routes": ["40", "43"]
   },
   "7789": {
     "name": "Dequindre & Nevada",
     "lat": "42.4256",
     "lon": "-83.082444",
-    "routes": ["43"]
+    "routes": ["40", "43"]
   },
   "7790": {
     "name": "Dequindre & Grixdale",
@@ -28185,25 +28185,25 @@ const Stops = {
     "name": "7 Mile & Dequindre",
     "lat": "42.432975",
     "lon": "-83.083265",
-    "routes": ["45"]
+    "routes": ["43", "45"]
   },
   "7795": {
     "name": "Dequindre & 7 Mile",
     "lat": "42.43267",
     "lon": "-83.082961",
-    "routes": ["43"]
+    "routes": ["43", "45"]
   },
   "7796": {
     "name": "7 Mile & Dequindre",
     "lat": "42.432837",
     "lon": "-83.082202",
-    "routes": ["45"]
+    "routes": ["43", "45"]
   },
   "7797": {
     "name": "Dequindre & 7 Mile",
     "lat": "42.43272",
     "lon": "-83.08277",
-    "routes": ["43"]
+    "routes": ["43", "45"]
   },
   "7799": {
     "name": "Dequindre & Emery",
@@ -28269,37 +28269,37 @@ const Stops = {
     "name": "E Outer Dr & Ryan",
     "lat": "42.440261",
     "lon": "-83.062984",
-    "routes": ["40", "95"]
+    "routes": ["40", "43", "95"]
   },
   "7818": {
     "name": "Ryan & E Outer Dr",
     "lat": "42.441003",
     "lon": "-83.063492",
-    "routes": ["43"]
+    "routes": ["40", "43", "95"]
   },
   "7819": {
     "name": "E Outer Dr & Ryan",
     "lat": "42.440611",
     "lon": "-83.064089",
-    "routes": ["43"]
+    "routes": ["40", "43", "95"]
   },
   "7820": {
     "name": "Ryan & E Outer Dr",
     "lat": "42.440084",
     "lon": "-83.063609",
-    "routes": ["40", "95"]
+    "routes": ["40", "43", "95"]
   },
   "7821": {
     "name": "Ryan & Cordova",
     "lat": "42.442325",
     "lon": "-83.063552",
-    "routes": ["43"]
+    "routes": ["40", "43", "95"]
   },
   "7822": {
     "name": "Ryan & Remington",
     "lat": "42.442467",
     "lon": "-83.063748",
-    "routes": ["43"]
+    "routes": ["40", "43", "95"]
   },
   "7823": {
     "name": "Ryan & Amrad",
@@ -28317,37 +28317,37 @@ const Stops = {
     "name": "Ryan & Hamlet",
     "lat": "42.445916",
     "lon": "-83.06372",
-    "routes": ["43"]
+    "routes": ["17", "43"]
   },
   "7826": {
     "name": "8 Mile & Ryan",
     "lat": "42.447164308",
     "lon": "-83.063539862",
-    "routes": ["17"]
+    "routes": ["17", "43"]
   },
   "7828": {
     "name": "Ryan & 8 Mile",
     "lat": "42.44686",
     "lon": "-83.063973",
-    "routes": ["43"]
+    "routes": ["17", "43"]
   },
   "7830": {
     "name": "Warren & St Antoine",
     "lat": "42.35989",
     "lon": "-83.057613",
-    "routes": ["14"]
+    "routes": ["14", "42"]
   },
   "7831": {
     "name": "St Antoine & Warren",
     "lat": "42.359495",
     "lon": "-83.057138",
-    "routes": ["42"]
+    "routes": ["14", "42"]
   },
   "7832": {
     "name": "Warren & St Antoine",
     "lat": "42.359333",
     "lon": "-83.058153",
-    "routes": ["14"]
+    "routes": ["14", "42"]
   },
   "7834": {
     "name": "Warren & I-75 Service Dr",
@@ -28365,7 +28365,7 @@ const Stops = {
     "name": "Oakland & Gerald",
     "lat": "42.409064",
     "lon": "-83.088052",
-    "routes": ["15"]
+    "routes": ["15", "42"]
   },
   "7837": {
     "name": "Oakland & Gerald",
@@ -28377,13 +28377,13 @@ const Stops = {
     "name": "Woodward & McNichols",
     "lat": "42.417315",
     "lon": "-83.105107",
-    "routes": ["53"]
+    "routes": ["23", "32", "53"]
   },
   "7840": {
     "name": "Oakland & Manchester",
     "lat": "42.410107",
     "lon": "-83.088931",
-    "routes": ["15"]
+    "routes": ["15", "42", "43"]
   },
   "7843": {
     "name": "McNichols & Brush",
@@ -28401,25 +28401,25 @@ const Stops = {
     "name": "Oakland & McNichols",
     "lat": "42.417615",
     "lon": "-83.094199",
-    "routes": ["43"]
+    "routes": ["32", "43"]
   },
   "7846": {
     "name": "McNichols & Oakland",
     "lat": "42.417884",
     "lon": "-83.093759",
-    "routes": ["32"]
+    "routes": ["32", "43"]
   },
   "7847": {
     "name": "McNichols & Oakland",
     "lat": "42.418135",
     "lon": "-83.094651",
-    "routes": ["32"]
+    "routes": ["32", "43"]
   },
   "7848": {
     "name": "Oakland & McNichols",
     "lat": "42.418769",
     "lon": "-83.094177",
-    "routes": ["43"]
+    "routes": ["32", "43"]
   },
   "7849": {
     "name": "McNichols & Cardoni",
@@ -28431,7 +28431,7 @@ const Stops = {
     "name": "Woodward & Manchester",
     "lat": "42.40678349",
     "lon": "-83.09806605",
-    "routes": ["498", "53"]
+    "routes": ["15", "39", "42", "43", "498", "53"]
   },
   "7850": {
     "name": "McNichols & Cardoni",
@@ -28479,7 +28479,7 @@ const Stops = {
     "name": "State Fair & Marx",
     "lat": "42.440033",
     "lon": "-83.083978",
-    "routes": ["12"]
+    "routes": ["12", "43"]
   },
   "786": {
     "name": "Woodward & Tuxedo",
@@ -28491,19 +28491,19 @@ const Stops = {
     "name": "E Outer Dr & Lumpkin",
     "lat": "42.440001",
     "lon": "-83.080281",
-    "routes": ["12"]
+    "routes": ["12", "43"]
   },
   "7864": {
     "name": "E Outer Dr & Dequindre",
     "lat": "42.43997",
     "lon": "-83.08264",
-    "routes": ["12"]
+    "routes": ["12", "43"]
   },
   "7865": {
     "name": "E Outer Dr & Lumpkin",
     "lat": "42.440291",
     "lon": "-83.080847",
-    "routes": ["12"]
+    "routes": ["12", "43"]
   },
   "7866": {
     "name": "Conant & Lantz",
@@ -28521,13 +28521,13 @@ const Stops = {
     "name": "Woodward & Clairmount",
     "lat": "42.382628869",
     "lon": "-83.08168758",
-    "routes": ["53"]
+    "routes": ["11", "53"]
   },
   "7870": {
     "name": "E Outer Dr & Conant",
     "lat": "42.440355",
     "lon": "-83.079652",
-    "routes": ["12"]
+    "routes": ["12", "43"]
   },
   "7875": {
     "name": "Vernor & Dale",
@@ -28551,7 +28551,7 @@ const Stops = {
     "name": "Woodward & W Grand Bl",
     "lat": "42.369814653",
     "lon": "-83.073219434",
-    "routes": ["53"]
+    "routes": ["16", "498", "53", "80", "89"]
   },
   "7880": {
     "name": "Vernor & Sharon",
@@ -28593,7 +28593,7 @@ const Stops = {
     "name": "Vernor & Carson",
     "lat": "42.311283",
     "lon": "-83.12781",
-    "routes": ["49"]
+    "routes": ["49", "89"]
   },
   "7888": {
     "name": "Vernor & Central",
@@ -28641,19 +28641,19 @@ const Stops = {
     "name": "Vernor & Infantry",
     "lat": "42.315494033",
     "lon": "-83.111214475",
-    "routes": ["49", "89"]
+    "routes": ["30", "49", "89"]
   },
   "7899": {
     "name": "Livernois & Vernor",
     "lat": "42.315428",
     "lon": "-83.109945",
-    "routes": ["30"]
+    "routes": ["30", "49", "89"]
   },
   "79": {
     "name": "7 Mile & Gratiot",
     "lat": "42.43502149",
     "lon": "-82.97697505",
-    "routes": ["45", "9"]
+    "routes": ["34", "45", "9"]
   },
   "790": {
     "name": "Woodward & Forest",
@@ -28665,25 +28665,25 @@ const Stops = {
     "name": "Dragoon & Vernor",
     "lat": "42.315942",
     "lon": "-83.108684",
-    "routes": ["30"]
+    "routes": ["30", "49", "89"]
   },
   "7901": {
     "name": "VERNOR & DRAGOON",
     "lat": "42.315766",
     "lon": "-83.108606",
-    "routes": ["89"]
+    "routes": ["30", "49", "89"]
   },
   "7902": {
     "name": "Vernor & Dragoon",
     "lat": "42.315716",
     "lon": "-83.108978",
-    "routes": ["49", "89"]
+    "routes": ["30", "49", "89"]
   },
   "7904": {
     "name": "VERNOR & CAVALARY",
     "lat": "42.316578",
     "lon": "-83.106004",
-    "routes": ["89"]
+    "routes": ["49", "89"]
   },
   "7905": {
     "name": "Vernor & Campbell",
@@ -28695,31 +28695,31 @@ const Stops = {
     "name": "Vernor & Campbell",
     "lat": "42.316939",
     "lon": "-83.104138",
-    "routes": ["49"]
+    "routes": ["49", "89"]
   },
   "7907": {
     "name": "Junction & Vernor",
     "lat": "42.31804",
     "lon": "-83.101884",
-    "routes": ["11"]
+    "routes": ["11", "49", "89"]
   },
   "7908": {
     "name": "Junction & Vernor",
     "lat": "42.3176",
     "lon": "-83.101794",
-    "routes": ["11"]
+    "routes": ["11", "49", "89"]
   },
   "7909": {
     "name": "Vernor & Junction",
     "lat": "42.317923363",
     "lon": "-83.101383145",
-    "routes": ["49", "89"]
+    "routes": ["11", "49", "89"]
   },
   "7910": {
     "name": "Vernor & Junction",
     "lat": "42.317732",
     "lon": "-83.1022",
-    "routes": ["49", "89"]
+    "routes": ["11", "49", "89"]
   },
   "7911": {
     "name": "Vernor & Ferdinand",
@@ -28743,7 +28743,7 @@ const Stops = {
     "name": "Vernor & McKinstry",
     "lat": "42.319731",
     "lon": "-83.09734",
-    "routes": ["49"]
+    "routes": ["49", "89"]
   },
   "7915": {
     "name": "Vernor & Clark",
@@ -28785,13 +28785,13 @@ const Stops = {
     "name": "W Grand Bl & Vernor",
     "lat": "42.323182",
     "lon": "-83.089316",
-    "routes": ["27"]
+    "routes": ["27", "49", "89"]
   },
   "7924": {
     "name": "W Grand Bl & Vernor",
     "lat": "42.322540376",
     "lon": "-83.089221869",
-    "routes": ["27"]
+    "routes": ["27", "49", "89"]
   },
   "7925": {
     "name": "Vernor & 24th",
@@ -28875,13 +28875,13 @@ const Stops = {
     "name": "Trumbull & Bagley",
     "lat": "42.3298",
     "lon": "-83.0656",
-    "routes": ["29"]
+    "routes": ["29", "37", "49", "89"]
   },
   "7945": {
     "name": "Trumbull & Bagley",
     "lat": "42.329281",
     "lon": "-83.065484",
-    "routes": ["29"]
+    "routes": ["29", "37", "49", "89"]
   },
   "795": {
     "name": "Woodward & Winder",
@@ -28893,19 +28893,19 @@ const Stops = {
     "name": "Michigan & Shelby",
     "lat": "42.331792",
     "lon": "-83.049326",
-    "routes": ["34"]
+    "routes": ["34", "40", "7"]
   },
   "7955": {
     "name": "Michigan & Griswold",
     "lat": "42.331768277",
     "lon": "-83.048826145",
-    "routes": ["34", "7"]
+    "routes": ["34", "40", "7"]
   },
   "7956": {
     "name": "MICHIGAN & GRISWOLD",
     "lat": "42.331898",
     "lon": "-83.048435",
-    "routes": ["40"]
+    "routes": ["34", "40", "7"]
   },
   "7963": {
     "name": "Mt Elliott & Vernor",
@@ -28923,7 +28923,7 @@ const Stops = {
     "name": "Woodward & Forest",
     "lat": "42.355148",
     "lon": "-83.063052",
-    "routes": ["53"]
+    "routes": ["14", "498", "53"]
   },
   "7977": {
     "name": "Van Dyke & Charlevoix",
@@ -28947,7 +28947,7 @@ const Stops = {
     "name": "Woodward & E Grand Bl",
     "lat": "42.370858",
     "lon": "-83.073495",
-    "routes": ["53"]
+    "routes": ["16", "498", "53", "80", "89"]
   },
   "7992": {
     "name": "Pennsylvania & Vernor",
@@ -28959,13 +28959,13 @@ const Stops = {
     "name": "Chalmers & Harper",
     "lat": "42.405193",
     "lon": "-82.964925",
-    "routes": ["9"]
+    "routes": ["7", "9"]
   },
   "800": {
     "name": "Owen & Woodward",
     "lat": "42.382929",
     "lon": "-83.081173",
-    "routes": ["11"]
+    "routes": ["11", "53"]
   },
   "801": {
     "name": "Woodward & Tennyson",
@@ -29001,7 +29001,7 @@ const Stops = {
     "name": "Woodward & Manchester",
     "lat": "42.40746",
     "lon": "-83.098159",
-    "routes": ["53"]
+    "routes": ["15", "39", "42", "43", "498", "53"]
   },
   "8020": {
     "name": "W Grand Bl & Toledo",
@@ -29025,7 +29025,7 @@ const Stops = {
     "name": "Woodward & McNichols",
     "lat": "42.417365",
     "lon": "-83.104823",
-    "routes": ["53"]
+    "routes": ["23", "32", "53"]
   },
   "8031": {
     "name": "Chalmers & Kercheval",
@@ -29067,19 +29067,19 @@ const Stops = {
     "name": "Woodward @ 19975",
     "lat": "42.440776",
     "lon": "-83.121428",
-    "routes": ["53"]
+    "routes": ["12", "17", "23", "30", "498", "53", "54"]
   },
   "8044": {
     "name": "WOODWARD & COLTON",
     "lat": "42.444997",
     "lon": "-83.123769",
-    "routes": ["30", "54"]
+    "routes": ["17", "30", "54"]
   },
   "805": {
     "name": "Wyoming & 8 Mile",
     "lat": "42.445314",
     "lon": "-83.161609",
-    "routes": ["54"]
+    "routes": ["17", "54"]
   },
   "8053": {
     "name": "McNichols & Second",
@@ -29103,7 +29103,7 @@ const Stops = {
     "name": "Woodward & McNichols",
     "lat": "42.418196",
     "lon": "-83.105362",
-    "routes": ["53"]
+    "routes": ["23", "32", "53"]
   },
   "8062": {
     "name": "McNichols & John R",
@@ -29127,13 +29127,13 @@ const Stops = {
     "name": "State Fair & Ralston",
     "lat": "42.439276",
     "lon": "-83.116829",
-    "routes": ["12"]
+    "routes": ["12", "23"]
   },
   "8068": {
     "name": "State Fair & Bauman",
     "lat": "42.43937",
     "lon": "-83.112117",
-    "routes": ["12"]
+    "routes": ["12", "23"]
   },
   "8069": {
     "name": "State Fair & Bauman",
@@ -29145,7 +29145,7 @@ const Stops = {
     "name": "Wyoming & McNichols",
     "lat": "42.416677",
     "lon": "-83.160421",
-    "routes": ["54"]
+    "routes": ["32", "54"]
   },
   "8071": {
     "name": "State Fair & Havana",
@@ -29157,7 +29157,7 @@ const Stops = {
     "name": "Wyoming & Fenkell",
     "lat": "42.402199",
     "lon": "-83.159778",
-    "routes": ["54"]
+    "routes": ["18", "54"]
   },
   "8082": {
     "name": "Second & Canfield",
@@ -29193,13 +29193,13 @@ const Stops = {
     "name": "Cass & Ledyard",
     "lat": "42.34058249",
     "lon": "-83.05772305",
-    "routes": ["16", "31"]
+    "routes": ["16", "23", "31"]
   },
   "809": {
     "name": "Wyoming & Grand River",
     "lat": "42.376425",
     "lon": "-83.158785",
-    "routes": ["54"]
+    "routes": ["21", "54"]
   },
   "8090": {
     "name": "Cass & Ledyard",
@@ -29217,19 +29217,19 @@ const Stops = {
     "name": "CASS & FOREST",
     "lat": "42.353676",
     "lon": "-83.065553",
-    "routes": ["80"]
+    "routes": ["80", "89"]
   },
   "8097": {
     "name": "Manchester & John R",
     "lat": "42.408163",
     "lon": "-83.09537",
-    "routes": ["15"]
+    "routes": ["15", "42", "43"]
   },
   "8098": {
     "name": "Manchester & John R",
     "lat": "42.408220934",
     "lon": "-83.094777348",
-    "routes": ["15", "43"]
+    "routes": ["15", "42", "43"]
   },
   "81": {
     "name": "Warren & Guilford",
@@ -29241,61 +29241,61 @@ const Stops = {
     "name": "Wyoming & Joy",
     "lat": "42.358478",
     "lon": "-83.158054",
-    "routes": ["54"]
+    "routes": ["27", "54", "96"]
   },
   "8100": {
     "name": "Larned & St Antoine",
     "lat": "42.332339325",
     "lon": "-83.038327728",
-    "routes": ["21", "7", "92", "96"]
+    "routes": ["21", "25", "7", "92", "96"]
   },
   "8109": {
     "name": "Jefferson & Rivard",
     "lat": "42.333366",
     "lon": "-83.033609",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "811": {
     "name": "Wyoming & Warren",
     "lat": "42.343828",
     "lon": "-83.15737",
-    "routes": ["54"]
+    "routes": ["14", "54"]
   },
   "8110": {
     "name": "Jefferson @ 1450",
     "lat": "42.334083",
     "lon": "-83.031884",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8111": {
     "name": "Jefferson & Riopelle",
     "lat": "42.334772",
     "lon": "-83.03103",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8112": {
     "name": "Jefferson & Riopelle",
     "lat": "42.334863",
     "lon": "-83.030048",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8113": {
     "name": "Jefferson & Rivard",
     "lat": "42.333517",
     "lon": "-83.033975",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8114": {
     "name": "Jefferson & Orleans",
     "lat": "42.335456",
     "lon": "-83.028729",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8115": {
     "name": "Jefferson & St Aubin",
     "lat": "42.336271922",
     "lon": "-83.027402443",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8117": {
     "name": "Jefferson & St Aubin",
@@ -29307,55 +29307,55 @@ const Stops = {
     "name": "Jefferson & Dubois",
     "lat": "42.337359",
     "lon": "-83.024314",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8119": {
     "name": "Jefferson & Dubois",
     "lat": "42.337435",
     "lon": "-83.024854",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8120": {
     "name": "Jefferson & Chene",
     "lat": "42.338161",
     "lon": "-83.023202",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8121": {
     "name": "Jefferson & Chene",
     "lat": "42.338256",
     "lon": "-83.022202",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8122": {
     "name": "Jefferson & Joseph Campau",
     "lat": "42.339435",
     "lon": "-83.020162",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8123": {
     "name": "Jefferson & Joseph Campau",
     "lat": "42.339484",
     "lon": "-83.019308",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8124": {
     "name": "Jefferson & McDougall",
     "lat": "42.340851",
     "lon": "-83.016913",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8125": {
     "name": "Jefferson & McDougall",
     "lat": "42.340341",
     "lon": "-83.017502",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8127": {
     "name": "Jefferson & Adair",
     "lat": "42.341941",
     "lon": "-83.014367",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8128": {
     "name": "Jefferson & Mt Elliott",
@@ -29367,7 +29367,7 @@ const Stops = {
     "name": "Jefferson & Mt Elliott",
     "lat": "42.343634",
     "lon": "-83.010482",
-    "routes": ["25"]
+    "routes": ["25", "7"]
   },
   "8131": {
     "name": "Jefferson & Jefferson Ct",
@@ -29403,7 +29403,7 @@ const Stops = {
     "name": "Jefferson & Field",
     "lat": "42.347761",
     "lon": "-83.000871",
-    "routes": ["25"]
+    "routes": ["12", "25"]
   },
   "8138": {
     "name": "Jefferson & Sheridan",
@@ -29475,7 +29475,7 @@ const Stops = {
     "name": "West Jefferson & WEST END",
     "lat": "42.292607",
     "lon": "-83.113689",
-    "routes": ["54"]
+    "routes": ["30", "54"]
   },
   "8150": {
     "name": "Jefferson & Iroquois",
@@ -29523,7 +29523,7 @@ const Stops = {
     "name": "Jefferson & McClellan",
     "lat": "42.358767",
     "lon": "-82.984883",
-    "routes": ["25"]
+    "routes": ["25", "80"]
   },
   "8165": {
     "name": "Jefferson & Parkview",
@@ -29589,7 +29589,7 @@ const Stops = {
     "name": "Jefferson & Hart",
     "lat": "42.368151",
     "lon": "-82.967442",
-    "routes": ["25", "80"]
+    "routes": ["11", "25", "80"]
   },
   "8181": {
     "name": "Jefferson & Corey",
@@ -29601,19 +29601,19 @@ const Stops = {
     "name": "Jefferson @ 12244",
     "lat": "42.36966",
     "lon": "-82.960834",
-    "routes": ["25"]
+    "routes": ["25", "80"]
   },
   "8183": {
     "name": "Jefferson & Conner",
     "lat": "42.370042",
     "lon": "-82.95954",
-    "routes": ["25", "80"]
+    "routes": ["13", "25", "80"]
   },
   "8184": {
     "name": "Jefferson & Conner",
     "lat": "42.369945",
     "lon": "-82.958257",
-    "routes": ["25", "80"]
+    "routes": ["13", "25", "80"]
   },
   "8188": {
     "name": "Jefferson & Coplin",
@@ -29643,13 +29643,13 @@ const Stops = {
     "name": "Jefferson & Lakewood",
     "lat": "42.372303",
     "lon": "-82.945383",
-    "routes": ["25", "80"]
+    "routes": ["25", "80", "9"]
   },
   "8193": {
     "name": "Jefferson & Lakewood",
     "lat": "42.37241",
     "lon": "-82.94583",
-    "routes": ["25", "80"]
+    "routes": ["25", "80", "9"]
   },
   "8194": {
     "name": "Jefferson & Chalmers",
@@ -29661,19 +29661,19 @@ const Stops = {
     "name": "Wyoming & Warren",
     "lat": "42.344737",
     "lon": "-83.157097",
-    "routes": ["54"]
+    "routes": ["14", "54"]
   },
   "821": {
     "name": "Wyoming & Joy",
     "lat": "42.359711",
     "lon": "-83.15785",
-    "routes": ["54"]
+    "routes": ["27", "54", "96"]
   },
   "8215": {
     "name": "Jefferson & Chalmers",
     "lat": "42.372946",
     "lon": "-82.944508",
-    "routes": ["25", "80"]
+    "routes": ["25", "80", "9"]
   },
   "8216": {
     "name": "Jefferson & Manistique",
@@ -29703,13 +29703,13 @@ const Stops = {
     "name": "Wyoming & Grand River",
     "lat": "42.376960723",
     "lon": "-83.158593105",
-    "routes": ["54"]
+    "routes": ["21", "54"]
   },
   "8233": {
     "name": "I-75 Service Dr & Owen",
     "lat": "42.387179",
     "lon": "-83.069138",
-    "routes": ["11"]
+    "routes": ["11", "95"]
   },
   "8236": {
     "name": "Fort & Lawndale",
@@ -29727,37 +29727,37 @@ const Stops = {
     "name": "Wyoming & Fenkell",
     "lat": "42.402948",
     "lon": "-83.159586",
-    "routes": ["54"]
+    "routes": ["18", "54"]
   },
   "8245": {
     "name": "I-75 Service Dr & E Grand Bl",
     "lat": "42.375037",
     "lon": "-83.061299",
-    "routes": ["11"]
+    "routes": ["11", "40"]
   },
   "8248": {
     "name": "Clairmount & Woodward",
     "lat": "42.382722169",
     "lon": "-83.082229131",
-    "routes": ["11"]
+    "routes": ["11", "53"]
   },
   "8249": {
     "name": "Owen & Woodward",
     "lat": "42.383086",
     "lon": "-83.08108",
-    "routes": ["11"]
+    "routes": ["11", "53"]
   },
   "825": {
     "name": "Wyoming & McNichols",
     "lat": "42.417193",
     "lon": "-83.160217",
-    "routes": ["54"]
+    "routes": ["32", "54"]
   },
   "8250": {
     "name": "Clairmount & Woodward",
     "lat": "42.382673",
     "lon": "-83.082032",
-    "routes": ["11"]
+    "routes": ["11", "53"]
   },
   "8251": {
     "name": "Woodrow Wilson & Davison",
@@ -29775,31 +29775,31 @@ const Stops = {
     "name": "Manchester & Oakland",
     "lat": "42.41018",
     "lon": "-83.089963",
-    "routes": ["15"]
+    "routes": ["15", "42", "43"]
   },
   "8257": {
     "name": "Manchester & Second",
     "lat": "42.40550849",
     "lon": "-83.10186505",
-    "routes": ["15", "39", "43"]
+    "routes": ["15", "39", "42", "43"]
   },
   "8258": {
     "name": "Manchester & Third",
     "lat": "42.40453549",
     "lon": "-83.10448705",
-    "routes": ["39", "43"]
+    "routes": ["15", "39", "42", "43"]
   },
   "826": {
     "name": "Wyoming & 8 Mile",
     "lat": "42.44508449",
     "lon": "-83.16140205",
-    "routes": ["54"]
+    "routes": ["17", "54"]
   },
   "8260": {
     "name": "Davison @ 4330 W",
     "lat": "42.387361",
     "lon": "-83.137576",
-    "routes": ["15"]
+    "routes": ["15", "30"]
   },
   "8263": {
     "name": "W Grand Bl & Lodge Service Dr",
@@ -29847,7 +29847,7 @@ const Stops = {
     "name": "MACK & McKINLEY",
     "lat": "42.407609",
     "lon": "-82.915149",
-    "routes": ["32"]
+    "routes": ["31", "32"]
   },
   "8292": {
     "name": "McNichols & Annott",
@@ -29859,7 +29859,7 @@ const Stops = {
     "name": "MACK & MANOR",
     "lat": "42.409556",
     "lon": "-82.913612",
-    "routes": ["31"]
+    "routes": ["14", "31", "32"]
   },
   "8295": {
     "name": "Glendale & Trumbull",
@@ -29871,7 +29871,7 @@ const Stops = {
     "name": "Mack & Warren",
     "lat": "42.41203649",
     "lon": "-82.91291905",
-    "routes": ["31", "32"]
+    "routes": ["14", "31", "32"]
   },
   "8299": {
     "name": "Mack & Radnor",
@@ -29883,7 +29883,7 @@ const Stops = {
     "name": "Chalmers & Warren",
     "lat": "42.395215517",
     "lon": "-82.958753242",
-    "routes": ["9"]
+    "routes": ["14", "9"]
   },
   "8302": {
     "name": "Fort & Bayside",
@@ -29913,31 +29913,31 @@ const Stops = {
     "name": "Davison & Rosa Parks",
     "lat": "42.396314",
     "lon": "-83.113557",
-    "routes": ["15"]
+    "routes": ["15", "18"]
   },
   "8322": {
     "name": "Mack & Anderdon",
     "lat": "42.383844",
     "lon": "-82.966968",
-    "routes": ["31"]
+    "routes": ["13", "31"]
   },
   "8330": {
     "name": "Chicago & Southfield",
     "lat": "42.365191",
     "lon": "-83.217561",
-    "routes": ["15"]
+    "routes": ["15", "46"]
   },
   "8331": {
     "name": "Southfield & Tireman",
     "lat": "42.350908",
     "lon": "-83.215862",
-    "routes": ["46"]
+    "routes": ["46", "47"]
   },
   "8336": {
     "name": "Larned & Brush",
     "lat": "42.331103141",
     "lon": "-83.041187516",
-    "routes": ["10", "21", "48", "7"]
+    "routes": ["10", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "8337": {
     "name": "Miller & Eagle",
@@ -29955,7 +29955,7 @@ const Stops = {
     "name": "Michigan & Washington",
     "lat": "42.331591676",
     "lon": "-83.050588123",
-    "routes": ["40"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "8345": {
     "name": "8 Mile & Hickory",
@@ -29967,31 +29967,31 @@ const Stops = {
     "name": "Michigan & First",
     "lat": "42.33181749",
     "lon": "-83.05470905",
-    "routes": ["34", "37"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "48", "49", "53", "7", "92", "96"]
   },
   "8347": {
     "name": "Mack & Woodward",
     "lat": "42.347566",
     "lon": "-83.057367",
-    "routes": ["47"]
+    "routes": ["31", "42", "47", "498", "53"]
   },
   "8355": {
     "name": "Mack & Rivard",
     "lat": "42.351974",
     "lon": "-83.046384",
-    "routes": ["31"]
+    "routes": ["31", "40", "80"]
   },
   "8358": {
     "name": "Grand River & Kentford",
     "lat": "42.402262",
     "lon": "-83.221814",
-    "routes": ["21", "92"]
+    "routes": ["18", "21", "92"]
   },
   "8360": {
     "name": "Ferry Park & Linwood",
     "lat": "42.359275",
     "lon": "-83.098695",
-    "routes": ["29"]
+    "routes": ["16", "29"]
   },
   "8361": {
     "name": "I-94 Service Dr & E Grand Bl",
@@ -30009,19 +30009,19 @@ const Stops = {
     "name": "Evergreen & 7 Mile",
     "lat": "42.42932",
     "lon": "-83.238966",
-    "routes": ["60", "92"]
+    "routes": ["45", "60", "92"]
   },
   "8384": {
     "name": "GRAND BLVD. & 2 ND",
     "lat": "42.369034",
     "lon": "-83.077194",
-    "routes": ["80", "89"]
+    "routes": ["16", "23", "42", "80", "89"]
   },
   "8385": {
     "name": "Ferry Park & 16th",
     "lat": "42.360136",
     "lon": "-83.09671",
-    "routes": ["29"]
+    "routes": ["16", "29"]
   },
   "8389": {
     "name": "7 Mile & Kingston",
@@ -30033,19 +30033,19 @@ const Stops = {
     "name": "Evergreen & Grand River",
     "lat": "42.408145",
     "lon": "-83.237909",
-    "routes": ["60"]
+    "routes": ["21", "60", "92"]
   },
   "84": {
     "name": "Greenfield & Warren",
     "lat": "42.343955",
     "lon": "-83.196414",
-    "routes": ["22"]
+    "routes": ["14", "22"]
   },
   "840": {
     "name": "Evergreen & Schoolcraft",
     "lat": "42.385989",
     "lon": "-83.236997",
-    "routes": ["60"]
+    "routes": ["43", "60"]
   },
   "8409": {
     "name": "7 Mile & Lesure",
@@ -30063,7 +30063,7 @@ const Stops = {
     "name": "Evergreen & Warren",
     "lat": "42.342799",
     "lon": "-83.235458",
-    "routes": ["60"]
+    "routes": ["14", "60"]
   },
   "843": {
     "name": "Evergreen @ Henry Ford Community College",
@@ -30075,13 +30075,13 @@ const Stops = {
     "name": "Evergreen & Warren",
     "lat": "42.343422",
     "lon": "-83.235311",
-    "routes": ["60"]
+    "routes": ["14", "60"]
   },
   "8441": {
     "name": "Michigan & Washington",
     "lat": "42.331753672",
     "lon": "-83.051957423",
-    "routes": ["10", "25", "34", "37", "48", "7", "92", "96"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "8445": {
     "name": "Linwood @ 14805",
@@ -30093,7 +30093,7 @@ const Stops = {
     "name": "Evergreen & Joy",
     "lat": "42.357848",
     "lon": "-83.235836",
-    "routes": ["60", "96"]
+    "routes": ["27", "60", "96"]
   },
   "8452": {
     "name": "Jefferson @ 8631",
@@ -30105,7 +30105,7 @@ const Stops = {
     "name": "Jefferson & West End",
     "lat": "42.292405",
     "lon": "-83.113047",
-    "routes": ["30"]
+    "routes": ["30", "54"]
   },
   "8458": {
     "name": "Warren & E Outer Dr",
@@ -30117,13 +30117,13 @@ const Stops = {
     "name": "Evergreen & Schoolcraft",
     "lat": "42.386556",
     "lon": "-83.236705",
-    "routes": ["60"]
+    "routes": ["43", "60"]
   },
   "8461": {
     "name": "Warren & W Grand Bl",
     "lat": "42.344892",
     "lon": "-83.108589",
-    "routes": ["14"]
+    "routes": ["14", "27", "47"]
   },
   "8464": {
     "name": "Belden & Midland",
@@ -30141,13 +30141,13 @@ const Stops = {
     "name": "7 Mile & Winston",
     "lat": "42.428567",
     "lon": "-83.28436",
-    "routes": ["17"]
+    "routes": ["17", "21"]
   },
   "847": {
     "name": "Evergreen & Grand River",
     "lat": "42.408852",
     "lon": "-83.237723",
-    "routes": ["60", "92"]
+    "routes": ["21", "60", "92"]
   },
   "8470": {
     "name": "7 Mile & Lenore",
@@ -30201,13 +30201,13 @@ const Stops = {
     "name": "Evergreen & 7 Mile",
     "lat": "42.429913",
     "lon": "-83.238734",
-    "routes": ["60", "92"]
+    "routes": ["45", "60", "92"]
   },
   "8480": {
     "name": "8 Mile & Trinity",
     "lat": "42.443387",
     "lon": "-83.249594",
-    "routes": ["17"]
+    "routes": ["17", "92"]
   },
   "8482": {
     "name": "8 Mile & Pierson",
@@ -30249,7 +30249,7 @@ const Stops = {
     "name": "8 Mile & Ashton",
     "lat": "42.444084",
     "lon": "-83.221101",
-    "routes": ["17"]
+    "routes": ["17", "46"]
   },
   "849": {
     "name": "Evergreen & 8 Mile",
@@ -30291,7 +30291,7 @@ const Stops = {
     "name": "8 Mile & Greenfield",
     "lat": "42.444651",
     "lon": "-83.199812",
-    "routes": ["17"]
+    "routes": ["16", "17", "22"]
   },
   "8499": {
     "name": "8 Mile & Oxley",
@@ -30303,7 +30303,7 @@ const Stops = {
     "name": "W Outer Dr & Schaefer",
     "lat": "42.420056",
     "lon": "-83.179699",
-    "routes": ["16"]
+    "routes": ["16", "41"]
   },
   "8500": {
     "name": "8 Mile & Marlowe",
@@ -30363,7 +30363,7 @@ const Stops = {
     "name": "8 Mile & Wyoming",
     "lat": "42.445588647",
     "lon": "-83.161231047",
-    "routes": ["17"]
+    "routes": ["17", "54"]
   },
   "8512": {
     "name": "8 Mile & Wisconsin",
@@ -30393,7 +30393,7 @@ const Stops = {
     "name": "8 Mile & Santa Rosa",
     "lat": "42.445949",
     "lon": "-83.143858",
-    "routes": ["17", "54"]
+    "routes": ["17", "30", "54"]
   },
   "8517": {
     "name": "8 Mile & Gardendale",
@@ -30471,7 +30471,7 @@ const Stops = {
     "name": "W Outer Dr & Schaefer",
     "lat": "42.420373",
     "lon": "-83.180371",
-    "routes": ["16"]
+    "routes": ["16", "41"]
   },
   "8530": {
     "name": "8 Mile & Greeley",
@@ -30561,13 +30561,13 @@ const Stops = {
     "name": "8 Mile & Spencer",
     "lat": "42.448027",
     "lon": "-83.026387",
-    "routes": ["17"]
+    "routes": ["17", "48"]
   },
   "8548": {
     "name": "8 Mile & Veach",
     "lat": "42.448129",
     "lon": "-83.021186",
-    "routes": ["17"]
+    "routes": ["13", "17", "48"]
   },
   "8549": {
     "name": "8 Mile @ Bel Air Ctr",
@@ -30579,7 +30579,7 @@ const Stops = {
     "name": "8 Mile & Hoover",
     "lat": "42.44862449",
     "lon": "-83.00724605",
-    "routes": ["17"]
+    "routes": ["13", "17"]
   },
   "8552": {
     "name": "8 Mile & Hoover",
@@ -30603,7 +30603,7 @@ const Stops = {
     "name": "8 Mile & Waltham",
     "lat": "42.448976",
     "lon": "-82.995076",
-    "routes": ["17"]
+    "routes": ["17", "9"]
   },
   "8556": {
     "name": "8 Mile & Fairport",
@@ -30615,7 +30615,7 @@ const Stops = {
     "name": "8 Mile & Schoenherr",
     "lat": "42.449171",
     "lon": "-82.985235",
-    "routes": ["17"]
+    "routes": ["17", "9"]
   },
   "8558": {
     "name": "8 Mile & Hoyt",
@@ -30735,25 +30735,25 @@ const Stops = {
     "name": "8 Mile & Schoenherr",
     "lat": "42.449630772",
     "lon": "-82.986187691",
-    "routes": ["17"]
+    "routes": ["17", "9"]
   },
   "8585": {
     "name": "8 Mile @ 13301",
     "lat": "42.449637",
     "lon": "-82.988478",
-    "routes": ["17"]
+    "routes": ["17", "9"]
   },
   "8586": {
     "name": "8 Mile @ 13011",
     "lat": "42.449602",
     "lon": "-82.990943",
-    "routes": ["17"]
+    "routes": ["17", "9"]
   },
   "8587": {
     "name": "8 Mile & Waltham",
     "lat": "42.449435606",
     "lon": "-82.995811",
-    "routes": ["17"]
+    "routes": ["17", "9"]
   },
   "8588": {
     "name": "8 Mile & Helle",
@@ -30801,7 +30801,7 @@ const Stops = {
     "name": "8 Mile @ 7575 E",
     "lat": "42.44853",
     "lon": "-83.027264",
-    "routes": ["17"]
+    "routes": ["17", "48"]
   },
   "8605": {
     "name": "8 Mile & Winfield",
@@ -30933,7 +30933,7 @@ const Stops = {
     "name": "8 Mile & Ford",
     "lat": "42.447309",
     "lon": "-83.106794",
-    "routes": ["17"]
+    "routes": ["17", "23"]
   },
   "8630": {
     "name": "8 Mile & West End",
@@ -30975,7 +30975,7 @@ const Stops = {
     "name": "8 Mile & Allen",
     "lat": "42.44658849",
     "lon": "-83.13773105",
-    "routes": ["17", "30", "54"]
+    "routes": ["17", "23", "30", "54"]
   },
   "8649": {
     "name": "8 Mile & Flowerdale",
@@ -30987,7 +30987,7 @@ const Stops = {
     "name": "8 Mile & Kensington",
     "lat": "42.446432",
     "lon": "-83.144988",
-    "routes": ["17", "54"]
+    "routes": ["17", "30", "54"]
   },
   "8652": {
     "name": "8 Mile & Pinecrest",
@@ -31029,7 +31029,7 @@ const Stops = {
     "name": "8 Mile & Wyoming",
     "lat": "42.446058",
     "lon": "-83.161884",
-    "routes": ["17"]
+    "routes": ["17", "54"]
   },
   "8661": {
     "name": "8 Mile & Mendota",
@@ -31071,13 +31071,13 @@ const Stops = {
     "name": "EIGHT MILE & GREENFIELD RD",
     "lat": "42.444704",
     "lon": "-83.200703",
-    "routes": ["17"]
+    "routes": ["16", "17", "22"]
   },
   "8678": {
     "name": "8 Mile & Southfield",
     "lat": "42.444587",
     "lon": "-83.220863",
-    "routes": ["17"]
+    "routes": ["17", "46"]
   },
   "8680": {
     "name": "8 Mile & Mapleridge",
@@ -31137,7 +31137,7 @@ const Stops = {
     "name": "E Outer Dr & Gratiot",
     "lat": "42.406722",
     "lon": "-82.996756",
-    "routes": ["13"]
+    "routes": ["13", "34", "38"]
   },
   "8698": {
     "name": "Conner @ WCCCD",
@@ -31155,13 +31155,13 @@ const Stops = {
     "name": "Chene & Gratiot",
     "lat": "42.35301216",
     "lon": "-83.032301233",
-    "routes": ["10"]
+    "routes": ["10", "34"]
   },
   "870": {
     "name": "Lahser & McNichols",
     "lat": "42.415142",
     "lon": "-83.257451",
-    "routes": ["32"]
+    "routes": ["21", "32", "45"]
   },
   "8700": {
     "name": "Conner & Waveney",
@@ -31185,7 +31185,7 @@ const Stops = {
     "name": "HARPER & LODEWICK",
     "lat": "42.422425",
     "lon": "-82.929886",
-    "routes": ["7"]
+    "routes": ["45", "7"]
   },
   "8734": {
     "name": "E Grand Bl & St Aubin",
@@ -31203,7 +31203,7 @@ const Stops = {
     "name": "Van Dyke & Gratiot",
     "lat": "42.378209194",
     "lon": "-83.014322057",
-    "routes": ["48"]
+    "routes": ["34", "48"]
   },
   "877": {
     "name": "Plymouth & Rouge Park Dr",
@@ -31215,7 +31215,7 @@ const Stops = {
     "name": "Vernor & W Grand Bl",
     "lat": "42.322728235",
     "lon": "-83.089763855",
-    "routes": ["49", "89"]
+    "routes": ["27", "49", "89"]
   },
   "8776": {
     "name": "Russell & Forest",
@@ -31227,7 +31227,7 @@ const Stops = {
     "name": "Russell & Gratiot",
     "lat": "42.343957562",
     "lon": "-83.038850225",
-    "routes": ["40"]
+    "routes": ["10", "34", "40"]
   },
   "8809": {
     "name": "Mack & Grayton",
@@ -31275,25 +31275,25 @@ const Stops = {
     "name": "Jefferson & I-75 Service Dr",
     "lat": "42.332161142",
     "lon": "-83.037080203",
-    "routes": ["25"]
+    "routes": ["21", "25", "7", "92", "96"]
   },
   "8825": {
     "name": "GRATIOT & PARKER",
     "lat": "42.37981",
     "lon": "-83.014123",
-    "routes": ["34"]
+    "routes": ["34", "48"]
   },
   "8826": {
     "name": "Dequindre & Davison",
     "lat": "42.40899",
     "lon": "-83.076953",
-    "routes": ["40"]
+    "routes": ["15", "40"]
   },
   "8836": {
     "name": "14620",
     "lat": "42.416923",
     "lon": "-83.082063",
-    "routes": ["40"]
+    "routes": ["32", "40"]
   },
   "8837": {
     "name": "Gratiot & Houston-Whittier",
@@ -31311,13 +31311,13 @@ const Stops = {
     "name": "Cass & Martin Luther King",
     "lat": "42.345950701",
     "lon": "-83.060856123",
-    "routes": ["16"]
+    "routes": ["16", "31", "47"]
   },
   "8843": {
     "name": "8 Mile & Ryan",
     "lat": "42.447676",
     "lon": "-83.064446",
-    "routes": ["17"]
+    "routes": ["17", "43"]
   },
   "8844": {
     "name": "Schaefer & Electric",
@@ -31329,13 +31329,13 @@ const Stops = {
     "name": "Woodward & Owen",
     "lat": "42.382691",
     "lon": "-83.081459",
-    "routes": ["53"]
+    "routes": ["11", "53"]
   },
   "886": {
     "name": "WOODWARD & BALMORAL",
     "lat": "42.433302",
     "lon": "-83.116271",
-    "routes": ["53"]
+    "routes": ["45", "498", "53"]
   },
   "8869": {
     "name": "Grand River & Meyers",
@@ -31347,7 +31347,7 @@ const Stops = {
     "name": "Woodward & Bryson",
     "lat": "42.434045",
     "lon": "-83.116114",
-    "routes": ["53"]
+    "routes": ["45", "498", "53"]
   },
   "8870": {
     "name": "Grand River & Meyers",
@@ -31359,19 +31359,19 @@ const Stops = {
     "name": "Van Dyke & Gratiot",
     "lat": "42.379269",
     "lon": "-83.014891",
-    "routes": ["48"]
+    "routes": ["34", "48"]
   },
   "8874": {
     "name": "Plymouth & Telegraph",
     "lat": "42.371142",
     "lon": "-83.275088",
-    "routes": ["38"]
+    "routes": ["38", "43"]
   },
   "8876": {
     "name": "Gratiot & Mack",
     "lat": "42.359612",
     "lon": "-83.027188",
-    "routes": ["34"]
+    "routes": ["31", "34"]
   },
   "8879": {
     "name": "McNichols & Lamphere",
@@ -31389,13 +31389,13 @@ const Stops = {
     "name": "Rosa Parks Transit Center - Bay 2",
     "lat": "42.332785905",
     "lon": "-83.052570853",
-    "routes": ["19"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "8892": {
     "name": "Rosa Parks Transit Center - Bay 1",
     "lat": "42.332920039",
     "lon": "-83.052562849",
-    "routes": ["10"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "89": {
     "name": "Joseph Campau & Holbrook",
@@ -31413,37 +31413,37 @@ const Stops = {
     "name": "Rosa Parks Transit Center - Bay 5",
     "lat": "42.332146593",
     "lon": "-83.052536952",
-    "routes": ["27"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "8911": {
     "name": "Rosa Parks Transit Center - Bay 12",
     "lat": "42.333089151",
     "lon": "-83.05240656",
-    "routes": ["7"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "8912": {
     "name": "Rosa Parks Transit Center - Bay 6",
     "lat": "42.332162566",
     "lon": "-83.052380958",
-    "routes": ["29"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "8913": {
     "name": "ROSA PARKS TRANSIT 16 SB",
     "lat": "42.332984",
     "lon": "-83.052316",
-    "routes": ["16"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "8915": {
     "name": "Rosa Parks Transit Center - Bay 10",
     "lat": "42.332768769",
     "lon": "-83.052425339",
-    "routes": ["49"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "8918": {
     "name": "Rosa Parks Transit Center - Bay 7",
     "lat": "42.33233954",
     "lon": "-83.052408887",
-    "routes": ["31"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "892": {
     "name": "Woodward & Pilgrim",
@@ -31455,31 +31455,31 @@ const Stops = {
     "name": "Rosa Parks Transit Center - Bay 15",
     "lat": "42.332903416",
     "lon": "-83.052788347",
-    "routes": ["53"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "8928": {
     "name": "Rosa Parks Transit Center - Bay 3",
     "lat": "42.332632392",
     "lon": "-83.052565367",
-    "routes": ["18"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "8933": {
     "name": "Rosa Parks Transit Center - Bay 8",
     "lat": "42.332494473",
     "lon": "-83.052404841",
-    "routes": ["23"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "8944": {
     "name": "Rosa Parks Transit Center - Bay 13",
     "lat": "42.333228886",
     "lon": "-83.052465452",
-    "routes": ["40"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "8945": {
     "name": "Rosa Parks Transit Center - Bay 9",
     "lat": "42.332624287",
     "lon": "-83.052409924",
-    "routes": ["37"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "895": {
     "name": "Woodward & Eason",
@@ -31515,7 +31515,7 @@ const Stops = {
     "name": "Jefferson & Lycaste",
     "lat": "42.368217",
     "lon": "-82.968054",
-    "routes": ["25", "80"]
+    "routes": ["11", "25", "80"]
   },
   "8965": {
     "name": "Mack & University",
@@ -31557,19 +31557,19 @@ const Stops = {
     "name": "Dequindre @ 14601",
     "lat": "42.417191",
     "lon": "-83.082286",
-    "routes": ["40"]
+    "routes": ["32", "40"]
   },
   "8974": {
     "name": "Dequindre & Davison",
     "lat": "42.409947",
     "lon": "-83.077855",
-    "routes": ["40"]
+    "routes": ["15", "40"]
   },
   "8976": {
     "name": "Dequindre & Lawley",
     "lat": "42.407513",
     "lon": "-83.076194",
-    "routes": ["40"]
+    "routes": ["15", "40"]
   },
   "8977": {
     "name": "7 Mile & Hershey",
@@ -31581,7 +31581,7 @@ const Stops = {
     "name": "Poland & Lumpkin",
     "lat": "42.392488585",
     "lon": "-83.063649275",
-    "routes": ["40"]
+    "routes": ["40", "95"]
   },
   "898": {
     "name": "Woodward & Worcester",
@@ -31605,7 +31605,7 @@ const Stops = {
     "name": "Linwood & Fenkell",
     "lat": "42.403235",
     "lon": "-83.127164",
-    "routes": ["29"]
+    "routes": ["18", "29"]
   },
   "8984": {
     "name": "Morang & 7 Mile",
@@ -31623,13 +31623,13 @@ const Stops = {
     "name": "Livernois & McNichols",
     "lat": "42.416823",
     "lon": "-83.140985",
-    "routes": ["30"]
+    "routes": ["16", "29", "30", "32"]
   },
   "8989": {
     "name": "Rosa Parks Transit Center - Bay 11",
     "lat": "42.332908318",
     "lon": "-83.05241393",
-    "routes": ["48"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "899": {
     "name": "Woodward & Worcester",
@@ -31653,13 +31653,13 @@ const Stops = {
     "name": "Schaefer & Schoolcraft",
     "lat": "42.388354096",
     "lon": "-83.17844082",
-    "routes": ["41"]
+    "routes": ["41", "43"]
   },
   "8995": {
     "name": "Schaefer & Schoolcraft",
     "lat": "42.387766779",
     "lon": "-83.178609279",
-    "routes": ["41"]
+    "routes": ["41", "43"]
   },
   "8997": {
     "name": "Fenkell & Lauder",
@@ -31671,7 +31671,7 @@ const Stops = {
     "name": "Kercheval & Van Dyke",
     "lat": "42.358431",
     "lon": "-82.999567",
-    "routes": ["7"]
+    "routes": ["48", "7", "80"]
   },
   "8999": {
     "name": "Caniff & Alpena",
@@ -31683,7 +31683,7 @@ const Stops = {
     "name": "Jos Campau & Davison",
     "lat": "42.413067",
     "lon": "-83.068668",
-    "routes": ["10"]
+    "routes": ["10", "15"]
   },
   "900": {
     "name": "Woodward & Savannah",
@@ -31695,19 +31695,19 @@ const Stops = {
     "name": "Schoolcraft & Greenfield",
     "lat": "42.387157",
     "lon": "-83.197712",
-    "routes": ["43"]
+    "routes": ["22", "43"]
   },
   "9002": {
     "name": "Southfield & Schoolcraft",
     "lat": "42.386379",
     "lon": "-83.218079",
-    "routes": ["46"]
+    "routes": ["43", "46"]
   },
   "9004": {
     "name": "Martin Luther King & Woodward",
     "lat": "42.34731349",
     "lon": "-83.05849805",
-    "routes": ["31", "42", "47"]
+    "routes": ["31", "42", "47", "498", "53"]
   },
   "9005": {
     "name": "Martin Luther King & 16th",
@@ -31755,13 +31755,13 @@ const Stops = {
     "name": "Jefferson & St Antoine",
     "lat": "42.331706",
     "lon": "-83.03787",
-    "routes": ["25"]
+    "routes": ["21", "25", "7", "92", "96"]
   },
   "9025": {
     "name": "Cadillac & Shoemaker",
     "lat": "42.389226",
     "lon": "-83.00154",
-    "routes": ["7"]
+    "routes": ["11", "7"]
   },
   "903": {
     "name": "Woodward & Nevada",
@@ -31773,37 +31773,37 @@ const Stops = {
     "name": "Joy & Linwood",
     "lat": "42.373363",
     "lon": "-83.109301",
-    "routes": ["11"]
+    "routes": ["11", "29"]
   },
   "9032": {
     "name": "Dailey & Northfield",
     "lat": "42.362019",
     "lon": "-83.132607",
-    "routes": ["27"]
+    "routes": ["11", "27", "96"]
   },
   "9033": {
     "name": "Conner & Harper",
     "lat": "42.396657",
     "lon": "-82.99005072",
-    "routes": ["13"]
+    "routes": ["13", "7"]
   },
   "9034": {
     "name": "Conant & Caniff",
     "lat": "42.402237",
     "lon": "-83.052638",
-    "routes": ["12"]
+    "routes": ["12", "38", "95"]
   },
   "9035": {
     "name": "Conant & Caniff",
     "lat": "42.402680656",
     "lon": "-83.052715",
-    "routes": ["12"]
+    "routes": ["12", "38", "95"]
   },
   "9037": {
     "name": "Joy & Linwood",
     "lat": "42.373263",
     "lon": "-83.10908",
-    "routes": ["11"]
+    "routes": ["11", "29"]
   },
   "9038": {
     "name": "Conant & Holbrook",
@@ -31821,7 +31821,7 @@ const Stops = {
     "name": "Michigan & Wyoming",
     "lat": "42.327769",
     "lon": "-83.157249",
-    "routes": ["37"]
+    "routes": ["37", "54"]
   },
   "9042": {
     "name": "Mt Elliott & Doremus",
@@ -31875,7 +31875,7 @@ const Stops = {
     "name": "Woodward & Hollywood",
     "lat": "42.430555",
     "lon": "-83.114513",
-    "routes": ["53"]
+    "routes": ["45", "498", "53"]
   },
   "9050": {
     "name": "Mt Elliott & Marcus",
@@ -31911,7 +31911,7 @@ const Stops = {
     "name": "Woodward & Hollywood",
     "lat": "42.430693",
     "lon": "-83.11385",
-    "routes": ["53"]
+    "routes": ["45", "498", "53"]
   },
   "9061": {
     "name": "E Outer Dr & Linnhurst",
@@ -31941,19 +31941,19 @@ const Stops = {
     "name": "E Outer Dr & Eastwood",
     "lat": "42.43246",
     "lon": "-83.014609",
-    "routes": ["32"]
+    "routes": ["32", "45"]
   },
   "9066": {
     "name": "McNichols & Grand River",
     "lat": "42.414879",
     "lon": "-83.254226",
-    "routes": ["32"]
+    "routes": ["21", "32", "45"]
   },
   "9067": {
     "name": "Greenfield & Fenkell",
     "lat": "42.401797",
     "lon": "-83.198517",
-    "routes": ["22"]
+    "routes": ["18", "22"]
   },
   "907": {
     "name": "Woodward & Hildale",
@@ -31977,7 +31977,7 @@ const Stops = {
     "name": "Joseph Campau & Nevada",
     "lat": "42.425622",
     "lon": "-83.072822",
-    "routes": ["10"]
+    "routes": ["10", "40"]
   },
   "910": {
     "name": "Woodward & Greendale",
@@ -31989,13 +31989,13 @@ const Stops = {
     "name": "KELLY & EDMORE",
     "lat": "42.446854",
     "lon": "-82.943506",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "9102": {
     "name": "Kelly & Bringard",
     "lat": "42.446275055",
     "lon": "-82.944643296",
-    "routes": ["31"]
+    "routes": ["17", "31"]
   },
   "9103": {
     "name": "Kelly & Cushing",
@@ -32175,7 +32175,7 @@ const Stops = {
     "name": "MOROSS & TYRONE",
     "lat": "42.422665",
     "lon": "-82.924773",
-    "routes": ["17", "31", "7"]
+    "routes": ["17", "31", "45", "7"]
   },
   "9152": {
     "name": "Gratiot & Wilfred",
@@ -32187,13 +32187,13 @@ const Stops = {
     "name": "RANDOLPH & MONROE",
     "lat": "42.334094",
     "lon": "-83.04479",
-    "routes": ["95"]
+    "routes": ["10", "34", "40", "48", "95"]
   },
   "917": {
     "name": "Woodward & State Fair",
     "lat": "42.439679",
     "lon": "-83.119955",
-    "routes": ["53"]
+    "routes": ["12", "23", "53"]
   },
   "9170": {
     "name": "Holbrook & Dauch",
@@ -32211,19 +32211,19 @@ const Stops = {
     "name": "State Fair & Woodward",
     "lat": "42.439379",
     "lon": "-83.119295",
-    "routes": ["12", "23"]
+    "routes": ["12", "23", "53"]
   },
   "919": {
     "name": "Woodward & State Fair",
     "lat": "42.439342",
     "lon": "-83.120443",
-    "routes": ["53"]
+    "routes": ["12", "23", "53"]
   },
   "92": {
     "name": "Nevada & Van Dyke",
     "lat": "42.42665",
     "lon": "-83.024397",
-    "routes": ["10"]
+    "routes": ["10", "32", "48"]
   },
   "9210": {
     "name": "Rosa Parks & Spruce",
@@ -32235,7 +32235,7 @@ const Stops = {
     "name": "State Fair & Woodward",
     "lat": "42.43922",
     "lon": "-83.119298",
-    "routes": ["12"]
+    "routes": ["12", "23", "53"]
   },
   "9229": {
     "name": "Rosa Parks & Lasalle Gardens S",
@@ -32265,13 +32265,13 @@ const Stops = {
     "name": "Woodward & Wellesley",
     "lat": "42.434695",
     "lon": "-83.117305",
-    "routes": ["53"]
+    "routes": ["45", "498", "53"]
   },
   "926": {
     "name": "Woodward & Ralston",
     "lat": "42.435964",
     "lon": "-83.117433",
-    "routes": ["53"]
+    "routes": ["45", "498", "53"]
   },
   "927": {
     "name": "Woodward & Winchester",
@@ -32283,7 +32283,7 @@ const Stops = {
     "name": "Bel Air Shopping Center",
     "lat": "42.448047",
     "lon": "-83.021271",
-    "routes": ["13", "48"]
+    "routes": ["13", "17", "48"]
   },
   "9411": {
     "name": "Michigan & American",
@@ -32301,13 +32301,13 @@ const Stops = {
     "name": "Michigan & Hinkel",
     "lat": "42.314756",
     "lon": "-83.200021",
-    "routes": ["37"]
+    "routes": ["22", "37"]
   },
   "9415": {
     "name": "Michigan & Palmer",
     "lat": "42.31548",
     "lon": "-83.19716",
-    "routes": ["37"]
+    "routes": ["22", "37"]
   },
   "9416": {
     "name": "Michigan & Firestone",
@@ -32325,7 +32325,7 @@ const Stops = {
     "name": "Michigan & Bingham",
     "lat": "42.32263949",
     "lon": "-83.17399005",
-    "routes": ["37", "49"]
+    "routes": ["37", "41", "49"]
   },
   "9424": {
     "name": "Michigan & Lois",
@@ -32367,7 +32367,7 @@ const Stops = {
     "name": "MICHIGAN & BINGHAM",
     "lat": "42.322636",
     "lon": "-83.174015",
-    "routes": ["49"]
+    "routes": ["37", "41", "49"]
   },
   "9432": {
     "name": "Michigan & Middlesex",
@@ -32415,7 +32415,7 @@ const Stops = {
     "name": "Glendale & Hamilton",
     "lat": "42.396231",
     "lon": "-83.102502",
-    "routes": ["15"]
+    "routes": ["15", "23", "42"]
   },
   "9473": {
     "name": "McNichols & Redford",
@@ -32427,19 +32427,19 @@ const Stops = {
     "name": "Anthony Wayne Dr & Warren",
     "lat": "42.354933",
     "lon": "-83.07118",
-    "routes": ["23", "42"]
+    "routes": ["14", "23", "42"]
   },
   "9475": {
     "name": "Anthony Wayne Dr & Warren",
     "lat": "42.354135893",
     "lon": "-83.071204178",
-    "routes": ["23"]
+    "routes": ["14", "23", "42"]
   },
   "9478": {
     "name": "Larned & Shelby",
     "lat": "42.32877298",
     "lon": "-83.046555187",
-    "routes": ["10", "16", "21", "25", "48", "7", "92", "96"]
+    "routes": ["10", "16", "21", "25", "34", "48", "53", "7", "92", "95", "96"]
   },
   "9482": {
     "name": "Washington & Jefferson",
@@ -32463,7 +32463,7 @@ const Stops = {
     "name": "Varjo & Van Dyke",
     "lat": "42.425989",
     "lon": "-83.024557",
-    "routes": ["10"]
+    "routes": ["10", "32", "48"]
   },
   "9513": {
     "name": "Woodward & Midland",
@@ -32547,7 +32547,7 @@ const Stops = {
     "name": "Chene & Lafayette",
     "lat": "42.341725",
     "lon": "-83.024874",
-    "routes": ["10"]
+    "routes": ["10", "48", "80"]
   },
   "9560": {
     "name": "Coolidge & Jefferson",
@@ -32559,31 +32559,31 @@ const Stops = {
     "name": "Schaefer & Fort",
     "lat": "42.27604749",
     "lon": "-83.15467705",
-    "routes": ["41"]
+    "routes": ["19", "41", "89"]
   },
   "9565": {
     "name": "State Fair & John R",
     "lat": "42.439487",
     "lon": "-83.102274",
-    "routes": ["12"]
+    "routes": ["12", "23"]
   },
   "9566": {
     "name": "Conner & Mack",
     "lat": "42.384227",
     "lon": "-82.968053",
-    "routes": ["13"]
+    "routes": ["13", "31"]
   },
   "9567": {
     "name": "Gratiot & Forest",
     "lat": "42.370102",
     "lon": "-83.020661",
-    "routes": ["34"]
+    "routes": ["14", "34"]
   },
   "9568": {
     "name": "Gratiot & Gunston",
     "lat": "42.408337",
     "lon": "-82.995456",
-    "routes": ["34"]
+    "routes": ["13", "34", "38"]
   },
   "9569": {
     "name": "8 Mile & Meyers",
@@ -32667,7 +32667,7 @@ const Stops = {
     "name": "Joseph Campau & Nevada",
     "lat": "42.425137",
     "lon": "-83.073246",
-    "routes": ["10"]
+    "routes": ["10", "40"]
   },
   "9604": {
     "name": "Woodward & Alexandrine",
@@ -32703,13 +32703,13 @@ const Stops = {
     "name": "Conant & Minnesota",
     "lat": "42.423472",
     "lon": "-83.067046",
-    "routes": ["12"]
+    "routes": ["12", "95"]
   },
   "9611": {
     "name": "Conant & Gaylord",
     "lat": "42.419738",
     "lon": "-83.064455",
-    "routes": ["12", "95"]
+    "routes": ["12", "32", "95"]
   },
   "9612": {
     "name": "Conant & Lawley",
@@ -32769,13 +32769,13 @@ const Stops = {
     "name": "Mt Elliott & Kercheval",
     "lat": "42.35278181",
     "lon": "-83.015867308",
-    "routes": ["12"]
+    "routes": ["12", "7"]
   },
   "9622": {
     "name": "Chene & Macomb",
     "lat": "42.342613175",
     "lon": "-83.025789411",
-    "routes": ["10"]
+    "routes": ["10", "48", "80"]
   },
   "9623": {
     "name": "Lafayette & Stafford",
@@ -32787,49 +32787,49 @@ const Stops = {
     "name": "Antietam & Orleans",
     "lat": "42.34474",
     "lon": "-83.036294",
-    "routes": ["10"]
+    "routes": ["10", "34", "40"]
   },
   "9625": {
     "name": "Antietam @ 1600",
     "lat": "42.343411",
     "lon": "-83.037461",
-    "routes": ["10"]
+    "routes": ["10", "34", "40"]
   },
   "9626": {
     "name": "Lafayette & Brush",
     "lat": "42.333495243",
     "lon": "-83.043436883",
-    "routes": ["10", "48"]
+    "routes": ["10", "34", "40", "48", "95"]
   },
   "9627": {
     "name": "Lafayette & Trevor",
     "lat": "42.340788151",
     "lon": "-83.025738199",
-    "routes": ["10"]
+    "routes": ["10", "48", "80"]
   },
   "9628": {
     "name": "Chene & Macomb",
     "lat": "42.343278",
     "lon": "-83.025857",
-    "routes": ["10"]
+    "routes": ["10", "48", "80"]
   },
   "963": {
     "name": "Jefferson & Randolph",
     "lat": "42.32976649",
     "lon": "-83.04269305",
-    "routes": ["21", "25", "53", "92"]
+    "routes": ["10", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "9632": {
     "name": "7 Mile & Chalmers",
     "lat": "42.435069",
     "lon": "-82.974748",
-    "routes": ["45"]
+    "routes": ["34", "45", "9"]
   },
   "9633": {
     "name": "7 Mile & Gratiot",
     "lat": "42.43500649",
     "lon": "-82.97849405",
-    "routes": ["45", "9"]
+    "routes": ["34", "45", "9"]
   },
   "9634": {
     "name": "7 Mile & Monte Vista",
@@ -32841,13 +32841,13 @@ const Stops = {
     "name": "7 Mile & Woodward",
     "lat": "42.432094",
     "lon": "-83.114044",
-    "routes": ["45"]
+    "routes": ["45", "498", "53"]
   },
   "9636": {
     "name": "Harper & Marseilles",
     "lat": "42.421665",
     "lon": "-82.930316",
-    "routes": ["45"]
+    "routes": ["45", "7"]
   },
   "9637": {
     "name": "7 Mile & Annott",
@@ -32859,13 +32859,13 @@ const Stops = {
     "name": "7 Mile & Woodward",
     "lat": "42.432217",
     "lon": "-83.114649",
-    "routes": ["45"]
+    "routes": ["45", "498", "53"]
   },
   "9639": {
     "name": "Milwaukee & Russell",
     "lat": "42.374207",
     "lon": "-83.058574",
-    "routes": ["11"]
+    "routes": ["11", "40"]
   },
   "9640": {
     "name": "Milwaukee @ RR (Orleans)",
@@ -32877,49 +32877,49 @@ const Stops = {
     "name": "Milwaukee & E Grand Bl",
     "lat": "42.376402",
     "lon": "-83.052995",
-    "routes": ["11"]
+    "routes": ["10", "11"]
   },
   "9658": {
     "name": "John R & 7 Mile",
     "lat": "42.432514",
     "lon": "-83.102308",
-    "routes": ["23"]
+    "routes": ["23", "45"]
   },
   "969": {
     "name": "JEFFERSON & BRUSH",
     "lat": "42.330182",
     "lon": "-83.041855",
-    "routes": ["21", "92"]
+    "routes": ["10", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "9690": {
     "name": "John R & 7 Mile",
     "lat": "42.431881",
     "lon": "-83.102456",
-    "routes": ["23"]
+    "routes": ["23", "45"]
   },
   "9693": {
     "name": "JEFFERSON & RANDOLPH",
     "lat": "42.329861",
     "lon": "-83.042845",
-    "routes": ["96"]
+    "routes": ["10", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "97": {
     "name": "Joseph Campau & Davison",
     "lat": "42.412503",
     "lon": "-83.068529",
-    "routes": ["10"]
+    "routes": ["10", "15"]
   },
   "972": {
     "name": "Jefferson & Beaubien",
     "lat": "42.330792",
     "lon": "-83.040242",
-    "routes": ["21", "25", "92", "96"]
+    "routes": ["10", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "973": {
     "name": "Jefferson & Brush",
     "lat": "42.330111438",
     "lon": "-83.041753525",
-    "routes": ["25", "53", "96"]
+    "routes": ["10", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "9739": {
     "name": "Mack & Drexel",
@@ -32961,7 +32961,7 @@ const Stops = {
     "name": "Chalmers & Jefferson",
     "lat": "42.373308",
     "lon": "-82.944313",
-    "routes": ["9"]
+    "routes": ["25", "80", "9"]
   },
   "9792": {
     "name": "Orleans @ Lafayette Towers",
@@ -33009,7 +33009,7 @@ const Stops = {
     "name": "Warren & Livernois",
     "lat": "42.344716",
     "lon": "-83.129855",
-    "routes": ["14"]
+    "routes": ["14", "30"]
   },
   "98": {
     "name": "Joseph Campau & Holbrook",
@@ -33021,7 +33021,7 @@ const Stops = {
     "name": "Jefferson & Beaubien",
     "lat": "42.330708",
     "lon": "-83.039034",
-    "routes": ["25"]
+    "routes": ["10", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "9801": {
     "name": "Forest & Brooklyn",
@@ -33069,13 +33069,13 @@ const Stops = {
     "name": "Woodward & Baltimore",
     "lat": "42.368715",
     "lon": "-83.0725",
-    "routes": ["53"]
+    "routes": ["16", "498", "53", "80", "89"]
   },
   "9809": {
     "name": "Conner & Goethe",
     "lat": "42.383319",
     "lon": "-82.967404",
-    "routes": ["13"]
+    "routes": ["13", "31"]
   },
   "9810": {
     "name": "Evergreen & St Martins",
@@ -33087,7 +33087,7 @@ const Stops = {
     "name": "Third & Manchester",
     "lat": "42.404161",
     "lon": "-83.103632",
-    "routes": ["15"]
+    "routes": ["15", "39", "42", "43"]
   },
   "9812": {
     "name": "Third & Pasadena",
@@ -33117,13 +33117,13 @@ const Stops = {
     "name": "Manchester & Hamilton",
     "lat": "42.403708",
     "lon": "-83.105916",
-    "routes": ["15"]
+    "routes": ["15", "23", "39", "42", "43"]
   },
   "9817": {
     "name": "Clairmount & Linwood",
     "lat": "42.373204",
     "lon": "-83.108224",
-    "routes": ["11"]
+    "routes": ["11", "29"]
   },
   "9818": {
     "name": "McNichols & Riverdale",
@@ -33135,7 +33135,7 @@ const Stops = {
     "name": "Grand River & Livernois",
     "lat": "42.368279",
     "lon": "-83.138179",
-    "routes": ["21"]
+    "routes": ["21", "30"]
   },
   "9834": {
     "name": "Belden @ 15810",
@@ -33147,25 +33147,25 @@ const Stops = {
     "name": "Lafayette & Mt Elliott",
     "lat": "42.346745",
     "lon": "-83.01279",
-    "routes": ["48"]
+    "routes": ["48", "7", "80"]
   },
   "9836": {
     "name": "Antietam @ Pavilion Apts",
     "lat": "42.340564",
     "lon": "-83.037286",
-    "routes": ["10"]
+    "routes": ["10", "48", "80"]
   },
   "9839": {
     "name": "McNichols & Grand River",
     "lat": "42.41462",
     "lon": "-83.252098",
-    "routes": ["32"]
+    "routes": ["21", "32", "45"]
   },
   "984": {
     "name": "Woodward & Baltimore",
     "lat": "42.368737414",
     "lon": "-83.072115158",
-    "routes": ["53"]
+    "routes": ["16", "498", "53", "80", "89"]
   },
   "9842": {
     "name": "Warren & Radnor",
@@ -33183,7 +33183,7 @@ const Stops = {
     "name": "Martin Luther King & Trumbull",
     "lat": "42.341548",
     "lon": "-83.073175",
-    "routes": ["47"]
+    "routes": ["21", "29", "47"]
   },
   "985": {
     "name": "Woodward & Antoinette",
@@ -33195,7 +33195,7 @@ const Stops = {
     "name": "Beaubien & Larned",
     "lat": "42.331781249",
     "lon": "-83.040604301",
-    "routes": ["10", "48"]
+    "routes": ["10", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "986": {
     "name": "Woodward & Palmer",
@@ -33225,7 +33225,7 @@ const Stops = {
     "name": "Van Dyke & Badger",
     "lat": "42.394338",
     "lon": "-83.022569",
-    "routes": ["48"]
+    "routes": ["38", "48"]
   },
   "9885": {
     "name": "VERNOR & WATERMAN",
@@ -33243,25 +33243,25 @@ const Stops = {
     "name": "Chene & I-94 Service Dr",
     "lat": "42.373788",
     "lon": "-83.046281",
-    "routes": ["10"]
+    "routes": ["10", "11"]
   },
   "990": {
     "name": "Woodward & Amsterdam",
     "lat": "42.366343",
     "lon": "-83.070989",
-    "routes": ["53"]
+    "routes": ["16", "53", "80", "89"]
   },
   "9908": {
     "name": "Fenkell & Linwood",
     "lat": "42.402872",
     "lon": "-83.126922",
-    "routes": ["18"]
+    "routes": ["18", "29"]
   },
   "9909": {
     "name": "Telegraph & Plymouth",
     "lat": "42.372268",
     "lon": "-83.275948",
-    "routes": ["43"]
+    "routes": ["38", "43"]
   },
   "991": {
     "name": "Woodward & Rhode Island",
@@ -33273,7 +33273,7 @@ const Stops = {
     "name": "GRAND RIVER & GRANDVIEW",
     "lat": "42.427144",
     "lon": "-83.284931",
-    "routes": ["21"]
+    "routes": ["17", "21"]
   },
   "992": {
     "name": "Woodward & Avalon",
@@ -33291,7 +33291,7 @@ const Stops = {
     "name": "WOODWARD & MANCHESTER",
     "lat": "42.407476",
     "lon": "-83.098365",
-    "routes": ["498"]
+    "routes": ["15", "39", "42", "43", "498", "53"]
   },
   "9936": {
     "name": "Jefferson & Victoria",
@@ -33369,19 +33369,19 @@ const Stops = {
     "name": "MICHIGAN & CASS",
     "lat": "42.331956",
     "lon": "-83.052001",
-    "routes": ["16", "53"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "9956": {
     "name": "JEFFERSON AND GRISWOLD",
     "lat": "42.3288",
     "lon": "-83.045193",
-    "routes": ["21", "25", "53", "92", "96"]
+    "routes": ["10", "16", "21", "25", "34", "40", "48", "53", "7", "92", "95", "96"]
   },
   "9963": {
     "name": "Third & Michigan",
     "lat": "42.33138249",
     "lon": "-83.05707305",
-    "routes": ["34"]
+    "routes": ["34", "37"]
   },
   "9968": {
     "name": "Woodward & Canfield",
@@ -33393,43 +33393,43 @@ const Stops = {
     "name": "Rosa Parks Transit Center - Bay 4",
     "lat": "42.33235749",
     "lon": "-83.05256605",
-    "routes": ["25"]
+    "routes": ["10", "16", "18", "19", "21", "23", "25", "27", "29", "31", "34", "37", "40", "48", "49", "53", "7", "92", "96"]
   },
   "9973": {
     "name": "Moross & Harper",
     "lat": "42.425104",
     "lon": "-82.929279",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "9974": {
     "name": "Moross & Rossiter",
     "lat": "42.431458",
     "lon": "-82.944794",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "9975": {
     "name": "Moross & Lansdowne",
     "lat": "42.432266",
     "lon": "-82.946842",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "9976": {
     "name": "Moross & Laing",
     "lat": "42.433177",
     "lon": "-82.948964",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "9977": {
     "name": "Moross & Riad",
     "lat": "42.433994",
     "lon": "-82.950997",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "9979": {
     "name": "Kelly & Washtenaw",
     "lat": "42.436958",
     "lon": "-82.951066",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "998": {
     "name": "Woodward & Burlingame",
@@ -33441,25 +33441,25 @@ const Stops = {
     "name": "Kelly & Roscommon",
     "lat": "42.439005",
     "lon": "-82.949522",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "9981": {
     "name": "Kelly & Woodland",
     "lat": "42.441447",
     "lon": "-82.947661",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "9982": {
     "name": "Kelly & Eastwood",
     "lat": "42.44354",
     "lon": "-82.946064",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "9983": {
     "name": "Kelly & Bringard",
     "lat": "42.446302",
     "lon": "-82.943954",
-    "routes": ["17"]
+    "routes": ["17", "31"]
   },
   "9986": {
     "name": "Mack & Maryland",

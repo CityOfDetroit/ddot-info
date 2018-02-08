@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Stops from '../data/stops.js';
 import StopHeader from './StopHeader';
 import StopMap from './StopMap';
+import StopTransfers from './StopTransfers';
 import StopRouteList from './StopRouteList';
 import Helpers from '../helpers';
 
@@ -43,11 +44,15 @@ class Stop extends React.Component {
     const stopName = Stops[stopId.toString()].name
     const stopRoutes = Stops[stopId.toString()].routes
     const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat]
+    const stopTransfers = Stops[stopId.toString()].transfers
     return (
       <div className='App'>
         <StopHeader id={stopId} name={stopName} />
         <StopMap stopId={stopId} center={stopCoords}/>
-        {this.state.fetchedPredictions ? <StopRouteList routes={stopRoutes} predictions={this.state.predictions} /> : `Loading real-time arrival data...` }
+        <div className='list pa3'>
+          {this.state.fetchedPredictions ? <StopRouteList routes={stopRoutes} predictions={this.state.predictions} /> : `Loading real-time arrival data...` }
+          {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null}
+        </div>
       </div>
     )
   }

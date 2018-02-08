@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import Helpers from '../helpers.js'
+import Stops from '../data/stops.js'
 
 class StopMap extends Component {
   constructor(props) {
@@ -19,19 +20,27 @@ class StopMap extends Component {
       'container': 'map',
       'style': Helpers.mapboxStyle,
       'center': this.props.center,
-      'zoom': 15,
+      'zoom': 17,
       'attributionControl': false,
       'interactive': false
     });
 
     const stopId = this.props.stopId
 
+    const transferIds = Stops[this.props.stopId].transfers.map(t => t[0])
+
     map.on('load', function() {
-      map.setFilter('ddot-stops', ["in", "stop_id", stopId])
-      map.setFilter('ddot-stops copy', ["in", "stop_id", stopId])
+      map.setFilter('ddot-stops', ["in", "stop_id"].concat(transferIds))
+      map.setFilter('ddot-stops copy', ["in", "stop_id"].concat(transferIds))
+      map.setFilter('ddot-stops-highlight', ["in", "stop_id", stopId])
+      map.setFilter('ddot-stops-label-highlight', ["in", "stop_id", stopId])
       map.setLayoutProperty('ddot-stops copy', 'visibility', 'visible')
       map.setLayoutProperty('ddot-stops', 'visibility', 'visible')
+      map.setLayoutProperty('ddot-stops-highlight', 'visibility', 'visible')
+      map.setLayoutProperty('ddot-stops-label-highlight', 'visibility', 'visible')
     });
+
+
 
     this.setState({
       drewMap: true,

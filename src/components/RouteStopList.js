@@ -78,7 +78,7 @@ class RouteStopList extends Component {
             <div className="" style={{ display: 'flex', alignItems: 'center', zIndex: 0 }} key={i}>
               <span className="ml3 tc" style={{ backgroundColor: color, height: '4em', width: '6px', marginRight: '1em', zIndex: 1 }}></span>
               <span className="f7 fw7 pa1 ma1" style={{ border: '.25em solid white', backgroundColor: 'black', borderRadius: '3em', height: '10px', width: '10px', marginRight: '1em', marginLeft: '-2.55em', zIndex: 2 }}></span>
-              <StopLink id={stop.slice(5,)} exclude={this.props.routeNumber}/>
+              <StopLink id={stop.slice(5,)} exclude={this.props.routeNumber} showTransfers={true}/>
             </div>
           ) : `Loading stops...`}
         </div>

@@ -20,14 +20,14 @@ class StopLink extends Component {
             <span className="db">STOP ID {this.props.id}</span>
           </div>
           <div className="w-70">
-          {Stops[this.props.id] ? Stops[this.props.id].routes.map((r, i) => (
+          {Stops[this.props.id] && Stops[this.props.id].routes.length < 10 ? Stops[this.props.id].routes.map((r, i) => (
             <Link className="white dim glow" to={{pathname: `/route/${r}`}}>
             <span className={exclude.toString() === r.toString() ? "dn" : "pa2 dib white fw7 f6 ma1"} 
               style={{ backgroundColor: Schedules[r].color }}
               key={i}>
                 {r}
             </span></Link>
-          )) : `FAILED`}
+          )) : `All downtown routes`}
           </div>
 
       </div>

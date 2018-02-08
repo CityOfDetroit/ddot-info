@@ -4,6 +4,7 @@ const Helpers = {
    */
   endpoint: `http://ec2-54-81-243-178.compute-1.amazonaws.com:8080/api/api/where`,
   proxyUrl: `https://cors-anywhere.herokuapp.com/`,
+  mapboxStyle: `mapbox://styles/cityofdetroit/cjden02ghepod2sqwnartv74c`,
 
   /**
    * Translate a day of the week to its service range

@@ -4,6 +4,7 @@ import mapboxgl from 'mapbox-gl';
 import _ from 'lodash';
 
 import Colors from '../data/colors.js';
+import Helpers from '../helpers.js'
 
 class RealtimeRouteMap extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class RealtimeRouteMap extends Component {
 
     const map = new mapboxgl.Map({
       'container': 'map',
-      'style': 'mapbox://styles/cityofdetroit/cjbzk1bqwg9972spc0hcb804b',
+      'style': Helpers.mapboxStyle,
       'center': [-83.0458, 42.3314],
       'zoom': 10,
       'attributionControl': false,

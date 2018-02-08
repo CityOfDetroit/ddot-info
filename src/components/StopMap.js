@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
+import Helpers from '../helpers.js'
 
 class StopMap extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class StopMap extends Component {
 
     const map = new mapboxgl.Map({
       'container': 'map',
-      'style': 'mapbox://styles/cityofdetroit/cjbzk1bqwg9972spc0hcb804b',
+      'style': Helpers.mapboxStyle,
       'center': this.props.center,
       'zoom': 15,
       'attributionControl': false,

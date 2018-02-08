@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
+import Helpers from '../helpers.js'
 
 class RouteMap extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class RouteMap extends Component {
 
     const map = new mapboxgl.Map({
       'container': 'map',
-      'style': 'mapbox://styles/cityofdetroit/cjd0iccnv1k7r2rnun0sbvxab',
+      'style': Helpers.mapboxStyle,
       'center': [-83.0458, 42.3314],
       'zoom': 10,
       'attributionControl': false,

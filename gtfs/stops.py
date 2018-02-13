@@ -18,7 +18,7 @@ if __name__ == "__main__":
     inner join gtfs.routes rt on tr.route_id = rt.route_id
     group by sp.stop_id, sp.stop_name, sp.stop_lat, sp.stop_lon, stop_dir"""
   res = conn.execute(query)
-  stops_object = { int(row[0]): {'name': row[2], 'dir': row[1], 'lat': row[3], 'lon': row[4], 'routes': row[5]} for row in res.fetchall() }
+  stops_object = { int(row[0]): { 'id': row[0], 'name': row[2], 'dir': row[1], 'lat': row[3], 'lon': row[4], 'routes': row[5]} for row in res.fetchall() }
   
   def routes_near_stop(stop):
     query = """

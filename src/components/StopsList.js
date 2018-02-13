@@ -8,8 +8,8 @@ class StopsList extends Component {
     return (
       <div>
         {this.props.stops.map((stop, i) =>
-          <div className="ph3 pv2 bb b--light-silver" key={i}>
-            <StopLink id={stop.name} />
+          <div className="pa2" key={i}>
+            <StopLink id={stop.id} showTransfers={true} />
           </div>
         )}
       </div>

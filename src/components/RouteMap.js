@@ -1,57 +1,17 @@
 import React, { Component } from 'react';
-import mapboxgl from 'mapbox-gl';
+import StaticMap from 'react-map-gl';
 import Helpers from '../helpers.js'
 
-class RouteMap extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      drewMap: false,
-      map: {},
-    };
-  }
-
-  drawMap() {
-
-    const route = this.props.route
-
-    mapboxgl.accessToken = 'pk.eyJ1IjoiY2l0eW9mZGV0cm9pdCIsImEiOiJjamNiY2RuZDcwMTV1MnF0MW9kbGo5YTlyIn0.5s818a6deB6YJJK4yFkMwQ';
-
-    const map = new mapboxgl.Map({
-      'container': 'map',
-      'style': Helpers.mapboxStyle,
-      'center': [-83.0458, 42.3314],
-      'zoom': 10,
-      'attributionControl': false,
-      'interactive': false
-    });
-
-    map.on('load', function () {
-      map.setFilter('ddot-routes', ["==", "route_num", route.id])
-      map.fitBounds(route.bbox, {
-        'padding': 75,
-        'easing': (function() { return 1; }),
-        'duration': 0
-      })
-    });
-
-    this.setState({
-      drewMap: true,
-      map: map,
-    });
-
-  }
-
-
-  componentDidMount() {
-    this.drawMap()
-  }
-
-  render() {
-    return ( 
-      <div id = "map" className = "map h6"> </div>
-    )
-  }
-}
+const RouteMap = (routeId) => (
+    <StaticMap
+      width={window.innerWidth}
+      height={window.innerHeight}
+      latitude={42.356}
+      longitude={-83.143}
+      zoom={12}
+      mapStyle={Helpers.mapboxStyle}
+      mapboxApiAccessToken={Helpers.mapboxApiAccessToken} >
+    </StaticMap>    
+)
 
 export default RouteMap;

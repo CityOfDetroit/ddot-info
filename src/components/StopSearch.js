@@ -9,7 +9,7 @@ class StopSearch extends Component {
     super(props);
 
     this.state = {
-      allStops: (Stops),
+      allStops: (Object.values(Stops)),
       filteredStops: (sampleStops),
       input: ''
     };

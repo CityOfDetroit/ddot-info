@@ -6,7 +6,7 @@ import StopLink from './StopLink';
 class StopsList extends Component {
   render() {
     return (
-      <div>
+      <div className="h5 overflow-scroll">
         {this.props.stops.map((stop, i) =>
           <div className="pa2" key={i}>
             <StopLink id={stop.id} showTransfers={true} />

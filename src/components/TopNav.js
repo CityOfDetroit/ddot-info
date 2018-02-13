@@ -10,9 +10,8 @@ const TopNav = () => (
     <span className="f4-s f3-ns mh2 pa2 fw7">
       Route Explorer
     </span>
-    <Link to="/" className="link dim gray fw7 f6 f5-ns ma2 pa2" style={{border: '3px solid #ddd'}}>Home</Link>
-    <Link to="/about" className="link dim gray fw7 f6 f5-ns ma2 pa2" style={{border: '3px solid #ddd'}}>About</Link>
-    <Link to="/nearby" className="link dim gray fw7 f6 f5-ns ma2 pa2" style={{border: '3px solid #ddd'}}>Search Nearby</Link>
+    <Link to="/" className="link dim gray fw7 f6 f5-ns ma2 pa2" style={{ border: '3px solid #ddd' }}>Home</Link>
+    <Link to="/about" className="link dim gray fw7 f6 f5-ns ma2 pa2" style={{ border: '3px solid #ddd' }}>About</Link>
   </div>
 )
 

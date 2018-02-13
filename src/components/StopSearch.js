@@ -35,8 +35,8 @@ class StopSearch extends Component {
 
   render() {
     return (
-      <div>
-        <span className="fw7 f4 pa2 dib">Search Stops:</span>
+      <div className="pa2">
+        <span className="fw7 f3 pa2">Search Stops</span>
         <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} />
         { this.state.input.length > 0 ? <StopsList stops={this.state.filteredStops} /> : '' }
       </div>

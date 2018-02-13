@@ -52,9 +52,9 @@ class RouteSearch extends Component {
   render() {
     return (
       <div className="search overflow-scroll pa2 br">
-        <span className="fw7 f4 pa2 dib">Already know what route you're looking for?</span>
+        <span className="fw7 f4 pa2 dib">Search Routes:</span>
         <RouteInput input={this.state.input} onSearchChange={this.handleSearchChange} />
-        { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : <p><strong>Loading...</strong></p> }
+        { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : <p>No matches, please search again...</p> }
       </div>
     )
   }

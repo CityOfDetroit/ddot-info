@@ -6,7 +6,7 @@ class RouteInput extends Component {
     return (
       <div  className="f5 ml2 w-75">
       <input className="w-90 pa2"
-        placeholder="Search for a route name or number"
+        placeholder="Search by route name or number, eg 'Woodward' or '53'"
         value={this.props.input}
         onChange={this.props.onSearchChange} />
       </div>

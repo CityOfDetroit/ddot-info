@@ -21,7 +21,7 @@ class RouteSearch extends Component {
   }
 
   componentDidMount() {
-    fetch(Helpers.proxyUrl + `${Helpers.endpoint}/routes-for-agency/DDOT.json?key=BETA`)
+    fetch(`${Helpers.endpoint}/routes-for-agency/DDOT.json?key=BETA`)
       .then(response => response.json())
       .then(d => {
         let sorted = d.data.list.sort((a,b) => {

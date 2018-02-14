@@ -6,7 +6,6 @@ import {defaultMapStyle, highlightLayerIndex} from '../style.js'
 
 import WebMercatorViewport from 'viewport-mercator-project';
 
-
 class RouteMap extends Component {
 
   render() {

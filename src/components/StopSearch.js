@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 
 import StopInput from './StopInput';
 import StopsList from './StopsList';
@@ -15,22 +16,24 @@ class StopSearch extends Component {
     };
 
     this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.handleSearchDebounced = _.debounce(this.handleSearchDebounced, 200);
   }
 
   handleSearchChange(event) {
-    const val = event.target.value
+    this.setState({ input: event.target.value });
+    this.handleSearchDebounced(event.target.value);
+  }
+
+  handleSearchDebounced(value) {
     const matched = []
 
     Object.values(this.state.allStops).forEach(st => {
-      if ( (st.id.indexOf(val) > -1) || (st.name.toUpperCase().indexOf(val.toUpperCase()) > -1) ) {
+      if ( (st.id.indexOf(value) > -1) || (st.name.toUpperCase().indexOf(value.toUpperCase()) > -1) ) {
         matched.push(st);
       }
-    })
-
-    this.setState({ 
-      input: event.target.value, 
-      filteredStops: matched 
     });
+
+    this.setState({ filteredStops: matched });
   }
 
   render() {
@@ -38,7 +41,7 @@ class StopSearch extends Component {
       <div className="pa2">
         <span className="fw7 f3 pa2">Search Stops</span>
         <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} />
-        {( this.state.filteredStops.length > 0 || this.state.input.length > 0 ) ? <StopsList stops={this.state.filteredStops} /> : '' }
+        { this.state.filteredStops.length > 0 ? <StopsList stops={this.state.filteredStops} /> : '' }
       </div>
     )
   }

@@ -1,17 +1,12 @@
-import React from 'react'
-
-let downtownStyle = { backgroundColor: '#44aa42' }
-let ewStyle = { backgroundColor: '#0079c2' }
-let nsStyle = { backgroundColor: '#9b5ba5' }
-let specialStyle = { backgroundColor: '#d07c32' }
+import React from 'react';
 
 const Legend = () => (
-  <div className="fw7 legend">
-    <div className="ma2 pa2 br2 white" style={downtownStyle}>Routes that go downtown</div>
-    <div className="ma2 pa2 br2 white" style={ewStyle}>Routes that go East-West, not downtown</div>
-    <div className="ma2 pa2 br2 white" style={nsStyle}>Routes that go North-South, not downtown</div>
-    <div className="ma2 pa2 br2 white" style={specialStyle}>Special routes</div>
+  <div className="ma2" style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
+    <div className='white fw5 f5 ma2 pa2' style={{ backgroundColor: '#44aa42' }}>Downtown Routes</div>
+    <div className='white fw5 f5 ma2 pa2' style={{ backgroundColor: '#0079c2' }}>EB/WB Routes</div>
+    <div className='white fw5 f5 ma2 pa2' style={{ backgroundColor: '#9b5ba5' }}>NB/SB Routes</div>
+    <div className='white fw5 f5 ma2 pa2' style={{ backgroundColor: '#d07c32' }}>Special Routes</div>
   </div>
-)
+);
 
-export default Legend
+export default Legend;

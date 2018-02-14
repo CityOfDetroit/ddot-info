@@ -52,7 +52,7 @@ class RouteSearch extends Component {
   render() {
     return (
       <div className="pa2">
-        <span className="fw7 f3 pa2">Search Routes</span>
+        <span className="fw7 f3 pa2 white">Search Routes</span>
         <RouteInput input={this.state.input} onSearchChange={this.handleSearchChange} />
         { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : '' }
       </div>

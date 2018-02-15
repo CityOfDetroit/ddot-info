@@ -9,11 +9,17 @@ Object.assign(MAP_STYLE.sources, {
     }
   });
   
+Object.assign(MAP_STYLE.sources, {
+    stops: {
+      type: 'vector',
+      url: 'mapbox://cityofdetroit.cjbeojxj72m3s34llgz0yt0u7-9mm9h'
+    }
+  });
+  
 // Insert custom layers before city labels
 MAP_STYLE.layers.splice(
-MAP_STYLE.layers.findIndex(layer => layer.id === 'tunnel-street-limited'), 0,
+MAP_STYLE.layers.findIndex(layer => layer.id === 'waterway-label'), 0,
 // Highlighted county polygons
-
 {
     "id": "ddot-routes",
     "type": "line",
@@ -25,7 +31,9 @@ MAP_STYLE.layers.findIndex(layer => layer.id === 'tunnel-street-limited'), 0,
         ""
     ],
     "layout": {
-        "visibility": "visible"
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
     },
     "paint": {
         "line-color": {
@@ -56,20 +64,29 @@ MAP_STYLE.layers.findIndex(layer => layer.id === 'tunnel-street-limited'), 0,
             "stops": [
                 [
                     9,
-                    3
+                    2
                 ],
                 [
                     22,
-                    15
+                    12
                 ]
             ]
         },
         "line-offset": 0,
-        "line-opacity": 1
+        "line-opacity": 1,
     }
 });
   
-export const highlightLayerIndex =
+export const routeLineIndex =
 MAP_STYLE.layers.findIndex(layer => layer.id === 'ddot-routes');
+
+export const stopLabelIndex =
+MAP_STYLE.layers.findIndex(layer => layer.id === 'stop-labels');
+export const stopPointIndex =
+MAP_STYLE.layers.findIndex(layer => layer.id === 'stop-points');
+export const highlightLabelIndex =
+MAP_STYLE.layers.findIndex(layer => layer.id === 'highlight-labels');
+export const highlightPointIndex =
+MAP_STYLE.layers.findIndex(layer => layer.id === 'highlight-points');
 
 export const defaultMapStyle = fromJS(MAP_STYLE);

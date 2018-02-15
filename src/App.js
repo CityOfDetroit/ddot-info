@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 
-import TopNav from './components/TopNav';
-import RouteSearch from './components/RouteSearch';
+import Homepage from './components/Homepage';
 
 class App extends Component {
-  
   render() {
     return (
-      <div className="App">
-        <TopNav />
-        <RouteSearch />
+      <div>
+        <Homepage />
       </div>
-    )
+    );
   }
-}
+};
 
 export default App;

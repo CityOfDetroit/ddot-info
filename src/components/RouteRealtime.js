@@ -50,28 +50,28 @@ class RouteRealtime extends React.Component {
   }
 
   fetchData() {
-    fetch(Helpers.proxyUrl + `${Helpers.endpoint}/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
+    fetch(`${Helpers.endpoint}/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
       let geojson = _.sortBy(d.data.list, 'status.tripId').map((bus, i) => {
-        return {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [bus.status.position.lon, bus.status.position.lat]
-          },
-          "properties": {
-            "tripId": bus.status.activeTripId,
-            "displayTripId": bus.status.activeTripId.slice(-4,),
-            "scheduledDistanceAlongTrip": bus.status.scheduledDistanceAlongTrip,
-            "nextStop": bus.status.nextStop,
-            "nextStopOffset": bus.status.nextStopTimeOffset,
-            "predicted": bus.status.predicted,
-            "updateTime": moment(bus.status.lastUpdateTime).format("h:mm:ss a"),
-            "onTime": bus.status.scheduleDeviation / 60,
-            "direction": _.findKey(this.state.tripIds, t => { return t.indexOf(bus.status.activeTripId.slice(-4)) > -1})
+          return {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [bus.status.position.lon, bus.status.position.lat]
+            },
+            "properties": {
+              "tripId": bus.status.activeTripId,
+              "displayTripId": bus.status.activeTripId.slice(-4,),
+              "scheduledDistanceAlongTrip": bus.status.scheduledDistanceAlongTrip,
+              "nextStop": bus.status.nextStop,
+              "nextStopOffset": bus.status.nextStopTimeOffset,
+              "predicted": bus.status.predicted,
+              "updateTime": moment(bus.status.lastUpdateTime).format("h:mm:ss a"),
+              "onTime": bus.status.scheduleDeviation / 60,
+              "direction": _.findKey(this.state.tripIds, t => { return t.indexOf(bus.status.activeTripId.slice(-4)) > -1})
+            }
           }
-        }
       })
       let realtimeTrips = _.filter(geojson, o => { return o.properties.direction !== undefined })
       this.setState({ 

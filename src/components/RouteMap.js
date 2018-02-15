@@ -1,55 +1,35 @@
 import React, { Component } from 'react';
-import mapboxgl from 'mapbox-gl';
+import StaticMap from 'react-map-gl';
 import Helpers from '../helpers.js'
 
+import {defaultMapStyle, routeLineIndex} from '../style.js'
+
+import WebMercatorViewport from 'viewport-mercator-project';
+
 class RouteMap extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      drewMap: false,
-      map: {},
-    };
-  }
-
-  drawMap() {
-
-    const route = this.props.route
-
-    mapboxgl.accessToken = 'pk.eyJ1IjoiY2l0eW9mZGV0cm9pdCIsImEiOiJjamNiY2RuZDcwMTV1MnF0MW9kbGo5YTlyIn0.5s818a6deB6YJJK4yFkMwQ';
-
-    const map = new mapboxgl.Map({
-      'container': 'map',
-      'style': Helpers.mapboxStyle,
-      'center': [-83.0458, 42.3314],
-      'zoom': 10,
-      'attributionControl': false,
-      'interactive': false
-    });
-
-    map.on('load', function () {
-      map.setFilter('ddot-routes', ["==", "route_num", route.id])
-      map.fitBounds(route.bbox, {
-        'padding': 75,
-        'easing': (function() { return 1; }),
-        'duration': 0
-      })
-    });
-
-    this.setState({
-      drewMap: true,
-      map: map,
-    });
-
-  }
-
-
-  componentDidMount() {
-    this.drawMap()
-  }
 
   render() {
-    return ( 
-      <div id = "map" className = "map h6"> </div>
+    const route = this.props.route
+    const viewport = new WebMercatorViewport({width: window.innerWidth/2, height: (window.innerHeight - 100)});
+    const bound = viewport.fitBounds(route.bbox,
+      {padding: 50}
+    );
+
+    let style = defaultMapStyle
+    style = style.setIn(['layers', routeLineIndex, 'filter', 2], route.id.toString())
+
+    return (
+      <div className="map">
+        <StaticMap
+          width={window.innerWidth/2}
+          height={window.innerHeight-100}
+          latitude={bound.latitude}
+          longitude={bound.longitude}
+          zoom={bound.zoom}
+          mapStyle={style}
+          mapboxApiAccessToken={Helpers.mapboxApiAccessToken} >
+        </StaticMap> 
+      </div>
     )
   }
 }

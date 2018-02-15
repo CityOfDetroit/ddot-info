@@ -21,7 +21,7 @@ class RouteSearch extends Component {
   }
 
   componentDidMount() {
-    fetch(Helpers.proxyUrl + `${Helpers.endpoint}/routes-for-agency/DDOT.json?key=BETA`)
+    fetch(`${Helpers.endpoint}/routes-for-agency/DDOT.json?key=BETA`)
       .then(response => response.json())
       .then(d => {
         let sorted = d.data.list.sort((a,b) => {
@@ -51,10 +51,10 @@ class RouteSearch extends Component {
 
   render() {
     return (
-      <div className="search overflow-scroll pa2 br">
-        <span className="fw7 f4 pa2 dib">Already know what route you're looking for?</span>
+      <div className="pa2">
+        <span className="fw7 f3 pa2">Search Routes</span>
         <RouteInput input={this.state.input} onSearchChange={this.handleSearchChange} />
-        { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : <p><strong>Loading...</strong></p> }
+        { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : '' }
       </div>
     )
   }

@@ -49,7 +49,9 @@ class RouteStops extends React.Component {
     return (
       <div className="BusRoute">
         <RouteHeader number={this.props.match.params.name} />
+        <div className="map">
         <RouteMap route={thisRoute} />
+        </div>
         <div className="stopList pa2">
         <h2 className="ml2">Stops on {thisRoute.id} {thisRoute.rt_name}</h2>
           <DirectionPicker 

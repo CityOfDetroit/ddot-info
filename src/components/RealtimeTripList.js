@@ -15,7 +15,7 @@ export default class RealtimeTripList extends Component {
         {Object.keys(byDirection).map((dir, i) =>
           <div key={i}>
             <span 
-              className="db pa2 f5 f4-ns fw7 white"
+              className="db pa2 f5 f4-ns fw7 black"
               style={{ backgroundColor: `rgba(${chroma(Colors[dir]).rgba().toString()})` }}>
                 {_.capitalize(dir)} to {Stops[this.props.route.schedules.weekday[dir].stops.slice(-1,)].name}
                 <br />

@@ -21,7 +21,7 @@ class RealtimeTrip extends Component {
             <span className="f5 fw7 db pv1">
               next stop:  
               <Link className="pl1" to={{pathname: `/stop/${this.props.trip.properties.nextStop.slice(5)}/`}} >
-                {Stops[this.props.trip.properties.nextStop.slice(5)].name}
+                {Stops[this.props.trip.properties.nextStop.slice(5)] ? Stops[this.props.trip.properties.nextStop.slice(5)].name : `unknown`}
               </Link>
             </span>
             <span className="f6 fw3 db">

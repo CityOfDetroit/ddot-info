@@ -6,12 +6,12 @@ import RouteLink from './RouteLink';
 class RoutesList extends Component {
   render() {
     return (
-      <div className="overflow-scroll vh-75 ba ma2">
-          {this.props.lines.map(line =>
-            <div className="ph3 pv2 bb b--light-silver" key={line.id}>
-              <RouteLink key={line.id} id={line.id} routeId={line.rt_id} name={line.rt_name} color={line.color} />
-            </div>
-          )}
+      <div className="ma2" style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start' }}>
+        {this.props.lines.map(line =>
+          <div className="pa2 ma2" style={{ width: '200px', background: '#eee' }} key={line.id}>
+            <RouteLink key={line.id} id={line.id} routeId={line.rt_id} name={line.rt_name} color={line.color} />
+          </div>
+        )}
       </div>
     )
   }

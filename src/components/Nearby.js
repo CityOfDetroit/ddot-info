@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { geolocated } from 'react-geolocated';
 
-import TopNav from './TopNav';
 import FeaturesNearLocation from './FeaturesNearLocation';
-import NearbyMap from './NearbyMap'
-import Helpers from '../helpers.js'
 
 class Nearby extends React.Component {
 

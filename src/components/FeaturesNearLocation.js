@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import StopLink from './StopLink';
-import RouteLink from './RouteLink';
 import Helpers from '../helpers';
 import NearbyMap from './NearbyMap';
 import NearbyList from './NearbyList'

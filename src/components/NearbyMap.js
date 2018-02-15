@@ -26,7 +26,7 @@ class NearbyMap extends Component {
 
 
     // show all nearby routes
-    const routeIds = _.map(this.props.data.data.references.routes, r => { return parseInt(r.shortName )})
+    const routeIds = _.map(this.props.data.data.references.routes, r => { return parseInt(r.shortName, 10)})
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(_.map(routeIds, r => { return r.toString() })))
 
     // set data for geolocated source to coords

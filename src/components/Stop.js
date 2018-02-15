@@ -41,7 +41,6 @@ class Stop extends React.Component {
 
   render() {
     const stopId = this.props.match.params.name
-    const stop = Stops[stopId.toString()] || {}
     const stopName = Stops[stopId.toString()].name
     const stopRoutes = Stops[stopId.toString()].routes
     const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat]

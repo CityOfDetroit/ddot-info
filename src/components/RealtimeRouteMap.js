@@ -21,13 +21,15 @@ class RealtimeRouteMap extends Component {
     // set the data
     style = style.setIn(['sources', 'realtime', 'data'], {"type": "FeatureCollection", "features": this.props.trips})
 
+    console.log(this.props.trips)
+
     return (
       <div className="map">
         <StaticMap
           width={window.innerWidth/2}
           height={window.innerHeight-100}
-          latitude={bound.latitude || 42.5}
-          longitude={bound.longitude || -83 }
+          latitude={bound.latitude}
+          longitude={bound.longitude}
           zoom={bound.zoom}
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} >

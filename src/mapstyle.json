@@ -7412,7 +7412,8 @@
                 ]
             ],
             "layout": {
-                "line-join": "bevel"
+                "line-join": "bevel",
+                "visibility": "none"
             },
             "paint": {
                 "line-color": {
@@ -7507,7 +7508,8 @@
                 ]
             ],
             "layout": {
-                "line-join": "miter"
+                "line-join": "miter",
+                "visibility": "none"
             },
             "paint": {
                 "line-width": {
@@ -7668,7 +7670,8 @@
                 ]
             ],
             "layout": {
-                "line-join": "round"
+                "line-join": "round",
+                "visibility": "none"
             },
             "paint": {
                 "line-dasharray": [
@@ -7732,7 +7735,8 @@
             ],
             "layout": {
                 "line-join": "round",
-                "line-cap": "round"
+                "line-cap": "round",
+                "visibility": "none"
             },
             "paint": {
                 "line-color": "hsl(211, 59%, 49%)",
@@ -7762,18 +7766,6 @@
                         ]
                     ]
                 }
-            }
-        },
-        {
-            "id": "realtime-background",
-            "type": "symbol",
-            "source": "realtime",
-            "layout": {
-                "icon-image": "bus-15",
-                "icon-allow-overlap": true
-            },
-            "paint": {
-                "icon-opacity": 0.75
             }
         },
         {
@@ -8528,6 +8520,7 @@
                 ]
             ],
             "layout": {
+                "visibility": "none",
                 "text-size": {
                     "base": 1,
                     "stops": [
@@ -11312,13 +11305,35 @@
             }
         },
         {
+            "id": "realtime-background",
+            "type": "symbol",
+            "source": "realtime",
+            "layout": {
+                "icon-image": {
+                    "property": "direction",
+                    "type": "categorical",
+                    "stops": [
+                        ["northbound", "bus-gray-15"],
+                        ["southbound", "bus-melon-15"],
+                        ["eastbound", "bus-gray-15"],
+                        ["westbound", "bus-melon-15"]
+                    ]
+                },
+                "icon-allow-overlap": true,
+                "icon-size": 1
+            },
+            "paint": {
+                "icon-opacity": 0.9
+            }
+        },
+        {
             "id": "realtime",
             "type": "symbol",
             "source": "realtime",
             "layout": {
                 "text-field": "{displayTripId}",
                 "text-font": ["Gibson Detroit SemiBold"],
-                "text-size": 13,
+                "text-size": 14,
                 "text-allow-overlap": true,
                 "text-padding": 3,
                 "text-anchor": {
@@ -11345,8 +11360,8 @@
                 }
             },
             "paint": {
-                "text-color": "white",
-                "text-halo-color": "black",
+                "text-color": "#111",
+                "text-halo-color": "white",
                 "text-halo-width": 8
             }
         },

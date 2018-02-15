@@ -7,8 +7,6 @@ import _ from 'lodash'
 
 import {defaultMapStyle, routeLineIndex, highlightPointIndex, highlightLabelIndex, stopPointIndex, stopLabelIndex} from '../style.js'
 
-import WebMercatorViewport from 'viewport-mercator-project';
-
 class StopMap extends Component {
 
   render() {
@@ -20,7 +18,6 @@ class StopMap extends Component {
     style = style.setIn(['layers', highlightPointIndex, 'layout', 'visibility'], 'visible')
     style = style.setIn(['layers', highlightLabelIndex, 'filter'], ['==', 'stop_id', this.props.stopId])
     style = style.setIn(['layers', highlightLabelIndex, 'layout', 'visibility'], 'visible')
-
 
     // set labels for transfers
     style = style.setIn(['layers', stopPointIndex, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 0)))

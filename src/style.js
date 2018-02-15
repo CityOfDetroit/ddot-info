@@ -16,10 +16,9 @@ Object.assign(MAP_STYLE.sources, {
     }
   });
   
-// Insert custom layers before city labels
+// Insert route layer before stops
 MAP_STYLE.layers.splice(
-MAP_STYLE.layers.findIndex(layer => layer.id === 'waterway-label'), 0,
-// Highlighted county polygons
+MAP_STYLE.layers.findIndex(layer => layer.id === 'stop-labels'), 0,
 {
     "id": "ddot-routes",
     "type": "line",
@@ -79,7 +78,6 @@ MAP_STYLE.layers.findIndex(layer => layer.id === 'waterway-label'), 0,
   
 export const routeLineIndex =
 MAP_STYLE.layers.findIndex(layer => layer.id === 'ddot-routes');
-
 export const stopLabelIndex =
 MAP_STYLE.layers.findIndex(layer => layer.id === 'stop-labels');
 export const stopPointIndex =

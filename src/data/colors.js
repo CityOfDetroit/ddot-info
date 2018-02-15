@@ -1,8 +1,8 @@
 const Colors = {
-  'northbound': 'rgb(58, 67, 201)',
-  'eastbound': 'rgb(58, 67, 201)',
-  'southbound': '#ba25b0',
-  'westbound': '#ba25b0',
+  'northbound': '#c4c4c4',
+  'eastbound': '#c4c4c4',
+  'southbound': '#B0D27B',
+  'westbound': '#B0D27B',
   'clockwise': 'rgb(23, 214, 42)'   
 }
 

@@ -104,8 +104,7 @@
             }
         }
     },
-    "center": [
-        -83.0320378097145,
+    "center": [-83.0320378097145,
         42.34739792057013
     ],
     "zoom": 13.31806186817976,
@@ -115,12 +114,15 @@
         "composite": {
             "url": "mapbox://mapbox.9g9sq3ys,mapbox.92olaqdt,mapbox.mapbox-streets-v7,mapbox.mapbox-terrain-v2,mapbox.b1l3wqbs,mapbox.8x70v9py,mapbox.443y3dl2,mapbox.3656mpur",
             "type": "vector"
+        },
+        "realtime": {
+            "type": "geojson",
+            "data": {}
         }
     },
     "sprite": "mapbox://sprites/cityofdetroit/cjdndtywb04ee2slc79udmzn8",
     "glyphs": "mapbox://fonts/cityofdetroit/{fontstack}/{range}.pbf",
-    "layers": [
-        {
+    "layers": [{
             "id": "background",
             "type": "background",
             "layout": {
@@ -140,8 +142,7 @@
             "source-layer": "countries-2-b4kmxk",
             "maxzoom": 7,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "Polygon"
@@ -222,8 +223,7 @@
             "source-layer": "countries-2-b4kmxk",
             "maxzoom": 7,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "Polygon"
@@ -308,8 +308,7 @@
             "source-layer": "countries-2-b4kmxk",
             "maxzoom": 7,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "Polygon"
@@ -394,8 +393,7 @@
             "source-layer": "countries-2-b4kmxk",
             "maxzoom": 7,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "Polygon"
@@ -941,8 +939,7 @@
             "source": "composite",
             "source-layer": "barrier_line",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "Polygon"
@@ -964,8 +961,7 @@
             "source": "composite",
             "source-layer": "barrier_line",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
@@ -1003,8 +999,7 @@
             "source-layer": "countries-2-b4kmxk",
             "maxzoom": 7,
             "filter": [
-                "all",
-                [
+                "all", [
                     "!=",
                     "ADMIN",
                     "Antarctica"
@@ -1085,8 +1080,7 @@
             "source-layer": "aeroway",
             "minzoom": 9,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
@@ -1138,8 +1132,7 @@
             "source-layer": "aeroway",
             "minzoom": 9,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
@@ -1179,8 +1172,7 @@
             "source-layer": "aeroway",
             "minzoom": 9,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
@@ -1232,15 +1224,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "street"
@@ -1307,15 +1297,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "street_limited"
@@ -1382,15 +1370,13 @@
             "source-layer": "road",
             "minzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "type",
                         "trunk_link"
@@ -1457,15 +1443,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "street_limited"
@@ -1542,15 +1526,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "type",
                         "platform"
@@ -1632,15 +1614,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "structure",
                         "tunnel"
@@ -1704,15 +1684,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "primary"
@@ -1785,15 +1763,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "structure",
                         "tunnel"
@@ -1857,15 +1833,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "motorway_link"
@@ -1928,15 +1902,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "structure",
                         "tunnel"
@@ -1996,15 +1968,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "motorway"
@@ -2065,15 +2035,13 @@
             "source-layer": "road",
             "minzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "construction"
@@ -2124,36 +2092,31 @@
                     "base": 1,
                     "stops": [
                         [
-                            14,
-                            [
+                            14, [
                                 0.4,
                                 0.8
                             ]
                         ],
                         [
-                            15,
-                            [
+                            15, [
                                 0.3,
                                 0.6
                             ]
                         ],
                         [
-                            16,
-                            [
+                            16, [
                                 0.2,
                                 0.3
                             ]
                         ],
                         [
-                            17,
-                            [
+                            17, [
                                 0.2,
                                 0.25
                             ]
                         ],
                         [
-                            18,
-                            [
+                            18, [
                                 0.15,
                                 0.15
                             ]
@@ -2171,15 +2134,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "type",
                         "crossing",
@@ -2239,15 +2200,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "structure",
                         "tunnel"
@@ -2285,29 +2244,25 @@
                     "base": 1,
                     "stops": [
                         [
-                            14,
-                            [
+                            14, [
                                 1,
                                 0
                             ]
                         ],
                         [
-                            15,
-                            [
+                            15, [
                                 1.75,
                                 1
                             ]
                         ],
                         [
-                            16,
-                            [
+                            16, [
                                 1,
                                 0.75
                             ]
                         ],
                         [
-                            17,
-                            [
+                            17, [
                                 0.3,
                                 0.3
                             ]
@@ -2339,15 +2294,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "structure",
                         "tunnel"
@@ -2399,15 +2352,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "motorway_link"
@@ -2459,15 +2410,13 @@
             "source-layer": "road",
             "minzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "type",
                         "trunk_link"
@@ -2521,15 +2470,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "street_limited"
@@ -2589,15 +2536,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "type",
                         "platform"
@@ -2662,15 +2607,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "structure",
                         "tunnel"
@@ -2723,15 +2666,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "primary"
@@ -2791,15 +2732,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "trunk"
@@ -2841,15 +2780,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "motorway"
@@ -2898,8 +2835,7 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
@@ -2945,15 +2881,13 @@
                     "base": 1,
                     "stops": [
                         [
-                            12,
-                            [
+                            12, [
                                 1,
                                 0
                             ]
                         ],
                         [
-                            13,
-                            [
+                            13, [
                                 12,
                                 4
                             ]
@@ -2972,8 +2906,7 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
@@ -3027,8 +2960,7 @@
             "source-layer": "road_label",
             "minzoom": 15,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
@@ -3084,8 +3016,7 @@
             "source-layer": "road",
             "minzoom": 15,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "Point"
@@ -3133,15 +3064,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "street"
@@ -3208,15 +3137,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "street_limited"
@@ -3283,15 +3210,13 @@
             "source-layer": "road",
             "minzoom": 12,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "Polygon"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "type",
                         "platform"
@@ -3354,15 +3279,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -3424,15 +3347,13 @@
             "source-layer": "road",
             "minzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "type",
                         "trunk_link"
@@ -3509,15 +3430,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "street_limited"
@@ -3590,15 +3509,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "type",
                         "platform"
@@ -3676,15 +3593,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -3762,15 +3677,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -3840,15 +3753,13 @@
             "source-layer": "road",
             "minzoom": 10,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -3922,15 +3833,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -4003,15 +3912,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -4097,15 +4004,13 @@
             "source-layer": "road",
             "minzoom": 6,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -4175,15 +4080,13 @@
             "source-layer": "road",
             "minzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "construction"
@@ -4234,36 +4137,31 @@
                     "base": 1,
                     "stops": [
                         [
-                            14,
-                            [
+                            14, [
                                 0.4,
                                 0.8
                             ]
                         ],
                         [
-                            15,
-                            [
+                            15, [
                                 0.3,
                                 0.6
                             ]
                         ],
                         [
-                            16,
-                            [
+                            16, [
                                 0.2,
                                 0.3
                             ]
                         ],
                         [
-                            17,
-                            [
+                            17, [
                                 0.2,
                                 0.25
                             ]
                         ],
                         [
-                            18,
-                            [
+                            18, [
                                 0.15,
                                 0.15
                             ]
@@ -4282,15 +4180,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -4339,15 +4235,13 @@
             "source-layer": "road",
             "minzoom": 10,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -4396,15 +4290,13 @@
             "source-layer": "road",
             "minzoom": 12,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "Polygon"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "type",
                         "platform"
@@ -4438,15 +4330,13 @@
             "source-layer": "road",
             "minzoom": 12,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "Polygon"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "class",
                         "service"
@@ -4482,15 +4372,13 @@
             "source-layer": "road",
             "minzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "type",
                         "trunk_link"
@@ -4541,15 +4429,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "street_limited"
@@ -4609,15 +4495,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "type",
                         "platform"
@@ -4683,15 +4567,13 @@
             "source-layer": "road",
             "minzoom": 6,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -4768,15 +4650,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -4844,15 +4724,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -4924,15 +4802,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -4989,15 +4865,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -5041,15 +4915,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "structure",
                         "bridge",
@@ -5110,8 +4982,7 @@
             "source-layer": "road",
             "minzoom": 16,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "Point"
@@ -5139,8 +5010,7 @@
             "source-layer": "road",
             "minzoom": 15,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "Point"
@@ -5184,8 +5054,7 @@
             "source-layer": "building",
             "minzoom": 15,
             "filter": [
-                "all",
-                [
+                "all", [
                     "!=",
                     "type",
                     "building:part"
@@ -5240,8 +5109,7 @@
             "source-layer": "building",
             "minzoom": 15,
             "filter": [
-                "all",
-                [
+                "all", [
                     "!=",
                     "type",
                     "building:part"
@@ -5282,8 +5150,7 @@
             "source-layer": "building",
             "minzoom": 15,
             "filter": [
-                "all",
-                [
+                "all", [
                     "!=",
                     "type",
                     "building:part"
@@ -5341,15 +5208,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "street"
@@ -5416,15 +5281,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "street_limited"
@@ -5491,15 +5354,13 @@
             "source-layer": "road",
             "minzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "type",
                         "trunk_link"
@@ -5561,15 +5422,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "street_limited"
@@ -5628,15 +5487,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "type",
                         "platform"
@@ -5713,15 +5570,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "structure",
                         "bridge"
@@ -5788,15 +5643,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "primary"
@@ -5868,15 +5721,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "layer",
                         2,
@@ -5956,15 +5807,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "layer",
                         2,
@@ -6031,15 +5880,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "layer",
                         2,
@@ -6117,15 +5964,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "layer",
                         2,
@@ -6188,15 +6033,13 @@
             "source-layer": "road",
             "minzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "construction"
@@ -6247,36 +6090,31 @@
                     "base": 1,
                     "stops": [
                         [
-                            14,
-                            [
+                            14, [
                                 0.4,
                                 0.8
                             ]
                         ],
                         [
-                            15,
-                            [
+                            15, [
                                 0.3,
                                 0.6
                             ]
                         ],
                         [
-                            16,
-                            [
+                            16, [
                                 0.2,
                                 0.3
                             ]
                         ],
                         [
-                            17,
-                            [
+                            17, [
                                 0.2,
                                 0.25
                             ]
                         ],
                         [
-                            18,
-                            [
+                            18, [
                                 0.15,
                                 0.15
                             ]
@@ -6294,15 +6132,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "type",
                         "crossing",
@@ -6363,15 +6199,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "layer",
                         2,
@@ -6426,15 +6260,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "layer",
                         2,
@@ -6489,15 +6321,13 @@
             "source-layer": "road",
             "minzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "type",
                         "trunk_link"
@@ -6547,15 +6377,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "street_limited"
@@ -6615,15 +6443,13 @@
             "source-layer": "road",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!=",
                         "type",
                         "platform"
@@ -6688,15 +6514,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "structure",
                         "bridge"
@@ -6756,15 +6580,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "structure",
                         "bridge"
@@ -6819,15 +6641,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "layer",
                         2,
@@ -6881,15 +6701,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "!in",
                         "layer",
                         2,
@@ -6941,15 +6759,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "structure",
                         "bridge"
@@ -6992,15 +6808,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "structure",
                         "bridge"
@@ -7060,15 +6874,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "structure",
                         "bridge"
@@ -7145,15 +6957,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "motorway_link"
@@ -7217,15 +7027,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "trunk"
@@ -7300,15 +7108,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "motorway"
@@ -7368,15 +7174,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "structure",
                         "bridge"
@@ -7428,15 +7232,13 @@
             "source-layer": "road",
             "minzoom": 13,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "motorway_link"
@@ -7487,15 +7289,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "trunk"
@@ -7546,15 +7346,13 @@
             "source": "composite",
             "source-layer": "road",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
                 ],
                 [
-                    "all",
-                    [
+                    "all", [
                         "==",
                         "class",
                         "motorway"
@@ -7602,8 +7400,7 @@
             "source": "composite",
             "source-layer": "admin",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "maritime",
                     0
@@ -7698,8 +7495,7 @@
             "source-layer": "admin",
             "minzoom": 1,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "admin_level",
                     2
@@ -7781,8 +7577,7 @@
             "source": "composite",
             "source-layer": "admin",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "maritime",
                     0
@@ -7802,15 +7597,13 @@
                     "base": 1,
                     "stops": [
                         [
-                            6,
-                            [
+                            6, [
                                 2,
                                 0
                             ]
                         ],
                         [
-                            7,
-                            [
+                            7, [
                                 2,
                                 2,
                                 6,
@@ -7858,8 +7651,7 @@
             "source-layer": "admin",
             "minzoom": 1,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "admin_level",
                     2
@@ -7922,8 +7714,7 @@
             "source-layer": "admin",
             "minzoom": 1,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "admin_level",
                     2
@@ -7971,6 +7762,18 @@
                         ]
                     ]
                 }
+            }
+        },
+        {
+            "id": "realtime-background",
+            "type": "symbol",
+            "source": "realtime",
+            "layout": {
+                "icon-image": "bus-15",
+                "icon-allow-overlap": true
+            },
+            "paint": {
+                "icon-opacity": 0.75
             }
         },
         {
@@ -8121,30 +7924,21 @@
                     "property": "right",
                     "stops": [
                         [
-                            "EB",
-                            [
+                            "EB", [
                                 0.5,
                                 0.5
                             ]
                         ],
                         [
-                            "WB",
-                            [
-                                -0.5,
-                                -0.5
+                            "WB", [-0.5, -0.5]
+                        ],
+                        [
+                            "NB", [
+                                0.5, -0.5
                             ]
                         ],
                         [
-                            "NB",
-                            [
-                                0.5,
-                                -0.5
-                            ]
-                        ],
-                        [
-                            "SB",
-                            [
-                                -0.5,
+                            "SB", [-0.5,
                                 0.5
                             ]
                         ]
@@ -8242,30 +8036,21 @@
                     "property": "right",
                     "stops": [
                         [
-                            "EB",
-                            [
+                            "EB", [
                                 0.5,
                                 0.5
                             ]
                         ],
                         [
-                            "WB",
-                            [
-                                -0.5,
-                                -0.5
+                            "WB", [-0.5, -0.5]
+                        ],
+                        [
+                            "NB", [
+                                0.5, -0.5
                             ]
                         ],
                         [
-                            "NB",
-                            [
-                                0.5,
-                                -0.5
-                            ]
-                        ],
-                        [
-                            "SB",
-                            [
-                                -0.5,
+                            "SB", [-0.5,
                                 0.5
                             ]
                         ]
@@ -8363,8 +8148,7 @@
             "source-layer": "poi_label",
             "minzoom": 17,
             "filter": [
-                "all",
-                [
+                "all", [
                     "!in",
                     "maki",
                     "campsite",
@@ -8439,8 +8223,7 @@
             "source-layer": "poi_label",
             "minzoom": 15,
             "filter": [
-                "all",
-                [
+                "all", [
                     "!in",
                     "maki",
                     "campsite",
@@ -8515,8 +8298,7 @@
             "source-layer": "poi_label",
             "minzoom": 15,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "scalerank",
                     4
@@ -8585,8 +8367,7 @@
             "source": "composite",
             "source-layer": "poi_label",
             "filter": [
-                "all",
-                [
+                "all", [
                     "!in",
                     "maki",
                     "campsite",
@@ -8655,8 +8436,7 @@
             "source": "composite",
             "source-layer": "poi_label",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "scalerank",
                     3
@@ -8726,8 +8506,7 @@
             "source-layer": "road_label",
             "minzoom": 15,
             "filter": [
-                "all",
-                [
+                "all", [
                     "!in",
                     "class",
                     "ferry",
@@ -8792,8 +8571,7 @@
             "source-layer": "road_label",
             "minzoom": 11,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
@@ -8849,8 +8627,7 @@
             "source": "composite",
             "source-layer": "road_label",
             "filter": [
-                "all",
-                [
+                "all", [
                     "!in",
                     "name",
                     "John C Lodge Fwy",
@@ -8879,7 +8656,7 @@
                     "base": 1,
                     "stops": [
                         [
-                            9,
+                            8,
                             10
                         ],
                         [
@@ -8918,8 +8695,7 @@
             "source-layer": "road_label",
             "minzoom": 7,
             "filter": [
-                "all",
-                [
+                "all", [
                     "<=",
                     "reflen",
                     6
@@ -9001,8 +8777,7 @@
             "source-layer": "motorway_junction",
             "minzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "<=",
                     "reflen",
                     9
@@ -9040,8 +8815,7 @@
             "source": "composite",
             "source-layer": "poi_label",
             "filter": [
-                "all",
-                [
+                "all", [
                     "!in",
                     "maki",
                     "campsite",
@@ -9121,8 +8895,7 @@
             "source": "composite",
             "source-layer": "poi_label",
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "scalerank",
                     2
@@ -9363,8 +9136,7 @@
             "source": "composite",
             "source-layer": "poi_label",
             "filter": [
-                "all",
-                [
+                "all", [
                     "<=",
                     "scalerank",
                     1
@@ -9444,8 +9216,7 @@
             "source": "composite",
             "source-layer": "poi_label",
             "filter": [
-                "all",
-                [
+                "all", [
                     "!in",
                     "maki",
                     "campsite",
@@ -9678,15 +9449,13 @@
                     "base": 1,
                     "stops": [
                         [
-                            12,
-                            [
+                            12, [
                                 "Heebo Light",
                                 "Arial Unicode MS Regular"
                             ]
                         ],
                         [
-                            22,
-                            [
+                            22, [
                                 "Heebo Light",
                                 "Arial Unicode MS Regular"
                             ]
@@ -9720,8 +9489,7 @@
                 "text-color": "hsl(0, 0%, 10%)",
                 "text-opacity": 1,
                 "text-translate": [
-                    0,
-                    -3
+                    0, -3
                 ]
             }
         },
@@ -9749,15 +9517,13 @@
                     "base": 1,
                     "stops": [
                         [
-                            14,
-                            [
+                            14, [
                                 "Heebo Light",
                                 "Arial Unicode MS Regular"
                             ]
                         ],
                         [
-                            15,
-                            [
+                            15, [
                                 "Heebo Regular",
                                 "Arial Unicode MS Regular"
                             ]
@@ -9809,15 +9575,13 @@
                     "base": 1,
                     "stops": [
                         [
-                            14,
-                            [
+                            14, [
                                 "Heebo Light",
                                 "Arial Unicode MS Regular"
                             ]
                         ],
                         [
-                            15,
-                            [
+                            15, [
                                 "Heebo Regular",
                                 "Arial Unicode MS Regular"
                             ]
@@ -9883,15 +9647,13 @@
                     "base": 1,
                     "stops": [
                         [
-                            13,
-                            [
+                            13, [
                                 "Heebo Light",
                                 "Arial Unicode MS Regular"
                             ]
                         ],
                         [
-                            14,
-                            [
+                            14, [
                                 "Heebo Regular",
                                 "Arial Unicode MS Regular"
                             ]
@@ -9913,8 +9675,7 @@
                 "text-halo-width": 1.25,
                 "text-color": "hsl(0, 0%, 0%)",
                 "text-translate": [
-                    0,
-                    -3
+                    0, -3
                 ]
             }
         },
@@ -9929,8 +9690,7 @@
             "minzoom": 7,
             "maxzoom": 15,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "type",
                     "town"
@@ -9977,15 +9737,13 @@
                     "base": 1,
                     "stops": [
                         [
-                            12,
-                            [
+                            12, [
                                 "Heebo Light",
                                 "Arial Unicode MS Regular"
                             ]
                         ],
                         [
-                            13,
-                            [
+                            13, [
                                 "Heebo Regular",
                                 "Arial Unicode MS Regular"
                             ]
@@ -9994,8 +9752,7 @@
                 },
                 "visibility": "none",
                 "text-offset": [
-                    0,
-                    -0.15
+                    0, -0.15
                 ],
                 "text-anchor": "bottom",
                 "text-field": "{name_en}",
@@ -10032,8 +9789,7 @@
             "minzoom": 6,
             "maxzoom": 15,
             "filter": [
-                "all",
-                [
+                "all", [
                     "<=",
                     "localrank",
                     30
@@ -10068,15 +9824,13 @@
                     "base": 1,
                     "stops": [
                         [
-                            12,
-                            [
+                            12, [
                                 "Heebo Light",
                                 "Arial Unicode MS Regular"
                             ]
                         ],
                         [
-                            13,
-                            [
+                            13, [
                                 "Heebo Regular",
                                 "Arial Unicode MS Regular"
                             ]
@@ -10085,8 +9839,7 @@
                 },
                 "visibility": "none",
                 "text-offset": [
-                    0,
-                    -0.15
+                    0, -0.15
                 ],
                 "text-anchor": "bottom",
                 "text-field": "{name_en}",
@@ -10122,8 +9875,7 @@
             "source-layer": "place_label",
             "maxzoom": 16,
             "filter": [
-                "all",
-                [
+                "all", [
                     "!=",
                     "name",
                     "Manhattan Island"
@@ -10200,8 +9952,7 @@
             "source-layer": "place_label",
             "maxzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "!in",
                     "scalerank",
                     0,
@@ -10246,15 +9997,12 @@
                     "base": 1,
                     "stops": [
                         [
-                            9,
-                            [
-                                0,
-                                -0.2
+                            9, [
+                                0, -0.2
                             ]
                         ],
                         [
-                            10,
-                            [
+                            10, [
                                 0,
                                 0
                             ]
@@ -10307,8 +10055,7 @@
             "source-layer": "place_label",
             "maxzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "type",
                     "city"
@@ -10344,8 +10091,7 @@
                     ]
                 },
                 "icon-offset": [
-                    0,
-                    -3
+                    0, -3
                 ],
                 "icon-image": "le-shine_place-2-8px",
                 "text-font": [
@@ -10357,15 +10103,13 @@
                     "base": 1,
                     "stops": [
                         [
-                            8,
-                            [
+                            8, [
                                 0,
                                 0.1
                             ]
                         ],
                         [
-                            9,
-                            [
+                            9, [
                                 0,
                                 0
                             ]
@@ -10418,8 +10162,7 @@
             "source-layer": "place_label",
             "maxzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "type",
                     "city"
@@ -10468,15 +10211,12 @@
                     "base": 1,
                     "stops": [
                         [
-                            8,
-                            [
-                                0,
-                                -0.2
+                            8, [
+                                0, -0.2
                             ]
                         ],
                         [
-                            9,
-                            [
+                            9, [
                                 0,
                                 0
                             ]
@@ -10531,8 +10271,7 @@
             "minzoom": 1,
             "maxzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "<=",
                     "scalerank",
                     2
@@ -10591,15 +10330,13 @@
                     "base": 1,
                     "stops": [
                         [
-                            8,
-                            [
+                            8, [
                                 0,
                                 0.05
                             ]
                         ],
                         [
-                            9,
-                            [
+                            9, [
                                 0,
                                 0
                             ]
@@ -10643,8 +10380,7 @@
                 },
                 "text-halo-blur": 1,
                 "icon-translate": [
-                    0,
-                    -5
+                    0, -5
                 ]
             }
         },
@@ -10659,8 +10395,7 @@
             "minzoom": 1,
             "maxzoom": 14,
             "filter": [
-                "all",
-                [
+                "all", [
                     "<=",
                     "scalerank",
                     2
@@ -10694,8 +10429,7 @@
                     ]
                 },
                 "icon-offset": [
-                    0,
-                    -10
+                    0, -10
                 ],
                 "icon-image": {
                     "base": 1,
@@ -10719,15 +10453,13 @@
                     "base": 1,
                     "stops": [
                         [
-                            8,
-                            [
+                            8, [
                                 0,
                                 0.05
                             ]
                         ],
                         [
-                            9,
-                            [
+                            9, [
                                 0,
                                 0
                             ]
@@ -10772,8 +10504,7 @@
                 },
                 "text-halo-blur": 1,
                 "text-translate": [
-                    0,
-                    -18
+                    0, -18
                 ]
             }
         },
@@ -10788,8 +10519,7 @@
             "minzoom": 3,
             "maxzoom": 10,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
@@ -10855,8 +10585,7 @@
             "minzoom": 3,
             "maxzoom": 10,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "Point"
@@ -10906,8 +10635,7 @@
             "source-layer": "marine_label",
             "maxzoom": 8,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
@@ -10973,8 +10701,7 @@
             "source-layer": "marine_label",
             "maxzoom": 8,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "Point"
@@ -11025,8 +10752,7 @@
             "source-layer": "marine_label",
             "maxzoom": 4,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
@@ -11078,8 +10804,7 @@
             "source-layer": "marine_label",
             "maxzoom": 4,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "Point"
@@ -11188,8 +10913,7 @@
             "minzoom": 4,
             "maxzoom": 8,
             "filter": [
-                "all",
-                [
+                "all", [
                     "<",
                     "area",
                     80000
@@ -11509,8 +11233,7 @@
             "source-layer": "current-lines-44mc2e",
             "maxzoom": 10,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
@@ -11556,8 +11279,7 @@
             "source-layer": "current-lines-44mc2e",
             "maxzoom": 10,
             "filter": [
-                "all",
-                [
+                "all", [
                     "==",
                     "$type",
                     "LineString"
@@ -11587,6 +11309,45 @@
                     ]
                 },
                 "line-width": 0.5
+            }
+        },
+        {
+            "id": "realtime",
+            "type": "symbol",
+            "source": "realtime",
+            "layout": {
+                "text-field": "{displayTripId}",
+                "text-font": ["Gibson Detroit SemiBold"],
+                "text-size": 13,
+                "text-allow-overlap": true,
+                "text-padding": 3,
+                "text-anchor": {
+                    "property": "direction",
+                    "type": "categorical",
+                    "stops": [
+                        ["northbound", "right"],
+                        ["southbound", "left"],
+                        ["westbound", "top"],
+                        ["eastbound", "bottom"],
+                        ["clockwise", "top"]
+                    ]
+                },
+                "text-offset": {
+                    "property": "direction",
+                    "type": "categorical",
+                    "stops": [
+                        ["northbound", [-1, 0.2]],
+                        ["southbound", [1, 0.2]],
+                        ["westbound", [0, 0.75]],
+                        ["eastbound", [0, -0.5]],
+                        ["clockwise", [0, 0.75]]
+                    ]
+                }
+            },
+            "paint": {
+                "text-color": "white",
+                "text-halo-color": "black",
+                "text-halo-width": 8
             }
         },
         {

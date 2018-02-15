@@ -29,7 +29,7 @@ class StopMap extends Component {
 
     // eventually set routes?
     const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 1).concat(stop.routes))))
-    // style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere))
+    style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere))
 
     return (
       <div className="map">

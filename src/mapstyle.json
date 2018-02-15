@@ -118,6 +118,14 @@
         "realtime": {
             "type": "geojson",
             "data": {}
+        },
+        "geolocated": {
+            "type": "geojson",
+            "data": {}
+        },
+        "walk-radius": {
+            "type": "geojson",
+            "data": {}
         }
     },
     "sprite": "mapbox://sprites/cityofdetroit/cjdndtywb04ee2slc79udmzn8",
@@ -11363,6 +11371,52 @@
                 "text-color": "#111",
                 "text-halo-color": "white",
                 "text-halo-width": 8
+            }
+        },
+        {
+            "id": "geolocated",
+            "type": "symbol",
+            "source": "geolocated",
+            "layout": {
+                "visibility": "visible",
+                "icon-image": "geolocated",
+                "icon-size": 1,
+                "icon-allow-overlap": true
+            },
+            "paint": {
+                "icon-opacity": 1
+            }
+        },
+        {
+            "id": "walk-radius",
+            "type": "line",
+            "source": "walk-radius",
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "line-color": "rgba(216, 46, 34, 0.8)",
+                "line-dasharray": [1,2],
+                "line-width": 4
+            }
+        },
+        {
+            "id": "walk-radius-label",
+            "type": "symbol",
+            "source": "walk-radius",
+            "layout": {
+                "visibility": "visible",
+                "symbol-placement": "line",
+                "text-field": "5 minute walk",
+                "text-font": ["Gibson Detroit SemiBold"],
+                "text-size": 20,
+                "text-letter-spacing": 0,
+                "text-padding": 150
+            },
+            "paint": {
+                "text-color": "rgba(216, 46, 34, 0.6)",
+                "text-halo-color": "white",
+                "text-halo-width": 2
             }
         },
         {

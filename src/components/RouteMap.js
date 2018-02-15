@@ -11,6 +11,7 @@ class RouteMap extends Component {
   render() {
     const route = this.props.route
     const viewport = new WebMercatorViewport({width: window.innerWidth/2, height: (window.innerHeight - 100)});
+    console.log(route.bbox)
     const bound = viewport.fitBounds(route.bbox,
       {padding: 50}
     );

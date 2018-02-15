@@ -41,7 +41,7 @@ body:after{
 }
 
 @media screen and (min-width: 650px) {
-  .App, .BusRoute {
+  .App, .BusRoute, .nearby {
     display: grid;
     grid-template: 50px 50px repeat(8, 1fr) / repeat(8, 1fr);
     height: 100vh;
@@ -56,11 +56,6 @@ body:after{
   .header {
     grid-row: 1/3;
     grid-column: 1/9;
-  }
-
-  .nearby {
-    grid-row: 2/7;
-    grid-column: 4/9;
   }
 
   .details {

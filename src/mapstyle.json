@@ -115,6 +115,11 @@
             "url": "mapbox://mapbox.9g9sq3ys,mapbox.92olaqdt,mapbox.mapbox-streets-v7,mapbox.mapbox-terrain-v2,mapbox.b1l3wqbs,mapbox.8x70v9py,mapbox.443y3dl2,mapbox.3656mpur",
             "type": "vector"
         },
+        "satellite": {
+            "type": "raster",
+            "url": "mapbox://mapbox.satellite",
+            "tileSize": 256
+        },
         "realtime": {
             "type": "geojson",
             "data": {}
@@ -138,6 +143,17 @@
             },
             "paint": {
                 "background-color": "#dddbd8"
+            }
+        },
+        {
+            "id": "satellite",
+            "type": "raster",
+            "source": "satellite",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "raster-opacity": 0.5
             }
         },
         {

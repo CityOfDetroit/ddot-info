@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import StaticMap from 'react-map-gl';
 import Helpers from '../helpers.js'
+
+import MapSatelliteSwitch from './MapSatelliteSwitch'
 import Stops from '../data/stops.js'
 
 import _ from 'lodash'
@@ -8,6 +10,22 @@ import _ from 'lodash'
 import {defaultMapStyle, routeLineIndex, highlightPointIndex, highlightLabelIndex, stopPointIndex, stopLabelIndex} from '../style.js'
 
 class StopMap extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      showSatellite: false
+    }
+
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(event) {
+    this.setState({
+      showSatellite: event.target.checked ? true : false
+    })
+  }
 
   render() {
     let style = defaultMapStyle
@@ -18,6 +36,13 @@ class StopMap extends Component {
     style = style.setIn(['layers', highlightPointIndex, 'layout', 'visibility'], 'visible')
     style = style.setIn(['layers', highlightLabelIndex, 'filter'], ['==', 'stop_id', this.props.stopId])
     style = style.setIn(['layers', highlightLabelIndex, 'layout', 'visibility'], 'visible')
+
+    style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none')
+    _.forEach(style.toJS().layers, (l, i) => {
+      if(l['source-layer'] === 'road') {
+        style = style.setIn(['layers', i, 'layout', 'visibility'], this.state.showSatellite ? 'none' : 'visible')
+      }
+    })  
 
     // set labels for transfers
     style = style.setIn(['layers', stopPointIndex, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 0)))
@@ -30,6 +55,7 @@ class StopMap extends Component {
 
     return (
       <div className="map">
+        <MapSatelliteSwitch onChange={this.handleChange} />
         <StaticMap
           width={window.innerWidth/2}
           height={window.innerHeight-100}

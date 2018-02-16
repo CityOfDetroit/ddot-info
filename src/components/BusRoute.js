@@ -13,8 +13,8 @@ class BusRoute extends React.Component {
     return (
       <div className="BusRoute">
         <RouteHeader color={thisRoute.color} number={this.props.match.params.name} name={thisRoute.rt_name} />
-        <RouteDetails id={this.props.match.params.name} />
         <RouteMap route={thisRoute} />
+        <RouteDetails id={this.props.match.params.name} />
       </div>
     )
   }

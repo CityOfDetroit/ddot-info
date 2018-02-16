@@ -8,12 +8,56 @@ import WebMercatorViewport from 'viewport-mercator-project';
 
 class RouteMap extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      viewport: {
+        latitude: 42,
+        longitude: -83,
+        zoom: 17,
+        bearing: 0,
+        pitch: 0,
+        width: window.innerWidth > 650 ? window.innerWidth / 2 : window.innerWidth,
+        height: window.innerWidth > 650 ? window.innerHeight - 100 : window.innerHeight * 4 / 10
+      }
+    }
+
+    this._resize = this._resize.bind(this)
+  }
+
+  _resize = () => {
+    if (window.innerWidth > 650) {
+      this.setState({
+        viewport: {
+          ...this.state.viewport,
+          width: window.outerWidth / 2,
+          height: window.innerHeight - 100
+        }
+      });
+    }
+    else {
+      this.setState({
+        viewport: {
+          ...this.state.viewport,
+          width: window.innerWidth,
+          height: window.innerHeight * 4 / 10
+        }
+      });
+    }
+  };
+
+  
+  componentDidMount() {
+    window.addEventListener('resize', this._resize);
+  }
+
   render() {
     const route = this.props.route
-    const viewport = new WebMercatorViewport({width: window.innerWidth/2, height: (window.innerHeight - 100)});
+
+    const viewport = new WebMercatorViewport({width: this.state.viewport.width, height: this.state.viewport.height});
     console.log(route.bbox)
     const bound = viewport.fitBounds(route.bbox,
-      {padding: 50}
+      {padding: window.innerWidth > 650 ? 50 : window.innerWidth / 20}
     );
 
     let style = defaultMapStyle
@@ -22,8 +66,8 @@ class RouteMap extends Component {
     return (
       <div className="map">
         <StaticMap
-          width={window.innerWidth/2}
-          height={window.innerHeight-100}
+          width={this.state.viewport.width}
+          height={this.state.viewport.height}
           latitude={bound.latitude}
           longitude={bound.longitude}
           zoom={bound.zoom}

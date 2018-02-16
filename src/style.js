@@ -18,7 +18,7 @@ Object.assign(MAP_STYLE.sources, {
   
 // Insert route layer before stops
 MAP_STYLE.layers.splice(
-MAP_STYLE.layers.findIndex(layer => layer.id === 'stop-labels'), 0,
+MAP_STYLE.layers.findIndex(layer => layer.id === 'road-label-small'), 0,
 {
     "id": "ddot-routes",
     "type": "line",

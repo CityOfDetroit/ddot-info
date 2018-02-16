@@ -10,7 +10,59 @@ import {defaultMapStyle, routeLineIndex, stopLabelIndex, stopPointIndex} from '.
 
 import WebMercatorViewport from 'viewport-mercator-project';
 
+import MapSatelliteSwitch from './MapSatelliteSwitch';
+
 class NearbyMap extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      showSatellite: false,
+      viewport: {
+        latitude: this.props.coords.latitude,
+        longitude: this.props.coords.longitude,
+        zoom: 17,
+        bearing: 0,
+        pitch: 0,
+        width: window.innerWidth > 650 ? window.innerWidth / 2 : window.innerWidth,
+        height: window.innerWidth > 650 ? window.innerHeight - 100 : window.innerHeight * 4 / 10
+      }
+    }
+
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(event) {
+    this.setState({
+      showSatellite: event.target.checked ? true : false
+    })
+  }
+
+  _resize = () => {
+    if (window.innerWidth > 650) {
+      this.setState({
+        viewport: {
+          ...this.state.viewport,
+          width: window.outerWidth / 2,
+          height: window.innerHeight - 100
+        }
+      });
+    }
+    else {
+      this.setState({
+        viewport: {
+          ...this.state.viewport,
+          width: window.innerWidth,
+          height: window.innerHeight * 4 / 10
+        }
+      });
+    }
+  };
+
+  componentDidMount() {
+    window.addEventListener('resize', this._resize);
+  }
 
   render() {
 
@@ -23,6 +75,13 @@ class NearbyMap extends Component {
     style = style.setIn(['layers', stopLabelIndex, 'filter'], ["in", "stop_id"].concat(stopIds))
     style = style.setIn(['layers', stopLabelIndex, 'layout', 'visibility'], 'visible')
     style = style.setIn(['layers', stopPointIndex, 'layout', 'visibility'], 'visible')
+
+    style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none')
+    _.forEach(style.toJS().layers, (l, i) => {
+      if(l['source-layer'] === 'road') {
+        style = style.setIn(['layers', i, 'layout', 'visibility'], this.state.showSatellite ? 'none' : 'visible')
+      }
+    })  
 
 
     // show all nearby routes
@@ -48,25 +107,25 @@ class NearbyMap extends Component {
     // making some walking dist radii
     const walkRadii = [buffer(geolocatedPoint[0].geometry, 250, {units: 'meters'})]
     const radiusBbox = bbox(walkRadii[0])
-    console.log(walkRadii)
 
-    const viewport = new WebMercatorViewport({width: window.innerWidth/2, height: (window.innerHeight - 100)});
+    const viewport = new WebMercatorViewport({width: this.state.viewport.width, height: this.state.viewport.height});
     const bound = viewport.fitBounds(
     [
       [radiusBbox[0], radiusBbox[1]], 
       [radiusBbox[2], radiusBbox[3]]
     ],
-      {padding: window.innerWidth*0.05})
+      {padding: window.innerWidth > 650 ? 50 : window.innerWidth / 30}
+    )
 
-    console.log(bound)
 
     style = style.setIn(['sources', 'walk-radius', 'data'], {"type": "FeatureCollection", "features": walkRadii})
 
     return (
       <div className="map">
+        <MapSatelliteSwitch onChange={this.handleChange} />
         <StaticMap
-          width={window.innerWidth/2}
-          height={window.innerHeight-100}
+          width={this.state.viewport.width}
+          height={this.state.viewport.height}
           latitude={bound.latitude}
           longitude={bound.longitude}
           zoom={bound.zoom}

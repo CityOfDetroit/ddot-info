@@ -14,11 +14,23 @@ class StopMap extends Component {
   constructor(props) {
     super(props)
 
+    let stop = Stops[this.props.stopId] || null
+
     this.state = {
-      showSatellite: false
+      showSatellite: false,
+      viewport: {
+        latitude: parseFloat(stop.lat),
+        longitude: parseFloat(stop.lon),
+        zoom: 17,
+        bearing: 0,
+        pitch: 0,
+        width: window.innerWidth > 650 ? window.innerWidth / 2 : window.innerWidth,
+        height: window.innerWidth > 650 ? window.innerHeight - 100 : window.innerHeight* 4 / 10
+      }
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this._resize = this._resize.bind(this)
   }
 
   handleChange(event) {
@@ -27,9 +39,34 @@ class StopMap extends Component {
     })
   }
 
+  _resize = () => {
+    if (window.innerWidth > 650) {
+      this.setState({
+        viewport: {
+          ...this.state.viewport,
+          width: window.outerWidth / 2,
+          height: window.innerHeight - 100
+        }
+      });
+    }
+    else {
+      this.setState({
+        viewport: {
+          ...this.state.viewport,
+          width: window.innerWidth,
+          height: window.innerHeight* 4 / 10
+        }
+      });
+    }
+  };
+
+  componentDidMount() {
+    window.addEventListener('resize', this._resize);
+  }
+
   render() {
     let style = defaultMapStyle
-    const stop = Stops[this.props.stopId] || null
+    let stop = Stops[this.props.stopId] || null
 
     // set style for main stop
     style = style.setIn(['layers', highlightPointIndex, 'filter'], ['==', 'stop_id', this.props.stopId])
@@ -57,11 +94,11 @@ class StopMap extends Component {
       <div className="map">
         <MapSatelliteSwitch onChange={this.handleChange} />
         <StaticMap
-          width={window.innerWidth/2}
-          height={window.innerHeight-100}
-          latitude={parseFloat(stop.lat)}
-          longitude={parseFloat(stop.lon)}
-          zoom={16.5}
+          width={this.state.viewport.width}
+          height={this.state.viewport.height}
+          latitude={this.state.viewport.latitude}
+          longitude={this.state.viewport.longitude}
+          zoom={this.state.viewport.zoom}
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} >
         </StaticMap> 

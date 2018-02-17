@@ -58,7 +58,7 @@ class RealtimeRouteMap extends Component {
 
     // make current route visible
     let style = defaultMapStyle
-    style = style.setIn(['layers', routeLineIndex, 'filter', 2], this.props.routeId)
+    style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.routeId, 10))
 
     // set the data
     style = style.setIn(['sources', 'realtime', 'data'], {"type": "FeatureCollection", "features": this.props.trips})

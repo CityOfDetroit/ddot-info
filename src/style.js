@@ -5,7 +5,7 @@ import MAP_STYLE from './mapstyle.json';
 Object.assign(MAP_STYLE.sources, {
     ddotroutes: {
       type: 'vector',
-      url: 'mapbox://cityofdetroit.cjbelah2m1spk32muemqy852a-75m4q'
+      url: 'mapbox://cityofdetroit.cjdqljjkt1zwc33qhodtkd2d8-496vb'
     }
   });
   
@@ -23,7 +23,7 @@ MAP_STYLE.layers.findIndex(layer => layer.id === 'road-label-small'), 0,
     "id": "ddot-routes",
     "type": "line",
     "source": "ddotroutes",
-    "source-layer": "ddot_routes",
+    "source-layer": "DDOTRoutes",
     "filter": [
         "==",
         "route_num",
@@ -35,10 +35,11 @@ MAP_STYLE.layers.findIndex(layer => layer.id === 'road-label-small'), 0,
         "line-join": "round"
     },
     "paint": {
+        // "line-color": "red",
         "line-color": {
             "base": 1,
             "type": "categorical",
-            "property": "orientatio",
+            "property": "orientation",
             "stops": [
                 [
                     "Downtown",
@@ -53,7 +54,7 @@ MAP_STYLE.layers.findIndex(layer => layer.id === 'road-label-small'), 0,
                     "#9b5ba5"
                 ],
                 [
-                    "Circular",
+                    "Special",
                     "#d07c32"
                 ]
             ]
@@ -66,13 +67,13 @@ MAP_STYLE.layers.findIndex(layer => layer.id === 'road-label-small'), 0,
                     2
                 ],
                 [
-                    22,
-                    12
+                    18,
+                    15
                 ]
             ]
         },
         "line-offset": 0,
-        "line-opacity": 1,
+        "line-opacity": 0.75,
     }
 });
   

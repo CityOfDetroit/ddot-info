@@ -61,7 +61,7 @@ class RouteMap extends Component {
     );
 
     let style = defaultMapStyle
-    style = style.setIn(['layers', routeLineIndex, 'filter', 2], route.id.toString())
+    style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(route.id, 10))
 
     return (
       <div className="map">

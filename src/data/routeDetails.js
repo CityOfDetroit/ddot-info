@@ -1091,6 +1091,27 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        services: {
+            "Monday-Friday": {
+                service_hours: ["5am", "11pm"],
+                frequency: [
+                    ["peak", 35],
+                    ["off-peak", 35]
+                ]
+            },
+            "Saturday": {
+                service_hours: ["7am", "11pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            },
+            "Sunday/Holiday": {
+                service_hours: ["7am", "8pm"],
+                frequency: [
+                    ["all day", 60]
+                ]
+            }
+        },
         frequency: [
             ['Monday-Friday', 'peak', 60],
             ['Monday-Friday', 'off-peak', 60],

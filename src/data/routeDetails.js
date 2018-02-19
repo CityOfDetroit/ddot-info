@@ -4,24 +4,24 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['Mack and Moross', 'Rosa Parks Transit Center'],
+        between: ['Mack and Moross', 'Rosa Parks TC'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:08am", "12:02am"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 30],
+                    ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["6:55am", "11:49pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["7:00am", "8:48pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -35,24 +35,25 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['Jefferson/Maryland', '7 Mile and Gratiot'],
+        between: ['Jefferson & Maryland', '7 Mile & Gratiot'],
+        via: ['Chalmers', "Schoenherr"],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:15am", "8:52pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 30],
+                    ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["6:45am", "7:52pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["8:20am", "5:04pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -66,24 +67,24 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Varjo & Van Dyke', 'Rosa Parks TC'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5am", "10:46pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 40],
+                    ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["6:00am", "8:46pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["8:00am", "7:50pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -97,26 +98,13 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Clark & Fort', 'Lycaste & Jefferson'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:10am", "9:03pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
-                ]
-            },
-            "Saturday": {
-                service_hours: ["7am", "11pm"],
-                frequency: [
-                    ["all day", 60]
-                ]
-            },
-            "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
-                frequency: [
-                    ["all day", 60]
+                    ["all day", 45],
                 ]
             }
         },
@@ -128,24 +116,23 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Fairgrounds TC', 'Belle Isle'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:50am", "8:43pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["all day", 50],
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["7:30am", "8:43pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["8:00am", "6:43pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -159,24 +146,25 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Conner & Jefferson', 'Bel-Air Center'],
+        via: ['Conner'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["6:15am", "9:49pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 40],
+                    ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["5:33am", "8:27pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["6:55am", "7:04pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -190,26 +178,30 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Warren & Telegraph', 'Warren & Moross'],
+        via: ['Warren', 'Forest'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 20],
+                    ["off-peak", 30],
+                    ["late night", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 45],
+                    ["late night", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 45],
+                    ["late night", 60]
                 ]
             }
         },
@@ -221,26 +213,26 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Rouge Park', 'Woodward & Manchester'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:02am", "9:16pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 25],
+                    ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["6:55am", "8:19pm"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 45]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["7:00am", "7:39pm"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 45]
                 ]
             }
         },

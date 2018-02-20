@@ -16,7 +16,8 @@ const RouteHeader = ({ number }) => {
       <div className="" style={{ display: 'flex', alignItems: 'center', }}>
         <Link className="link dim dark-gray" to={{ pathname: `/` }}>
           <img src={Bus} className="w3 ph2" alt="Weird bus logo" />
-        </Link>     
+        </Link>
+        <Link className="link dim dark-gray" to={{ pathname: `/route/${number}`}} >   
         <span className="dib f3-s f2-ns mh2 pa2 white fw7" style={{ backgroundColor: color }}>
           {number}
         </span>
@@ -25,6 +26,7 @@ const RouteHeader = ({ number }) => {
             {name}
           </span>
         </div>
+        </Link>
         <Link className="link dim dark-gray ma2" style={{border: '3px solid #ddd'}} to={{ pathname: `/route/${number}/real-time` }}>
           <div className="fw7 f7 f6-ns pa2 ">Live</div>
         </Link>

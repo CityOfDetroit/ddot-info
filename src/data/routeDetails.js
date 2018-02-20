@@ -244,26 +244,30 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Rosa Parks TC', 'Providence Hospital'],
+        via: ['Cass', 'West Grand Bl.', 'Dexter', 'Greenfield', 'Livernois', 'Curtis'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 12],
+                    ["off-peak", 15],
+                    ["late night", 30]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 30],
+                    ["late night", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 30],
+                    ["late night", 60]
                 ]
             }
         },
@@ -275,26 +279,30 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Mack & Moross', '7 Mile & Grand River'],
+        via: ['8 Mile Road'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["4:09am", "2:44am"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 20],
+                    ["off-peak", 30],
+                    ["late night", 45],
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["4:51am", "1:42am"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 30],
+                    ["late night", 50],
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["5:45am", "11:31pm"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 55],
+                    ["late night", 55]
                 ]
             }
         },
@@ -306,26 +314,30 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Rosa Parks TC', 'Telegraph & Fenkell'],
+        via: ['12th (northbound)/14th (southbound)', 'Fenkell'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:10am", "11:02pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 25],
+                    ["off-peak", 45],
+                    ["late night", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["6:00am", "10L57pm"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 45],
+                    ["late night", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["7:41am", "8:28pm"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 45],
+                    ["late night", 60]
                 ]
             }
         },
@@ -337,24 +349,27 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Rosa Parks TC', 'West Outer Drive'],
+        via: ['Fort St.'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["4:00am", "12:25am"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 25],
+                    ["off-peak", 35],
+                    ["late night", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["5:00am", "12:28am"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 40],
+                    ["late night", 65]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["5:00am", "10:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -368,26 +383,30 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Rosa Parks TC', 'West 7 Mile'],
+        via: ['Grand River'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 10],
+                    ["off-peak", 15],
+                    ["late night", 30]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 20],
+                    ["late night", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 30],
+                    ["late night", 60]
                 ]
             }
         },
@@ -399,26 +418,29 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Northland Mall', 'Fairlane Mall'],
+        via: ["Greenfield Rd."],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["4:28am", "1:40am"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["all day", 15],
+                    ["late night", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["5:15am", "12:39am"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 20],
+                    ["late night", 30]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["6:05am", "10:38pm"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 35],
+                    ["late night", 60]
                 ]
             }
         },
@@ -430,24 +452,24 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Rosa Parks TC', '8 Mile Meijer'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:37am", "11:23pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["all day", 40],
+                    ["late night", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["7:08am", "9:44pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["7:08am", "8:43pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -461,24 +483,24 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Rosa Parks TC', 'Jefferson & Maryland'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
                     ["peak", 35],
                     ["off-peak", 35]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["24 hours"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -492,24 +514,26 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Redford Plaza', 'Rosa Parks TC'],
+        via: ['Lafayette', 'W. Grand Blvd.', 'Joy Rd.'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:21am", "11:51pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 30],
+                    ["off-peak", 50],
+                    ["late night", 60],
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["6:40am", "10:35pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["7:01am", "7:51pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -523,14 +547,15 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        between: ['Rosa Parks TC', 'Univ. of Detroit Mercy'],
+        via: ['Trumbull', 'Linwood'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
                 frequency: [
                     ["peak", 35],
-                    ["off-peak", 35]
+                    ["all day", 60]
                 ]
             },
             "Saturday": {

@@ -9,11 +9,11 @@ const RouteDetails = ({ id }) => {
   return (
     <div className="details ph3">
       <div className="f5 pv3">{obj.description}</div>
-      {/* <div className="f5 pv1">
+      <div className="f5 pv1">
         Runs from <span className="fw7">{obj.between[0]} </span> 
         to <span className="fw7">{obj.between[1]} </span>
         via <span className="fw7">{obj.via.map(v => `${v}`).join(", ")}</span>
-      </div> */}
+      </div>
       {["Monday-Friday", "Saturday", "Sunday/Holiday"].map((d, i) => (
         <div className="pt1 w-100 bt mb3" key={i}>
           <div className="f4 w-100">
@@ -23,7 +23,7 @@ const RouteDetails = ({ id }) => {
             (<div>
               <div className="f5">
               <span className="fw5">
-                {obj.services[d].service_hours.length === 1 ? obj.services[d].service_hours[0] : obj.services[d].service_hours[0] - obj.services[d].service_hours[1] }</span>
+                {obj.services[d].service_hours.length === 1 ? obj.services[d].service_hours[0] : `${obj.services[d].service_hours[0]} - ${obj.services[d].service_hours[1]}` }</span>
               </div>
               <div className="mt2">
                 <table className="w-100">

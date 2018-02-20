@@ -7,7 +7,7 @@ const routeDetails = [{
         between: ['Mack and Moross', 'Rosa Parks TC'],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/07CadilllacHarper.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5:08am", "12:02am"],
@@ -39,7 +39,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Jefferson & Maryland', '7 Mile & Gratiot'],
         via: ['Chalmers', "Schoenherr"],
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/9ChalmersMS.pdf"],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -73,7 +73,7 @@ const routeDetails = [{
         between: ['Varjo & Van Dyke', 'Rosa Parks TC'],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/10CheneMS.pdf?ver=2016-04-22-150329-977"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "10:46pm"],
@@ -106,7 +106,7 @@ const routeDetails = [{
         between: ['Clark & Fort', 'Lycaste & Jefferson'],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/11Clairmount.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5:10am", "9:03pm"],
@@ -126,7 +126,7 @@ const routeDetails = [{
         between: ['Fairgrounds TC', 'Belle Isle'],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/12ConantMS.pdf?ver=2016-04-22-150443-267"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5:50am", "8:43pm"],
@@ -157,7 +157,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Conner & Jefferson', 'Bel-Air Center'],
         via: ['Conner'],
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/13ConnerMS.pdf"],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -190,7 +190,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Warren & Telegraph', 'Warren & Moross'],
         via: ['Warren', 'Forest'],
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/14CrosstownMS.pdf?ver=2017-04-21-164624-043"],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -227,7 +227,7 @@ const routeDetails = [{
         between: ['Rouge Park', 'Woodward & Manchester'],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/15ChicagoDavison.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5:02am", "9:16pm"],
@@ -259,7 +259,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Providence Hospital'],
         via: ['Cass', 'West Grand Bl.', 'Dexter', 'Greenfield', 'Livernois', 'Curtis'],
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/16DexterMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/16DexterSS.pdf"],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -295,7 +295,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Mack & Moross', '7 Mile & Grand River'],
         via: ['8 Mile Road'],
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/17EightMile.pdf"],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -331,7 +331,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Telegraph & Fenkell'],
         via: ['12th (northbound)/14th (southbound)', 'Fenkell'],
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/18FenkellMS.pdf?ver=2016-04-22-150631-777"],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -367,7 +367,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'West Outer Drive'],
         via: ['Fort St.'],
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/19Fort.pdf"],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -402,7 +402,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'West 7 Mile'],
         via: ['Grand River'],
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/21GrandRiverMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/21GrandRiverSS.pdf"],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -438,7 +438,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Northland Mall', 'Fairlane Mall'],
         via: ["Greenfield Rd."],
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/22Greenfield.pdf"],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -474,7 +474,7 @@ const routeDetails = [{
         between: ['Rosa Parks TC', '8 Mile Meijer'],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/23Hamilton.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5:37am", "11:23pm"],
@@ -507,7 +507,7 @@ const routeDetails = [{
         between: ['Rosa Parks TC', 'Jefferson & Maryland'],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/25JeffersonMS.pdf?ver=2017-04-21-170105-283"],
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
@@ -539,7 +539,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Redford Plaza', 'Rosa Parks TC'],
         via: ['Lafayette', 'W. Grand Blvd.', 'Joy Rd.'],
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/27Joy.pdf"],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -573,7 +573,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Univ. of Detroit Mercy'],
         via: ['Trumbull', 'Linwood'],
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/29Linwood.pdf"],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -607,7 +607,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/30LivernoisMS.pdf?ver=2016-04-22-151449-233"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -637,10 +637,10 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Mack & Moross', 'Rosa Parks TC'],
+        via: ['Mack', 'Cass'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/31MackMS.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -673,7 +673,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/32McNichols.pdf?ver=2017-01-30-160912-920"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -706,7 +706,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/34GratiotMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/34GratiotSS.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -739,7 +739,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/37Michigan.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -772,7 +772,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/38Plymouth.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -805,7 +805,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/39Puritan.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -838,7 +838,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/40RussellMF.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -871,7 +871,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/41SchaeferMS.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -904,7 +904,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/42%20Mid-City%20Loop.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -937,7 +937,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/43Schoolcraft.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -967,10 +967,10 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Meijer Old Redford', 'Mack & Moross'],
+        via: ['Lahser', '7 Mile', 'Morang', 'Moross'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/45SevenMileMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/45SevenMileSS.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1003,7 +1003,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/46Southfield.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1036,7 +1036,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/47TiremanMS.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1069,7 +1069,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/48VanDykeLafayette.pdf?ver=2017-01-27-121537-590"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1102,7 +1102,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/49VernorMS.pdf?ver=2017-06-26-142208-523"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5:07am", "1:45am"],
@@ -1135,7 +1135,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/53WoodwardMS.pdf?ver=2017-06-26-135605-973"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1168,7 +1168,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/54WyomingMS.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1211,7 +1211,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/60Evergreen.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1244,7 +1244,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/80VillagesDirectMF.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1277,7 +1277,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/89SouthwestDirectMF.pdf?ver=2017-04-21-171512-467"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1310,7 +1310,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/92RosedaleExpressMF.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1331,7 +1331,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/95RyanExpress.pdf?ver=2017-01-27-132516-670"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1352,7 +1352,7 @@ const routeDetails = [{
         between: ['', ''],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
-        pdf: "https",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/96JoyExpress.pdf?ver=2017-01-27-132707-847"],
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],

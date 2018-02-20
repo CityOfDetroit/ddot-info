@@ -1,6 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 
+import PdfSVG from '../img/pdf.svg'
+
 import routeDetails from '../data/routeDetails.js';
 
 const RouteDetails = ({ id }) => {
@@ -8,12 +10,29 @@ const RouteDetails = ({ id }) => {
 
   return (
     <div className="details ph3">
-      <div className="f5 pv3">{obj.description}</div>
-      <div className="f5 pv1">
+
+      <div className="f5 pv2">{obj.description}</div>
+      
+      <div className="f6 pv1">
         Runs from <span className="fw7">{obj.between[0]} </span> 
         to <span className="fw7">{obj.between[1]} </span>
         via <span className="fw7">{obj.via.map(v => `${v}`).join(", ")}</span>
       </div>
+
+      <div style={{display: 'flex', alignItems: 'center'}}>
+      <span className="fw7 mr2">Download schedule as PDF:</span>
+      {obj.pdf.map((p, i) => 
+        <a href={p}>
+        <div 
+          className="pv2 f6 mr2" 
+          style={{display: 'flex', alignItems:'center'}}>
+            <img src={PdfSVG} className="ph1" />
+            {obj.pdf.length === 1 ? `All services` :  i === 0 ? `Monday-Friday` : `Saturday-Sunday` }
+        </div>
+        </a>
+      )}
+      </div>
+
       {["Monday-Friday", "Saturday", "Sunday/Holiday"].map((d, i) => (
         <div className="pt1 w-100 bt mb3" key={i}>
           <div className="f4 w-100">

@@ -5,7 +5,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['Mack and Moross', 'Rosa Parks TC'],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5:08am", "12:02am"],
@@ -37,6 +39,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Jefferson & Maryland', '7 Mile & Gratiot'],
         via: ['Chalmers', "Schoenherr"],
+        pdf: "https",
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -68,7 +71,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['Varjo & Van Dyke', 'Rosa Parks TC'],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "10:46pm"],
@@ -99,7 +104,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['Clark & Fort', 'Lycaste & Jefferson'],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5:10am", "9:03pm"],
@@ -117,7 +124,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['Fairgrounds TC', 'Belle Isle'],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5:50am", "8:43pm"],
@@ -148,6 +157,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Conner & Jefferson', 'Bel-Air Center'],
         via: ['Conner'],
+        pdf: "https",
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -180,6 +190,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Warren & Telegraph', 'Warren & Moross'],
         via: ['Warren', 'Forest'],
+        pdf: "https",
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -214,7 +225,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rouge Park', 'Woodward & Manchester'],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5:02am", "9:16pm"],
@@ -246,6 +259,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Providence Hospital'],
         via: ['Cass', 'West Grand Bl.', 'Dexter', 'Greenfield', 'Livernois', 'Curtis'],
+        pdf: "https",
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -281,6 +295,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Mack & Moross', '7 Mile & Grand River'],
         via: ['8 Mile Road'],
+        pdf: "https",
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -316,6 +331,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Telegraph & Fenkell'],
         via: ['12th (northbound)/14th (southbound)', 'Fenkell'],
+        pdf: "https",
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -351,6 +367,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'West Outer Drive'],
         via: ['Fort St.'],
+        pdf: "https",
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -385,6 +402,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'West 7 Mile'],
         via: ['Grand River'],
+        pdf: "https",
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -420,6 +438,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Northland Mall', 'Fairlane Mall'],
         via: ["Greenfield Rd."],
+        pdf: "https",
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -453,7 +472,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', '8 Mile Meijer'],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5:37am", "11:23pm"],
@@ -484,7 +505,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Jefferson & Maryland'],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
@@ -516,6 +539,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Redford Plaza', 'Rosa Parks TC'],
         via: ['Lafayette', 'W. Grand Blvd.', 'Joy Rd.'],
+        pdf: "https",
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -549,6 +573,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Univ. of Detroit Mercy'],
         via: ['Trumbull', 'Linwood'],
+        pdf: "https",
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
@@ -580,7 +605,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -611,7 +638,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -642,7 +671,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -673,7 +704,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -704,7 +737,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -735,7 +770,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -766,7 +803,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -797,7 +836,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -828,7 +869,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -859,7 +902,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -890,7 +935,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -921,7 +968,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -952,7 +1001,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -983,7 +1034,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1014,7 +1067,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1045,7 +1100,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5:07am", "1:45am"],
@@ -1076,7 +1133,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1107,7 +1166,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1148,7 +1209,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1179,7 +1242,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1210,7 +1275,9 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1241,7 +1308,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Friday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1260,7 +1329,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Friday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],
@@ -1279,7 +1350,9 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Friday'],
         between: ['', ''],
+        via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        pdf: "https",
         services: {
             "Monday-Friday": {
                 service_hours: ["5am", "11pm"],

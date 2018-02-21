@@ -26,7 +26,7 @@ const RouteDetails = ({ id }) => {
         <div 
           className="pv2 f6 mr2" 
           style={{display: 'flex', alignItems:'center'}}>
-            <img src={PdfSVG} className="ph1" />
+            <img src={PdfSVG} alt="download PDF" className="ph1" />
             {obj.pdf.length === 1 ? `All services` :  i === 0 ? `Monday-Friday` : `Saturday-Sunday` }
         </div>
         </a>

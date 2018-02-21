@@ -70,8 +70,8 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['Varjo & Van Dyke', 'Rosa Parks TC'],
-        via: [''],
+        between: ['Rosa Parks TC', 'Varjo & Van Dyke'],
+        via: ['Lafayette', 'Chene', 'Jos. Campau', 'Nevada'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/10CheneMS.pdf?ver=2016-04-22-150329-977"],
         services: {
@@ -104,7 +104,7 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['Clark & Fort', 'Lycaste & Jefferson'],
-        via: [''],
+        via: ['Junction', 'Epworth', 'Joy', 'Harper', 'St. Jean'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/11Clairmount.pdf"],
         services: {
@@ -124,7 +124,7 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['Fairgrounds TC', 'Belle Isle'],
-        via: [''],
+        via: ['Conant', 'E. Outer Dr'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/12ConantMS.pdf?ver=2016-04-22-150443-267"],
         services: {
@@ -198,21 +198,21 @@ const routeDetails = [{
                 frequency: [
                     ["peak", 20],
                     ["off-peak", 30],
-                    ["late night", 60]
+                    ["evening", 60]
                 ]
             },
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
                     ["all day", 45],
-                    ["late night", 60]
+                    ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
                     ["all day", 45],
-                    ["late night", 60]
+                    ["evening", 60]
                 ]
             }
         },
@@ -267,21 +267,21 @@ const routeDetails = [{
                 frequency: [
                     ["peak", 12],
                     ["off-peak", 15],
-                    ["late night", 30]
+                    ["evening", 30]
                 ]
             },
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
                     ["all day", 30],
-                    ["late night", 60]
+                    ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
                     ["all day", 30],
-                    ["late night", 60]
+                    ["evening", 60]
                 ]
             }
         },
@@ -303,21 +303,21 @@ const routeDetails = [{
                 frequency: [
                     ["peak", 20],
                     ["off-peak", 30],
-                    ["late night", 45],
+                    ["evening", 45],
                 ]
             },
             "Saturday": {
                 service_hours: ["4:51am", "1:42am"],
                 frequency: [
                     ["all day", 30],
-                    ["late night", 50],
+                    ["evening", 50],
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["5:45am", "11:31pm"],
                 frequency: [
                     ["all day", 55],
-                    ["late night", 55]
+                    ["evening", 55]
                 ]
             }
         },
@@ -339,21 +339,21 @@ const routeDetails = [{
                 frequency: [
                     ["peak", 25],
                     ["off-peak", 45],
-                    ["late night", 60]
+                    ["evening", 60]
                 ]
             },
             "Saturday": {
                 service_hours: ["6:00am", "10L57pm"],
                 frequency: [
                     ["all day", 45],
-                    ["late night", 60]
+                    ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["7:41am", "8:28pm"],
                 frequency: [
                     ["all day", 45],
-                    ["late night", 60]
+                    ["evening", 60]
                 ]
             }
         },
@@ -375,14 +375,14 @@ const routeDetails = [{
                 frequency: [
                     ["peak", 25],
                     ["off-peak", 35],
-                    ["late night", 60]
+                    ["evening", 60]
                 ]
             },
             "Saturday": {
                 service_hours: ["5:00am", "12:28am"],
                 frequency: [
                     ["all day", 40],
-                    ["late night", 65]
+                    ["evening", 65]
                 ]
             },
             "Sunday/Holiday": {
@@ -410,21 +410,21 @@ const routeDetails = [{
                 frequency: [
                     ["peak", 10],
                     ["off-peak", 15],
-                    ["late night", 30]
+                    ["evening", 30]
                 ]
             },
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
                     ["all day", 20],
-                    ["late night", 60]
+                    ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
                     ["all day", 30],
-                    ["late night", 60]
+                    ["evening", 60]
                 ]
             }
         },
@@ -437,7 +437,7 @@ const routeDetails = [{
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
         between: ['Northland Mall', 'Fairlane Mall'],
-        via: ["Greenfield Rd."],
+        via: ["Greenfield"],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/22Greenfield.pdf"],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
@@ -445,21 +445,21 @@ const routeDetails = [{
                 service_hours: ["4:28am", "1:40am"],
                 frequency: [
                     ["all day", 15],
-                    ["late night", 60]
+                    ["evening", 60]
                 ]
             },
             "Saturday": {
                 service_hours: ["5:15am", "12:39am"],
                 frequency: [
                     ["all day", 20],
-                    ["late night", 30]
+                    ["evening", 30]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["6:05am", "10:38pm"],
                 frequency: [
                     ["all day", 35],
-                    ["late night", 60]
+                    ["evening", 60]
                 ]
             }
         },
@@ -472,7 +472,7 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', '8 Mile Meijer'],
-        via: [''],
+        via: ['2nd', 'Hamilton', 'McNichols', 'John R'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/23Hamilton.pdf"],
         services: {
@@ -480,7 +480,7 @@ const routeDetails = [{
                 service_hours: ["5:37am", "11:23pm"],
                 frequency: [
                     ["all day", 40],
-                    ["late night", 60]
+                    ["evening", 60]
                 ]
             },
             "Saturday": {
@@ -505,7 +505,7 @@ const routeDetails = [{
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Jefferson & Maryland'],
-        via: [''],
+        via: ['Jefferson'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/25JeffersonMS.pdf?ver=2017-04-21-170105-283"],
         services: {
@@ -547,7 +547,7 @@ const routeDetails = [{
                 frequency: [
                     ["peak", 30],
                     ["off-peak", 50],
-                    ["late night", 60],
+                    ["evening", 60],
                 ]
             },
             "Saturday": {
@@ -577,20 +577,20 @@ const routeDetails = [{
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:15am", "11:30pm"],
                 frequency: [
                     ["peak", 35],
                     ["all day", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["6:51am", "9:35pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["7:00am", "7:40pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -604,26 +604,26 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Fairgrounds TC', 'W. Jefferson & Brennan'],
+        via: ['Livernois'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/30LivernoisMS.pdf?ver=2016-04-22-151449-233"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["6:00am", "9:46pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 40],
+                    ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["6:57am", "9:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["7:00am", "7:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -643,22 +643,24 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/31MackMS.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["4:47am", "12:44am"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 20],
+                    ["off-peak", 30],
+                    ["evening", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["5:39am", "10:51am"],
                 frequency: [
-                    ["all day", 60]
+                    ["peak", 30],
+                    ["off-peak", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["6:40am", "9:47pm"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 55]
                 ]
             }
         },
@@ -670,26 +672,27 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['6 Mile & Telegraph', 'Mack & Moross'],
+        via: ['McNichols', 'Cadieux'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/32McNichols.pdf?ver=2017-01-30-160912-920"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["4:55am", "1:40am"],
                 frequency: [
                     ["peak", 35],
-                    ["off-peak", 35]
+                    ["off-peak", 50]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["5:49am", "12:54am"],
                 frequency: [
-                    ["all day", 60]
+                    ["daytime", 45],
+                    ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["7:04am", "10:13pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -703,28 +706,33 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['3rd & Abbott', '8 Mile & Gratiot'],
+        via: ['Gratiot'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/34GratiotMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/34GratiotSS.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 12],
+                    ["off-peak", 30],
+                    ["evening", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["peak", 15],
+                    ["off-peak", 35],
+                    ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["peak", 30],
+                    ["off-peak", 35],
+                    ["evening", 60]
                 ]
             }
         },
@@ -736,28 +744,31 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Rosa Parks TC', 'Fairlane Mall'],
+        via: ['Michigan Ave'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/37Michigan.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 20],
+                    ["off-peak", 35],
+                    ["evening", 50]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["day", 30],
+                    ["evening", 60],
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["day", 40],
+                    ["evening", 60],
                 ]
             }
         },
@@ -769,26 +780,26 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['I-96 & Middlebelt', '8 Mile & Hayes'],
+        via: ['Plymouth', 'Elmhurst', 'Caniff'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/38Plymouth.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["4:10am", "12:11am"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 45],
+                    ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["4:22am", "10:15pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["4:22am", "8:20pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -802,28 +813,27 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Southfield & Fenkell', 'Manchester & Woodward'],
+        via: ['Fenkell', 'Puritan'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/39Puritan.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["6:00am", "8:27pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["all day", 60],
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["7:00am", "6:24pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["8:00am", "4:00pm"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 65]
                 ]
             }
         },
@@ -834,29 +844,16 @@ const routeDetails = [{
         name: 'Russell',
         orientation: 'NS',
         downtown: true,
-        days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
+        days_per_week: ['Monday', 'Friday'],
+        between: ['Rosa Parks TC', 'Van Dyke & E. Outer Dr'],
         via: [''],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/40RussellMF.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["6:00am", "7:49pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
-                ]
-            },
-            "Saturday": {
-                service_hours: ["7am", "11pm"],
-                frequency: [
-                    ["all day", 60]
-                ]
-            },
-            "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
-                frequency: [
-                    ["all day", 60]
+                    ["all day", 65]
                 ]
             }
         },
@@ -868,26 +865,25 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['8 Mile & Schaefer', 'Brennan Loop'],
+        via: ['Schaefer', 'W. Jefferson'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/41SchaeferMS.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:10am", "9:56pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["all day", 60],
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["7:00am", "8:57pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["7:00am", "8:57pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -901,26 +897,27 @@ const routeDetails = [{
         orientation: 'CW',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Woodward & Manchester', 'Woodward & Mack'],
+        via: ['Rosa Parks', 'Hamilton', 'Manchester', 'Oakland', 'St. Antoine'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/42%20Mid-City%20Loop.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:20am", "8:59pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 25],
+                    ["off-peak", 30],
+                    ["evening", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["7:15am", "7:00pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["8:15am", "6:00pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -934,28 +931,27 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Redford Plaza', '8 Mile & Ryan'],
+        via: ['Schoolcraft', 'Oakman Blvd', 'Manchester', 'Oakland'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/43Schoolcraft.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:10am", "8:24pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["all day", 50]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["7:00am", "7:10pm"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 50]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["10:05am", "7:02pm"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 50]
                 ]
             }
         },
@@ -973,22 +969,25 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/45SevenMileMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/45SevenMileSS.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 15],
+                    ["off-peak", 30],
+                    ["evening", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 40],
+                    ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 45],
+                    ["evening", 60]                
                 ]
             }
         },
@@ -999,29 +998,16 @@ const routeDetails = [{
         name: 'Southfield',
         orientation: 'NS',
         downtown: false,
-        days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        days_per_week: ['Monday', 'Friday'],
+        between: ['9 Mile & Rutland', 'Fairlane Mall'],
+        via: ['Southfield Service Drive'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/46Southfield.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:48am", "8:20pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
-                ]
-            },
-            "Saturday": {
-                service_hours: ["7am", "11pm"],
-                frequency: [
-                    ["all day", 60]
-                ]
-            },
-            "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
-                frequency: [
-                    ["all day", 60]
+                    ["all day", 50]
                 ]
             }
         },
@@ -1033,28 +1019,21 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Warren & Pierson', 'John R & Mack'],
+        via: ['Warren', 'Tireman', 'MLK'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/47TiremanMS.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:10am", "7:35pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["all day", 50],
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["7:40am", "6:50pm"],
                 frequency: [
-                    ["all day", 60]
-                ]
-            },
-            "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
-                frequency: [
-                    ["all day", 60]
+                    ["all day", 50]
                 ]
             }
         },
@@ -1066,28 +1045,31 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Bel Air Center', 'Rosa Parks TC'],
+        via: ['Lafayette', 'Van Dyke'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/48VanDykeLafayette.pdf?ver=2017-01-27-121537-590"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 20],
+                    ["off-peak", 30],
+                    ["evening", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 35],
+                    ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 50],
+                    ["evening", 60]
                 ]
             }
         },
@@ -1099,28 +1081,29 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Michigan & Schaefer', 'Rosa Parks TC'],
+        via: ['Vernor', 'Bagley', 'Lafayette'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/49VernorMS.pdf?ver=2017-06-26-142208-523"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:07am", "1:45am"],
+                service_hours: ["4:40am", "1:18am"],
                 frequency: [
-                    ["Peak", 35],
-                    ["Off-Peak", 35]
+                    ["peak", 25],
+                    ["off-peak", 45]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["4:59am", "1:03am"],
                 frequency: [
-                    ["all day", 60]
+                    ["peak", 25],
+                    ["off-peak", 45]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["6:03am", "12:00am"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 55]
                 ]
             }
         },
@@ -1132,29 +1115,32 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Fairgrounds TC', 'Downtown'],
+        via: ['Woodward Avenue'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/53WoodwardMS.pdf?ver=2017-06-26-135605-973"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 10],
+                    ["off-peak", 15],
+                    ["evening", 30]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
-                ]
+                    ["daytime", 10],
+                    ["evening", 30] 
+                ]               
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
-                ]
+                    ["daytime", 15],
+                    ["evening", 30]
+                ]         
             }
         },
         notes: ""
@@ -1165,40 +1151,29 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['8 Mile & Wyoming', 'Delray'],
+        via: ['Wyoming', 'Dearborn'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/54WyomingMS.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:00am", "9:51pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["all day", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["7:00am", "8:52pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["8:00am", "7:52pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             }
-        },
-        frequency: [
-            ['Monday-Friday', 'peak', 60],
-            ['Monday-Friday', 'off-peak', 60],
-            ['Saturday-Sunday', 'all day', 60]
-        ],
-        service_hours: {
-            'Monday-Friday': ['6am', '11pm'],
-            'Saturday': ['8am', '8pm'],
-            'Sunday': ['10am', '8pm']
         },
         notes: ""
     },
@@ -1208,28 +1183,29 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Northland Mall', 'Fairlane Mall'],
+        via: ['8 Mile Rd', 'Evergreen'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/60Evergreen.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:55am", "10:41pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
+                    ["peak", 20],
+                    ["off-peak", 35],
+                    ["evening", 60],
                 ]
             },
             "Saturday": {
-                service_hours: ["7am", "11pm"],
+                service_hours: ["6:58am", "10:31pm"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 35]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
+                service_hours: ["8:38am", "7:43pm"],
                 frequency: [
-                    ["all day", 60]
+                    ["all day", 55]
                 ]
             }
         },
@@ -1241,28 +1217,15 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Jefferson & Maryland', 'W. Grand Blvd. & Trumbull'],
+        via: ['Jefferson', 'Lafayette', 'Cass', 'W. Grand Blvd.'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/80VillagesDirectMF.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:37am", "8:10pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
-                ]
-            },
-            "Saturday": {
-                service_hours: ["7am", "11pm"],
-                frequency: [
-                    ["all day", 60]
-                ]
-            },
-            "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
-                frequency: [
-                    ["all day", 60]
+                    ["peak", 30],
                 ]
             }
         },
@@ -1274,28 +1237,15 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: false,
         days_per_week: ['Monday', 'Sunday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Trumbull & W. Grand Blvd.', 'W. Outer Dr. & Fort'],
+        via: ['Bassett', 'Vernor', 'Cass', 'W. Grand Blvd.'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/89SouthwestDirectMF.pdf?ver=2017-04-21-171512-467"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:35am", "6:55pm"],
                 frequency: [
-                    ["peak", 35],
-                    ["off-peak", 35]
-                ]
-            },
-            "Saturday": {
-                service_hours: ["7am", "11pm"],
-                frequency: [
-                    ["all day", 60]
-                ]
-            },
-            "Sunday/Holiday": {
-                service_hours: ["7am", "8pm"],
-                frequency: [
-                    ["all day", 60]
+                    ["peak", 40],
                 ]
             }
         },
@@ -1307,16 +1257,15 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Friday'],
-        between: ['', ''],
-        via: [''],
+        between: ['8 Mile & Evergreen', 'Downtown'],
+        via: ['Grand River', 'I-96'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/92RosedaleExpressMF.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:35am", "6:55pm"],
                 frequency: [
                     ["peak", 35],
-                    ["off-peak", 35]
                 ]
             }
         },
@@ -1328,16 +1277,15 @@ const routeDetails = [{
         orientation: 'NS',
         downtown: true,
         days_per_week: ['Monday', 'Friday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Downtown', 'Van Dyke & Outer Dr.'],
+        via: ['Ryan', 'I-75'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/95RyanExpress.pdf?ver=2017-01-27-132516-670"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:51am", "6:45pm"],
                 frequency: [
                     ["peak", 35],
-                    ["off-peak", 35]
                 ]
             }
         },
@@ -1349,16 +1297,15 @@ const routeDetails = [{
         orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Friday'],
-        between: ['', ''],
-        via: [''],
+        between: ['Downtown', 'Weatherby'],
+        via: ['Joy Road', 'I-96'],
         description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/96JoyExpress.pdf?ver=2017-01-27-132707-847"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "11pm"],
+                service_hours: ["5:43am", "6:54pm"],
                 frequency: [
                     ["peak", 35],
-                    ["off-peak", 35]
                 ]
             }
         },

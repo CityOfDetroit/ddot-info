@@ -18,7 +18,7 @@ class Homepage extends Component {
             <p>Find your route or stop, or see which buses are running near your current location.</p>
           </div>
           <div className="w-100" style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start', background: '#004445' }}>
-            <div className="w-100 mr2">
+            <div className="w-100 pa1">
               <RouteSearch />
               <Legend />
             </div>

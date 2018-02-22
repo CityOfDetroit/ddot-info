@@ -15498,7 +15498,7 @@ const Schedules = {
   },
   "48": {
     "id": "48",
-    "rt_name": "Van Dyke - Lafayette",
+    "rt_name": "Van Dyke/Lafayette",
     "color": "#44aa42",
     "rt_id": 6689,
     "timepoints": {

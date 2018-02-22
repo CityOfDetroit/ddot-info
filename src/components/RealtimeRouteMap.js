@@ -18,7 +18,7 @@ class RealtimeRouteMap extends Component {
         bearing: 0,
         pitch: 0,
         width: window.innerWidth > 650 ? window.innerWidth / 2 : window.innerWidth,
-        height: window.innerWidth > 650 ? window.innerHeight - 100 : window.innerHeight * 4 / 10
+        height: window.innerWidth > 650 ? window.innerHeight - 100 : 225
       }
     }
 
@@ -40,7 +40,7 @@ class RealtimeRouteMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth,
-          height: window.innerHeight * 4 / 10
+          height: 225
         }
       });
     }

@@ -9,17 +9,17 @@ class RouteLink extends Component {
     const route = Schedules[this.props.id]
 
     return (
-      <div style={{ display: 'flex', alignItems:'center' }}>
-        <span className='white fw7 f5 mw2 pa2 tc' style={{ backgroundColor: route.color }}>
+      <Link className="dim black link underline-hover hover-mid-gray glow" 
+            to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}>  
+      <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start', backgroundColor: `#eee`}}>
+        <div className='white fw7 f5 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: route.color }}>
           {this.props.id}
-        </span> 
-        <span className='tl pl1 f5 fw6 pl2 glow'>
-          <Link 
-            className="dim black hover-mid-gray glow" 
-            to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}>
-              {route.rt_name}</Link>
-        </span>
+        </div> 
+        <div className='fw5 glow pl1' style={{fontSize: `.9em`}}>
+          {route.rt_name}
+        </div>
       </div>
+      </Link>
     )
   }
 }
@@ -27,5 +27,4 @@ class RouteLink extends Component {
 RouteLink.propTypes = {
   id: PropTypes.string.isRequired,
 }
-
-export default RouteLink
+export default RouteLink;

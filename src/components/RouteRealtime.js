@@ -50,10 +50,13 @@ class RouteRealtime extends React.Component {
   }
 
   fetchData() {
+    console.log(`${Helpers.endpoint}/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
     fetch(`${Helpers.endpoint}/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
       let geojson = _.sortBy(d.data.list, 'status.tripId').map((bus, i) => {
+
+        let direction = _.findKey(this.state.tripIds, t => { return t.indexOf(bus.status.activeTripId.slice(-4)) > -1})
           return {
             "type": "Feature",
             "geometry": {
@@ -69,7 +72,8 @@ class RouteRealtime extends React.Component {
               "predicted": bus.status.predicted,
               "updateTime": moment(bus.status.lastUpdateTime).format("h:mm:ss a"),
               "onTime": bus.status.scheduleDeviation / 60,
-              "direction": _.findKey(this.state.tripIds, t => { return t.indexOf(bus.status.activeTripId.slice(-4)) > -1})
+              "lastStop": this.state.route.timepoints[direction] ? this.state.route.timepoints[direction].slice(-1)[0] : ``,
+              "direction": direction
             }
           }
       })

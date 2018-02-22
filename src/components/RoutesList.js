@@ -6,11 +6,9 @@ import RouteLink from './RouteLink';
 class RoutesList extends Component {
   render() {
     return (
-      <div className="ma2" style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start' }}>
+      <div className="" style={{ display: 'grid', gridTemplateColumns: `repeat(auto-fit, minmax(165px, 1fr))`, gridGap: `.5em` }}>
         {this.props.lines.map(line =>
-          <div className="pa2 ma2" style={{ width: '200px', background: '#eee' }} key={line.id}>
-            <RouteLink key={line.id} id={line.id} routeId={line.rt_id} name={line.rt_name} color={line.color} />
-          </div>
+          <RouteLink key={line.id} id={line.id} routeId={line.rt_id} name={line.rt_name} color={line.color} />
         )}
       </div>
     )

@@ -52,7 +52,7 @@ class RouteStops extends React.Component {
         <div className="map">
         <RouteMap route={thisRoute} />
         </div>
-        <div className="stopList pa2">
+        <div className="stopList">
         <h2 className="ml2">Stops on {thisRoute.id} {thisRoute.rt_name}</h2>
           <DirectionPicker 
             directions={this.state.availableDirections}

@@ -9,8 +9,7 @@ class RouteLink extends Component {
     const route = Schedules[this.props.id]
 
     return (
-<Link 
-            className="dim black link underline-hover hover-mid-gray glow" 
+      <Link className="dim black link underline-hover hover-mid-gray glow" 
             to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}>  
       <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start', backgroundColor: `#eee`}}>
         <div className='white fw7 f5 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: route.color }}>

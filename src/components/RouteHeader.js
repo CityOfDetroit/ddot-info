@@ -2,7 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import RouteLink from './RouteLink'
+
 import Bus from '../img/bus.png'
+
+import ChevronSVG from '../img/chevron.svg'
 
 import Schedules from '../data/schedules.js';
 
@@ -10,32 +14,38 @@ const RouteHeader = ({ number }) => {
   const thisRoute = Schedules[number];
   const color = thisRoute.color;
   const name = thisRoute.rt_name;
+  const page = window.location.pathname.split('/').slice(-1)[0]
 
   return (
-    <div className="pv3 ph3 bg-white bg-o-50 header bb">
-      <div className="" style={{ display: 'flex', alignItems: 'center', }}>
-        <Link className="link dim dark-gray" to={{ pathname: `/` }}>
-          <img src={Bus} className="w3 ph2" alt="Weird bus logo" />
+    <div className="nav header" style={{background: '#004445'}}>
+      <div className="pa3" style={{display: 'flex', alignItems: 'center'}}>
+        <Link className="link dim pr3" to={{ pathname: `/` }}>
+          <img src={ChevronSVG} className="" alt="Weird bus logo" />
         </Link>
-        <Link className="link dim dark-gray" to={{ pathname: `/route/${number}`}} >   
-        <span className="dib f3-s f2-ns mh2 pa2 white fw7" style={{ backgroundColor: color }}>
-          {number}
-        </span>
-        <div className="dib">
-          <span className="db f4-s f3-ns fw5 mr2">
-            {name}
-          </span>
+        <div>
+          <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start'}}>
+          <Link className="link dim" to={{ pathname: `/route/${number}`}} > 
+            <div className='white fw7 f3 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: color }}>
+              {number}
+            </div> 
+          </Link>
+            <div className='white glow ph3' style={{fontSize: `2em`}}>
+              {name}
+            </div>
+          </div>
         </div>
-        </Link>
-        <Link className="link dim dark-gray ma2" style={{border: '3px solid #ddd'}} to={{ pathname: `/route/${number}/real-time` }}>
-          <div className="fw7 f7 f6-ns pa2 ">Live</div>
-        </Link>
-        <Link className="link dim dark-gray ma2" style={{border: '3px solid #ddd'}} to={{ pathname: `/route/${number}/schedule` }}>
-          <div className="fw7 f7 f6-ns pa2" >Schedule</div>
-        </Link>
-        <Link className="link dim dark-gray ma2" style={{border: '3px solid #ddd'}} to={{ pathname: `/route/${number}/stops` }}>
-          <div className="fw7 f7 f6-ns pa2">Stops</div>
-        </Link>
+      </div>
+
+      <div style={{display: 'flex'}}>
+         <Link className="link dim white pv2 ph3 ml3" style={page === 'real-time' ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}/real-time` }}>
+           Live
+         </Link>
+         <Link className="link dim white pv2 ph3 ml3" style={page === 'stops' ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}/stops` }}>
+           Stops
+         </Link>
+         <Link className="link dim white pv2 ph3 ml3" style={page === 'schedule' ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}/schedule` }}>
+           Schedule
+         </Link>
       </div>
     </div>
   )

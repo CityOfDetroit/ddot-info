@@ -3344,7 +3344,7 @@ const Stops = {
   },
   "10408": {
     "id": "10408",
-    "name": "LARNED AND SHELBY (FINANCIAL DISTRICT PM)",
+    "name": "LARNED AND SHELBY",
     "dir": "EB",
     "lat": "42.328757",
     "lon": "-83.047122",

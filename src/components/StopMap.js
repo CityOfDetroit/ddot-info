@@ -39,6 +39,16 @@ class StopMap extends Component {
     })
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      viewport: {
+        ...this.state.viewport,
+        latitude: parseFloat(Stops[nextProps.stopId].lat),
+        longitude: parseFloat(Stops[nextProps.stopId].lon),
+      }
+    })
+  }
+
   _resize = () => {
     if (window.innerWidth > 650) {
       this.setState({

@@ -33,19 +33,49 @@ if __name__ == "__main__":
   for k in stops_object.keys():
     og_routes = stops_object[k]['routes']
     near = routes_near_stop(int(k))
+    addRPTC = False
+    rptc_stops = [
+      "8892",
+      "8915",
+      "8989",
+      "8911",
+      "8944",
+      "9972",
+      "8926",
+      "8891",
+      "8928",
+      "9970",
+      "8910",
+      "8912",
+      "8918",
+      "8933",
+      "8945"]
+
+    rptc_routes = ['7','10','16','18','19','21','23','25','27','29','31','34','37','39','40','48','49','53']
     if near and len(near) > 0:
       transfers = []
       for n in near:
+        if n in rptc_stops:
+          addRPTC = True
         try:
           rts = stops_object[int(n)]['routes']
           diff = list(set(rts) - set(og_routes))
-          if len(list(diff)) > 0:
+          if len(list(diff)) > 0 and n not in rptc_stops:
             transfers.append([n, list(diff)])
         except:
           pass
+      if addRPTC:
+        transfers.append(['0000', ['7','10','16','18','19','21','23','25','27','29','31','34','37','39','40','48','49','53']])
       stops_object[k]['transfers'] = transfers
     else:
       stops_object[k]['transfers'] = []
 
+
+  stops_object["0000"] = {
+    "id": "0000",
+    "name": "Rosa Parks Transit Center",
+    "transfers": [],
+    "routes": rptc_routes
+  }
   with open("stops.json", 'w') as f:
     f.write(json.dumps(stops_object))

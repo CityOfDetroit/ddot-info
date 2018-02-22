@@ -13197,7 +13197,7 @@ const Schedules = {
   "39": {
     "id": "39",
     "rt_name": "Puritan",
-    "color": "#44aa42",
+    "color": "#0079c2",
     "rt_id": 6681,
     "timepoints": {
       "eastbound": [627, 628, 629, 630, 3032, 196],

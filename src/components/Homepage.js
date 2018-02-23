@@ -13,7 +13,6 @@ class Homepage extends Component {
         <TopNav />
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div className="ma2">
-            <h1>Detroit Department of Transportation</h1>
             <p>This app helps transit riders find bus schedules and real-time arrival information for DDOT routes and bus stops.</p>
             <p>Find your route or stop, or see which buses are running near your current location.</p>
           </div>
@@ -28,7 +27,7 @@ class Homepage extends Component {
               <StopSearch />
             </div>
             <div className="ma2">
-              <Link to="/nearby" className="link dim black fw8 f3">Search Nearby</Link>
+              <Link to="/nearby" className="link dim black fw8 f3">Find Nearby</Link>
             </div>
           </div>
         </div>

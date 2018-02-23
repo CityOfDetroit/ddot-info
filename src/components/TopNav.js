@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Bus from '../img/bus.png'
+
+import Info from '../img/info_outline.svg';
 
 const TopNav = () => (
-  <div className="pv3 ph3 bg-white bg-o-50 header bb" style={{ display: 'flex', alignItems: 'center', verticalAlign: 'center' }}>
-    <Link className="link dim dark-gray" to={{ pathname: `/` }}>
-      <img src={Bus} className="w3 ph2" alt="Weird bus logo" />
-    </Link>     
-    {/* <span className="f4-s f3-ns mh2 pa2 fw7">
-      Route Explorer
-    </span> */}
-    {/* <Link to="/" className="link dim gray fw7 f6 f5-ns ma2 pa2" style={{ border: '3px solid #ddd' }}>Home</Link> */}
-    <Link to="/about" className="link dim gray fw7 f6 f5-ns ma2 pa2">About</Link>
+  <div className="nav header" style={{background: '#004445'}}>
+    <div className="pa3" style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', }}>
+      <div className="ph3" style={{fontSize: `2.5em`}}>
+        <Link className="link dim white" to={{ pathname: '/' }}>DDOT // Buses</Link>
+      </div>
+      <Link className="link dim pr3" to={{ pathname: `/about` }}>
+        <img src={Info} alt="Info" />
+      </Link>
+    </div>
   </div>
 )
 

@@ -7,7 +7,7 @@ const About = () => (
     <TopNav />
     <div className="ml4">
       <h1>About</h1>
-      <p>Route-Explorer is a beta project between DoIT and DDOT to make bus schedules easier to access and more dynamic by incorporating real-time data.</p>
+      <p>This app helps transit riders find bus schedules and real-time arrival information for DDOT routes and bus stops.</p>
       <p>It will replace the PDF links on this City webpage: <a className="black dim hover-mid-gray" href="http://www.detroitmi.gov/How-Do-I/Locate-Transportation/Bus-Schedules" 
         target="_blank" rel="noopener noreferrer">http://www.detroitmi.gov/How-Do-I/Locate-Transportation/Bus-Schedules</a>
       </p>

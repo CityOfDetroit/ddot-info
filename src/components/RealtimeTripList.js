@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import chroma from 'chroma-js'
 import _ from 'lodash'
 
 import RealtimeTrip from './RealtimeTrip'
 import Colors from '../data/colors.js'
-import Stops from '../data/stops.js'
 
 import SchedSVG from '../img/schedule.svg';
 import LiveSVG from '../img/speaker_phone.svg';

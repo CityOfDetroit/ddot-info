@@ -2,13 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import RouteLink from './RouteLink'
-
-import Bus from '../img/bus.png'
-
-import ChevronSVG from '../img/chevron.svg'
-
 import Schedules from '../data/schedules.js';
+import ChevronSVG from '../img/chevron.svg';
 
 const RouteHeader = ({ number }) => {
   const thisRoute = Schedules[number];
@@ -18,9 +13,9 @@ const RouteHeader = ({ number }) => {
 
   return (
     <div className="nav header" style={{background: '#004445'}}>
-      <div className="pa3" style={{display: 'flex', alignItems: 'center'}}>
+      <div className="pa3" style={{display: 'flex', alignItems: 'center', }}>
         <Link className="link dim pr3" to={{ pathname: `/` }}>
-          <img src={ChevronSVG} className="" alt="Weird bus logo" />
+          <img src={ChevronSVG} className="" alt="Go back" />
         </Link>
         <div>
           <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start'}}>
@@ -35,8 +30,7 @@ const RouteHeader = ({ number }) => {
           </div>
         </div>
       </div>
-
-      <div style={{display: 'flex'}}>
+      <div style={{ display: 'flex' }}>
          <Link className="link dim white pv2 ph3 ml3" style={page === 'real-time' ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}/real-time` }}>
            Live
          </Link>

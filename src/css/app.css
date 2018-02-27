@@ -58,6 +58,22 @@ body {
     grid-column: 1/9;
   }
 
+  /* Homepage */
+  .routes {
+    grid-row: 3/9;
+    grid-column: 1/5;
+  }
+
+  .stops {
+    grid-row: 3/9;
+    grid-column: 5/9;
+  }
+
+  .explainer {
+    grid-row: 2/3;
+    grid-column: 1/9;
+  }
+
   .details {
     grid-row: 2/11;
     grid-column: 5/9;

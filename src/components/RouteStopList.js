@@ -64,11 +64,11 @@ class RouteStopList extends Component {
           <StopInput input={this.state.input} onSearchChange={this.handleSearchChange}/>
         </div>
         <div className="w-100 pa3 f4 fw7" style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', borderBottom: '1px solid #000', }}>
-          <div className="w-30 ml3">
+          <div className="w-50 ml3">
             <span className='db'>Bus Stops</span>
             <span className='db f7 fw5 i w5'>In order of arrival</span>
           </div>
-          <div className="w-70 ml3">
+          <div className="w-50 ml3">
             <span className='db'>Transfers</span>
             <span className='db f7 fw5 i w5'>Transfer routes board at nearby stops or at the same stop. Check bus stop signs.</span>
           </div>

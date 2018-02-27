@@ -45,7 +45,7 @@ ReactDOM.render(
         <Route exact path='/' component={App} />
         <Route path='/about' component={About} />
         <Route path='/nearby' component={Nearby} />
-        <Route path='/stop/0000' component={TransitCenter} />
+        <Route path='/stop/rosa-parks-tc' component={TransitCenter} />
         <Route path='/stop/:name' component={Stop} />
         <Route path="/route/:name/real-time" component={RouteRealtime} />
         <Route path="/route/:name/schedule" component={RouteSchedule} />

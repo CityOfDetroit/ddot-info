@@ -51,7 +51,7 @@ if __name__ == "__main__":
       "8933",
       "8945"]
 
-    rptc_routes = ['7','10','16','18','19','21','23','25','27','29','31','34','37','39','40','48','49','53']
+    rptc_routes = ['7','10','16','18','19','21','23','25','27','29','31','34','37','40','48','49','53']
     if near and len(near) > 0:
       transfers = []
       for n in near:
@@ -65,14 +65,14 @@ if __name__ == "__main__":
         except:
           pass
       if addRPTC:
-        transfers.append(['0000', ['7','10','16','18','19','21','23','25','27','29','31','34','37','39','40','48','49','53']])
+        transfers.append(['rosa-parks-tc', ['7','10','16','18','19','21','23','25','27','29','31','34','37','40','48','49','53']])
       stops_object[k]['transfers'] = transfers
     else:
       stops_object[k]['transfers'] = []
 
 
-  stops_object["0000"] = {
-    "id": "0000",
+  stops_object["rosa-parks-tc"] = {
+    "id": "rosa-parks-tc",
     "name": "Rosa Parks Transit Center",
     "transfers": [],
     "routes": rptc_routes

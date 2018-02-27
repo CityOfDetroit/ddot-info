@@ -18,7 +18,7 @@ const RouteHeader = ({ number }) => {
         <div>
           <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start' }}>
             <Link className="link dim pr3" to={{ pathname: `/` }}>
-              <img src={ChevronSVG} className="" alt="Go back" />
+              <img src={ChevronSVG} className="" alt="Back to home" />
             </Link>
             <Link className="link dim" to={{ pathname: `/route/${number}`}} > 
               <div className='white fw7 f3 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: color }}>

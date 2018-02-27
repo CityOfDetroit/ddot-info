@@ -53,9 +53,11 @@ class StopSearch extends Component {
 
   render() {
     return (
-      <div className="pa2">
-        <span className="fw7 f3 pa2">Search Stops</span>
-        <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} />
+      <div className="pa3" style={{background: 'white'}}>
+        <div className="pb3" 
+          style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+        <span className="fw7 f3">Stops</span>
+        <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} /></div>
         { this.state.filteredStops.length > 0 ? <StopsList stops={this.state.filteredStops} /> : '' }
       </div>
     )

@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 class StopInput extends Component {
   render() {
     return (
-      <div className="f5 pa2">
-        <input className="w-90 pa2"
+      <div className="f7">
+        <input className="pa1"
+          style={{width: '250px'}}
           placeholder='"Woodward & Mack" or "Meijer" or "1882"'
           value={this.props.input}
           onChange={this.props.onSearchChange} />

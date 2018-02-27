@@ -6,7 +6,9 @@ import RouteLink from './RouteLink';
 class RoutesList extends Component {
   render() {
     return (
-      <div className="" style={{ display: 'grid', gridTemplateColumns: `repeat(auto-fit, minmax(165px, 1fr))`, gridGap: `.5em` }}>
+      <div 
+        className="" 
+        style={{ display: 'grid', gridTemplateColumns: `repeat(auto-fit, minmax(165px, 1fr))`, gridGap: `.5em`, maxHeight: 370, overflowY: 'scroll' }}>
         {this.props.lines.map(line =>
           <RouteLink key={line.id} id={line.id} routeId={line.rt_id} name={line.rt_name} color={line.color} />
         )}

@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 class RouteInput extends Component {
   render() {
     return (
-      <div className="f5 pa2">
-        <input className="w-90 pa2"
-          placeholder='"Woodward" or "53"'
+      <div className="f7">
+        <input className="pa1"
+          style={{width: '250px'}}
+          placeholder='Search by name or number: ex. "Woodward", "53"'
           value={this.props.input}
           onChange={this.props.onSearchChange} />
       </div>

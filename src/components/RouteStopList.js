@@ -70,15 +70,13 @@ class RouteStopList extends Component {
           </div>
           <div className="w-50 ml3">
             <span className='db'>Transfers</span>
-            <span className='db f7 fw5 i w5'>Transfer routes board at nearby stops or at the same stop. Check bus stop signs.</span>
+            <span className='db f7 fw5 i'>Transfer routes board at nearby stops or at the same stop. Check bus stop signs.</span>
           </div>
         </div>
         <div className="overflow-scroll" style={{height: '60vh'}}>
           {filteredStops.length > 0 ? filteredStops.map((stop, i) =>
             <div className="" style={{ display: 'flex', alignItems: 'center', zIndex: 0 }} key={i}>
-              <span className="ml3 tc" style={{ backgroundColor: color, height: '4em', width: '6px', marginRight: '1em', zIndex: 1 }}></span>
-              <span className="f7 fw7 pa1 ma1" style={{ border: '.25em solid white', backgroundColor: 'black', borderRadius: '3em', height: '10px', width: '10px', marginRight: '1em', marginLeft: '-2.55em', zIndex: 2 }}></span>
-              <StopLink id={stop.slice(5,)} exclude={this.props.routeNumber} showTransfers={true}/>
+              <StopLink id={stop.slice(5,)} exclude={this.props.routeNumber} color={color} showTransfers showBorder/>
             </div>
           ) : `Loading stops...`}
         </div>

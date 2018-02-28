@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import TopNav from './TopNav';
 import RouteSearch from './RouteSearch';
 import StopSearch from './StopSearch';
-import Legend from './Legend';
 
 class Homepage extends Component {
   render() {

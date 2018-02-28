@@ -87,5 +87,10 @@ export const highlightLabelIndex =
 MAP_STYLE.layers.findIndex(layer => layer.id === 'highlight-labels');
 export const highlightPointIndex =
 MAP_STYLE.layers.findIndex(layer => layer.id === 'highlight-points');
+export const realtimeLabelIndex =
+MAP_STYLE.layers.findIndex(layer => layer.id === 'realtime');
+export const realtimeIconIndex =
+MAP_STYLE.layers.findIndex(layer => layer.id === 'realtime-background');
+
 
 export const defaultMapStyle = fromJS(MAP_STYLE);

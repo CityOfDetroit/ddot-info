@@ -3,29 +3,30 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import _ from 'lodash';
 
-import Helpers from '../helpers.js';
 import Schedules from '../data/schedules.js';
+import routeDetails from '../data/routeDetails.js';
+import Helpers from '../helpers.js';
 
 import ScheduleTable from './ScheduleTable';
 import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
+import PrintSchedule from './PrintSchedule';
 
 class RouteSchedule extends React.Component {
   constructor(props) {
     super(props);
 
     let route = Schedules[parseInt(this.props.match.params.name, 10)];
-
-    let tripIds = {}
+    let tripIds = {};
     Object.keys(route.schedules).forEach(svc => {
       Object.keys(route.schedules.weekday).forEach(dir => {
         if (!tripIds[dir]) {
           tripIds[dir] = []
         }
         tripIds[dir] = tripIds[dir].concat(route.schedules[svc][dir].trips.map(trip => trip.trip_id))
-      })
-    })
+      });
+    });
 
     this.state = {
       route: route,
@@ -104,9 +105,14 @@ class RouteSchedule extends React.Component {
   }
 
   render() {
+    let routeDetailObj = _.filter(routeDetails, {number: this.state.routeNumber})[0];
+
     return (
       <div className="App">
         <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
+        <div className="pa2 ma2 w5">
+          <PrintSchedule routePdf={routeDetailObj.pdf} />
+        </div>
         <div className="pickers">
           <ServicePicker 
             services={this.state.availableServices}

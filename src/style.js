@@ -75,10 +75,13 @@ MAP_STYLE.layers.findIndex(layer => layer.id === 'road-label-small'), 0,
         "line-offset": 0,
         "line-opacity": 0.75,
     }
-});
+}
+);
   
 export const routeLineIndex =
 MAP_STYLE.layers.findIndex(layer => layer.id === 'ddot-routes');
+export const timepointLabelIndex =
+MAP_STYLE.layers.findIndex(layer => layer.id === 'timepoint-labels');
 export const stopLabelIndex =
 MAP_STYLE.layers.findIndex(layer => layer.id === 'stop-labels');
 export const stopPointIndex =

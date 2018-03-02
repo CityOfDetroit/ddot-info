@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import StaticMap from 'react-map-gl';
-import Helpers from '../helpers.js'
+import Helpers from '../helpers.js';
 
-import MapSatelliteSwitch from './MapSatelliteSwitch'
-import Stops from '../data/stops.js'
+import MapSatelliteSwitch from './MapSatelliteSwitch';
+import Stops from '../data/stops.js';
 
-import _ from 'lodash'
+import _ from 'lodash';
 
-import {defaultMapStyle, routeLineIndex, highlightPointIndex, highlightLabelIndex, stopPointIndex, stopLabelIndex} from '../style.js'
+import {defaultMapStyle, routeLineIndex, highlightPointIndex, highlightLabelIndex, stopPointIndex, stopLabelIndex} from '../style.js';
 
 class StopMap extends Component {
 
   constructor(props) {
     super(props)
 
-    let stop = Stops[this.props.stopId] || null
+    let stop = Stops[this.props.stopId] || null;
 
     this.state = {
       showSatellite: false,
@@ -29,14 +29,14 @@ class StopMap extends Component {
       }
     }
 
-    this.handleChange = this.handleChange.bind(this)
-    this._resize = this._resize.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this._resize = this._resize.bind(this);
   }
 
   handleChange(event) {
     this.setState({
       showSatellite: event.target.checked ? true : false
-    })
+    });
   }
 
   componentWillReceiveProps(nextProps) {

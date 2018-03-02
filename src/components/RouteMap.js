@@ -3,9 +3,13 @@ import StaticMap from 'react-map-gl';
 import _ from 'lodash';
 import moment from 'moment';
 import WebMercatorViewport from 'viewport-mercator-project';
+import Stops from '../data/stops.js';
+import chroma from 'chroma-js'
+
+import {toJS} from 'immutable';
 
 import Helpers from '../helpers.js';
-import {defaultMapStyle, routeLineIndex, realtimeLabelIndex} from '../style.js'
+import {defaultMapStyle, routeLineIndex, realtimeLabelIndex, timepointLabelIndex} from '../style.js'
 
 class RouteMap extends Component {
   constructor(props) {
@@ -21,6 +25,26 @@ class RouteMap extends Component {
       });
     });
 
+    // make timepoint GeoJSON
+    const firstDir = Object.keys(this.props.route.schedules.weekday)[1]
+    const firstDirTimepoints = this.props.route.timepoints[firstDir]
+
+    const timepointFeatures = firstDirTimepoints.map(t => {
+      return {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [Stops[t].lon, Stops[t].lat]
+        },
+        "properties": {
+          "name": Stops[t].name.toUpperCase().indexOf('ROSA PARKS') > -1 ? "Rosa Parks TC" : Stops[t].name,
+          "stop_code": Stops[t].dir
+        }
+      }
+    })
+
+    console.log(timepointFeatures)
+
     this.state = {
       viewport: {
         latitude: 42,
@@ -34,7 +58,9 @@ class RouteMap extends Component {
       realtimeTrips: [],
       showRealtime: true,
       fetched: false,
-      tripIds: tripIds
+      tripIds: tripIds,
+      timepointFeatures: timepointFeatures,
+      showTimepoints: true
     };
 
     this._resize = this._resize.bind(this);
@@ -82,7 +108,7 @@ class RouteMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.outerWidth / 2,
+          width: window.innerWidth / 2,
           height: window.innerHeight - 100
         }
       });
@@ -118,10 +144,18 @@ class RouteMap extends Component {
     let style = defaultMapStyle;
     style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(route.id, 10));
 
+    if (this.state.showTimepoints) {
+      style = style.setIn(['sources', 'timepoints', 'data'], {"type": "FeatureCollection", "features": this.state.timepointFeatures})
+      style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-color'], chroma(this.props.route.color).darken(2).hex())
+      style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-halo-color'], "#fff")
+    }
+
     if (this.state.showRealtime) {
       style = style.setIn(['layers', realtimeLabelIndex, 'layout', 'visibility'], 'none');
       style = style.setIn(['sources', 'realtime', 'data'], {"type": "FeatureCollection", "features": this.state.realtimeTrips}); 
     }
+
+    console.log(style)
 
     return (
       <div className="map">

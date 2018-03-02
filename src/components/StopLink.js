@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import chroma from 'chroma-js';
 import Stops from '../data/stops.js';
 import Schedules from '../data/schedules.js';
 
@@ -27,16 +27,16 @@ class StopLink extends Component {
       <div className="w-100 pa2" style={this.props.showBorder ? { marginLeft: '1em', borderLeft: `5px solid ${this.props.color}`, display: 'flex', justifyContent: 'center', alignItems: 'center', borderBottom: '1px dashed #ccc'} : { display: 'flex', justifyContent: 'center', alignItems: 'center', borderBottom: '1px dashed #ccc'} }>
           
           {this.props.showBorder ? 
-            <span className="" style={{ marginLeft: '-1.2em', border: '.25em solid white', backgroundColor: 'black', borderRadius: '3em', height: '11px', width: '11px', marginRight: '1em', zIndex: 2 }} />
+            <span className="" style={{ marginLeft: '-1.2em', border: '.25em solid black', backgroundColor: this.props.isTimepoint ? chroma(`${this.props.color}`).brighten().hex() : 'black', borderRadius: '3em', height: '11px', width: '11px', marginRight: '1em', zIndex: 2 }} />
             : ``}
 
           <div className="w-50">
             <Link 
-              className="dim black hover-mid-gray glow fw3 db mb1" style={{fontSize: '1em'}} 
+              className="dim black hover-mid-gray glow db mb1" style={{fontSize: '1em'}} 
               to={{ pathname: `/stop/${this.props.id}/` }}>
-              <strong>{this.props.showDir ? `${Stops[this.props.id].name} (${Stops[this.props.id].dir})` : `${Stops[this.props.id].name}`}</strong>
+              <span>{this.props.showDir ? `${Stops[this.props.id].name} (${Stops[this.props.id].dir})` : `${Stops[this.props.id].name}`}</span>
             </Link>
-            <span className="pa1 fw5 f7" style={{background: '#eee'}}>#{this.props.id}</span>
+            <span className="pa1 f7" style={{background: '#eee'}}>#{this.props.id}</span>
 
           </div>
           <div className="w-50" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center'}}>

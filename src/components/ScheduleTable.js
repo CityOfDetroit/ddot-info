@@ -22,7 +22,7 @@ class ScheduleTable extends Component {
                 style={{ borderBottomColor: this.props.color, borderBottomWidth: '10px' }} 
                 key={s}>
                 <Link className="dim black" to={{ pathname: `/stop/${s}/` }} >
-                  {Stops[s].name}
+                  {Stops[s].name.indexOf('Rosa Parks') > -1 ? "Rosa Parks TC" : Stops[s].name}
                 </Link>
               </Cell>
             ))}

@@ -124,6 +124,10 @@
             "type": "geojson",
             "data": {}
         },
+        "timepoints": {
+            "type": "geojson",
+            "data": {}
+        },
         "geolocated": {
             "type": "geojson",
             "data": {}
@@ -8496,6 +8500,66 @@
                 "text-color": "hsl(0, 0%, 0%)"
             }
         },
+        {
+        "id": "timepoint-labels",
+        "type": "symbol",
+        "source": "timepoints",
+        "filter": [
+            "==",
+            "$type",
+            "Point"
+        ],
+        "layout": {
+            "text-line-height": 1,
+            "text-size": {
+                "base": 1,
+                "stops": [
+                    [
+                        6,
+                        6
+                    ],
+                    [
+                        11,
+                        10
+                    ],
+                    [
+                        13,
+                        14
+                    ]
+                ]
+            },
+            "text-allow-overlap": true,
+            "text-padding": 10,
+            "text-font": [
+                "Gibson Detroit Regular",
+                "Arial Unicode MS Regular"
+            ],
+            "text-justify": {
+                "base": 1,
+                "type": "categorical",
+                "property": "stop_code",
+                "stops": [
+                    [
+                        "",
+                        "center"
+                    ]
+                ]
+            },
+            "text-padding": 0,
+            "visibility": "visible",
+            "text-field": "{name}",
+            "text-max-width": 5
+        },
+        "paint": {
+            "text-translate": [
+                0,
+                0
+            ],
+            "text-halo-color": "rgba(235,244,66,0.8)",
+            "text-halo-width": 2,
+            "text-color": "black"
+        }
+    },
         {
             "id": "highlight-labels",
             "type": "symbol",

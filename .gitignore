@@ -22,3 +22,5 @@ yarn-error.log*
 
 *.pyc
 *checkpoint.ipynb
+
+./.vscode/*

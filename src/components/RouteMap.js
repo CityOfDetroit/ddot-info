@@ -5,9 +5,6 @@ import moment from 'moment';
 import WebMercatorViewport from 'viewport-mercator-project';
 import Stops from '../data/stops.js';
 import chroma from 'chroma-js'
-
-import {toJS} from 'immutable';
-
 import Helpers from '../helpers.js';
 import {defaultMapStyle, routeLineIndex, realtimeLabelIndex, timepointLabelIndex} from '../style.js'
 

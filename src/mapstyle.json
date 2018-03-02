@@ -8531,7 +8531,7 @@
             "text-allow-overlap": true,
             "text-padding": 10,
             "text-font": [
-                "Gibson Detroit Regular",
+                "Gibson Detroit SemiBold",
                 "Arial Unicode MS Regular"
             ],
             "text-justify": {

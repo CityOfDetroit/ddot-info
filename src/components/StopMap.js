@@ -54,7 +54,7 @@ class StopMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.outerWidth / 2,
+          width: window.innerWidth / 2,
           height: window.innerHeight - 114
         }
       });

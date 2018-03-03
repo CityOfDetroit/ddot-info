@@ -19595,7 +19595,8 @@ const Schedules = {
   "498": {
     "id": "498",
     "rt_name": "Reflex",
-    "color": "red"
+    "color": "red",
+    "rt_id": 9999
   },
   "96": {
     "id": "96",

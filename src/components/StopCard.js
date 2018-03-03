@@ -8,7 +8,6 @@ import Schedules from '../data/schedules.js';
 class StopCard extends Component {
   render() {
     const exclude = this.props.exclude || '';
-    console.log(exclude)
     let routes = [];
 
     if (Stops[this.props.id]) {

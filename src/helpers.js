@@ -1,3 +1,6 @@
+import Schedules from './data/schedules.js';
+import _ from 'lodash';
+
 const Helpers = {
   /**
    * Config vars
@@ -36,6 +39,16 @@ const Helpers = {
     } else { 
       return 'weekday';
     }
+  },
+
+  /**
+   * Given a route ID, return the schedule entry.
+   */
+  scheduleFromGtfsId: function(id) {
+    const routeNum = _.filter(Object.keys(Schedules), s => {
+      return Schedules[s].rt_id.toString() === id.split("_").pop()
+    })
+    return Schedules[routeNum]
   }
 };
 

@@ -3,7 +3,6 @@ import _ from 'lodash';
 
 import StopLink from './StopLink';
 import Stops from '../data/stops.js';
-import StopInput from './StopInput';
 
 import Helpers from '../helpers';
 import Schedules from '../data/schedules.js'

@@ -8501,65 +8501,78 @@
             }
         },
         {
-        "id": "timepoint-labels",
-        "type": "symbol",
-        "source": "timepoints",
-        "filter": [
-            "==",
-            "$type",
-            "Point"
-        ],
-        "layout": {
-            "text-line-height": 1,
-            "text-size": {
-                "base": 1,
-                "stops": [
-                    [
-                        6,
-                        6
-                    ],
-                    [
-                        11,
-                        10
-                    ],
-                    [
-                        13,
-                        14
-                    ]
-                ]
-            },
-            "text-allow-overlap": true,
-            "text-padding": 10,
-            "text-font": [
-                "Gibson Detroit SemiBold",
-                "Arial Unicode MS Regular"
+            "id": "timepoint-points",
+            "type": "circle",
+            "source": "timepoints",
+            "filter": [
+                "==",
+                "$type",
+                "Point"
             ],
-            "text-justify": {
-                "base": 1,
-                "type": "categorical",
-                "property": "stop_code",
-                "stops": [
-                    [
-                        "",
-                        "center"
-                    ]
-                ]
-            },
-            "text-padding": 0,
-            "visibility": "visible",
-            "text-field": "{name}",
-            "text-max-width": 5
+            "layout": {},
+            "paint": {}
         },
-        "paint": {
-            "text-translate": [
-                0,
-                0
+        {
+            "id": "timepoint-labels",
+            "type": "symbol",
+            "source": "timepoints",
+            "filter": [
+                "==",
+                "$type",
+                "Point"
             ],
-            "text-halo-color": "rgba(235,244,66,0.8)",
-            "text-halo-width": 2,
-            "text-color": "black"
-        }
-    },
+            "layout": {
+                "text-line-height": 1,
+                "text-size": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            6,
+                            6
+                        ],
+                        [
+                            11,
+                            10
+                        ],
+                        [
+                            13,
+                            14
+                        ]
+                    ]
+                },
+                "text-allow-overlap": true,
+                "text-padding": 10,
+                "text-offset": [3, 1],
+                "text-font": [
+                    "Gibson Detroit SemiBold",
+                    "Arial Unicode MS Regular"
+                ],
+                "text-justify": {
+                    "base": 1,
+                    "type": "categorical",
+                    "property": "stop_code",
+                    "stops": [
+                        [
+                            "",
+                            "center"
+                        ]
+                    ]
+                },
+                "text-padding": 0,
+                "visibility": "visible",
+                "text-field": "{name}",
+                "text-max-width": 5
+            },
+            "paint": {
+                "text-translate": [
+                    0,
+                    0
+                ],
+                "text-halo-color": "rgba(235,244,66,0.8)",
+                "text-halo-width": 2,
+                "text-color": "black"
+            }
+        },
         {
             "id": "highlight-labels",
             "type": "symbol",
@@ -8832,7 +8845,8 @@
                 "text-rotation-alignment": "viewport",
                 "text-field": "{ref}",
                 "text-letter-spacing": 0.05,
-                "icon-padding": 2
+                "icon-padding": 2,
+                "visibility": "none"
             },
             "paint": {
                 "text-color": "hsl(0, 0%, 40%)",
@@ -11476,7 +11490,7 @@
             },
             "paint": {
                 "line-color": "rgba(216, 46, 34, 0.8)",
-                "line-dasharray": [1,2],
+                "line-dasharray": [1, 2],
                 "line-width": 4
             }
         },

@@ -6,6 +6,7 @@ import StopHeader from './StopHeader';
 import StopMap from './StopMap';
 import StopTransfers from './StopTransfers';
 import StopRouteList from './StopRouteList';
+import StopSchedule from './StopSchedule';
 import Helpers from '../helpers';
 
 class Stop extends React.Component {
@@ -51,6 +52,7 @@ class Stop extends React.Component {
         <StopMap stopId={stopId} center={stopCoords}/>
         <div className='list pa3'>
           {this.state.fetchedPredictions ? <StopRouteList routes={stopRoutes} predictions={this.state.predictions} /> : `Loading real-time arrival data...` }
+          <StopSchedule stopId={stopId} />
           {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null}
         </div>
       </div>

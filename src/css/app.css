@@ -44,6 +44,7 @@ body {
   .App, .BusRoute, .nearby {
     display: grid;
     grid-template: auto repeat(8, 1fr) / repeat(8, 1fr);
+    grid-gap: .5em;
     height: 100vh;
     width: 100vw;
   }
@@ -113,7 +114,7 @@ body {
     grid-row: 3/11;
   }
   .pickers {
-    grid-column: 6/9;
+    grid-column: 1/9;
     grid-row: 2;
   }
 }

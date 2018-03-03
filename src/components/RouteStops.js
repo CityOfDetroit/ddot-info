@@ -6,6 +6,7 @@ import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
 import RouteStopList from './RouteStopList';
 import RouteMap from './RouteMap';
+import StopInput from './StopInput';
 
 import Helpers from '../helpers';
 import Schedules from '../data/schedules.js';
@@ -26,10 +27,19 @@ class RouteStops extends React.Component {
       currentDirection: (Object.keys(route.schedules.weekday)[0]),
       availableServices: (Object.keys(route.schedules)),
       availableDirections: (Object.keys(route.schedules.weekday)),
+      input: ''
     };
 
     this.handleDirectionChange = this.handleDirectionChange.bind(this);
     this.handleServiceChange = this.handleServiceChange.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
+  }
+
+  handleSearchChange(event) {
+    console.log(event)
+    this.setState({ 
+      input: event.target.value.toLowerCase()
+    });
   }
 
   handleDirectionChange(event) {
@@ -49,19 +59,25 @@ class RouteStops extends React.Component {
     return (
       <div className="BusRoute">
         <RouteHeader number={this.props.match.params.name} />
+
         <div className="map">
-        <RouteMap route={thisRoute} />
+          <RouteMap route={thisRoute} />
         </div>
+
         <div className="stopList">
-        <h2 className="ml2">Stops on {thisRoute.id} {thisRoute.rt_name}</h2>
-          <DirectionPicker 
-            directions={this.state.availableDirections}
-            currentDirection={this.state.currentDirection}
-            onChange={this.handleDirectionChange}
-            route={thisRoute}
-          />
+          <div className="pa1" style={{display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between'}}>
+            <span className="f4">Stops along this route</span>
+            <DirectionPicker 
+              directions={this.state.availableDirections}
+              currentDirection={this.state.currentDirection}
+              onChange={this.handleDirectionChange}
+              route={thisRoute}
+              />
+            <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} />
+          </div>
         <RouteStopList
           id={this.state.routeId}
+          input={this.state.input}
           routeNumber={thisRoute.id}
           timepoints={this.state[this.state.currentSvc][this.state.currentDirection].stops}
           />

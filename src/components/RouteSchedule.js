@@ -110,21 +110,21 @@ class RouteSchedule extends React.Component {
     return (
       <div className="App">
         <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
-        <div className="pa2 ma2 w5">
+        <div className="pickers pa2" style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center'}}>
+          <div>
+            <ServicePicker
+              services={this.state.availableServices}
+              currentSvc={this.state.currentSvc}
+              onChange={this.handleServiceChange}
+            />
+            <DirectionPicker 
+              directions={this.state.availableDirections}
+              currentDirection={this.state.currentDirection}
+              onChange={this.handleDirectionChange}
+              route={this.state.route} 
+            />
+          </div>
           <PrintSchedule routePdf={routeDetailObj.pdf} />
-        </div>
-        <div className="pickers">
-          <ServicePicker 
-            services={this.state.availableServices}
-            currentSvc={this.state.currentSvc}
-            onChange={this.handleServiceChange}
-          />
-          <DirectionPicker 
-            directions={this.state.availableDirections}
-            currentDirection={this.state.currentDirection}
-            onChange={this.handleDirectionChange}
-            route={this.state.route} 
-          />
         </div>
         <ScheduleTable 
           schedule={this.state[this.state.currentSvc]} 

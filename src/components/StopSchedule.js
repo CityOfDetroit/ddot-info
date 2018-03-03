@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import RouteLink from './RouteLink'
+
 import Helpers from '../helpers';
 
 class StopSchedule extends Component {
@@ -14,9 +16,12 @@ class StopSchedule extends Component {
   }
 
   fetchData() {
-    fetch(Helpers.proxyUrl + `${Helpers.endpoint}/schedule-for-stop/DDOT_${this.props.stopId}.json?key=BETA&includePolylines=false`)
+    fetch(`${Helpers.endpoint}/schedule-for-stop/DDOT_${this.props.stopId}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
+
+      console.log(d)
+
       this.setState({ 
         schedule: d, 
         fetchedSchedule: true 
@@ -32,7 +37,11 @@ class StopSchedule extends Component {
   render() {
     return (
       <div className='stopSchedule'>
-        something
+        Scheduled daily stops:
+        {this.state.fetchedSchedule ? 
+          this.state.schedule.data.entry.stopRouteSchedules.map(r => (
+            <div>{r.routeId}</div>
+          )) : ``}
       </div>
     )
   }

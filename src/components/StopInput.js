@@ -6,8 +6,8 @@ class StopInput extends Component {
     return (
       <div className="f7">
         <input className="pa1"
-          style={{width: '250px'}}
-          placeholder='"Woodward & Mack" or "Meijer" or "1882"'
+          style={{width: '330px'}}
+          placeholder='search by: street name (Woodward) or stop ID'
           value={this.props.input}
           onChange={this.props.onSearchChange} />
       </div>

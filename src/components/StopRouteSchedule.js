@@ -8,7 +8,7 @@ class StopRouteSchedule extends Component {
   render() {
     return (
       <div className='pv2'>
-        <span className="db f4 fw5 mt2 pb1">All scheduled stop times</span>    
+        <span className="db f4 fw5 mt2 pb1">Today's scheduled stop times</span>    
         {this.props.schedules.length > 0 ? this.props.schedules[0].stopRouteDirectionSchedules.map((rds, i) => (
           (<div className="pa2" key={i} style={{background: '#eee', margin: '.5em'}}>
           {this.props.multipleDirs ? <span className="dib">{rds.tripHeadsign}</span> : ``}
@@ -18,7 +18,7 @@ class StopRouteSchedule extends Component {
             ))}
           </div>
           </div>)
-        )) : ``}
+        )) : `No stops today.`}
       </div>
     )
   }

@@ -31,8 +31,8 @@ class Stop extends React.Component {
     }
   }
 
-  fetchRealtimeData() {
-    fetch(`${Helpers.endpoint}/arrivals-and-departures-for-stop/DDOT_${this.props.match.params.name}.json?key=BETA&includePolylines=false`)
+  fetchRealtimeData(id) {
+    fetch(`${Helpers.endpoint}/arrivals-and-departures-for-stop/DDOT_${id}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
       console.log(d)
@@ -48,8 +48,8 @@ class Stop extends React.Component {
     .catch(e => console.log(e));
   }
 
-  fetchStopScheduleData() {
-    fetch(`${Helpers.endpoint}/schedule-for-stop/DDOT_${this.props.match.params.name}.json?key=BETA&includePolylines=false`)
+  fetchStopScheduleData(id) {
+    fetch(`${Helpers.endpoint}/schedule-for-stop/DDOT_${id}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
       let multipleDirs = false
@@ -69,9 +69,16 @@ class Stop extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchRealtimeData()
-    this.fetchStopScheduleData()
-    // this.interval = setInterval(() => this.fetchRealtimeData(), 5000);
+    this.fetchRealtimeData(this.props.match.params.name)
+    this.fetchStopScheduleData(this.props.match.params.name)
+    this.interval = setInterval(() => this.fetchRealtimeData(this.props.match.params.name), 5000);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.match.params.name !== nextProps.match.params.name) {
+      this.fetchStopScheduleData(nextProps.match.params.name)
+      this.fetchRealtimeData(nextProps.match.params.name)
+    }
   }
 
   componentWillUnmount() {
@@ -101,7 +108,6 @@ class Stop extends React.Component {
                 <RouteLink id={r}/>
                 {this.state.fetchedPredictions ? 
                   <RoutePredictionList
-
                     predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')})} 
                     route={r}
                     multipleDirs={this.state.multipleDirs} /> 

@@ -8524,6 +8524,15 @@ const Stops = {
         "routes": ["38"],
         "transfers": []
     },
+    "188": {
+        "id": "188",
+        "name": "Hayes & Bonita",
+        "dir": "NB",
+        "lat": "42.416063",
+        "lon": "-82.964709",
+        "routes": ["38"],
+        "transfers": []
+    },
     "1880": {
         "id": "1880",
         "name": "Hayes & E Outer Dr",

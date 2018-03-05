@@ -27,6 +27,9 @@ class RouteMap extends Component {
     const firstDirTimepoints = this.props.route.timepoints[firstDir]
 
     const timepointFeatures = firstDirTimepoints.map(t => {
+
+      console.log(t)
+      
       return {
         "type": "Feature",
         "geometry": {

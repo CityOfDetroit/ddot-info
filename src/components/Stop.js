@@ -5,8 +5,17 @@ import Stops from '../data/stops.js';
 import StopHeader from './StopHeader';
 import StopMap from './StopMap';
 import StopTransfers from './StopTransfers';
-import StopRouteList from './StopRouteList';
-import StopSchedule from './StopSchedule';
+import StopRouteSchedule from './StopRouteSchedule';
+import RouteBadge from './RouteBadge';
+import RouteLink from './RouteLink';
+import RoutePredictionList from './RoutePredictionList';
+import Schedules from '../data/schedules.js'
+
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+
+import _ from 'lodash';
+
 import Helpers from '../helpers';
 
 class Stop extends React.Component {
@@ -15,11 +24,14 @@ class Stop extends React.Component {
 
     this.state = {
       predictions: {},
-      fetchedPredictions: false
+      scheduledStops: {},
+      fetchedStopSchedule: false,
+      fetchedPredictions: false,
+      multipleDirs: false
     }
   }
 
-  fetchData() {
+  fetchRealtimeData() {
     fetch(`${Helpers.endpoint}/arrivals-and-departures-for-stop/DDOT_${this.props.match.params.name}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
@@ -31,9 +43,31 @@ class Stop extends React.Component {
     .catch(e => console.log(e));
   }
 
+  fetchStopScheduleData() {
+    fetch(`${Helpers.endpoint}/schedule-for-stop/DDOT_${this.props.match.params.name}.json?key=BETA&includePolylines=false`)
+    .then(response => response.json())
+    .then(d => {
+      let multipleDirs = false
+      d.data.entry.stopRouteSchedules.forEach(srs => {
+        console.log(srs)
+        if (srs.stopRouteDirectionSchedules.length > 1) {
+          multipleDirs = true
+        }
+      });
+
+      this.setState({ 
+        scheduledStops: d, 
+        fetchedStopSchedule: true,
+        multipleDirs: multipleDirs
+      })
+    })
+    .catch(e => console.log(e));
+  }
+
   componentDidMount() {
-    this.fetchData()
-    this.interval = setInterval(() => this.fetchData(), 5000);
+    this.fetchRealtimeData()
+    this.fetchStopScheduleData()
+    // this.interval = setInterval(() => this.fetchRealtimeData(), 5000);
   }
 
   componentWillUnmount() {
@@ -50,9 +84,35 @@ class Stop extends React.Component {
       <div className='App'>
         <StopHeader id={stopId} name={stopName} />
         <StopMap stopId={stopId} center={stopCoords}/>
-        <div className='list pa3'>
-          {this.state.fetchedPredictions ? <StopRouteList routes={stopRoutes} predictions={this.state.predictions} /> : `Loading real-time arrival data...` }
-          <StopSchedule stopId={stopId} />
+        <div className='list pa2'>
+          <span className="db f3 fw5 mt3 pb2">Routes that stop here</span>    
+          <Tabs>
+            <TabList>
+              {stopRoutes.map(r => <Tab><RouteBadge id={r} /></Tab>)}
+            </TabList>
+
+            {stopRoutes.map(r => (
+              <TabPanel>
+                <div style={{display: 'flex', alignItems: 'center'}} >
+                <RouteLink id={r}/>
+                {this.state.fetchedPredictions ? 
+                  <RoutePredictionList 
+                    predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')})} 
+                    route={r}
+                    multipleDirs={this.state.multipleDirs} /> 
+                  : ``}
+                </div>
+                {this.state.fetchedStopSchedule ? 
+                  <StopRouteSchedule schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
+                    return s.routeId.split("_").pop() === Schedules[r].rt_id.toString()
+                  })} route={r} multipleDirs={this.state.multipleDirs} /> : ``}
+              </TabPanel>
+            ))}
+
+
+          </Tabs>
+          {/* <StopRouteList routes={stopRoutes} />} */}
+          {/* <StopSchedule stopId={stopId} /> */}
           {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null}
         </div>
       </div>

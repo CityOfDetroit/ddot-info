@@ -35,6 +35,11 @@ class Stop extends React.Component {
     fetch(`${Helpers.endpoint}/arrivals-and-departures-for-stop/DDOT_${this.props.match.params.name}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
+      console.log(d)
+
+      d.data.entry.arrivalsAndDepartures = _.filter(d.data.entry.arrivalsAndDepartures, ad => {
+        return (ad.predicted && ad.predictedArrivalTime > d.currentTime) || !ad.predicted
+      })
       this.setState({ 
         predictions: d, 
         fetchedPredictions: true 

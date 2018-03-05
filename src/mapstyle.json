@@ -8542,22 +8542,12 @@
                 },
                 "text-allow-overlap": true,
                 "text-padding": 10,
-                "text-offset": [3, 1],
+                "text-offset": ["get", "offset"],
+                "text-justify": ["get", "align"],
                 "text-font": [
                     "Gibson Detroit SemiBold",
                     "Arial Unicode MS Regular"
                 ],
-                "text-justify": {
-                    "base": 1,
-                    "type": "categorical",
-                    "property": "stop_code",
-                    "stops": [
-                        [
-                            "",
-                            "center"
-                        ]
-                    ]
-                },
                 "text-padding": 0,
                 "visibility": "visible",
                 "text-field": "{name}",

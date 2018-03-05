@@ -27,6 +27,9 @@ class RouteMap extends Component {
     const firstDirTimepoints = this.props.route.timepoints[firstDir]
 
     const timepointFeatures = firstDirTimepoints.map(t => {
+
+      console.log(t)
+      
       return {
         "type": "Feature",
         "geometry": {
@@ -34,13 +37,14 @@ class RouteMap extends Component {
           "coordinates": [Stops[t].lon, Stops[t].lat]
         },
         "properties": {
+          "id": t,
           "name": Stops[t].name.toUpperCase().indexOf('ROSA PARKS') > -1 ? "Rosa Parks TC" : Stops[t].name,
-          "stop_code": Stops[t].dir
+          "stop_code": Stops[t].dir,
+          "offset": Stops[t].offset || [3,1],
+          "align": Stops[t].align || 'center'
         }
       }
     })
-
-    console.log(timepointFeatures)
 
     this.state = {
       viewport: {
@@ -64,8 +68,6 @@ class RouteMap extends Component {
   }
 
   fetchData() {
-    console.log(`${Helpers.endpoint}/trips-for-route/DDOT_${this.props.route.rt_id}.json?key=BETA&includeStatus=true&includePolylines=false`);
-
     fetch(`${Helpers.endpoint}/trips-for-route/DDOT_${this.props.route.rt_id}.json?key=BETA&includeStatus=true&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
@@ -151,8 +153,6 @@ class RouteMap extends Component {
       style = style.setIn(['layers', realtimeLabelIndex, 'layout', 'visibility'], 'none');
       style = style.setIn(['sources', 'realtime', 'data'], {"type": "FeatureCollection", "features": this.state.realtimeTrips}); 
     }
-
-    console.log(style)
 
     return (
       <div className="map">

@@ -15,7 +15,7 @@ class RouteLink extends Component {
         <div className='white fw7 f5 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: route.color }}>
           {this.props.id}
         </div> 
-        <div className='fw5 glow pl1' style={{fontSize: `.9em`}}>
+        <div className='fw5 glow pl1 pr3' style={{fontSize: `.9em`}}>
           {route.rt_name}
         </div>
       </div>

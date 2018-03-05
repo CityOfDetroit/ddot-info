@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import chroma from 'chroma-js';
 import Stops from '../data/stops.js';
 import Schedules from '../data/schedules.js';
 
 class StopLink extends Component {
   render() {
     const exclude = this.props.exclude || '';
-    console.log(exclude)
     let routes = [];
 
     if (Stops[this.props.id]) {
@@ -27,7 +25,7 @@ class StopLink extends Component {
       <div className="w-100 pa2" style={this.props.showBorder ? { marginLeft: '1em', borderLeft: `6px solid ${this.props.color}`, display: 'flex', justifyContent: 'center', alignItems: 'center', borderBottom: '1px dashed #ccc'} : { display: 'flex', justifyContent: 'center', alignItems: 'center', borderBottom: '1px dashed #ccc'} }>
           
           {this.props.showBorder ? 
-            <span className="" style={{ marginLeft: '-1.25em', border: '.25em solid black', backgroundColor: this.props.isTimepoint ? chroma(`${this.props.color}`).brighten().hex() : 'black', borderRadius: '4em', height: '11px', width: '11px', marginRight: '1em', zIndex: 2 }} />
+            <span className="" style={{ marginLeft: '-1.25em', border: '.25em solid white', backgroundColor: !this.props.isTimepoint ? this.props.color : 'black', borderRadius: '4em', height: '11px', width: '11px', marginRight: '1em', zIndex: 2 }} />
             : ``}
 
           <div className="w-50">

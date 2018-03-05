@@ -23,7 +23,8 @@ const Helpers = {
     'eastbound': 'EB',
     'westbound': 'WB',
     'southbound': 'SB',
-    'northbound': 'NB'
+    'northbound': 'NB',
+    'clockwise': 'CW'
   },
 
   /**

@@ -23,7 +23,7 @@ class RouteMap extends Component {
     });
 
     // make timepoint GeoJSON
-    const firstDir = Object.keys(this.props.route.schedules.weekday)[1]
+    const firstDir = Object.keys(this.props.route.schedules.weekday)[0]
     const firstDirTimepoints = this.props.route.timepoints[firstDir]
 
     const timepointFeatures = firstDirTimepoints.map(t => {

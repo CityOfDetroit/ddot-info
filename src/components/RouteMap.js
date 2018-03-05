@@ -43,8 +43,6 @@ class RouteMap extends Component {
       }
     })
 
-    console.log(timepointFeatures)
-
     this.state = {
       viewport: {
         latitude: 42,
@@ -67,8 +65,6 @@ class RouteMap extends Component {
   }
 
   fetchData() {
-    console.log(`${Helpers.endpoint}/trips-for-route/DDOT_${this.props.route.rt_id}.json?key=BETA&includeStatus=true&includePolylines=false`);
-
     fetch(`${Helpers.endpoint}/trips-for-route/DDOT_${this.props.route.rt_id}.json?key=BETA&includeStatus=true&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
@@ -154,8 +150,6 @@ class RouteMap extends Component {
       style = style.setIn(['layers', realtimeLabelIndex, 'layout', 'visibility'], 'none');
       style = style.setIn(['sources', 'realtime', 'data'], {"type": "FeatureCollection", "features": this.state.realtimeTrips}); 
     }
-
-    console.log(style)
 
     return (
       <div className="map">

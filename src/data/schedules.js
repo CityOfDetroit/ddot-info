@@ -3922,7 +3922,7 @@ const Schedules = {
     "rt_id": 6666,
     "notes": "nonstandard schedule",
     "timepoints": {
-      "eastbound": [236, 238, 10325, 240, 242, 243, 144, 62, 245, 40],
+      "eastbound": [236, 238, 10325, 240, 242, 243, 244, 62, 245, 40],
       "westbound": [41, 245, 63, 247, 248, 249, 251, 10326, 253, 236]
     },
     "schedules": {

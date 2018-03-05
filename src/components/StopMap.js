@@ -55,7 +55,7 @@ class StopMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth / 2,
-          height: window.innerHeight - 114
+          height: window.innerHeight - 100
         }
       });
     }

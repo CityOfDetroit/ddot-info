@@ -49,7 +49,6 @@ class Stop extends React.Component {
     .then(d => {
       let multipleDirs = false
       d.data.entry.stopRouteSchedules.forEach(srs => {
-        console.log(srs)
         if (srs.stopRouteDirectionSchedules.length > 1) {
           multipleDirs = true
         }
@@ -88,15 +87,16 @@ class Stop extends React.Component {
           <span className="db f3 fw5 mt3 pb2">Routes that stop here</span>    
           <Tabs>
             <TabList>
-              {stopRoutes.map(r => <Tab><RouteBadge id={r} /></Tab>)}
+              {stopRoutes.map(r => <Tab key={r}><RouteBadge id={r} /></Tab>)}
             </TabList>
 
             {stopRoutes.map(r => (
-              <TabPanel>
+              <TabPanel key={r}>
                 <div style={{display: 'flex', alignItems: 'center'}} >
                 <RouteLink id={r}/>
                 {this.state.fetchedPredictions ? 
-                  <RoutePredictionList 
+                  <RoutePredictionList
+
                     predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')})} 
                     route={r}
                     multipleDirs={this.state.multipleDirs} /> 

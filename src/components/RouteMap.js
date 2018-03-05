@@ -34,8 +34,11 @@ class RouteMap extends Component {
           "coordinates": [Stops[t].lon, Stops[t].lat]
         },
         "properties": {
+          "id": t,
           "name": Stops[t].name.toUpperCase().indexOf('ROSA PARKS') > -1 ? "Rosa Parks TC" : Stops[t].name,
-          "stop_code": Stops[t].dir
+          "stop_code": Stops[t].dir,
+          "offset": Stops[t].offset || [3,1],
+          "align": Stops[t].align || 'center'
         }
       }
     })

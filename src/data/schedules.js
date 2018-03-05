@@ -2559,8 +2559,8 @@ const Schedules = {
     "color": "#0079c2",
     "rt_id": 6664,
     "timepoints": {
-      "eastbound": [188, 190, 191, 192, 193, 194, 195, 196, 197, 198],
-      "westbound": [198, 200, 201, 202, 203, 204, 205, 206, 207, 188]
+      "eastbound": [10414, 190, 191, 192, 193, 194, 195, 196, 197, 198],
+      "westbound": [198, 200, 201, 202, 203, 204, 205, 206, 207, 10414]
     },
     "schedules": {
       "weekday": {
@@ -3922,7 +3922,7 @@ const Schedules = {
     "rt_id": 6666,
     "notes": "nonstandard schedule",
     "timepoints": {
-      "eastbound": [236, 238, 10325, 240, 242, 243, 144, 62, 245, 40],
+      "eastbound": [236, 238, 10325, 240, 242, 243, 244, 62, 245, 40],
       "westbound": [41, 245, 63, 247, 248, 249, 251, 10326, 253, 236]
     },
     "schedules": {
@@ -19595,7 +19595,8 @@ const Schedules = {
   "498": {
     "id": "498",
     "rt_name": "Reflex",
-    "color": "red"
+    "color": "red",
+    "rt_id": 9999
   },
   "96": {
     "id": "96",

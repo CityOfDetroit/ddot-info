@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import Stops from '../data/stops.js';
 import Schedules from '../data/schedules.js';
 
 class StopLink extends Component {
   render() {
     const exclude = this.props.exclude || '';
-    console.log(exclude)
     let routes = [];
 
     if (Stops[this.props.id]) {
@@ -24,21 +22,25 @@ class StopLink extends Component {
     }
 
     return (
-      <div className="h3 w-100" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', borderBottom: '1px dashed #ccc', }}>
-          <div className="w-30">
+      <div className="w-100 pa2" style={this.props.showBorder ? { marginLeft: '1em', borderLeft: `6px solid ${this.props.color}`, display: 'flex', justifyContent: 'center', alignItems: 'center', borderBottom: '1px dashed #ccc'} : { display: 'flex', justifyContent: 'center', alignItems: 'center', borderBottom: '1px dashed #ccc'} }>
+          
+          {this.props.showBorder ? 
+            <span className="" style={{ marginLeft: '-1.25em', border: '.25em solid white', backgroundColor: !this.props.isTimepoint ? this.props.color : 'black', borderRadius: '4em', height: '11px', width: '11px', marginRight: '1em', zIndex: 2 }} />
+            : ``}
 
+          <div className="w-50">
             <Link 
-              className="dim black hover-mid-gray glow fw3 db mb1" style={{fontSize: '1em'}} 
+              className="dim black hover-mid-gray glow db mb1" style={{fontSize: '1em'}} 
               to={{ pathname: `/stop/${this.props.id}/` }}>
-              <strong>{this.props.showDir ? `${Stops[this.props.id].name} (${Stops[this.props.id].dir})` : `${Stops[this.props.id].name}`}</strong>
+              <span>{this.props.showDir ? `${Stops[this.props.id].name} (${Stops[this.props.id].dir})` : `${Stops[this.props.id].name}`}</span>
             </Link>
-            <span className="pa1 fw5 f7" style={{background: '#eee'}}>#{this.props.id}</span>
+            <span className="pa1 f7" style={{background: '#eee'}}>#{this.props.id}</span>
 
           </div>
-          <div className="w-70" style={{ display: 'flex', alignItems: 'center'}}>
-          {Stops[this.props.id] && routes.length < 10 ? routes.map((r, i) => (
+          <div className="w-50" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center'}}>
+          {Stops[this.props.id] && routes.length < 25 ? routes.map((r, i) => (
             <Link className={exclude.toString() === r.toString() ? 'dn' : "dim black link underline-hover hover-mid-gray glow mr2"} to={{pathname: `/route/${r}`}} key={i}>
-              <div className={exclude.toString() === r.toString() ? `dn` : `white fw7 f5 tc`} style={exclude.toString() === r.toString() ? {display: 'none'} : { display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: Schedules[r].color }}>
+              <div className={exclude.toString() === r.toString() ? `dn` : `white fw7 f5 tc mv1`} style={exclude.toString() === r.toString() ? {display: 'none'} : { display: 'flex', alignItems:'center',  justifyContent: 'center', width: '2em', height: '2em', backgroundColor: Schedules[r].color }}>
                 {r}
               </div> 
             </Link>

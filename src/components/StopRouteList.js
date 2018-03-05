@@ -12,8 +12,9 @@ class StopRouteList extends Component {
     const routes = this.props.routes
 
     return (
-      <div className='overflow-scroll'>
-        <span className="db f3">Routes that stop here</span>
+      <div>
+        <span className="db f3">Next arrivals at this stop:</span>
+        <div style={{maxHeight: 300, overflowY: 'scroll'}}>
         {routes.map((r, i) => (
           <div className="pa2 overflow-none w-100" style={{ display: 'flex', alignItems: 'center', borderBottom: '1px dashed #ccc', }} key={i}>
             <div className="w-40">
@@ -25,6 +26,7 @@ class StopRouteList extends Component {
             </div>
           </div>
         ))}
+        </div>
       </div>
     )
   }

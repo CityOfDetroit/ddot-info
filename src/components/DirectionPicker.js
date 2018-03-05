@@ -15,13 +15,11 @@ class DirectionPicker extends React.Component {
 
   render() {
     return (
-      <div className="dib pa2">
-        <select className="fw7 f5 pa2" onChange={this.props.onChange} style={{border: '3px solid #ddd'}}>
-          {this.props.directions.map(s => (
-            <option className="fw5" value={s} key={s}>{_.capitalize(s)} to {Stops[this.props.route.timepoints[s].slice(-1)].name}</option>
-          ))}
-        </select>
-      </div>
+      <select className="fw7 f6 pa2" onChange={this.props.onChange} style={{border: '3px solid #ddd'}}>
+        {this.props.directions.map(s => (
+          <option className="fw5" value={s} key={s}>{_.capitalize(s)} to {Stops[this.props.route.timepoints[s].slice(-1)].name}</option>
+        ))}
+      </select>
     )
   }
 }

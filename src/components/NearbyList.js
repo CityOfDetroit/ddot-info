@@ -1,7 +1,7 @@
 import React from 'react'
 
 import RouteLink from './RouteLink'
-import StopLink from './StopLink'
+import StopCard from './StopCard'
 
 class NearbyList extends React.Component {
     render() {
@@ -21,7 +21,7 @@ class NearbyList extends React.Component {
                 <span className="db f3 fw5 ma2 mt4">Nearby stops</span>                
                 <div className="h5 overflow-scroll pa2">
                     {this.props.data.data.list.map((a, i) => (
-                    <StopLink id={a.id.slice(5,)} key={i} />
+                        <StopCard id={a.id.slice(5,)} key={i} />
                     ))}
                 </div>
             </div>

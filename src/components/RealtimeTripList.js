@@ -1,36 +1,28 @@
-import React, { Component } from 'react'
-import chroma from 'chroma-js'
-import _ from 'lodash'
+import React, { Component } from 'react';
+import _ from 'lodash';
 
-import RealtimeTrip from './RealtimeTrip'
-import Colors from '../data/colors.js'
-import Stops from '../data/stops.js'
-
+import RealtimeTrip from './RealtimeTrip';
+import Helpers from '../helpers.js';
 import SchedSVG from '../img/schedule.svg';
 import LiveSVG from '../img/speaker_phone.svg';
 
 export default class RealtimeTripList extends Component {
   render() {
-    const byDirection = _.groupBy(this.props.trips, 'properties.direction')
-
-    const dirCount = Object.keys(byDirection).map(d => ([byDirection[d].length, d]))
-
-    console.log(dirCount)
+    const byDirection = _.groupBy(this.props.trips, 'properties.direction');
+    const dirCount = Object.keys(byDirection).map(d => ([byDirection[d].length, d]));
 
     return (
       <div className="list">
-
         <div className="pa3 f4">
           {dirCount.length === 0 ? `There are no buses currently running.` : 
           (<div>There are
             {dirCount.map((dc, i) => (
               <div className="dib">
-              <span className="ph2 pv1 mh1" style={{backgroundColor: Colors[dc[1]]}}>{dc[0]} {dc[1]}</span> {i+1 === dirCount.length ? ` ` : `&`}</div>
+              <span className="ph2 pv1 mh1" style={{backgroundColor: Helpers.colors[dc[1]]}}>{dc[0]} {dc[1]}</span> {i+1 === dirCount.length ? ` ` : `&`}</div>
             ))}
           buses currently running.</div>)
-            }
+          }
         </div>
-
 
         <div className="w-100 pa3 f4 fw7" style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', borderBottom: '1px solid #000', }}>
           <div className="w-40">
@@ -60,7 +52,6 @@ export default class RealtimeTripList extends Component {
           </div>
         )}
 
-
         <div className="pa3" style={{display: 'flex', alignItems: 'center'}}>
           <span>Trips showing a live location are marked with</span>
           <img src={LiveSVG} className="pa2" style={{width: '1.25em'}} alt={"Real time prediction"} />
@@ -68,8 +59,7 @@ export default class RealtimeTripList extends Component {
           <img src={SchedSVG} className="pa2" style={{width: '1.25em'}} alt={"Scheduled time"} />
           <span>show the scheduled location.</span>
         </div>
-
       </div>
-    )
+    );
   }
 }

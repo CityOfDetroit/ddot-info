@@ -25,22 +25,39 @@ class StopSearch extends Component {
   }
 
   handleSearchDebounced(value) {
+
+    if (value.length < 3) {
+      return
+    }
+
     const matched = []
 
+    let values = value.split(" ")
+
     Object.values(this.state.allStops).forEach(st => {
-      if ( (st.id.indexOf(value) > -1) || (st.name.toUpperCase().indexOf(value.toUpperCase()) > -1) ) {
-        matched.push(st);
+      if(values.length > 1) {
+        let stopDidMatch = values.every(val => {
+          return ( (st.id.indexOf(val) > -1) || (st.name.toUpperCase().indexOf(val.toUpperCase()) > -1) )
+        })
+        if(stopDidMatch) { matched.push(st) };
       }
-    });
+      else {
+        if ( (st.id.indexOf(value) > -1) || (st.name.toUpperCase().indexOf(value.toUpperCase()) > -1) ) {
+          matched.push(st);
+        }
+      }
+    })
 
     this.setState({ filteredStops: matched });
   }
 
   render() {
     return (
-      <div className="pa2">
-        <span className="fw7 f3 pa2">Search Stops</span>
-        <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} />
+      <div className="pa3" style={{background: 'white'}}>
+        <div className="pb3" 
+          style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap'}}>
+        <span className="fw7 f3">Stops</span>
+        <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} /></div>
         { this.state.filteredStops.length > 0 ? <StopsList stops={this.state.filteredStops} /> : '' }
       </div>
     )

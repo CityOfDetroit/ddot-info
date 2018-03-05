@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import StopLink from './StopLink';
+import StopCard from './StopCard';
 
 class StopsList extends Component {
   render() {
     return (
-      <div className="h5 overflow-scroll">
+      <div className="overflow-scroll" style={{height: 350}}>
         {this.props.stops.map((stop, i) =>
-          <div className="pa2" key={i}>
-            <StopLink id={stop.id} showTransfers={true} />
+          <div className="" key={i}>
+            <StopCard id={stop.id} showTransfers={true} />
           </div>
         )}
       </div>

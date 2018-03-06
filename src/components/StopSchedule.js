@@ -33,20 +33,19 @@ class StopSchedule extends Component {
 
   render() {
     return (
-      <div className='pv2'>
-        <span className="f3 db">Scheduled daily stops</span>
+      <div>
         {this.state.fetchedSchedule ? (
-          <div style={{display: 'flex', flexDirection: 'row', padding: '.5em', overflowX: 'scroll'}} >
+          <div style={{display: 'inline-flex', justifyContent: 'left', flexDirection: 'row', padding: '.5em', overflowX: 'scroll'}} >
             {this.state.schedule.data.entry.stopRouteSchedules.map(r => (
-              <div key={r.routeId} style={{minWidth: 200, marginRight: '.5em'}}>
-              <RouteLink key={r.routeId} id={Helpers.scheduleFromGtfsId(r.routeId).id} />
-              <ul className="ma1 pa0" style={{maxHeight: 300, overflowY: 'scroll'}}>
-              {r.stopRouteDirectionSchedules[0].scheduleStopTimes.map(st => (
-                <li key={st.tripId}>
-                  {moment(st.arrivalTime).format('h:mma')}
-                </li>
-              ))}
-              </ul>
+              <div key={r.routeId} style={{alignSelf: 'flex-start'}}>
+                {/* <RouteLink key={r.routeId} id={Helpers.scheduleFromGtfsId(r.routeId).id} /> */}
+                <div className="" style={{alignItems: 'flex-start', display: 'flex', flexDirection: 'column', flexWrap: 'wrap', maxHeight: 250}}>
+                {r.stopRouteDirectionSchedules[0].scheduleStopTimes.map(st => (
+                  <span className="ph2" style={{textAlign: 'center', lineHeight: '1.5em'}} key={st.tripId}>
+                    {moment(st.arrivalTime).format('h:mma')}
+                  </span>
+                ))}
+                </div>
               </div>
             ))}
           </div>

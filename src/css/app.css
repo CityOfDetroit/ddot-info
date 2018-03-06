@@ -12,27 +12,27 @@ body {
 }
 
 /* BETA tag */
-/* body:after{
+body:after{
   content: "beta";
   position: fixed;
-  width: 80px;
-  height: 25px;
-  background: #004445;
-  top: 7px;
+  width: 70px;
+  height: 20px;
+  background: #B0D27B;
+  top: 5px;
   left: -20px;
   text-align: center;
-  font-size: 16px;
+  font-size: 13px;
   font-family: "Gibson Detroit Regular", sans-serif;
   text-transform: uppercase;
   font-weight: normal;
-  color: #fff;
-  line-height: 27px;
+  color: #000;
+  line-height: 19px;
   -ms-transform:rotate(-45deg);
   -webkit-transform:rotate(-45deg);
   transform:rotate(-45deg);
   z-index: 2500;
   box-shadow: 1px 3px 10px #aaa;
-} */
+}
 
 @media screen and (max-width: 650px) {
   .map {

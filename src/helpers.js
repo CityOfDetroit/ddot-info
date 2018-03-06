@@ -50,6 +50,41 @@ const Helpers = {
       return Schedules[s].rt_id.toString() === id.split("_").pop()
     })
     return Schedules[routeNum]
+  },
+
+  /**
+   * Given a an API "schedules" object, replace the trip headsigns.
+   */
+  cleanScheduleHeadsign: function(stopRouteSchedule) {
+    const route = this.scheduleFromGtfsId(stopRouteSchedule.routeId)
+    stopRouteSchedule.stopRouteDirectionSchedules.forEach(srds => {
+      const testTrip = srds.scheduleStopTimes[0].tripId
+      Array.from(["weekday", "saturday", "sunday"]).forEach(s => {
+        Object.keys(route.schedules[s]).forEach(k => {
+          if (route.schedules[s][k].trips[0].trip_id === testTrip.slice(-4,).toString()) {
+            srds.tripHeadsign = k
+          }
+        })
+      })
+    })
+    return stopRouteSchedule
+  },
+
+  /**
+   * Given an array of predictions, replace the trip headsigns.
+   */
+  cleanPredictionHeadsign: function(predictions) {
+    return predictions.map(p => {
+      const route = this.scheduleFromGtfsId(p.routeId)
+      Array.from(["weekday", "saturday", "sunday"]).forEach(s => {
+        Object.keys(route.schedules[s]).forEach(k => {
+          if ((_.map(route.schedules[s][k].trips, 'trip_id').indexOf(p.tripId.slice(-4,).toString())) > -1) {
+            p.tripHeadsign = k
+          }
+        })
+      })
+      return p
+    })
   }
 };
 

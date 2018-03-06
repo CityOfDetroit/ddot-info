@@ -9,9 +9,8 @@ const RoutePredictionList = ({ predictions, route, multipleDirs }) => (
     {predictions.length > 0 ? Helpers.cleanPredictionHeadsign(predictions).map((p, i) => (
       <div className="pv1 ph2 ma1 bg-moon-gray dib" style={{ display: 'flex', alignItems: 'center' }} key={i}>
         <span className="dib">
-          {multipleDirs ? `${p.tripHeadsign} ` : ``} 
-          at {p.predicted ? moment(p.predictedArrivalTime).format('h:mma') : moment(p.scheduledArrivalTime).format('h:mma')} 
-          {/* {p.tripStatus.scheduleDeviation/60} */}
+          {p.predicted ? moment(p.predictedArrivalTime).format('h:mma') : moment(p.scheduledArrivalTime).format('h:mma')} 
+          {multipleDirs ? ` (${Helpers.lookup[p.tripHeadsign]})` : ``} 
         </span>
         {p.predicted ?
           <img className="ml1" src={LiveSVG} style={{width: '1.5em'}} alt="Showing real-time prediction" />

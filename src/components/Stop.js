@@ -108,7 +108,7 @@ class Stop extends React.Component {
                 <div style={{display: 'flex', alignItems: 'center'}} >
                 {this.state.fetchedPredictions ? 
                   <div>
-                    <span className="db f4 fw5 mt2 pb1">Next buses scheduled:</span> 
+                    <span className="db f4 fw5 mt2 pb1">Arrival predictions for this stop</span> 
                     <RoutePredictionList
                       predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')})} 
                       route={r}
@@ -118,7 +118,7 @@ class Stop extends React.Component {
                 </div>
                 {this.state.fetchedStopSchedule ?
                   <div>
-                    <span className="db f4 fw5 mt2 pb1">All scheduled stop times for today</span>    
+                    <span className="db f4 fw5 mt2 pb1">Scheduled stop times for today</span>    
                     <StopRouteSchedule schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
                       return s.routeId.split("_").pop() === Schedules[r].rt_id.toString()
                     })} route={r} multipleDirs={this.state.multipleDirs} />

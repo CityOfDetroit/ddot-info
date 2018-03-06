@@ -16,7 +16,7 @@ const RoutePredictionList = ({ predictions, route, multipleDirs }) => (
           <img className="ml1" src={LiveSVG} style={{width: '1.5em'}} alt="Showing real-time prediction" />
           :<img className="ml1" src={SchedSVG} style={{width: '1.5em'}} alt="Showing scheduled time" />}
       </div>
-    )) : ``}
+    )) : <span className="pa2">No bus arrivals predicted</span>}
   </div>
 ) 
 

@@ -93,8 +93,8 @@ class Stop extends React.Component {
       <div className='App'>
         <StopHeader id={stopId} name={stopName} />
         <StopMap stopId={stopId} center={stopCoords}/>
-        <div className='list pa2'>
-          <span className="db f3 fw5 mt3 pb2">Routes that stop here</span>    
+        <div className='list pa3'>
+          <span className="db f3 fw5 pb2">Routes that stop here</span>    
           <Tabs>
             <TabList>
               {stopRoutes.map(r => <Tab key={r}><RouteBadge id={r} /></Tab>)}
@@ -102,19 +102,27 @@ class Stop extends React.Component {
 
             {stopRoutes.map(r => (
               <TabPanel key={r}>
+                <div className="ph2 mb1">
+                <RouteLink id={r} />
+                </div>
                 <div style={{display: 'flex', alignItems: 'center'}} >
-                <RouteLink id={r}/>
                 {this.state.fetchedPredictions ? 
-                  <RoutePredictionList
-                    predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')})} 
-                    route={r}
-                    multipleDirs={this.state.multipleDirs} /> 
+                  <div>
+                    <span className="db f4 fw5 mt2 pb1">Next buses scheduled:</span> 
+                    <RoutePredictionList
+                      predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')})} 
+                      route={r}
+                      multipleDirs={this.state.multipleDirs} />
+                  </div>
                   : ``}
                 </div>
-                {this.state.fetchedStopSchedule ? 
-                  <StopRouteSchedule schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
-                    return s.routeId.split("_").pop() === Schedules[r].rt_id.toString()
-                  })} route={r} multipleDirs={this.state.multipleDirs} /> : ``}
+                {this.state.fetchedStopSchedule ?
+                  <div>
+                    <span className="db f4 fw5 mt2 pb1">All scheduled stop times for today</span>    
+                    <StopRouteSchedule schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
+                      return s.routeId.split("_").pop() === Schedules[r].rt_id.toString()
+                    })} route={r} multipleDirs={this.state.multipleDirs} />
+                  </div> : ``}
               </TabPanel>
             ))}
 

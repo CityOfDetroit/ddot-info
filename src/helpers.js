@@ -61,7 +61,7 @@ const Helpers = {
       const testTrip = srds.scheduleStopTimes[0].tripId
       Array.from(["weekday", "saturday", "sunday"]).forEach(s => {
         Object.keys(route.schedules[s]).forEach(k => {
-          if (route.schedules[s][k].trips[0].trip_id === testTrip.slice(-4,).toString()) {
+          if ((_.map(route.schedules[s][k].trips, 'trip_id').indexOf(testTrip.slice(-4,).toString())) > -1) {
             srds.tripHeadsign = k
           }
         })

@@ -4,6 +4,8 @@ import TopNav from './TopNav';
 import RouteSearch from './RouteSearch';
 import StopSearch from './StopSearch';
 
+import RouteMapSVG from '../img/ddot.svg'
+
 class Homepage extends Component {
   render() {
     return (
@@ -19,6 +21,9 @@ class Homepage extends Component {
         </div>
         <div className="stops">
           <StopSearch />
+        </div>
+        <div>
+          <img src={RouteMapSVG} style={{width: 300}} />
         </div>
       </div>
     );

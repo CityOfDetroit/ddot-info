@@ -12,10 +12,10 @@ class StopRouteSchedule extends Component {
       <div>
         {this.props.schedules.length > 0 ? Helpers.cleanScheduleHeadsign(this.props.schedules[0]).stopRouteDirectionSchedules.map((rds, i) => (
           (<div className="pa2" key={i} style={{background: '#eee', margin: '.5em'}}>
-          <span className="dib ph2 pb2 fw7 f6">{_.capitalize(rds.tripHeadsign)}</span>
-          <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', maxHeight: rds.scheduleStopTimes.length > 80 ? 350 : 150, alignContent: 'flex-start', textAlign: 'left' }}>
+          <span className="dib ph2 fw7 f6">{_.capitalize(rds.tripHeadsign)}</span>
+          <div style={{ display: 'flex', padding: '.5em', flexDirection: 'column', overflowX: 'scroll', flexWrap: 'wrap', maxHeight: rds.scheduleStopTimes.length > 80 ? 350 : 150, alignContent: 'flex-start', textAlign: 'left' }}>
             {rds.scheduleStopTimes.map(sst => (
-              <span className="ph2" key={sst.tripId} style={{fontSize: '.8em'}}>{moment(sst.arrivalTime).format('h:mma')}</span>
+              <span className="pr3" key={sst.tripId} style={{fontSize: '.8em'}}>{moment(sst.arrivalTime).format('h:mma')}</span>
             ))}
           </div>
           </div>)

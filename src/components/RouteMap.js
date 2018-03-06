@@ -28,7 +28,7 @@ class RouteMap extends Component {
 
     const timepointFeatures = firstDirTimepoints.map(t => {
 
-      console.log(t)
+      console.log(Stops[t].id, Stops[t].name)
       
       return {
         "type": "Feature",

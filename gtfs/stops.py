@@ -30,7 +30,19 @@ if __name__ == "__main__":
     res = conn.execute(query)
     return res.fetchone()[0]
 
+
+
+  timepoint_edits = {
+    "429": {"offset": [0, 2]},
+    "674": {"offset": [0, 2]},
+  }
+
   for k in stops_object.keys():
+
+    # add offset
+    if k in timepoint_edits.keys():
+      stops_object[k]['offset'] = timepoint_edits[k]['offset']
+      
     og_routes = stops_object[k]['routes']
     near = routes_near_stop(int(k))
     addRPTC = False

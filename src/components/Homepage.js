@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import TopNav from './TopNav';
 import RouteSearch from './RouteSearch';
@@ -22,8 +23,11 @@ class Homepage extends Component {
         <div className="stops">
           <StopSearch />
         </div>
-        <div>
-          <img src={RouteMapSVG} style={{width: 300}} />
+        <div className="systemMap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',  }}>
+          <img src={RouteMapSVG} alt="System map" style={{ position: 'relative' }} />
+          <button style={{ position: 'absolute', fontSize: '1.75em', fontWeight: 'bold', backgroundColor: 'rgba(255, 255, 255, 0.6)', borderRadius: '.25em', border: 'none', padding: '.5em', }}>
+            <Link to="/nearby" className="dim black hover-gray" style={{ textDecoration: 'none' }}>Find Nearby Routes & Stops</Link>
+          </button>
         </div>
       </div>
     );

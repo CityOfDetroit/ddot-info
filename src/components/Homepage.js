@@ -23,11 +23,15 @@ class Homepage extends Component {
         <div className="stops">
           <StopSearch />
         </div>
-        <div className="systemMap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',  }}>
-          <img src={RouteMapSVG} alt="System map" style={{ position: 'relative' }} />
-          <button style={{ position: 'absolute', fontSize: '1.75em', fontWeight: 'bold', backgroundColor: 'rgba(255, 255, 255, 0.6)', borderRadius: '.25em', border: 'none', padding: '.5em', }}>
-            <Link to="/nearby" className="dim black hover-gray" style={{ textDecoration: 'none' }}>Find Nearby Routes & Stops</Link>
-          </button>
+        <div className="systemMap">
+          <span className="fw7 f3 ph3">
+            <Link to="/nearby" className="black dim" style={{ textDecoration: 'none' }}>Find service nearby</Link>
+          </span>
+          <div className="ma3 pa3" style={{ border: ".5em solid #eee", borderRadius: "1.5em" }}>
+            <Link to="/nearby">
+              <img src={RouteMapSVG} alt="System map" />
+            </Link>
+          </div>
         </div>
       </div>
     );

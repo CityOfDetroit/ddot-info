@@ -58,20 +58,24 @@ body:after{
     grid-column: 1/9;
   }
 
-
   /* Homepage */
+  .explainer {
+    grid-row: 2/3;
+    grid-column: 1/9;
+  }
+
   .routes {
-    grid-row: 3/9;
+    grid-row: 3/6;
     grid-column: 1/6;
   }
 
   .stops {
-    grid-row: 3/9;
+    grid-row: 3/6;
     grid-column: 6/9;
   }
 
-  .explainer {
-    grid-row: 2/3;
+  .systemMap {
+    grid-row: 7/9;
     grid-column: 1/9;
   }
 
@@ -84,11 +88,6 @@ body:after{
     grid-row: 2/11;
     grid-column: 5/9;
     overflow-y: scroll;
-  }
-
-  .systemMap {
-    grid-row: 9/11;
-    grid-column: 1/9;
   }
 
   /* Stop, LineRealTime */

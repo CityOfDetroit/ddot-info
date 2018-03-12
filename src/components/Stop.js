@@ -116,12 +116,17 @@ class Stop extends React.Component {
                   </div>
                   : ``}
                 </div>
-                {this.state.fetchedStopSchedule ?
+                {this.state.fetchedStopSchedule && this.state.fetchedPredictions ?
                   <div>
                     <span className="db f4 fw5 mt2 pb1">Scheduled stop times for today</span>    
-                    <StopRouteSchedule schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
-                      return s.routeId.split("_").pop() === Schedules[r].rt_id.toString()
-                    })} route={r} multipleDirs={this.state.multipleDirs} />
+                    <StopRouteSchedule 
+                      schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
+                        return s.routeId.split("_").pop() === Schedules[r].rt_id.toString()
+                      })} 
+                      route={r}
+                      multipleDirs={this.state.multipleDirs}
+                      predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')}).map(p => p.tripId)} 
+                    />
                   </div> : ``}
               </TabPanel>
             ))}

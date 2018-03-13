@@ -58,23 +58,26 @@ body:after{
     grid-column: 1/9;
   }
 
-
   /* Homepage */
-  .routes {
-    grid-row: 3/9;
-    grid-column: 1/6;
-  }
-
-  .stops {
-    grid-row: 3/9;
-    grid-column: 6/9;
-  }
-
   .explainer {
     grid-row: 2/3;
     grid-column: 1/9;
   }
 
+  .routes {
+    grid-row: 3/6;
+    grid-column: 1/6;
+  }
+
+  .stops {
+    grid-row: 3/6;
+    grid-column: 6/9;
+  }
+
+  .systemMap {
+    grid-row: 7/9;
+    grid-column: 1/9;
+  }
 
   .details {
     grid-row: 2/11;
@@ -82,8 +85,8 @@ body:after{
   }
 
   .stopList {
-    grid-column: 5/9;
     grid-row: 2/11;
+    grid-column: 5/9;
     overflow-y: scroll;
   }
 

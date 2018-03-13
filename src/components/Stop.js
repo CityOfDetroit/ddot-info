@@ -11,6 +11,8 @@ import RouteLink from './RouteLink';
 import RoutePredictionList from './RoutePredictionList';
 import Schedules from '../data/schedules.js'
 
+import chroma from 'chroma-js';
+
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
@@ -27,16 +29,17 @@ class Stop extends React.Component {
       scheduledStops: {},
       fetchedStopSchedule: false,
       fetchedPredictions: false,
-      multipleDirs: false
+      multipleDirs: false,
+      selectedIndex: 0
     }
+
+    this.handleSelected = this.handleSelected.bind(this)
   }
 
   fetchRealtimeData(id) {
     fetch(`${Helpers.endpoint}/arrivals-and-departures-for-stop/DDOT_${id}.json?key=BETA&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
-      console.log(d)
-
       d.data.entry.arrivalsAndDepartures = _.filter(d.data.entry.arrivalsAndDepartures, ad => {
         return (ad.predicted && ad.predictedArrivalTime > d.currentTime) || !ad.predicted
       })
@@ -68,6 +71,12 @@ class Stop extends React.Component {
     .catch(e => console.log(e));
   }
 
+  handleSelected(index, last) {
+    this.setState({
+      selectedIndex: index
+    })
+  }
+
   componentDidMount() {
     this.fetchRealtimeData(this.props.match.params.name)
     this.fetchStopScheduleData(this.props.match.params.name)
@@ -95,35 +104,51 @@ class Stop extends React.Component {
       <div className='App'>
         <StopHeader id={stopId} name={stopName} />
         <StopMap stopId={stopId} center={stopCoords}/>
-        <div className='list pa2'>
-          <span className="db f3 fw5 mt3 pb2">Routes that stop here</span>    
-          <Tabs>
+        <div className='list pa3'>
+          <h2 style={{margin: 0, padding: '.25em 0em', width: '100%'}}>Routes at this stop</h2>    
+          <Tabs
+            onSelect={ this.handleSelected }>
             <TabList>
-              {stopRoutes.map(r => <Tab key={r}><RouteBadge id={r} /></Tab>)}
+    {stopRoutes.map((r, i) => <Tab key={r}>{this.state.selectedIndex === i ? <RouteLink id={r}/> : <RouteBadge id={r} />}</Tab>)}
             </TabList>
 
             {stopRoutes.map(r => (
               <TabPanel key={r}>
                 <div style={{display: 'flex', alignItems: 'center'}} >
-                <RouteLink id={r}/>
                 {this.state.fetchedPredictions ? 
-                  <RoutePredictionList
-                    predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')})} 
-                    route={r}
-                    multipleDirs={this.state.multipleDirs} /> 
+                  <div style={{display: 'block', padding: '0em 0em', width: '100%'}}>
+                    {/* <span className="db f4 fw5 mt2 pb1">Arrival predictions for this stop</span>  */}
+                    <h3 style={{margin: 0, padding: '.25em 0em', borderBottom: '1px dotted black', width: '100%'}}>Next arrivals at this stop</h3>    
+                    <RoutePredictionList
+                      predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')})} 
+                      route={r}
+                      multipleDirs={this.state.multipleDirs} />
+                  </div>
                   : ``}
                 </div>
-                {this.state.fetchedStopSchedule ? 
-                  <StopRouteSchedule schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
-                    return s.routeId.split("_").pop() === Schedules[r].rt_id.toString()
-                  })} route={r} multipleDirs={this.state.multipleDirs} /> : ``}
+                {this.state.fetchedStopSchedule && this.state.fetchedPredictions ?
+                  <div style={{padding: '.5em 0em 0em 0em'}}>
+                    <h3 style={{margin: 0, padding: '.25em 0em'}}>Scheduled stop times for today</h3>
+                    <div style={{background: '#eee', padding: '.25em 0em', margin: '0em 0em .5em 0em', borderBottom: '1px dotted black'}}>
+                      <span className="f6 tc" style={{padding: '0em .75em'}}>am times</span>
+                      <span className="f6 tc" style={{padding: '0em .75em'}}><strong>pm times</strong></span>
+                      <span className="f6 tc" style={{backgroundColor: chroma(Schedules[r].color).alpha(0.25).css(), padding: '.4em .7em'}}>next arrivals</span>
+                    </div>
+                    <StopRouteSchedule 
+                      schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
+                        return s.routeId.split("_").pop() === Schedules[r].rt_id.toString()
+                      })} 
+                      route={r}
+                      multipleDirs={this.state.multipleDirs}
+                      predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')}).map(p => p.tripId)} 
+                    />
+                  </div> : ``}
               </TabPanel>
             ))}
 
 
           </Tabs>
-          {/* <StopRouteList routes={stopRoutes} />} */}
-          {/* <StopSchedule stopId={stopId} /> */}
+
           {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null}
         </div>
       </div>

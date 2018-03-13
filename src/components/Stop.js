@@ -97,18 +97,19 @@ class Stop extends React.Component {
           <span className="db f3 fw5 pb2">Routes that stop here</span>    
           <Tabs>
             <TabList>
-              {stopRoutes.map(r => <Tab key={r}><RouteBadge id={r} /></Tab>)}
+    {stopRoutes.map(r => <Tab key={r} selected={this.props.selected}><RouteBadge id={r} selected={true}/></Tab>)}
             </TabList>
 
             {stopRoutes.map(r => (
               <TabPanel key={r}>
-                <div className="ph2 mb1">
+                <div className="ph2 pt2 mb1">
                 <RouteLink id={r} />
                 </div>
                 <div style={{display: 'flex', alignItems: 'center'}} >
                 {this.state.fetchedPredictions ? 
-                  <div>
-                    <span className="db f4 fw5 mt2 pb1">Arrival predictions for this stop</span> 
+                  <div style={{padding: '.5em 0em'}}>
+                    {/* <span className="db f4 fw5 mt2 pb1">Arrival predictions for this stop</span>  */}
+                    <span>Arrival predictions for this stop</span> 
                     <RoutePredictionList
                       predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')})} 
                       route={r}
@@ -117,8 +118,8 @@ class Stop extends React.Component {
                   : ``}
                 </div>
                 {this.state.fetchedStopSchedule && this.state.fetchedPredictions ?
-                  <div>
-                    <span className="db f4 fw5 mt2 pb1">Scheduled stop times for today</span>    
+                  <div style={{padding: '.5em 0em', borderTop: '1px dotted black'}}>
+                    <span className="">Scheduled stop times for today</span>    
                     <StopRouteSchedule 
                       schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
                         return s.routeId.split("_").pop() === Schedules[r].rt_id.toString()

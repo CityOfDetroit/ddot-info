@@ -10790,7 +10790,7 @@ const Schedules = {
     "color": "#44aa42",
     "rt_id": 6678,
     "timepoints": {
-      "northbound": [9963, 8942, 167, 547, 549, 550, 552, 62],
+      "northbound": [9963, 167, 547, 549, 550, 552, 62],
       "southbound": [554, 555, 557, 558, 178, 179, 9963]
     },
     "schedules": {

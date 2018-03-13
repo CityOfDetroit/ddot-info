@@ -27,8 +27,11 @@ class Stop extends React.Component {
       scheduledStops: {},
       fetchedStopSchedule: false,
       fetchedPredictions: false,
-      multipleDirs: false
+      multipleDirs: false,
+      selectedIndex: 0
     }
+
+    this.handleSelected = this.handleSelected.bind(this)
   }
 
   fetchRealtimeData(id) {
@@ -66,6 +69,12 @@ class Stop extends React.Component {
     .catch(e => console.log(e));
   }
 
+  handleSelected(index, last) {
+    this.setState({
+      selectedIndex: index
+    })
+  }
+
   componentDidMount() {
     this.fetchRealtimeData(this.props.match.params.name)
     this.fetchStopScheduleData(this.props.match.params.name)
@@ -95,19 +104,17 @@ class Stop extends React.Component {
         <StopMap stopId={stopId} center={stopCoords}/>
         <div className='list pa3'>
           <span className="db f3 fw5 pb2">Routes that stop here</span>    
-          <Tabs>
+          <Tabs
+            onSelect={ this.handleSelected }>
             <TabList>
-    {stopRoutes.map(r => <Tab key={r} selected={this.props.selected}><RouteBadge id={r} selected={true}/></Tab>)}
+    {stopRoutes.map((r, i) => <Tab key={r}>{this.state.selectedIndex === i ? <RouteLink id={r}/> : <RouteBadge id={r} />}</Tab>)}
             </TabList>
 
             {stopRoutes.map(r => (
               <TabPanel key={r}>
-                <div className="ph2 pt2 mb1">
-                <RouteLink id={r} />
-                </div>
                 <div style={{display: 'flex', alignItems: 'center'}} >
                 {this.state.fetchedPredictions ? 
-                  <div style={{padding: '.5em 0em'}}>
+                  <div style={{padding: '0em 0em'}}>
                     {/* <span className="db f4 fw5 mt2 pb1">Arrival predictions for this stop</span>  */}
                     <span>Arrival predictions for this stop</span> 
                     <RoutePredictionList
@@ -118,7 +125,7 @@ class Stop extends React.Component {
                   : ``}
                 </div>
                 {this.state.fetchedStopSchedule && this.state.fetchedPredictions ?
-                  <div style={{padding: '.5em 0em', borderTop: '1px dotted black'}}>
+                  <div style={{padding: '.5em 0em'}}>
                     <span className="">Scheduled stop times for today</span>    
                     <StopRouteSchedule 
                       schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {

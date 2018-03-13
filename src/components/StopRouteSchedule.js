@@ -14,7 +14,9 @@ class StopRouteSchedule extends Component {
       <div>
         {this.props.schedules.length > 0 ? Helpers.cleanScheduleHeadsign(this.props.schedules[0]).stopRouteDirectionSchedules.map((rds, i) => (
           (<div className="pa1" key={i} style={{background: '#fff', margin: '.25em'}}>
-          <h4 style={{paddingBottom: '.2em', margin: 0, color: '#222'}}>{_.capitalize(rds.tripHeadsign)}</h4>
+          <div style={{display: 'flex', alignItems: 'center'}}>
+            <h4 style={{paddingBottom: '.2em', margin: 0, color: '#222'}}>{_.capitalize(rds.tripHeadsign)}</h4>
+          </div>
           <div style={{ display: 'flex', paddingBottom: '.5em', flexDirection: 'column', overflowX: 'scroll', maxHeight: ((rds.scheduleStopTimes.length / 6 )* 20) + 30, flexWrap: 'wrap', alignContent: 'flex-start', textAlign: 'left' }}>
             {rds.scheduleStopTimes.map(sst => (
               <span className="ph2" key={sst.tripId} 

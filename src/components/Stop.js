@@ -11,6 +11,8 @@ import RouteLink from './RouteLink';
 import RoutePredictionList from './RoutePredictionList';
 import Schedules from '../data/schedules.js'
 
+import chroma from 'chroma-js';
+
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
@@ -103,7 +105,7 @@ class Stop extends React.Component {
         <StopHeader id={stopId} name={stopName} />
         <StopMap stopId={stopId} center={stopCoords}/>
         <div className='list pa3'>
-          <span className="db f3 fw5 pb2">Routes that stop here</span>    
+          <h2 style={{margin: 0, padding: '.25em 0em', width: '100%'}}>Routes at this stop</h2>    
           <Tabs
             onSelect={ this.handleSelected }>
             <TabList>
@@ -114,9 +116,9 @@ class Stop extends React.Component {
               <TabPanel key={r}>
                 <div style={{display: 'flex', alignItems: 'center'}} >
                 {this.state.fetchedPredictions ? 
-                  <div style={{padding: '0em 0em'}}>
+                  <div style={{display: 'block', padding: '0em 0em', width: '100%'}}>
                     {/* <span className="db f4 fw5 mt2 pb1">Arrival predictions for this stop</span>  */}
-                    <span>Arrival predictions for this stop</span> 
+                    <h3 style={{margin: 0, padding: '.25em 0em', borderBottom: '1px dotted black', width: '100%'}}>Next arrivals at this stop</h3>    
                     <RoutePredictionList
                       predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')})} 
                       route={r}
@@ -125,8 +127,11 @@ class Stop extends React.Component {
                   : ``}
                 </div>
                 {this.state.fetchedStopSchedule && this.state.fetchedPredictions ?
-                  <div style={{padding: '.5em 0em'}}>
-                    <span className="">Scheduled stop times for today</span>    
+                  <div style={{padding: '.5em 0em 0em 0em'}}>
+                    <h3 style={{margin: 0, padding: '.25em 0em', marginBottom: '.25em', borderBottom: '1px dotted black'}}>Scheduled stop times for today</h3>
+                    <span className="f5 pl2">am times</span>
+                    <span className="f5 pl2"><strong>pm times</strong></span>
+                    <span className="f5 ml2 pa1" style={{backgroundColor: chroma(Schedules[r].color).alpha(0.25).css()}}>next arrivals</span>
                     <StopRouteSchedule 
                       schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
                         return s.routeId.split("_").pop() === Schedules[r].rt_id.toString()

@@ -5,7 +5,7 @@ import SchedSVG from '../img/schedule.svg'
 import LiveSVG from '../img/speaker_phone.svg'
 
 const RoutePredictionList = ({ predictions, route, multipleDirs }) => (
-  <div className="ml1 f6" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+  <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', paddingTop: '.5em' }}>
     {predictions.length > 0 ? Helpers.cleanPredictionHeadsign(predictions).map((p, i) => (
       <div className="pv1 ph2 ma1 dib" style={{ display: 'flex', alignItems: 'center', background: '#eee' }} key={i}>
         <span className="dib">

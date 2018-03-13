@@ -19,9 +19,10 @@ class StopRouteSchedule extends Component {
           </div>
           <div style={{ display: 'flex', paddingBottom: '.5em', flexDirection: 'column', overflowX: 'scroll', maxHeight: ((rds.scheduleStopTimes.length / 6 )* 20) + 30, flexWrap: 'wrap', alignContent: 'flex-start', textAlign: 'left' }}>
             {rds.scheduleStopTimes.map(sst => (
-              <span className="ph2" key={sst.tripId} 
+              <span key={sst.tripId} 
                 style={{
-                  fontSize: '.9em',  
+                  fontSize: '.9em', 
+                  minWidth: '3.5em', 
                   fontWeight: moment(sst.arrivalTime).format('a') === 'am' ? 300 : 700,
                   borderRight: '1px solid #aaa',
                   backgroundColor: this.props.predictions.indexOf(sst.tripId) > -1 ? chroma(Schedules[this.props.route].color).alpha(0.25).css() : 'rgba(255,255,255,1)',

@@ -14,18 +14,18 @@ const RouteHeader = ({ number }) => {
 
   return (
     <div className="nav header" style={{ background: '#004445' }}>
-      <div className="pa3" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div className="pa3" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: window.innerWidth < 650 ? '1em' : '1.5em' }}>
         <div>
           <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start' }}>
             <Link className="link dim pr3" to={{ pathname: `/` }}>
               <img src={ChevronSVG} className="" alt="Back to home" />
             </Link>
             <Link className="link dim" to={{ pathname: `/route/${number}`}} > 
-              <div className='white fw7 f3 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: color }}>
+              <div className='white fw7 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: color }}>
                 {number}
               </div> 
             </Link>
-            <div className='white glow ph3' style={{ fontSize: `2em` }}>
+            <div className='white glow ph2'>
               {name}
             </div>
           </div>
@@ -36,7 +36,7 @@ const RouteHeader = ({ number }) => {
           </Link>
         </div>
       </div>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', fontSize: window.innerWidth < 650 ? '1em' : '1.2em' }}>
          {/* <Link className="link dim white pv2 ph3 ml3" style={page === 'real-time' ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}/real-time` }}>
            Live
          </Link> */}

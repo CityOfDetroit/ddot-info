@@ -128,10 +128,12 @@ class Stop extends React.Component {
                 </div>
                 {this.state.fetchedStopSchedule && this.state.fetchedPredictions ?
                   <div style={{padding: '.5em 0em 0em 0em'}}>
-                    <h3 style={{margin: 0, padding: '.25em 0em', marginBottom: '.25em', borderBottom: '1px dotted black'}}>Scheduled stop times for today</h3>
-                    <span className="f5 pl2">am times</span>
-                    <span className="f5 pl2"><strong>pm times</strong></span>
-                    <span className="f5 ml2 pa1" style={{backgroundColor: chroma(Schedules[r].color).alpha(0.25).css()}}>next arrivals</span>
+                    <h3 style={{margin: 0, padding: '.25em 0em'}}>Scheduled stop times for today</h3>
+                    <div style={{background: '#eee', padding: '.25em 0em', margin: '0em 0em .5em 0em', borderBottom: '1px dotted black'}}>
+                      <span className="f6 tc" style={{padding: '0em .75em'}}>am times</span>
+                      <span className="f6 tc" style={{padding: '0em .75em'}}><strong>pm times</strong></span>
+                      <span className="f6 tc" style={{backgroundColor: chroma(Schedules[r].color).alpha(0.25).css(), padding: '.4em .7em'}}>next arrivals</span>
+                    </div>
                     <StopRouteSchedule 
                       schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
                         return s.routeId.split("_").pop() === Schedules[r].rt_id.toString()
@@ -146,8 +148,7 @@ class Stop extends React.Component {
 
 
           </Tabs>
-          {/* <StopRouteList routes={stopRoutes} />} */}
-          {/* <StopSchedule stopId={stopId} /> */}
+
           {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null}
         </div>
       </div>

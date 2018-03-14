@@ -118,7 +118,7 @@ class Stop extends React.Component {
                 {this.state.fetchedPredictions ? 
                   <div style={{display: 'block', padding: '0em 0em', width: '100%'}}>
                     {/* <span className="db f4 fw5 mt2 pb1">Arrival predictions for this stop</span>  */}
-                    <h3 style={{margin: 0, padding: '.25em 0em', borderBottom: '1px dotted black', width: '100%'}}>Next arrivals at this stop</h3>    
+                    <h3 style={{margin: 0, padding: '.25em 0em', borderBottom: '1px dotted black', width: '100%'}}>Next departures from this stop</h3>    
                     <RoutePredictionList
                       predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')})} 
                       route={r}

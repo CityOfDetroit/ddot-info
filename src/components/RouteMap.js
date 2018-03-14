@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StaticMap from 'react-map-gl';
+import MapGL from 'react-map-gl';
 import _ from 'lodash';
 import moment from 'moment';
 import WebMercatorViewport from 'viewport-mercator-project';
@@ -46,25 +46,44 @@ class RouteMap extends Component {
       }
     })
 
+    const route = this.props.route
+    const viewport = new WebMercatorViewport({width: window.innerWidth > 650 ? window.innerWidth / 2 : window.innerWidth, height: window.innerWidth > 650 ? window.innerHeight - 100 : 225});
+    const bound = viewport.fitBounds(route.bbox,
+      { padding: window.innerWidth > 650 ? 50 : window.innerWidth / 20 }
+    );
+
     this.state = {
       viewport: {
-        latitude: 42,
-        longitude: -83,
-        zoom: 17,
+        latitude: bound.latitude,
+        longitude: bound.longitude,
+        zoom: bound.zoom,
         bearing: 0,
         pitch: 0,
         width: window.innerWidth > 650 ? window.innerWidth / 2 : window.innerWidth,
         height: window.innerWidth > 650 ? window.innerHeight - 100 : 225
+      },
+      settings: {
+        dragPan: true,
+        scrollZoom: true,
+        touchZoom: true,
+        touchRotate: true,
+        keyboard: true,
+        doubleClickZoom: true,
+        minZoom: 9,
+        maxZoom: 19,
+        minPitch: 0,
+        maxPitch: 0
       },
       realtimeTrips: [],
       showRealtime: true,
       fetched: false,
       tripIds: tripIds,
       timepointFeatures: timepointFeatures,
-      showTimepoints: true
+      showTimepoints: false
     };
 
     this._resize = this._resize.bind(this);
+    this._updateViewport = this._updateViewport.bind(this)
   }
 
   fetchData() {
@@ -122,6 +141,10 @@ class RouteMap extends Component {
       });
     }
   }
+
+  _updateViewport = (viewport) => {
+    this.setState({viewport});
+  }
   
   componentDidMount() {
     window.addEventListener('resize', this._resize);
@@ -135,10 +158,6 @@ class RouteMap extends Component {
 
   render() {
     const route = this.props.route;
-    const viewport = new WebMercatorViewport({width: this.state.viewport.width, height: this.state.viewport.height});
-    const bound = viewport.fitBounds(route.bbox,
-      { padding: window.innerWidth > 650 ? 50 : window.innerWidth / 20 }
-    );
 
     let style = defaultMapStyle;
     style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(route.id, 10));
@@ -156,15 +175,13 @@ class RouteMap extends Component {
 
     return (
       <div className="map">
-        <StaticMap
-          width={this.state.viewport.width}
-          height={this.state.viewport.height}
-          latitude={bound.latitude}
-          longitude={bound.longitude}
-          zoom={bound.zoom}
+        <MapGL
+          {...this.state.viewport}
+          {...this.state.settings}
           mapStyle={style}
-          mapboxApiAccessToken={Helpers.mapboxApiAccessToken} >
-        </StaticMap> 
+          mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
+          onViewportChange={this._updateViewport} >
+        </MapGL> 
       </div>
     );
   }

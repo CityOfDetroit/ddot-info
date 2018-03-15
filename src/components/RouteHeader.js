@@ -12,7 +12,6 @@ const RouteHeader = ({ number }) => {
   const thisRoute = Schedules[number];
   const color = thisRoute.color;
   const name = thisRoute.rt_name;
-  const page = window.location.pathname.split('/').slice(-1)[0];
 
   return (
     <div className="nav header" style={{ background: '#004445' }}>

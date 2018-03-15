@@ -8573,7 +8573,7 @@
                     "Arial Unicode MS Regular"
                 ],
                 "text-padding": 0,
-                "visibility": "visible",
+                "visibility": "none",
                 "text-field": "{name}",
                 "text-max-width": 5
             },

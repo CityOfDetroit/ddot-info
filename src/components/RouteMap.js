@@ -161,9 +161,9 @@ class RouteMap extends Component {
 
     let style = defaultMapStyle;
     style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(route.id, 10));
+    style = style.setIn(['sources', 'timepoints', 'data'], {"type": "FeatureCollection", "features": this.state.timepointFeatures})
 
     if (this.state.showTimepoints) {
-      style = style.setIn(['sources', 'timepoints', 'data'], {"type": "FeatureCollection", "features": this.state.timepointFeatures})
       style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-color'], chroma(this.props.route.color).darken(2).hex())
       style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-halo-color'], "#fff")
     }

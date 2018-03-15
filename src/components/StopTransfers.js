@@ -1,15 +1,23 @@
 import React from 'react';
 
-import StopCard from './StopCard';
+import StopListItem from './StopListItem';
+
+import {Toolbar, ToolbarTitle} from 'material-ui/Toolbar'
+import {List, ListItem} from 'material-ui/List'
 
 const StopTransfers = ({ stops }) => (
-  <div className="transfers">
-    <h3 style={{margin: 0, padding: '.25em 0em', borderBottom: '1px dotted black', width: '100%'}}>Transfer at nearby stops:</h3>    
-    {stops.map((s, i) => (
-      <div key={i}>
-        <StopCard id={s[0]} showTransfers={false} showDir />
-      </div>
-    ))}
+  <div>
+    <Toolbar>
+      <ToolbarTitle text="Nearby transfers" style={{ color: 'black', fontWeight: 700}} />
+    </Toolbar>
+    <List>
+      {stops.map((s, i) => (
+        <div key={i}>
+         <StopListItem id={s[0]}/>
+          {/* <StopCard id={s[0]} showTransfers={false} showDir /> */}
+        </div>
+      ))}
+    </List>
   </div>
 )
 

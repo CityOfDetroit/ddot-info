@@ -20,11 +20,9 @@ const RouteHeader = ({ number }) => {
             <Link className="link dim pr3" to={{ pathname: `/` }}>
               <img src={ChevronSVG} className="" alt="Back to home" />
             </Link>
-            <Link className="link dim" to={{ pathname: `/route/${number}`}} > 
-              <div className='white fw7 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: color }}>
-                {number}
-              </div> 
-            </Link>
+            <div className='white fw7 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: color }}>
+              {number}
+            </div> 
             <div className='white glow ph2'>
               {name}
             </div>
@@ -40,6 +38,9 @@ const RouteHeader = ({ number }) => {
          {/* <Link className="link dim white pv2 ph3 ml3" style={page === 'real-time' ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}/real-time` }}>
            Live
          </Link> */}
+         <Link className="link dim white pv2 ph3 ml3" style={page === `${number}` ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}` }}>
+           Route
+         </Link>
          <Link className="link dim white pv2 ph3 ml3" style={page === 'stops' ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}/stops` }}>
            Stops
          </Link>

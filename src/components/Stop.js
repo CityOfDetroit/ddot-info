@@ -109,20 +109,19 @@ class Stop extends React.Component {
         <StopHeader id={stopId} name={stopName} />
         <StopMap stopId={stopId} center={stopCoords}/>
         <div className='list'>
-          <Toolbar >
+          <Toolbar>
             <ToolbarGroup>
             <ToolbarTitle text="Routes" />
             </ToolbarGroup>
             <ToolbarGroup style={{overflowX: 'scroll'}}>
             <Tabs
-              tabItemContainerStyle={{background: grey300, fontFamily: 'Gibson Detroit Regular'}}
+              tabItemContainerStyle={{background: grey300}}
               onChange={this.handleChange}
               value={this.state.slideIndex}>
               {stopRoutes.map((r, i) => (
                 <Tab label={<RouteBadge id={r}/>} style={{padding: '0em .5em'}} value={i} />
               ))}
             </Tabs>
-            {/* {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null} */}
             </ToolbarGroup>
           </Toolbar>
           <SwipeableViews
@@ -131,7 +130,9 @@ class Stop extends React.Component {
             >
             {stopRoutes.map((r, i) => (
               <div className="">
+              <div className="pa2">
               <RouteLink id={r} />
+              </div>
                 <div className="pa2">
                 {this.state.fetchedPredictions ? 
                   <div style={{display: 'block', padding: '0em 0em', width: '100%'}}>
@@ -159,6 +160,7 @@ class Stop extends React.Component {
                       predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')}).map(p => p.tripId)} 
                     />
                   </div> : ``}
+                  {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null}
                   </div>
                 </div>
             ))}

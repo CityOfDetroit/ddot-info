@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import {Tabs, Tab} from 'material-ui/Tabs';
+
 import Schedules from '../data/schedules.js';
 import ChevronSVG from '../img/chevron.svg';
 import Info from '../img/info_outline.svg';
@@ -35,18 +37,17 @@ const RouteHeader = ({ number }) => {
         </div>
       </div>
       <div style={{ display: 'flex', fontSize: window.innerWidth < 650 ? '1em' : '1.2em' }}>
-         {/* <Link className="link dim white pv2 ph3 ml3" style={page === 'real-time' ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}/real-time` }}>
-           Live
-         </Link> */}
-         <Link className="link dim white pv2 ph3 ml3" style={page === `${number}` ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}` }}>
-           Route
-         </Link>
-         <Link className="link dim white pv2 ph3 ml3" style={page === 'stops' ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}/stops` }}>
-           Stops
-         </Link>
-         <Link className="link dim white pv2 ph3 ml3" style={page === 'schedule' ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}/schedule` }}>
-           Schedule
-         </Link>
+        <Tabs>
+          <Tab 
+            label={<Link to={{ pathname: `/route/${number}` }}>Route</Link>}>
+          </Tab>
+          <Tab 
+            label={<Link to={{ pathname: `/route/${number}/stops` }}>Stops</Link>}>
+          </Tab>
+          <Tab 
+            label={<Link to={{ pathname: `/route/${number}/schedule` }}> Schedule</Link>}>
+          </Tab>
+        </Tabs>
       </div>
     </div>
   );

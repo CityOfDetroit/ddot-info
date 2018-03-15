@@ -13,8 +13,12 @@ import Schedules from '../data/schedules.js'
 
 import chroma from 'chroma-js';
 
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import { Tabs, Tab } from 'material-ui/Tabs';
+import grey300 from 'material-ui/styles/colors'
+import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
+
+
+import SwipeableViews from 'react-swipeable-views';
 
 import _ from 'lodash';
 
@@ -30,10 +34,10 @@ class Stop extends React.Component {
       fetchedStopSchedule: false,
       fetchedPredictions: false,
       multipleDirs: false,
-      selectedIndex: 0
+      slideIndex: 0
     }
 
-    this.handleSelected = this.handleSelected.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   fetchRealtimeData(id) {
@@ -71,11 +75,11 @@ class Stop extends React.Component {
     .catch(e => console.log(e));
   }
 
-  handleSelected(index, last) {
+  handleChange(value) {
     this.setState({
-      selectedIndex: index
-    })
-  }
+      slideIndex: value,
+    });
+  };
 
   componentDidMount() {
     this.fetchRealtimeData(this.props.match.params.name)
@@ -104,28 +108,40 @@ class Stop extends React.Component {
       <div className='App'>
         <StopHeader id={stopId} name={stopName} />
         <StopMap stopId={stopId} center={stopCoords}/>
-        <div className='list pa3'>
-          <h2 style={{margin: 0, padding: '.25em 0em', width: '100%'}}>Routes at this stop</h2>    
-          <Tabs
-            onSelect={ this.handleSelected }>
-            <TabList>
-    {stopRoutes.map((r, i) => <Tab key={r}>{this.state.selectedIndex === i ? <RouteLink id={r}/> : <RouteBadge id={r} />}</Tab>)}
-            </TabList>
-
-            {stopRoutes.map(r => (
-              <TabPanel key={r}>
-                <div style={{display: 'flex', alignItems: 'center'}} >
+        <div className='list'>
+          <Toolbar >
+            <ToolbarGroup>
+            <ToolbarTitle text="Routes" />
+            </ToolbarGroup>
+            <ToolbarGroup style={{overflowX: 'scroll'}}>
+            <Tabs
+              tabItemContainerStyle={{background: grey300, fontFamily: 'Gibson Detroit Regular'}}
+              onChange={this.handleChange}
+              value={this.state.slideIndex}>
+              {stopRoutes.map((r, i) => (
+                <Tab label={<RouteBadge id={r}/>} style={{padding: '0em .5em'}} value={i} />
+              ))}
+            </Tabs>
+            {/* {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null} */}
+            </ToolbarGroup>
+          </Toolbar>
+          <SwipeableViews
+            index={this.state.slideIndex}
+            onChangeIndex={this.handleChange}
+            >
+            {stopRoutes.map((r, i) => (
+              <div className="">
+              <RouteLink id={r} />
+                <div className="pa2">
                 {this.state.fetchedPredictions ? 
                   <div style={{display: 'block', padding: '0em 0em', width: '100%'}}>
-                    {/* <span className="db f4 fw5 mt2 pb1">Arrival predictions for this stop</span>  */}
-                    <h3 style={{margin: 0, padding: '.25em 0em', borderBottom: '1px dotted black', width: '100%'}}>Next departures from this stop</h3>    
+                    <h3 style={{margin: 0, borderBottom: '1px dotted black', width: '100%'}}>Next departures from this stop</h3>    
                     <RoutePredictionList
                       predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')})} 
                       route={r}
                       multipleDirs={this.state.multipleDirs} />
                   </div>
                   : ``}
-                </div>
                 {this.state.fetchedStopSchedule && this.state.fetchedPredictions ?
                   <div style={{padding: '.5em 0em 0em 0em'}}>
                     <h3 style={{margin: 0, padding: '.25em 0em'}}>Scheduled stop times for today</h3>
@@ -143,13 +159,10 @@ class Stop extends React.Component {
                       predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')}).map(p => p.tripId)} 
                     />
                   </div> : ``}
-              </TabPanel>
+                  </div>
+                </div>
             ))}
-
-
-          </Tabs>
-
-          {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null}
+            </SwipeableViews>
         </div>
       </div>
     )

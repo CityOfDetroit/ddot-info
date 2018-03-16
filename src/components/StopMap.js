@@ -5,7 +5,7 @@ import Helpers from '../helpers.js';
 import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Stops from '../data/stops.js';
 
-import {Card, CardHeader, CardContent} from 'material-ui/Card'
+import {Card, CardHeader, CardText} from 'material-ui/Card'
 
 import _ from 'lodash';
 
@@ -26,8 +26,8 @@ class StopMap extends Component {
         zoom: 17,
         bearing: 0,
         pitch: 0,
-        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 30 : window.innerWidth,
-        height: window.innerWidth > 650 ? window.innerHeight * (5/10) - 30 : 225
+        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 30 : window.innerWidth - 30,
+        height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8) - 98) : 225
       }
     }
 
@@ -57,7 +57,7 @@ class StopMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth * (3/8) - 30,
-          height: window.innerHeight * (5/10) - 30
+          height: ((window.innerHeight - 75) * (5/8) - 98)
         }
       });
     }
@@ -65,7 +65,7 @@ class StopMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth,
+          width: window.innerWidth -30,
           height: 225
         }
       });
@@ -116,7 +116,8 @@ class StopMap extends Component {
             longitude={this.state.viewport.longitude}
             zoom={this.state.viewport.zoom}
             mapStyle={style}
-            mapboxApiAccessToken={Helpers.mapboxApiAccessToken} >
+            mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
+            attributionControl={false}>
           </StaticMap>
       </Card>
     )

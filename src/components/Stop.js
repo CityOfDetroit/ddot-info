@@ -116,18 +116,19 @@ class Stop extends React.Component {
     const stopRoutes = Stops[stopId.toString()].routes
     const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat]
     const stopTransfers = Stops[stopId.toString()].transfers
+
+    console.log(stopTransfers)
     return (
       <div className='App'>
         <StopHeader id={stopId} name={stopName} />
         <StopMap stopId={stopId} center={stopCoords}/>
-        {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null}
         <div className='routes'>
 
           <Toolbar style={{background: grey200}}>
-            <ToolbarGroup style={{overflowX: 'scroll'}}>
+            <ToolbarGroup>
               <ToolbarTitle text="Routes" style={{ color: 'black', fontWeight: 700}} />
             </ToolbarGroup>
-            <ToolbarGroup>
+            <ToolbarGroup style={{overflowX: 'scroll'}}>
             <Tabs
               tabItemContainerStyle={{background: grey300}}
               onChange={this.handleChange}
@@ -147,9 +148,9 @@ class Stop extends React.Component {
               <div className="">
               <Toolbar style={{alignItems: 'center', background: grey300}}>
                 <ToolbarGroup>
-                <RouteLink id={r} />
+                  <RouteLink id={r} />
                 </ToolbarGroup>
-                <ToolbarGroup>
+                <ToolbarGroup >
                 <Tabs onChange={this.handleRouteChange} value={this.state.routeStopType}>
                   <Tab icon={<LiveIcon color='black' style={{width: 40, fontSize: '1em'}}/>} value='next' style={{backgroundColor: grey300, color: 'black'}} />
                   <Tab icon={<ScheduleIcon color='black' />}  value='schedule' style={{backgroundColor: grey300, color: 'black', padding: '0em 2em'}}/>
@@ -166,9 +167,9 @@ class Stop extends React.Component {
                         multipleDirs={this.state.multipleDirs} />
                     </div>
                     : ``)
-                :
-                (this.state.fetchedStopSchedule && this.state.fetchedPredictions ?
-                  <div>
+                    :
+                    (this.state.fetchedStopSchedule && this.state.fetchedPredictions ?
+                      <div>
                     <div style={{display: 'flex', margin: 10}}>
                       <Chip style={{margin: 4}}>am times</Chip>
                       <Chip style={{margin: 4, fontWeight: 700}}><span class="b">pm times</span></Chip>
@@ -181,13 +182,14 @@ class Stop extends React.Component {
                       route={r}
                       multipleDirs={this.state.multipleDirs}
                       predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r.padStart(3, '0')}).map(p => p.tripId)} 
-                    />
+                      />
                   </div> : ``)}
                   </div>
                 </div>
             ))}
             </SwipeableViews>
         </div>
+        {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null}
       </div>
     )
   }

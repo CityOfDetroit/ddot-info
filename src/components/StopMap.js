@@ -5,6 +5,8 @@ import Helpers from '../helpers.js';
 import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Stops from '../data/stops.js';
 
+import {Card, CardHeader, CardContent} from 'material-ui/Card'
+
 import _ from 'lodash';
 
 import {defaultMapStyle, routeLineIndex, highlightPointIndex, highlightLabelIndex, stopPointIndex, stopLabelIndex} from '../style.js';
@@ -24,8 +26,8 @@ class StopMap extends Component {
         zoom: 17,
         bearing: 0,
         pitch: 0,
-        width: window.innerWidth > 650 ? window.innerWidth / 2 : window.innerWidth,
-        height: window.innerWidth > 650 ? window.innerHeight - 100 : 225
+        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 30 : window.innerWidth,
+        height: window.innerWidth > 650 ? window.innerHeight * (5/10) - 30 : 225
       }
     }
 
@@ -54,8 +56,8 @@ class StopMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth / 2,
-          height: window.innerHeight - 100
+          width: window.innerWidth * (3/8) - 30,
+          height: window.innerHeight * (5/10) - 30
         }
       });
     }
@@ -101,18 +103,22 @@ class StopMap extends Component {
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))
 
     return (
-      <div className="map">
+      <Card className="map" style={{margin: 15}}>
+        <CardHeader 
+          title='Stop map'
+        >
         <MapSatelliteSwitch onChange={this.handleChange} />
-        <StaticMap
-          width={this.state.viewport.width}
-          height={this.state.viewport.height}
-          latitude={this.state.viewport.latitude}
-          longitude={this.state.viewport.longitude}
-          zoom={this.state.viewport.zoom}
-          mapStyle={style}
-          mapboxApiAccessToken={Helpers.mapboxApiAccessToken} >
-        </StaticMap> 
-      </div>
+        </CardHeader>
+          <StaticMap
+            width={this.state.viewport.width}
+            height={this.state.viewport.height}
+            latitude={this.state.viewport.latitude}
+            longitude={this.state.viewport.longitude}
+            zoom={this.state.viewport.zoom}
+            mapStyle={style}
+            mapboxApiAccessToken={Helpers.mapboxApiAccessToken} >
+          </StaticMap>
+      </Card>
     )
   }
 }

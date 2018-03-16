@@ -6,7 +6,7 @@ import {Toolbar, ToolbarTitle} from 'material-ui/Toolbar'
 import {List, ListItem} from 'material-ui/List'
 
 const StopTransfers = ({ stops }) => (
-  <div>
+  <div className="transfers">
     <Toolbar>
       <ToolbarTitle text="Nearby transfers" style={{ color: 'black', fontWeight: 700}} />
     </Toolbar>

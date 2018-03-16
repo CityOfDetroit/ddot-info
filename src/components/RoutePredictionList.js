@@ -1,10 +1,8 @@
 import React from 'react'
 import moment from 'moment'
 import Helpers from '../helpers.js'
-// import SchedSVG from '../img/schedule.svg'
 import SchedSVG from 'material-ui/svg-icons/action/schedule'
-// import LiveSVG from '../img/speaker_phone.svg'
-import LiveSVG from 'material-ui/svg-icons/hardware/router'
+import LiveSVG from 'material-ui/svg-icons/communication/speaker-phone'
 
 import {List, ListItem} from 'material-ui/List';
 
@@ -16,9 +14,9 @@ const RoutePredictionList = ({ predictions, route, multipleDirs }) => (
           primaryText={
             `
             ${p.predicted ? moment(p.predictedArrivalTime).format('h:mma') : moment(p.scheduledArrivalTime).format('h:mma')}
-            ${multipleDirs ? `(${p.tripHeadsign})` : ``}
-             `
-            }
+            `
+          }
+          secondaryText={p.tripHeadsign}
           leftIcon={p.predicted ? <LiveSVG /> : <SchedSVG />}
           style={{margin: 0, padding: 0}}
           />

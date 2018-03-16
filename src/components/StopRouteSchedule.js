@@ -20,7 +20,7 @@ class StopRouteSchedule extends Component {
             subtitle={`to ${Stops[Schedules[this.props.route].timepoints[rds.tripHeadsign].slice(-1)[0]].name}`}
             style={{padding: '10px 16px'}}
           />
-          <GridList cellHeight={20} cols={8} style={{maxWidth: 450, padding: 10}}>
+          <GridList cellHeight={20} cols={8} spacing={0} style={{maxWidth: 450, padding: 10}}>
             {rds.scheduleStopTimes.map((sst, i) => (
               <GridTile style={{
                 backgroundColor: this.props.predictions.indexOf(sst.tripId) > -1 ? chroma(Schedules[this.props.route].color).alpha(0.25).css() : 'rgba(255,255,255,1)',

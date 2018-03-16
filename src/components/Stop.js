@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Stops from '../data/stops.js';
 import StopHeader from './StopHeader';
 import StopMap from './StopMap';
-// import StopTransfers from './StopTransfers';
+import StopTransfers from './StopTransfers';
 import StopRouteSchedule from './StopRouteSchedule';
 import RouteBadge from './RouteBadge';
 import RouteLink from './RouteLink';
@@ -15,7 +15,7 @@ import chroma from 'chroma-js';
 
 import { Tabs, Tab } from 'material-ui/Tabs';
 import {grey300, grey200} from 'material-ui/styles/colors'
-import LiveIcon from 'material-ui/svg-icons/hardware/router'
+import LiveIcon from 'material-ui/svg-icons/communication/speaker-phone'
 import ScheduleIcon from 'material-ui/svg-icons/action/schedule'
 import Chip from 'material-ui/Chip';
 import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
@@ -115,17 +115,19 @@ class Stop extends React.Component {
     const stopName = Stops[stopId.toString()].name
     const stopRoutes = Stops[stopId.toString()].routes
     const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat]
-    // const stopTransfers = Stops[stopId.toString()].transfers
+    const stopTransfers = Stops[stopId.toString()].transfers
     return (
       <div className='App'>
         <StopHeader id={stopId} name={stopName} />
         <StopMap stopId={stopId} center={stopCoords}/>
-        <div className='list'>
-          {/* {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null} */}
+        {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null}
+        <div className='routes'>
 
           <Toolbar style={{background: grey200}}>
             <ToolbarGroup style={{overflowX: 'scroll'}}>
               <ToolbarTitle text="Routes" style={{ color: 'black', fontWeight: 700}} />
+            </ToolbarGroup>
+            <ToolbarGroup>
             <Tabs
               tabItemContainerStyle={{background: grey300}}
               onChange={this.handleChange}
@@ -146,6 +148,8 @@ class Stop extends React.Component {
               <Toolbar style={{alignItems: 'center', background: grey300}}>
                 <ToolbarGroup>
                 <RouteLink id={r} />
+                </ToolbarGroup>
+                <ToolbarGroup>
                 <Tabs onChange={this.handleRouteChange} value={this.state.routeStopType}>
                   <Tab icon={<LiveIcon color='black' style={{width: 40, fontSize: '1em'}}/>} value='next' style={{backgroundColor: grey300, color: 'black'}} />
                   <Tab icon={<ScheduleIcon color='black' />}  value='schedule' style={{backgroundColor: grey300, color: 'black', padding: '0em 2em'}}/>

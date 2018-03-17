@@ -170,11 +170,6 @@ class Stop extends React.Component {
                     :
                     (this.state.fetchedStopSchedule && this.state.fetchedPredictions ?
                       <div>
-                    <div style={{display: 'flex', margin: 10}}>
-                      <Chip style={{margin: 4}}>am times</Chip>
-                      <Chip style={{margin: 4, fontWeight: 700}}><span class="b">pm times</span></Chip>
-                      <Chip style={{margin: 4, backgroundColor: chroma(Schedules[r].color).alpha(0.25).css()}}>next arrivals</Chip>
-                    </div>
                     <StopRouteSchedule 
                       schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
                         return s.routeId.split("_").pop() === Schedules[r].rt_id.toString()

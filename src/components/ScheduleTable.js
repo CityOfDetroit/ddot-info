@@ -13,7 +13,7 @@ class ScheduleTable extends Component {
     let tripsToHighlight = this.props.liveTrips.map(t => t.slice(8));
 
     return (
-      <div className="v-top schedule">
+      <div className="v-top">
         <StickyTable className="h6 v-top" stickyColumnCount={0}>
           <Row>
             {this.props.schedule[this.props.direction].stops.map((s, i) => (

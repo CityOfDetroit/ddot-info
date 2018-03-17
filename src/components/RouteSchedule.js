@@ -13,6 +13,8 @@ import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
 import PrintSchedule from './PrintSchedule';
 
+import Toolbar, { ToolbarTitle, ToolbarGroup } from 'material-ui/Toolbar'
+
 class RouteSchedule extends React.Component {
   constructor(props) {
     super(props);
@@ -110,28 +112,33 @@ class RouteSchedule extends React.Component {
     return (
       <div className="App">
         <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
-        <div className="pickers pa2" style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center'}}>
-          <div>
-            <ServicePicker
-              services={this.state.availableServices}
-              currentSvc={this.state.currentSvc}
-              onChange={this.handleServiceChange}
-            />
-            <DirectionPicker 
-              directions={this.state.availableDirections}
-              currentDirection={this.state.currentDirection}
-              onChange={this.handleDirectionChange}
-              route={this.state.route} 
-            />
-          </div>
+        <div className="schedule">
+        <Toolbar style={{width: '100%', height: '6em'}}>
+          <ToolbarGroup>
+          <ToolbarTitle text='Schedule' />
+          </ToolbarGroup>
+          <ToolbarGroup>
+          <ServicePicker
+            services={this.state.availableServices}
+            currentSvc={this.state.currentSvc}
+            onChange={this.handleServiceChange}
+          />
+          <DirectionPicker 
+            directions={this.state.availableDirections}
+            currentDirection={this.state.currentDirection}
+            onChange={this.handleDirectionChange}
+            route={this.state.route} 
+          />
           <PrintSchedule routePdf={routeDetailObj.pdf} />
-        </div>
+          </ToolbarGroup>
+        </Toolbar>
         <ScheduleTable 
           schedule={this.state[this.state.currentSvc]} 
           direction={this.state.currentDirection} 
           liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
           color={this.state.color}
         />
+        </div>
       </div>
     )
   }

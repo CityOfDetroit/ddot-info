@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+
 class ServicePicker extends React.Component {
   constructor(props) {
     super(props);
@@ -13,11 +15,11 @@ class ServicePicker extends React.Component {
 
   render() {
     return (
-      <select className="fw7 f6 pa2 mr2" style={{border: '3px solid #ddd'}} onChange={this.props.onChange}>
+      <RadioButtonGroup onChange={this.props.onChange}>
         {this.props.services.map(s => (
-          <option className="fw5" value={s} key={s}>{_.capitalize(s)}</option>
+          <RadioButton value={s} label={_.capitalize(s)} />
         ))}
-      </select>
+      </RadioButtonGroup>
     )
   }
 }

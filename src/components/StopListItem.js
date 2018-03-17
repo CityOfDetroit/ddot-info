@@ -24,17 +24,12 @@ class StopListItem extends Component {
     }
 
     return (
-      <ListItem 
-          primaryText={
-            `
-            ${Stops[this.props.id].name}
-            ${routes.map((r, i) => (
-              <RouteBadge id={r} />
-            ))}
-            `
-          }
-        >
-
+      <ListItem primaryText={Stops[this.props.id].name}
+        secondaryText=
+          {routes.map((r, i) => (
+            `${r}`
+          )).join(",")}
+          >
       </ListItem>
     )
   }

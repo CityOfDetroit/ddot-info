@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import TextField from 'material-ui/TextField';
 import PropTypes from 'prop-types';
 
 class StopInput extends Component {
   render() {
     return (
-      <div className="f7">
-        <input className="pa1"
-          style={{width: '330px'}}
-          placeholder='search by: street name (Woodward) or stop ID'
+      <div>
+        <TextField
+          floatingLabelText='Search by street name or stop ID'
+          hintText='E.g. "Michigan" or "1118"'
           value={this.props.input}
           onChange={this.props.onSearchChange} />
       </div>

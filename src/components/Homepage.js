@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Card, CardMedia, CardTitle } from 'material-ui/Card';
 
 import TopNav from './TopNav';
 import RouteSearch from './RouteSearch';
@@ -24,14 +25,13 @@ class Homepage extends Component {
           <StopSearch />
         </div>
         <div className="systemMap">
-          <span className="fw7 f3 ph3">
-            <Link to="/nearby" className="black dim" style={{ textDecoration: 'none' }}>Find service nearby</Link>
-          </span>
-          <div className="ma3 pa3" style={{ border: ".5em solid #eee", borderRadius: "1.5em" }}>
+          <Card style={{ maxWidth: '500px', maxHeight: '350px', margin: '1em' }}>
             <Link to="/nearby">
-              <img src={RouteMapSVG} alt="System map" />
+              <CardMedia overlay={<CardTitle title="Find Service Nearby" subtitle="See routes and stops near your current location" style={{ textAlign: 'center' }} />}>
+                <img src={RouteMapSVG} alt="DDOT System Map" />
+              </CardMedia>
             </Link>
-          </div>
+          </Card>
         </div>
       </div>
     );

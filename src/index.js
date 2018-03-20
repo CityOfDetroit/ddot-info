@@ -24,11 +24,19 @@ ReactGA.initialize('UA-107915075-4');
 
 const muiTheme = getMuiTheme({
   fontFamily: 'Gibson Detroit Regular',
+  checkbox: {
+    checkedColor: '#b0d27b',
+  },
+  radioButton: {
+    checkedColor: '#b0d27b',
+  },
   tabs: {
     backgroundColor: '#b0d27b',
   },
+  textField: {
+    focusColor: '#004445',
+  }
 });
-
 
 class GAListener extends React.Component {
   static contextTypes = {

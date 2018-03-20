@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { ListItem } from 'material-ui/List'
 import Stops from '../data/stops.js';
-import Schedules from '../data/schedules.js';
-import RouteBadge from './RouteBadge'
 
 class StopListItem extends Component {
   render() {
-    const exclude = this.props.exclude || '';
+    // const exclude = this.props.exclude || '';
     let routes = [];
 
     if (Stops[this.props.id]) {

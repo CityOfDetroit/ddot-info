@@ -35,17 +35,14 @@ const RouteHeader = ({ number }) => {
           </Link>
         </div>
       </div>
-      <div style={{ display: 'flex', fontSize: window.innerWidth < 650 ? '1em' : '1.2em' }}>
+      <div>
         <Tabs>
           <Tab 
-            label={<Link to={{ pathname: `/route/${number}` }}>Route</Link>}>
-          </Tab>
+            label={<Link to={{ pathname: `/route/${number}`}}>Route</Link>} />
           <Tab 
-            label={<Link to={{ pathname: `/route/${number}/stops` }}>Stops</Link>}>
-          </Tab>
+            label={<Link to={{ pathname: `/route/${number}/stops`}}>Stops</Link>} />
           <Tab 
-            label={<Link to={{ pathname: `/route/${number}/schedule` }}> Schedule</Link>}>
-          </Tab>
+            label={<Link to={{ pathname: `/route/${number}/schedule`}}>Schedule</Link>} />
         </Tabs>
       </div>
     </div>

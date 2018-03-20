@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import StaticMap from 'react-map-gl';
-import Helpers from '../helpers.js';
+import { Card, CardHeader } from 'material-ui/Card';
+import _ from 'lodash';
 
+import Helpers from '../helpers.js';
 import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Stops from '../data/stops.js';
-
-import {Card, CardHeader, CardText} from 'material-ui/Card'
-
-import _ from 'lodash';
 
 import {defaultMapStyle, routeLineIndex, highlightPointIndex, highlightLabelIndex, stopPointIndex, stopLabelIndex} from '../style.js';
 
 class StopMap extends Component {
-
   constructor(props) {
     super(props)
 

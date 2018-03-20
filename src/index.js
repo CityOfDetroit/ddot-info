@@ -23,7 +23,10 @@ import ReactGA from 'react-ga';
 ReactGA.initialize('UA-107915075-4');
 
 const muiTheme = getMuiTheme({
-  fontFamily: 'Gibson Detroit Regular'
+  fontFamily: 'Gibson Detroit Regular',
+  tabs: {
+    backgroundColor: '#b0d27b',
+  },
 });
 
 

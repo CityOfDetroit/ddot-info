@@ -1,9 +1,8 @@
 import React from 'react';
+import { Toolbar, ToolbarTitle } from 'material-ui/Toolbar';
+import { List } from 'material-ui/List';
 
 import StopListItem from './StopListItem';
-
-import {Toolbar, ToolbarTitle} from 'material-ui/Toolbar'
-import {List, ListItem} from 'material-ui/List'
 
 const StopTransfers = ({ stops }) => (
   <div className="transfers">

@@ -11,13 +11,10 @@ import RouteLink from './RouteLink';
 import RoutePredictionList from './RoutePredictionList';
 import Schedules from '../data/schedules.js'
 
-import chroma from 'chroma-js';
-
 import { Tabs, Tab } from 'material-ui/Tabs';
 import {grey300, grey200} from 'material-ui/styles/colors'
 import LiveIcon from 'material-ui/svg-icons/communication/speaker-phone'
 import ScheduleIcon from 'material-ui/svg-icons/action/schedule'
-import Chip from 'material-ui/Chip';
 import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
 
 

@@ -18,7 +18,7 @@ const RouteDetails = ({ id }) => {
       <Card className="mv2">
         <CardTitle title="Service overview" />
         {["Monday-Friday", "Saturday", "Sunday/Holiday"].map((d, i) => (
-          <div>
+          <div key={i}>
             {obj.services[d] ?
               <Card key={i}>
                 <CardHeader

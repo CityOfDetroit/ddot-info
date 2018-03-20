@@ -103,22 +103,20 @@ class StopMap extends Component {
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))
 
     return (
-      <Card className="map" style={{margin: 15}}>
-        <CardHeader 
-          title='Stop map'
-        >
-        <MapSatelliteSwitch onChange={this.handleChange} />
+      <Card className="map" style={{ margin: 15 }}>
+        <CardHeader>
+          <MapSatelliteSwitch onChange={this.handleChange} />
         </CardHeader>
-          <StaticMap
-            width={this.state.viewport.width}
-            height={this.state.viewport.height}
-            latitude={this.state.viewport.latitude}
-            longitude={this.state.viewport.longitude}
-            zoom={this.state.viewport.zoom}
-            mapStyle={style}
-            mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
-            attributionControl={false}>
-          </StaticMap>
+        <StaticMap
+          width={this.state.viewport.width}
+          height={this.state.viewport.height}
+          latitude={this.state.viewport.latitude}
+          longitude={this.state.viewport.longitude}
+          zoom={this.state.viewport.zoom}
+          mapStyle={style}
+          mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
+          attributionControl={false}>
+        </StaticMap>
       </Card>
     )
   }

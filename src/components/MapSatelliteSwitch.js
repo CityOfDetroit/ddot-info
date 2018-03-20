@@ -1,16 +1,18 @@
 import React from 'react';
+import Checkbox from 'material-ui/Checkbox';
 
 class MapSatelliteSwitch extends React.Component {
-
-    render() {
-        return (
-            <div style={{zIndex: 2}}>
-                <label htmlFor="satellite">Aerial imagery
-                </label>
-                <input type="checkbox" id="satellite" value="satellite"  onChange={this.props.onChange} />
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <Checkbox
+          label="Satellite view"
+          onCheck={this.props.onChange}
+          style={{ marginBottom: '.2em' }}
+        />
+      </div>
+    );
+  }
 }
 
 export default MapSatelliteSwitch;

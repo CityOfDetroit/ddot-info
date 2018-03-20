@@ -36,7 +36,7 @@ class FeaturesNearLocation extends Component {
       <div className="App">
         <TopNav />
         {this.state.fetchedData ?  <NearbyMap data={this.state.data} coords={this.props.coords} /> : null }
-        {this.state.fetchedData ?  <NearbyList data={this.state.data} />: null }
+        {this.state.fetchedData ?  <NearbyList data={this.state.data} /> : null }
       </div>
     )
   }

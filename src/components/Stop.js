@@ -1,5 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import SwipeableViews from 'react-swipeable-views';
+import _ from 'lodash';
+import { Tabs, Tab } from 'material-ui/Tabs';
+import {grey300, grey200} from 'material-ui/styles/colors'
+import LiveIcon from 'material-ui/svg-icons/communication/speaker-phone'
+import ScheduleIcon from 'material-ui/svg-icons/action/schedule'
+import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
 
 import Stops from '../data/stops.js';
 import StopHeader from './StopHeader';
@@ -10,18 +17,6 @@ import RouteBadge from './RouteBadge';
 import RouteLink from './RouteLink';
 import RoutePredictionList from './RoutePredictionList';
 import Schedules from '../data/schedules.js'
-
-import { Tabs, Tab } from 'material-ui/Tabs';
-import {grey300, grey200} from 'material-ui/styles/colors'
-import LiveIcon from 'material-ui/svg-icons/communication/speaker-phone'
-import ScheduleIcon from 'material-ui/svg-icons/action/schedule'
-import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
-
-
-import SwipeableViews from 'react-swipeable-views';
-
-import _ from 'lodash';
-
 import Helpers from '../helpers';
 
 class Stop extends React.Component {
@@ -37,7 +32,6 @@ class Stop extends React.Component {
       slideIndex: 0,
       routeStopType: 'schedule'
     }
-
 
     this.handleChange = this.handleChange.bind(this)
     this.handleRouteChange = this.handleRouteChange.bind(this)
@@ -68,7 +62,6 @@ class Stop extends React.Component {
           multipleDirs = true
         }
       });
-
       this.setState({ 
         scheduledStops: d, 
         fetchedStopSchedule: true,
@@ -114,7 +107,6 @@ class Stop extends React.Component {
     const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat]
     const stopTransfers = Stops[stopId.toString()].transfers
 
-    console.log(stopTransfers)
     return (
       <div className='App'>
         <StopHeader id={stopId} name={stopName} />

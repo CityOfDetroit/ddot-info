@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import { Card, CardTitle, CardText } from 'material-ui/Card';
 
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
 import RouteStopList from './RouteStopList';
 import RouteMap from './RouteMap';
 import StopInput from './StopInput';
-
 import Helpers from '../helpers';
 import Schedules from '../data/schedules.js';
 
@@ -55,35 +55,35 @@ class RouteStops extends React.Component {
   }
 
   render() {
-    const thisRoute = Schedules[this.props.match.params.name]
+    const thisRoute = Schedules[this.props.match.params.name];
+
     return (
       <div className="BusRoute">
         <RouteHeader number={this.props.match.params.name} />
-
         <div className="map">
           <RouteMap route={thisRoute} />
         </div>
-
         <div className="stopList">
-          <div className="pa1" style={{display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between'}}>
-            <span className="f4">Stops along this route</span>
-            <DirectionPicker 
-              directions={this.state.availableDirections}
-              currentDirection={this.state.currentDirection}
-              onChange={this.handleDirectionChange}
-              route={thisRoute}
-              />
-            <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} />
-          </div>
-        <RouteStopList
-          id={this.state.routeId}
-          input={this.state.input}
-          routeNumber={thisRoute.id}
-          timepoints={this.state[this.state.currentSvc][this.state.currentDirection].stops}
-          />
+          <Card className="ma1">
+            <CardTitle title="Stops along this route" />
+            <CardText>
+              <DirectionPicker 
+                directions={this.state.availableDirections}
+                currentDirection={this.state.currentDirection}
+                onChange={this.handleDirectionChange}
+                route={thisRoute} />
+              <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} />
+            </CardText>
+          </Card>
+          <RouteStopList
+            id={this.state.routeId}
+            input={this.state.input}
+            routeNumber={thisRoute.id}
+            timepoints={this.state[this.state.currentSvc][this.state.currentDirection].stops}
+            />
         </div>
       </div>
-    )
+    );
   }
 }
 

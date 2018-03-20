@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import { Card } from 'material-ui/Card';
 
 import StopLink from './StopLink';
 import Stops from '../data/stops.js';
-
 import Helpers from '../helpers';
-import Schedules from '../data/schedules.js'
+import Schedules from '../data/schedules.js';
 
 class RouteStopList extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+
     this.state = {
       allStops: [],
       fetchedStops: false,
@@ -49,7 +50,7 @@ class RouteStopList extends Component {
     const color = Schedules[this.props.routeNumber].color
 
     return (
-      <div>
+      <Card className="ma1"> 
         <div className="w-100 pa2 f4 fw7" style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', borderBottom: '1px solid #000', }}>
           <div className="w-50 ml3">
             <span className='db'>Bus Stops</span>
@@ -67,7 +68,7 @@ class RouteStopList extends Component {
             </div>
           ) : `Loading stops...`}
         </div>
-      </div>
+      </Card>
     )
   }
 }

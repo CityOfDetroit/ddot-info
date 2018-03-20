@@ -6,7 +6,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Mack and Moross', 'Rosa Parks TC'],
         via: [''],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "An east side route that connects Detroit from Mack & Moross to Downtown Rosa Parks Transit Center. The main streets served are Harper Ave. E Larned St. Cadillac Blvd.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/07CadilllacHarper.pdf"],
         services: {
             "Monday-Friday": {
@@ -40,7 +40,7 @@ const routeDetails = [{
         between: ['Jefferson & Maryland', '7 Mile & Gratiot'],
         via: ['Chalmers', "Schoenherr"],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/9ChalmersMS.pdf"],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "An east side route that connects Detroit from Jefferson & Maryland to 7 Mile & Gratiot. The main streets served are Chalmers and Schoenherr St.",
         services: {
             "Monday-Friday": {
                 service_hours: ["5:15am", "8:52pm"],
@@ -72,7 +72,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Varjo & Van Dyke'],
         via: ['Lafayette', 'Chene', 'Jos. Campau', 'Nevada'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "An east side route that connects Detroit from Varjo & Van Dyke to Downtown Rosa Parks Transit Center. The main streets served are E Nevada St, Caniff St and Chene St.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/10CheneMS.pdf?ver=2016-04-22-150329-977"],
         services: {
             "Monday-Friday": {
@@ -105,7 +105,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Clark & Fort', 'Lycaste & Jefferson'],
         via: ['Junction', 'Epworth', 'Joy', 'Harper', 'St. Jean'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "Connects Detroit from E Jefferson & Lycaste St to Clark & Fort. The main streets served are Junction, St. Jean, Clairmount St and Harper Ave.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/11Clairmount.pdf"],
         services: {
             "Monday-Friday": {
@@ -125,7 +125,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Fairgrounds TC', 'Belle Isle'],
         via: ['Conant', 'E. Outer Dr'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "An east side route that connects Detroit from Belle Isle to Fairgrounds. The main streets served are Conant St, Mt. Elliot and State Fair. In addition to Detroit, this route also serves Hamtramck.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/12ConantMS.pdf?ver=2016-04-22-150443-267"],
         services: {
             "Monday-Friday": {
@@ -158,7 +158,7 @@ const routeDetails = [{
         between: ['Conner & Jefferson', 'Bel-Air Center'],
         via: ['Conner'],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/13ConnerMS.pdf"],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "An east Side route that connects Detroit from Conner & Jefferson to Bel-Air Center. The main streets served are Conner St, Hoover St.",
         services: {
             "Monday-Friday": {
                 service_hours: ["6:15am", "9:49pm"],
@@ -191,7 +191,7 @@ const routeDetails = [{
         between: ['Warren & Telegraph', 'Warren & Moross'],
         via: ['Warren', 'Forest'],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/14CrosstownMS.pdf?ver=2017-04-21-164624-043"],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A crosstown route that connects Detroit from Mack & Moross to Warren & Telegraph. The main street served is Warren Ave. In Addition to Detroit this route serves Dearborn.",
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
@@ -226,7 +226,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rouge Park', 'Woodward & Manchester'],
         via: [''],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A crosstown route that connects Detroit from Rouge Park to Woodward & Manchester. The main streets served are Chicago and Davidson.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/15ChicagoDavison.pdf"],
         services: {
             "Monday-Friday": {
@@ -260,7 +260,7 @@ const routeDetails = [{
         between: ['Rosa Parks TC', 'Providence Hospital'],
         via: ['Cass', 'West Grand Bl.', 'Dexter', 'Greenfield', 'Livernois', 'Curtis'],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/16DexterMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/16DexterSS.pdf"],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A route that connects Detroit from Downtown Rosa Parks Transit Center to Providence Hospital (JL Hudson & Greenfield). The main streets served are W Outer Drive, Cass, Dexter, W Grand Blvd and Greenfield. In addition to Detroit, this route also serves Southfield.",
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
@@ -296,7 +296,7 @@ const routeDetails = [{
         between: ['Mack & Moross', '7 Mile & Grand River'],
         via: ['8 Mile Road'],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/17EightMile.pdf"],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A crosstown route that connects Detroit from Mack & Moross to Seven Mile & Grand River. The main street served by this route is Eight Mile.",
         services: {
             "Monday-Friday": {
                 service_hours: ["4:09am", "2:44am"],
@@ -332,7 +332,7 @@ const routeDetails = [{
         between: ['Rosa Parks TC', 'Telegraph & Fenkell'],
         via: ['12th (northbound)/14th (southbound)', 'Fenkell'],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/18FenkellMS.pdf?ver=2016-04-22-150631-777"],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side route that connects Detroit from Downtown Rosa Parks Transit Center to Fenkell & Telegraph. The main streets served are Fenkell, 14th (northbound) and 12th (southbound).",
         services: {
             "Monday-Friday": {
                 service_hours: ["5:10am", "11:02pm"],
@@ -368,7 +368,7 @@ const routeDetails = [{
         between: ['Rosa Parks TC', 'West Outer Drive'],
         via: ['Fort St.'],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/19Fort.pdf"],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side route that connects Detroit from Downtown Rosa Parks Transit Center to W Outer Dr & Fort. The main street served is Fort.",
         services: {
             "Monday-Friday": {
                 service_hours: ["4:00am", "12:25am"],
@@ -403,7 +403,7 @@ const routeDetails = [{
         between: ['Rosa Parks TC', 'West 7 Mile'],
         via: ['Grand River'],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/21GrandRiverMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/21GrandRiverSS.pdf"],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side route that connects Detroit from Downtown Larned & St Antoine to Seven Mile & Grand River. The main street served is Grand River.",
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
@@ -439,7 +439,7 @@ const routeDetails = [{
         between: ['Northland Mall', 'Fairlane Mall'],
         via: ["Greenfield"],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/22Greenfield.pdf"],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side route that connects Detroit from Providence Hospital to Fairlane Mall. The main street used for this route is Greenfield. In addition to Detroit, this route serves Southfield and Dearborn.",
         services: {
             "Monday-Friday": {
                 service_hours: ["4:28am", "1:40am"],
@@ -473,7 +473,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', '8 Mile Meijer'],
         via: ['2nd', 'Hamilton', 'McNichols', 'John R'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side route that connects Detroit from Downtown Rosa Parks Transit Center to Eight Mile Meijer. The main streets used are McNichols, John R, Hamilton and 3rd.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/23Hamilton.pdf"],
         services: {
             "Monday-Friday": {
@@ -506,7 +506,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Jefferson & Maryland'],
         via: ['Jefferson'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "An east side route that connects Detroit from Downtown Rosa Parks Transit Center to Maryland & Jefferson. The main street used is Jefferson.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/25JeffersonMS.pdf?ver=2017-04-21-170105-283"],
         services: {
             "Monday-Friday": {
@@ -540,7 +540,7 @@ const routeDetails = [{
         between: ['Redford Plaza', 'Rosa Parks TC'],
         via: ['Lafayette', 'W. Grand Blvd.', 'Joy Rd.'],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/27Joy.pdf"],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side route that connects Detroit from Redford Plaza to Downtown Rosa Parks Transit Center. The main streets served are Joy Rd, Fort and W. Grand Blvd.",
         services: {
             "Monday-Friday": {
                 service_hours: ["5:21am", "11:51pm"],
@@ -574,7 +574,7 @@ const routeDetails = [{
         between: ['Rosa Parks TC', 'Univ. of Detroit Mercy'],
         via: ['Trumbull', 'Linwood'],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/29Linwood.pdf"],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side route that connects Detroit from Downtown Rosa Parks Transit Center to University of Detroit Mercy. The main streets used are Trumbull and Linwood.",
         services: {
             "Monday-Friday": {
                 service_hours: ["5:15am", "11:30pm"],
@@ -606,7 +606,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Fairgrounds TC', 'W. Jefferson & Brennan'],
         via: ['Livernois'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side route that connects Detroit from the Fairgrounds to W. Jefferson & Brennan. The main street served is Livernois.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/30LivernoisMS.pdf?ver=2016-04-22-151449-233"],
         services: {
             "Monday-Friday": {
@@ -639,7 +639,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Mack & Moross', 'Rosa Parks TC'],
         via: ['Mack', 'Cass'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "An east side route that connects Detroit from Mack & Moross to Downtown Rosa Parks Transit Center. The main streets used are Mack, Cass and Moross.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/31MackMS.pdf"],
         services: {
             "Monday-Friday": {
@@ -674,7 +674,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['6 Mile & Telegraph', 'Mack & Moross'],
         via: ['McNichols', 'Cadieux'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A crosstown route that connects Detroit from McNichols & Telegraph to McNichols & Cadieux. The main streets used are McNichols and Seymour St.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/32McNichols.pdf?ver=2017-01-30-160912-920"],
         services: {
             "Monday-Friday": {
@@ -708,7 +708,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['3rd & Abbott', '8 Mile & Gratiot'],
         via: ['Gratiot'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "An east side route that connects Detroit from 3rd & Abbott to Eight Mile & Gratiot. The main street served is Gratiot.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/34GratiotMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/34GratiotSS.pdf"],
         services: {
             "Monday-Friday": {
@@ -746,7 +746,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Fairlane Mall'],
         via: ['Michigan Ave'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side route that connects Detroit from Downtown Rosa Parks Transit Center to Fairlane Mall. The main street used is Michigan.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/37Michigan.pdf"],
         services: {
             "Monday-Friday": {
@@ -782,7 +782,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['I-96 & Middlebelt', '8 Mile & Hayes'],
         via: ['Plymouth', 'Elmhurst', 'Caniff'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A crosstown route that connects Detroit from I-96 & Middlebelt to Eight Mile and Hayes. The main streets used are Hayes, Calvert, Elmhurst St and Plymouth Rd. In addition to Detroit, this route serves Livonia and Redford Township.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/38Plymouth.pdf"],
         services: {
             "Monday-Friday": {
@@ -815,7 +815,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Southfield & Fenkell', 'Manchester & Woodward'],
         via: ['Fenkell', 'Puritan'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side route that connects Detroit from Southfield & Fenkell to Manchester & Woodward. The main street served is Puritan.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/39Puritan.pdf"],
         services: {
             "Monday-Friday": {
@@ -847,7 +847,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Friday'],
         between: ['Rosa Parks TC', 'Van Dyke & E. Outer Dr'],
         via: [''],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "An east side route that connects Detroit from Downtown Rosa Parks Transit Center to E outer Dr & Van Dyke. The main streets served are Russell and E Outer Dr.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/40RussellMF.pdf"],
         services: {
             "Monday-Friday": {
@@ -867,7 +867,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['8 Mile & Schaefer', 'Brennan Loop'],
         via: ['Schaefer', 'W. Jefferson'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side route that connects Detroit from Eight Mile & Schaefer to Brennan & Jefferson (Del Ray). The main street used is Schaefer Hwy. In addition to Detroit, this route serves Dearborn.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/41SchaeferMS.pdf"],
         services: {
             "Monday-Friday": {
@@ -899,7 +899,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Woodward & Manchester', 'Woodward & Mack'],
         via: ['Rosa Parks', 'Hamilton', 'Manchester', 'Oakland', 'St. Antoine'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A unique one-directional route that connects specific Detroit neighborhoods to more resource intensive routes and areas. This route begins and ends at Manchester & Woodward. The main streets served are Oakland Ave, Rosa Parks Blvd, St Antonie and Second.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/42%20Mid-City%20Loop.pdf"],
         services: {
             "Monday-Friday": {
@@ -933,7 +933,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Redford Plaza', '8 Mile & Ryan'],
         via: ['Schoolcraft', 'Oakman Blvd', 'Manchester', 'Oakland'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A crosstown route that connects Detroit from Eight Mile & Ryan to Redford Plaza. The main streets used are Schoolcraft, Ewald, Oakman and Dequindre.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/43Schoolcraft.pdf"],
         services: {
             "Monday-Friday": {
@@ -965,7 +965,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Meijer Old Redford', 'Mack & Moross'],
         via: ['Lahser', '7 Mile', 'Morang', 'Moross'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A crosstown route that connects Detroit from Old Redford Meijer to Mack & Moross. The main street used is Seven Mile.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/45SevenMileMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/45SevenMileSS.pdf"],
         services: {
             "Monday-Friday": {
@@ -1001,7 +1001,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Friday'],
         between: ['9 Mile & Rutland', 'Fairlane Mall'],
         via: ['Southfield Service Drive'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side peak hour route that connects Detroit from Nine Mile & Rutland to Fairelane Mall. The main street served is Southfield. In addition to Detroit, this route also serves Dearborn and Southfield.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/46Southfield.pdf"],
         services: {
             "Monday-Friday": {
@@ -1021,7 +1021,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Warren & Pierson', 'John R & Mack'],
         via: ['Warren', 'Tireman', 'MLK'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side route that connects Detroit from Warren & Pierson to John R & Mack. The main streets served are MLK, W. Grand Blvd and Tierman.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/47TiremanMS.pdf"],
         services: {
             "Monday-Friday": {
@@ -1047,7 +1047,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Bel Air Center', 'Rosa Parks TC'],
         via: ['Lafayette', 'Van Dyke'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "An east side route that connects Detroit form Bel Air Center to Downtown Rosa Parks Transit Center. The main streets served are Van Dyke and E Lafayette.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/48VanDykeLafayette.pdf?ver=2017-01-27-121537-590"],
         services: {
             "Monday-Friday": {
@@ -1083,7 +1083,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Michigan & Schaefer', 'Rosa Parks TC'],
         via: ['Vernor', 'Bagley', 'Lafayette'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side route that connects Detroit from Michigan & Schaefer to Downtown Rosa Parks Transit Center. The main streets served are Vernor and Miller. In Addition to Detroit, this route serves Dearborn.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/49VernorMS.pdf?ver=2017-06-26-142208-523"],
         services: {
             "Monday-Friday": {
@@ -1117,7 +1117,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Fairgrounds TC', 'Downtown'],
         via: ['Woodward Avenue'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A central route that connects Detroit from the Fairgrounds to Downtown. The main street used is Woodward Ave.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/53WoodwardMS.pdf?ver=2017-06-26-135605-973"],
         services: {
             "Monday-Friday": {
@@ -1153,7 +1153,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['8 Mile & Wyoming', 'Delray'],
         via: ['Wyoming', 'Dearborn'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A westside route that connects Detroit from Eight Mile & Wyoming to S West End St & Jefferson (Del Ray). The main streets served are Wyoming, & Dearborn St.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/54WyomingMS.pdf"],
         services: {
             "Monday-Friday": {
@@ -1185,7 +1185,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Northland Mall', 'Fairlane Mall'],
         via: ['8 Mile Rd', 'Evergreen'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side route that connects Detroit on Ten Mile and Evergreen to Fairlane Mall. The main street served is Evergreen. In addition to Detroit, this route also serves Dearborn and Southfield.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/60Evergreen.pdf"],
         services: {
             "Monday-Friday": {
@@ -1219,7 +1219,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Jefferson & Maryland', 'W. Grand Blvd. & Trumbull'],
         via: ['Jefferson', 'Lafayette', 'Cass', 'W. Grand Blvd.'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "An east side peak hour route that connects Detroit from Jefferson & Maryland to W Grand Blvd & Trumbull. This route connects highly populated residential neighborhoods to a resource intensive neighborhood using both street and highways. The main streets served are E Lafayette, Kercheval, E Jefferson and Cass.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/80VillagesDirectMF.pdf"],
         services: {
             "Monday-Friday": {
@@ -1239,7 +1239,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Trumbull & W. Grand Blvd.', 'W. Outer Dr. & Fort'],
         via: ['Bassett', 'Vernor', 'Cass', 'W. Grand Blvd.'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A southwest peak hour route that connects Detroit from Fort & W Outer Dr to Trumbull & W Grand Blvd. This route connects highly populated residential neighborhoods in Southwest Detroit to a resource intensive neighborhood using both streets and highways. The main streets served are Bassett, S Schafer Hwy, Springwells, W Vernor and Cass Ave.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/89SouthwestDirectMF.pdf?ver=2017-04-21-171512-467"],
         services: {
             "Monday-Friday": {
@@ -1259,7 +1259,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Friday'],
         between: ['8 Mile & Evergreen', 'Downtown'],
         via: ['Grand River', 'I-96'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side express route that connects Detroit from Pembroke St & Evergreen to Downtown E Jefferson & St Antoine. This route provides express service by using highways to decrease travel time. The main streets served are Evergreen and Grand River.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/92RosedaleExpressMF.pdf"],
         services: {
             "Monday-Friday": {
@@ -1279,7 +1279,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Friday'],
         between: ['Downtown', 'Van Dyke & Outer Dr.'],
         via: ['Ryan', 'I-75'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "An east side express route that connects Detroit from E outer Dr & Van Dyke to Downtown E Larned & Shelby St. This route provides express service by using highways to decrease travel time. The main streets served are Ryan, Conant, Caniff and E Outer Dr.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/95RyanExpress.pdf?ver=2017-01-27-132516-670"],
         services: {
             "Monday-Friday": {
@@ -1299,7 +1299,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Friday'],
         between: ['Downtown', 'Weatherby'],
         via: ['Joy Road', 'I-96'],
-        description: "Duis lacinia magna id lorem rhoncus, ac volutpat lacus pellentesque. Ut vel facilisis nunc, vitae euismod purus. Vestibulum ultrices nec erat eget mollis. Proin placerat id mauris eget viverra.",
+        description: "A west side express route that connects Detroit from Evergreen & Plymouth Rd to Downtown E Jefferson & St. Antoine St. This route provides express service by using highways to decrease travel time. The main street served is Joy Rd.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/96JoyExpress.pdf?ver=2017-01-27-132707-847"],
         services: {
             "Monday-Friday": {

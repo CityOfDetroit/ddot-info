@@ -4,14 +4,6 @@ import _ from 'lodash';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 
 class ServicePicker extends React.Component {
-  constructor(props) {
-    super(props);
-    
-    this.state = { 
-      selectedOption: props.currentSvc 
-    }
-  }
-
   render() {
     return (
       <RadioButtonGroup name="services" defaultSelected={this.props.currentSvc} onChange={this.props.onChange}>

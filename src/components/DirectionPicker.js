@@ -6,14 +6,6 @@ import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 import Stops from '../data/stops.js';
 
 class DirectionPicker extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { 
-      selectedOption: props.currentDirection 
-    }
-  }
-
   render() {
     return (
       <RadioButtonGroup name="directions" defaultSelected={this.props.directions[0]} onChange={this.props.onChange} style={{ marginLeft: '1em' }}>

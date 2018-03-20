@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Card, CardText } from 'material-ui/Card';
 import Chip from 'material-ui/Chip';
 import Avatar from 'material-ui/Avatar';
-import PdfIcon from 'material-ui/svg-icons/file/file-download';
+import PdfIcon from 'material-ui/svg-icons/image/picture-as-pdf';
 
 const PrintSchedule = ({ routePdf }) => (
   <Card>

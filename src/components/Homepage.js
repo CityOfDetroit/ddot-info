@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Card, { CardMedia, CardTitle } from 'material-ui/Card';
+import Card, { CardMedia, CardHeader } from 'material-ui/Card';
 
 import TopNav from './TopNav';
 import RouteSearch from './RouteSearch';
@@ -27,7 +27,7 @@ class Homepage extends Component {
         <div className="systemMap">
           <Card style={{ maxWidth: '500px', maxHeight: '350px', margin: '1em' }}>
             <Link to="/nearby">
-              <CardMedia overlay={<CardTitle title="Find Service Nearby" subtitle="See routes and stops near your current location" style={{ textAlign: 'center' }} />}>
+              <CardMedia>
                 <img src={RouteMapSVG} alt="DDOT System Map" />
               </CardMedia>
             </Link>

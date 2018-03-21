@@ -10,10 +10,11 @@ const PrintSchedule = ({ routePdf }) => (
     <CardContent style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
       <div style={{ marginRight: '.5em', fontSize: '1.2em' }}>Download schedule:</div>
       {routePdf.map((p, i) => 
-        <Chip key={i} style={{ marginRight: '.5em' }}>
-          <Avatar color="#444" icon={<PdfIcon />} />
-          <a href={p} style={{ textDecoration: 'none' }}>{routePdf.length === 1 ? `All service` :  i === 0 ? `Weekday` : `Saturday-Sunday` }</a>
-        </Chip>
+        <Chip 
+          key={i} 
+          style={{ marginRight: '.5em' }} 
+          label={<a href={p} style={{ textDecoration: 'none' }}>{routePdf.length === 1 ? `All service` :  i === 0 ? `Weekday` : `Saturday-Sunday` }</a>} 
+          avatar={<Avatar><PdfIcon /></Avatar>} />
       )}
     </CardContent>
   </Card>

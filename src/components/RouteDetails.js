@@ -37,7 +37,7 @@ const RouteDetails = ({ id }) => {
                   </table>
                 </CardContent>
               </Card> 
-            : <Card key={i}><CardHeader title={d} subtitle="No service" /></Card> }
+            : <Card key={i}><CardHeader title={d} subheader="No service" /></Card> }
           </div>
         ))}
       </Card>

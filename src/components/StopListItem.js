@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ListItem } from 'material-ui/List'
+import { ListItem, ListItemText } from 'material-ui/List'
 import Stops from '../data/stops.js';
 
 class StopListItem extends Component {
@@ -21,12 +21,14 @@ class StopListItem extends Component {
     }
 
     return (
-      <ListItem primarytext={Stops[this.props.id].name}
-        secondarytext=
-          {routes.map((r, i) => (
-            `${r}`
-          )).join(",")}
-          >
+      <ListItem button>
+          <ListItemText
+            primary={Stops[this.props.id].name}
+            secondary=
+              {routes.map((r, i) => (
+                `${r}`
+              )).join(",")}
+              />
       </ListItem>
     )
   }

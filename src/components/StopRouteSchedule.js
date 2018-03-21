@@ -47,9 +47,9 @@ class StopRouteSchedule extends Component {
             </GridList>
           </CardContent>
             <div style={{display: 'flex'}}>
-              <Chip style={{margin: 6}} labelStyle={{fontSize: '.7em'}}>am times</Chip>
-              <Chip style={{margin: 6, fontWeight: 700}} labelStyle={{fontSize: '.7em'}}><span class="b">pm times</span></Chip>
-              <Chip style={{margin: 6, backgroundColor: chroma(Schedules[this.props.route].color).alpha(0.25).css()}} labelStyle={{fontSize: '.7em'}}>next arrivals</Chip>
+              <Chip style={{margin: 6}} labelstyle={{fontSize: '.7em'}}>am times</Chip>
+              <Chip style={{margin: 6, fontWeight: 700}} labelstyle={{fontSize: '.7em'}}><span class="b">pm times</span></Chip>
+              <Chip style={{margin: 6, backgroundColor: chroma(Schedules[this.props.route].color).alpha(0.25).css()}} labelstyle={{fontSize: '.7em'}}>next arrivals</Chip>
             </div>
           </Card>
         ))}

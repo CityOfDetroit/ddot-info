@@ -30,7 +30,7 @@ class Stop extends React.Component {
       fetchedPredictions: false,
       multipleDirs: false,
       slideIndex: 0,
-      routeStopType: 'schedule'
+      routeStopType: 'next'
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -77,7 +77,7 @@ class Stop extends React.Component {
     });
   };
 
-  handleRouteChange(value) {
+  handleRouteChange(event, value) {
     this.setState({
       routeStopType: value,
     });

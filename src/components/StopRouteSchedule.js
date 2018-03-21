@@ -23,7 +23,7 @@ class StopRouteSchedule extends Component {
             style={{padding: '16px 10px 0px 10px'}}
           />
           <CardContent style={{padding: 10}}>
-            <h4 style={{marginTop: 0, fontWeight: 600, color: grey800}}>Buses stop here at:</h4>
+            <h4 style={{marginTop: 0, fontWeight: 300, color: grey800}}>Buses stop here at:</h4>
             <GridList cellHeight={20} cols={Math.ceil(rds.scheduleStopTimes) / 8} padding={0} style={{
                 maxHeight: 100 + Math.ceil(rds.scheduleStopTimes.length) * 3, 
                 maxWidth: Math.ceil(rds.scheduleStopTimes.length / 10) * 90,

@@ -7,10 +7,11 @@ class StopInput extends Component {
     return (
       <div>
         <TextField
-          floatinglabeltext='Search by street name or stop ID'
-          hinttext='E.g. "Michigan" or "1118"'
+          label='Search by street name or stop ID'
+          placeholder='E.g. "Michigan" or "1118"'
           value={this.props.input}
-          onChange={this.props.onSearchChange} />
+          onChange={this.props.onSearchChange}
+          margin='normal' />
       </div>
     )
   }

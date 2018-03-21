@@ -7,10 +7,11 @@ class RouteInput extends Component {
     return (
       <div>
         <TextField
-          floatinglabeltext='Search routes by name or number'
-          hinttext='E.g. "Woodward" or "53"'
+          label='Search routes by name or number'
+          placeholder='E.g. "Woodward" or "53"'
           value={this.props.input}
-          onChange={this.props.onSearchChange} />
+          onChange={this.props.onSearchChange}
+          margin='normal' />
       </div>
     );
   }

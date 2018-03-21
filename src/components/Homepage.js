@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Card, { CardMedia, CardContent } from 'material-ui/Card';
+import Card, { CardHeader, CardMedia, CardContent } from 'material-ui/Card';
 
 import TopNav from './TopNav';
 import RouteSearch from './RouteSearch';
@@ -13,29 +13,32 @@ class Homepage extends Component {
     return (
       <div className="App">
         <TopNav />
-        <div className="explainer ma2">
-          <p>This app helps transit riders find bus schedules and real-time arrival information for DDOT routes and bus stops.</p>
-          <p>Find your route or stop, or see which buses are running near your current location.</p>
-        </div>
-        <div className="routes">
+        <Card className="explainer ma1">
+          <CardContent>
+            <p>This app helps transit riders find bus schedules and real-time departure information for DDOT routes and bus stops.</p>
+            <p>Find your route or stop, or see which buses are running near your current location.</p>
+          </CardContent>
+        </Card>
+        <div className="routes-homepage ma1">
           <RouteSearch />
-          {/* <Legend /> */}
         </div>
-        <div className="stops">
+        <div className="stops ma1">
           <StopSearch />
         </div>
-        <div className="systemMap">
+        {/* <div className="systemMap">
           <Card style={{ maxWidth: '500px', maxHeight: '350px', margin: '1em' }}>
-            <Link to="/nearby">
-              <CardMedia
-                image={RouteMapSVG}
-                title="DDOT System Map" />
-              <CardContent>
-                Find service nearby
-              </CardContent>
-            </Link>
+            <CardHeader title="Nearby" />
+            <CardContent>
+              <Link to="/nearby">
+                <CardMedia
+                  image={RouteMapSVG}
+                  title="DDOT System Map" />
+              </Link>
+            </CardContent>
           </Card>
         </div>
+        <div className="footer-homepage" style={{ backgroundColor: '#eee' }}>
+        </div> */}
       </div>
     );
   }

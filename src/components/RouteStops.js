@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import Card, { CardContent } from 'material-ui/Card';
+import Card, { CardHeader, CardContent } from 'material-ui/Card';
 
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
@@ -65,7 +65,7 @@ class RouteStops extends React.Component {
         </div>
         <div className="stopList">
           <Card className="ma1">
-            {/* <CardTitle title="Stops along this route" /> */}
+            <CardHeader title="Stops along this route" />
             <CardContent>
               <DirectionPicker 
                 directions={this.state.availableDirections}

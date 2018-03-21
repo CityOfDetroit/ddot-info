@@ -11,7 +11,8 @@ class RouteInput extends Component {
           placeholder='E.g. "Woodward" or "53"'
           value={this.props.input}
           onChange={this.props.onSearchChange}
-          margin='normal' />
+          margin='normal'
+          fullWidth />
       </div>
     );
   }

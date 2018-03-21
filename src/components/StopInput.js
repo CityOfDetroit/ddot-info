@@ -11,7 +11,8 @@ class StopInput extends Component {
           placeholder='E.g. "Michigan" or "1118"'
           value={this.props.input}
           onChange={this.props.onSearchChange}
-          margin='normal' />
+          margin='normal'
+          fullWidth />
       </div>
     )
   }

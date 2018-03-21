@@ -64,7 +64,7 @@ body:after{
     grid-column: 1/9;
   }
 
-  .routes {
+  .routes-homepage {
     grid-row: 3/6;
     grid-column: 1/6;
   }
@@ -75,7 +75,12 @@ body:after{
   }
 
   .systemMap {
-    grid-row: 7/9;
+    grid-row: 7/8;
+    grid-column: 1/9;
+  }
+
+  .footer-homepage {
+    grid-row: 8/9;
     grid-column: 1/9;
   }
 

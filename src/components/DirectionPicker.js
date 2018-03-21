@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import Radio, {RadioGroup} from 'material-ui/Radio';
 
 import Stops from '../data/stops.js';
 
 class DirectionPicker extends React.Component {
   render() {
     return (
-      <RadioButtonGroup name="directions" defaultSelected={this.props.directions[0]} onChange={this.props.onChange} style={{ marginLeft: '1em' }}>
+      <RadioGroup name="directions" defaultselected={this.props.directions[0]} onChange={this.props.onChange} style={{ marginLeft: '1em' }}>
         {this.props.directions.map(s => (
-          <RadioButton
+          <Radio
             key={s} 
             value={s} 
             label={`${_.capitalize(s)} to ${Stops[this.props.route.timepoints[s].slice(-1)].name}`} />
         ))}
-      </RadioButtonGroup>
+      </RadioGroup>
     );
   }
 }

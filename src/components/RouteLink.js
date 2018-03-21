@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import Schedules from '../data/schedules.js'
-import { grey300 } from 'material-ui/styles/colors';
+import { grey300 } from 'material-ui/colors';
 
 class RouteLink extends Component {
   render() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import { Card, CardText, CardTitle, CardHeader } from 'material-ui/Card';
+import Card, { CardContent, CardHeader } from 'material-ui/Card';
 
 import routeDetails from '../data/routeDetails.js';
 import PrintSchedule from './PrintSchedule';
@@ -11,12 +11,11 @@ const RouteDetails = ({ id }) => {
   return (
     <div className="details ph2">
       <Card className="mv2">
-        <CardText style={{ fontSize: '1.2em' }}>
+        <CardContent style={{ fontSize: '1.2em' }}>
           {obj.description}
-        </CardText>
+        </CardContent>
       </Card>
       <Card className="mv2">
-        <CardTitle title="Service overview" />
         {["Monday-Friday", "Saturday", "Sunday/Holiday"].map((d, i) => (
           <div key={i}>
             {obj.services[d] ?
@@ -24,7 +23,7 @@ const RouteDetails = ({ id }) => {
                 <CardHeader
                   title={d}
                   subtitle={obj.services[d].service_hours.length === 1 ? obj.services[d].service_hours[0] : `${obj.services[d].service_hours[0]} - ${obj.services[d].service_hours[1]}`} />
-                <CardText>
+                <CardContent>
                   <table className="w-100">
                     <tbody>
                       {obj.services[d].frequency.map((f, i) => (
@@ -35,7 +34,7 @@ const RouteDetails = ({ id }) => {
                       ))}
                     </tbody>
                   </table>
-                </CardText>
+                </CardContent>
               </Card> 
             : <Card key={i}><CardHeader title={d} subtitle="No service" /></Card> }
           </div>

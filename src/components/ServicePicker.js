@@ -1,20 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+
+import Radio, {RadioGroup} from 'material-ui/Radio';
 
 class ServicePicker extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = { 
+      selectedOption: props.currentSvc 
+    }
+  }
+
   render() {
     return (
-      <RadioButtonGroup name="services" defaultSelected={this.props.currentSvc} onChange={this.props.onChange}>
+      <RadioGroup value={this.props.currentSvc} onChange={this.props.onChange} style={{width: 140, background: '#fff'}}>
         {this.props.services.map(s => (
-          <RadioButton 
-            key={s}
-            value={s} 
-            label={_.capitalize(s)} />
+          <Radio value={s} primaryText={_.capitalize(s)} />
         ))}
-      </RadioButtonGroup>
-    );
+      </RadioGroup>
+    )
   }
 }
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TextField from 'material-ui/TextField';
+import {TextField} from 'material-ui';
 import PropTypes from 'prop-types';
 
 class RouteInput extends Component {
@@ -7,7 +7,7 @@ class RouteInput extends Component {
     return (
       <div>
         <TextField
-          floatingLabelText='Search routes by name or number'
+          floatinglabeltext='Search routes by name or number'
           hintText='E.g. "Woodward" or "53"'
           value={this.props.input}
           onChange={this.props.onSearchChange} />

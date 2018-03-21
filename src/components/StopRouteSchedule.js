@@ -9,7 +9,7 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import {Card, CardHeader, CardText} from 'material-ui/Card'
 import Chip from 'material-ui/Chip';
 import moment from 'moment';
-import { grey800 } from 'material-ui/styles/colors';
+import { grey800 } from 'material-ui/colors';
 
 class StopRouteSchedule extends Component {
   render() {

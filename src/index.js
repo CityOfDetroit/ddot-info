@@ -16,13 +16,13 @@ import Nearby from './components/Nearby';
 import TransitCenter from './components/TransitCenter';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {createMuiTheme} from 'material-ui/styles';
 
 
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-107915075-4');
 
-const muiTheme = getMuiTheme({
+const muiTheme = createMuiTheme({
   fontFamily: 'Gibson Detroit Regular',
   checkbox: {
     checkedColor: '#b0d27b',
@@ -61,7 +61,7 @@ class GAListener extends React.Component {
 ReactDOM.render(
   <Router basename="/route-explorer">
     <GAListener>
-      <MuiThemeProvider muiTheme={muiTheme}>
+      <MuiThemeProvider theme={muiTheme}>
         <Switch>
           <Route exact path='/' component={App} />
           <Route path='/about' component={About} />

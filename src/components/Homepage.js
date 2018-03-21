@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardMedia, CardTitle } from 'material-ui/Card';
+import Card, { CardMedia, CardTitle } from 'material-ui/Card';
 
 import TopNav from './TopNav';
 import RouteSearch from './RouteSearch';

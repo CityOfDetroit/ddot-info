@@ -1,8 +1,8 @@
 import React from 'react'
 import moment from 'moment'
 import Helpers from '../helpers.js'
-import SchedSVG from 'material-ui/svg-icons/action/schedule'
-import LiveSVG from 'material-ui/svg-icons/communication/speaker-phone'
+import SchedSVG from 'material-ui-icons/Schedule'
+import LiveSVG from 'material-ui-icons/SpeakerPhone'
 
 import {List, ListItem} from 'material-ui/List';
 

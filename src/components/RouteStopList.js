@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import { Card } from 'material-ui/Card';
+import { Card } from 'material-ui';
 
 import StopLink from './StopLink';
 import Stops from '../data/stops.js';

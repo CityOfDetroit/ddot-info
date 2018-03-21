@@ -13,7 +13,7 @@ import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
 import PrintSchedule from './PrintSchedule';
 
-import Toolbar, { ToolbarTitle, ToolbarGroup } from 'material-ui/Toolbar'
+import Toolbar from 'material-ui/Toolbar'
 
 class RouteSchedule extends React.Component {
   constructor(props) {
@@ -114,10 +114,6 @@ class RouteSchedule extends React.Component {
         <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
         <div className="schedule">
         <Toolbar style={{width: '100%', height: '6em'}}>
-          <ToolbarGroup>
-          <ToolbarTitle text='Schedule' />
-          </ToolbarGroup>
-          <ToolbarGroup>
           <ServicePicker
             services={this.state.availableServices}
             currentSvc={this.state.currentSvc}
@@ -130,7 +126,6 @@ class RouteSchedule extends React.Component {
             route={this.state.route} 
           />
           <PrintSchedule routePdf={routeDetailObj.pdf} />
-          </ToolbarGroup>
         </Toolbar>
         <ScheduleTable 
           schedule={this.state[this.state.currentSvc]} 

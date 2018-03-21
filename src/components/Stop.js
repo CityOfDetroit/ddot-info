@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import _ from 'lodash';
 import { Tabs, Tab } from 'material-ui/Tabs';
-import {grey300, grey200} from 'material-ui/styles/colors'
-import LiveIcon from 'material-ui/svg-icons/communication/speaker-phone'
-import ScheduleIcon from 'material-ui/svg-icons/action/schedule'
+import {grey300, grey200} from 'material-ui/colors'
+import LiveIcon from 'material-ui-icons/SpeakerPhone'
+import ScheduleIcon from 'material-ui-icons/Schedule'
 import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
 
 import Stops from '../data/stops.js';

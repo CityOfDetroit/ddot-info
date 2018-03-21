@@ -4,7 +4,7 @@ import _ from 'lodash';
 import buffer from '@turf/buffer';
 import bbox from '@turf/bbox';
 import WebMercatorViewport from 'viewport-mercator-project';
-import { Card, CardHeader } from 'material-ui/Card';
+import Card, { CardHeader } from 'material-ui/Card';
 
 import {defaultMapStyle, routeLineIndex, stopLabelIndex, stopPointIndex} from '../style.js'
 

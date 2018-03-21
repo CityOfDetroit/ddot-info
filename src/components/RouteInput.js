@@ -8,7 +8,7 @@ class RouteInput extends Component {
       <div>
         <TextField
           floatinglabeltext='Search routes by name or number'
-          hintText='E.g. "Woodward" or "53"'
+          hinttext='E.g. "Woodward" or "53"'
           value={this.props.input}
           onChange={this.props.onSearchChange} />
       </div>

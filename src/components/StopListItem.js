@@ -21,8 +21,8 @@ class StopListItem extends Component {
     }
 
     return (
-      <ListItem primaryText={Stops[this.props.id].name}
-        secondaryText=
+      <ListItem primarytext={Stops[this.props.id].name}
+        secondarytext=
           {routes.map((r, i) => (
             `${r}`
           )).join(",")}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import StaticMap from 'react-map-gl';
-import { Card, CardHeader } from 'material-ui/Card';
+import Card, { CardHeader } from 'material-ui/Card';
 import _ from 'lodash';
 
 import Helpers from '../helpers.js';

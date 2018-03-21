@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import _ from 'lodash';
-import { Tabs, Tab } from 'material-ui/Tabs';
+import Tabs, { Tab } from 'material-ui/Tabs';
 import {grey300, grey200} from 'material-ui/colors'
 import LiveIcon from 'material-ui-icons/SpeakerPhone'
 import ScheduleIcon from 'material-ui-icons/Schedule'
-import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
+import Toolbar from 'material-ui/Toolbar';
 
 import Stops from '../data/stops.js';
 import StopHeader from './StopHeader';
@@ -114,19 +114,14 @@ class Stop extends React.Component {
         <div className='routes'>
 
           <Toolbar style={{background: grey200}}>
-            <ToolbarGroup>
-              <ToolbarTitle text="Routes" style={{ color: 'black', fontWeight: 700}} />
-            </ToolbarGroup>
-            <ToolbarGroup style={{overflowX: 'scroll'}}>
             <Tabs
-              tabItemContainerStyle={{background: grey300}}
+              tabitemcontainerstyle={{background: grey300}}
               onChange={this.handleChange}
               value={this.state.slideIndex}>
               {stopRoutes.map((r, i) => (
                 <Tab label={<RouteBadge id={r}/>} style={{padding: '0em .5em', background: grey200}} value={i} />
               ))}
             </Tabs>
-            </ToolbarGroup>
           </Toolbar>
 
           <SwipeableViews
@@ -136,15 +131,11 @@ class Stop extends React.Component {
             {stopRoutes.map((r, i) => (
               <div className="">
               <Toolbar style={{alignItems: 'center', background: grey300}}>
-                <ToolbarGroup>
                   <RouteLink id={r} />
-                </ToolbarGroup>
-                <ToolbarGroup >
                 <Tabs onChange={this.handleRouteChange} value={this.state.routeStopType}>
                   <Tab icon={<LiveIcon color='black' style={{width: 40, fontSize: '1em'}}/>} value='next' style={{backgroundColor: grey300, color: 'black'}} />
                   <Tab icon={<ScheduleIcon color='black' />}  value='schedule' style={{backgroundColor: grey300, color: 'black', padding: '0em 2em'}}/>
                 </Tabs>
-                </ToolbarGroup>
               </Toolbar>
                 <div className="">
                 {this.state.routeStopType === 'next' ?

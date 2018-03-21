@@ -7,7 +7,7 @@ class RouteInput extends Component {
     return (
       <div>
         <TextField
-          label='Search routes by name or number'
+          label='Search by route name or number'
           placeholder='E.g. "Woodward" or "53"'
           value={this.props.input}
           onChange={this.props.onSearchChange}

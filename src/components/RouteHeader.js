@@ -9,9 +9,7 @@ import ChevronSVG from '../img/chevron.svg';
 import Info from '../img/info_outline.svg';
 
 class RouteHeader extends React.Component {
-
   render() {
-
     const tabs = [
       {label: "Route", path: `/route/${this.props.number}`},
       {label: "Stops", path: `/route/${this.props.number}/stops`},
@@ -45,19 +43,19 @@ class RouteHeader extends React.Component {
           </div>
         </div>
         <div>
-        <Tabs value={0}>
-          {
-            tabs.map(
-              ({label, path})=><Tab key={label} 
-                                    label={label} 
-                                    component={Link} 
-                                    to={path} />
-            )
-          }
-        </Tabs>
+          <Tabs value={0}>
+            {tabs.map(({ label, path }) => 
+              <Tab key={label} label={label} component={Link} to={path} />
+            )}
+          </Tabs>
         </div>
       </div>
     );
   }
 }
+
+RouteHeader.propTypes = {
+  number: PropTypes.string,
+}
+
 export default RouteHeader;

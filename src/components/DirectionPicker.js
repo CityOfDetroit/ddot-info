@@ -12,7 +12,7 @@ class DirectionPicker extends React.Component {
       <FormControl component="fieldset" required>
         <RadioGroup name="directions" value={this.props.currentDirection} onChange={this.props.onChange} style={{ marginLeft: '1em' }}>
           {this.props.directions.map(s => (
-            <FormControlLabel value={s} control={<Radio/>} label={`${_.capitalize(s)} to ${Stops[this.props.route.timepoints[s].slice(-1)].name}`} />
+            <FormControlLabel key={s} value={s} control={<Radio/>} label={`${_.capitalize(s)} to ${Stops[this.props.route.timepoints[s].slice(-1)].name}`} />
           ))}
         </RadioGroup>
       </FormControl>

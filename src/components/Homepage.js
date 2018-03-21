@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Card, { CardHeader, CardMedia, CardContent } from 'material-ui/Card';
+import Card, { CardContent } from 'material-ui/Card';
 
 import TopNav from './TopNav';
 import RouteSearch from './RouteSearch';
 import StopSearch from './StopSearch';
-
-import RouteMapSVG from '../img/ddot.svg'
+// import RouteMapSVG from '../img/ddot.svg';
 
 class Homepage extends Component {
   render() {
@@ -14,9 +13,9 @@ class Homepage extends Component {
       <div className="App">
         <TopNav />
         <Card className="explainer ma1">
-          <CardContent>
+          <CardContent style={{ fontSize: '1.2em' }}>
             <p>This app helps transit riders find bus schedules and real-time departure information for DDOT routes and bus stops.</p>
-            <p>Find your route or stop, or see which buses are running near your current location.</p>
+            <p>Find your route or stop below, or <Link to="/nearby">see which buses are running near your current location</Link>.</p>
           </CardContent>
         </Card>
         <div className="routes-homepage ma1">

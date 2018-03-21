@@ -1,19 +1,17 @@
 import React from 'react';
-import List  from 'material-ui/List';
+import Card, { CardHeader, CardContent } from 'material-ui/Card';
 
-import StopListItem from './StopListItem';
+import StopCard from './StopCard';
 
 const StopTransfers = ({ stops }) => (
-  <div className="transfers">
-    <List>
+  <Card className="transfers overflow-scroll ma1">
+    <CardHeader title="Transfer to other routes nearby" />
+    <CardContent>
       {stops.map((s, i) => (
-        <div key={i}>
-         <StopListItem id={s[0]}/>
-          {/* <StopCard id={s[0]} showTransfers={false} showDir /> */}
-        </div>
+        <StopCard key={i} id={s[0]} showTransfers={false} showDir />
       ))}
-    </List>
-  </div>
-)
+    </CardContent>
+  </Card>
+);
 
 export default StopTransfers;

@@ -16,13 +16,14 @@ const RouteDetails = ({ id }) => {
         </CardContent>
       </Card>
       <Card className="mv2">
+        <CardHeader title="Service overview" />
         {["Monday-Friday", "Saturday", "Sunday/Holiday"].map((d, i) => (
           <div key={i}>
             {obj.services[d] ?
               <Card key={i}>
                 <CardHeader
                   title={d}
-                  subtitle={obj.services[d].service_hours.length === 1 ? obj.services[d].service_hours[0] : `${obj.services[d].service_hours[0]} - ${obj.services[d].service_hours[1]}`} />
+                  subheader={obj.services[d].service_hours.length === 1 ? obj.services[d].service_hours[0] : `${obj.services[d].service_hours[0]} - ${obj.services[d].service_hours[1]}`} />
                 <CardContent>
                   <table className="w-100">
                     <tbody>

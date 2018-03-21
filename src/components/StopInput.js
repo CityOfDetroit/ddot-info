@@ -7,7 +7,7 @@ class StopInput extends Component {
     return (
       <div>
         <TextField
-          label='Search by street name or stop ID'
+          label='Search by street name or stop ID' 
           placeholder='E.g. "Michigan" or "1118"'
           value={this.props.input}
           onChange={this.props.onSearchChange}

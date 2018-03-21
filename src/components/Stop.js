@@ -30,7 +30,7 @@ class Stop extends React.Component {
       fetchedPredictions: false,
       multipleDirs: false,
       slideIndex: 0,
-      routeStopType: 'schedule'
+      routeStopType: 'next'
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -71,13 +71,13 @@ class Stop extends React.Component {
     .catch(e => console.log(e));
   }
 
-  handleChange(value) {
+  handleChange(event, value) {
     this.setState({
       slideIndex: value,
     });
   };
 
-  handleRouteChange(value) {
+  handleRouteChange(event, value) {
     this.setState({
       routeStopType: value,
     });
@@ -125,6 +125,7 @@ class Stop extends React.Component {
           </Toolbar>
 
           <SwipeableViews
+            axis='x'
             index={this.state.slideIndex}
             onChangeIndex={this.handleChange}
             >

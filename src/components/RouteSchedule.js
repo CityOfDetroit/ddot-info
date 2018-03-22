@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import _ from 'lodash';
+import Card, { CardContent } from 'material-ui/Card';
 
 import Schedules from '../data/schedules.js';
 import routeDetails from '../data/routeDetails.js';
@@ -12,8 +13,6 @@ import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
 import PrintSchedule from './PrintSchedule';
-
-import Toolbar from 'material-ui/Toolbar'
 
 class RouteSchedule extends React.Component {
   constructor(props) {
@@ -113,26 +112,27 @@ class RouteSchedule extends React.Component {
       <div className="App">
         <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
         <div className="schedule">
-        <Toolbar style={{width: '100%', height: '6em'}}>
-          <ServicePicker
-            services={this.state.availableServices}
-            currentSvc={this.state.currentSvc}
-            onChange={this.handleServiceChange}
-          />
-          <DirectionPicker 
-            directions={this.state.availableDirections}
-            currentDirection={this.state.currentDirection}
-            onChange={this.handleDirectionChange}
-            route={this.state.route} 
-          />
-          <PrintSchedule routePdf={routeDetailObj.pdf} />
-        </Toolbar>
-        <ScheduleTable 
-          schedule={this.state[this.state.currentSvc]} 
-          direction={this.state.currentDirection} 
-          liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
-          color={this.state.color}
-        />
+          <Card className="ma1">
+            <CardContent style={{ display: 'flex', flexWrap: 'wrap' }}>
+              <ServicePicker
+                services={this.state.availableServices}
+                currentSvc={this.state.currentSvc}
+                onChange={this.handleServiceChange} />
+              <DirectionPicker 
+                directions={this.state.availableDirections}
+                currentDirection={this.state.currentDirection}
+                onChange={this.handleDirectionChange}
+                route={this.state.route} />
+              <div>
+                <PrintSchedule routePdf={routeDetailObj.pdf} />
+              </div>
+            </CardContent>
+            <ScheduleTable 
+              schedule={this.state[this.state.currentSvc]} 
+              direction={this.state.currentDirection} 
+              liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
+              color={this.state.color} />
+          </Card>
         </div>
       </div>
     )

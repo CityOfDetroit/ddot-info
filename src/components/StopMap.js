@@ -24,7 +24,7 @@ class StopMap extends Component {
         bearing: 0,
         pitch: 0,
         width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 30 : window.innerWidth - 30,
-        height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8) - 98) : 225
+        height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8) - 78) : 225
       }
     }
 
@@ -33,6 +33,7 @@ class StopMap extends Component {
   }
 
   handleChange(event) {
+    console.log(event)
     this.setState({
       showSatellite: event.target.checked ? true : false
     });
@@ -54,7 +55,7 @@ class StopMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth * (3/8) - 30,
-          height: ((window.innerHeight - 75) * (5/8) - 98)
+          height: ((window.innerHeight - 75) * (5/8) - 78)
         }
       });
     }
@@ -101,9 +102,6 @@ class StopMap extends Component {
 
     return (
       <Card className="map" style={{ margin: 15 }}>
-        <CardHeader>
-          <MapSatelliteSwitch onChange={this.handleChange} />
-        </CardHeader>
         <StaticMap
           width={this.state.viewport.width}
           height={this.state.viewport.height}
@@ -114,6 +112,7 @@ class StopMap extends Component {
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}>
         </StaticMap>
+        <MapSatelliteSwitch onChange={this.handleChange} />
       </Card>
     )
   }

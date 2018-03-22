@@ -22,7 +22,7 @@ class BusRoute extends React.Component {
     
     return (
       <div className="BusRoute">
-        <RouteHeader number={this.props.match.params.name}/>
+        <RouteHeader number={this.props.match.params.name} page={this.props.match.url.split("/").slice(-1)}/>
         <RouteMap route={thisRoute} />
         <RouteDetails id={this.props.match.params.name} />
       </div>

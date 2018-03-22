@@ -19,7 +19,7 @@ const RoutePredictionList = ({ predictions, route, multipleDirs }) => (
           </ListItemIcon>
           <ListItemText primary={`${p.predicted ? moment(p.predictedArrivalTime).format('h:mma') : moment(p.scheduledArrivalTime).format('h:mma')}`} />
         </ListItem>
-      )) : <Card><CardContent>This</CardContent></Card>}
+      )) : <Card><CardContent>There are currently no real-time predictions available.</CardContent></Card>}
       </List>
   </div>
 ) 

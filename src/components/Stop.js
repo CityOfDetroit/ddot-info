@@ -110,9 +110,7 @@ class Stop extends React.Component {
     const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat]
     const stopTransfers = Stops[stopId.toString()].transfers
     const { slideIndex } = this.state
-    console.log(Stops[stopId.toString()])
 
-    console.log(stopTransfers)
     return (
       <div className='App'>
         <StopHeader id={stopId} name={stopName} />

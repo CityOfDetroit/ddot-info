@@ -9,6 +9,20 @@ import ChevronSVG from '../img/chevron.svg';
 import Info from '../img/info_outline.svg';
 
 class RouteHeader extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.handleChange = this.handleChange.bind(this)
+    this.state = {
+      currentTab: 0
+    }
+  }
+
+  handleChange = (event, value) => {
+    console.log(event, value)
+    this.setState({ currentTab: value })
+  }
+
   render() {
     const tabs = [
       {label: "Route", path: `/route/${this.props.number}`},
@@ -19,6 +33,7 @@ class RouteHeader extends React.Component {
     const thisRoute = Schedules[this.props.number];
     const color = thisRoute.color;
     const name = thisRoute.rt_name;
+    const { currentTab } = this.state
     
     return (
       <div className="nav header" style={{ background: '#004445' }}>
@@ -43,7 +58,7 @@ class RouteHeader extends React.Component {
           </div>
         </div>
         <div>
-          <Tabs value={0} textColor="white" style={{ fontSize: '1.2em' }}>
+          <Tabs value={currentTab} onChange={this.handleChange} textColor="white" style={{ fontSize: '1.2em' }}>
             {tabs.map(({ label, path }) => 
               <Tab key={label} label={label} component={Link} to={path} />
             )}

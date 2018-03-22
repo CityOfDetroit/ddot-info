@@ -109,7 +109,9 @@ class Stop extends React.Component {
     const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat]
     const stopTransfers = Stops[stopId.toString()].transfers
     const { slideIndex } = this.state
+    console.log(Stops[stopId.toString()])
 
+    console.log(stopTransfers)
     return (
       <div className='App'>
         <StopHeader id={stopId} name={stopName} />
@@ -123,7 +125,7 @@ class Stop extends React.Component {
                 value={slideIndex}
                 indicatorColor="red"
                 textColor="primary"
-                scrollable>
+                >
 
                 {stopRoutes.map((r, i) => (
                   <Tab label={<RouteBadge id={r[0]}/>} value={i} style={{minWidth: 40, width: 50}} />

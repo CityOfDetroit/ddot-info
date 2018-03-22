@@ -24,10 +24,11 @@ if __name__ == "__main__":
   
   def routes_near_stop(stop):
     query = """
-    select json_agg(b.stop_id) from gtfs.stops a
-        inner join gtfs.stops b on
-        st_dwithin(a.geom, b.geom, 0.0015)
-        where a.stop_id = '{}' and a.stop_id != b.stop_id;
+        select json_agg(distinct(ltrim(r.route_short_name, '0'))) as xfers from gtfs.stops a
+          inner join gtfs.shape_geoms b on st_dwithin(a.geom, b.the_geom, 0.0015)
+          inner join gtfs.trips t on b.shape_id = t.shape_id
+          inner join gtfs.routes r on r.route_id = t.route_id
+        where a.stop_id = '{}'
         """.format(stop)
     res = conn.execute(query)
     return res.fetchone()[0]
@@ -46,6 +47,25 @@ if __name__ == "__main__":
       return [route, list(thisRoute[0]['timepoints'].keys())[index]]
     except:
       return [route, '']
+
+  def get_best_xfer(origin_stop='7921', route='49', direction='eastbound'):
+    # turn direction into a direction_id
+    thisRouteDirections = [r['timepoints'].keys() for r in routes.routes if str(route) == r['id']]
+
+    direction_id = list(thisRouteDirections[0]).index(direction)
+    query = """
+        select b.stop_id from gtfs.stops a
+        inner join gtfs.stops b on st_dwithin(a.geom, b.geom, 0.0045)
+        inner join gtfs.stop_times st on b.stop_id = st.stop_id
+        inner join gtfs.trips tr on tr.trip_id = st.trip_id
+        inner join gtfs.routes rt on tr.route_id = rt.route_id
+        where a.stop_id = '{}'
+        and tr.direction_id = '{}'
+        and rt.route_short_name = '{}'
+        and a.stop_id != b.stop_id
+        order by st_distance(a.geom, b.geom) asc limit 1""".format(origin_stop, direction_id, route.zfill(3))
+    res = conn.execute(query)
+    return res.fetchone()[0]
 
   timepoint_edits = {
     # 43 Schoolcraft
@@ -69,8 +89,6 @@ if __name__ == "__main__":
   }
 
   for k in stops_object.keys():
-    print(k)
-
     routesList = []
     for r in stops_object[k]['routes']:
       routesList.append(stop_direction(k, r))
@@ -82,9 +100,25 @@ if __name__ == "__main__":
       if "align" in timepoint_edits[str(k)].keys():
         stops_object[k]['align'] = timepoint_edits[str(k)]['align']
       
-    og_routes = stops_object[k]['routes']
-    near = routes_near_stop(int(k))
-    addRPTC = False
+    xfers = routes_near_stop(k)
+
+    transferArray = []
+    if xfers and len(xfers) > 0:
+      for x in xfers:
+        # get possible directions for that route
+        try:
+          thisRoute = [r for r in routes.routes if str(x) == r['id']]
+          if thisRoute[0]:
+            routeDirs = thisRoute[0]['timepoints'].keys()
+            for d in routeDirs:
+              if [x,d] not in routesList:
+                transferArray.append([x, d, get_best_xfer(str(k), str(x), str(d))])
+        except: 
+          pass
+    stops_object[k]['transfers'] = transferArray
+    if len(stops_object[k]['transfers']) > 0:
+      print(stops_object[k])
+
     rptc_stops = [
       "8892",
       "8915",
@@ -101,25 +135,8 @@ if __name__ == "__main__":
       "8918",
       "8933",
       "8945"]
-
     rptc_routes = ['7','10','16','18','19','21','23','25','27','29','31','34','37','40','48','49','53']
-    if near and len(near) > 0:
-      transfers = []
-      for n in near:
-        if n in rptc_stops:
-          addRPTC = True
-        try:
-          rts = stops_object[int(n)]['routes']
-          diff = list(set(rts) - set(og_routes))
-          if len(list(diff)) > 0 and n not in rptc_stops:
-            transfers.append([n, list(diff)])
-        except:
-          pass
-      if addRPTC:
-        transfers.append(['rosa-parks-tc', ['7','10','16','18','19','21','23','25','27','29','31','34','37','40','48','49','53']])
-      stops_object[k]['transfers'] = transfers
-    else:
-      stops_object[k]['transfers'] = []
+
 
 
   stops_object["rosa-parks-tc"] = {

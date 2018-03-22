@@ -1,15 +1,18 @@
 import React from 'react';
 import Checkbox from 'material-ui/Checkbox';
+import {FormControlLabel} from 'material-ui';
 
 class MapSatelliteSwitch extends React.Component {
   render() {
     return (
-      <div>
-        <Checkbox
-          label="Satellite view"
-          onCheck={this.props.onChange}
-          style={{ marginBottom: '.2em' }}
+      <div className="ph2">
+        <FormControlLabel 
+          control={<Checkbox
+            onChange={this.props.onChange}
+          />}
+          label="Satellite"
         />
+
       </div>
     );
   }

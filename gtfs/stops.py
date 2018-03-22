@@ -3,6 +3,8 @@ import json
 engine = sqlalchemy.create_engine('postgresql://jimmy@localhost/gtfs')
 conn = engine.connect()
 
+import routes
+
 if __name__ == "__main__":
   query = """
       select 
@@ -10,7 +12,7 @@ if __name__ == "__main__":
       right(sp.stop_code, 2) as stop_dir,
       sp.stop_name, 
       sp.stop_lat, 
-      sp.stop_lon, 
+      sp.stop_lon,
       json_agg(distinct regexp_replace(rt.route_short_name, '^0{1,}', ''))
     from gtfs.stops sp
     inner join gtfs.stop_times st on sp.stop_id = st.stop_id
@@ -29,6 +31,21 @@ if __name__ == "__main__":
         """.format(stop)
     res = conn.execute(query)
     return res.fetchone()[0]
+
+  def stop_direction(stop, route):
+    query = """
+      select max(tr.direction_id) from gtfs.stops sp
+          inner join gtfs.stop_times st on sp.stop_id = st.stop_id
+          inner join gtfs.trips tr on tr.trip_id = st.trip_id
+          inner join gtfs.routes rt on tr.route_id = rt.route_id
+      where sp.stop_id = '{}' and route_short_name = lpad('{}', 3, '0')""".format(stop, route)
+    res = conn.execute(query)
+    index = int(res.fetchone()[0])
+    thisRoute = [r for r in routes.routes if str(route) == r['id']]
+    try:
+      return [route, list(thisRoute[0]['timepoints'].keys())[index]]
+    except:
+      return [route, '']
 
   timepoint_edits = {
     # 43 Schoolcraft
@@ -52,6 +69,12 @@ if __name__ == "__main__":
   }
 
   for k in stops_object.keys():
+    print(k)
+
+    routesList = []
+    for r in stops_object[k]['routes']:
+      routesList.append(stop_direction(k, r))
+    stops_object[k]['routes'] = routesList
 
     # add offset
     if str(k) in timepoint_edits.keys():
@@ -105,5 +128,5 @@ if __name__ == "__main__":
     "transfers": [],
     "routes": rptc_routes
   }
-  with open("./src/data/stops.js", 'w') as f:
+  with open("stops.js", 'w') as f:
     f.write("const Stops = {}; export default Stops;".format(json.dumps(stops_object)))

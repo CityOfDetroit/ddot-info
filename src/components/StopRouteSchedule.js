@@ -26,7 +26,7 @@ class StopRouteSchedule extends Component {
             <h4 style={{marginTop: 0, fontWeight: 300, color: grey800}}>Buses stop here at:</h4>
             <GridList cellHeight={20} cols={Math.ceil(rds.scheduleStopTimes) / 8} padding={0} style={{
                 maxHeight: 100 + Math.ceil(rds.scheduleStopTimes.length) * 3, 
-                maxWidth: Math.ceil(rds.scheduleStopTimes.length / 10) * 90,
+                maxWidth: 50 + Math.ceil(rds.scheduleStopTimes.length / 10) * 90,
                 flexFlow: 'column wrap', 
                 justifyContent: 'start'}}>
               {rds.scheduleStopTimes.map((sst, i) => (

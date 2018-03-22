@@ -11,13 +11,13 @@ class StopLink extends Component {
 
     if (Stops[this.props.id]) {
       if (this.props.showTransfers && Stops[this.props.id] && Stops[this.props.id].transfers.length > 0) {
-        routes = Stops[this.props.id].routes;
+        routes = Stops[this.props.id].routes.map(r => r[0]);
         Stops[this.props.id].transfers.map(t => {
           return routes = routes.concat(t[1])
         })
         routes = Array.from(new Set(routes)).sort()
       } else {
-        routes = Stops[this.props.id].routes.sort()
+        routes = Stops[this.props.id].routes.map(r => r[0]).sort()
       }
     }
 

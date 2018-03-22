@@ -32,10 +32,10 @@ class StopCard extends Component {
         <span className="f6 pv1">Stop ID #{this.props.id}</span>
         <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
         {routes.map((r, i) => (
-          <Link className={exclude.toString() === r.toString() ? 'dn' : "dim black link underline-hover hover-mid-gray glow mr2"} to={{pathname: `/route/${r}`}} key={i}>
-            <div className={exclude.toString() === r.toString() ? `dn` : `white fw7 f5 tc mv1`} style={exclude.toString() === r.toString() ? {display: 'none'} : { display: 'flex', alignItems:'center',  justifyContent: 'center', width: '2em', height: '2em', backgroundColor: Schedules[r].color }}>
+          <Link className={exclude.toString() === r[0].toString() ? 'dn' : "dim black link underline-hover hover-mid-gray glow mr2"} to={{pathname: `/route/${r}`}} key={i}>
+            {/* <div className={exclude.toString() === r[0].toString() ? `dn` : `white fw7 f5 tc mv1`} style={exclude.toString() === r[0].toString() ? {display: 'none'} : { display: 'flex', alignItems:'center',  justifyContent: 'center', width: '2em', height: '2em', backgroundColor: Schedules[r[0]].color }}>
               {r}
-            </div> 
+            </div>  */}
           </Link>
         ))}
         </div>

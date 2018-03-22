@@ -23,19 +23,11 @@ import ReactGA from 'react-ga';
 ReactGA.initialize('UA-107915075-4');
 
 const muiTheme = createMuiTheme({
-  fontFamily: 'Gibson Detroit Regular',
-  checkbox: {
-    checkedColor: '#b0d27b',
+  typography: {
+    fontFamily:
+      'Gibson Detroit Regular' +
+      '"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
   },
-  radioButton: {
-    checkedColor: '#b0d27b',
-  },
-  tabs: {
-    backgroundColor: '#b0d27b',
-  },
-  textField: {
-    focusColor: '#004445',
-  }
 });
 
 class GAListener extends React.Component {

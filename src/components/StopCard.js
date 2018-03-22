@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Stops from '../data/stops.js';
-import Schedules from '../data/schedules.js';
 
 class StopCard extends Component {
   render() {

@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import _ from 'lodash';
 import Tabs, { Tab } from 'material-ui/Tabs';
-import {grey300, grey200} from 'material-ui/colors'
+import { grey300 } from 'material-ui/colors'
 import LiveIcon from 'material-ui-icons/SpeakerPhone'
 import ScheduleIcon from 'material-ui-icons/Schedule'
 import Toolbar from 'material-ui/Toolbar';
-import Chip from 'material-ui/Chip'
+import { AppBar } from 'material-ui';
 
 import Stops from '../data/stops.js';
 import StopHeader from './StopHeader';
@@ -19,8 +19,6 @@ import RouteLink from './RouteLink';
 import RoutePredictionList from './RoutePredictionList';
 import Schedules from '../data/schedules.js'
 import Helpers from '../helpers';
-import {AppBar} from 'material-ui';
-import Card, {CardContent} from 'material-ui/Card';
 
 class Stop extends React.Component {
   constructor(props) {

@@ -7,12 +7,22 @@ import RouteMap from './RouteMap';
 import RouteDetails from './RouteDetails';
 
 class BusRoute extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.onTabsChange = this.onTabsChange.bind(this)
+  }
+
+  onTabsChange(event) {
+    console.log(event)
+  }
+ 
   render() {
     const thisRoute = Schedules[this.props.match.params.name];
     
     return (
       <div className="BusRoute">
-        <RouteHeader color={thisRoute.color} number={this.props.match.params.name} name={thisRoute.rt_name} />
+        <RouteHeader number={this.props.match.params.name} page={this.props.match.url.split("/").slice(-1)}/>
         <RouteMap route={thisRoute} />
         <RouteDetails id={this.props.match.params.name} />
       </div>

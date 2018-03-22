@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import StaticMap from 'react-map-gl';
-import Helpers from '../helpers.js';
+import Card, { CardHeader } from 'material-ui/Card';
+import _ from 'lodash';
 
+import Helpers from '../helpers.js';
 import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Stops from '../data/stops.js';
-
-import _ from 'lodash';
 
 import {defaultMapStyle, routeLineIndex, highlightPointIndex, highlightLabelIndex, stopPointIndex, stopLabelIndex} from '../style.js';
 
 class StopMap extends Component {
-
   constructor(props) {
     super(props)
 
@@ -24,8 +23,8 @@ class StopMap extends Component {
         zoom: 17,
         bearing: 0,
         pitch: 0,
-        width: window.innerWidth > 650 ? window.innerWidth / 2 : window.innerWidth,
-        height: window.innerWidth > 650 ? window.innerHeight - 100 : 225
+        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 30 : window.innerWidth - 30,
+        height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8) - 78) : 225
       }
     }
 
@@ -34,6 +33,7 @@ class StopMap extends Component {
   }
 
   handleChange(event) {
+    console.log(event)
     this.setState({
       showSatellite: event.target.checked ? true : false
     });
@@ -54,8 +54,8 @@ class StopMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth / 2,
-          height: window.innerHeight - 100
+          width: window.innerWidth * (3/8) - 30,
+          height: ((window.innerHeight - 75) * (5/8) - 78)
         }
       });
     }
@@ -63,7 +63,7 @@ class StopMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth,
+          width: window.innerWidth -30,
           height: 225
         }
       });
@@ -92,17 +92,16 @@ class StopMap extends Component {
     })  
 
     // set labels for transfers
-    style = style.setIn(['layers', stopPointIndex, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 0)))
-    style = style.setIn(['layers', stopLabelIndex, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 0)))
+    style = style.setIn(['layers', stopPointIndex, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 2)))
+    style = style.setIn(['layers', stopLabelIndex, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 2)))
     style = style.setIn(['layers', stopLabelIndex, 'layout', 'visibility'], 'visible')
 
     // eventually set routes?
-    const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 1).concat(stop.routes))))
+    const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 0).concat(stop.routes))))
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))
 
     return (
-      <div className="map">
-        <MapSatelliteSwitch onChange={this.handleChange} />
+      <Card className="map" style={{ margin: 15 }}>
         <StaticMap
           width={this.state.viewport.width}
           height={this.state.viewport.height}
@@ -110,9 +109,11 @@ class StopMap extends Component {
           longitude={this.state.viewport.longitude}
           zoom={this.state.viewport.zoom}
           mapStyle={style}
-          mapboxApiAccessToken={Helpers.mapboxApiAccessToken} >
-        </StaticMap> 
-      </div>
+          mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
+          attributionControl={false}>
+        </StaticMap>
+        <MapSatelliteSwitch onChange={this.handleChange} />
+      </Card>
     )
   }
 }

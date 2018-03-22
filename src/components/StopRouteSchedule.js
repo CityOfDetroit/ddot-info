@@ -4,38 +4,57 @@ import Helpers from '../helpers.js';
 import _ from 'lodash';
 import chroma from 'chroma-js';
 import Schedules from '../data/schedules.js'
-
+import Stops from '../data/stops.js'
+import GridList, {GridListTile} from 'material-ui/GridList';
+import Card, {CardHeader, CardContent} from 'material-ui/Card'
+import Chip from 'material-ui/Chip';
 import moment from 'moment';
+import { grey800 } from 'material-ui/colors';
 
 class StopRouteSchedule extends Component {
-
   render() {
     return (
       <div>
-        {this.props.schedules.length > 0 ? Helpers.cleanScheduleHeadsign(this.props.schedules[0]).stopRouteDirectionSchedules.map((rds, i) => (
-          (<div className="pa1" key={i} style={{background: '#fff', margin: '.25em'}}>
-          <div style={{display: 'flex', alignItems: 'center'}}>
-            <h4 style={{paddingBottom: '.2em', margin: 0, color: '#222'}}>{_.capitalize(rds.tripHeadsign)}</h4>
-          </div>
-          <div style={{ display: 'flex', paddingBottom: '.5em', flexDirection: 'column', overflowX: 'scroll', maxHeight: ((rds.scheduleStopTimes.length / 6 )* 20) + 30, flexWrap: 'wrap', alignContent: 'flex-start', textAlign: 'left' }}>
-            {rds.scheduleStopTimes.map(sst => (
-              <span key={sst.tripId} 
-                style={{
-                  fontSize: '.9em', 
-                  minWidth: '3.5em', 
-                  fontWeight: moment(sst.arrivalTime).format('a') === 'am' ? 300 : 700,
-                  borderRight: '1px solid #aaa',
+        {Helpers.cleanScheduleHeadsign(this.props.schedules[0]).stopRouteDirectionSchedules.map((rds, i) => (
+          <Card style={{margin: 15, padding: 10}}>
+          <CardHeader
+            title={_.capitalize(rds.tripHeadsign)}
+            subheader={`to ${Stops[Schedules[this.props.route].timepoints[rds.tripHeadsign].slice(-1)[0]].name}`}
+            style={{padding: '16px 10px 0px 10px'}}
+          />
+          <CardContent style={{padding: 10}}>
+            <h4 style={{marginTop: 0, fontWeight: 300, color: grey800}}>Buses stop here at:</h4>
+            <GridList cellHeight={20} cols={Math.ceil(rds.scheduleStopTimes) / 8} padding={0} style={{
+                maxHeight: 100 + Math.ceil(rds.scheduleStopTimes.length) * 3, 
+                maxWidth: 50 + Math.ceil(rds.scheduleStopTimes.length / 10) * 90,
+                flexFlow: 'column wrap', 
+                justifyContent: 'start'}}>
+              {rds.scheduleStopTimes.map((sst, i) => (
+                <GridListTile style={{
                   backgroundColor: this.props.predictions.indexOf(sst.tripId) > -1 ? chroma(Schedules[this.props.route].color).alpha(0.25).css() : 'rgba(255,255,255,1)',
-                  lineHeight: '1.25em',
-                  textAlign: 'center'
-                }}>{moment(sst.arrivalTime).format('h:mm')}</span>
-            ))}
-          </div>
-          </div>)
-        )) : `No stops today.`}
+                  textAlign: 'center',
+                  verticalAlign: 'center',
+                  letterSpacing: '-0.25px',
+                  borderRight: '1px solid #ccc',
+                  fontSize: '.9em',
+                  paddingTop: '.25em',
+                  fontWeight: moment(sst.arrivalTime).format('a') === 'am' ? 300 : 700,
+                }}>
+                  {(i === 0 || moment(rds.scheduleStopTimes[i-1].arrivalTime).format('a') !== moment(sst.arrivalTime).format('a')) ? moment(sst.arrivalTime).format('h:mma').slice(0,-1) : moment(sst.arrivalTime).format('h:mm')}
+                </GridListTile>
+              ))
+              }
+            </GridList>
+          </CardContent>
+            <div style={{display: 'flex'}}>
+              <Chip style={{ margin: 6 }} labelStyle={{ fontSize: '.7em' }} label="am times" />
+              <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} label={<strong>pm times</strong>} />
+              <Chip style={{ margin: 6, backgroundColor: chroma(Schedules[this.props.route].color).alpha(0.25).css() }} labelStyle={{ fontSize: '.7em' }} label="next departures" />
+            </div>
+          </Card>
+        ))}
       </div>
-    )
-  }
+    )}
 }
 
 StopRouteSchedule.propTypes = {

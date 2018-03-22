@@ -26,10 +26,7 @@ class RouteMap extends Component {
     const firstDir = Object.keys(this.props.route.schedules.weekday)[0]
     const firstDirTimepoints = this.props.route.timepoints[firstDir]
     console.log(firstDirTimepoints)
-    const timepointFeatures = firstDirTimepoints.map(t => {
-
-      console.log(Stops[t].id)
-      
+    const timepointFeatures = firstDirTimepoints.map(t => {      
       return {
         "type": "Feature",
         "geometry": {
@@ -47,6 +44,22 @@ class RouteMap extends Component {
     })
 
     const route = this.props.route
+
+    const stopFeatures = _.filter(Stops, s => { return s.routes.map(r => r[0]).indexOf(route.id) > -1 }).map(t => {
+      return {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [t.lon, t.lat]
+        },
+        "properties": {
+          "id": t.id,
+          "name": t.name.toUpperCase().indexOf('ROSA PARKS') > -1 ? "Rosa Parks TC" : t.name,
+          "stop_code": t.dir,
+        }
+      }
+    });
+
     const viewport = new WebMercatorViewport({width: window.innerWidth > 650 ? window.innerWidth / 2 : window.innerWidth, height: window.innerWidth > 650 ? window.innerHeight - 100 : 225});
     const bound = viewport.fitBounds(route.bbox,
       { padding: window.innerWidth > 650 ? 50 : window.innerWidth / 20 }
@@ -79,6 +92,7 @@ class RouteMap extends Component {
       fetched: false,
       tripIds: tripIds,
       timepointFeatures: timepointFeatures,
+      stopFeatures: stopFeatures,
       showTimepoints: false
     };
 
@@ -161,12 +175,11 @@ class RouteMap extends Component {
 
     let style = defaultMapStyle;
     style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(route.id, 10));
+    style = style.setIn(['sources', 'timepoints', 'data'], {"type": "FeatureCollection", "features": this.state.timepointFeatures})
+    style = style.setIn(['sources', 'busstops', 'data'], {"type": "FeatureCollection", "features": this.state.stopFeatures})
 
-    if (this.state.showTimepoints) {
-      style = style.setIn(['sources', 'timepoints', 'data'], {"type": "FeatureCollection", "features": this.state.timepointFeatures})
-      style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-color'], chroma(this.props.route.color).darken(2).hex())
-      style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-halo-color'], "#fff")
-    }
+    style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-color'], chroma(this.props.route.color).darken(2).hex())
+    style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-halo-color'], "#fff")
 
     if (this.state.showRealtime) {
       style = style.setIn(['layers', realtimeLabelIndex, 'layout', 'visibility'], 'none');

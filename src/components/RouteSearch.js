@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Card, { CardHeader, CardContent } from 'material-ui/Card';
 
 import RouteInput from './RouteInput';
 import RoutesList from './RoutesList';
@@ -51,13 +52,13 @@ class RouteSearch extends Component {
 
   render() {
     return (
-      <div className="pa3" style={{background: 'white'}}>
-        <div className="pb3" 
-          style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
-        <span className="fw7 f3">Routes</span>
-        <RouteInput input={this.state.input} onSearchChange={this.handleSearchChange} /></div>
-        { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : '' }
-      </div>
+      <Card>
+        <CardHeader title="Routes" />
+        <CardContent>
+          <RouteInput input={this.state.input} onSearchChange={this.handleSearchChange} />
+          { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : '' }
+        </CardContent>
+      </Card>
     )
   }
 }

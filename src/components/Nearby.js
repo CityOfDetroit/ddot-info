@@ -5,7 +5,6 @@ import { geolocated } from 'react-geolocated';
 import FeaturesNearLocation from './FeaturesNearLocation';
 
 class Nearby extends React.Component {
-
   render() {
     return (
       !this.props.isGeolocationAvailable
@@ -13,10 +12,10 @@ class Nearby extends React.Component {
         ? <div>Geolocation is not enabled</div> : this.props.coords
           ? 
           <div>
-              <FeaturesNearLocation coords={this.props.coords} />
-            </div>
+            <FeaturesNearLocation coords={this.props.coords} />
+          </div>
           : <div>Getting the location data&hellip;</div>
-    )
+    );
   }
 }
 

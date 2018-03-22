@@ -1,26 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-
 import Stops from '../data/stops.js';
 
+import Radio, {RadioGroup} from 'material-ui/Radio';
+import { FormControl, FormControlLabel  } from 'material-ui/Form';
+
 class DirectionPicker extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = { 
-      selectedOption: props.currentDirection 
-    }
-  }
-
   render() {
     return (
-      <select className="fw7 f6 pa2" onChange={this.props.onChange} style={{border: '3px solid #ddd'}}>
-        {this.props.directions.map(s => (
-          <option className="fw5" value={s} key={s}>{_.capitalize(s)} to {Stops[this.props.route.timepoints[s].slice(-1)].name}</option>
-        ))}
-      </select>
-    )
+      <FormControl component="fieldset" required>
+        <RadioGroup name="directions" value={this.props.currentDirection} onChange={this.props.onChange}>
+          {this.props.directions.map(s => (
+            <FormControlLabel key={s} value={s} control={<Radio/>} label={`${_.capitalize(s)} to ${Stops[this.props.route.timepoints[s].slice(-1)].name}`} />
+          ))}
+        </RadioGroup>
+      </FormControl>
+    );
   }
 }
 

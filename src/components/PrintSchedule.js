@@ -1,20 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import PdfSVG from '../img/pdf.svg';
+import Card, { CardContent } from 'material-ui/Card';
+import Chip from 'material-ui/Chip';
+import Avatar from 'material-ui/Avatar';
+import PdfIcon from 'material-ui-icons/PictureAsPdf';
 
 const PrintSchedule = ({ routePdf }) => (
-  <div style={{ display: 'flex', alignItems: 'center' }}>
-    <span className="fw7 mr2">Download schedule as PDF:</span>
-    {routePdf.map((p, i) => 
-      <a href={p} key={i}>
-        <div className="pv2 f6 mr2" style={{ display: 'flex', alignItems:'center' }}>
-          <img src={PdfSVG} alt="download PDF" className="ph1" />
-          {routePdf.length === 1 ? `All services` :  i === 0 ? `Monday-Friday` : `Saturday-Sunday` }
-        </div>
-      </a>
-    )}
-  </div>
+  <Card>
+    <CardContent style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
+      <div style={{ marginRight: '.5em', fontSize: '1.2em' }}>Download schedule:</div>
+      {routePdf.map((p, i) => 
+        <Chip 
+          key={i} 
+          style={{ marginRight: '.5em' }} 
+          label={<a href={p} style={{ textDecoration: 'none' }}>{routePdf.length === 1 ? `All service` :  i === 0 ? `Weekday` : `Saturday-Sunday` }</a>} 
+          avatar={<Avatar><PdfIcon /></Avatar>} />
+      )}
+    </CardContent>
+  </Card>
 );
 
 PrintSchedule.propTypes = {

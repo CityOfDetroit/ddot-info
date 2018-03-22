@@ -1,32 +1,34 @@
-import React from 'react'
+import React from 'react';
+import Card, { CardHeader, CardContent } from 'material-ui/Card';
 
-import RouteLink from './RouteLink'
-import StopCard from './StopCard'
+import RouteLink from './RouteLink';
+import StopCard from './StopCard';
 
 class NearbyList extends React.Component {
-    render() {
-        console.log(this.props.data)
-        return (
-            <div className="details pa3">
-                <span className="db f3 fw5">Nearby routes</span>                
-                <div className="overflow-scroll">
-                    {this.props.data.data.references.routes.map((r, i) => (
-                    <div className="mv2" key={i}>
-                        <RouteLink id={parseInt(r.shortName, 10)}/>
-                    </div>
-                    ))}
-                </div>
-
-
-                <span className="db f3 fw5 ma2 mt4">Nearby stops</span>                
-                <div className="h5 overflow-scroll pa2">
-                    {this.props.data.data.list.map((a, i) => (
-                        <StopCard id={a.id.slice(5,)} key={i} />
-                    ))}
-                </div>
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className="details pa2">
+        <Card className="mv2">
+          <CardHeader title="Nearby routes" />
+          <CardContent className="overflow-scroll">
+            {this.props.data.data.references.routes.map((r, i) => (
+              <div className="mv1" key={i}>
+                <RouteLink id={parseInt(r.shortName, 10)} />
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+        <Card className="mv2">
+          <CardHeader title="Nearby stops" />
+          <CardContent className="h5 overflow-scroll">
+            {this.props.data.data.list.map((a, i) => (
+              <StopCard id={a.id.slice(5, )} key={i} />
+            ))}
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 }
 
 export default NearbyList;

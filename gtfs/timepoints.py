@@ -167,6 +167,9 @@ def get_route_bbox(route_id):
     bbox = json.loads(res.fetchone()[0])
     return [bbox['coordinates'][0][0], bbox['coordinates'][0][2]]
 
+def get_stopseq_for_direction(route_id, direction):
+    print(route_id, direction)
+
 def get_route(route):
     services = {
         1: {},
@@ -179,7 +182,8 @@ def get_route(route):
                 sched_json = json.loads(get_schedule(route['rt_id'], svc, i).to_json(orient='split'))
             except IndexError:
                 continue
-            sched_json['stops'] = sched_json['columns']
+            sched_json['timepoints'] = sched_json['columns']
+            get_stopseq_for_direction(route, i)
             trips = []
             for index, trip in enumerate(sched_json['index']):
                 trips.append({"trip_id": trip, "timepoints": sched_json['data'][index]})
@@ -197,18 +201,17 @@ def get_route(route):
             elif s == 3:
                 services['sunday'] = services[s]
         del services[s]
-    test_service = [k for k in route['timepoints'].keys()]
-    print(test_service[0])
-    for s in ['weekday', 'saturday', 'sunday']:
-        if len(services[s][test_service[0]]['stops']) == 0:
-            del services[s]
+    # test_service = [k for k in route['timepoints'].keys()]
+    # for s in ['weekday', 'saturday', 'sunday']:
+    #     if len(services[s][test_service[0]]['stops']) == 0:
+    #         del services[s]
     route['schedules'] = services
     route['bbox'] = get_route_bbox(route['id'])
     return route
 
 if __name__ == "__main__":
     file_object = {}
-    for r in routes:
+    for r in routes[:5]:
         print("{} - {}".format(r['id'], r['rt_name']))
         route_json = get_route(r)
         file_object[r['id']] = route_json

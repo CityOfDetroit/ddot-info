@@ -1,38 +1,43 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Card, { CardContent } from 'material-ui/Card';
 
 import TopNav from './TopNav';
 import RouteSearch from './RouteSearch';
 import StopSearch from './StopSearch';
-
-import RouteMapSVG from '../img/ddot.svg'
+// import RouteMapSVG from '../img/ddot.svg';
 
 class Homepage extends Component {
   render() {
     return (
       <div className="App">
         <TopNav />
-        <div className="explainer ma2">
-          <p>This app helps transit riders find bus schedules and real-time arrival information for DDOT routes and bus stops.</p>
-          <p>Find your route or stop, or see which buses are running near your current location.</p>
-        </div>
-        <div className="routes">
+        <Card className="explainer ma1">
+          <CardContent style={{ fontSize: '1.2em' }}>
+            <p>This app helps transit riders find bus schedules and real-time departure information for DDOT routes and bus stops.</p>
+            <p>Find your route or stop below, or <Link to="/nearby">see which buses are running near your current location</Link>.</p>
+          </CardContent>
+        </Card>
+        <div className="routes-homepage ma1">
           <RouteSearch />
-          {/* <Legend /> */}
         </div>
-        <div className="stops">
+        <div className="stops ma1">
           <StopSearch />
         </div>
-        <div className="systemMap">
-          <span className="fw7 f3 ph3">
-            <Link to="/nearby" className="black dim" style={{ textDecoration: 'none' }}>Find service nearby</Link>
-          </span>
-          <div className="ma3 pa3" style={{ border: ".5em solid #eee", borderRadius: "1.5em" }}>
-            <Link to="/nearby">
-              <img src={RouteMapSVG} alt="System map" />
-            </Link>
-          </div>
+        {/* <div className="systemMap">
+          <Card style={{ maxWidth: '500px', maxHeight: '350px', margin: '1em' }}>
+            <CardHeader title="Nearby" />
+            <CardContent>
+              <Link to="/nearby">
+                <CardMedia
+                  image={RouteMapSVG}
+                  title="DDOT System Map" />
+              </Link>
+            </CardContent>
+          </Card>
         </div>
+        <div className="footer-homepage" style={{ backgroundColor: '#eee' }}>
+        </div> */}
       </div>
     );
   }

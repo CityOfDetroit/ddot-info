@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
+import Radio, {RadioGroup} from 'material-ui/Radio';
+import { FormControl, FormControlLabel } from 'material-ui/Form';
+
 class ServicePicker extends React.Component {
   constructor(props) {
     super(props);
@@ -13,12 +16,14 @@ class ServicePicker extends React.Component {
 
   render() {
     return (
-      <select className="fw7 f6 pa2 mr2" style={{border: '3px solid #ddd'}} onChange={this.props.onChange}>
-        {this.props.services.map(s => (
-          <option className="fw5" value={s} key={s}>{_.capitalize(s)}</option>
-        ))}
-      </select>
-    )
+      <FormControl component="fieldset" required>
+        <RadioGroup name="serviceDays" value={this.props.currentSvc} onChange={this.props.onChange}>
+          {this.props.services.map(s => (
+            <FormControlLabel key={s} value={s} control={<Radio/>} label={_.capitalize(s)} />
+          ))}
+        </RadioGroup>
+      </FormControl>
+    );
   }
 }
 

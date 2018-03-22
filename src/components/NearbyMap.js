@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import StaticMap from 'react-map-gl';
-import Helpers from '../helpers.js'
-import _ from 'lodash'
-
+import _ from 'lodash';
 import buffer from '@turf/buffer';
 import bbox from '@turf/bbox';
+import WebMercatorViewport from 'viewport-mercator-project';
+import Card, { CardHeader } from 'material-ui/Card';
 
 import {defaultMapStyle, routeLineIndex, stopLabelIndex, stopPointIndex} from '../style.js'
 
-import WebMercatorViewport from 'viewport-mercator-project';
-
 import MapSatelliteSwitch from './MapSatelliteSwitch';
+import Helpers from '../helpers.js';
 
 class NearbyMap extends Component {
-
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       showSatellite: false,
@@ -30,13 +28,13 @@ class NearbyMap extends Component {
       }
     }
 
-    this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
     this.setState({
       showSatellite: event.target.checked ? true : false
-    })
+    });
   }
 
   _resize = () => {
@@ -48,8 +46,7 @@ class NearbyMap extends Component {
           height: window.innerHeight - 100
         }
       });
-    }
-    else {
+    } else {
       this.setState({
         viewport: {
           ...this.state.viewport,
@@ -58,35 +55,31 @@ class NearbyMap extends Component {
         }
       });
     }
-  };
+  }
 
   componentDidMount() {
     window.addEventListener('resize', this._resize);
   }
 
   render() {
-
-    console.log(this.props)
-
     // show all nearby stops
-    const stopIds = _.map(this.props.data.data.list, s => { return s.id.slice(5) })
-    let style = defaultMapStyle
-    style = style.setIn(['layers', stopPointIndex, 'filter'], ["in", "stop_id"].concat(stopIds))
-    style = style.setIn(['layers', stopLabelIndex, 'filter'], ["in", "stop_id"].concat(stopIds))
-    style = style.setIn(['layers', stopLabelIndex, 'layout', 'visibility'], 'visible')
-    style = style.setIn(['layers', stopPointIndex, 'layout', 'visibility'], 'visible')
+    const stopIds = _.map(this.props.data.data.list, s => { return s.id.slice(5) });
+    let style = defaultMapStyle;
+    style = style.setIn(['layers', stopPointIndex, 'filter'], ["in", "stop_id"].concat(stopIds));
+    style = style.setIn(['layers', stopLabelIndex, 'filter'], ["in", "stop_id"].concat(stopIds));
+    style = style.setIn(['layers', stopLabelIndex, 'layout', 'visibility'], 'visible');
+    style = style.setIn(['layers', stopPointIndex, 'layout', 'visibility'], 'visible');
 
-    style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none')
+    style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none');
     _.forEach(style.toJS().layers, (l, i) => {
       if(l['source-layer'] === 'road') {
         style = style.setIn(['layers', i, 'layout', 'visibility'], this.state.showSatellite ? 'none' : 'visible')
       }
-    })  
-
+    });
 
     // show all nearby routes
-    const routeIds = _.map(this.props.data.data.references.routes, r => { return parseInt(r.shortName, 10)})
-    style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(_.map(routeIds, r => { return r.toString() })))
+    const routeIds = _.map(this.props.data.data.references.routes, r => { return parseInt(r.shortName, 10)});
+    style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(_.map(routeIds, r => { return r.toString() })));
 
     // set data for geolocated source to coords
     const geolocatedPoint = [
@@ -101,12 +94,13 @@ class NearbyMap extends Component {
           ]
         }
       }
-    ]
-    style = style.setIn(['sources', 'geolocated', 'data'], {"type": "FeatureCollection", "features": geolocatedPoint})
+    ];
+
+    style = style.setIn(['sources', 'geolocated', 'data'], {"type": "FeatureCollection", "features": geolocatedPoint});
 
     // making some walking dist radii
-    const walkRadii = [buffer(geolocatedPoint[0].geometry, 250, {units: 'meters'})]
-    const radiusBbox = bbox(walkRadii[0])
+    const walkRadii = [buffer(geolocatedPoint[0].geometry, 250, {units: 'meters'})];
+    const radiusBbox = bbox(walkRadii[0]);
 
     const viewport = new WebMercatorViewport({width: this.state.viewport.width, height: this.state.viewport.height});
     const bound = viewport.fitBounds(
@@ -115,14 +109,15 @@ class NearbyMap extends Component {
       [radiusBbox[2], radiusBbox[3]]
     ],
       {padding: window.innerWidth > 650 ? 50 : window.innerWidth / 30}
-    )
+    );
 
-
-    style = style.setIn(['sources', 'walk-radius', 'data'], {"type": "FeatureCollection", "features": walkRadii})
+    style = style.setIn(['sources', 'walk-radius', 'data'], {"type": "FeatureCollection", "features": walkRadii});
 
     return (
-      <div className="map">
-        <MapSatelliteSwitch onChange={this.handleChange} />
+      <Card className="map">
+        <CardHeader title="Service nearby your location">
+          <MapSatelliteSwitch onChange={this.handleChange} />
+        </CardHeader>
         <StaticMap
           width={this.state.viewport.width}
           height={this.state.viewport.height}
@@ -132,8 +127,8 @@ class NearbyMap extends Component {
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} >
         </StaticMap> 
-      </div>
-    )
+      </Card>
+    );
   }
 }
 

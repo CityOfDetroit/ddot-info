@@ -1,59 +1,76 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link }  from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+import Tabs, {Tab} from 'material-ui/Tabs'
 
 import Schedules from '../data/schedules.js';
 import ChevronSVG from '../img/chevron.svg';
 import Info from '../img/info_outline.svg';
 
-const RouteHeader = ({ number }) => {
-  const thisRoute = Schedules[number];
-  const color = thisRoute.color;
-  const name = thisRoute.rt_name;
-  const page = window.location.pathname.split('/').slice(-1)[0];
+class RouteHeader extends React.Component {
 
-  return (
-    <div className="nav header" style={{ background: '#004445' }}>
-      <div className="pa3" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: window.innerWidth < 650 ? '1em' : '1.5em' }}>
-        <div>
-          <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start' }}>
-            <Link className="link dim pr3" to={{ pathname: `/` }}>
-              <img src={ChevronSVG} className="" alt="Back to home" />
-            </Link>
-            <div className='white fw7 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: color }}>
-              {number}
-            </div> 
-            <div className='white glow ph2'>
-              {name}
+  constructor(props) {
+    super(props)
+    this.handleChange = this.handleChange.bind(this)
+    this.state = {
+      currentTab: 0
+    }
+  }
+
+  handleChange = (event, value) => {
+    console.log(event, value)
+    this.setState({ currentTab: value })
+  }
+
+  render() {
+    const tabs = [
+      {label: "Route", path: `/route/${this.props.number}`},
+      {label: "Stops", path: `/route/${this.props.number}/stops`},
+      {label: "Schedule", path: `/route/${this.props.number}/schedule`}
+    ];
+
+    const thisRoute = Schedules[this.props.number];
+    const color = thisRoute.color;
+    const name = thisRoute.rt_name;
+    const { currentTab } = this.state
+    
+    return (
+      <div className="nav header" style={{ background: '#004445' }}>
+        <div className="pa3" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: window.innerWidth < 650 ? '1em' : '1.5em' }}>
+          <div>
+            <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start' }}>
+              <Link className="link dim pr3" to={{ pathname: `/` }}>
+                <img src={ChevronSVG} className="" alt="Back to home" />
+              </Link>
+              <div className='white fw7 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: color }}>
+                {this.props.number}
+              </div> 
+              <div className='white glow ph2'>
+                {name}
+              </div>
             </div>
+          </div>
+          <div>
+            <Link className="link dim pr3" to={{ pathname: `/about` }}>
+              <img src={Info} alt="Info" />
+            </Link>
           </div>
         </div>
         <div>
-          <Link className="link dim pr3" to={{ pathname: `/about` }}>
-            <img src={Info} alt="Info" />
-          </Link>
+          <Tabs value={currentTab} onChange={this.handleChange} textColor="white" style={{ fontSize: '1.2em' }}>
+            {tabs.map(({ label, path }) => 
+              <Tab key={label} label={label} component={Link} to={path} />
+            )}
+          </Tabs>
         </div>
       </div>
-      <div style={{ display: 'flex', fontSize: window.innerWidth < 650 ? '1em' : '1.2em' }}>
-         {/* <Link className="link dim white pv2 ph3 ml3" style={page === 'real-time' ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}/real-time` }}>
-           Live
-         </Link> */}
-         <Link className="link dim white pv2 ph3 ml3" style={page === `${number}` ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}` }}>
-           Route
-         </Link>
-         <Link className="link dim white pv2 ph3 ml3" style={page === 'stops' ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}/stops` }}>
-           Stops
-         </Link>
-         <Link className="link dim white pv2 ph3 ml3" style={page === 'schedule' ? {background: `white`, color: `black`} : {background: 'rgba(255,255,255,0.2)'}} to={{ pathname: `/route/${number}/schedule` }}>
-           Schedule
-         </Link>
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 RouteHeader.propTypes = {
-  number: PropTypes.string.isRequired,
+  number: PropTypes.string,
 }
 
 export default RouteHeader;

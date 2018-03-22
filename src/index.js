@@ -15,8 +15,32 @@ import Stop from './components/Stop';
 import Nearby from './components/Nearby';
 import TransitCenter from './components/TransitCenter';
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {createMuiTheme} from 'material-ui/styles';
+
+
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-107915075-4');
+
+const muiTheme = createMuiTheme({
+  typography: {
+    fontFamily:
+      'Gibson Detroit Regular' +
+      '"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
+  },
+  overrides: {
+    MuiRadio: {
+      checkedSecondary: {
+        color: '#004445'
+      },
+    },
+    MuiFormLabel: {
+      focused: {
+        color: '#004445',
+      },
+    },
+  },
+});
 
 class GAListener extends React.Component {
   static contextTypes = {
@@ -41,17 +65,19 @@ class GAListener extends React.Component {
 ReactDOM.render(
   <Router basename="/route-explorer">
     <GAListener>
-      <Switch>
-        <Route exact path='/' component={App} />
-        <Route path='/about' component={About} />
-        <Route path='/nearby' component={Nearby} />
-        <Route path='/stop/rosa-parks-tc' component={TransitCenter} />
-        <Route path='/stop/:name' component={Stop} />
-        <Route path="/route/:name/real-time" component={RouteRealtime} />
-        <Route path="/route/:name/schedule" component={RouteSchedule} />
-        <Route path="/route/:name/stops" component={RouteStops} />
-        <Route path='/route/:name' component={BusRoute} />
-      </Switch>
+      <MuiThemeProvider theme={muiTheme}>
+        <Switch>
+          <Route exact path='/' component={App} />
+          <Route path='/about' component={About} />
+          <Route path='/nearby' component={Nearby} />
+          <Route path='/stop/rosa-parks-tc' component={TransitCenter} />
+          <Route path='/stop/:name' component={Stop} />
+          <Route path="/route/:name/real-time" component={RouteRealtime} />
+          <Route path="/route/:name/schedule" component={RouteSchedule} />
+          <Route path="/route/:name/stops" component={RouteStops} />
+          <Route path='/route/:name' component={BusRoute} />
+        </Switch>
+      </MuiThemeProvider>
     </GAListener>
   </Router>,
   document.getElementById('root'));

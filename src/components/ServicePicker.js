@@ -17,13 +17,13 @@ class ServicePicker extends React.Component {
   render() {
     return (
       <FormControl component="fieldset" required>
-      <RadioGroup value={this.props.currentSvc} onChange={this.props.onChange} style={{width: 140, background: '#fff'}}>
-        {this.props.services.map(s => (
-          <FormControlLabel key={s} value={s} control={<Radio/>} label={_.capitalize(s)} />
-        ))}
-      </RadioGroup>
+        <RadioGroup name="serviceDays" value={this.props.currentSvc} onChange={this.props.onChange}>
+          {this.props.services.map(s => (
+            <FormControlLabel key={s} value={s} control={<Radio/>} label={_.capitalize(s)} />
+          ))}
+        </RadioGroup>
       </FormControl>
-    )
+    );
   }
 }
 

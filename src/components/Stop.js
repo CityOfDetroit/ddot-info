@@ -91,12 +91,13 @@ class Stop extends React.Component {
     this.interval = setInterval(() => this.fetchRealtimeData(this.props.match.params.name), 5000);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if(this.props.match.params.name !== nextProps.match.params.name && this.props.slideIndex !== nextProps.slide) {
-  //     this.fetchStopScheduleData(nextProps.match.params.name)
-  //     this.fetchRealtimeData(nextProps.match.params.name)
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    this.setState({fetchedStopSchedule: false, slideIndex: 0})
+    if(this.props.match.params.name !== nextProps.match.params.name) {
+      this.fetchStopScheduleData(nextProps.match.params.name)
+      this.fetchRealtimeData(nextProps.match.params.name)
+    }
+  }
 
   componentWillUnmount() {
     clearInterval(this.interval)
@@ -181,7 +182,7 @@ class Stop extends React.Component {
             ))}
             </SwipeableViews>
         </div>
-        {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null}
+        {stopTransfers.length > 0 ? <StopTransfers stops={_.groupBy(stopTransfers, 0)} /> : null}
       </div>
     )
   }

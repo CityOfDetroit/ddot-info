@@ -128,6 +128,10 @@
             "type": "geojson",
             "data": {}
         },
+        "busstops": {
+            "type": "geojson",
+            "data": {}
+        },
         "geolocated": {
             "type": "geojson",
             "data": {}
@@ -8537,6 +8541,33 @@
             "paint": {}
         },
         {
+            "id": "busstop-points",
+            "type": "circle",
+            "source": "busstops",
+            "filter": [
+                "==",
+                "$type",
+                "Point"
+            ],
+            "layout": {},
+            "paint": {
+                "circle-color": "white",
+                "circle-stroke-color": "black",
+                "circle-stroke-width": {
+                    "stops": [[15, 1], [19, 4]]
+                },
+                "circle-stroke-opacity": {
+                    "stops": [[15, 0], [15.1, 0.1], [15.2, 1]]
+                },
+                "circle-opacity": {
+                    "stops": [[15, 0], [15.1, 0.1], [15.2, 1]]
+                },
+                "circle-radius": {
+                    "stops": [[15, 3], [19, 12]]
+                }
+            }
+        },
+        {
             "id": "timepoint-labels",
             "type": "symbol",
             "source": "timepoints",
@@ -8573,7 +8604,7 @@
                     "Arial Unicode MS Regular"
                 ],
                 "text-padding": 0,
-                "visibility": "none",
+                "visibility": "visible",
                 "text-field": "{name}",
                 "text-max-width": 5
             },
@@ -8584,6 +8615,111 @@
                 ],
                 "text-halo-color": "rgba(235,244,66,0.8)",
                 "text-halo-width": 2,
+                "text-opacity": {
+                    "stops": [[13, 0], [13.1, 0.1], [13.2, 1]]
+                },
+                "text-color": "black"
+            }
+        },
+        {
+            "id": "busstop-labels",
+            "type": "symbol",
+            "source": "busstops",
+            "filter": [
+                "==",
+                "$type",
+                "Point"
+            ],
+            "layout": {
+                "text-line-height": 1,
+                "text-size": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            6,
+                            4
+                        ],
+                        [
+                            11,
+                            8
+                        ],
+                        [
+                            13,
+                            12
+                        ]
+                    ]
+                },
+                "text-allow-overlap": true,
+                "text-padding": 10,
+                "text-offset": {
+                    "base": 1,
+                    "type": "categorical",
+                    "property": "stop_code",
+                    "stops": [
+                        [
+                            "EB", [
+                                0.5,
+                                0.5
+                            ]
+                        ],
+                        [
+                            "WB", [-0.5, -0.5]
+                        ],
+                        [
+                            "NB", [
+                                0.5, -0.5
+                            ]
+                        ],
+                        [
+                            "SB", [-0.5,
+                                0.5
+                            ]
+                        ]
+                    ]
+                },
+                "text-anchor": {
+                    "base": 1,
+                    "type": "categorical",
+                    "property": "stop_code",
+                    "stops": [
+                        [
+                            "SB",
+                            "top-right"
+                        ],
+                        [
+                            "NB",
+                            "bottom-left"
+                        ],
+                        [
+                            "EB",
+                            "top-left"
+                        ],
+                        [
+                            "WB",
+                            "bottom-right"
+                        ]
+                    ],
+                    "default": "center"
+                },                
+                "text-font": [
+                    "Gibson Detroit Regular",
+                    "Arial Unicode MS Regular"
+                ],
+                "text-padding": 0,
+                "visibility": "visible",
+                "text-field": "{name}",
+                "text-max-width": 5
+            },
+            "paint": {
+                "text-translate": [
+                    0,
+                    0
+                ],
+                "text-halo-color": "hsl(0, 0%, 100%)",
+                "text-halo-width": 3,
+                "text-opacity": {
+                    "stops": [[16, 0], [16.1, 0.1], [16.2, 1]]
+                },
                 "text-color": "black"
             }
         },

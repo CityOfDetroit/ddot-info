@@ -43,7 +43,7 @@ class RouteHeader extends React.Component {
           </div>
         </div>
         <div>
-          <Tabs value={0}>
+          <Tabs value={0} textColor="white" style={{ fontSize: '1.2em' }}>
             {tabs.map(({ label, path }) => 
               <Tab key={label} label={label} component={Link} to={path} />
             )}

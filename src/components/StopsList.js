@@ -9,7 +9,7 @@ class StopsList extends Component {
       <div className="overflow-scroll" style={{height: 350}}>
         {this.props.stops.map((stop, i) =>
           <div className="" key={i}>
-            <StopCard id={stop.id} showTransfers={true} />
+            <StopCard id={stop.id} showTransfers={true} showRoutes />
           </div>
         )}
       </div>

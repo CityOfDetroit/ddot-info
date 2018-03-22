@@ -91,12 +91,12 @@ class StopMap extends Component {
     })  
 
     // set labels for transfers
-    style = style.setIn(['layers', stopPointIndex, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 0)))
-    style = style.setIn(['layers', stopLabelIndex, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 0)))
+    style = style.setIn(['layers', stopPointIndex, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 2)))
+    style = style.setIn(['layers', stopLabelIndex, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 2)))
     style = style.setIn(['layers', stopLabelIndex, 'layout', 'visibility'], 'visible')
 
     // eventually set routes?
-    const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 1).concat(stop.routes))))
+    const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 0).concat(stop.routes))))
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))
 
     return (

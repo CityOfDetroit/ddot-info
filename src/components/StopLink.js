@@ -18,15 +18,7 @@ class StopLink extends Component {
     let routes = [];
 
     if (Stops[this.props.id]) {
-      if (this.props.showTransfers && Stops[this.props.id] && Stops[this.props.id].transfers.length > 0) {
-        routes = Stops[this.props.id].routes.map(r => r[0]);
-        Stops[this.props.id].transfers.map(t => {
-          return routes = routes.concat(t[1])
-        })
-        routes = Array.from(new Set(routes)).sort()
-      } else {
-        routes = Stops[this.props.id].routes.map(r => r[0]).sort()
-      }
+      routes = Array.from(new Set(Stops[this.props.id].routes.map(r => r[0]).concat(Stops[this.props.id].transfers.map(r => r[0]))))
     }
 
     return (

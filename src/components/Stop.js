@@ -91,12 +91,13 @@ class Stop extends React.Component {
     this.interval = setInterval(() => this.fetchRealtimeData(this.props.match.params.name), 5000);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if(this.props.match.params.name !== nextProps.match.params.name && this.props.slideIndex !== nextProps.slide) {
-  //     this.fetchStopScheduleData(nextProps.match.params.name)
-  //     this.fetchRealtimeData(nextProps.match.params.name)
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    this.setState({fetchedStopSchedule: false})
+    if(this.props.match.params.name !== nextProps.match.params.name) {
+      this.fetchStopScheduleData(nextProps.match.params.name)
+      this.fetchRealtimeData(nextProps.match.params.name)
+    }
+  }
 
   componentWillUnmount() {
     clearInterval(this.interval)

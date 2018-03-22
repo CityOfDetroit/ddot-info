@@ -28,6 +28,18 @@ const muiTheme = createMuiTheme({
       'Gibson Detroit Regular' +
       '"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
   },
+  overrides: {
+    MuiRadio: {
+      checkedSecondary: {
+        color: '#004445'
+      },
+    },
+    MuiFormLabel: {
+      focused: {
+        color: '#004445',
+      },
+    },
+  },
 });
 
 class GAListener extends React.Component {

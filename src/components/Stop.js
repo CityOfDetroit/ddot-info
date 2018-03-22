@@ -182,7 +182,7 @@ class Stop extends React.Component {
             ))}
             </SwipeableViews>
         </div>
-        {stopTransfers.length > 0 ? <StopTransfers stops={stopTransfers} /> : null}
+        {stopTransfers.length > 0 ? <StopTransfers stops={_.groupBy(stopTransfers, 0)} /> : null}
       </div>
     )
   }

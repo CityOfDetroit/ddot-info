@@ -92,7 +92,7 @@ class Stop extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({fetchedStopSchedule: false})
+    this.setState({fetchedStopSchedule: false, slideIndex: 0})
     if(this.props.match.params.name !== nextProps.match.params.name) {
       this.fetchStopScheduleData(nextProps.match.params.name)
       this.fetchRealtimeData(nextProps.match.params.name)

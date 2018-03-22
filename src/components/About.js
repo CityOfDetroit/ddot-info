@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Divider from 'material-ui/Divider';
-import LiveIcon from 'material-ui-icons/SpeakerPhone'
-import ScheduleIcon from 'material-ui-icons/Schedule'
+
+import LiveIcon from 'material-ui-icons/SpeakerPhone';
+import ScheduleIcon from 'material-ui-icons/Schedule';
 import PdfIcon from 'material-ui-icons/PictureAsPdf';
+import BusIcon from 'material-ui-icons/DirectionsBus';
+import NearbyIcon from 'material-ui-icons/Place';
 
 import TopNav from './TopNav';
-import Bus from '../img/bus-15.svg';
 
 const About = () => (
   <div>
@@ -53,7 +55,7 @@ const About = () => (
             <td className="bb bl b--moon-gray pl2">Time of arrival based on the route schedule</td>
           </tr>
           <tr>
-            <td className="bb b--moon-gray tc pa2"><img src={Bus} alt="Bus" /></td>
+            <td className="bb b--moon-gray tc pa2"><BusIcon /></td>
             <td className="bb bl b--moon-gray pl2">Location of active buses on the route, color-coded by travel direction</td>
           </tr>
           <tr>
@@ -61,7 +63,7 @@ const About = () => (
             <td className="bb bl b--moon-gray pl2">Download the current route schedule as a PDF</td>
           </tr>
           <tr>
-            <td className="bb b--moon-gray tc pa2">Red Pin</td>
+            <td className="bb b--moon-gray tc pa2"><NearbyIcon style={{ color: '#d7437e' }} /></td>
             <td className="bb bl b--moon-gray pl2">Your current location when viewing service <Link to="/nearby">nearby</Link></td>
           </tr>
           <tr>

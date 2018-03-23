@@ -8,8 +8,7 @@ import Stops from '../data/stops.js';
 
 class ScheduleTable extends Component {
   render() {
-    const background = `rgba(${chroma(this.props.color).darken().alpha(0.25).rgba().toString()}`;
-    const active = `rgba(${chroma(this.props.color).darken(2).rgba().toString()}`;
+    const background = `rgba(${chroma(this.props.color).alpha(0.25).rgba().toString()}`;
     let tripsToHighlight = this.props.liveTrips.map(t => t.slice(8));
 
     return (
@@ -31,13 +30,13 @@ class ScheduleTable extends Component {
           {this.props.schedule[this.props.direction].trips.map((t, j) => (
             <TableRow 
               key={t.trip_id}
-              style={tripsToHighlight.indexOf(t.trip_id) > -1 ? { color: active, backgroundColor: background } : {}}>
+              style={tripsToHighlight.indexOf(t.trip_id) > -1 ? { backgroundColor: background } : {}}>
               {t.timepoints.map((tp, k) => (
                 <TableCell
                   className={tp.indexOf('p') > -1 ? "fw7" : "" }
                   style={(j+1) % 5 === 0 ? { borderBottom: `2px solid ${this.props.color}`, borderRight: '1px solid #ccc', textAlign: 'center' } : { borderBottom: '0', borderRight: '1px solid #ccc', textAlign: 'center' } }
                   key={k}>
-                  {tp.slice(0, -1)}
+                  {tp.slice(0, -2)}
                 </TableCell>
               ))}
             </TableRow>

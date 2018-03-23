@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import _ from 'lodash';
 import Card, { CardContent } from 'material-ui/Card';
+import Chip from 'material-ui/Chip';
+import chroma from 'chroma-js';
 
 import Schedules from '../data/schedules.js';
 import routeDetails from '../data/routeDetails.js';
@@ -123,16 +125,21 @@ class RouteSchedule extends React.Component {
                 currentDirection={this.state.currentDirection}
                 onChange={this.handleDirectionChange}
                 route={this.state.route} />
+              <div style={{display: 'flex'}}>
+                <Chip style={{ margin: 6 }} labelStyle={{ fontSize: '.7em' }} label="am times" />
+                <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} label={<strong>pm times</strong>} />
+                <Chip style={{ margin: 6, backgroundColor: chroma(this.state.color).alpha(0.25).css() }} labelStyle={{ fontSize: '.7em' }} label="current trips" />
+              </div>
               <div>
                 <PrintSchedule routePdf={routeDetailObj.pdf} />
               </div>
             </CardContent>
-            <ScheduleTable 
-              schedule={this.state[this.state.currentSvc]} 
-              direction={this.state.currentDirection} 
-              liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
-              color={this.state.color} />
           </Card>
+          <ScheduleTable 
+            schedule={this.state[this.state.currentSvc]} 
+            direction={this.state.currentDirection} 
+            liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
+            color={this.state.color} />
         </div>
       </div>
     )

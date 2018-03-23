@@ -8551,7 +8551,7 @@
             ],
             "layout": {},
             "paint": {
-                "circle-color": "black",
+                "circle-color": "white",
                 "circle-stroke-color": "#222",
                 "circle-stroke-width": {
                     "stops": [[14, 1], [19, 3]]
@@ -8616,7 +8616,7 @@
                 "text-halo-color": "rgba(235,244,66,0.8)",
                 "text-halo-width": 2,
                 "text-opacity": {
-                    "stops": [[11.5, 0], [11.51, 0.1], [11.6, 1], [15.9, 1], [16, 0]]
+                    "stops": [[11.5, 0], [11.51, 0.1], [11.6, 1], [15.49, 1], [15.5, 0]]
                 },
                 "text-color": "black"
             }
@@ -8637,15 +8637,15 @@
                     "stops": [
                         [
                             6,
-                            6
+                            5
                         ],
                         [
                             11,
-                            10
+                            9
                         ],
                         [
                             13,
-                            14
+                            13
                         ]
                     ]
                 },
@@ -8702,7 +8702,7 @@
                     "default": "center"
                 },                
                 "text-font": [
-                    "Gibson Detroit Regular",
+                    "Gibson Detroit SemiBold",
                     "Arial Unicode MS Regular"
                 ],
                 "text-padding": 0,
@@ -8716,7 +8716,7 @@
                     0
                 ],
                 "text-halo-color": "hsl(0, 0%, 100%)",
-                "text-halo-width": 1.5,
+                "text-halo-width": 2,
                 "text-opacity": {
                     "stops": [[15.5, 0], [15.51, 0.1], [15.6, 1]]
                 },

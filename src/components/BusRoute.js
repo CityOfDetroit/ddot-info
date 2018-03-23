@@ -21,11 +21,12 @@ class BusRoute extends React.Component {
     const thisRoute = Schedules[this.props.match.params.name];
     
     return (
-      <div className="BusRoute">
+      <div className="BusRoute" style={{background: '#eee'}}>
         <RouteHeader number={this.props.match.params.name} page={this.props.match.url.split("/").slice(-1)}/>
         <RouteMap route={thisRoute} />
         <RouteDetails id={this.props.match.params.name} />
       </div>
+
     )
   }
 }

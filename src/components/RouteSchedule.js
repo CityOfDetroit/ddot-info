@@ -5,6 +5,11 @@ import _ from 'lodash';
 import Card, { CardContent } from 'material-ui/Card';
 import Chip from 'material-ui/Chip';
 import Avatar from 'material-ui/Avatar';
+import Divider from 'material-ui/Divider'
+
+import Toolbar from 'material-ui/Toolbar';
+import { AppBar } from 'material-ui';
+
 import chroma from 'chroma-js';
 
 import Schedules from '../data/schedules.js';
@@ -115,8 +120,9 @@ class RouteSchedule extends React.Component {
       <div className="App">
         <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
         <div className="schedule">
-          <Card className="ma1">
-            <CardContent style={{ display: 'flex', flexWrap: 'wrap' }}>
+          <AppBar position="static" color="default" elevation={0} style={{display: 'flex', flexWrap: 'wrap', padding: '.2em 0em'}}>
+            <Toolbar elevation={0} style={{justifyContent: window.innerWidth < 650 ? 'space-around' : 'flex-start'}}>
+              <h4 style={{maxWidth: 100}}>Service and direction:</h4>
               <ServicePicker
                 services={this.state.availableServices}
                 currentSvc={this.state.currentSvc}
@@ -126,17 +132,22 @@ class RouteSchedule extends React.Component {
                 currentDirection={this.state.currentDirection}
                 onChange={this.handleDirectionChange}
                 route={this.state.route} />
-              <div style={{display: 'flex'}}>
+            </Toolbar>
+          </AppBar>
+          <AppBar position="static" color="red" elevation={0} style={{display: 'flex', flexWrap: 'wrap'}}>
+            <Toolbar style={{justifyContent: 'space-between'}} elevation={0}>
+              <div>
                 <Chip style={{ margin: 6 }} labelStyle={{ fontSize: '.7em' }} label="am times" />
                 <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} label={<strong>pm times</strong>} />
                 <Chip style={{ margin: 6, backgroundColor: chroma(this.state.color).alpha(0.25).css() }} labelStyle={{ fontSize: '.7em' }} label="current trips" />
-                <Chip style={{ margin: 6 }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#000', border: '4px solid #fff' }}></Avatar>} label="major stops" />
               </div>
               <div>
                 <PrintSchedule routePdf={routeDetailObj.pdf} />
               </div>
-            </CardContent>
-          </Card>
+            </Toolbar>
+          </AppBar>
+
+
           <ScheduleTable 
             schedule={this.state[this.state.currentSvc]} 
             direction={this.state.currentDirection} 

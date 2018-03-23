@@ -39,6 +39,21 @@ const muiTheme = createMuiTheme({
         color: '#004445',
       },
     },
+    MuiCardContent: {
+      root: {
+        paddingTop: '0em'
+      }
+    },
+    MuiPaper: {
+      elevation2: {
+        boxShadow: 'none'
+      }
+    },
+    MuiIconButton: {
+      root: {
+        height: '24px'
+      }
+    },
     MuiTableRow: {
       root: {
         height: '24px',
@@ -50,9 +65,14 @@ const muiTheme = createMuiTheme({
     MuiTableCell: {
       root: {
         padding: '4px 24px 4px 24px',
+        maxWidth: '90px'
       },
       head: {
         padding: '4px 0 4px 0',
+        textAlign: 'center',
+        '&:last-child': {
+          paddingRight: 0,
+        },
       },
     },
   },

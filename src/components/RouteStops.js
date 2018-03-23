@@ -58,13 +58,13 @@ class RouteStops extends React.Component {
     const thisRoute = Schedules[this.props.match.params.name];
 
     return (
-      <div className="BusRoute">
+      <div className="BusRoute" style={{background: '#eee'}}>
         <RouteHeader number={this.props.match.params.name} />
-        <div className="map">
+        <div className="routeMap">
           <RouteMap route={thisRoute} />
         </div>
         <div className="stopList">
-          <Card className="ma1">
+          <Card>
             <CardHeader title="Stops along this route" />
             <CardContent>
               <DirectionPicker 

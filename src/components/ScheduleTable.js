@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import chroma from 'chroma-js';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 
+
 import Stops from '../data/stops.js';
 
 class ScheduleTable extends Component {
@@ -12,33 +13,33 @@ class ScheduleTable extends Component {
     let tripsToHighlight = this.props.liveTrips.map(t => t.slice(8));
 
     return (
-      <Table>
-        <TableHead>
-          <TableRow>
-            {this.props.schedule[this.props.direction].stops.map((s, i) => (
-              <TableCell 
-                key={i}
-                style={{ borderBottom: '0', textAlign: 'center' }}>
-                <Link className="dim black f6 fw7 ph2" to={{ pathname: `/stop/${s}/` }} >
-                  {Stops[s].name.indexOf('Rosa Parks') > -1 ? "Rosa Parks TC" : Stops[s].name}
-                </Link>
-              </TableCell>
-            ))}
-          </TableRow>
-          <TableRow>
-            {this.props.schedule[this.props.direction].stops.map((s, j) => (
-              <TableCell 
-                key={j}
-                style={{ borderBottom: '0' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
-                  <div style={{ position: 'absolute', top: '8px', height: '8px', width: '100%', backgroundColor: `${this.props.color}`, verticalAlign: 'center'  }}></div>
-                  <div style={{ backgroundColor: '#000', height: '24px', width: '24px', borderRadius: '2em', border: '3px solid #fff', margin: 'auto', verticalAlign: 'center', zIndex: '200' }}></div>
-                </div>
-              </TableCell>
-            ))}
-          </TableRow>
-        </TableHead>
-        <TableBody>
+        <Table style={{background: '#fff'}}>
+            <TableHead >
+              <TableRow>
+                {this.props.schedule[this.props.direction].stops.map((s, i) => (
+                  <TableCell 
+                  key={i}
+                  style={{ borderBottom: '0', textAlign: 'center', padding: '0em 1em' }}>
+                    <Link className="dim black f6 fw7" to={{ pathname: `/stop/${s}/` }}  >
+                      {Stops[s].name.indexOf('Rosa Parks') > -1 ? "Rosa Parks TC" : Stops[s].name}
+                    </Link>
+                  </TableCell>
+                ))}
+              </TableRow>
+              <TableRow>
+                {this.props.schedule[this.props.direction].stops.map((s, j) => (
+                  <TableCell 
+                    key={j}
+                    style={{ borderBottom: '0' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
+                      <div style={{ position: 'absolute', top: '8px', height: '8px', right: j === 0 ? 0 : null, width: j === (this.props.schedule[this.props.direction].stops.length - 1) || j === 0 ? '50%' : '100%', backgroundColor: `${this.props.color}`, verticalAlign: 'center'}}></div>
+                      <div style={{ backgroundColor: '#000', height: '24px', width: '24px', borderRadius: '2em', border: '3px solid #fff', margin: 'auto', verticalAlign: 'center', zIndex: '200' }}></div>
+                    </div>
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableHead>
+        <TableBody style={{overflowY: 'scroll', height: 400}}>
           {this.props.schedule[this.props.direction].trips.map((t, j) => (
             <TableRow 
               key={t.trip_id}

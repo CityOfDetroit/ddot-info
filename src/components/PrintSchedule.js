@@ -6,18 +6,15 @@ import Avatar from 'material-ui/Avatar';
 import PdfIcon from 'material-ui-icons/PictureAsPdf';
 
 const PrintSchedule = ({ routePdf }) => (
-  <Card>
-    <CardContent style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
-      <div style={{ marginRight: '.5em', fontSize: '1.2em' }}>Download schedule:</div>
+    <div style={{margin: 10}}>
       {routePdf.map((p, i) => 
         <Chip 
-          key={i} 
-          style={{ marginRight: '.5em' }} 
+          key={i}
+          style={{marginRight: '.5em'}}
           label={<a href={p} style={{ textDecoration: 'none' }}>{routePdf.length === 1 ? `All service` :  i === 0 ? `Weekday` : `Saturday-Sunday` }</a>} 
-          avatar={<Avatar><PdfIcon /></Avatar>} />
+          avatar={<Avatar><PdfIcon color='action' /></Avatar>} />
       )}
-    </CardContent>
-  </Card>
+    </div>
 );
 
 PrintSchedule.propTypes = {

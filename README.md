@@ -1,29 +1,30 @@
 # route-explorer
 
-A web-based interface for accessing bus schedules and real-time data.
+A web app for accessing bus schedules and real-time data.
 
-We're using React, React Router and [Tachyons](http://tachyons.io/). 
+We're using [Create React App](https://github.com/facebook/create-react-app) with [react router](https://github.com/ReactTraining/react-router), [react-map-gl](https://github.com/uber/react-map-gl) and [material design](https://material-ui-next.com/) UI components. Create React App's default webpack configuration was ejected to use `react-map-gl`; [these instructions](https://github.com/zjhch123/react-map-gl-demo-with-create-react-app) were helpful for doing that.
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+## Key features
 
-## Features
+- bookmarkable route and stop pages
+- time aware ui that defaults to show today's service and current trips
+- live departure, scheduled departure, and nearby transfer info for every DDOT bus stop
+- location aware component to see routes and stops within a 5 minute walk of your current location
+- digital schedule tables! (meaning we'll no longer exclusively offer PDFs [here](http://www.detroitmi.gov/How-Do-I/Locate-Transportation/Bus-Schedules))
 
-- get route data from DDOT's OneBusAway API
-- search all bus lines
+## Data sources
 
-What we're working towards:
-
-- map of route
-- points of interest
-- transfers
-- time points
-- all stops
-- real-time location
+- DDOT GTFS
+- OneBusAway API
 
 # Install
 
-`npm install`
+`yarn` will install dependencies
 
 ## Development
 
-`npm start` will run the build steps and serve at `localhost:3000`
+`yarn start` will run the build steps and serve at `localhost:3000`
+
+`yarn css` will compile style files
+
+`yarn deploy` will publish to `gh-pages`

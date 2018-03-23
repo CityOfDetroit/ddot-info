@@ -4,6 +4,7 @@ import moment from 'moment';
 import _ from 'lodash';
 import Card, { CardContent } from 'material-ui/Card';
 import Chip from 'material-ui/Chip';
+import Avatar from 'material-ui/Avatar';
 import chroma from 'chroma-js';
 
 import Schedules from '../data/schedules.js';
@@ -129,6 +130,7 @@ class RouteSchedule extends React.Component {
                 <Chip style={{ margin: 6 }} labelStyle={{ fontSize: '.7em' }} label="am times" />
                 <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} label={<strong>pm times</strong>} />
                 <Chip style={{ margin: 6, backgroundColor: chroma(this.state.color).alpha(0.25).css() }} labelStyle={{ fontSize: '.7em' }} label="current trips" />
+                <Chip style={{ margin: 6 }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#000', border: '4px solid #fff' }}></Avatar>} label="major stops" />
               </div>
               <div>
                 <PrintSchedule routePdf={routeDetailObj.pdf} />

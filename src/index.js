@@ -44,12 +44,15 @@ const muiTheme = createMuiTheme({
         height: '24px',
       },
       head: {
-        height: '48px',
+        height: '24px',
       },
     },
     MuiTableCell: {
       root: {
         padding: '4px 24px 4px 24px',
+      },
+      head: {
+        padding: '4px 0 4px 0',
       },
     },
   },

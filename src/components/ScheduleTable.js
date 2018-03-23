@@ -19,9 +19,21 @@ class ScheduleTable extends Component {
               <TableCell 
                 key={i}
                 style={{ borderBottom: '0', textAlign: 'center' }}>
-                <Link className="dim black f6 fw7" to={{ pathname: `/stop/${s}/` }} >
+                <Link className="dim black f6 fw7 ph2" to={{ pathname: `/stop/${s}/` }} >
                   {Stops[s].name.indexOf('Rosa Parks') > -1 ? "Rosa Parks TC" : Stops[s].name}
                 </Link>
+              </TableCell>
+            ))}
+          </TableRow>
+          <TableRow>
+            {this.props.schedule[this.props.direction].stops.map((s, j) => (
+              <TableCell 
+                key={j}
+                style={{ borderBottom: '0' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '8px', height: '8px', width: '100%', backgroundColor: `${this.props.color}`, verticalAlign: 'center'  }}></div>
+                  <div style={{ backgroundColor: '#000', height: '24px', width: '24px', borderRadius: '2em', border: '3px solid #fff', margin: 'auto', verticalAlign: 'center', zIndex: '200' }}></div>
+                </div>
               </TableCell>
             ))}
           </TableRow>

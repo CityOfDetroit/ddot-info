@@ -72,8 +72,8 @@ class RouteStopList extends Component {
             ) : `Loading stops...`}
           </div>
           <div className="mt2" style={{ display: 'flex', justifyContent: 'flex-start' }}>
-            <Chip style={{ margin: 6, fontWeight: 200 }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: color, border: '4px solid #fff' }}></Avatar>} label="all stops" />
-            <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#000', border: '4px solid #fff' }}></Avatar>} label="schedule timepoints" />
+            <Chip style={{ margin: 6, fontWeight: 200 }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: color, border: '4px solid #fff' }}></Avatar>} label="local stops" />
+            <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#000', border: '4px solid #fff' }}></Avatar>} label="major stops" />
           </div>
         </CardContent>
       </Card>

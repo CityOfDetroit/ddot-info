@@ -53,7 +53,7 @@ class RouteSearch extends Component {
   render() {
     return (
       <Card>
-        <CardHeader title="Routes" />
+        <CardHeader title="Choose your bus" subheader="DDOT operates 48 fixed bus routes" />
         <CardContent>
           <RouteInput input={this.state.input} onSearchChange={this.handleSearchChange} />
           { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : '' }

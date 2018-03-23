@@ -5,15 +5,13 @@ import PropTypes from 'prop-types';
 class RouteInput extends Component {
   render() {
     return (
-      <div>
         <TextField
           label='Search by route name or number'
-          placeholder='E.g. "Woodward" or "53"'
+          placeholder='Try: "Woodward", "Dexter", "53", "16"'
           value={this.props.input}
           onChange={this.props.onSearchChange}
-          margin='normal'
+          margin='dense'
           fullWidth />
-      </div>
     );
   }
 }

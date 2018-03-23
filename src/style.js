@@ -85,7 +85,7 @@ MAP_STYLE.layers.findIndex(layer => layer.id === 'timepoint-labels');
 export const stopLabelIndex =
 MAP_STYLE.layers.findIndex(layer => layer.id === 'stop-labels');
 export const stopPointIndex =
-MAP_STYLE.layers.findIndex(layer => layer.id === 'stop-points');
+MAP_STYLE.layers.findIndex(layer => layer.id === 'busstop-points');
 export const highlightLabelIndex =
 MAP_STYLE.layers.findIndex(layer => layer.id === 'highlight-labels');
 export const highlightPointIndex =

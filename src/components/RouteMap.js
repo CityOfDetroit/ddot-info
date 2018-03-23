@@ -7,6 +7,7 @@ import Stops from '../data/stops.js';
 import chroma from 'chroma-js'
 import Helpers from '../helpers.js';
 import {defaultMapStyle, routeLineIndex, realtimeLabelIndex, timepointLabelIndex} from '../style.js'
+import {stopPointIndex} from '../style';
 
 class RouteMap extends Component {
   constructor(props) {
@@ -179,6 +180,7 @@ class RouteMap extends Component {
     style = style.setIn(['sources', 'busstops', 'data'], {"type": "FeatureCollection", "features": this.state.stopFeatures})
 
     style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-color'], chroma(this.props.route.color).darken(2).hex())
+    style = style.setIn(['layers', stopPointIndex, 'paint', 'circle-color'], chroma(this.props.route.color).darken().hex())
     style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-halo-color'], "#fff")
 
     if (this.state.showRealtime) {

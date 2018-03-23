@@ -25,7 +25,7 @@ class StopLink extends Component {
       <div className="w-100 pa2" style={this.props.showBorder ? { ...defaultStyles, marginLeft: '1em', borderLeft: `6px solid ${this.props.color}`} : defaultStyles }>  
         
         {this.props.showBorder ? 
-          <span className="" style={{ marginLeft: '-1.25em', border: '.25em solid white', backgroundColor: !this.props.isTimepoint ? this.props.color : 'black', borderRadius: '4em', height: '11px', width: '11px', marginRight: '1em', zIndex: 2 }} />
+          <span className="" style={{ marginLeft: '-1.25em', border: this.props.isTimepoint ? '.25em solid black' : `.25em solid ${this.props.color}`, backgroundColor: !this.props.isTimepoint ? 'white' : 'black', borderRadius: '4em', height: '11px', width: '11px', marginRight: '1em', zIndex: 2 }} />
           : ``}
 
           <div className="w-50">

@@ -5,7 +5,7 @@ import Homepage from './components/Homepage';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div style={{background: '#eee'}}>
         <Homepage />
       </div>
     );

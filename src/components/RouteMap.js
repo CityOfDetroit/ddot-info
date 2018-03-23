@@ -7,6 +7,11 @@ import Stops from '../data/stops.js';
 import chroma from 'chroma-js'
 import Helpers from '../helpers.js';
 import {defaultMapStyle, routeLineIndex, realtimeLabelIndex, timepointLabelIndex} from '../style.js'
+import {stopPointIndex} from '../style';
+
+import Card, {CardHeader, CardContent} from 'material-ui/Card';
+import Chip from 'material-ui/Chip';
+import Avatar from 'material-ui/Avatar';
 
 class RouteMap extends Component {
   constructor(props) {
@@ -71,9 +76,8 @@ class RouteMap extends Component {
         longitude: bound.longitude,
         zoom: bound.zoom,
         bearing: 0,
-        pitch: 0,
-        width: window.innerWidth > 650 ? window.innerWidth / 2 : window.innerWidth,
-        height: window.innerWidth > 650 ? window.innerHeight - 100 : 225
+        width: window.innerWidth > 650 ? window.innerWidth * (4/8) - 30 : window.innerWidth - 60,
+        height: window.innerWidth > 650 ? ((window.innerHeight - 128) * 1 - 114) : 225
       },
       settings: {
         dragPan: true,
@@ -140,8 +144,8 @@ class RouteMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth / 2,
-          height: window.innerHeight - 100
+          width: window.innerWidth * (4/8) - 30,
+          height: ((window.innerHeight - 128) * 1 - 104)
         }
       });
     }
@@ -179,6 +183,7 @@ class RouteMap extends Component {
     style = style.setIn(['sources', 'busstops', 'data'], {"type": "FeatureCollection", "features": this.state.stopFeatures})
 
     style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-color'], chroma(this.props.route.color).darken(2).hex())
+    style = style.setIn(['layers', stopPointIndex, 'paint', 'circle-stroke-color'], chroma(this.props.route.color).darken().hex())
     style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-halo-color'], "#fff")
 
     if (this.state.showRealtime) {
@@ -187,15 +192,24 @@ class RouteMap extends Component {
     }
 
     return (
-      <div className="map">
-        <MapGL
-          {...this.state.viewport}
-          {...this.state.settings}
-          mapStyle={style}
-          mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
-          onViewportChange={this._updateViewport} >
-        </MapGL> 
-      </div>
+      <Card className="routeMap" elevation={0}>
+        <CardContent style={{padding: 0, margin: 0}}>
+          <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+            <CardHeader title='Route map' subheader='Zoom in to see all stops' />
+            <div>
+            <Chip style={{ margin: 6, fontWeight: 200 }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#fff', border: `4px solid ${this.props.route.color}` }}></Avatar>} label="local stops" />
+            <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#000', border: '4px solid #fff' }}></Avatar>} label="major stops" />
+            </div>
+          </div>
+          <MapGL
+            {...this.state.viewport}
+            {...this.state.settings}
+            mapStyle={style}
+            mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
+            onViewportChange={this._updateViewport} >
+          </MapGL>
+        </CardContent>
+      </Card>
     );
   }
 }

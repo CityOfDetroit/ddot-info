@@ -52,9 +52,9 @@ class RouteStopList extends Component {
     const color = Schedules[this.props.routeNumber].color
 
     return (
-      <Card className="ma1">
+      <Card className="">
         <CardContent>
-          <div className="w-100 pa2 f4 fw7" style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', borderBottom: '1px solid #000' }}>
+          <div className="w-100 f4 fw7 pb3" style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', borderBottom: '1px solid #000' }}>
             <div className="w-50 ml3">
               <span className='db'>Bus Stops</span>
               <span className='db f7 fw5 i'>In order of arrival</span>
@@ -70,10 +70,6 @@ class RouteStopList extends Component {
                 <StopLink id={stop.slice(5,)} exclude={this.props.routeNumber} color={color} isTimepoint={this.props.timepoints.indexOf(stop.slice(5,)) > -1} showTransfers showBorder/>
               </div>
             ) : `Loading stops...`}
-          </div>
-          <div className="mt2" style={{ display: 'flex', justifyContent: 'flex-start' }}>
-            <Chip style={{ margin: 6, fontWeight: 200 }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: color, border: '4px solid #fff' }}></Avatar>} label="all stops" />
-            <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#000', border: '4px solid #fff' }}></Avatar>} label="schedule timepoints" />
           </div>
         </CardContent>
       </Card>

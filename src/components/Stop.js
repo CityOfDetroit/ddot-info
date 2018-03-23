@@ -116,7 +116,7 @@ class Stop extends React.Component {
         <StopHeader id={stopId} name={stopName} />
         <StopMap stopId={stopId} center={stopCoords}/>
         <div className='routes'>
-          <AppBar position="static" color="red" style={{display: 'flex'}}>
+          <AppBar position="static" color="red" style={{display: 'flex'}} elevation={0}>
             <Toolbar>
               <h4 style={{margin: 0, padding: '.5em'}}>Routes here</h4>
               <Tabs
@@ -140,8 +140,8 @@ class Stop extends React.Component {
             >
             {stopRoutes.map((r, i) => (
               <div className="">
-              <AppBar position="static" color="default" style={{display: 'flex'}}>
-                <Toolbar style={{justifyContent: 'space-between'}}>
+              <AppBar position="static" color="default" elevation={0} style={{display: 'flex'}}>
+                <Toolbar style={{justifyContent: 'space-between'}} elevation={0}>
                   <RouteLink id={r[0]} />
                   <Tabs 
                     onChange={this.handleRouteChange} 

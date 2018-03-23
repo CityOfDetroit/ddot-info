@@ -12,16 +12,16 @@ class Homepage extends Component {
     return (
       <div className="App">
         <TopNav />
-        <Card className="explainer ma1">
+        <Card className="explainer">
           <CardContent style={{ fontSize: '1.2em' }}>
             <p>This app helps transit riders find bus schedules and real-time departure information for DDOT routes and bus stops.</p>
             <p>Find your route or stop below, or <Link to="/nearby">see which buses are running near your current location</Link>.</p>
           </CardContent>
         </Card>
-        <div className="routes-homepage ma1">
+        <div className="routes-homepage">
           <RouteSearch />
         </div>
-        <div className="stops ma1">
+        <div className="stops">
           <StopSearch />
         </div>
         {/* <div className="systemMap">

@@ -50,7 +50,6 @@
     "react-geolocated": "^2.2.1",
     "react-map-gl": "^3.2.4",
     "react-router-dom": "^4.2.2",
-    "react-sticky-table": "^1.2.0",
     "react-swipeable-views": "^0.12.13",
     "react-tabs": "^2.2.1",
     "style-loader": "0.19.0",

@@ -89,7 +89,8 @@ class RouteMap extends Component {
         minZoom: 9,
         maxZoom: 19,
         minPitch: 0,
-        maxPitch: 0
+        maxPitch: 0,
+        maxBounds: route.bbox
       },
       realtimeTrips: [],
       showRealtime: true,

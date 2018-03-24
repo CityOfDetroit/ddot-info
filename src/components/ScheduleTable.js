@@ -13,6 +13,7 @@ class ScheduleTable extends Component {
     let tripsToHighlight = this.props.liveTrips.map(t => t.slice(8));
 
     return (
+      <div style={{maxWidth: '100vw', overflowX: 'scroll'}}>
         <Table style={{background: '#fff'}}>
             <TableHead >
               <TableRow>
@@ -39,7 +40,7 @@ class ScheduleTable extends Component {
                 ))}
               </TableRow>
             </TableHead>
-        <TableBody style={{overflowY: 'scroll', height: 400}}>
+        <TableBody>
           {this.props.schedule[this.props.direction].trips.map((t, j) => (
             <TableRow 
               key={t.trip_id}
@@ -56,6 +57,7 @@ class ScheduleTable extends Component {
           ))}
         </TableBody>
       </Table>
+    </div>
     );
   }
 }

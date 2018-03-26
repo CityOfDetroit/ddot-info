@@ -8,6 +8,7 @@ import Stops from '../data/stops.js'
 import GridList, {GridListTile} from 'material-ui/GridList';
 import Card, {CardHeader, CardContent} from 'material-ui/Card'
 import Chip from 'material-ui/Chip';
+import Divider from 'material-ui/Divider'
 import moment from 'moment';
 import { grey800 } from 'material-ui/colors';
 
@@ -19,7 +20,8 @@ class StopRouteSchedule extends Component {
     return (
       <div>
         {Helpers.cleanScheduleHeadsign(this.props.schedules[0]).stopRouteDirectionSchedules.map((rds, i) => (
-          <Card style={{margin: 15, padding: 10}}>
+          <div>{i === 1 ? <Divider /> : ``}
+          <Card style={{padding: 10}}>
           <CardHeader
             title={_.capitalize(rds.tripHeadsign)}
             subheader={`to ${Stops[Schedules[this.props.route].timepoints[rds.tripHeadsign].slice(-1)[0]].name}`}
@@ -49,13 +51,15 @@ class StopRouteSchedule extends Component {
               }
             </GridList>
           </CardContent>
-            <div style={{display: 'flex'}}>
+          </Card></div>
+          
+        ))}
+            <Divider />
+            <div style={{display: 'flex', background: 'white', padding: '.5em'}}>
               <Chip style={{ margin: 6 }} labelStyle={{ fontSize: '.7em' }} label="am times" />
               <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} label={<strong>pm times</strong>} />
               <Chip style={{ margin: 6, backgroundColor: chroma(Schedules[this.props.route].color).alpha(0.25).css() }} labelStyle={{ fontSize: '.7em' }} label="next departures" />
             </div>
-          </Card>
-        ))}
       </div>
     )}
 }

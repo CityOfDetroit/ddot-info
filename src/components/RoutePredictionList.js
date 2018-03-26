@@ -32,11 +32,10 @@ class RoutePredictionList extends React.Component {
 
     console.log(Helpers.cleanPredictionHeadsign(predictions))
     return (
-      <div>
-        <List>
+        <List style={{paddingTop: 0}}>
         {predictions.length > 0 ? Helpers.cleanPredictionHeadsign(predictions).map((p, i) => (
           <div>
-            <ListItem button key={p.tripId} onClick={this.handleClick(p.tripId)} >
+            <ListItem button key={p.tripId} onClick={this.handleClick(p.tripId)} style={{background: '#fff'}} >
               <ListItemIcon >
                 {p.predicted ? <LiveSVG /> : <SchedSVG />}
               </ListItemIcon>
@@ -48,7 +47,6 @@ class RoutePredictionList extends React.Component {
         </div>
           )) : <Card><CardContent>There are currently no real-time predictions available.</CardContent></Card>}
           </List>
-      </div>
     )
   }
 }

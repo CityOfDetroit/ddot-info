@@ -85,11 +85,11 @@ class RealtimeCard extends Component {
     render() {
         return (
             this.state.fetched && this.state.tripData ? 
-            (<Card style={{minWidth: 320, maxHeight: 500, display: 'flex'}}>
+            (<Card style={{minWidth: 320, maxHeight: 500, display: 'flex', flexWrap: 'wrap'}}>
                 <CardMedia 
                         image={'something'}
                         component={StaticMap}
-                        width={300}
+                        width={window.innerWidth < 500 ? window.innerWidth : 300}
                         height={280}
                         latitude={this.state.tripData.position.lat}
                         longitude={this.state.tripData.position.lon}

@@ -124,6 +124,7 @@ class Stop extends React.Component {
                 value={slideIndex}
                 indicatorColor="red"
                 textColor="primary"
+                scrollable
                 >
 
                 {stopRoutes.map((r, i) => (
@@ -166,7 +167,6 @@ class Stop extends React.Component {
                     : ``)
                     :
                     (this.state.fetchedStopSchedule && this.state.fetchedPredictions ?
-                      <div>
                     <StopRouteSchedule 
                       schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
                         return s.routeId.split("_").pop() === Schedules[r[0]].rt_id.toString()
@@ -175,7 +175,7 @@ class Stop extends React.Component {
                       multipleDirs={this.state.multipleDirs}
                       predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r[0].padStart(3, '0')}).map(p => p.tripId)} 
                       />
-                  </div> : ``)}
+                   : ``)}
                   </div>
                 </div>
             ))}

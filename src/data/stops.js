@@ -6563,7 +6563,6 @@ const Stops = {
       ["12", "northbound"],
       ["23", "northbound"],
       ["30", "northbound"],
-      ["498", ""],
       ["53", "northbound"],
       ["54", "northbound"]
     ],

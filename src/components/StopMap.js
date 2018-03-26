@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import StaticMap from 'react-map-gl';
-import Card from 'material-ui/Card';
+import Card, { CardHeader } from 'material-ui/Card';
 import _ from 'lodash';
 
 import Helpers from '../helpers.js';
@@ -23,8 +23,8 @@ class StopMap extends Component {
         zoom: 17,
         bearing: 0,
         pitch: 0,
-        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 30 : window.innerWidth - 30,
-        height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8) - 78) : 225
+        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 10 : window.innerWidth,
+        height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8) - 88) : 225
       }
     }
 
@@ -54,8 +54,8 @@ class StopMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth * (3/8) - 30,
-          height: ((window.innerHeight - 75) * (5/8) - 78)
+          width: window.innerWidth * (3/8) - 10,
+          height: ((window.innerHeight - 64) * (5/8) - 78)
         }
       });
     }
@@ -63,7 +63,7 @@ class StopMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth -30,
+          width: window.innerWidth,
           height: 225
         }
       });
@@ -101,7 +101,8 @@ class StopMap extends Component {
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))
 
     return (
-      <Card className="map" style={{ margin: 15 }}>
+      <Card className="map" style={{ }}>
+        <CardHeader title="Stop map" />
         <StaticMap
           width={this.state.viewport.width}
           height={this.state.viewport.height}
@@ -110,9 +111,10 @@ class StopMap extends Component {
           zoom={this.state.viewport.zoom}
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
-          attributionControl={false}>
+          attributionControl={false}
+          children={<MapSatelliteSwitch onChange={this.handleChange} defaultChecked/>}>
+        
         </StaticMap>
-        <MapSatelliteSwitch onChange={this.handleChange} defaultChecked/>
       </Card>
     )
   }

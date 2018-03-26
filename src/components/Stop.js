@@ -124,7 +124,7 @@ class Stop extends React.Component {
                 value={slideIndex}
                 indicatorColor="red"
                 textColor="primary"
-                scrollable
+                scrollable={stopRoutes.length > 5 ? true : false}
                 >
 
                 {stopRoutes.map((r, i) => (
@@ -181,7 +181,7 @@ class Stop extends React.Component {
             ))}
             </SwipeableViews>
         </div>
-        {stopTransfers.length > 0 ? <StopTransfers stops={_.groupBy(stopTransfers, 0)} /> : null}
+        {stopTransfers.length > 0 && this.state.fetchedStopSchedule && this.state.fetchedPredictions ? <StopTransfers stops={_.groupBy(stopTransfers, 0)} /> : null}
       </div>
     )
   }

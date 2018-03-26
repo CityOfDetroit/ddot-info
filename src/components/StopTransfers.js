@@ -30,17 +30,11 @@ class StopTransfers extends React.Component {
             value={this.state.value}
             indicatorColor="red"
             textColor="primary"
-            scrollable
+            scrollable={Object.keys(stops).length > 5 ? true : false}
             >
-    
             {Object.keys(stops).map((s, i) => (
               <Tab label={<RouteBadge id={s}/>} value={i} style={{minWidth: 40, width: 50}} />
             ))}
-
-
-
-
-
           </Tabs>
         </Toolbar>
       </AppBar>

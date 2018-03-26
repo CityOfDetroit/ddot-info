@@ -17,7 +17,8 @@ const Helpers = {
     'eastbound': '#c4c4c4',
     'southbound': '#B0D27B',
     'westbound': '#B0D27B',
-    'clockwise': 'rgb(23, 214, 42)'   
+    'clockwise': 'rgb(23, 214, 42)',
+    'background': 'rgba(0, 68, 69, 0.2)'  
   },
   lookup: {
     'eastbound': 'EB',

@@ -5,7 +5,8 @@ import Avatar from 'material-ui/Avatar';
 import PdfIcon from 'material-ui-icons/PictureAsPdf';
 
 const PrintSchedule = ({ routePdf }) => (
-    <div style={{margin: 10}}>
+    <div style={{margin: 10, display: 'flex', alignItems: 'center'}}>
+      <span style={{marginRight: '.5em'}}>Download schedules:</span>
       {routePdf.map((p, i) => 
         <Chip 
           key={i}

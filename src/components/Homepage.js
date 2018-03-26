@@ -5,12 +5,13 @@ import Card, { CardContent } from 'material-ui/Card';
 import TopNav from './TopNav';
 import RouteSearch from './RouteSearch';
 import StopSearch from './StopSearch';
+import Helpers from '../helpers'
 // import RouteMapSVG from '../img/ddot.svg';
 
 class Homepage extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{background: Helpers.colors.background}}>
         <TopNav />
         <Card className="explainer">
           <CardContent style={{ fontSize: '1.2em' }}>

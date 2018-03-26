@@ -92,7 +92,7 @@ class Stop extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({fetchedStopSchedule: false, slideIndex: 0})
+    this.setState({fetchedStopSchedule: false, slideIndex: 0, routeStopType: 'schedule'})
     if(this.props.match.params.name !== nextProps.match.params.name) {
       this.fetchStopScheduleData(nextProps.match.params.name)
       this.fetchRealtimeData(nextProps.match.params.name)
@@ -112,7 +112,7 @@ class Stop extends React.Component {
     const { slideIndex } = this.state
 
     return (
-      <div className='App'>
+      <div className='App' style={{background: Helpers.colors['background']}}>
         <StopHeader id={stopId} name={stopName} />
         <StopMap stopId={stopId} center={stopCoords}/>
         <div className='routes'>
@@ -160,6 +160,7 @@ class Stop extends React.Component {
                       <RoutePredictionList
                         predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r[0].padStart(3, '0')})} 
                         route={r[0]}
+                        stop={stopId}
                         multipleDirs={this.state.multipleDirs} />
                     </div>
                     : ``)

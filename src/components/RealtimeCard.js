@@ -33,33 +33,88 @@ const styles = {
 
 class RealtimeCard extends Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            allData: {},
+            tripData: null,
+            fetched: false
+        }
+    }
+
+    fetchData() {
+        fetch(`${Helpers.endpoint}/trip-details/${this.props.trip}.json?key=BETA&includeStatus=true&includePolylines=false`)
+        .then(response => response.json())
+        .then(d => {
+            console.log(d)
+            this.setState({ 
+                tripData: d.data.entry.status,
+                allData: d,
+                fetched: true
+            })
+        })
+    }
+
+    componentDidMount() {
+        this.fetchData()
+        this.interval = setInterval(() => this.fetchData(), 3000)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval)
+    }
+
+    computeStopsAway(current, target) {
+        const stopOrder = this.state.allData.data.references.stops.map(s => s.id.slice(5,))
+        const currentPosition = stopOrder.indexOf(current) 
+        const targetPosition = stopOrder.indexOf(target)
+        console.log(currentPosition, targetPosition)
+        return (targetPosition - currentPosition)
+      }    
+    
+    computeTimeAway(current, target) {
+        const currentTime = this.state.allData.data.entry.schedule.stopTimes.filter(st => { return st.stopId.slice(5,) === current.toString() })[0] || this.state.allData.data.entry.schedule.stopTimes.slice(1)[0]
+        const targetTime = this.state.allData.data.entry.schedule.stopTimes.filter(st => { return st.stopId.slice(5,) === target.toString() })[0]
+        console.log(currentTime, targetTime)
+        const timeFromTarget = Math.ceil(targetTime.departureTime - currentTime.departureTime)
+        return timeFromTarget
+    }
+
     render() {
-        const {properties, geometry} = this.props.trip
         return (
-            <Card elevation={3} style={{margin: '1em', minWidth: 320, maxHeight: 500}}>
-                <CardMedia component={StaticMap}
-                        width={320}
+            this.state.fetched && this.state.tripData ? 
+            (<Card style={{minWidth: 320, maxHeight: 500, display: 'flex'}}>
+                <CardMedia 
+                        image={'something'}
+                        component={StaticMap}
+                        width={300}
                         height={280}
-                        latitude={geometry.coordinates[1]}
-                        longitude={geometry.coordinates[0]}
+                        latitude={this.state.tripData.position.lat}
+                        longitude={this.state.tripData.position.lon}
                         zoom={14}
                         mapStyle={defaultMapStyle}
                         mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
                         attributionControl={false}
-                        children={[<Chip label={properties.direction} style={{margin: '.5em', background: Helpers.colors[properties.direction], border: '2px solid rgba(0,0,0,0.5)'}} />, <Marker latitude={geometry.coordinates[1]} longitude={geometry.coordinates[0]}>
+                        children={[<Marker latitude={this.state.tripData.position.lat} longitude={this.state.tripData.position.lon}>
                                     <BusIcon />
                         </Marker>]}
                         />
-                {/* <CardHeader title={`${properties.direction} ${properties.tripId}`} subheader={`Next stop: ${Stops[properties.nextStop.slice(5,)].name}`} /> */}
+                {/* <CardHeader title={`${this.state.tripData.direction} ${this.state.tripData.tripId}`} subheader={`Next stop: ${Stops[this.state.tripData.nextStop.slice(5,)].name}`} /> */}
                 <CardContent>
-                    <p>Next stop: {Stops[properties.nextStop.slice(5,)].name}</p>
-                </CardContent>
-                <CardActions disableActionSpacing>
-                    {properties.predicted 
-                        ? <div style={styles.prediction}><LiveIcon style={styles.predictionIcon}/><p>real-time location {properties.predicted ? <span style={properties.onTime > 0 ? styles.behind : styles.ahead}>{properties.onTime} min {properties.onTime <= 0 ? 'ahead' : 'behind'}</span>: `` }</p></div>
+                    {this.state.tripData.nextStop && this.props.stop? 
+                    (
+                    <div>
+                        <p>Arrives here in {this.computeTimeAway(this.state.tripData.nextStop.slice(5,), this.props.stop) / 60} minutes</p>
+                        <p>Next stop: {Stops[this.state.tripData.nextStop.slice(5,)].name} {this.computeStopsAway(this.state.tripData.nextStop.slice(5,), this.props.stop) > 0 ? `(${this.computeStopsAway(this.state.tripData.nextStop.slice(5,), this.props.stop)} stops away)`: ``} </p>
+                    </div>
+                    )
+                    : ``}
+                    {this.state.tripData.predicted 
+                        ? <div style={styles.prediction}><LiveIcon style={styles.predictionIcon}/><p>real-time location {this.state.tripData.predicted ? <span style={this.state.tripData.onTime > 0 ? styles.behind : styles.ahead}>{this.state.tripData.onTime} min {this.state.tripData.onTime <= 0 ? 'ahead' : 'behind'}</span>: `` }</p></div>
                         : <div style={styles.prediction}><ScheduleIcon style={styles.predictionIcon}/><p>scheduled location</p></div>}
-                </CardActions>
-            </Card>
+                        </CardContent>
+            </Card>)
+            : <Card style={{minWidth: 320, maxHeight: 500}}><CardContent>{this.state.fetched ? `No data available...` : `Loading...`}</CardContent></Card>
         )
     }
 }

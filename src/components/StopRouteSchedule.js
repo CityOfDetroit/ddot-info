@@ -13,6 +13,9 @@ import { grey800 } from 'material-ui/colors';
 
 class StopRouteSchedule extends Component {
   render() {
+    if (!this.props.schedules[0]) {
+      return ``
+    }
     return (
       <div>
         {Helpers.cleanScheduleHeadsign(this.props.schedules[0]).stopRouteDirectionSchedules.map((rds, i) => (

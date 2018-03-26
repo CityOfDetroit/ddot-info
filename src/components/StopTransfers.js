@@ -1,13 +1,8 @@
 import React from 'react';
 import Card, { CardHeader, CardContent } from 'material-ui/Card';
-import List, { ListItem, ListItemText } from 'material-ui/List'
 
 import StopInlineLink from './StopInlineLink';
 import RouteLink from './RouteLink';
-import {Chip} from 'material-ui';
-
-import Schedules from '../data/schedules.js';
-import Stops from '../data/stops.js';
 
 const StopTransfers = ({ stops }) => (
   <div className="transfers" style={{overflowX: 'scroll', margin: 10}}>

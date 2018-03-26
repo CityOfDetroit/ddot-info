@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import _ from 'lodash';
-import Card, { CardContent } from 'material-ui/Card';
 import Chip from 'material-ui/Chip';
-import Avatar from 'material-ui/Avatar';
-import Divider from 'material-ui/Divider'
 
 import Toolbar from 'material-ui/Toolbar';
 import { AppBar } from 'material-ui';

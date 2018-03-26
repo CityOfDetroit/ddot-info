@@ -38,7 +38,6 @@ class RouteRealtime extends React.Component {
     .then(response => response.json())
     .then(d => {
       let geojson = _.sortBy(d.data.list, 'status.tripId').map((bus, i) => {
-
         let direction = _.findKey(this.state.tripIds, t => { return t.indexOf(bus.status.activeTripId.slice(-4)) > -1})
           return {
             "type": "Feature",
@@ -86,11 +85,12 @@ class RouteRealtime extends React.Component {
           <div style={{
             gridRow: '2/11', 
             gridColumn: '1/9', 
-            // display: 'grid', 
+            display: 'flex',
+            flexWrap: 'wrap', 
             // gridTemplateColumns: `repeat(auto-fit, 1fr))`, 
             // gridTemplateRows: `repeat(auto-fit, 1fr)`, 
             // gridGap: `.5em`,
-            margin: '.5em' }}>
+            margin: '.25em' }}>
           {this.state.realtimeTrips.map(rt => (
             <RealtimeCard trip={rt} />
           ))}

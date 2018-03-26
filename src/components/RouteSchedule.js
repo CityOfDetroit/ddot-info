@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import _ from 'lodash';
-import Chip from 'material-ui/Chip';
 
 import Toolbar from 'material-ui/Toolbar';
 import { AppBar } from 'material-ui';
@@ -21,13 +20,10 @@ import PrintSchedule from './PrintSchedule';
 
 import HelpOutline from 'material-ui-icons/HelpOutline'
 
-import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton'
 import Dialog, {
   DialogActions,
   DialogContent,
-  DialogContentText,
-  DialogTitle,
 } from 'material-ui/Dialog';
 
 

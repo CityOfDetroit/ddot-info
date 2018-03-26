@@ -5,7 +5,9 @@ import BusIcon from 'material-ui-icons/DirectionsBus'
 import LiveIcon from 'material-ui-icons/SpeakerPhone'
 import ScheduleIcon from 'material-ui-icons/Schedule'
 
-import { Card, CardContent, CardMedia, CardActions , Chip, Divider} from 'material-ui';
+import { Card, CardContent, CardMedia } from 'material-ui';
+
+import { Link } from 'react-router-dom'
 
 import {defaultMapStyle} from '../style.js';
 import Helpers from '../helpers'
@@ -76,7 +78,7 @@ class RealtimeCard extends Component {
         const currentTime = this.state.allData.data.entry.schedule.stopTimes.filter(st => { return st.stopId.slice(5,) === current.toString() })[0] || this.state.allData.data.entry.schedule.stopTimes.slice(1)[0]
         const targetTime = this.state.allData.data.entry.schedule.stopTimes.filter(st => { return st.stopId.slice(5,) === target.toString() })[0]
         console.log(currentTime, targetTime)
-        const timeFromTarget = Math.ceil(targetTime.departureTime - currentTime.departureTime)
+        const timeFromTarget = Math.floor((targetTime.departureTime - currentTime.departureTime)/60)
         return timeFromTarget
     }
 
@@ -104,8 +106,8 @@ class RealtimeCard extends Component {
                     {this.state.tripData.nextStop && this.props.stop? 
                     (
                     <div>
-                        <p>Arrives here in {this.computeTimeAway(this.state.tripData.nextStop.slice(5,), this.props.stop) / 60} minutes</p>
-                        <p>Next stop: {Stops[this.state.tripData.nextStop.slice(5,)].name} {this.computeStopsAway(this.state.tripData.nextStop.slice(5,), this.props.stop) > 0 ? `(${this.computeStopsAway(this.state.tripData.nextStop.slice(5,), this.props.stop)} stops away)`: ``} </p>
+                        <p>Arrives here in {this.computeTimeAway(this.state.tripData.nextStop.slice(5,), this.props.stop)} minutes</p>
+                        <p>Next stop: <Link to={`/stop/${Stops[this.state.tripData.nextStop.slice(5,)].id}`}>{Stops[this.state.tripData.nextStop.slice(5,)].name}</Link> {this.computeStopsAway(this.state.tripData.nextStop.slice(5,), this.props.stop) > 0 ? `(${this.computeStopsAway(this.state.tripData.nextStop.slice(5,), this.props.stop)} stops away)`: ``} </p>
                     </div>
                     )
                     : ``}

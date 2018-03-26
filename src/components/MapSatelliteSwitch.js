@@ -9,6 +9,7 @@ class MapSatelliteSwitch extends React.Component {
         <FormControlLabel 
           control={<Checkbox
             onChange={this.props.onChange}
+            defaultChecked
           />}
           label="Satellite"
         />

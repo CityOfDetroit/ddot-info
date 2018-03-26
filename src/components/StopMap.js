@@ -16,7 +16,7 @@ class StopMap extends Component {
     let stop = Stops[this.props.stopId] || null;
 
     this.state = {
-      showSatellite: false,
+      showSatellite: true,
       viewport: {
         latitude: parseFloat(stop.lat),
         longitude: parseFloat(stop.lon),
@@ -112,7 +112,7 @@ class StopMap extends Component {
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}>
         </StaticMap>
-        <MapSatelliteSwitch onChange={this.handleChange} />
+        <MapSatelliteSwitch onChange={this.handleChange} defaultChecked/>
       </Card>
     )
   }

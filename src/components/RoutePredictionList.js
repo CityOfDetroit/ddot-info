@@ -5,13 +5,11 @@ import Helpers from '../helpers.js'
 import RealtimeCard from './RealtimeCard';
 
 import Card, { CardContent } from 'material-ui/Card';
-import IconButton from 'material-ui/IconButton';
-import List, {ListItem, ListItemIcon, ListItemText, ListItemSecondaryAction} from 'material-ui/List';
+import List, {ListItem, ListItemIcon, ListItemText} from 'material-ui/List';
 import Collapse from 'material-ui/transitions/Collapse'
 
 import SchedSVG from 'material-ui-icons/Schedule'
 import LiveSVG from 'material-ui-icons/SpeakerPhone'
-import CommentIcon from 'material-ui-icons/Comment';
 
 
 class RoutePredictionList extends React.Component {
@@ -30,7 +28,7 @@ class RoutePredictionList extends React.Component {
 
   render() {
 
-    const {predictions, route} = this.props
+    const {predictions} = this.props
 
     console.log(Helpers.cleanPredictionHeadsign(predictions))
     return (

@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import _ from 'lodash';
-import Card, { CardContent } from 'material-ui/Card';
-import Chip from 'material-ui/Chip';
-import Avatar from 'material-ui/Avatar';
-import Divider from 'material-ui/Divider'
 
 import Toolbar from 'material-ui/Toolbar';
 import { AppBar } from 'material-ui';
@@ -21,6 +17,15 @@ import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
 import PrintSchedule from './PrintSchedule';
+
+import HelpOutline from 'material-ui-icons/HelpOutline'
+
+import IconButton from 'material-ui/IconButton'
+import Dialog, {
+  DialogActions,
+  DialogContent,
+} from 'material-ui/Dialog';
+
 
 class RouteSchedule extends React.Component {
   constructor(props) {
@@ -55,6 +60,7 @@ class RouteSchedule extends React.Component {
       availableServices: (Object.keys(route.schedules)),
       availableDirections: (Object.keys(route.schedules.weekday)),
       routeBbox: route.bbox,
+      open: false
     };
 
     this.handleDirectionChange = this.handleDirectionChange.bind(this);
@@ -104,6 +110,14 @@ class RouteSchedule extends React.Component {
     });
   }
 
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
   componentDidMount() {
     this.fetchData();
     this.interval = setInterval(() => this.fetchData(), 3000);
@@ -120,9 +134,9 @@ class RouteSchedule extends React.Component {
       <div className="App">
         <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
         <div className="schedule">
-          <AppBar position="static" color="default" elevation={0} style={{display: 'flex', flexWrap: 'wrap', padding: '.2em 0em'}}>
+          <AppBar position="static" color="default" elevation={0} style={{display: 'flex', flexWrap: 'wrap', padding: '.2em 0em', marginBottom: '1em'}}>
             <Toolbar elevation={0} style={{justifyContent: window.innerWidth < 650 ? 'space-around' : 'flex-start'}}>
-              <h4 style={{maxWidth: 100}}>Service and direction:</h4>
+              {/* <h4 style={{maxWidth: 100}}>Service and direction:</h4> */}
               <ServicePicker
                 services={this.state.availableServices}
                 currentSvc={this.state.currentSvc}
@@ -132,22 +146,30 @@ class RouteSchedule extends React.Component {
                 currentDirection={this.state.currentDirection}
                 onChange={this.handleDirectionChange}
                 route={this.state.route} />
-            </Toolbar>
-          </AppBar>
-          <AppBar position="static" color="red" elevation={0} style={{display: 'flex', flexWrap: 'wrap'}}>
-            <Toolbar style={{justifyContent: 'space-between'}} elevation={0}>
-              <div>
-                <Chip style={{ margin: 6 }} labelStyle={{ fontSize: '.7em' }} label="am times" />
-                <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} label={<strong>pm times</strong>} />
-                <Chip style={{ margin: 6, backgroundColor: chroma(this.state.color).alpha(0.25).css() }} labelStyle={{ fontSize: '.7em' }} label="current trips" />
-              </div>
-              <div>
+            <IconButton onClick={this.handleClickOpen}><HelpOutline /></IconButton>
+              <Dialog
+                open={this.state.open}
+                onClose={this.handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+              >
+                <DialogContent>
+                <div style={{display: 'flex', alignItems: 'center'}}>
+                <p style={{marginRight: '.5em', maxWidth: 400}}>Major stops are shown in order from left to right; look down the column to see scheduled arrivals at that stop.</p>
+                <ul style={{width: 200}}>
+                  <li style={{ padding: '.25em' }}>AM arrivals</li>
+                  <li style={{ fontWeight: 700, padding: '.25em'}}>PM arrivals</li>
+                  <li style={{ backgroundColor: chroma(this.state.color).alpha(0.25).css(), padding: '.25em' }}>current trips</li>
+                </ul>
+                </div>
+                <DialogActions>
                 <PrintSchedule routePdf={routeDetailObj.pdf} />
-              </div>
+                </DialogActions>
+                </DialogContent>
+              </Dialog>   
+         
             </Toolbar>
           </AppBar>
-
-
           <ScheduleTable 
             schedule={this.state[this.state.currentSvc]} 
             direction={this.state.currentDirection} 

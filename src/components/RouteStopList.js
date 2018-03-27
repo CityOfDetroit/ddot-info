@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import Card, { CardContent } from 'material-ui/Card';
-import Chip from 'material-ui/Chip';
-import Avatar from 'material-ui/Avatar';
 
 import StopLink from './StopLink';
 import Stops from '../data/stops.js';

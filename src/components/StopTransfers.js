@@ -1,30 +1,54 @@
 import React from 'react';
-import Card, { CardHeader, CardContent } from 'material-ui/Card';
-import List, { ListItem, ListItemText } from 'material-ui/List'
+import Card, { CardHeader } from 'material-ui/Card';
+import Tabs, {Tab} from 'material-ui/Tabs'
+import Toolbar from 'material-ui/Toolbar';
+import { AppBar } from 'material-ui';
 
 import StopInlineLink from './StopInlineLink';
+import RouteBadge from './RouteBadge'
 import RouteLink from './RouteLink';
-import {Chip} from 'material-ui';
 
-import Schedules from '../data/schedules.js';
-import Stops from '../data/stops.js';
+class StopTransfers extends React.Component {
+  
+  state = {
+    value: 0
+  };
 
-const StopTransfers = ({ stops }) => (
-  <div className="transfers" style={{overflowX: 'scroll', margin: 10}}>
-    <h4 style={{margin: 0, padding: 10}}>Transfer to other routes</h4>
-    {Object.keys(stops).map((s, i) => (
-      <Card style={{margin: 5}}>
-        <CardHeader component={RouteLink} id={s}/>
-        <CardContent>
-        {stops[s].map((s,i) => (
+  handleChange = (event, value) => {
+    this.setState({ value })
+  }
+  
+  render() {
+    const stops = this.props.stops
+    return (
+      <div className="transfers">
+      <AppBar position="static" color="red" style={{display: 'flex'}} elevation={0}>
+        <Toolbar>
+          <h4 style={{margin: 0, padding: '.5em'}}>Transfers</h4>
+          <Tabs
+            onChange={this.handleChange}
+            value={this.state.value}
+            indicatorColor="red"
+            textColor="primary"
+            scrollable={Object.keys(stops).length > 5 ? true : false}
+            >
+            {Object.keys(stops).map((s, i) => (
+              <Tab label={<RouteBadge id={s}/>} value={i} style={{minWidth: 40, width: 50}} />
+            ))}
+          </Tabs>
+        </Toolbar>
+      </AppBar>
+      <Card style={{padding: '1em'}}>
+        <CardHeader component={RouteLink} id={Object.keys(stops)[this.state.value]} />
+        {stops[Object.keys(stops)[this.state.value]].map((t, i) => (
             <p style={{margin: 0, padding: 5}}>
-            {s[1]}: {<StopInlineLink id={s[2]} />}
+              {t[1]}: {<StopInlineLink id={t[2]} />}
             </p>
-          ))}
-        </CardContent>
+        ))}
       </Card>
-    ))}
-  </div>
-);
+      </div>
+    )
+  }
+}
 
 export default StopTransfers;

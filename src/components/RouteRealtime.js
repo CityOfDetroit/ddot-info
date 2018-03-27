@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import moment from 'moment'
 import _ from 'lodash'
 
-import RealtimeRouteMap from './RealtimeRouteMap'
-import RealtimeTripList from './RealtimeTripList'
+import RealtimeCard from './RealtimeCard'
 import RouteHeader from './RouteHeader'
 import Helpers from '../helpers'
 import Schedules from '../data/schedules.js'
@@ -27,35 +26,18 @@ class RouteRealtime extends React.Component {
 
     this.state = {
       route: (route),
-      routeName: (route.rt_name),
       routeId: (route.rt_id),
-      description: (route.description),
-      weekday: (route.schedules.weekday),
-      saturday: (route.schedules.saturday),
-      sunday: (route.schedules.sunday),
       tripIds: tripIds,
       realtimeTrips: [],
       fetched: false,
-      color: (route.color),
-      currentSvc: (Object.keys(route.schedules).length > 1 ? Helpers.dowToService(moment().day()) : 'weekday'),
-      currentDirection: (Object.keys(route.schedules.weekday)[0]),
-      availableServices: (Object.keys(route.schedules)),
-      availableDirections: (Object.keys(route.schedules.weekday)),
-      routeBbox: route.bbox,
-      timepointStops: route.timepoints[Object.keys(route.schedules.weekday)[0]]
     }
-
-    this.handleDirectionChange = this.handleDirectionChange.bind(this)
-    this.handleServiceChange = this.handleServiceChange.bind(this)
   }
 
   fetchData() {
-    console.log(`${Helpers.endpoint}/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
     fetch(`${Helpers.endpoint}/trips-for-route/DDOT_${this.state.routeId}.json?key=BETA&includeStatus=true&includePolylines=false`)
     .then(response => response.json())
     .then(d => {
       let geojson = _.sortBy(d.data.list, 'status.tripId').map((bus, i) => {
-
         let direction = _.findKey(this.state.tripIds, t => { return t.indexOf(bus.status.activeTripId.slice(-4)) > -1})
           return {
             "type": "Feature",
@@ -79,28 +61,16 @@ class RouteRealtime extends React.Component {
       })
       let realtimeTrips = _.filter(geojson, o => { return o.properties.direction !== undefined })
       this.setState({ 
-        realtimeTrips: realtimeTrips ,
+        realtimeTrips: realtimeTrips.map(t => t.properties.tripId) ,
         fetched: true
       })
     })
     .catch(e => console.log(e))
   }
 
-  handleDirectionChange(event) {
-    this.setState({
-      currentDirection: event.target.value
-    })
-  }
-
-  handleServiceChange(event) {
-    this.setState({
-      currentSvc: event.target.value
-    })
-  }
-
   componentDidMount() {
     this.fetchData()
-    this.interval = setInterval(() => this.fetchData(), 3000)
+    this.interval = setInterval(() => this.fetchData(), 20000)
   }
 
   componentWillUnmount() {
@@ -111,16 +81,20 @@ class RouteRealtime extends React.Component {
     return (
       <div className="App">
         <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
-        <RealtimeRouteMap 
-          routeId={this.props.match.params.name} 
-          stops={this.state.timepointStops} 
-          bbox={this.state.routeBbox} 
-          trips={this.state.realtimeTrips} 
-        />
         {this.state.fetched ?
-          <RealtimeTripList
-                trips={this.state.realtimeTrips}
-                route={this.state.route} /> 
+          <div style={{
+            gridRow: '2/11', 
+            gridColumn: '1/9', 
+            display: 'flex',
+            flexWrap: 'wrap', 
+            // gridTemplateColumns: `repeat(auto-fit, 1fr))`, 
+            // gridTemplateRows: `repeat(auto-fit, 1fr)`, 
+            // gridGap: `.5em`,
+            margin: '.25em' }}>
+          {this.state.realtimeTrips.map(rt => (
+            <RealtimeCard trip={rt} />
+          ))}
+          </div>
         : `Loading real-time arrival data...` }
       </div>
     )

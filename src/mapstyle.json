@@ -161,7 +161,7 @@
                 "visibility": "none"
             },
             "paint": {
-                "raster-opacity": 0.75
+                "raster-opacity": 0.5
             }
         },
         {

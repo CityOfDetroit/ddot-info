@@ -27,7 +27,8 @@ class RouteHeader extends React.Component {
     const tabs = [
       {label: "Route", path: `/route/${this.props.number}`},
       {label: "Stops", path: `/route/${this.props.number}/stops`},
-      {label: "Schedule", path: `/route/${this.props.number}/schedule`}
+      {label: "Schedule", path: `/route/${this.props.number}/schedule`},
+      // {label: "Live", path: `/route/${this.props.number}/real-time`},
     ];
 
     const thisRoute = Schedules[this.props.number];

@@ -92,7 +92,7 @@ class Stop extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({fetchedStopSchedule: false, slideIndex: 0})
+    this.setState({fetchedStopSchedule: false, slideIndex: 0, routeStopType: 'schedule'})
     if(this.props.match.params.name !== nextProps.match.params.name) {
       this.fetchStopScheduleData(nextProps.match.params.name)
       this.fetchRealtimeData(nextProps.match.params.name)
@@ -112,7 +112,7 @@ class Stop extends React.Component {
     const { slideIndex } = this.state
 
     return (
-      <div className='App'>
+      <div className='App' style={{background: Helpers.colors['background']}}>
         <StopHeader id={stopId} name={stopName} />
         <StopMap stopId={stopId} center={stopCoords}/>
         <div className='routes'>
@@ -124,6 +124,7 @@ class Stop extends React.Component {
                 value={slideIndex}
                 indicatorColor="red"
                 textColor="primary"
+                scrollable={stopRoutes.length > 5 ? true : false}
                 >
 
                 {stopRoutes.map((r, i) => (
@@ -160,12 +161,12 @@ class Stop extends React.Component {
                       <RoutePredictionList
                         predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r[0].padStart(3, '0')})} 
                         route={r[0]}
+                        stop={stopId}
                         multipleDirs={this.state.multipleDirs} />
                     </div>
                     : ``)
                     :
                     (this.state.fetchedStopSchedule && this.state.fetchedPredictions ?
-                      <div>
                     <StopRouteSchedule 
                       schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
                         return s.routeId.split("_").pop() === Schedules[r[0]].rt_id.toString()
@@ -174,13 +175,13 @@ class Stop extends React.Component {
                       multipleDirs={this.state.multipleDirs}
                       predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r[0].padStart(3, '0')}).map(p => p.tripId)} 
                       />
-                  </div> : ``)}
+                   : ``)}
                   </div>
                 </div>
             ))}
             </SwipeableViews>
         </div>
-        {stopTransfers.length > 0 ? <StopTransfers stops={_.groupBy(stopTransfers, 0)} /> : null}
+        {stopTransfers.length > 0 && this.state.fetchedStopSchedule && this.state.fetchedPredictions ? <StopTransfers stops={_.groupBy(stopTransfers, 0)} /> : null}
       </div>
     )
   }

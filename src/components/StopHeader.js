@@ -10,11 +10,11 @@ const StopHeader = ({ id, name }) => (
       <Link className="link dim pr3" to={{ pathname: `/` }}>
         <img src={ChevronSVG} className="" alt="Back to home" />
       </Link>
-      <span className="fw7 mr2 pa2" style={{background: 'hsl(60, 84%, 49%)'}}>
-        #{id}
-      </span>
       <span className="pa2 fw5 white">
         {name}
+      </span>
+      <span className="fw7 f5 mr2 pa2" style={{background: '#ddd'}}>
+        Stop ID #{id}
       </span>
     </div>
     <div>

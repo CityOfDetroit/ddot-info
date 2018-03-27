@@ -89,7 +89,8 @@ class RouteMap extends Component {
         minZoom: 9,
         maxZoom: 19,
         minPitch: 0,
-        maxPitch: 0
+        maxPitch: 0,
+        maxBounds: route.bbox
       },
       realtimeTrips: [],
       showRealtime: true,
@@ -197,8 +198,8 @@ class RouteMap extends Component {
           <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
             <CardHeader title='Route map' subheader='Zoom in to see all stops' />
             <div>
-            <Chip style={{ margin: 6, fontWeight: 200 }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#fff', border: `4px solid ${this.props.route.color}` }}></Avatar>} label="local stops" />
-            <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#000', border: '4px solid #fff' }}></Avatar>} label="major stops" />
+            <Chip style={{ margin: 6, fontWeight: 200, background: 'white' }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#fff', border: `4px solid ${this.props.route.color}` }}></Avatar>} label="local stops" />
+            <Chip style={{ margin: 6, fontWeight: 700, background: 'white' }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#000', border: '4px solid #fff' }}></Avatar>} label="major stops" />
             </div>
           </div>
           <MapGL

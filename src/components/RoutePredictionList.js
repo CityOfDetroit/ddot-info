@@ -10,7 +10,8 @@ import Collapse from 'material-ui/transitions/Collapse'
 
 import SchedSVG from 'material-ui-icons/Schedule'
 import LiveSVG from 'material-ui-icons/SpeakerPhone'
-
+import ExpandLess from 'material-ui-icons/ExpandLess'
+import ExpandMore from 'material-ui-icons/ExpandMore'
 
 class RoutePredictionList extends React.Component {
 
@@ -37,15 +38,18 @@ class RoutePredictionList extends React.Component {
           <div>
             <ListItem button key={p.tripId} onClick={this.handleClick(p.tripId)} style={{background: '#fff'}} >
               <ListItemIcon >
-                {p.predicted ? <LiveSVG /> : <SchedSVG />}
+                {this.state.open === p.tripId ? <ExpandLess /> : <ExpandMore />}
               </ListItemIcon>
               <ListItemText style={{fontWeight: this.state.open === p.tripId ? 700 : 300 }} primary={`${p.predicted ? moment(p.predictedArrivalTime).format('h:mma') : moment(p.scheduledArrivalTime).format('h:mma')}`} />
+              <ListItemIcon >
+                {p.predicted ? <LiveSVG /> : <SchedSVG />}
+              </ListItemIcon>
             </ListItem>
             <Collapse in={this.state.open === p.tripId} timeout="auto" unmountOnExit>
-              <RealtimeCard trip={p.tripId} stop={this.props.stop}/>
+              <RealtimeCard trip={p.tripId} stop={this.props.stop} route={this.props.route}/>
             </Collapse>
         </div>
-          )) : <Card><CardContent>There are currently no real-time predictions available.</CardContent></Card>}
+          )) : <Card><CardContent style={{padding: '1em'}}>There are currently no real-time predictions available.</CardContent></Card>}
           </List>
     )
   }

@@ -61,7 +61,7 @@ class RouteRealtime extends React.Component {
       })
       let realtimeTrips = _.filter(geojson, o => { return o.properties.direction !== undefined })
       this.setState({ 
-        realtimeTrips: realtimeTrips ,
+        realtimeTrips: realtimeTrips.map(t => t.properties.tripId) ,
         fetched: true
       })
     })
@@ -70,7 +70,7 @@ class RouteRealtime extends React.Component {
 
   componentDidMount() {
     this.fetchData()
-    this.interval = setInterval(() => this.fetchData(), 3000)
+    this.interval = setInterval(() => this.fetchData(), 20000)
   }
 
   componentWillUnmount() {

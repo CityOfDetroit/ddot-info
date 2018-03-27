@@ -1,5 +1,5 @@
 import React from 'react';
-import Card, { CardHeader, CardContent } from 'material-ui/Card';
+import Card, { CardHeader } from 'material-ui/Card';
 import Tabs, {Tab} from 'material-ui/Tabs'
 import Toolbar from 'material-ui/Toolbar';
 import { AppBar } from 'material-ui';

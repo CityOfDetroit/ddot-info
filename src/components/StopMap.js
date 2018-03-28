@@ -7,7 +7,7 @@ import Helpers from '../helpers.js';
 import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Stops from '../data/stops.js';
 
-import {defaultMapStyle, routeLineIndex, highlightPointIndex, highlightLabelIndex, stopPointIndex, stopLabelIndex} from '../style.js';
+import {defaultMapStyle, routeLineIndex, highlightPointIndex, highlightLabelIndex, stopPointIndex, stopLabelIndex, stopPointIndexTwo} from '../style.js';
 
 class StopMap extends Component {
   constructor(props) {
@@ -92,9 +92,7 @@ class StopMap extends Component {
     })  
 
     // set labels for transfers
-    style = style.setIn(['layers', stopPointIndex, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 2)))
-    style = style.setIn(['layers', stopLabelIndex, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 2)))
-    style = style.setIn(['layers', stopLabelIndex, 'layout', 'visibility'], 'visible')
+    style = style.setIn(['layers', stopPointIndexTwo, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 2)))
 
     // eventually set routes?
     const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 0).concat(stop.routes))))

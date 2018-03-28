@@ -76,8 +76,8 @@ class RouteMap extends Component {
         longitude: bound.longitude,
         zoom: bound.zoom,
         bearing: 0,
-        width: window.innerWidth > 650 ? window.innerWidth * (4/8) - 30 : window.innerWidth - 60,
-        height: window.innerWidth > 650 ? ((window.innerHeight - 128) * 1 - 114) : 225
+        width: window.innerWidth > 650 ? window.innerWidth * (4/8) - 30 : window.innerWidth,
+        height: window.innerWidth > 650 ? ((window.innerHeight - 128) * 1 - 114) : 250
       },
       settings: {
         dragPan: true,

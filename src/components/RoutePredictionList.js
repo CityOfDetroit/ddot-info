@@ -19,7 +19,7 @@ class RoutePredictionList extends React.Component {
     super(props)
     this.handleClick = this.handleClick.bind(this)
     this.state = { 
-      open: null 
+      open: this.props.predictions.length > 0 ? this.props.predictions[0].tripId : null 
     }
   }
 

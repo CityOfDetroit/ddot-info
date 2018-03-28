@@ -22,7 +22,7 @@ const RouteDetails = ({ id }) => {
           <div key={i}>
             {obj.services[d] ?
             <div>
-                  <Divider />
+              <Divider />
               <Card key={i}>
                 <CardHeader
                   title={d}

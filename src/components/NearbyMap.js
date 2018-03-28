@@ -16,15 +16,15 @@ class NearbyMap extends Component {
     super(props);
 
     this.state = {
-      showSatellite: false,
+      showSatellite: true,
       viewport: {
         latitude: this.props.coords.latitude,
         longitude: this.props.coords.longitude,
         zoom: 17,
         bearing: 0,
         pitch: 0,
-        width: window.innerWidth > 650 ? window.innerWidth / 2 : window.innerWidth,
-        height: window.innerWidth > 650 ? window.innerHeight - 100 : window.innerHeight * 4 / 10
+        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 10 : window.innerWidth,
+        height: window.innerWidth > 650 ? ((window.innerHeight - 74) * (5/8) - 88) : 225
       }
     }
 
@@ -42,8 +42,8 @@ class NearbyMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.outerWidth / 2,
-          height: window.innerHeight - 100
+          width: window.innerWidth * (3/8) - 10,
+          height: ((window.innerHeight - 64) * (5/8) - 78)
         }
       });
     } else {
@@ -51,7 +51,7 @@ class NearbyMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth,
-          height: window.innerHeight * 4 / 10
+          height: 225
         }
       });
     }
@@ -115,9 +115,7 @@ class NearbyMap extends Component {
 
     return (
       <Card className="map">
-        <CardHeader title="Service nearby your location">
-          <MapSatelliteSwitch onChange={this.handleChange} />
-        </CardHeader>
+        <CardHeader title="Nearby service" />
         <StaticMap
           width={this.state.viewport.width}
           height={this.state.viewport.height}
@@ -125,7 +123,8 @@ class NearbyMap extends Component {
           longitude={bound.longitude}
           zoom={bound.zoom}
           mapStyle={style}
-          mapboxApiAccessToken={Helpers.mapboxApiAccessToken} >
+          mapboxApiAccessToken={Helpers.mapboxApiAccessToken}
+          children={<MapSatelliteSwitch onChange={this.handleChange} defaultChecked />}>
         </StaticMap> 
       </Card>
     );

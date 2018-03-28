@@ -99,7 +99,7 @@ class NearbyMap extends Component {
     style = style.setIn(['sources', 'geolocated', 'data'], {"type": "FeatureCollection", "features": geolocatedPoint});
 
     // making some walking dist radii
-    const walkRadii = [buffer(geolocatedPoint[0].geometry, 250, {units: 'meters'})];
+    const walkRadii = [buffer(geolocatedPoint[0].geometry, parseInt(this.props.currentRadius, 10), {units: 'meters'})];
     const radiusBbox = bbox(walkRadii[0]);
 
     const viewport = new WebMercatorViewport({width: this.state.viewport.width, height: this.state.viewport.height});

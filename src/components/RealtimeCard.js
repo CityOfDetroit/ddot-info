@@ -38,7 +38,6 @@ const styles = {
 }
 
 class RealtimeCard extends Component {
-
     constructor(props) {
         super(props)
         this.state = {
@@ -84,7 +83,6 @@ class RealtimeCard extends Component {
     }
 
     render() {
-
         let style = defaultMapStyle;
         style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.route, 10));
 

@@ -28,7 +28,6 @@ class RoutePredictionList extends React.Component {
   };
 
   render() {
-
     const {predictions} = this.props
 
     console.log(Helpers.cleanPredictionHeadsign(predictions))

@@ -15,8 +15,8 @@ class FeaturesNearLocation extends Component {
     }
   }
 
-  fetchData() {
-    fetch(`${Helpers.endpoint}/stops-for-location.json?key=BETA&radius=200&lat=${this.props.coords.latitude}&lon=${this.props.coords.longitude}`)
+  fetchData(meters, coords) {
+    fetch(`${Helpers.endpoint}/stops-for-location.json?key=BETA&radius=${meters}&lat=${coords.latitude}&lon=${coords.longitude}`)
     .then(response => response.json())
     .then(d => {
       this.setState({
@@ -28,14 +28,20 @@ class FeaturesNearLocation extends Component {
   }
 
   componentDidMount() {
-    this.fetchData()
+    this.fetchData(this.props.meters, this.props.coords)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.meters !== nextProps.meters) {
+      this.fetchData(nextProps.meters, this.props.coords)
+    }
   }
 
   render() {
     return (
       <div className="App" style={{background: Helpers.colors['background']}}>
         <TopNav />
-        {this.state.fetchedData ? <NearbyMap data={this.state.data} coords={this.props.coords} /> : null }
+        {this.state.fetchedData ? <NearbyMap data={this.state.data} coords={this.props.coords} currentRadius={this.props.meters} /> : null }
         {this.state.fetchedData ? <NearbyList data={this.state.data} /> : null }
       </div>
     )
@@ -46,7 +52,8 @@ FeaturesNearLocation.propTypes = {
   coords: PropTypes.shape({
     latitude: PropTypes.number,
     longitude: PropTypes.number,
-  })
+  }),
+  meters: PropTypes.string,
 }
 
 export default FeaturesNearLocation;

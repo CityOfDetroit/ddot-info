@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { geolocated } from 'react-geolocated';
+import Toolbar from 'material-ui/Toolbar';
+import { AppBar } from 'material-ui';
 
 import FeaturesNearLocation from './FeaturesNearLocation';
+import TopNav from './TopNav';
 import RadiusPicker from './RadiusPicker';
+
+import Helpers from '../helpers';
 
 const radii = [
   { meters: '200', label: '5 minute walk' },
@@ -33,9 +38,16 @@ class Nearby extends React.Component {
       ? <div>Your browser does not support Geolocation</div> : !this.props.isGeolocationEnabled
         ? <div>Geolocation is not enabled</div> : this.props.coords
           ? 
-          <div>
-            <FeaturesNearLocation coords={this.props.coords} meters={this.state.currentRadius} />
-            <RadiusPicker radii={radii} currentRadius={this.state.currentRadius} onChange={this.onRadiusChange} />
+          <div style={{background: Helpers.colors['background']}}>
+            <TopNav />
+            <AppBar position="static" color="default" elevation={0} style={{display: 'flex', flexWrap: 'wrap', padding: '.2em 0em', marginBottom: '1em'}}>
+              <Toolbar elevation={0} style={{justifyContent: window.innerWidth < 650 ? 'space-around' : 'flex-start'}}>
+                <RadiusPicker radii={radii} currentRadius={this.state.currentRadius} onChange={this.onRadiusChange} />
+              </Toolbar>
+            </AppBar>
+            <div>
+              <FeaturesNearLocation coords={this.props.coords} meters={this.state.currentRadius} />
+            </div>
           </div>
           : <div>Getting the location data&hellip;</div>
     );

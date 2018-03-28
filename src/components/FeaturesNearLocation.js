@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Helpers from '../helpers';
 import NearbyMap from './NearbyMap';
 import NearbyList from './NearbyList'
-import TopNav from './TopNav';
 
 class FeaturesNearLocation extends Component {
   constructor(props) {
@@ -39,10 +38,12 @@ class FeaturesNearLocation extends Component {
 
   render() {
     return (
-      <div className="App" style={{background: Helpers.colors['background']}}>
-        <TopNav />
-        {this.state.fetchedData ? <NearbyMap data={this.state.data} coords={this.props.coords} currentRadius={this.props.meters} /> : null }
-        {this.state.fetchedData ? <NearbyList data={this.state.data} /> : null }
+      <div>
+        {this.state.fetchedData ? 
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div><NearbyMap data={this.state.data} coords={this.props.coords} currentRadius={this.props.meters} /></div>
+            <div><NearbyList data={this.state.data} /></div>
+          </div> : null }
       </div>
     )
   }

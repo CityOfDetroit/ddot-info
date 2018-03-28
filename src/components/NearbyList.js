@@ -6,7 +6,7 @@ import StopCard from './StopCard';
 class NearbyList extends React.Component {
   render() {
     return (
-      <Card className="routes">
+      <Card>
         <CardHeader title='Stops' />
         <CardContent>
           {this.props.data.data.list.length} stops nearby

@@ -40,8 +40,8 @@ class FeaturesNearLocation extends Component {
     return (
       <div>
         {this.state.fetchedData ? 
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <div><NearbyMap data={this.state.data} coords={this.props.coords} currentRadius={this.props.meters} /></div>
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            <div style={{ marginRight: '1em' }}><NearbyMap data={this.state.data} coords={this.props.coords} currentRadius={this.props.meters} /></div>
             <div><NearbyList data={this.state.data} /></div>
           </div> : null }
       </div>

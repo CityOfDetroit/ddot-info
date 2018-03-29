@@ -50,7 +50,7 @@ class ScheduleTable extends Component {
                   className={tp.indexOf('p') > -1 ? "fw7" : "" }
                   style={(j+1) % 5 === 0 ? { borderBottom: `2px solid ${this.props.color}`, borderRight: '1px solid #ccc', textAlign: 'center' } : { borderBottom: '0', borderRight: '1px solid #ccc', textAlign: 'center' } }
                   key={k}>
-                  {tp.slice(0, -2)}
+                  {tp === "\u2013" ? `—` : tp.slice(0, -2)}
                 </TableCell>
               ))}
             </TableRow>

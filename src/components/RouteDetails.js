@@ -12,12 +12,15 @@ const RouteDetails = ({ id }) => {
   return (
     <div className="details">
       <Card>
-        <CardContent style={{ fontSize: '1.2em' }}>
-          {obj.description}
+        {/* <CardContent style={{ fontSize: '1.2em' }}>
         </CardContent>
       </Card>
-      <Card>
-        <CardHeader title="Service overview" />
+      <Card> */}
+        {/* <CardHeader title="Service overview" /> */}
+        <CardContent style={{paddingTop: 16}}>
+          {obj.description}
+          <div style={{marginTop: 15}}><PrintSchedule routePdf={obj.pdf} /></div>
+        </CardContent>
         {["Monday-Friday", "Saturday", "Sunday/Holiday"].map((d, i) => (
           <div key={i}>
             {obj.services[d] ?
@@ -44,7 +47,6 @@ const RouteDetails = ({ id }) => {
           </div>
         ))}
       </Card>
-      <PrintSchedule routePdf={obj.pdf} />
     </div>
   );
 }

@@ -5,15 +5,14 @@ import PropTypes from 'prop-types';
 class StopInput extends Component {
   render() {
     return (
-      <div>
-        <TextField
-          label='Search by street name or stop ID' 
-          placeholder='E.g. "Michigan" or "1118"'
-          value={this.props.input}
-          onChange={this.props.onSearchChange}
-          margin='normal'
-          fullWidth />
-      </div>
+      <TextField
+        label='Search by street name or stop ID' 
+        placeholder='E.g. "Michigan" or "1118"'
+        value={this.props.input}
+        onChange={this.props.onSearchChange}
+        margin='dense'
+        style={{minWidth: 300}}
+         />
     )
   }
 }

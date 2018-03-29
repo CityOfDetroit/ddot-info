@@ -11,7 +11,7 @@ class RouteInput extends Component {
           value={this.props.input}
           onChange={this.props.onSearchChange}
           margin='dense'
-          fullWidth />
+          style={{minWidth: 300}} />
     );
   }
 }

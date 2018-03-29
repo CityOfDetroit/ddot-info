@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import Card, { CardHeader, CardContent } from 'material-ui/Card';
+import Toolbar from 'material-ui/Toolbar';
+import { AppBar } from 'material-ui';
 
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
@@ -64,17 +66,18 @@ class RouteStops extends React.Component {
           <RouteMap route={thisRoute} />
         </div>
         <div className="stopList">
-          <Card>
-            <CardHeader title="Stops along this route" />
-            <CardContent>
-              <DirectionPicker 
-                directions={this.state.availableDirections}
-                currentDirection={this.state.currentDirection}
-                onChange={this.handleDirectionChange}
-                route={thisRoute} />
-              <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} />
-            </CardContent>
-          </Card>
+            <AppBar position="static" elevation={0} color="red" style={{marginBottom: '.5em', padding: '.75em 0em'}} >
+              <Toolbar style={{flexWrap: 'wrap', justifyContent: 'space-between'}}>
+                <span style={{margin: 0, padding: '.5em 0em', fontSize: '1.5em'}}>Stops on this route</span>
+                <DirectionPicker 
+                  directions={this.state.availableDirections}
+                  currentDirection={this.state.currentDirection}
+                  onChange={this.handleDirectionChange}
+                  route={thisRoute}
+                  />
+                <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} fullWidth={false} />
+              </Toolbar>
+            </AppBar>
           <RouteStopList
             id={this.state.routeId}
             input={this.state.input}

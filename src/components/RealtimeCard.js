@@ -20,12 +20,12 @@ const styles = {
     prediction: {
         display: 'flex',
         alignItems: 'center',
-        fontSize: '.8em',
+        fontSize: '.9em',
         opacity: '.5',
         marginTop: '.5em'
     },
     predictionIcon: {
-        margin: '0em .25em',
+        marginRight: '.25em',
         width: '1em'
     },
     ahead: {
@@ -90,7 +90,7 @@ class RealtimeCard extends Component {
         style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.route, 10));
         
         let nextStopId = null
-        if(this.state.fetched) {
+        if(this.state.fetched && this.state.tripData) {
             nextStopId = this.state.tripData.nextStop.slice(5,)
         }
 
@@ -109,12 +109,12 @@ class RealtimeCard extends Component {
                         mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
                         attributionControl={false}
                         children={[<Marker latitude={this.state.tripData.position.lat} longitude={this.state.tripData.position.lon}>
-                                    <BusIcon />
+                                    <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,0.75)', padding: 2.5, color: '#eee'}}/>
                         </Marker>]}
                         />
                 {/* <CardHeader title={`${this.state.tripData.direction} ${this.state.tripData.tripId}`} subheader={`Next stop: ${Stops[nextStopId].name}`} /> */}
                 <CardContent>
-                    <div style={{display: 'flex', flexDirection: 'column', marginTop: window.innerWidth < 650 ? '.5em' : null}}>
+                    <div style={{display: 'flex', flexDirection: 'column', fontSize: 18, marginTop: window.innerWidth < 650 ? '.5em' : null}}>
                         <span style={{margin: '.25em 0em', color: '#444', fontSize: '.8em'}}>Next stop:</span>
                         <StopInlineLink id={nextStopId} />
                         {this.computeStopsAway(nextStopId, this.props.stop) > 0 ?

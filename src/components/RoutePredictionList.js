@@ -5,6 +5,7 @@ import Helpers from '../helpers.js'
 import RealtimeCard from './RealtimeCard';
 
 import Card, { CardContent } from 'material-ui/Card';
+import Divider from 'material-ui/Divider';
 import List, {ListItem, ListItemIcon, ListItemText} from 'material-ui/List';
 import Collapse from 'material-ui/transitions/Collapse'
 
@@ -44,7 +45,7 @@ class RoutePredictionList extends React.Component {
                 {p.predicted ? <LiveSVG /> : <SchedSVG />}
               </ListItemIcon>
             </ListItem>
-            <Collapse in={this.state.open === p.tripId} timeout="auto" unmountOnExit>
+            <Collapse in={this.state.open === p.tripId} style={{marginBottom: '.5em'}} timeout="auto" unmountOnExit>
               <RealtimeCard trip={p.tripId} stop={this.props.stop} route={this.props.route}/>
             </Collapse>
         </div>

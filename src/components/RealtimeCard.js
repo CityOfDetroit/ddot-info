@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom'
 import {defaultMapStyle, routeLineIndex} from '../style.js';
 import Helpers from '../helpers'
 import Stops from '../data/stops'
+import StopInlineLink from './StopInlineLink'
 // import Schedules from '../data/schedules'
 
 const styles = {
@@ -29,11 +30,13 @@ const styles = {
     },
     ahead: {
         color: 'darkgreen',
-        fontWeight: 700
+        fontWeight: 700,
+        paddingLeft: '.25em'
     },
     behind: {
         color: 'darkred',
-        fontWeight: 700
+        fontWeight: 700,
+        paddingLeft: '.25em'
     }
 }
 
@@ -85,6 +88,11 @@ class RealtimeCard extends Component {
     render() {
         let style = defaultMapStyle;
         style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.route, 10));
+        
+        let nextStopId = null
+        if(this.state.fetched) {
+            nextStopId = this.state.tripData.nextStop.slice(5,)
+        }
 
         return (
             this.state.fetched && this.state.tripData ? 
@@ -104,17 +112,41 @@ class RealtimeCard extends Component {
                                     <BusIcon />
                         </Marker>]}
                         />
-                {/* <CardHeader title={`${this.state.tripData.direction} ${this.state.tripData.tripId}`} subheader={`Next stop: ${Stops[this.state.tripData.nextStop.slice(5,)].name}`} /> */}
+                {/* <CardHeader title={`${this.state.tripData.direction} ${this.state.tripData.tripId}`} subheader={`Next stop: ${Stops[nextStopId].name}`} /> */}
                 <CardContent>
-                    <p style={{maxWidth: '100vw'}}>Next stop: <Link to={`/stop/${Stops[this.state.tripData.nextStop.slice(5,)].id}`}>{Stops[this.state.tripData.nextStop.slice(5,)].name}</Link> {this.computeStopsAway(this.state.tripData.nextStop.slice(5,), this.props.stop) > 0 ? `(${this.computeStopsAway(this.state.tripData.nextStop.slice(5,), this.props.stop)} stops away)`: ``} </p>
+                    <div style={{display: 'flex', flexDirection: 'column', marginTop: window.innerWidth < 650 ? '.5em' : null}}>
+                        <span style={{margin: '.25em 0em', color: '#444', fontSize: '.8em'}}>Next stop:</span>
+                        <StopInlineLink id={nextStopId} />
+                        {this.computeStopsAway(nextStopId, this.props.stop) > 0 ?
+                            <span style={{margin: '.25em 0em', color: '#444', fontSize: '.8em'}}>({this.computeStopsAway(nextStopId, this.props.stop)} stops away)</span>
+                            : ``} 
+                    </div>
                     {this.state.tripData.activeTripId === this.props.trip ?
-                      <div>Arrives here in {this.computeTimeAway(this.state.tripData.nextStop.slice(5,), this.props.stop)} minutes</div>
+                      <div style={{marginTop: '.5em'}}>
+                          Arrives here in 
+                          <span style={{fontWeight: 700, paddingLeft: '.25em'}}>{this.computeTimeAway(nextStopId, this.props.stop)} minutes</span>
+                      </div>
                     : <div style={styles.prediction}><Warning style={styles.predictionIcon}/>This bus has not yet started this trip.</div>
                     }
-                    {this.state.tripData.predicted 
-                        ? <div style={styles.prediction}><LiveIcon style={styles.predictionIcon}/><p>real-time location {this.state.tripData.predicted ? <span style={this.state.tripData.scheduleDeviation > 0 ? styles.behind : styles.ahead}>{this.state.tripData.scheduleDeviation/60} min {this.state.tripData.scheduleDeviation <= 0 ? 'ahead' : 'behind'}</span>: `` }</p></div>
-                        : <div style={styles.prediction}><ScheduleIcon style={styles.predictionIcon}/><p>scheduled location</p></div>}
-                        </CardContent>
+                    {this.state.tripData.predicted ? 
+                        <div style={styles.prediction}>
+                            <LiveIcon style={styles.predictionIcon}/>
+                            <p>real-time location 
+                            {this.state.tripData.predicted ? 
+                                (<span style={this.state.tripData.scheduleDeviation > 0 ? styles.behind : styles.ahead}>
+                                {this.state.tripData.scheduleDeviation === 0 ? `on time` : (
+                                    `${Math.abs(this.state.tripData.scheduleDeviation/60)} min ${this.state.tripData.scheduleDeviation >= 0 ? ' late' : ' early'}`
+                                )}</span>)
+                                
+                            : `` }
+                            </p>
+                        </div>
+                        : <div style={styles.prediction}>
+                            <ScheduleIcon style={styles.predictionIcon}/>
+                            <p>scheduled location</p>
+                          </div>
+                    }
+                </CardContent>
             </Card>)
             : <Card style={{minWidth: 320, maxHeight: 500}}><CardContent>{this.state.fetched ? `No data available...` : `Loading...`}</CardContent></Card>
         )

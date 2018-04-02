@@ -5,7 +5,6 @@ import Helpers from '../helpers.js'
 import RealtimeCard from './RealtimeCard';
 
 import Card, { CardContent } from 'material-ui/Card';
-import Divider from 'material-ui/Divider';
 import List, {ListItem, ListItemIcon, ListItemText} from 'material-ui/List';
 import Collapse from 'material-ui/transitions/Collapse'
 

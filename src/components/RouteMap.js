@@ -6,12 +6,10 @@ import WebMercatorViewport from 'viewport-mercator-project';
 import Stops from '../data/stops.js';
 import chroma from 'chroma-js'
 import Helpers from '../helpers.js';
-import {defaultMapStyle, routeLineIndex, realtimeLabelIndex, timepointLabelIndex} from '../style.js'
+import {defaultMapStyle, routeLineIndex, timepointLabelIndex} from '../style.js'
 import {stopPointIndex} from '../style';
 
 import Card, {CardHeader, CardContent} from 'material-ui/Card';
-import Chip from 'material-ui/Chip';
-import Avatar from 'material-ui/Avatar';
 import BusIcon from 'material-ui-icons/DirectionsBus';
 
 
@@ -190,11 +188,6 @@ class RouteMap extends Component {
     style = style.setIn(['layers', stopPointIndex, 'paint', 'circle-stroke-color'], chroma(this.props.route.color).darken().hex())
     style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-halo-color'], "#fff")
 
-    // if (this.state.showRealtime) {
-    //   style = style.setIn(['layers', realtimeLabelIndex, 'layout', 'visibility'], 'none');
-    //   style = style.setIn(['sources', 'realtime', 'data'], {"type": "FeatureCollection", "features": this.state.realtimeTrips}); 
-    // }
-
     return (
       <Card className="routeMap" elevation={0}>
         <CardContent style={{padding: 0, margin: 0}}>
@@ -216,8 +209,6 @@ class RouteMap extends Component {
                   <span style={{marginLeft: '.5em'}}>Local stops</span>
                 </div>
               </div>
-            {/* <Chip style={{ margin: 6, fontWeight: 200, background: 'white' }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#fff', border: `4px solid ${this.props.route.color}` }}></Avatar>} label="local stops" />
-            <Chip style={{ margin: 6, fontWeight: 700, background: 'white' }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#000', border: '4px solid #fff' }}></Avatar>} label="major stops" /> */}
           </div>
           <MapGL
             {...this.state.viewport}

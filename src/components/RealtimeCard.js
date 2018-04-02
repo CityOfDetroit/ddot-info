@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
 import StaticMap, {Marker} from 'react-map-gl'
 
+import { Card, CardContent, CardMedia } from 'material-ui';
 import BusIcon from 'material-ui-icons/DirectionsBus';
 import LiveIcon from 'material-ui-icons/SpeakerPhone';
 import ScheduleIcon from 'material-ui-icons/Schedule';
 import Warning from 'material-ui-icons/Warning';
 
-import { Card, CardContent, CardMedia } from 'material-ui';
-
-import { Link } from 'react-router-dom'
-
+import StopInlineLink from './StopInlineLink'
 import {defaultMapStyle, routeLineIndex} from '../style.js';
 import Helpers from '../helpers'
-import Stops from '../data/stops'
-import StopInlineLink from './StopInlineLink'
-// import Schedules from '../data/schedules'
 
 const styles = {
     prediction: {

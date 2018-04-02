@@ -6,7 +6,7 @@ import bbox from '@turf/bbox';
 import WebMercatorViewport from 'viewport-mercator-project';
 import Card, { CardHeader } from 'material-ui/Card';
 
-import {defaultMapStyle, routeLineIndex, stopLabelIndex, stopPointIndex, stopPointIndexTwo} from '../style.js'
+import {defaultMapStyle, routeLineIndex, stopPointIndex, stopPointIndexTwo} from '../style.js'
 
 import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Helpers from '../helpers.js';

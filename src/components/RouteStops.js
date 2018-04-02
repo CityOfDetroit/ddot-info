@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import Card, { CardHeader, CardContent } from 'material-ui/Card';
+
 import Toolbar from 'material-ui/Toolbar';
 import { AppBar } from 'material-ui';
 

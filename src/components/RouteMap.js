@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import MapGL from 'react-map-gl';
+import MapGL, {Marker} from 'react-map-gl';
 import _ from 'lodash';
 import moment from 'moment';
 import WebMercatorViewport from 'viewport-mercator-project';
 import Stops from '../data/stops.js';
 import chroma from 'chroma-js'
 import Helpers from '../helpers.js';
-import {defaultMapStyle, routeLineIndex, realtimeLabelIndex, timepointLabelIndex} from '../style.js'
+import {defaultMapStyle, routeLineIndex, timepointLabelIndex} from '../style.js'
 import {stopPointIndex} from '../style';
 
 import Card, {CardHeader, CardContent} from 'material-ui/Card';
-import Chip from 'material-ui/Chip';
-import Avatar from 'material-ui/Avatar';
+import BusIcon from 'material-ui-icons/DirectionsBus';
+
 
 class RouteMap extends Component {
   constructor(props) {
@@ -59,7 +59,7 @@ class RouteMap extends Component {
         },
         "properties": {
           "id": t.id,
-          "name": t.name.toUpperCase().indexOf('ROSA PARKS') > -1 ? "Rosa Parks TC" : t.name,
+          "name": t.name.toUpperCase().indexOf('ROSA PARKS TR') > -1 ? "Rosa Parks TC" : t.name,
           "stop_code": t.dir,
         }
       }
@@ -76,8 +76,8 @@ class RouteMap extends Component {
         longitude: bound.longitude,
         zoom: bound.zoom,
         bearing: 0,
-        width: window.innerWidth > 650 ? window.innerWidth * (4/8) - 30 : window.innerWidth - 60,
-        height: window.innerWidth > 650 ? ((window.innerHeight - 128) * 1 - 114) : 225
+        width: window.innerWidth > 650 ? window.innerWidth * (4/8) - 7.5 : window.innerWidth,
+        height: window.innerWidth > 650 ? ((window.innerHeight - 128) * 1 - 114) : 250
       },
       settings: {
         dragPan: true,
@@ -92,6 +92,7 @@ class RouteMap extends Component {
         maxPitch: 0,
         maxBounds: route.bbox
       },
+      directions: Object.keys(route.timepoints),
       realtimeTrips: [],
       showRealtime: true,
       fetched: false,
@@ -145,7 +146,7 @@ class RouteMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth * (4/8) - 30,
+          width: window.innerWidth * (4/8) - 7.5,
           height: ((window.innerHeight - 128) * 1 - 104)
         }
       });
@@ -187,20 +188,27 @@ class RouteMap extends Component {
     style = style.setIn(['layers', stopPointIndex, 'paint', 'circle-stroke-color'], chroma(this.props.route.color).darken().hex())
     style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-halo-color'], "#fff")
 
-    if (this.state.showRealtime) {
-      style = style.setIn(['layers', realtimeLabelIndex, 'layout', 'visibility'], 'none');
-      style = style.setIn(['sources', 'realtime', 'data'], {"type": "FeatureCollection", "features": this.state.realtimeTrips}); 
-    }
-
     return (
       <Card className="routeMap" elevation={0}>
         <CardContent style={{padding: 0, margin: 0}}>
           <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
             <CardHeader title='Route map' subheader='Zoom in to see all stops' />
-            <div>
-            <Chip style={{ margin: 6, fontWeight: 200, background: 'white' }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#fff', border: `4px solid ${this.props.route.color}` }}></Avatar>} label="local stops" />
-            <Chip style={{ margin: 6, fontWeight: 700, background: 'white' }} labelStyle={{ fontSize: '.7em' }} avatar={<Avatar style={{ backgroundColor: '#000', border: '4px solid #fff' }}></Avatar>} label="major stops" />
-            </div>
+            <div style={{display: 'grid', width: 250, gridTemplate: '1fr 1fr / 1fr 1fr', gridGap: 10, marginRight: '1em', fontSize: '.9em'}}>
+                {this.state.directions.map(d => (
+                  <div style={{display: 'flex', alignItems: 'center'}}>
+                    <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,0.75)', padding: 2.5, color: Helpers.colors[d]}} /> 
+                    <span style={{marginLeft: '.5em'}}>{_.capitalize(d)}</span>
+                  </div>
+                ))}
+                <div style={{display: 'flex', alignItems: 'center'}}>
+                  <span style={{borderRadius: 9999, border: '5px solid black', width: 20, height: 20, background: '#000'}}></span>
+                  <span style={{marginLeft: '.5em'}}>Major stops</span>
+                </div>
+                <div style={{display: 'flex', alignItems: 'center'}}>
+                  <span style={{borderRadius: 9999, border: `5px solid ${this.props.route.color}`, width: 20, height: 20, background: '#fff'}}></span>
+                  <span style={{marginLeft: '.5em'}}>Local stops</span>
+                </div>
+              </div>
           </div>
           <MapGL
             {...this.state.viewport}
@@ -208,6 +216,11 @@ class RouteMap extends Component {
             mapStyle={style}
             mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
             onViewportChange={this._updateViewport} >
+            {this.state.realtimeTrips.map(rt => (
+              <Marker latitude={rt.geometry.coordinates[1]} longitude={rt.geometry.coordinates[0]} offsetLeft={-12} offsetTop={-12}>
+                <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,0.75)', padding: 2.5, color: Helpers.colors[rt.properties.direction]}} />
+              </Marker>
+            ))}
           </MapGL>
         </CardContent>
       </Card>

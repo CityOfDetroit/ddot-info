@@ -19,7 +19,7 @@ class RoutePredictionList extends React.Component {
     super(props)
     this.handleClick = this.handleClick.bind(this)
     this.state = { 
-      open: null 
+      open: this.props.predictions.length > 0 ? this.props.predictions[0].tripId : null 
     }
   }
 
@@ -28,7 +28,6 @@ class RoutePredictionList extends React.Component {
   };
 
   render() {
-
     const {predictions} = this.props
 
     console.log(Helpers.cleanPredictionHeadsign(predictions))
@@ -45,7 +44,7 @@ class RoutePredictionList extends React.Component {
                 {p.predicted ? <LiveSVG /> : <SchedSVG />}
               </ListItemIcon>
             </ListItem>
-            <Collapse in={this.state.open === p.tripId} timeout="auto" unmountOnExit>
+            <Collapse in={this.state.open === p.tripId} style={{marginBottom: '.5em'}} timeout="auto" unmountOnExit>
               <RealtimeCard trip={p.tripId} stop={this.props.stop} route={this.props.route}/>
             </Collapse>
         </div>

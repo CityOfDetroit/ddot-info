@@ -52,14 +52,14 @@ class RouteStopList extends Component {
     return (
       <Card className="">
         <CardContent>
-          <div className="w-100 f4 fw7 pb3" style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', borderBottom: '1px solid #000' }}>
+          <div className="w-100 f4 pv3" style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', borderBottom: '1px solid #aaa' }}>
             <div className="w-50 ml3">
-              <span className='db'>Bus Stops</span>
-              <span className='db f7 fw5 i'>In order of arrival</span>
+              <span className='db'>Stops</span>
+              {/* <span className='db f7 fw5 i'>In order of arrival</span> */}
             </div>
             <div className="w-50 ml3">
               <span className='db'>Transfers</span>
-              <span className='db f7 fw5 i'>Transfer routes board at nearby stops or at the same stop. Check bus stop signs.</span>
+              {/* <span className='db f7 fw5 i'>Transfer routes board at nearby stops or at the same stop. Check bus stop signs.</span> */}
             </div>
           </div>
           <div className="overflow-scroll" style={{height: '60vh'}}>

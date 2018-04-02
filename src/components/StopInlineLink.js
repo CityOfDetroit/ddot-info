@@ -23,7 +23,7 @@ class StopInlineLink extends Component {
     return (
       <span style={{padding: 0, display: 'inline'}}>  
           <Link 
-            className="dim black hover-mid-gray glow mb1" style={{ fontSize: '1em' }} 
+            className="dim black fw3 hover-mid-gray glow mb1" style={{ fontSize: '1em' }} 
             to={{ pathname: `/stop/${this.props.id}/` }}>
             <span>{this.props.showDir ? `${Stops[this.props.id].name} (${Stops[this.props.id].dir})` : `${Stops[this.props.id].name}`}</span>
           </Link>

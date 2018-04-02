@@ -167,7 +167,6 @@ class RouteSchedule extends React.Component {
                 </DialogActions>
                 </DialogContent>
               </Dialog>   
-         
             </Toolbar>
           </AppBar>
           <ScheduleTable 

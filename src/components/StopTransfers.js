@@ -8,8 +8,9 @@ import StopInlineLink from './StopInlineLink';
 import RouteBadge from './RouteBadge'
 import RouteLink from './RouteLink';
 
+import Helpers from '../helpers';
+
 class StopTransfers extends React.Component {
-  
   state = {
     value: 0
   };
@@ -24,7 +25,7 @@ class StopTransfers extends React.Component {
       <div className="transfers">
       <AppBar position="static" color="red" style={{display: 'flex'}} elevation={0}>
         <Toolbar>
-          <h4 style={{margin: 0, padding: '.5em'}}>Transfers</h4>
+          <h4 style={{ margin: 0, padding: '.5em' }}>Transfers</h4>
           <Tabs
             onChange={this.handleChange}
             value={this.state.value}
@@ -38,12 +39,12 @@ class StopTransfers extends React.Component {
           </Tabs>
         </Toolbar>
       </AppBar>
-      <Card style={{padding: '1em'}}>
+      <Card style={{ padding: '1em' }}>
         <CardHeader component={RouteLink} id={Object.keys(stops)[this.state.value]} />
         {stops[Object.keys(stops)[this.state.value]].map((t, i) => (
-            <p style={{margin: 0, padding: 5}}>
-              {t[1]}: {<StopInlineLink id={t[2]} />}
-            </p>
+          <p style={{ margin: 0, padding: '.5em' }}>
+            {Helpers.lookup[t[1]]}: {<StopInlineLink id={t[2]} />}
+          </p>
         ))}
       </Card>
       </div>

@@ -7,7 +7,7 @@ import Helpers from '../helpers.js';
 import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Stops from '../data/stops.js';
 
-import {defaultMapStyle, routeLineIndex, highlightPointIndex, highlightLabelIndex, stopPointIndex, stopLabelIndex} from '../style.js';
+import {defaultMapStyle, routeLineIndex, highlightPointIndex, highlightLabelIndex, stopPointIndexTwo} from '../style.js';
 
 class StopMap extends Component {
   constructor(props) {
@@ -55,11 +55,10 @@ class StopMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth * (3/8) - 10,
-          height: ((window.innerHeight - 64) * (5/8) - 78)
+          height: ((window.innerHeight - 75) * (5/8) - 88)
         }
       });
-    }
-    else {
+    } else {
       this.setState({
         viewport: {
           ...this.state.viewport,
@@ -92,16 +91,14 @@ class StopMap extends Component {
     })  
 
     // set labels for transfers
-    style = style.setIn(['layers', stopPointIndex, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 2)))
-    style = style.setIn(['layers', stopLabelIndex, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 2)))
-    style = style.setIn(['layers', stopLabelIndex, 'layout', 'visibility'], 'visible')
+    style = style.setIn(['layers', stopPointIndexTwo, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 2)))
 
     // eventually set routes?
     const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 0).concat(stop.routes))))
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))
 
     return (
-      <Card className="map" style={{ }}>
+      <Card className="map"s>
         <CardHeader title="Stop map" />
         <StaticMap
           width={this.state.viewport.width}
@@ -113,7 +110,6 @@ class StopMap extends Component {
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
           children={<MapSatelliteSwitch onChange={this.handleChange} defaultChecked/>}>
-        
         </StaticMap>
       </Card>
     )

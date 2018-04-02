@@ -6,7 +6,7 @@ import bbox from '@turf/bbox';
 import WebMercatorViewport from 'viewport-mercator-project';
 import Card, { CardHeader } from 'material-ui/Card';
 
-import {defaultMapStyle, routeLineIndex, stopLabelIndex, stopPointIndex} from '../style.js'
+import {defaultMapStyle, routeLineIndex, stopPointIndex, stopPointIndexTwo} from '../style.js'
 
 import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Helpers from '../helpers.js';
@@ -16,15 +16,15 @@ class NearbyMap extends Component {
     super(props);
 
     this.state = {
-      showSatellite: false,
+      showSatellite: true,
       viewport: {
         latitude: this.props.coords.latitude,
         longitude: this.props.coords.longitude,
         zoom: 17,
         bearing: 0,
         pitch: 0,
-        width: window.innerWidth > 650 ? window.innerWidth / 2 : window.innerWidth,
-        height: window.innerWidth > 650 ? window.innerHeight - 100 : window.innerHeight * 4 / 10
+        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 10 : window.innerWidth,
+        height: window.innerWidth > 650 ? ((window.innerHeight - 74) * (5/8) - 88) : 225
       }
     }
 
@@ -42,8 +42,8 @@ class NearbyMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.outerWidth / 2,
-          height: window.innerHeight - 100
+          width: window.innerWidth * (3/8) - 10,
+          height: ((window.innerHeight - 64) * (5/8) - 78)
         }
       });
     } else {
@@ -51,7 +51,7 @@ class NearbyMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth,
-          height: window.innerHeight * 4 / 10
+          height: 225
         }
       });
     }
@@ -65,9 +65,9 @@ class NearbyMap extends Component {
     // show all nearby stops
     const stopIds = _.map(this.props.data.data.list, s => { return s.id.slice(5) });
     let style = defaultMapStyle;
-    style = style.setIn(['layers', stopPointIndex, 'filter'], ["in", "stop_id"].concat(stopIds));
-    style = style.setIn(['layers', stopLabelIndex, 'filter'], ["in", "stop_id"].concat(stopIds));
-    style = style.setIn(['layers', stopLabelIndex, 'layout', 'visibility'], 'visible');
+    style = style.setIn(['layers', stopPointIndexTwo, 'filter'], ["in", "stop_id"].concat(stopIds));
+    // style = style.setIn(['layers', stopLabelIndex, 'filter'], ["in", "stop_id"].concat(stopIds));
+    // style = style.setIn(['layers', stopLabelIndex, 'layout', 'visibility'], 'visible');
     style = style.setIn(['layers', stopPointIndex, 'layout', 'visibility'], 'visible');
 
     style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none');
@@ -99,8 +99,10 @@ class NearbyMap extends Component {
     style = style.setIn(['sources', 'geolocated', 'data'], {"type": "FeatureCollection", "features": geolocatedPoint});
 
     // making some walking dist radii
-    const walkRadii = [buffer(geolocatedPoint[0].geometry, 250, {units: 'meters'})];
-    const radiusBbox = bbox(walkRadii[0]);
+    console.log(parseInt(this.props.currentRadius, 10))
+    const walkRadii = buffer(geolocatedPoint[0].geometry, parseInt(this.props.currentRadius, 10)*1.25, {units: 'metres'});
+    // const walkRadii = [buffer(geolocatedPoint[0].geometry, 400, {units: 'meters'})];
+    const radiusBbox = bbox(walkRadii);
 
     const viewport = new WebMercatorViewport({width: this.state.viewport.width, height: this.state.viewport.height});
     const bound = viewport.fitBounds(
@@ -111,13 +113,12 @@ class NearbyMap extends Component {
       {padding: window.innerWidth > 650 ? 50 : window.innerWidth / 30}
     );
 
-    style = style.setIn(['sources', 'walk-radius', 'data'], {"type": "FeatureCollection", "features": walkRadii});
+    style = style.setIn(['sources', 'walk-radius', 'data'], {"type": "FeatureCollection", "features": [walkRadii]});
+    console.log(style.sources)
 
     return (
       <Card className="map">
-        <CardHeader title="Service nearby your location">
-          <MapSatelliteSwitch onChange={this.handleChange} />
-        </CardHeader>
+        <CardHeader title="Nearby service" />
         <StaticMap
           width={this.state.viewport.width}
           height={this.state.viewport.height}
@@ -125,7 +126,8 @@ class NearbyMap extends Component {
           longitude={bound.longitude}
           zoom={bound.zoom}
           mapStyle={style}
-          mapboxApiAccessToken={Helpers.mapboxApiAccessToken} >
+          mapboxApiAccessToken={Helpers.mapboxApiAccessToken}
+          children={<MapSatelliteSwitch onChange={this.handleChange} defaultChecked />}>
         </StaticMap> 
       </Card>
     );

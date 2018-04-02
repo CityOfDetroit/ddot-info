@@ -8705,7 +8705,6 @@
                     "Gibson Detroit SemiBold",
                     "Arial Unicode MS Regular"
                 ],
-                "text-padding": 0,
                 "visibility": "visible",
                 "text-field": "{name}",
                 "text-max-width": 5
@@ -11651,7 +11650,7 @@
             "layout": {
                 "visibility": "visible",
                 "symbol-placement": "line",
-                "text-field": "5 minute walk",
+                "text-field": "10 minute walk",
                 "text-font": ["Gibson Detroit SemiBold"],
                 "text-size": 20,
                 "text-letter-spacing": 0,

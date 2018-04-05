@@ -211,7 +211,7 @@ def get_route(route):
 
 if __name__ == "__main__":
     file_object = {}
-    for r in routes[:5]:
+    for r in routes:
         print("{} - {}".format(r['id'], r['rt_name']))
         route_json = get_route(r)
         file_object[r['id']] = route_json

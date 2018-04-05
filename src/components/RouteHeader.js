@@ -12,8 +12,16 @@ class RouteHeader extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      currentTab: 0
+    switch (this.props.page) {
+      case 'schedule':
+        this.state = {currentTab: 2}
+        break;
+      case 'stops':
+        this.state = {currentTab: 1}
+        break;
+      default:
+        this.state = {currentTab: 0}
+        break;
     }
 
     this.handleChange = this.handleChange.bind(this);

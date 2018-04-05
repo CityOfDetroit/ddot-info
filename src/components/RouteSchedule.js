@@ -126,7 +126,7 @@ class RouteSchedule extends React.Component {
 
     return (
       <div className="App">
-        <RouteHeader color={this.state.color} number={this.props.match.params.name} name={this.state.routeName} />
+        <RouteHeader number={this.props.match.params.name} page="schedule" />
         <div className="schedule">
           <AppBar position="static" color="default" elevation={0} style={{display: 'flex', flexWrap: 'wrap', padding: '.2em 0em', marginBottom: '1em'}}>
             <Toolbar elevation={0} style={{justifyContent: window.innerWidth < 650 ? 'space-around' : 'flex-start'}}>

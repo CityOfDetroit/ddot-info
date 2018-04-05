@@ -2,11 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import _ from 'lodash';
-
+import chroma from 'chroma-js';
 import Toolbar from 'material-ui/Toolbar';
 import { AppBar } from 'material-ui';
-
-import chroma from 'chroma-js';
+import HelpOutline from 'material-ui-icons/HelpOutline';
+import IconButton from 'material-ui/IconButton';
+import Dialog, { DialogActions, DialogContent } from 'material-ui/Dialog';
+import Divider from 'material-ui/Divider';
+import Chip from 'material-ui/Chip';
 
 import Schedules from '../data/schedules.js';
 import routeDetails from '../data/routeDetails.js';
@@ -17,15 +20,6 @@ import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
 import PrintSchedule from './PrintSchedule';
-
-import HelpOutline from 'material-ui-icons/HelpOutline'
-
-import IconButton from 'material-ui/IconButton'
-import Dialog, {
-  DialogActions,
-  DialogContent,
-} from 'material-ui/Dialog';
-
 
 class RouteSchedule extends React.Component {
   constructor(props) {
@@ -146,8 +140,8 @@ class RouteSchedule extends React.Component {
                 currentDirection={this.state.currentDirection}
                 onChange={this.handleDirectionChange}
                 route={this.state.route} />
-            <IconButton onClick={this.handleClickOpen}><HelpOutline /></IconButton>
-              <Dialog
+              {/* <IconButton onClick={this.handleClickOpen}><HelpOutline /></IconButton> */}
+              {/* <Dialog
                 open={this.state.open}
                 onClose={this.handleClose}
                 aria-labelledby="alert-dialog-title"
@@ -166,7 +160,7 @@ class RouteSchedule extends React.Component {
                 <PrintSchedule routePdf={routeDetailObj.pdf} />
                 </DialogActions>
                 </DialogContent>
-              </Dialog>   
+              </Dialog>    */}
             </Toolbar>
           </AppBar>
           <ScheduleTable 
@@ -174,6 +168,17 @@ class RouteSchedule extends React.Component {
             direction={this.state.currentDirection} 
             liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
             color={this.state.color} />
+          <Divider style={{ marginTop: '1em' }} />
+          <div style={{display: 'flex', flexDirection: 'column', padding: '.5em' }}>
+            <div>
+              <p style={{ fontSize: '.9em', marginLeft: '.5em' }}>Major stops are shown in order from left to right; look down the column to see scheduled departure times at that stop.</p>
+            </div>
+            <div style={{ display: 'flex' }}>
+              <Chip style={{ margin: 6 }} labelStyle={{ fontSize: '.7em' }} label="am times" />
+              <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} label="pm times" />
+              <Chip style={{ margin: 6, backgroundColor: chroma(this.state.color).alpha(0.25).css() }} labelStyle={{ fontSize: '.7em' }} label="current trips" />
+            </div>
+          </div>
         </div>
       </div>
     )

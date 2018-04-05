@@ -7,10 +7,10 @@ import WebMercatorViewport from 'viewport-mercator-project';
 import Card, { CardHeader } from 'material-ui/Card';
 
 import {defaultMapStyle, routeLineIndex, stopPointIndex, stopPointIndexTwo} from '../style.js'
-
 import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Helpers from '../helpers.js';
 
+/** Map of users location and stops within walk radius */
 class NearbyMap extends Component {
   constructor(props) {
     super(props);
@@ -64,10 +64,9 @@ class NearbyMap extends Component {
   render() {
     // show all nearby stops
     const stopIds = _.map(this.props.data.data.list, s => { return s.id.slice(5) });
+    
     let style = defaultMapStyle;
     style = style.setIn(['layers', stopPointIndexTwo, 'filter'], ["in", "stop_id"].concat(stopIds));
-    // style = style.setIn(['layers', stopLabelIndex, 'filter'], ["in", "stop_id"].concat(stopIds));
-    // style = style.setIn(['layers', stopLabelIndex, 'layout', 'visibility'], 'visible');
     style = style.setIn(['layers', stopPointIndex, 'layout', 'visibility'], 'visible');
 
     style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none');
@@ -101,7 +100,6 @@ class NearbyMap extends Component {
     // making some walking dist radii
     console.log(parseInt(this.props.currentRadius, 10))
     const walkRadii = buffer(geolocatedPoint[0].geometry, parseInt(this.props.currentRadius, 10)*1.25, {units: 'metres'});
-    // const walkRadii = [buffer(geolocatedPoint[0].geometry, 400, {units: 'meters'})];
     const radiusBbox = bbox(walkRadii);
 
     const viewport = new WebMercatorViewport({width: this.state.viewport.width, height: this.state.viewport.height});
@@ -114,7 +112,6 @@ class NearbyMap extends Component {
     );
 
     style = style.setIn(['sources', 'walk-radius', 'data'], {"type": "FeatureCollection", "features": [walkRadii]});
-    console.log(style.sources)
 
     return (
       <Card className="map">

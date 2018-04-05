@@ -12,7 +12,6 @@ import {stopPointIndex} from '../style';
 import Card, {CardHeader, CardContent} from 'material-ui/Card';
 import BusIcon from 'material-ui-icons/DirectionsBus';
 
-
 class RouteMap extends Component {
   constructor(props) {
     super(props);

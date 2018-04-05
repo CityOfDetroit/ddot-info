@@ -3,6 +3,7 @@ import Card, { CardHeader, CardContent } from 'material-ui/Card';
 
 import StopCard from './StopCard';
 
+/** List of stops within walk radius */
 class NearbyList extends React.Component {
   render() {
     return (

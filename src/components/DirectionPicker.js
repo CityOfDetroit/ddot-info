@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import Stops from '../data/stops.js';
-
 import Radio, {RadioGroup} from 'material-ui/Radio';
 import { FormControl, FormControlLabel  } from 'material-ui/Form';
 
+import Stops from '../data/stops.js';
+
+/** Service direction picker for RouteSchedule and RouteStopList */
 class DirectionPicker extends React.Component {
   render() {
     return (

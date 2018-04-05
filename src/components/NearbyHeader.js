@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ChevronSVG from '../img/chevron.svg';
 import Info from '../img/info_outline.svg';
 
+/** Navigation for /nearby page */
 const NearbyHeader = () => (
   <div className="nav header" style={{ padding: '1em', background: '#004445',display: 'flex', alignItems: 'center', verticalAlign: 'middle', justifyContent: 'space-between' }}>
     <div style={{display: 'flex', alignItems: 'center', fontSize: window.innerWidth < 650 ? '1em' : '1.5em'}}>

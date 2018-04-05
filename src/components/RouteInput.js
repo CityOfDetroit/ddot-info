@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {TextField} from 'material-ui';
 import PropTypes from 'prop-types';
 
+/** Text input for RouteSearch */
 class RouteInput extends Component {
   render() {
     return (
@@ -11,7 +12,7 @@ class RouteInput extends Component {
           value={this.props.input}
           onChange={this.props.onSearchChange}
           margin='dense'
-          style={{minWidth: 300}} />
+          style={{ minWidth: 300 }} />
     );
   }
 }
@@ -19,6 +20,6 @@ class RouteInput extends Component {
 RouteInput.propTypes = {
   input: PropTypes.string.isRequired,
   onSearchChange: PropTypes.func.isRequired,
-};
+}
 
 export default RouteInput;

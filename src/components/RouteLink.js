@@ -1,27 +1,28 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import Schedules from '../data/schedules.js'
+import Schedules from '../data/schedules.js';
 
 class RouteLink extends Component {
   render() {
-    const route = Schedules[this.props.id]
+    const route = Schedules[this.props.id];
 
     return (
-      <Link className="dim black link underline-hover hover-mid-gray glow" 
-            to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}>  
-      <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start', backgroundColor: '#eee' }}>
-        <div className='white fw7 f5 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: route.color }}>
-          {this.props.id}
-        </div> 
-        <div className={this.props.direction ? 'fw5 glow ph1' : 'fw5 flow pl1 pr3'} style={{fontSize: `.9em`}}>
-          {route.rt_name}
+      <Link 
+        className="dim black link underline-hover hover-mid-gray glow" 
+        to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}>  
+        <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start', backgroundColor: '#eee' }}>
+          <div className='white fw7 f5 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: route.color }}>
+            {this.props.id}
+          </div> 
+          <div className={this.props.direction ? 'fw5 glow ph1' : 'fw5 flow pl1 pr3'} style={{ fontSize: `.9em` }}>
+            {route.rt_name}
+          </div>
+          {this.props.direction ? <div className='fw5 glow' style={{ fontSize: `.9em` }}>
+            ({this.props.direction})
+          </div> : ``}
         </div>
-        {this.props.direction ? <div className='fw5 glow' style={{fontSize: `.9em`}}>
-          ({this.props.direction})
-        </div> : ``}
-      </div>
       </Link>
     );
   }

@@ -1,26 +1,25 @@
 import React from 'react';
 import _ from 'lodash';
 import Card, { CardContent, CardHeader } from 'material-ui/Card';
-import Divider from 'material-ui/Divider'
+import Divider from 'material-ui/Divider';
 
 import routeDetails from '../data/routeDetails.js';
 import PrintSchedule from './PrintSchedule';
 
+/** General service info about a route within BusRoute */
 const RouteDetails = ({ id }) => {
   const obj = _.filter(routeDetails, r => { return id === r.number.toString() })[0];
 
   return (
     <div className="details">
       <Card>
-        {/* <CardContent style={{ fontSize: '1.2em' }}>
-        </CardContent>
-      </Card>
-      <Card> */}
-        {/* <CardHeader title="Service overview" /> */}
-        <CardContent style={{paddingTop: 16}}>
+        <CardContent style={{ paddingTop: 16 }}>
           {obj.description}
-          <div style={{marginTop: 15}}><PrintSchedule routePdf={obj.pdf} /></div>
+          <div style={{ marginTop: 15 }}>
+            <PrintSchedule routePdf={obj.pdf} />
+          </div>
         </CardContent>
+
         {["Monday-Friday", "Saturday", "Sunday/Holiday"].map((d, i) => (
           <div key={i}>
             {obj.services[d] ?
@@ -42,7 +41,8 @@ const RouteDetails = ({ id }) => {
                     </tbody>
                   </table>
                 </CardContent>
-              </Card></div>
+              </Card>
+            </div>
             : <Card key={i}><CardHeader title={d} subheader="No service" /></Card> }
           </div>
         ))}

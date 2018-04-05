@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 
 import Helpers from '../helpers';
 import NearbyMap from './NearbyMap';
-import NearbyList from './NearbyList'
+import NearbyList from './NearbyList';
 
+/** Fetches data within a certain walk radius of users location for NearbyMap and NearbyList */
 class FeaturesNearLocation extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+
     this.state = {
       data: {},
-      fetchedData: false
+      fetchedData: false,
     }
   }
 
@@ -27,12 +29,12 @@ class FeaturesNearLocation extends Component {
   }
 
   componentDidMount() {
-    this.fetchData(this.props.meters, this.props.coords)
+    this.fetchData(this.props.meters, this.props.coords);
   }
 
   componentWillReceiveProps(nextProps) {
     if(this.props.meters !== nextProps.meters) {
-      this.fetchData(nextProps.meters, this.props.coords)
+      this.fetchData(nextProps.meters, this.props.coords);
     }
   }
 
@@ -41,9 +43,14 @@ class FeaturesNearLocation extends Component {
       <div>
         {this.state.fetchedData ? 
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <div style={{ marginRight: '1em' }}><NearbyMap data={this.state.data} coords={this.props.coords} currentRadius={this.props.meters} /></div>
-            <div><NearbyList data={this.state.data} /></div>
-          </div> : null }
+            <div style={{ marginRight: '1em' }}>
+              <NearbyMap data={this.state.data} coords={this.props.coords} currentRadius={this.props.meters} />
+            </div>
+            <div>
+              <NearbyList data={this.state.data} />
+            </div>
+          </div>
+        : null }
       </div>
     )
   }

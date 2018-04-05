@@ -5,13 +5,13 @@ import Card, { CardContent } from 'material-ui/Card';
 import TopNav from './TopNav';
 import RouteSearch from './RouteSearch';
 import StopSearch from './StopSearch';
-import Helpers from '../helpers'
-// import RouteMapSVG from '../img/ddot.svg';
+import Helpers from '../helpers';
 
+/** Top level component for App */
 class Homepage extends Component {
   render() {
     return (
-      <div className="App" style={{background: Helpers.colors.background}}>
+      <div className="App" style={{ background: Helpers.colors.background }}>
         <TopNav />
         <Card className="explainer">
           <CardContent style={{ fontSize: '1.2em' }}>
@@ -25,23 +25,9 @@ class Homepage extends Component {
         <div className="stops">
           <StopSearch />
         </div>
-        {/* <div className="systemMap">
-          <Card style={{ maxWidth: '500px', maxHeight: '350px', margin: '1em' }}>
-            <CardHeader title="Nearby" />
-            <CardContent>
-              <Link to="/nearby">
-                <CardMedia
-                  image={RouteMapSVG}
-                  title="DDOT System Map" />
-              </Link>
-            </CardContent>
-          </Card>
-        </div>
-        <div className="footer-homepage" style={{ backgroundColor: '#eee' }}>
-        </div> */}
       </div>
     );
   }
-};
+}
 
 export default Homepage;

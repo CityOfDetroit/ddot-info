@@ -55,7 +55,7 @@ class StopSearch extends Component {
   render() {
     return (
       <Card>
-        <CardHeader title="Find your stop" subheader="DDOT has more than 5,000 bus stops across Detroit, Hamtramck, Highland Park and Dearborn" />
+        <CardHeader title="Find your stop" subheader="DDOT has more than 5,000 bus stops across Detroit, Hamtramck, Highland Park, Dearborn and Southfield" />
         <CardContent>
           <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} />
           { this.state.filteredStops.length > 0 ? <StopsList stops={this.state.filteredStops} /> : '' }

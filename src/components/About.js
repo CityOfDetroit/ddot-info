@@ -10,6 +10,7 @@ import NearbyIcon from 'material-ui-icons/Place';
 
 import TopNav from './TopNav';
 
+/** Content for /about page */
 const About = () => (
   <div>
     <TopNav />

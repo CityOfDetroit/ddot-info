@@ -7,7 +7,6 @@ import { AppBar } from 'material-ui';
 import FeaturesNearLocation from './FeaturesNearLocation';
 import NearbyHeader from './NearbyHeader';
 import RadiusPicker from './RadiusPicker';
-
 import Helpers from '../helpers';
 
 const radii = [
@@ -15,9 +14,10 @@ const radii = [
   { meters: '400', label: '10 minute walk' },
 ];
 
+/** Top level component for /nearby page */
 class Nearby extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       currentRadius: '200',

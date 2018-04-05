@@ -17,7 +17,7 @@ class ScheduleTable extends Component {
         <Table style={{background: '#fff'}}>
             <TableHead >
               <TableRow>
-                {this.props.schedule[this.props.direction].stops.map((s, i) => (
+                {this.props.schedule[this.props.direction].timepoints.map((s, i) => (
                   <TableCell 
                   key={i}
                   style={{ borderBottom: '0', textAlign: 'center', padding: '0em 1em' }}>
@@ -28,12 +28,12 @@ class ScheduleTable extends Component {
                 ))}
               </TableRow>
               <TableRow>
-                {this.props.schedule[this.props.direction].stops.map((s, j) => (
+                {this.props.schedule[this.props.direction].timepoints.map((s, j) => (
                   <TableCell 
                     key={j}
                     style={{ borderBottom: '0' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
-                      <div style={{ position: 'absolute', top: '8px', height: '8px', right: j === 0 ? 0 : null, width: j === (this.props.schedule[this.props.direction].stops.length - 1) || j === 0 ? '50%' : '100%', backgroundColor: `${this.props.color}`, verticalAlign: 'center'}}></div>
+                      <div style={{ position: 'absolute', top: '8px', height: '8px', right: j === 0 ? 0 : null, width: j === (this.props.schedule[this.props.direction].timepoints.length - 1) || j === 0 ? '50%' : '100%', backgroundColor: `${this.props.color}`, verticalAlign: 'center'}}></div>
                       <div style={{ backgroundColor: '#000', height: '24px', width: '24px', borderRadius: '2em', border: '3px solid #fff', margin: 'auto', verticalAlign: 'center', zIndex: '200' }}></div>
                     </div>
                   </TableCell>

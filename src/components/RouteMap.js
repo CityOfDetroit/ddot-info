@@ -65,7 +65,7 @@ class RouteMap extends Component {
       }
     });
 
-    const viewport = new WebMercatorViewport({width: window.innerWidth > 650 ? window.innerWidth / 2 : window.innerWidth, height: window.innerWidth > 650 ? window.innerHeight - 100 : 225});
+    const viewport = new WebMercatorViewport({width: window.innerWidth > 650 ? window.innerWidth * (4/8) - 7.5 : window.innerWidth, height: window.innerWidth > 650 ? ((window.innerHeight - 128) * 1 - 114) : 250});
     const bound = viewport.fitBounds(route.bbox,
       { padding: window.innerWidth > 650 ? 50 : window.innerWidth / 20 }
     );

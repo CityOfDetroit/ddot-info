@@ -103,7 +103,7 @@ class RealtimeCard extends Component {
                         mapStyle={style}
                         mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
                         attributionControl={false}
-                        children={[<Marker latitude={this.state.tripData.position.lat} longitude={this.state.tripData.position.lon}>
+                        children={[<Marker latitude={this.state.tripData.position.lat} longitude={this.state.tripData.position.lon} offsetLeft={-12} offsetTop={-12}>
                                     <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,0.75)', padding: 2.5, color: '#eee'}}/>
                         </Marker>]}
                         />

@@ -35,8 +35,8 @@ const RouteDetails = ({ id }) => {
                     <tbody>
                       {obj.services[d].frequency.map((f, i) => (
                         <tr key={i}>
-                          <td className='w-50 bg-light-gray fw7 pa2'>{f[0]}</td>
-                          <td className='w-50 bg-light-gray pa2'>every <span className='fw7'>{f[1]}</span> minutes</td>
+                          <td className='w-50 bg-light-gray pa2'>{_.capitalize(f[0])}</td>
+                          <td className='w-50 bg-light-gray pa2'>Every <span className='fw7'>{f[1]}</span> minutes</td>
                         </tr>
                       ))}
                     </tbody>

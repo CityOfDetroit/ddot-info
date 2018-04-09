@@ -98,7 +98,7 @@ class StopMap extends Component {
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))
 
     return (
-      <Card className="map"s>
+      <Card className="map">
         <CardHeader title="Stop map" />
         <StaticMap
           width={this.state.viewport.width}
@@ -109,7 +109,7 @@ class StopMap extends Component {
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
-          children={<MapSatelliteSwitch onChange={this.handleChange} defaultChecked/>}>
+          children={<MapSatelliteSwitch onChange={this.handleChange} checked='true'/>}>
         </StaticMap>
       </Card>
     )

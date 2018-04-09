@@ -16,7 +16,7 @@ class NearbyMap extends Component {
     super(props);
 
     this.state = {
-      showSatellite: true,
+      showSatellite: false,
       viewport: {
         latitude: this.props.coords.latitude,
         longitude: this.props.coords.longitude,
@@ -62,11 +62,13 @@ class NearbyMap extends Component {
   }
 
   render() {
-    // show all nearby stops
-    const stopIds = _.map(this.props.data.data.list, s => { return s.id.slice(5) });
-    
+
     let style = defaultMapStyle;
-    style = style.setIn(['layers', stopPointIndexTwo, 'filter'], ["in", "stop_id"].concat(stopIds));
+    const stopIds = Object.keys(this.props.stops).map(rid => {
+      return this.props.stops[rid].map(r => r[2])
+    })
+    console.log(_.flatten(stopIds))
+    style = style.setIn(['layers', stopPointIndexTwo, 'filter'], ["in", "stop_id"].concat(_.flatten(stopIds)));
     style = style.setIn(['layers', stopPointIndex, 'layout', 'visibility'], 'visible');
 
     style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none');
@@ -77,8 +79,8 @@ class NearbyMap extends Component {
     });
 
     // show all nearby routes
-    const routeIds = _.map(this.props.data.data.references.routes, r => { return parseInt(r.shortName, 10)});
-    style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(_.map(routeIds, r => { return r.toString() })));
+    const routeIds = Object.keys(this.props.stops).map(rid => parseInt(rid, 10))
+    style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routeIds));
 
     // set data for geolocated source to coords
     const geolocatedPoint = [
@@ -98,7 +100,6 @@ class NearbyMap extends Component {
     style = style.setIn(['sources', 'geolocated', 'data'], {"type": "FeatureCollection", "features": geolocatedPoint});
 
     // making some walking dist radii
-    console.log(parseInt(this.props.currentRadius, 10))
     const walkRadii = buffer(geolocatedPoint[0].geometry, parseInt(this.props.currentRadius, 10)*1.25, {units: 'metres'});
     const radiusBbox = bbox(walkRadii);
 
@@ -124,7 +125,7 @@ class NearbyMap extends Component {
           zoom={bound.zoom}
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken}
-          children={<MapSatelliteSwitch onChange={this.handleChange} defaultChecked />}>
+          children={<MapSatelliteSwitch onChange={this.handleChange} />}>
         </StaticMap> 
       </Card>
     );

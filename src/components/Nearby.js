@@ -38,7 +38,7 @@ class Nearby extends React.Component {
       ? <div>Your browser does not support Geolocation</div> : !this.props.isGeolocationEnabled
         ? <div>Geolocation is not enabled</div> : this.props.coords
           ? 
-          <div style={{ background: Helpers.colors['background'] }}>
+          <div className="App" style={{ background: Helpers.colors['background'] }}>
             <NearbyHeader />
             <AppBar position="static" color="default" elevation={0} style={{ display: 'flex', flexWrap: 'wrap', padding: '.2em 0em', marginBottom: '1em' }}>
               <Toolbar elevation={0} style={{ justifyContent: window.innerWidth < 650 ? 'space-around' : 'flex-start' }}>

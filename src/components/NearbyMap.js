@@ -23,8 +23,8 @@ class NearbyMap extends Component {
         zoom: 17,
         bearing: 0,
         pitch: 0,
-        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 10 : window.innerWidth,
-        height: window.innerWidth > 650 ? ((window.innerHeight - 74) * (5/8) - 88) : 225
+        width: window.innerWidth > 650 ? 400 : window.innerWidth,
+        height: window.innerWidth > 650 ? 300 : 225
       }
     }
 
@@ -42,8 +42,8 @@ class NearbyMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth * (3/8) - 10,
-          height: ((window.innerHeight - 64) * (5/8) - 78)
+          width: 400,
+          height: 300
         }
       });
     } else {
@@ -116,7 +116,7 @@ class NearbyMap extends Component {
 
     return (
       <Card className="map">
-        <CardHeader title="Nearby service" />
+        <CardHeader title="Service near you" />
         <StaticMap
           width={this.state.viewport.width}
           height={this.state.viewport.height}

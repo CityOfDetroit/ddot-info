@@ -5,7 +5,6 @@ import Toolbar from 'material-ui/Toolbar';
 import { AppBar } from 'material-ui';
 
 import FeaturesNearLocation from './FeaturesNearLocation';
-import NearbyHeader from './NearbyHeader';
 import RadiusPicker from './RadiusPicker';
 import Helpers from '../helpers';
 
@@ -13,6 +12,22 @@ const radii = [
   { meters: '200', label: '5 minute walk' },
   { meters: '400', label: '10 minute walk' },
 ];
+
+const styles = {
+  nearby: {
+    display: 'grid',
+    gridTemplate: `auto 1fr / 1fr 1fr`,
+    gridGap: 15
+  },
+  radius: {
+    gridRow: `1 / 2`,
+    gridColumn: `1 / 3`
+  },
+  data: {
+    gridRow: `2 / 3`,
+    gridColumn: `1 / 3`
+  }
+}
 
 /** Top level component for /nearby page */
 class Nearby extends React.Component {
@@ -38,14 +53,17 @@ class Nearby extends React.Component {
       ? <div>Your browser does not support Geolocation</div> : !this.props.isGeolocationEnabled
         ? <div>Geolocation is not enabled</div> : this.props.coords
           ? 
-          <div className="App" style={{ background: Helpers.colors['background'] }}>
-            <NearbyHeader />
-            <AppBar position="static" color="default" elevation={0} style={{ display: 'flex', flexWrap: 'wrap', padding: '.2em 0em', marginBottom: '1em' }}>
-              <Toolbar elevation={0} style={{ justifyContent: window.innerWidth < 650 ? 'space-around' : 'flex-start' }}>
-                <RadiusPicker radii={radii} currentRadius={this.state.currentRadius} onChange={this.onRadiusChange} />
-              </Toolbar>
-            </AppBar>
-            <FeaturesNearLocation coords={this.props.coords} meters={this.state.currentRadius} />
+          <div style={styles.nearby}>
+            <div style={styles.radius}>
+              <AppBar position="static" color="default" elevation={0}>
+                <Toolbar elevation={0} style={{ justifyContent: window.innerWidth < 650 ? 'space-around' : 'flex-start' }}>
+                  <RadiusPicker radii={radii} currentRadius={this.state.currentRadius} onChange={this.onRadiusChange} />
+                </Toolbar>
+              </AppBar>
+            </div>
+            <div style={styles.data}>
+              <FeaturesNearLocation coords={this.props.coords} meters={this.state.currentRadius} />
+            </div>
           </div>
           : <div>Getting the location data&hellip;</div>
     );

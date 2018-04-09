@@ -1180,26 +1180,6 @@ const Schedules = {
             "timepoints": ["8:10pm", "8:20pm", "8:28pm", "8:36pm", "8:46pm", "8:52pm", "9:03pm"]
           }]
         }
-      },
-      "saturday": {
-        "eastbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "westbound": {
-          "timepoints": [],
-          "trips": []
-        }
-      },
-      "sunday": {
-        "eastbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "westbound": {
-          "timepoints": [],
-          "trips": []
-        }
       }
     },
     "bbox": [
@@ -13567,26 +13547,6 @@ const Schedules = {
             "timepoints": ["7:00pm", "7:04pm", "7:11pm", "7:21pm", "7:30pm", "7:38pm", "7:50pm"]
           }]
         }
-      },
-      "saturday": {
-        "northbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "southbound": {
-          "timepoints": [],
-          "trips": []
-        }
-      },
-      "sunday": {
-        "northbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "southbound": {
-          "timepoints": [],
-          "trips": []
-        }
       }
     },
     "bbox": [
@@ -15303,26 +15263,6 @@ const Schedules = {
             "timepoints": ["7:38pm", "7:42pm", "7:49pm", "7:56pm", "8:02pm", "8:06pm", "8:13pm", "8:18pm"]
           }]
         }
-      },
-      "saturday": {
-        "southbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "northbound": {
-          "timepoints": [],
-          "trips": []
-        }
-      },
-      "sunday": {
-        "southbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "northbound": {
-          "timepoints": [],
-          "trips": []
-        }
       }
     },
     "bbox": [
@@ -15548,16 +15488,6 @@ const Schedules = {
             "trip_id": "2492",
             "timepoints": ["6:05pm", "6:14pm", "6:21pm", "6:24pm"]
           }]
-        }
-      },
-      "sunday": {
-        "eastbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "westbound": {
-          "timepoints": [],
-          "trips": []
         }
       }
     },
@@ -19445,26 +19375,6 @@ const Schedules = {
             "timepoints": ["7:47pm", "7:56pm", "8:03pm", "8:13pm", "8:18pm", "8:27pm"]
           }]
         }
-      },
-      "saturday": {
-        "westbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "eastbound": {
-          "timepoints": [],
-          "trips": []
-        }
-      },
-      "sunday": {
-        "westbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "eastbound": {
-          "timepoints": [],
-          "trips": []
-        }
       }
     },
     "bbox": [
@@ -19538,26 +19448,6 @@ const Schedules = {
             "trip_id": "3717",
             "timepoints": ["9:29am", "9:42am", "9:49am", "9:57am", "10:07am", "10:15am"]
           }]
-        }
-      },
-      "saturday": {
-        "southbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "northbound": {
-          "timepoints": [],
-          "trips": []
-        }
-      },
-      "sunday": {
-        "southbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "northbound": {
-          "timepoints": [],
-          "trips": []
         }
       }
     },
@@ -19639,26 +19529,6 @@ const Schedules = {
             "timepoints": ["6:10pm", "6:18pm", "6:33pm", "6:44pm", "6:54pm"]
           }]
         }
-      },
-      "saturday": {
-        "eastbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "westbound": {
-          "timepoints": [],
-          "trips": []
-        }
-      },
-      "sunday": {
-        "eastbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "westbound": {
-          "timepoints": [],
-          "trips": []
-        }
       }
     },
     "bbox": [
@@ -19714,26 +19584,6 @@ const Schedules = {
             "trip_id": "3739",
             "timepoints": ["8:15am", "8:25am", "8:34am", "8:40am", "8:51am", "8:57am"]
           }]
-        }
-      },
-      "saturday": {
-        "northbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "southbound": {
-          "timepoints": [],
-          "trips": []
-        }
-      },
-      "sunday": {
-        "northbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "southbound": {
-          "timepoints": [],
-          "trips": []
         }
       }
     },
@@ -19796,26 +19646,6 @@ const Schedules = {
             "trip_id": "3750",
             "timepoints": ["6:10pm", "6:18pm", "6:33pm", "6:43pm", "6:50pm", "6:54pm"]
           }]
-        }
-      },
-      "saturday": {
-        "eastbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "westbound": {
-          "timepoints": [],
-          "trips": []
-        }
-      },
-      "sunday": {
-        "eastbound": {
-          "timepoints": [],
-          "trips": []
-        },
-        "westbound": {
-          "timepoints": [],
-          "trips": []
         }
       }
     },

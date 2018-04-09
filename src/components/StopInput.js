@@ -10,9 +10,8 @@ class StopInput extends Component {
         placeholder='Try: "Michigan", "Washington", "1118"'
         value={this.props.input}
         onChange={this.props.onSearchChange}
-        margin='dense'
-        style={{minWidth: 300}}
-         />
+        fullWidth
+        style={{ marginBottom: '1em' }} />
     )
   }
 }

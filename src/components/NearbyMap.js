@@ -6,7 +6,7 @@ import bbox from '@turf/bbox';
 import WebMercatorViewport from 'viewport-mercator-project';
 import Card, { CardHeader } from 'material-ui/Card';
 
-import {defaultMapStyle, routeLineIndex, stopPointIndex, stopPointIndexTwo} from '../style.js'
+import {defaultMapStyle, routeLineIndex, stopPointIndex, stopPointIndexTwo, walkRadiusLabelIndex} from '../style.js'
 import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Helpers from '../helpers.js';
 
@@ -23,8 +23,8 @@ class NearbyMap extends Component {
         zoom: 17,
         bearing: 0,
         pitch: 0,
-        width: window.innerWidth > 650 ? 400 : window.innerWidth,
-        height: window.innerWidth > 650 ? 300 : 225
+        width: window.innerWidth > 650 ? window.innerWidth/2 : window.innerWidth,
+        height: window.innerWidth > 650 ? 500 : 350
       }
     }
 
@@ -42,8 +42,8 @@ class NearbyMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: 400,
-          height: 300
+          width: window.innerWidth/2,
+          height: 500
         }
       });
     } else {
@@ -51,7 +51,7 @@ class NearbyMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth,
-          height: 225
+          height: 350
         }
       });
     }
@@ -113,21 +113,21 @@ class NearbyMap extends Component {
     );
 
     style = style.setIn(['sources', 'walk-radius', 'data'], {"type": "FeatureCollection", "features": [walkRadii]});
+    
+    // set walk radius text
+    style = style.setIn(['layers', walkRadiusLabelIndex, 'layout', 'text-field'], this.props.currentRadius === "200" ? `5 minute walk` : `10 minute walk`)
 
     return (
-      <Card className="map">
-        <CardHeader title="Service near you" />
-        <StaticMap
-          width={this.state.viewport.width}
-          height={this.state.viewport.height}
-          latitude={bound.latitude}
-          longitude={bound.longitude}
-          zoom={bound.zoom}
-          mapStyle={style}
-          mapboxApiAccessToken={Helpers.mapboxApiAccessToken}
-          children={<MapSatelliteSwitch onChange={this.handleChange} />}>
-        </StaticMap> 
-      </Card>
+      <StaticMap
+        width={this.state.viewport.width}
+        height={this.state.viewport.height}
+        latitude={bound.latitude}
+        longitude={bound.longitude}
+        zoom={bound.zoom}
+        mapStyle={style}
+        mapboxApiAccessToken={Helpers.mapboxApiAccessToken}
+        children={<MapSatelliteSwitch onChange={this.handleChange} />}>
+      </StaticMap> 
     );
   }
 }

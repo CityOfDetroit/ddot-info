@@ -36,8 +36,7 @@ class Homepage extends Component {
       <div style={{ background: Helpers.colors.background }}>
         <TopNav />
         <List 
-          style={{ background: '#fff' }}
-          subheader={<ListSubheader style={{ fontSize: '1.2em', color: '#000' }}>Find bus schedules and real-time departure data for all DDOT service.<br />Start here:</ListSubheader>}>
+          style={{ background: '#fff' }}>
           <ListItem key="routes" button onClick={this.handleClick("routes")} style={{ background: this.state.open === "routes" ? Helpers.colors.background : '#fff' }}>
             <ListItemIcon>
               <BusIcon style={{ color: '#000' }} />

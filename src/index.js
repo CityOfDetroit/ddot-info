@@ -99,7 +99,7 @@ class GAListener extends React.Component {
 }
 
 ReactDOM.render(
-  <Router basename="/route-explorer">
+  <Router>
     <GAListener>
       <MuiThemeProvider theme={muiTheme}>
         <Switch>

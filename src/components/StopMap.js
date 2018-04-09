@@ -23,7 +23,7 @@ class StopMap extends Component {
         zoom: 17,
         bearing: 0,
         pitch: 0,
-        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 10 : window.innerWidth,
+        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 9 : window.innerWidth,
         height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8) - 88) : 225
       }
     }
@@ -54,7 +54,7 @@ class StopMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth * (3/8) - 10,
+          width: window.innerWidth * (3/8) - 9,
           height: ((window.innerHeight - 75) * (5/8) - 88)
         }
       });

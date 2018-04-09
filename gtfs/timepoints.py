@@ -202,9 +202,9 @@ def get_route(route):
                 services['sunday'] = services[s]
         del services[s]
     # test_service = [k for k in route['timepoints'].keys()]
-    # for s in ['weekday', 'saturday', 'sunday']:
-    #     if len(services[s][test_service[0]]['stops']) == 0:
-    #         del services[s]
+    for s in ['weekday', 'saturday', 'sunday']:
+        if len(services[s][test_service[0]]['stops']) == 0:
+            del services[s]
     route['schedules'] = services
     route['bbox'] = get_route_bbox(route['id'])
     return route

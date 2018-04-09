@@ -4,6 +4,7 @@ import Card, { CardContent } from 'material-ui/Card';
 import ListSubheader from 'material-ui/List/ListSubheader';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Collapse from 'material-ui/transitions/Collapse';
+import Divider from 'material-ui/Divider';
 import NearbyIcon from 'material-ui-icons/MyLocation';
 import BusIcon from 'material-ui-icons/DirectionsBus';
 import StopIcon from 'material-ui-icons/NaturePeople';
@@ -36,33 +37,31 @@ class Homepage extends Component {
     return (
       <div style={{ background: Helpers.colors.background }}>
         <TopNav />
-        <Card className="explainer">
-          <CardContent style={{ fontSize: '1.2em' }}>
-            <p>Find bus schedules and real-time departure information for DDOT routes and bus stops.</p>
-          </CardContent>
-        </Card>
-        <List subheader={<ListSubheader style={{ fontSize: '1.2em' }}>Start here</ListSubheader>}>
-          <ListItem key="routes" button onClick={this.handleClick("routes")}>
+        <List 
+          style={{ background: '#fff' }}
+          subheader={<ListSubheader style={{ fontSize: '1.2em', color: '#000' }}>Find bus schedules and real-time departure data for all DDOT service.<br />Start here:</ListSubheader>}>
+          <ListItem key="routes" button onClick={this.handleClick("routes")} style={{ background: this.state.open == "routes" ? Helpers.colors.background : '#fff' }}>
             <ListItemIcon>
-              <BusIcon />
+              <BusIcon style={{ color: '#000' }} />
             </ListItemIcon>
             <ListItemText inset primary="Choose your bus" />
             {this.state.open == "routes" ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
-          <ListItem key="stops" button onClick={this.handleClick("stops")}>
+          <ListItem key="stops" button onClick={this.handleClick("stops")} style={{ background: this.state.open == "stops" ? Helpers.colors.background : '#fff' }}>
             <ListItemIcon>
-              <StopIcon />
+              <StopIcon style={{ color: '#000' }} />
             </ListItemIcon>
             <ListItemText inset primary="Find your stop" />
             {this.state.open == "stops" ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
-          <ListItem key="nearby" button onClick={this.handleClick("nearby")}>
+          <ListItem key="nearby" button onClick={this.handleClick("nearby")} style={{ background: this.state.open == "nearby" ? Helpers.colors.background : '#fff' }}>
             <ListItemIcon>
-              <NearbyIcon />
+              <NearbyIcon style={{ color: '#000' }} />
             </ListItemIcon>
             <ListItemText inset primary="See what's nearby" />
             {this.state.open == "nearby" ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
+          <Divider />
           <Collapse in={this.state.open} timeout="auto" unmountOnExit>
             {this.state.open == "routes" ? <RouteSearch /> 
               : this.state.open == "stops" ? <StopSearch /> 

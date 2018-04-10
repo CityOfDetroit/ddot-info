@@ -62,8 +62,8 @@ class FeaturesNearLocation extends Component {
     return (
       this.state.fetchedData ? 
         <div style={{display: 'flex'}}>
-          <NearbyMap stops={this.state.closeStopsByRoutes} coords={this.props.coords} currentRadius={this.props.meters} />
           <NearbyList stops={this.state.closeStopsByRoutes}/>
+          <NearbyMap stops={this.state.closeStopsByRoutes} coords={this.props.coords} currentRadius={this.props.meters} />
         </div>
       : null 
     )

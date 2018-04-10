@@ -4,7 +4,6 @@ import _ from 'lodash';
 import buffer from '@turf/buffer';
 import bbox from '@turf/bbox';
 import WebMercatorViewport from 'viewport-mercator-project';
-import Card, { CardHeader } from 'material-ui/Card';
 
 import {defaultMapStyle, routeLineIndex, stopPointIndex, stopPointIndexTwo, walkRadiusLabelIndex} from '../style.js'
 import MapSatelliteSwitch from './MapSatelliteSwitch';

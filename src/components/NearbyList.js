@@ -1,14 +1,9 @@
 import React from 'react';
-import _ from 'lodash';
-import Card, { CardHeader, CardContent } from 'material-ui/Card';
-import Collapse from 'material-ui/transitions/Collapse'
 
 import Helpers from '../helpers.js'
-import StopCard from './StopCard';
 import StopInlineLink from './StopInlineLink';
 import RouteLink from './RouteLink';
 
-import Stops from '../data/stops.js'
 import GridList, {GridListTile} from 'material-ui/GridList'
 
 /** List of stops within walk radius */

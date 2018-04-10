@@ -1,21 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { geolocated } from 'react-geolocated';
-import Toolbar from 'material-ui/Toolbar';
-import { AppBar, Card } from 'material-ui';
-import { CardHeader } from 'material-ui/Card'
+import Card, { CardHeader, CardContent } from 'material-ui/Card'
 
 import FeaturesNearLocation from './FeaturesNearLocation';
 import RadiusPicker from './RadiusPicker';
 import Helpers from '../helpers';
-import { CardContent } from 'material-ui';
 
 const radii = [
   { meters: '200', label: '5 minute walk' },
   { meters: '400', label: '10 minute walk' },
 ];
 
-
+/** Utility component for fetching current intersection */
 class IntersectionFromCoords extends React.Component {
 
   constructor(props) {

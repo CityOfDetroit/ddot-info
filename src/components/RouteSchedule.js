@@ -5,21 +5,16 @@ import _ from 'lodash';
 import chroma from 'chroma-js';
 import Toolbar from 'material-ui/Toolbar';
 import { AppBar } from 'material-ui';
-import HelpOutline from 'material-ui-icons/HelpOutline';
-import IconButton from 'material-ui/IconButton';
-import Dialog, { DialogActions, DialogContent } from 'material-ui/Dialog';
 import Divider from 'material-ui/Divider';
 import Chip from 'material-ui/Chip';
 
 import Schedules from '../data/schedules.js';
-import routeDetails from '../data/routeDetails.js';
 import Helpers from '../helpers.js';
 
 import ScheduleTable from './ScheduleTable';
 import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
-import PrintSchedule from './PrintSchedule';
 
 class RouteSchedule extends React.Component {
   constructor(props) {
@@ -122,8 +117,6 @@ class RouteSchedule extends React.Component {
   }
 
   render() {
-    let routeDetailObj = _.filter(routeDetails, {number: this.state.routeNumber})[0];
-
     return (
       <div className="App">
         <RouteHeader number={this.props.match.params.name} page="schedule" />

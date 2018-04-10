@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import ListSubheader from 'material-ui/List/ListSubheader';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Card, { CardHeader, CardContent } from 'material-ui/Card';
 import Collapse from 'material-ui/transitions/Collapse';
@@ -42,7 +41,7 @@ class Homepage extends Component {
           <Card>
             <CardHeader title="Welcome to the new DDOT bus schedules page" />
             <CardContent>
-              You can browse DDOT routes, look up a stop, or see service near your current location.
+              You can browse bus routes, look up a stop, or see service near your current location.
             </CardContent>
           </Card> : ``}
         <List 

@@ -47,7 +47,7 @@ class StopCard extends Component {
 
 StopCard.propTypes = {
   id: PropTypes.string.isRequired,
-  showRoutes: PropTypes.boolean,
+  showRoutes: PropTypes.bool,
   exclude: PropTypes.string,
 }
 

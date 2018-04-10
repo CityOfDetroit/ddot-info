@@ -23,7 +23,7 @@ class StopMap extends Component {
         zoom: 17,
         bearing: 0,
         pitch: 0,
-        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 10 : window.innerWidth,
+        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 9 : window.innerWidth,
         height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8) - 88) : 225
       }
     }
@@ -54,7 +54,7 @@ class StopMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth * (3/8) - 10,
+          width: window.innerWidth * (3/8) - 9,
           height: ((window.innerHeight - 75) * (5/8) - 88)
         }
       });
@@ -98,7 +98,7 @@ class StopMap extends Component {
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))
 
     return (
-      <Card className="map"s>
+      <Card className="map">
         <CardHeader title="Stop map" />
         <StaticMap
           width={this.state.viewport.width}
@@ -109,7 +109,7 @@ class StopMap extends Component {
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
-          children={<MapSatelliteSwitch onChange={this.handleChange} defaultChecked/>}>
+          children={<MapSatelliteSwitch onChange={this.handleChange} checked='true'/>}>
         </StaticMap>
       </Card>
     )

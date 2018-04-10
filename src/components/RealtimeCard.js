@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import StaticMap, {Marker} from 'react-map-gl'
-
 import { Card, CardContent, CardMedia } from 'material-ui';
 import BusIcon from 'material-ui-icons/DirectionsBus';
 import LiveIcon from 'material-ui-icons/SpeakerPhone';
 import ScheduleIcon from 'material-ui-icons/Schedule';
 import Warning from 'material-ui-icons/Warning';
 
-import StopInlineLink from './StopInlineLink'
 import {defaultMapStyle, routeLineIndex} from '../style.js';
-import Helpers from '../helpers'
+import StopInlineLink from './StopInlineLink';
+import Helpers from '../helpers';
 
 const styles = {
     prediction: {
@@ -37,7 +36,8 @@ const styles = {
 
 class RealtimeCard extends Component {
     constructor(props) {
-        super(props)
+        super(props);
+
         this.state = {
             allData: {},
             tripData: null,
@@ -55,38 +55,39 @@ class RealtimeCard extends Component {
                 fetched: true
             })
         })
+        .catch(e => console.log(e))
     }
 
     componentDidMount() {
-        this.fetchData()
-        this.interval = setInterval(() => this.fetchData(), 5000)
+        this.fetchData();
+        this.interval = setInterval(() => this.fetchData(), 5000);
     }
 
     componentWillUnmount() {
-        clearInterval(this.interval)
+        clearInterval(this.interval);
     }
 
     computeStopsAway(current, target) {
-        const stopOrder = this.state.allData.data.references.stops.map(s => s.id.slice(5,))
-        const currentPosition = stopOrder.indexOf(current) 
-        const targetPosition = stopOrder.indexOf(target)
-        return (targetPosition - currentPosition)
+        const stopOrder = this.state.allData.data.references.stops.map(s => s.id.slice(5,));
+        const currentPosition = stopOrder.indexOf(current);
+        const targetPosition = stopOrder.indexOf(target);
+        return (targetPosition - currentPosition);
       }    
     
     computeTimeAway(current, target) {
-        const currentTime = this.state.allData.data.entry.schedule.stopTimes.filter(st => { return st.stopId.slice(5,) === current.toString() })[0] || this.state.allData.data.entry.schedule.stopTimes.slice(1)[0]
-        const targetTime = this.state.allData.data.entry.schedule.stopTimes.filter(st => { return st.stopId.slice(5,) === target.toString() })[0]
-        const timeFromTarget = Math.floor((targetTime.departureTime - currentTime.departureTime)/60)
-        return timeFromTarget
+        const currentTime = this.state.allData.data.entry.schedule.stopTimes.filter(st => { return st.stopId.slice(5,) === current.toString() })[0] || this.state.allData.data.entry.schedule.stopTimes.slice(1)[0];
+        const targetTime = this.state.allData.data.entry.schedule.stopTimes.filter(st => { return st.stopId.slice(5,) === target.toString() })[0];
+        const timeFromTarget = Math.floor((targetTime.departureTime - currentTime.departureTime)/60);
+        return timeFromTarget;
     }
 
     render() {
         let style = defaultMapStyle;
         style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.route, 10));
         
-        let nextStopId = null
+        let nextStopId = null;
         if(this.state.fetched && this.state.tripData) {
-            nextStopId = this.state.tripData.nextStop.slice(5,)
+            nextStopId = this.state.tripData.nextStop.slice(5,);
         }
 
         return (
@@ -103,7 +104,7 @@ class RealtimeCard extends Component {
                         mapStyle={style}
                         mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
                         attributionControl={false}
-                        children={[<Marker latitude={this.state.tripData.position.lat} longitude={this.state.tripData.position.lon}>
+                        children={[<Marker latitude={this.state.tripData.position.lat} longitude={this.state.tripData.position.lon} offsetLeft={-12} offsetTop={-12}>
                                     <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,0.75)', padding: 2.5, color: '#eee'}}/>
                         </Marker>]}
                         />
@@ -144,7 +145,7 @@ class RealtimeCard extends Component {
                 </CardContent>
             </Card>)
             : <Card style={{minWidth: 320, maxHeight: 500}}><CardContent>{this.state.fetched ? `No data available...` : `Loading...`}</CardContent></Card>
-        )
+        );
     }
 }
 

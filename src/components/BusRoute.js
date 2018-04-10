@@ -6,30 +6,30 @@ import RouteHeader from './RouteHeader';
 import RouteMap from './RouteMap';
 import RouteDetails from './RouteDetails';
 
-import Helpers from '../helpers'
+import Helpers from '../helpers';
 
+/** Top level component for /route/{#} page */
 class BusRoute extends React.Component {
-
   constructor(props) {
-    super(props)
-    this.onTabsChange = this.onTabsChange.bind(this)
+    super(props);
+
+    this.onTabsChange = this.onTabsChange.bind(this);
   }
 
   onTabsChange(event) {
-    console.log(event)
+    console.log(event);
   }
  
   render() {
     const thisRoute = Schedules[this.props.match.params.name];
     
     return (
-      <div className="BusRoute" style={{background: Helpers.colors['background']}}>
-        <RouteHeader number={this.props.match.params.name} page={this.props.match.url.split("/").slice(-1)}/>
+      <div className="BusRoute" style={{ background: Helpers.colors['background'] }}>
+        <RouteHeader number={this.props.match.params.name} page={this.props.match.url.split("/").slice(-1)} />
         <RouteMap route={thisRoute} />
         <RouteDetails id={this.props.match.params.name} />
       </div>
-
-    )
+    );
   }
 }
 

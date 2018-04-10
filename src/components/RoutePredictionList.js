@@ -16,11 +16,13 @@ import ExpandMore from 'material-ui-icons/ExpandMore'
 class RoutePredictionList extends React.Component {
 
   constructor(props) {
-    super(props)
-    this.handleClick = this.handleClick.bind(this)
+    super(props);
+    
     this.state = { 
       open: this.props.predictions.length > 0 ? this.props.predictions[0].tripId : null 
     }
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick = tripId => () => {

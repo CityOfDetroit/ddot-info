@@ -61,7 +61,7 @@ class RouteStops extends React.Component {
 
     return (
       <div className="BusRoute" style={{background: Helpers.colors['background']}}>
-        <RouteHeader number={this.props.match.params.name} />
+        <RouteHeader number={this.props.match.params.name} page="stops" />
         <div className="routeMap">
           <RouteMap route={thisRoute} />
         </div>
@@ -82,7 +82,7 @@ class RouteStops extends React.Component {
             id={this.state.routeId}
             input={this.state.input}
             routeNumber={thisRoute.id}
-            timepoints={this.state[this.state.currentSvc][this.state.currentDirection].stops}
+            timepoints={this.state[this.state.currentSvc][this.state.currentDirection].timepoints}
             />
         </div>
       </div>

@@ -149,8 +149,8 @@ class Stop extends React.Component {
                     value={this.state.routeStopType}
                     indicatorColor="red"
                     textColor="primary">
-                    <Tab icon={<ScheduleIcon color='black' />}  value='schedule' style={{backgroundColor: grey300, color: 'black', padding: '0em 2em'}}/>
-                    <Tab icon={<LiveIcon color='black'/>} value='next' style={{backgroundColor: grey300, color: 'black'}} />
+                    <Tab icon={<ScheduleIcon color='black' />} label='Schedule'  value='schedule' style={{backgroundColor: grey300, color: 'black', padding: '0em 2em', textTransform: 'none'}}/>
+                    <Tab icon={<LiveIcon color='black'/>} label='Live' value='next' style={{backgroundColor: grey300, color: 'black', textTransform: 'none'}} />
                   </Tabs>
                 </Toolbar>
               </AppBar>

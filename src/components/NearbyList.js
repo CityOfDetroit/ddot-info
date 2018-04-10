@@ -1,20 +1,27 @@
 import React from 'react';
-import Card, { CardHeader, CardContent } from 'material-ui/Card';
 
-import StopCard from './StopCard';
+import Helpers from '../helpers.js'
+import StopInlineLink from './StopInlineLink';
+import RouteLink from './RouteLink';
 
+import GridList, {GridListTile} from 'material-ui/GridList'
+
+/** List of stops within walk radius */
 class NearbyList extends React.Component {
+
   render() {
-    return (
-      <Card>
-        <CardHeader title='Stops' />
-        <CardContent>
-          {this.props.data.data.list.length} stops nearby
-          {this.props.data.data.list.map((a, i) => (
-            <StopCard id={a.id.slice(5, )} key={i} showRoutes />
-          ))}
-        </CardContent>
-      </Card>
+
+   return (
+      <GridList cellHeight='auto' cols={1} style={{overflowY: 'scroll', padding: '.5em', height: window.innerWidth < 650 ? 400 : 500, maxWidth: 450}} spacing={20}>
+        {Object.keys(this.props.stops).map(k => (
+          <GridListTile key={k} style={{}}>
+            <RouteLink id={k} />
+            {this.props.stops[k].map(d => (
+              <div key={d[1]} style={{padding: '.25em 0em'}}>{Helpers.lookup[d[1]]}: <StopInlineLink id={d[2]} /></div>
+            ))}
+          </GridListTile>
+        ))}
+      </GridList>
     );
   }
 }

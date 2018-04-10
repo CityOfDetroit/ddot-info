@@ -96,6 +96,8 @@ export const realtimeLabelIndex =
 MAP_STYLE.layers.findIndex(layer => layer.id === 'realtime');
 export const realtimeIconIndex =
 MAP_STYLE.layers.findIndex(layer => layer.id === 'realtime-background');
+export const walkRadiusLabelIndex =
+MAP_STYLE.layers.findIndex(layer => layer.id === 'walk-radius-label');
 
 
 export const defaultMapStyle = fromJS(MAP_STYLE);

@@ -4,27 +4,26 @@ import _ from 'lodash';
 import buffer from '@turf/buffer';
 import bbox from '@turf/bbox';
 import WebMercatorViewport from 'viewport-mercator-project';
-import Card, { CardHeader } from 'material-ui/Card';
 
-import {defaultMapStyle, routeLineIndex, stopPointIndex, stopPointIndexTwo} from '../style.js'
-
+import {defaultMapStyle, routeLineIndex, stopPointIndex, stopPointIndexTwo, walkRadiusLabelIndex} from '../style.js'
 import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Helpers from '../helpers.js';
 
+/** Map of users location and stops within walk radius */
 class NearbyMap extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      showSatellite: true,
+      showSatellite: false,
       viewport: {
         latitude: this.props.coords.latitude,
         longitude: this.props.coords.longitude,
         zoom: 17,
         bearing: 0,
         pitch: 0,
-        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 10 : window.innerWidth,
-        height: window.innerWidth > 650 ? ((window.innerHeight - 74) * (5/8) - 88) : 225
+        width: window.innerWidth > 650 ? window.innerWidth/2 : window.innerWidth,
+        height: window.innerWidth > 650 ? 500 : 350
       }
     }
 
@@ -42,8 +41,8 @@ class NearbyMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth * (3/8) - 10,
-          height: ((window.innerHeight - 64) * (5/8) - 78)
+          width: window.innerWidth/2,
+          height: 500
         }
       });
     } else {
@@ -51,7 +50,7 @@ class NearbyMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth,
-          height: 225
+          height: 350
         }
       });
     }
@@ -62,12 +61,13 @@ class NearbyMap extends Component {
   }
 
   render() {
-    // show all nearby stops
-    const stopIds = _.map(this.props.data.data.list, s => { return s.id.slice(5) });
+
     let style = defaultMapStyle;
-    style = style.setIn(['layers', stopPointIndexTwo, 'filter'], ["in", "stop_id"].concat(stopIds));
-    // style = style.setIn(['layers', stopLabelIndex, 'filter'], ["in", "stop_id"].concat(stopIds));
-    // style = style.setIn(['layers', stopLabelIndex, 'layout', 'visibility'], 'visible');
+    const stopIds = Object.keys(this.props.stops).map(rid => {
+      return this.props.stops[rid].map(r => r[2])
+    })
+    console.log(_.flatten(stopIds))
+    style = style.setIn(['layers', stopPointIndexTwo, 'filter'], ["in", "stop_id"].concat(_.flatten(stopIds)));
     style = style.setIn(['layers', stopPointIndex, 'layout', 'visibility'], 'visible');
 
     style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none');
@@ -78,8 +78,8 @@ class NearbyMap extends Component {
     });
 
     // show all nearby routes
-    const routeIds = _.map(this.props.data.data.references.routes, r => { return parseInt(r.shortName, 10)});
-    style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(_.map(routeIds, r => { return r.toString() })));
+    const routeIds = Object.keys(this.props.stops).map(rid => parseInt(rid, 10))
+    style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routeIds));
 
     // set data for geolocated source to coords
     const geolocatedPoint = [
@@ -99,9 +99,7 @@ class NearbyMap extends Component {
     style = style.setIn(['sources', 'geolocated', 'data'], {"type": "FeatureCollection", "features": geolocatedPoint});
 
     // making some walking dist radii
-    console.log(parseInt(this.props.currentRadius, 10))
     const walkRadii = buffer(geolocatedPoint[0].geometry, parseInt(this.props.currentRadius, 10)*1.25, {units: 'metres'});
-    // const walkRadii = [buffer(geolocatedPoint[0].geometry, 400, {units: 'meters'})];
     const radiusBbox = bbox(walkRadii);
 
     const viewport = new WebMercatorViewport({width: this.state.viewport.width, height: this.state.viewport.height});
@@ -114,22 +112,21 @@ class NearbyMap extends Component {
     );
 
     style = style.setIn(['sources', 'walk-radius', 'data'], {"type": "FeatureCollection", "features": [walkRadii]});
-    console.log(style.sources)
+    
+    // set walk radius text
+    style = style.setIn(['layers', walkRadiusLabelIndex, 'layout', 'text-field'], this.props.currentRadius === "200" ? `5 minute walk` : `10 minute walk`)
 
     return (
-      <Card className="map">
-        <CardHeader title="Nearby service" />
-        <StaticMap
-          width={this.state.viewport.width}
-          height={this.state.viewport.height}
-          latitude={bound.latitude}
-          longitude={bound.longitude}
-          zoom={bound.zoom}
-          mapStyle={style}
-          mapboxApiAccessToken={Helpers.mapboxApiAccessToken}
-          children={<MapSatelliteSwitch onChange={this.handleChange} defaultChecked />}>
-        </StaticMap> 
-      </Card>
+      <StaticMap
+        width={this.state.viewport.width}
+        height={this.state.viewport.height}
+        latitude={bound.latitude}
+        longitude={bound.longitude}
+        zoom={bound.zoom}
+        mapStyle={style}
+        mapboxApiAccessToken={Helpers.mapboxApiAccessToken}
+        children={<MapSatelliteSwitch onChange={this.handleChange} />}>
+      </StaticMap> 
     );
   }
 }

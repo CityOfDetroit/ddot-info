@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+
 import ListSubheader from 'material-ui/List/ListSubheader';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+import Card, { CardHeader, CardContent } from 'material-ui/Card';
 import Collapse from 'material-ui/transitions/Collapse';
 import Divider from 'material-ui/Divider';
+
 import NearbyIcon from 'material-ui-icons/MyLocation';
 import BusIcon from 'material-ui-icons/DirectionsBus';
 import StopIcon from 'material-ui-icons/NaturePeople';
@@ -21,7 +24,7 @@ class Homepage extends Component {
     super(props);
 
     this.state = {
-      open: "routes"
+      open: null
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -35,6 +38,13 @@ class Homepage extends Component {
     return (
       <div style={{ background: Helpers.colors.background }}>
         <TopNav />
+        {!this.state.open ? 
+          <Card>
+            <CardHeader title="Welcome to the new DDOT bus schedules page" />
+            <CardContent>
+              You can browse DDOT routes, look up a stop, or see service near your current location.
+            </CardContent>
+          </Card> : ``}
         <List 
           style={{ background: '#fff' }}>
           <ListItem key="routes" button onClick={this.handleClick("routes")} style={{ background: this.state.open === "routes" ? Helpers.colors.background : '#fff' }}>

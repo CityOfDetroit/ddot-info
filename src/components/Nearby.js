@@ -16,6 +16,36 @@ const radii = [
 ];
 
 
+class IntersectionFromCoords extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      intersection: ''
+    }
+  }
+
+  componentDidMount() {
+    this.fetchData()
+  }
+
+  fetchData() {
+    console.log(`${Helpers.geocoder}?location=${this.props.coords.longitude}%2C${this.props.coords.latitude}&returnIntersection=true&f=pjson`)
+    fetch(`${Helpers.geocoder}?location=${this.props.coords.longitude}%2C${this.props.coords.latitude}&returnIntersection=true&f=pjson`)
+      .then(response => response.json())
+      .then(d => {
+        this.setState({intersection: d.address.Street})
+        console.log(d)
+      })
+  }
+
+  render() {
+    return (
+      <span>You're near {this.state.intersection}</span>
+    )
+  }
+}
+
 /** Top level component for /nearby page */
 class Nearby extends React.Component {
   constructor(props) {
@@ -23,6 +53,7 @@ class Nearby extends React.Component {
 
     this.state = {
       currentRadius: '200',
+      intersection: '',
     }
 
     this.onRadiusChange = this.onRadiusChange.bind(this);
@@ -41,7 +72,7 @@ class Nearby extends React.Component {
         ? <div>Geolocation is not enabled</div> : this.props.coords
           ? 
             <Card>
-              <CardHeader title="Service near you" subheader={`We found you near ${this.props.coords.latitude}, ${this.props.coords.longitude}`} />
+              <CardHeader title="Service near you" subheader={<IntersectionFromCoords coords={this.props.coords} />} />
               <CardContent>
                 <RadiusPicker radii={radii} currentRadius={this.state.currentRadius} onChange={this.onRadiusChange} />
                 <FeaturesNearLocation coords={this.props.coords} meters={this.state.currentRadius} />

@@ -12,7 +12,7 @@ class NearbyList extends React.Component {
   render() {
 
    return (
-      <GridList cellHeight='auto' cols={1} style={{overflowY: 'scroll', padding: '.5em', height: window.innerWidth < 650 ? 400 : 500}} spacing={20}>
+      <GridList cellHeight='auto' cols={1} style={{overflowY: 'scroll', padding: '.5em', height: window.innerWidth < 650 ? 400 : 500, maxWidth: 450}} spacing={20}>
         {Object.keys(this.props.stops).map(k => (
           <GridListTile key={k} style={{}}>
             <RouteLink id={k} />

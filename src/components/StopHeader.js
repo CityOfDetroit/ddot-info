@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-import Info from 'material-ui-icons/Info'
-import Home from 'material-ui-icons/Home'
+import Button from 'material-ui/Button';
+import Feedback from 'material-ui-icons/Feedback';
+import Info from 'material-ui-icons/Info';
+import Home from 'material-ui-icons/Home';
 
 const StopHeader = ({ id, name }) => (
   <div className="nav header" style={{ padding: '1em', background: '#004445',display: 'flex', alignItems: 'center', verticalAlign: 'middle', justifyContent: 'space-between' }}>
@@ -14,13 +15,19 @@ const StopHeader = ({ id, name }) => (
         Stop ID #{id}
       </span>
     </div>
-    <div>
-      <Link className="link dim pr3" to={{ pathname: `/about` }} style={{color: 'white'}}>
-        <Info />
+    <div style={{ display: 'flex', alignContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+      <Link to={{ pathname: `/about` }}>
+        <Info style={{ color: '#fff', paddingRight: '.5em' }} />
       </Link>
-      <Link className="dim pr3" to={{ pathname: `/` }} style={{color: 'white'}}>
-        <Home />
+      <Link to={{ pathname: `/` }}>
+        <Home style={{ color: '#fff', paddingRight: '.5em' }} />
       </Link>
+      <a href="https://app.smartsheet.com/b/form/28665a43770d48b5bbdfe35f3b7b45ac" style={{ textDecoration: 'none' }}>
+        <Button variant="flat" size="small" style={{ textTransform: 'none', backgroundColor: '#fff', color: '#000' }}>
+          Feedback
+          <Feedback style={{ color: '#004445', marginLeft: '.25em' }} />
+        </Button>
+      </a>
     </div>
   </div>
 );

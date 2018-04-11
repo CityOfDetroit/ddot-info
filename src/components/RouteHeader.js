@@ -2,12 +2,12 @@ import React from 'react';
 import { Link }  from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Tabs, {Tab} from 'material-ui/Tabs';
+import Button from 'material-ui/Button';
+import Feedback from 'material-ui-icons/Feedback';
+import Info from 'material-ui-icons/Info';
+import Home from 'material-ui-icons/Home';
 
 import Schedules from '../data/schedules.js';
-import ChevronSVG from '../img/chevron.svg';
-import Info from 'material-ui-icons/Info';
-
-import Home from 'material-ui-icons/Home'
 
 /** Navigation for /route/{#} page */
 class RouteHeader extends React.Component {
@@ -50,7 +50,6 @@ class RouteHeader extends React.Component {
         <div className="pa3" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: window.innerWidth < 650 ? '1em' : '1.5em' }}>
           <div>
             <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start' }}>
-
               <div className='white fw7 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: color }}>
                 {this.props.number}
               </div> 
@@ -59,14 +58,19 @@ class RouteHeader extends React.Component {
               </div>
             </div>
           </div>
-          <div>
-            <Link className="link dim pr3" to={{ pathname: `/about` }} style={{color: 'white'}}>
-              <Info />
+          <div style={{ display: 'flex', alignContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Link to={{ pathname: `/about` }}>
+              <Info style={{ color: '#fff', paddingRight: '.5em' }} />
             </Link>
-            <Link className="dim pr3" to={{ pathname: `/` }} style={{color: 'white'}}>
-              <Home />
-              {/* <img src={Home} className="" alt="Back to home" /> */}
+            <Link to={{ pathname: `/` }}>
+              <Home style={{ color: '#fff', paddingRight: '.5em' }} />
             </Link>
+            <a href="https://app.smartsheet.com/b/form/28665a43770d48b5bbdfe35f3b7b45ac" style={{ textDecoration: 'none' }}>
+              <Button variant="flat" size="small" style={{ textTransform: 'none', backgroundColor: '#fff', color: '#000' }}>
+                Feedback
+                <Feedback style={{ color: '#004445', marginLeft: '.25em' }} />
+              </Button>
+            </a>
           </div>
         </div>
         <div>

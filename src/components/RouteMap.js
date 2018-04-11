@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MapGL, {Marker} from 'react-map-gl';
+import MapGL, {Marker, NavigationControl} from 'react-map-gl';
 import _ from 'lodash';
 import moment from 'moment';
 import WebMercatorViewport from 'viewport-mercator-project';
@@ -220,6 +220,9 @@ class RouteMap extends Component {
                 <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,0.75)', padding: 2.5, color: Helpers.colors[rt.properties.direction]}} />
               </Marker>
             ))}
+            <div style={{position: 'absolute', right: 15, top: 15, transform: 'scale(1.1, 1.1)'}}>
+              <NavigationControl onViewportChange={this._updateViewport} showCompass={false} />
+            </div>
           </MapGL>
         </CardContent>
       </Card>

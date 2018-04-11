@@ -2,12 +2,9 @@ import React from 'react';
 import { Link }  from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Tabs, {Tab} from 'material-ui/Tabs';
-import Button from 'material-ui/Button';
-import Feedback from 'material-ui-icons/Feedback';
-import Info from 'material-ui-icons/Info';
-import Home from 'material-ui-icons/Home';
 
 import Schedules from '../data/schedules.js';
+import NavLinks from './NavLinks.js';
 
 /** Navigation for /route/{#} page */
 class RouteHeader extends React.Component {
@@ -47,7 +44,7 @@ class RouteHeader extends React.Component {
     
     return (
       <div className="nav header" style={{ background: '#004445' }}>
-        <div className="pa3" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: window.innerWidth < 650 ? '1em' : '1.5em' }}>
+        <div className="pa3" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div>
             <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start' }}>
               <div className='white fw7 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: color }}>
@@ -58,20 +55,7 @@ class RouteHeader extends React.Component {
               </div>
             </div>
           </div>
-          <div style={{ display: 'flex', alignContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
-            <Link to={{ pathname: `/about` }}>
-              <Info style={{ color: '#fff', paddingRight: '.5em' }} />
-            </Link>
-            <Link to={{ pathname: `/` }}>
-              <Home style={{ color: '#fff', paddingRight: '.5em' }} />
-            </Link>
-            <a href="https://app.smartsheet.com/b/form/28665a43770d48b5bbdfe35f3b7b45ac" style={{ textDecoration: 'none' }}>
-              <Button variant="raised" size="small" style={{ backgroundColor: '#B0D27B', color: '#000' }}>
-                Feedback
-                <Feedback style={{ color: '#000', marginLeft: '.1em' }} />
-              </Button>
-            </a>
-          </div>
+          <NavLinks />
         </div>
         <div>
           <Tabs value={currentTab} onChange={this.handleChange} textColor="white" style={{ fontSize: '1.2em' }}>

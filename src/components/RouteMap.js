@@ -3,14 +3,15 @@ import MapGL, {Marker, NavigationControl} from 'react-map-gl';
 import _ from 'lodash';
 import moment from 'moment';
 import WebMercatorViewport from 'viewport-mercator-project';
-import Stops from '../data/stops.js';
-import chroma from 'chroma-js'
-import Helpers from '../helpers.js';
-import {defaultMapStyle, routeLineIndex, timepointLabelIndex} from '../style.js'
-import {stopPointIndex} from '../style';
-
+import chroma from 'chroma-js';
 import Card, {CardHeader, CardContent} from 'material-ui/Card';
 import BusIcon from 'material-ui-icons/DirectionsBus';
+
+import Stops from '../data/stops.js';
+import Helpers from '../helpers.js';
+import {defaultMapStyle, routeLineIndex, timepointLabelIndex} from '../style.js';
+import {stopPointIndex} from '../style';
+import RouteBadge from './RouteBadge';
 
 class RouteMap extends Component {
   constructor(props) {
@@ -191,7 +192,7 @@ class RouteMap extends Component {
       <Card className="routeMap" elevation={0}>
         <CardContent style={{padding: 0, margin: 0}}>
           <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
-            <CardHeader title='Route map' subheader='Zoom in to see all stops' />
+            <CardHeader title={<RouteBadge id={route.id} showName />} subheader='Zoom in to see local stops' />
             <div style={{display: 'grid', width: 250, gridTemplate: '1fr 1fr / 1fr 1fr', gridGap: 10, marginRight: '1em', fontSize: '.9em'}}>
                 {this.state.directions.map(d => (
                   <div style={{display: 'flex', alignItems: 'center'}}>

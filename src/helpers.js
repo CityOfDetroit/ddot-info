@@ -52,7 +52,7 @@ const Helpers = {
     const routeNum = _.filter(Object.keys(Schedules), s => {
       return Schedules[s].rt_id.toString() === id.split("_").pop()
     })
-    return Schedules[routeNum]
+    return Schedules[routeNum] || Schedules['498']
   },
 
   /**

@@ -15,6 +15,7 @@ import ScheduleTable from './ScheduleTable';
 import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
+import RouteBadge from './RouteBadge';
 
 class RouteSchedule extends React.Component {
   constructor(props) {
@@ -121,9 +122,9 @@ class RouteSchedule extends React.Component {
       <div className="App">
         <RouteHeader number={this.props.match.params.name} page="schedule" />
         <div className="schedule">
-          <AppBar position="static" color="default" elevation={0} style={{display: 'flex', flexWrap: 'wrap', padding: '.2em 0em', marginBottom: '1em'}}>
-            <Toolbar elevation={0} style={{justifyContent: window.innerWidth < 650 ? 'space-around' : 'flex-start'}}>
-              {/* <h4 style={{maxWidth: 100}}>Service and direction:</h4> */}
+          <AppBar position="static" color="default" elevation={0} style={{ display: 'flex', flexWrap: 'wrap', padding: '.2em 0em', marginBottom: '1em' }}>
+            <Toolbar elevation={0} style={{ justifyContent: window.innerWidth < 650 ? 'space-around' : 'flex-start' }}>
+              <span style={{ marginRight: '1em' }}><RouteBadge id={this.props.match.params.name} /></span>
               <ServicePicker
                 services={this.state.availableServices}
                 currentSvc={this.state.currentSvc}
@@ -133,27 +134,6 @@ class RouteSchedule extends React.Component {
                 currentDirection={this.state.currentDirection}
                 onChange={this.handleDirectionChange}
                 route={this.state.route} />
-              {/* <IconButton onClick={this.handleClickOpen}><HelpOutline /></IconButton> */}
-              {/* <Dialog
-                open={this.state.open}
-                onClose={this.handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-              >
-                <DialogContent>
-                <div style={{display: 'flex', alignItems: 'center'}}>
-                <p style={{marginRight: '.5em', maxWidth: 400}}>Major stops are shown in order from left to right; look down the column to see scheduled arrivals at that stop.</p>
-                <ul style={{width: 200}}>
-                  <li style={{ padding: '.25em' }}>AM arrivals</li>
-                  <li style={{ fontWeight: 700, padding: '.25em'}}>PM arrivals</li>
-                  <li style={{ backgroundColor: chroma(this.state.color).alpha(0.25).css(), padding: '.25em' }}>current trips</li>
-                </ul>
-                </div>
-                <DialogActions>
-                <PrintSchedule routePdf={routeDetailObj.pdf} />
-                </DialogActions>
-                </DialogContent>
-              </Dialog>    */}
             </Toolbar>
           </AppBar>
           <ScheduleTable 
@@ -162,7 +142,7 @@ class RouteSchedule extends React.Component {
             liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
             color={this.state.color} />
           <Divider style={{ marginTop: '1em' }} />
-          <div style={{display: 'flex', flexDirection: 'column', padding: '.5em' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', padding: '.5em' }}>
             <div>
               <p style={{ fontSize: '.9em', marginLeft: '.5em' }}>Major stops are shown in order from left to right; look down the column to see scheduled departure times at that stop.</p>
             </div>

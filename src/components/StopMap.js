@@ -99,7 +99,7 @@ class StopMap extends Component {
 
     return (
       <Card className="map">
-        <CardHeader title={stop.name} />
+        <CardHeader title={stop.name} subheader={<span>Stop ID #{this.props.stopId}</span>} />
         <StaticMap
           width={this.state.viewport.width}
           height={this.state.viewport.height}

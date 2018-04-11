@@ -5,6 +5,7 @@ import Divider from 'material-ui/Divider';
 
 import routeDetails from '../data/routeDetails.js';
 import PrintSchedule from './PrintSchedule';
+import RouteBadge from './RouteBadge';
 
 /** General service info about a route within BusRoute */
 const RouteDetails = ({ id }) => {
@@ -13,7 +14,8 @@ const RouteDetails = ({ id }) => {
   return (
     <div className="details">
       <Card>
-        <CardContent style={{ paddingTop: 16 }}>
+        <CardHeader title={<RouteBadge id={id} showName />} />
+        <CardContent>
           {obj.description}
           <div style={{ marginTop: 15 }}>
             <PrintSchedule routePdf={obj.pdf} />

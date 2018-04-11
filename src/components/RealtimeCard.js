@@ -111,7 +111,7 @@ class RealtimeCard extends Component {
                 {/* <CardHeader title={`${this.state.tripData.direction} ${this.state.tripData.tripId}`} subheader={`Next stop: ${Stops[nextStopId].name}`} /> */}
                 <CardContent>
                     <div style={{display: 'flex', flexDirection: 'column', fontSize: 18, marginTop: window.innerWidth < 650 ? '.5em' : null}}>
-                        <span style={{margin: '.25em 0em', color: '#444', fontSize: '.8em'}}>Next stop:</span>
+                        <span style={{margin: '.25em 0em', color: '#444', fontSize: '.8em'}}>Now arriving at:</span>
                         <StopInlineLink id={nextStopId} />
                         {this.computeStopsAway(nextStopId, this.props.stop) > 0 ?
                             <span style={{margin: '.25em 0em', color: '#444', fontSize: '.8em'}}>({this.computeStopsAway(nextStopId, this.props.stop)} stops away)</span>

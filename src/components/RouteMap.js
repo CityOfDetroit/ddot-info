@@ -216,9 +216,12 @@ class RouteMap extends Component {
             mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
             onViewportChange={this._updateViewport} >
             {this.state.realtimeTrips.map(rt => (
+              <div>
               <Marker latitude={rt.geometry.coordinates[1]} longitude={rt.geometry.coordinates[0]} offsetLeft={-12} offsetTop={-12}>
                 <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,0.75)', padding: 2.5, color: Helpers.colors[rt.properties.direction]}} />
+                {this.state.viewport.zoom > 17 ? <div>Some info about this</div> : ``}
               </Marker>
+              </div>
             ))}
             <div style={{position: 'absolute', right: 15, top: 15, transform: 'scale(1.1, 1.1)'}}>
               <NavigationControl onViewportChange={this._updateViewport} showCompass={false} />

@@ -8554,16 +8554,16 @@
                 "circle-color": "white",
                 "circle-stroke-color": "#222",
                 "circle-stroke-width": {
-                    "stops": [[14, 1], [19, 3]]
+                    "stops": [[13, 1], [19, 3]]
                 },
                 "circle-stroke-opacity": {
-                    "stops": [[14, 0], [14.1, 0.1], [14.2, 0.8]]
+                    "stops": [[13, 0], [13.1, 0.1], [13.2, 0.8]]
                 },
                 "circle-opacity": {
-                    "stops": [[14, 0], [14.1, 0.1], [14.2, 0.8]]
+                    "stops": [[13, 0], [13.1, 0.1], [13.2, 0.8]]
                 },
                 "circle-radius": {
-                    "stops": [[15, 3], [19, 12]]
+                    "stops": [[13, 1.5], [19, 12]]
                 }
             }
         },

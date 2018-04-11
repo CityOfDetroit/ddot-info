@@ -5,7 +5,9 @@ import Tabs, {Tab} from 'material-ui/Tabs';
 
 import Schedules from '../data/schedules.js';
 import ChevronSVG from '../img/chevron.svg';
-import Info from '../img/info_outline.svg';
+import Info from 'material-ui-icons/Info';
+
+import Home from 'material-ui-icons/Home'
 
 /** Navigation for /route/{#} page */
 class RouteHeader extends React.Component {
@@ -48,9 +50,7 @@ class RouteHeader extends React.Component {
         <div className="pa3" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: window.innerWidth < 650 ? '1em' : '1.5em' }}>
           <div>
             <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start' }}>
-              <Link className="link dim pr3" to={{ pathname: `/` }}>
-                <img src={ChevronSVG} className="" alt="Back to home" />
-              </Link>
+
               <div className='white fw7 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: color }}>
                 {this.props.number}
               </div> 
@@ -60,8 +60,12 @@ class RouteHeader extends React.Component {
             </div>
           </div>
           <div>
-            <Link className="link dim pr3" to={{ pathname: `/about` }}>
-              <img src={Info} alt="Info" />
+            <Link className="link dim pr3" to={{ pathname: `/about` }} style={{color: 'white'}}>
+              <Info />
+            </Link>
+            <Link className="dim pr3" to={{ pathname: `/` }} style={{color: 'white'}}>
+              <Home />
+              {/* <img src={Home} className="" alt="Back to home" /> */}
             </Link>
           </div>
         </div>

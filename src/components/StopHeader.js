@@ -1,15 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import ChevronSVG from '../img/chevron.svg';
-import Info from '../img/info_outline.svg';
+import Info from 'material-ui-icons/Info'
+import Home from 'material-ui-icons/Home'
 
 const StopHeader = ({ id, name }) => (
   <div className="nav header" style={{ padding: '1em', background: '#004445',display: 'flex', alignItems: 'center', verticalAlign: 'middle', justifyContent: 'space-between' }}>
     <div style={{display: 'flex', alignItems: 'center', fontSize: window.innerWidth < 650 ? '1em' : '1.5em'}}>
-      <Link className="link dim pr3" to={{ pathname: `/` }}>
-        <img src={ChevronSVG} className="" alt="Back to home" />
-      </Link>
       <span className="pa2 fw5 white">
         {name}
       </span>
@@ -18,8 +15,11 @@ const StopHeader = ({ id, name }) => (
       </span>
     </div>
     <div>
-      <Link className="link dim pr3" to={{ pathname: `/about` }}>
-        <img src={Info} alt="Info" />
+      <Link className="link dim pr3" to={{ pathname: `/about` }} style={{color: 'white'}}>
+        <Info />
+      </Link>
+      <Link className="dim pr3" to={{ pathname: `/` }} style={{color: 'white'}}>
+        <Home />
       </Link>
     </div>
   </div>

@@ -66,9 +66,9 @@ class RouteHeader extends React.Component {
               <Home style={{ color: '#fff', paddingRight: '.5em' }} />
             </Link>
             <a href="https://app.smartsheet.com/b/form/28665a43770d48b5bbdfe35f3b7b45ac" style={{ textDecoration: 'none' }}>
-              <Button variant="flat" size="small" style={{ textTransform: 'none', backgroundColor: '#fff', color: '#000' }}>
+              <Button variant="raised" size="small" style={{ backgroundColor: '#B0D27B', color: '#000' }}>
                 Feedback
-                <Feedback style={{ color: '#004445', marginLeft: '.25em' }} />
+                <Feedback style={{ color: '#000', marginLeft: '.1em' }} />
               </Button>
             </a>
           </div>

@@ -5,7 +5,7 @@ import Card, { CardHeader, CardContent } from 'material-ui/Card';
 import Collapse from 'material-ui/transitions/Collapse';
 import Divider from 'material-ui/Divider';
 
-import NearbyIcon from 'material-ui-icons/MyLocation';
+import PinIcon from 'material-ui-icons/PinDrop';
 import BusIcon from 'material-ui-icons/DirectionsBus';
 import StopIcon from 'material-ui-icons/NaturePeople';
 import ExpandLess from 'material-ui-icons/ExpandLess';
@@ -23,7 +23,7 @@ class Homepage extends Component {
     super(props);
 
     this.state = {
-      open: null
+      open: 'routes'
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -37,32 +37,31 @@ class Homepage extends Component {
     return (
       <div style={{ background: Helpers.colors.background }}>
         <TopNav />
-        {!this.state.open ? 
-          <Card>
-            <CardHeader title="Welcome to the new DDOT bus schedules page" />
-            <CardContent>
-              You can browse bus routes, look up a stop, or see service near your current location.
-            </CardContent>
-          </Card> : ``}
+        <Card>
+          <CardHeader title="Welcome to DDOT's new bus schedule tool" />
+          <CardContent>
+            You can browse bus routes, look up a bus stop, or see service near your current location
+          </CardContent>
+        </Card>
         <List 
           style={{ background: '#fff' }}>
           <ListItem key="routes" button onClick={this.handleClick("routes")} style={{ background: this.state.open === "routes" ? Helpers.colors.background : '#fff' }}>
             <ListItemIcon>
               <BusIcon style={{ color: '#000' }} />
             </ListItemIcon>
-            <ListItemText inset primary="Choose your bus" />
+            <ListItemText inset primary="Choose your bus route" />
             {this.state.open === "routes" ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <ListItem key="stops" button onClick={this.handleClick("stops")} style={{ background: this.state.open === "stops" ? Helpers.colors.background : '#fff' }}>
             <ListItemIcon>
               <StopIcon style={{ color: '#000' }} />
             </ListItemIcon>
-            <ListItemText inset primary="Find your stop" />
+            <ListItemText inset primary="Find your bus stop" />
             {this.state.open === "stops" ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <ListItem key="nearby" button onClick={this.handleClick("nearby")} style={{ background: this.state.open === "nearby" ? Helpers.colors.background : '#fff' }}>
             <ListItemIcon>
-              <NearbyIcon style={{ color: '#000' }} />
+              <PinIcon style={{ color: '#000' }} />
             </ListItemIcon>
             <ListItemText inset primary="See what's nearby" />
             {this.state.open === "nearby" ? <ExpandLess /> : <ExpandMore />}

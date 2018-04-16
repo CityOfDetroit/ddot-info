@@ -8,11 +8,28 @@ import chroma from 'chroma-js';
 import Card, {CardHeader, CardContent} from 'material-ui/Card';
 import BusIcon from 'material-ui-icons/DirectionsBus';
 
+import LiveIcon from 'material-ui-icons/SpeakerPhone'
+import ScheduleIcon from 'material-ui-icons/Schedule'
 import Stops from '../data/stops.js';
 import Helpers from '../helpers.js';
 import {defaultMapStyle, routeLineIndex, timepointLabelIndex} from '../style.js';
 import {stopPointIndex} from '../style';
 import RouteBadge from './RouteBadge';
+
+const styles = {
+  ahead: {
+      color: 'darkgreen',
+      fontWeight: 700,
+      display: 'block',
+      opacity: 0.75
+  },
+  behind: {
+      color: 'darkred',
+      fontWeight: 700,
+      display: 'block',
+      opacity: 0.75
+  }
+}
 
 class RouteMap extends Component {
   constructor(props) {
@@ -127,6 +144,7 @@ class RouteMap extends Component {
             "nextStop": bus.status.nextStop,
             "nextStopOffset": bus.status.nextStopTimeOffset,
             "predicted": bus.status.predicted,
+            "scheduleDeviation": bus.status.scheduleDeviation,
             "updateTime": moment(bus.status.lastUpdateTime).format("h:mm:ss a"),
             "onTime": bus.status.scheduleDeviation / 60,
             "lastStop": this.props.route.timepoints[direction] ? this.props.route.timepoints[direction].slice(-1)[0] : ``,
@@ -203,14 +221,15 @@ class RouteMap extends Component {
       <Card className="routeMap" elevation={0}>
         <CardContent style={{padding: 0, margin: 0}}>
           <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
-            <CardHeader title={<RouteBadge id={route.id} showName />} subheader='Showing active buses' />
-            <div style={{display: 'grid', width: 250, gridTemplate: '1fr 1fr / 1fr 1fr', gridGap: 10, marginRight: '1em', fontSize: '.9em'}}>
-                {this.state.directions.map(d => (
+            <CardHeader 
+              title={<RouteBadge id={route.id} showName />} 
+              subheader={
                   <div style={{display: 'flex', alignItems: 'center'}}>
-                    <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,0.75)', padding: 2.5, color: Helpers.colors[d]}} /> 
-                    <span style={{marginLeft: '.5em'}}>{_.capitalize(d)}</span>
-                  </div>
-                ))}
+                    showing active buses 
+                    <BusIcon style={{height: 20, padding: 1, borderRadius: 9999, marginLeft: '.25em', color: 'white', background: 'rgba(0,0,0,1)'}} />
+                  </div>} />
+
+                <div style={{display: 'grid', width: 250, gridTemplate: '1fr 1fr / 1fr 1fr', gridGap: 10, marginRight: '1em', fontSize: '.9em'}}>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                   <span style={{borderRadius: 9999, border: '5px solid black', width: 20, height: 20, background: '#000'}}></span>
                   <span style={{marginLeft: '.5em'}}>Major stops</span>
@@ -232,17 +251,28 @@ class RouteMap extends Component {
             {this.state.realtimeTrips.map(rt => (
               <div>
               <Marker latitude={rt.geometry.coordinates[1]} longitude={rt.geometry.coordinates[0]} offsetLeft={-12} offsetTop={-12} onClick={this._onClick} captureClick={false}>
-                {this.state.viewport.zoom > 14 ? 
+                {this.state.viewport.zoom > 14.5 ? 
                   <div>
-                  <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,.9)', padding: 2.5, color: Helpers.colors[rt.properties.direction]}} />
-                  <Card style={{background: 'rgba(255,255,255,0.75)'}}>
-                    <CardHeader title={rt.properties.direction} style={{fontSize: '.75em'}} />
-                    <CardContent style={{paddingTop: '.5em'}}>
-                      {rt.properties.direction}
+                  <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,.9)', padding: 2.5, color: 'white'}} />
+                  <Card style={{background: 'rgba(255,255,255,0.95)'}}>
+                    <CardHeader 
+                      avatar={rt.properties.predicted ? <LiveIcon /> : <ScheduleIcon />}
+                      title={_.capitalize(rt.properties.direction)} 
+                      subheader={`to ${Stops[this.props.route.timepoints[rt.properties.direction].slice(-1)].name}`} 
+                      style={{fontSize: '.75em'}} />
+                    <CardContent>
+                      <span style={{display: 'block'}}>Next stop: {Stops[rt.properties.nextStop.slice(5,)].name}</span>
+                      {rt.properties.predicted ? 
+                                  (<span style={rt.properties.scheduleDeviation > 0 ? styles.behind : styles.ahead}>
+                                  {rt.properties.scheduleDeviation === 0 ? `on time` : (
+                                      `${Math.abs(rt.properties.scheduleDeviation/60)} min ${rt.properties.scheduleDeviation >= 0 ? ' late' : ' early'}`
+                                  )}</span>)
+                                  
+                              : `` }                      
                     </CardContent>
                   </Card>
                   </div>
-                : <BusIcon style={{height: 20}} />}
+                : <BusIcon style={{height: 20, padding: 1, borderRadius: 9999, color: 'white', background: 'rgba(0,0,0,1)'}} />}
               </Marker>
               </div>
             ))}

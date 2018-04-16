@@ -12,6 +12,7 @@ class RouteInput extends Component {
           value={this.props.input}
           onChange={this.props.onSearchChange}
           fullWidth 
+          InputLabelProps={{style:{padding: '0px 5px'}}}
           style={{ marginBottom: '1em' }} />
     );
   }

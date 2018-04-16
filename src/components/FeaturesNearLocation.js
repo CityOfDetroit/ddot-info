@@ -20,6 +20,7 @@ class FeaturesNearLocation extends Component {
     }
   }
 
+  
   getClosestStops(coords, data) {
     const nearbyStops = _.sortBy(data, c => { 
       return Math.sqrt(Math.pow(Math.abs(coords.latitude - c.lat), 2) + Math.pow(Math.abs(coords.longitude - c.lon), 2))

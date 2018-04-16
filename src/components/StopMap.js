@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import StaticMap from 'react-map-gl';
+import MapGL from 'react-map-gl';
+import { Redirect } from 'react-router-dom'
 import Card, { CardHeader } from 'material-ui/Card';
 import _ from 'lodash';
 
@@ -24,7 +25,8 @@ class StopMap extends Component {
         bearing: 0,
         pitch: 0,
         width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 9 : window.innerWidth,
-        height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8) - 88) : 225
+        height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8) - 88) : 300,
+        clickedStop: null
       }
     }
 
@@ -39,8 +41,14 @@ class StopMap extends Component {
     });
   }
 
+  _onClick = (event) => {
+    console.log(event)
+    this.setState({clickedStop: event.features[0]})
+  }
+
   componentWillReceiveProps(nextProps) {
     this.setState({
+      clickedStop: null,
       viewport: {
         ...this.state.viewport,
         latitude: parseFloat(Stops[nextProps.stopId].lat),
@@ -63,7 +71,7 @@ class StopMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth,
-          height: 225
+          height: 300
         }
       });
     }
@@ -98,9 +106,10 @@ class StopMap extends Component {
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))
 
     return (
+      this.state.clickedStop ? <Redirect push to={`/stop/${this.state.clickedStop.properties.stop_id}`} /> :
       <Card className="map">
         <CardHeader title={stop.name} subheader={<span>Stop ID #{this.props.stopId}</span>} />
-        <StaticMap
+        <MapGL
           width={this.state.viewport.width}
           height={this.state.viewport.height}
           latitude={this.state.viewport.latitude}
@@ -109,8 +118,9 @@ class StopMap extends Component {
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
+          onClick={this._onClick}
           children={<MapSatelliteSwitch onChange={this.handleChange} checked='true'/>}>
-        </StaticMap>
+        </MapGL>
       </Card>
     )
   }

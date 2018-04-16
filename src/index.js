@@ -62,6 +62,13 @@ const muiTheme = createMuiTheme({
         height: '24px',
       },
     },
+    MuiInput: {
+      root: {
+        padding: 5,
+        background: 'rgba(0,40,10,0.1)',
+        // border: '1px solid black'
+      }
+    },
     MuiTableCell: {
       root: {
         padding: '4px 24px 4px 24px',

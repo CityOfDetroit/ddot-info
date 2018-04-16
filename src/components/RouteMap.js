@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MapGL, {Marker, NavigationControl} from 'react-map-gl';
+import { Redirect } from 'react-router-dom'
 import _ from 'lodash';
 import moment from 'moment';
 import WebMercatorViewport from 'viewport-mercator-project';
@@ -99,7 +100,8 @@ class RouteMap extends Component {
       tripIds: tripIds,
       timepointFeatures: timepointFeatures,
       stopFeatures: stopFeatures,
-      showTimepoints: false
+      showTimepoints: false,
+      clickedStop: null
     };
 
     this._resize = this._resize.bind(this);
@@ -165,6 +167,14 @@ class RouteMap extends Component {
   _updateViewport = (viewport) => {
     this.setState({viewport});
   }
+
+  _onClick = (event) => {
+    // this.props.location.history.push('thies')
+    // console.log(event.features[0].properties.id)
+    // <Redirect to={`/stop/${event.features[0].properties.id}`} />
+    // console.log(event, event.features)
+    this.setState({clickedStop: event.features[0]})
+  }
   
   componentDidMount() {
     window.addEventListener('resize', this._resize);
@@ -189,6 +199,7 @@ class RouteMap extends Component {
     style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-halo-color'], "#fff")
 
     return (
+      this.state.clickedStop ? <Redirect push to={`/stop/${this.state.clickedStop.properties.id}`} /> :
       <Card className="routeMap" elevation={0}>
         <CardContent style={{padding: 0, margin: 0}}>
           <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
@@ -215,12 +226,21 @@ class RouteMap extends Component {
             {...this.state.settings}
             mapStyle={style}
             mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
-            onViewportChange={this._updateViewport} >
+            onViewportChange={this._updateViewport} 
+            onClick={this._onClick}
+            >
             {this.state.realtimeTrips.map(rt => (
               <div>
-              <Marker latitude={rt.geometry.coordinates[1]} longitude={rt.geometry.coordinates[0]} offsetLeft={-12} offsetTop={-12}>
-                <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,0.75)', padding: 2.5, color: Helpers.colors[rt.properties.direction]}} />
-                {this.state.viewport.zoom > 17 ? <div>Some info about this</div> : ``}
+              <Marker latitude={rt.geometry.coordinates[1]} longitude={rt.geometry.coordinates[0]} offsetLeft={-12} offsetTop={-12} onClick={this._onClick} captureClick={false}>
+                <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,.9)', padding: 2.5, color: Helpers.colors[rt.properties.direction]}} />
+                {this.state.viewport.zoom > 14 ? 
+                  <Card style={{background: 'rgba(255,255,255,0.75)'}}>
+                    <CardHeader title={rt.properties.direction} style={{fontSize: '.75em'}} />
+                    <CardContent style={{paddingTop: '.5em'}}>
+                      {rt.properties.direction}
+                    </CardContent>
+                  </Card>
+                : ``}
               </Marker>
               </div>
             ))}

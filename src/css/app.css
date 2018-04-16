@@ -35,9 +35,9 @@ body:after{
 }
 
 @media screen and (max-width: 650px) {
-  .map {
-    height: 291px;
-  }
+  /* .map {
+    height: 400px;
+  } */
 }
 
 @media screen and (min-width: 650px) {

@@ -106,7 +106,7 @@ class GAListener extends React.Component {
 }
 
 ReactDOM.render(
-  <Router>
+  <Router onUpdate={() => window.scrollTo(0, 0)}>
     <GAListener>
       <MuiThemeProvider theme={muiTheme}>
         <Switch>

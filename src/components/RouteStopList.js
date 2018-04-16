@@ -54,7 +54,7 @@ class RouteStopList extends Component {
         <CardContent>
           <div className="w-100 f4 pv3" style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', borderBottom: '1px solid #aaa' }}>
             <div className="w-50 ml3">
-              <span className='db'>Stops</span>
+              <span className='db'>Bus stops</span>
               {/* <span className='db f7 fw5 i'>In order of arrival</span> */}
             </div>
             <div className="w-50 ml3">

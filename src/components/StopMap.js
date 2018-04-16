@@ -25,7 +25,7 @@ class StopMap extends Component {
         bearing: 0,
         pitch: 0,
         width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 9 : window.innerWidth,
-        height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8) - 88) : 300,
+        height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8)) : 300,
         clickedStop: null
       }
     }
@@ -63,7 +63,7 @@ class StopMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth * (3/8) - 9,
-          height: ((window.innerHeight - 75) * (5/8) - 88)
+          height: ((window.innerHeight - 75) * (5/8))
         }
       });
     } else {
@@ -108,7 +108,6 @@ class StopMap extends Component {
     return (
       this.state.clickedStop ? <Redirect push to={`/stop/${this.state.clickedStop.properties.stop_id}`} /> :
       <Card className="map">
-        <CardHeader title={stop.name} subheader={<span>Stop ID #{this.props.stopId}</span>} />
         <MapGL
           width={this.state.viewport.width}
           height={this.state.viewport.height}

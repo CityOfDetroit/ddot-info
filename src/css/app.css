@@ -6,9 +6,15 @@
   src: url("./fonts/GibsonDetroit-Reg.woff") format("woff"),
        url("./fonts/GibsonDetroit-Reg.svg#filename") format("svg")
 }
+@font-face{
+  font-family: "Gibson Detroit Light";
+  src: url("./fonts/GibsonDetroit-Light.eot");
+  src: url("./fonts/GibsonDetroit-Light.woff") format("woff"),
+       url("./fonts/GibsonDetroit-Light.svg#filename") format("svg")
+}
 
 body {
-  font-family: "Gibson Detroit Regular", sans-serif;
+  font-family: "Gibson Detroit Regular", "Gibson Detroit Light", sans-serif;
 }
 
 /* BETA tag */

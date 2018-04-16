@@ -16,7 +16,7 @@ class ServicePicker extends React.Component {
 
   render() {
     return (
-      <FormControl component="fieldset" required>
+      <FormControl component="fieldset" required style={{marginRight: 30}}>
         <RadioGroup name="serviceDays" value={this.props.currentSvc} onChange={this.props.onChange}>
           {this.props.services.map(s => (
             <FormControlLabel key={s} value={s} control={<Radio/>} label={_.capitalize(s)} />

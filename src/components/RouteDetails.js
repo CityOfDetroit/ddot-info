@@ -21,7 +21,6 @@ const RouteDetails = ({ id }) => {
             <PrintSchedule routePdf={obj.pdf} />
           </div>
         </CardContent>
-
         {["Monday-Friday", "Saturday", "Sunday/Holiday"].map((d, i) => (
           <div key={i}>
             {obj.services[d] ?
@@ -30,7 +29,7 @@ const RouteDetails = ({ id }) => {
               <Card key={i}>
                 <CardHeader
                   title={d}
-                  subheader={obj.services[d].service_hours.length === 1 ? obj.services[d].service_hours[0] : `${obj.services[d].service_hours[0]} - ${obj.services[d].service_hours[1]}`} />
+                  subheader={obj.services[d].service_hours.length === 1 ? `${obj.services[d].service_hours[0]} (see schedule for all times)` : `${obj.services[d].service_hours[0]} - ${obj.services[d].service_hours[1]} (see schedule for all times)`} />
                 <CardContent>
                   <table className="w-100">
                     <tbody>

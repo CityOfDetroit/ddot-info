@@ -62,6 +62,13 @@ const muiTheme = createMuiTheme({
         height: '24px',
       },
     },
+    MuiListItemText: {
+      primary: {
+        fontSize: '1.25em',
+        fontFamily: 'Gibson Detroit Light',
+        fontWeight: 700
+      }
+    },
     // MuiInput: {
     //   root: {
     //     padding: 5,

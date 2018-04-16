@@ -203,7 +203,7 @@ class RouteMap extends Component {
       <Card className="routeMap" elevation={0}>
         <CardContent style={{padding: 0, margin: 0}}>
           <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
-            <CardHeader title={<RouteBadge id={route.id} showName />} subheader='Zoom in to see local stops' />
+            <CardHeader title={<RouteBadge id={route.id} showName />} subheader='Showing active buses' />
             <div style={{display: 'grid', width: 250, gridTemplate: '1fr 1fr / 1fr 1fr', gridGap: 10, marginRight: '1em', fontSize: '.9em'}}>
                 {this.state.directions.map(d => (
                   <div style={{display: 'flex', alignItems: 'center'}}>
@@ -232,15 +232,17 @@ class RouteMap extends Component {
             {this.state.realtimeTrips.map(rt => (
               <div>
               <Marker latitude={rt.geometry.coordinates[1]} longitude={rt.geometry.coordinates[0]} offsetLeft={-12} offsetTop={-12} onClick={this._onClick} captureClick={false}>
-                <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,.9)', padding: 2.5, color: Helpers.colors[rt.properties.direction]}} />
                 {this.state.viewport.zoom > 14 ? 
+                  <div>
+                  <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,.9)', padding: 2.5, color: Helpers.colors[rt.properties.direction]}} />
                   <Card style={{background: 'rgba(255,255,255,0.75)'}}>
                     <CardHeader title={rt.properties.direction} style={{fontSize: '.75em'}} />
                     <CardContent style={{paddingTop: '.5em'}}>
                       {rt.properties.direction}
                     </CardContent>
                   </Card>
-                : ``}
+                  </div>
+                : <BusIcon style={{height: 20}} />}
               </Marker>
               </div>
             ))}

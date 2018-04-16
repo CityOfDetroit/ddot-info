@@ -6,11 +6,14 @@ import Tabs, { Tab } from 'material-ui/Tabs';
 import { grey300 } from 'material-ui/colors'
 import LiveIcon from 'material-ui-icons/SpeakerPhone'
 import ScheduleIcon from 'material-ui-icons/Schedule'
+import BusIcon from 'material-ui-icons/DirectionsBus';
 import Toolbar from 'material-ui/Toolbar';
+import Card, {CardHeader} from 'material-ui/Card'
 import { AppBar } from 'material-ui';
+import { withStyles } from 'material-ui/styles';
 
 import Stops from '../data/stops.js';
-import StopHeader from './StopHeader';
+import TopNav from './TopNav';
 import StopMap from './StopMap';
 import StopTransfers from './StopTransfers';
 import StopRouteSchedule from './StopRouteSchedule';
@@ -19,6 +22,13 @@ import RouteLink from './RouteLink';
 import RoutePredictionList from './RoutePredictionList';
 import Schedules from '../data/schedules.js'
 import Helpers from '../helpers';
+
+const styles = {
+  title: {
+    fontWeight: 500,
+    fontSize: '1.25em'
+  }
+}
 
 class Stop extends React.Component {
   constructor(props) {
@@ -118,12 +128,14 @@ class Stop extends React.Component {
 
     return (
       <div className='App' style={{ background: Helpers.colors['background'] }}>
-        <StopHeader id={stopId} name={stopName} />
+        <TopNav />
         <StopMap stopId={stopId} center={stopCoords}/>
         <div className='routes'>
+          <Card>
+            <CardHeader title={stopName} subheader={`Stop ID: #${stopId}`} classes={{title: this.props.classes.title}} />
+          </Card>
           <AppBar position="static" color="red" style={{ display: 'flex' }} elevation={0}>
             <Toolbar>
-              <h4 style={{ margin: 0, padding: '.5em' }}>Routes here</h4>
               <Tabs
                 onChange={this.handleTabsChange}
                 value={slideIndex}
@@ -199,4 +211,4 @@ Stop.propTypes = {
   }).isRequired,
 }
 
-export default Stop;
+export default withStyles(styles)(Stop);

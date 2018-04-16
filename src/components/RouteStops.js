@@ -63,14 +63,14 @@ class RouteStops extends React.Component {
     return (
       <div className="BusRoute" style={{background: Helpers.colors['background']}}>
         <RouteHeader number={this.props.match.params.name} page="stops" />
-        <div className="routeMap">
+        {/* <div className="routeMap">
           <RouteMap route={thisRoute} />
-        </div>
-        <div className="stopList">
+        </div> */}
+        <div className="schedule">
           <AppBar position="static" elevation={0} color="red" style={{ marginBottom: '.5em', padding: '.75em 0em' }} >
             <Toolbar style={{ flexWrap: 'wrap', justifyContent: 'space-between' }}>
               <span style={{ margin: 0, padding: '.5em 0em', fontSize: '1.5em', display: 'flex', flexDirection: 'row' }}>
-                Stops on route <span style={{ marginLeft: '.25em' }}><RouteBadge id={thisRoute.id} /></span>
+                Bus stops on route <span style={{ marginLeft: '.25em' }}><RouteBadge id={thisRoute.id} /></span>
               </span>
               <DirectionPicker 
                 directions={this.state.availableDirections}

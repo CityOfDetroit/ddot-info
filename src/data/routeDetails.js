@@ -1,6 +1,6 @@
 const routeDetails = [{
         number: 7,
-        name: 'Cadillac-Harper',
+        name: 'Cadillac/Harper',
         orientation: 'EW',
         downtown: true,
         days_per_week: ['Monday', 'Sunday'],

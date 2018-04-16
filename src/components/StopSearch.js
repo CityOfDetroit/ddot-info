@@ -59,6 +59,7 @@ class StopSearch extends Component {
         <CardHeader title="Find your bus stop" subheader="DDOT has more than 5,000 bus stops. Bus stop signs are placed every 2-3 blocks along each route" />
         <CardContent>
           <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} />
+          { (this.state.input !== '' && this.state.filteredStops.length > 0) ? <span>Found {this.state.filteredStops.length} stops</span>:``}
           { this.state.filteredStops.length > 0 ? <StopsList stops={this.state.filteredStops} /> : '' }
         </CardContent>
       </Card>

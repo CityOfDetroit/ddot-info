@@ -5,6 +5,22 @@ import PropTypes from 'prop-types';
 import Stops from '../data/stops.js';
 import Schedules from '../data/schedules.js';
 
+import Card, { CardHeader, CardContent } from 'material-ui/Card'
+import BusIcon from 'material-ui-icons/DirectionsBus'
+import { withStyles } from 'material-ui/styles'
+
+const styles = {
+  title: {
+    fontWeight: 500,
+    fontSize: '1.25em',
+    padding: '0px 0px',
+  },
+  subheader: {
+    fontSize: '1em',
+    padding: 0,
+  }
+}
+
 class StopCard extends Component {
   render() {
     const exclude = this.props.exclude || '';
@@ -24,23 +40,25 @@ class StopCard extends Component {
     }
 
     return (
-      <div className="f5 fw3 ma1" style={{display: 'flex', flexDirection: 'column', padding: '.5em', background: '#eee'}}>
-        <Link 
-          className="dim black hover-mid-gray glow" style={{display: 'flex', flexWrap: 'wrap', alignItems: 'center'}} 
-          to={{ pathname: `/stop/${this.props.id}/` }}>
-          <span className="">{Stops[this.props.id].name}</span>
-        </Link>
-        <span className="f6 pv1">Stop ID #{this.props.id}</span>
-        <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
-        {this.props.showRoutes && routes.map((r, i) => (
-          <Link className={exclude.toString() === r.toString() ? 'dn' : "dim black link underline-hover hover-mid-gray glow mr2"} to={{pathname: `/route/${r}`}} key={i}>
-            <div className={exclude.toString() === r.toString() ? `dn` : `white fw7 f5 tc mv1`} style={exclude.toString() === r.toString() ? {display: 'none'} : { display: 'flex', alignItems:'center',  justifyContent: 'center', width: '2em', height: '2em', backgroundColor: Schedules[r].color }}>
+      <Card style={{background: '#eee', margin: 10, minWidth: 300}}>
+        <CardHeader 
+          avatar={<BusIcon />} 
+          title={Stops[this.props.id].name} 
+          subheader={`Stop ID: #${this.props.id}`} 
+          classes={{title: this.props.classes.title, subheader: this.props.classes.subheader}}
+          />
+        <CardContent>
+            <div style={{display: 'flex'}}>
+           {routes.map((r, i) => (
+           <Link to={{pathname: `/route/${r}`}} key={i} style={{textDecoration: 'none', marginRight: '.5em'}}>
+            <div style={{ display: 'flex', alignItems:'center', fontWeight: 700, justifyContent: 'center', width: '2em', height: '2em', color: 'white', fontSize: '1.25em', backgroundColor: Schedules[r].color }}>
               {r}
             </div> 
           </Link>
-        ))}
-        </div>
-      </div>
+         ))}
+         </div>
+         </CardContent>
+      </Card>
     )
   }
 }
@@ -51,4 +69,4 @@ StopCard.propTypes = {
   exclude: PropTypes.string,
 }
 
-export default StopCard;
+export default withStyles(styles)(StopCard);

@@ -1,7 +1,7 @@
 const Schedules = {
   "7": {
     "id": "7",
-    "rt_name": "Cadillac-Harper",
+    "rt_name": "Cadillac/Harper",
     "color": "#44aa42",
     "rt_id": 6657,
     "timepoints": {
@@ -2555,7 +2555,7 @@ const Schedules = {
   },
   "15": {
     "id": "15",
-    "rt_name": "Chicago Davison",
+    "rt_name": "Chicago/Davison",
     "color": "#0079c2",
     "rt_id": 6664,
     "timepoints": {
@@ -15498,7 +15498,7 @@ const Schedules = {
   },
   "48": {
     "id": "48",
-    "rt_name": "Van Dyke - Lafayette",
+    "rt_name": "Van Dyke/Lafayette",
     "color": "#44aa42",
     "rt_id": 6689,
     "timepoints": {

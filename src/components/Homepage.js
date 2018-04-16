@@ -4,10 +4,11 @@ import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Card, { CardHeader, CardContent } from 'material-ui/Card';
 import Collapse from 'material-ui/transitions/Collapse';
 import Divider from 'material-ui/Divider';
+import { withStyles } from 'material-ui/styles' 
 
-import PinIcon from 'material-ui-icons/PinDrop';
-import BusIcon from 'material-ui-icons/DirectionsBus';
-import StopIcon from 'material-ui-icons/NaturePeople';
+import PinIcon from 'material-ui-icons/Place';
+import BusIcon from 'material-ui-icons/Timeline';
+import StopIcon from 'material-ui-icons/DirectionsBus';
 import ExpandLess from 'material-ui-icons/ExpandLess';
 import ExpandMore from 'material-ui-icons/ExpandMore';
 
@@ -16,6 +17,13 @@ import RouteSearch from './RouteSearch';
 import StopSearch from './StopSearch';
 import Nearby from './Nearby';
 import Helpers from '../helpers';
+
+const styles = {
+  root: {
+    fontSize: '1.25em',
+    fontWeight: 700
+  }
+}
 
 /** Top level component for App */
 class Homepage extends Component {
@@ -46,21 +54,21 @@ class Homepage extends Component {
         <List 
           style={{ background: '#fff' }}>
           <ListItem key="routes" button onClick={this.handleClick("routes")} style={{ background: this.state.open === "routes" ? Helpers.colors.background : '#fff' }}>
-            <ListItemIcon>
+            <ListItemIcon style={{fontSize: 30}}>
               <BusIcon style={{ color: '#000' }} />
             </ListItemIcon>
             <ListItemText inset primary="Choose your bus route" />
             {this.state.open === "routes" ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <ListItem key="stops" button onClick={this.handleClick("stops")} style={{ background: this.state.open === "stops" ? Helpers.colors.background : '#fff' }}>
-            <ListItemIcon>
+            <ListItemIcon style={{fontSize: 30}}>
               <StopIcon style={{ color: '#000' }} />
             </ListItemIcon>
             <ListItemText inset primary="Find your bus stop" />
             {this.state.open === "stops" ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <ListItem key="nearby" button onClick={this.handleClick("nearby")} style={{ background: this.state.open === "nearby" ? Helpers.colors.background : '#fff' }}>
-            <ListItemIcon>
+            <ListItemIcon style={{fontSize: 30}}>
               <PinIcon style={{ color: '#000' }} />
             </ListItemIcon>
             <ListItemText inset primary="See what's nearby" />
@@ -79,4 +87,4 @@ class Homepage extends Component {
   }
 }
 
-export default Homepage;
+export default withStyles(styles)(Homepage);

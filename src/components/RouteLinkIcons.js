@@ -23,7 +23,7 @@ class RouteLinkIcons extends Component {
             <Link  
               to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}
               style={{textDecoration: 'none'}}>
-            <span style={{ fontSize: `1.25em`, fontFamily: "Gibson Detroit Light", fontWeight: 600, color: 'black', marginLeft: '.4em' }}>
+            <span style={{ fontSize: `1.1em`, fontFamily: "Gibson Detroit Light", fontWeight: 600, color: 'black', marginLeft: '.4em' }}>
               {route.rt_name}
             </span>
             </Link>

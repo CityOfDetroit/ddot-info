@@ -20,7 +20,7 @@ import Helpers from '../helpers';
 
 const styles = {
   root: {
-    fontSize: '1.25em',
+    fontSize: '1.1em',
     fontWeight: 700
   }
 }

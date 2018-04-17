@@ -20,7 +20,7 @@ import Helpers from '../helpers';
 
 const styles = {
   root: {
-    fontSize: '1.1em',
+    fontSize: '1em',
     fontWeight: 700
   }
 }
@@ -54,21 +54,21 @@ class Homepage extends Component {
         <List 
           style={{ background: '#fff' }}>
           <ListItem key="routes" button onClick={this.handleClick("routes")} style={{ background: this.state.open === "routes" ? Helpers.colors.background : '#fff' }}>
-            <ListItemIcon style={{fontSize: 30}}>
+            <ListItemIcon style={{ fontSize: 30 }}>
               <BusIcon style={{ color: '#000' }} />
             </ListItemIcon>
             <ListItemText inset primary="Choose your bus route" />
             {this.state.open === "routes" ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <ListItem key="stops" button onClick={this.handleClick("stops")} style={{ background: this.state.open === "stops" ? Helpers.colors.background : '#fff' }}>
-            <ListItemIcon style={{fontSize: 30}}>
+            <ListItemIcon style={{ fontSize: 30 }}>
               <StopIcon style={{ color: '#000' }} />
             </ListItemIcon>
             <ListItemText inset primary="Find your bus stop" />
             {this.state.open === "stops" ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <ListItem key="nearby" button onClick={this.handleClick("nearby")} style={{ background: this.state.open === "nearby" ? Helpers.colors.background : '#fff' }}>
-            <ListItemIcon style={{fontSize: 30}}>
+            <ListItemIcon style={{ fontSize: 30 }}>
               <PinIcon style={{ color: '#000' }} />
             </ListItemIcon>
             <ListItemText inset primary="See what's nearby" />

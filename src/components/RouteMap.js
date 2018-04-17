@@ -225,19 +225,21 @@ class RouteMap extends Component {
               title={<RouteBadge id={route.id} showName />} 
               subheader={
                   <div style={{display: 'flex', alignItems: 'center'}}>
-                    showing active buses 
-                    <BusIcon style={{height: 20, padding: 1, borderRadius: 9999, marginLeft: '.25em', color: 'white', background: 'rgba(0,0,0,1)'}} />
+                    Zoom in for all stops and real-time bus info.
                   </div>} />
-
-                <div style={{display: 'grid', width: 250, gridTemplate: '1fr 1fr / 1fr 1fr', gridGap: 10, marginRight: '1em', fontSize: '.9em'}}>
-                <div style={{display: 'flex', alignItems: 'center'}}>
-                  <span style={{borderRadius: 9999, border: '5px solid black', width: 20, height: 20, background: '#000'}}></span>
-                  <span style={{marginLeft: '.5em'}}>Major stops</span>
-                </div>
-                <div style={{display: 'flex', alignItems: 'center'}}>
-                  <span style={{borderRadius: 9999, border: `5px solid ${this.props.route.color}`, width: 20, height: 20, background: '#fff'}}></span>
-                  <span style={{marginLeft: '.5em'}}>Local stops</span>
-                </div>
+                <div style={{display: 'grid', gridRowTemplate: 'repeat(3, 1fr)', gridGap: 5, marginRight: '1em', fontSize: '.9em'}}>
+                  <div style={{display: 'flex', alignItems: 'center', alignContent: 'space-between'}}>
+                    <span style={{borderRadius: 9999, border: '5px solid black', width: 8, height: 8, background: '#000'}}></span>
+                    <span style={{marginLeft: '.5em', textAlign: 'center'}}>Major stops</span>
+                  </div>
+                  <div style={{display: 'flex', alignItems: 'center', alignContent: 'flex-end'}}>
+                    <span style={{borderRadius: 9999, border: `5px solid ${this.props.route.color}`, width: 8, height: 8, background: '#fff'}}></span>
+                    <span style={{marginLeft: '.5em'}}>Local stops</span>
+                  </div>
+                  <div style={{display: 'flex', alignItems: 'center', alignContent: 'space-between'}}>
+                    <BusIcon />
+                    <span style={{marginLeft: '.5em'}}>Active buses</span>
+                  </div>
               </div>
           </div>
           <MapGL

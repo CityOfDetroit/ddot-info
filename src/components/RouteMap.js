@@ -227,18 +227,22 @@ class RouteMap extends Component {
                   <div style={{display: 'flex', alignItems: 'center'}}>
                     Zoom in for all stops and real-time bus info.
                   </div>} />
-                <div style={{display: 'grid', gridRowTemplate: 'repeat(3, 1fr)', gridGap: 5, marginRight: '1em', fontSize: '.9em'}}>
+                
+                <div style={{display: 'grid', gridTemplate: 'repeat(2, 1fr) / 1fr 1fr', gridGap: 5, marginRight: '.5em', background: '#eee', padding: 10}}>
+                  <div style={{display: 'flex', alignItems: 'center', alignContent: 'center', fontWeight: 700}}>
+                    <span style={{textAlign: 'center', textSize: '1.5em'}}></span>
+                  </div>
                   <div style={{display: 'flex', alignItems: 'center', alignContent: 'space-between'}}>
-                    <span style={{borderRadius: 9999, border: '5px solid black', width: 8, height: 8, background: '#000'}}></span>
+                    <BusIcon style={{height: 19, width: 19, padding: 1, borderRadius: 9999, color: 'white', background: 'rgba(0,0,0,1)'}}/>
+                    <span style={{marginLeft: '.5em'}}>Active buses</span>
+                  </div>
+                  <div style={{display: 'flex', alignItems: 'center', alignContent: 'space-between'}}>
+                    <span style={{borderRadius: 9999, border: '3px solid black', width: 15, height: 15, background: '#000'}}></span>
                     <span style={{marginLeft: '.5em', textAlign: 'center'}}>Major stops</span>
                   </div>
-                  <div style={{display: 'flex', alignItems: 'center', alignContent: 'flex-end'}}>
-                    <span style={{borderRadius: 9999, border: `5px solid ${this.props.route.color}`, width: 8, height: 8, background: '#fff'}}></span>
-                    <span style={{marginLeft: '.5em'}}>Local stops</span>
-                  </div>
                   <div style={{display: 'flex', alignItems: 'center', alignContent: 'space-between'}}>
-                    <BusIcon />
-                    <span style={{marginLeft: '.5em'}}>Active buses</span>
+                    <span style={{borderRadius: 9999, border: `3px solid ${this.props.route.color}`, width: 15, height: 15, background: '#fff'}}></span>
+                    <span style={{marginLeft: '.5em'}}>Local stops</span>
                   </div>
               </div>
           </div>

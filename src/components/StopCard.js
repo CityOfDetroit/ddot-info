@@ -56,7 +56,7 @@ class StopCard extends Component {
               <Link to={{pathname: `/stop/${this.props.id}`}} style={{color: 'black', textDecoration: 'none'}}>
                 <span>{Stops[this.props.id].name}</span>
               </Link> 
-              <span style={{background: '#666', marginLeft: '.5em', padding: '0px 8px', fontSize: '.85em', fontWeight: 700, color: 'white'}}>
+              <span style={{background: '#ccc', marginLeft: '.5em', padding: '0px 8px', fontSize: '.85em', fontWeight: 700, color: 'black'}}>
                 #{this.props.id}
               </span> 
             </div>} 

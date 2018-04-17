@@ -5,8 +5,6 @@ import _ from 'lodash';
 import chroma from 'chroma-js';
 import Toolbar from 'material-ui/Toolbar';
 import { AppBar } from 'material-ui';
-import Divider from 'material-ui/Divider';
-import Chip from 'material-ui/Chip';
 
 import Schedules from '../data/schedules.js';
 import Helpers from '../helpers.js';
@@ -15,6 +13,7 @@ import ScheduleTable from './ScheduleTable';
 import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
+import RouteBadge from './RouteBadge';
 
 class RouteSchedule extends React.Component {
   constructor(props) {
@@ -118,12 +117,23 @@ class RouteSchedule extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="BusRoute" style={{ background: Helpers.colors['background'] }}>
         <RouteHeader number={this.props.match.params.name} page="schedule" />
         <div className="schedule">
-          <AppBar position="static" color="default" elevation={0} style={{display: 'flex', flexWrap: 'wrap', padding: '.2em 0em', marginBottom: '1em'}}>
-            <Toolbar elevation={0} style={{justifyContent: window.innerWidth < 650 ? 'space-around' : 'flex-start'}}>
-              {/* <h4 style={{maxWidth: 100}}>Service and direction:</h4> */}
+          <AppBar position="static" color="default" elevation={0} style={{ display: 'flex', background: 'white' }}>
+            <Toolbar elevation={0} style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+              <span style={{ margin: 0, padding: '.5em 0em', fontSize: '1.5em', display: 'flex', flexDirection: 'row' }}>
+                Schedule for route <span style={{ marginLeft: '.25em' }}><RouteBadge id={this.props.match.params.name} /></span>
+              </span>
+              <span style={{ fontSize: '.9em', marginBottom: '.5em' }}><b>Major stops</b> are shown in order from left to right; look down the column to see scheduled departure times at that stop.</span>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '.5em' }}>
+                <span style={{ fontSize: '.9em' }}>Displaying AM times, <b>PM times</b>, and </span>
+                <span style={{ background: chroma(this.state.color).alpha(0.25).css(), fontSize: '.9em', marginLeft: '.25em', padding: '.15em' }}> current trips</span>
+              </div>
+            </Toolbar>
+          </AppBar>
+          <AppBar position="static" color="default" elevation={0} style={{ display: 'flex', flexWrap: 'wrap', padding: '.5em 0em', marginBottom: '1em' }}>
+            <Toolbar elevation={0} style={{ justifyContent: 'flex-start' }}>
               <ServicePicker
                 services={this.state.availableServices}
                 currentSvc={this.state.currentSvc}
@@ -133,44 +143,14 @@ class RouteSchedule extends React.Component {
                 currentDirection={this.state.currentDirection}
                 onChange={this.handleDirectionChange}
                 route={this.state.route} />
-              {/* <IconButton onClick={this.handleClickOpen}><HelpOutline /></IconButton> */}
-              {/* <Dialog
-                open={this.state.open}
-                onClose={this.handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-              >
-                <DialogContent>
-                <div style={{display: 'flex', alignItems: 'center'}}>
-                <p style={{marginRight: '.5em', maxWidth: 400}}>Major stops are shown in order from left to right; look down the column to see scheduled arrivals at that stop.</p>
-                <ul style={{width: 200}}>
-                  <li style={{ padding: '.25em' }}>AM arrivals</li>
-                  <li style={{ fontWeight: 700, padding: '.25em'}}>PM arrivals</li>
-                  <li style={{ backgroundColor: chroma(this.state.color).alpha(0.25).css(), padding: '.25em' }}>current trips</li>
-                </ul>
-                </div>
-                <DialogActions>
-                <PrintSchedule routePdf={routeDetailObj.pdf} />
-                </DialogActions>
-                </DialogContent>
-              </Dialog>    */}
             </Toolbar>
           </AppBar>
-          <ScheduleTable 
-            schedule={this.state[this.state.currentSvc]} 
-            direction={this.state.currentDirection} 
-            liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
-            color={this.state.color} />
-          <Divider style={{ marginTop: '1em' }} />
-          <div style={{display: 'flex', flexDirection: 'column', padding: '.5em' }}>
-            <div>
-              <p style={{ fontSize: '.9em', marginLeft: '.5em' }}>Major stops are shown in order from left to right; look down the column to see scheduled departure times at that stop.</p>
-            </div>
-            <div style={{ display: 'flex' }}>
-              <Chip style={{ margin: 6 }} labelStyle={{ fontSize: '.7em' }} label="am times" />
-              <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} label="pm times" />
-              <Chip style={{ margin: 6, backgroundColor: chroma(this.state.color).alpha(0.25).css() }} labelStyle={{ fontSize: '.7em' }} label="current trips" />
-            </div>
+          <div style={{ padding: '1em 0em', backgroundColor: '#fff' }}>
+            <ScheduleTable 
+              schedule={this.state[this.state.currentSvc]} 
+              direction={this.state.currentDirection} 
+              liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
+              color={this.state.color} />
           </div>
         </div>
       </div>

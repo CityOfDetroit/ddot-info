@@ -13,6 +13,7 @@ class RouteBadge extends Component {
           <div className='white fw7 f6 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: route.color }}>
             {this.props.id}
           </div>
+          { this.props.showName ? <span style={{ marginLeft: '.25em' }}>{route.rt_name}</span> : null }
         </div>
       </div>
     );
@@ -21,6 +22,7 @@ class RouteBadge extends Component {
 
 RouteBadge.propTypes = {
   id: PropTypes.string.isRequired,
+  showName: PropTypes.bool,
 }
 
 export default RouteBadge;

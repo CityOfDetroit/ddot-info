@@ -5,21 +5,22 @@ import Divider from 'material-ui/Divider';
 
 import routeDetails from '../data/routeDetails.js';
 import PrintSchedule from './PrintSchedule';
+import RouteBadge from './RouteBadge';
 
 /** General service info about a route within BusRoute */
 const RouteDetails = ({ id }) => {
   const obj = _.filter(routeDetails, r => { return id === r.number.toString() })[0];
 
   return (
-    <div className="details">
+    <div className="details" style={{overflowX: 'scroll'}}>
       <Card>
-        <CardContent style={{ paddingTop: 16 }}>
+        <CardHeader title={<RouteBadge id={id} showName />} />
+        <CardContent>
           {obj.description}
           <div style={{ marginTop: 15 }}>
             <PrintSchedule routePdf={obj.pdf} />
           </div>
         </CardContent>
-
         {["Monday-Friday", "Saturday", "Sunday/Holiday"].map((d, i) => (
           <div key={i}>
             {obj.services[d] ?
@@ -28,7 +29,7 @@ const RouteDetails = ({ id }) => {
               <Card key={i}>
                 <CardHeader
                   title={d}
-                  subheader={obj.services[d].service_hours.length === 1 ? obj.services[d].service_hours[0] : `${obj.services[d].service_hours[0]} - ${obj.services[d].service_hours[1]}`} />
+                  subheader={obj.services[d].service_hours.length === 1 ? `${obj.services[d].service_hours[0]} (see schedule for all times)` : `${obj.services[d].service_hours[0]} - ${obj.services[d].service_hours[1]} (see schedule for all times)`} />
                 <CardContent>
                   <table className="w-100">
                     <tbody>

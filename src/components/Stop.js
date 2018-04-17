@@ -7,10 +7,12 @@ import { grey300 } from 'material-ui/colors'
 import LiveIcon from 'material-ui-icons/SpeakerPhone'
 import ScheduleIcon from 'material-ui-icons/Schedule'
 import Toolbar from 'material-ui/Toolbar';
+import Card, {CardHeader} from 'material-ui/Card'
 import { AppBar } from 'material-ui';
+import { withStyles } from 'material-ui/styles';
 
 import Stops from '../data/stops.js';
-import StopHeader from './StopHeader';
+import TopNav from './TopNav';
 import StopMap from './StopMap';
 import StopTransfers from './StopTransfers';
 import StopRouteSchedule from './StopRouteSchedule';
@@ -20,9 +22,16 @@ import RoutePredictionList from './RoutePredictionList';
 import Schedules from '../data/schedules.js'
 import Helpers from '../helpers';
 
+const styles = {
+  title: {
+    fontWeight: 500,
+    fontSize: '1.25em'
+  }
+}
+
 class Stop extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       predictions: {},
@@ -34,7 +43,7 @@ class Stop extends React.Component {
       routeStopType: 'next'
     }
 
-    this.handleRouteChange = this.handleRouteChange.bind(this)
+    this.handleRouteChange = this.handleRouteChange.bind(this);
   }
 
   fetchRealtimeData(id) {
@@ -86,63 +95,66 @@ class Stop extends React.Component {
   };
 
   componentDidMount() {
-    this.fetchRealtimeData(this.props.match.params.name)
-    this.fetchStopScheduleData(this.props.match.params.name)
+    this.fetchRealtimeData(this.props.match.params.name);
+    this.fetchStopScheduleData(this.props.match.params.name);
     this.interval = setInterval(() => this.fetchRealtimeData(this.props.match.params.name), 5000);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({fetchedStopSchedule: false, slideIndex: 0, routeStopType: 'schedule'})
+    this.setState({
+      fetchedStopSchedule: false, 
+      slideIndex: 0, 
+      routeStopType: 'schedule'
+    });
+
     if(this.props.match.params.name !== nextProps.match.params.name) {
-      this.fetchStopScheduleData(nextProps.match.params.name)
-      this.fetchRealtimeData(nextProps.match.params.name)
+      this.fetchStopScheduleData(nextProps.match.params.name);
+      this.fetchRealtimeData(nextProps.match.params.name);
     }
   }
 
   componentWillUnmount() {
-    clearInterval(this.interval)
+    clearInterval(this.interval);
   }
 
   render() {
-    const stopId = this.props.match.params.name
-    const stopName = Stops[stopId.toString()].name
-    const stopRoutes = Stops[stopId.toString()].routes
-    const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat]
-    const stopTransfers = Stops[stopId.toString()].transfers
-    const { slideIndex } = this.state
+    const stopId = this.props.match.params.name;
+    const stopName = Stops[stopId.toString()].name;
+    const stopRoutes = Stops[stopId.toString()].routes;
+    const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat];
+    const stopTransfers = Stops[stopId.toString()].transfers;
+    const { slideIndex } = this.state;
 
     return (
-      <div className='App' style={{background: Helpers.colors['background']}}>
-        <StopHeader id={stopId} name={stopName} />
+      <div className='App' style={{ background: Helpers.colors['background'] }}>
+        <TopNav />
         <StopMap stopId={stopId} center={stopCoords}/>
         <div className='routes'>
-          <AppBar position="static" color="red" style={{display: 'flex'}} elevation={0}>
+          <Card>
+            <CardHeader title={stopName} subheader={`Stop ID: #${stopId}`} classes={{title: this.props.classes.title}} />
+          </Card>
+          <AppBar position="static" color="red" style={{ display: 'flex' }} elevation={0}>
             <Toolbar>
-              <h4 style={{margin: 0, padding: '.5em'}}>Routes here</h4>
               <Tabs
                 onChange={this.handleTabsChange}
                 value={slideIndex}
                 indicatorColor="red"
                 textColor="primary"
-                scrollable={stopRoutes.length > 5 ? true : false}
-                >
-
+                scrollable={stopRoutes.length > 5 ? true : false}>
                 {stopRoutes.map((r, i) => (
-                  <Tab label={<RouteBadge id={r[0]}/>} value={i} style={{minWidth: 40, width: 50}} />
+                  <Tab label={<RouteBadge id={r[0]} />} value={i} style={{ minWidth: 40, width: 50 }} />
                 ))}
               </Tabs>
             </Toolbar>
           </AppBar>
-
           <SwipeableViews
             axis='x'
             index={slideIndex}
-            onChangeIndex={this.handleSlideChange}
-            >
+            onChangeIndex={this.handleSlideChange}>
             {stopRoutes.map((r, i) => (
               <div className="">
-              <AppBar position="static" color="default" elevation={0} style={{display: 'flex'}}>
-                <Toolbar style={{justifyContent: 'space-between'}} elevation={0}>
+              <AppBar position="static" color="default" elevation={0} style={{ display: 'flex' }}>
+                <Toolbar style={{ justifyContent: 'space-between' }} elevation={0}>
                   <RouteLink id={r[0]} />
                   <Tabs 
                     onChange={this.handleRouteChange} 
@@ -198,4 +210,4 @@ Stop.propTypes = {
   }).isRequired,
 }
 
-export default Stop;
+export default withStyles(styles)(Stop);

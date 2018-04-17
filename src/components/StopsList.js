@@ -6,7 +6,7 @@ import StopCard from './StopCard';
 class StopsList extends Component {
   render() {
     return (
-      <div className="overflow-scroll" style={{height: 350}}>
+      <div className="overflow-scroll" style={{display: 'flex', flexWrap: 'wrap', height: 350}}>
         {this.props.stops.map((stop, i) =>
           <div className="" key={i}>
             <StopCard id={stop.id} showTransfers={true} showRoutes />

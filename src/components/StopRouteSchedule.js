@@ -7,10 +7,8 @@ import Schedules from '../data/schedules.js'
 import Stops from '../data/stops.js'
 import GridList, {GridListTile} from 'material-ui/GridList';
 import Card, {CardHeader, CardContent} from 'material-ui/Card'
-import Chip from 'material-ui/Chip';
 import Divider from 'material-ui/Divider'
 import moment from 'moment';
-import { grey800 } from 'material-ui/colors';
 
 class StopRouteSchedule extends Component {
   render() {
@@ -28,12 +26,11 @@ class StopRouteSchedule extends Component {
             style={{padding: '16px 10px 0px 10px'}}
           />
           <CardContent style={{padding: 10}}>
-            <h4 style={{marginTop: 0, fontWeight: 300, color: grey800}}>Buses stop here at:</h4>
             <GridList cellHeight={20} cols={Math.ceil(rds.scheduleStopTimes) / 8} padding={0} style={{
-                maxHeight: 100 + Math.ceil(rds.scheduleStopTimes.length) * 3, 
-                maxWidth: 50 + Math.ceil(rds.scheduleStopTimes.length / 10) * 90,
-                flexFlow: 'column wrap', 
-                justifyContent: 'start'}}>
+              maxHeight: 100 + Math.ceil(rds.scheduleStopTimes.length) * 3, 
+              maxWidth: 50 + Math.ceil(rds.scheduleStopTimes.length / 10) * 90,
+              flexFlow: 'column wrap', 
+              justifyContent: 'start'}}>
               {rds.scheduleStopTimes.map((sst, i) => (
                 <GridListTile style={{
                   backgroundColor: this.props.predictions.indexOf(sst.tripId) > -1 ? chroma(Schedules[this.props.route].color).alpha(0.25).css() : 'rgba(255,255,255,1)',
@@ -48,18 +45,16 @@ class StopRouteSchedule extends Component {
                   {(i === 0 || moment(rds.scheduleStopTimes[i-1].arrivalTime).format('a') !== moment(sst.arrivalTime).format('a')) ? moment(sst.arrivalTime).format('h:mma').slice(0,-1) : moment(sst.arrivalTime).format('h:mm')}
                 </GridListTile>
               ))
-              }
+            }
             </GridList>
           </CardContent>
           </Card></div>
-          
         ))}
-            <Divider />
-            <div style={{display: 'flex', background: 'white', padding: '.5em'}}>
-              <Chip style={{ margin: 6 }} labelStyle={{ fontSize: '.7em' }} label="am times" />
-              <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} label={<strong>pm times</strong>} />
-              <Chip style={{ margin: 6, backgroundColor: chroma(Schedules[this.props.route].color).alpha(0.25).css() }} labelStyle={{ fontSize: '.7em' }} label="next departures" />
-            </div>
+        <Divider />
+        <div style={{display: 'flex', alignItems: 'center', background: 'white', padding: '.5em'}}>
+          <span style={{fontSize: '.9em'}}>Displaying AM times, <b>PM times</b>, and </span>
+          <span style={{background: chroma(Schedules[this.props.route].color).alpha(0.25).css(), fontSize: '.9em', marginLeft: '.25em', padding: '.15em'}}> next departures</span>
+        </div>
       </div>
     )}
 }

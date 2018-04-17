@@ -8,9 +8,9 @@ import RadiusPicker from './RadiusPicker';
 import Helpers from '../helpers';
 
 const radii = [
-  { meters: '200', label: '5 minute walk' },
-  { meters: '400', label: '10 minute walk' },
-  { meters: '1000', label: '20 minute walk' }
+  { meters: '400', label: '5 minute walk' },
+  { meters: '800', label: '10 minute walk' },
+  { meters: '1600', label: '20 minute walk' },
 ];
 
 /** Utility component for fetching current intersection */
@@ -50,7 +50,7 @@ class Nearby extends React.Component {
     super(props);
 
     this.state = {
-      currentRadius: '200',
+      currentRadius: '400',
       intersection: '',
     }
 

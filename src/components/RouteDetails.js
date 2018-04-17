@@ -12,7 +12,7 @@ const RouteDetails = ({ id }) => {
   const obj = _.filter(routeDetails, r => { return id === r.number.toString() })[0];
 
   return (
-    <div className="details">
+    <div className="details" style={{overflowX: 'scroll'}}>
       <Card>
         <CardHeader title={<RouteBadge id={id} showName />} />
         <CardContent>

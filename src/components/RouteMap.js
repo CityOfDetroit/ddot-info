@@ -225,10 +225,10 @@ class RouteMap extends Component {
               title={<RouteBadge id={route.id} showName />} 
               subheader={
                   <div style={{display: 'flex', alignItems: 'center'}}>
-                    showing active buses 
+                    Showing active buses 
                     <BusIcon style={{height: 20, padding: 1, borderRadius: 9999, marginLeft: '.25em', color: 'white', background: 'rgba(0,0,0,1)'}} />
                   </div>} />
-
+                  
                 <div style={{display: 'grid', width: 250, gridTemplate: '1fr 1fr / 1fr 1fr', gridGap: 10, marginRight: '1em', fontSize: '.9em'}}>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                   <span style={{borderRadius: 9999, border: '5px solid black', width: 20, height: 20, background: '#000'}}></span>

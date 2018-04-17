@@ -117,18 +117,18 @@ class RouteSchedule extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="BusRoute" style={{ background: Helpers.colors['background'] }}>
         <RouteHeader number={this.props.match.params.name} page="schedule" />
         <div className="schedule">
-          <AppBar position="static" color="default" elevation={0} style={{display: 'flex', flexDirection: 'column', background: 'white', marginBottom: '.5em'}}>
-            <Toolbar elevation={0} style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+          <AppBar position="static" color="default" elevation={0} style={{ display: 'flex', background: 'white' }}>
+            <Toolbar elevation={0} style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
               <span style={{ margin: 0, padding: '.5em 0em', fontSize: '1.5em', display: 'flex', flexDirection: 'row' }}>
                 Schedule for route <span style={{ marginLeft: '.25em' }}><RouteBadge id={this.props.match.params.name} /></span>
               </span>
-              <span style={{ fontSize: '.9em', marginBottom: '.5em' }}>Major stops are shown in order from left to right; look down the column to see scheduled departure times at that stop.</span>
-              <div style={{display: 'flex', alignItems: 'center'}}>
-                <span style={{fontSize: '.9em'}}>Displaying AM times, <b>PM times</b>, and </span>
-                <span style={{background: chroma(this.state.color).alpha(0.25).css(), fontSize: '.9em', marginLeft: '.25em', padding: '.15em'}}> current trips</span>
+              <span style={{ fontSize: '.9em', marginBottom: '.5em' }}><b>Major stops</b> are shown in order from left to right; look down the column to see scheduled departure times at that stop.</span>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '.5em' }}>
+                <span style={{ fontSize: '.9em' }}>Displaying AM times, <b>PM times</b>, and </span>
+                <span style={{ background: chroma(this.state.color).alpha(0.25).css(), fontSize: '.9em', marginLeft: '.25em', padding: '.15em' }}> current trips</span>
               </div>
             </Toolbar>
           </AppBar>
@@ -145,11 +145,13 @@ class RouteSchedule extends React.Component {
                 route={this.state.route} />
             </Toolbar>
           </AppBar>
-          <ScheduleTable 
-            schedule={this.state[this.state.currentSvc]} 
-            direction={this.state.currentDirection} 
-            liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
-            color={this.state.color} />
+          <div style={{ padding: '1em 0em', backgroundColor: '#fff' }}>
+            <ScheduleTable 
+              schedule={this.state[this.state.currentSvc]} 
+              direction={this.state.currentDirection} 
+              liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
+              color={this.state.color} />
+          </div>
         </div>
       </div>
     )

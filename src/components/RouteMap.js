@@ -228,20 +228,20 @@ class RouteMap extends Component {
                     Zoom in for all stops and real-time bus info.
                   </div>} />
                 
-                <div style={{display: 'grid', gridTemplate: 'repeat(2, 1fr) / 1fr 1fr', gridGap: 5, marginRight: '.5em', background: '#eee', padding: 10}}>
+                <div style={{display: 'grid', gridTemplate: 'repeat(2, 1fr) / 1fr 1fr', gridGap: 10, marginRight: '.5em', background: 'rgba(0,0,0,0.05)', padding: 10}}>
                   <div style={{display: 'flex', alignItems: 'center', alignContent: 'center', fontWeight: 700}}>
                     <span style={{textAlign: 'center', textSize: '1.5em'}}></span>
                   </div>
                   <div style={{display: 'flex', alignItems: 'center', alignContent: 'space-between'}}>
-                    <BusIcon style={{height: 19, width: 19, padding: 1, borderRadius: 9999, color: 'white', background: 'rgba(0,0,0,1)'}}/>
+                    <BusIcon style={{height: 17, width: 17, padding: 1, borderRadius: 9999, color: 'white', background: 'rgba(0,0,0,1)'}}/>
                     <span style={{marginLeft: '.5em'}}>Active buses</span>
                   </div>
                   <div style={{display: 'flex', alignItems: 'center', alignContent: 'space-between'}}>
-                    <span style={{borderRadius: 9999, border: '3px solid black', width: 15, height: 15, background: '#000'}}></span>
+                    <span style={{borderRadius: 9999, border: '3px solid black', width: 13, height: 13, background: '#000'}}></span>
                     <span style={{marginLeft: '.5em', textAlign: 'center'}}>Major stops</span>
                   </div>
                   <div style={{display: 'flex', alignItems: 'center', alignContent: 'space-between'}}>
-                    <span style={{borderRadius: 9999, border: `3px solid ${this.props.route.color}`, width: 15, height: 15, background: '#fff'}}></span>
+                    <span style={{borderRadius: 9999, border: `3px solid ${this.props.route.color}`, width: 13, height: 13, background: '#fff'}}></span>
                     <span style={{marginLeft: '.5em'}}>Local stops</span>
                   </div>
               </div>

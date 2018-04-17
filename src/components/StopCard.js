@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Stops from '../data/stops.js';
 import Schedules from '../data/schedules.js';
 
-import Card, { CardHeader, CardContent } from 'material-ui/Card'
+import Card, { CardHeader } from 'material-ui/Card'
 import BusIcon from 'material-ui-icons/DirectionsBus'
 import { withStyles } from 'material-ui/styles'
 
@@ -41,7 +41,6 @@ const StopCardRoutes = ({routes}) => {
 
 class StopCard extends Component {
   render() {
-    const exclude = this.props.exclude || '';
     let routes = [];
 
     if (Stops[this.props.id]) {

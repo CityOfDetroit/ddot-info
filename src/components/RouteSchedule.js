@@ -5,8 +5,6 @@ import _ from 'lodash';
 import chroma from 'chroma-js';
 import Toolbar from 'material-ui/Toolbar';
 import { AppBar } from 'material-ui';
-import Divider from 'material-ui/Divider';
-import Chip from 'material-ui/Chip';
 
 import Schedules from '../data/schedules.js';
 import Helpers from '../helpers.js';
@@ -152,16 +150,6 @@ class RouteSchedule extends React.Component {
             direction={this.state.currentDirection} 
             liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
             color={this.state.color} />
-          <Divider style={{ marginTop: '1em' }} />
-          <div style={{ display: 'flex', flexDirection: 'column', padding: '.5em' }}>
-            <div>
-            </div>
-            <div style={{ display: 'flex' }}>
-              <Chip style={{ margin: 6 }} labelStyle={{ fontSize: '.7em' }} label="am times" />
-              <Chip style={{ margin: 6, fontWeight: 700 }} labelStyle={{ fontSize: '.7em' }} label="pm times" />
-              <Chip style={{ margin: 6, backgroundColor: chroma(this.state.color).alpha(0.25).css() }} labelStyle={{ fontSize: '.7em' }} label="current trips" />
-            </div>
-          </div>
         </div>
       </div>
     )

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MapGL from 'react-map-gl';
 import { Redirect } from 'react-router-dom'
-import Card, { CardHeader } from 'material-ui/Card';
+import Card from 'material-ui/Card';
 import _ from 'lodash';
 
 import Helpers from '../helpers.js';

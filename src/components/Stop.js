@@ -6,7 +6,6 @@ import Tabs, { Tab } from 'material-ui/Tabs';
 import { grey300 } from 'material-ui/colors'
 import LiveIcon from 'material-ui-icons/SpeakerPhone'
 import ScheduleIcon from 'material-ui-icons/Schedule'
-import BusIcon from 'material-ui-icons/DirectionsBus';
 import Toolbar from 'material-ui/Toolbar';
 import Card, {CardHeader} from 'material-ui/Card'
 import { AppBar } from 'material-ui';

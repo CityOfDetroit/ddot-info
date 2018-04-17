@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import BusIcon from 'material-ui-icons/Timeline';
 import StopIcon from 'material-ui-icons/DirectionsBus';
 import IconButton from 'material-ui/IconButton'
 import ScheduleIcon from 'material-ui-icons/Schedule'

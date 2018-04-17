@@ -7,7 +7,6 @@ import BusIcon from 'material-ui-icons/Timeline';
 import StopIcon from 'material-ui-icons/DirectionsBus';
 import ScheduleIcon from 'material-ui-icons/Schedule'
 
-import Schedules from '../data/schedules.js';
 import NavLinks from './NavLinks.js';
 
 /** Navigation for /route/{#} page */
@@ -41,9 +40,6 @@ class RouteHeader extends React.Component {
       { label: "Schedule", path: `/route/${this.props.number}/schedule`, icon: <ScheduleIcon /> },
     ];
 
-    const thisRoute = Schedules[this.props.number];
-    const color = thisRoute.color;
-    const name = thisRoute.rt_name;
     const { currentTab } = this.state;
     
     return (

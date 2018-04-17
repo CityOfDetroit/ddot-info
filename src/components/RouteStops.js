@@ -8,7 +8,6 @@ import { AppBar } from 'material-ui';
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
 import RouteStopList from './RouteStopList';
-import RouteMap from './RouteMap';
 import RouteBadge from './RouteBadge';
 import StopInput from './StopInput';
 import Helpers from '../helpers';
@@ -63,9 +62,6 @@ class RouteStops extends React.Component {
     return (
       <div className="BusRoute" style={{background: Helpers.colors['background']}}>
         <RouteHeader number={this.props.match.params.name} page="stops" />
-        {/* <div className="routeMap">
-          <RouteMap route={thisRoute} />
-        </div> */}
         <div className="schedule">
           <AppBar position="static" elevation={0} color="red" style={{ marginBottom: '.5em', padding: '.75em 0em' }} >
             <Toolbar style={{ flexWrap: 'wrap', justifyContent: 'space-between' }}>

@@ -7,10 +7,8 @@ import Schedules from '../data/schedules.js'
 import Stops from '../data/stops.js'
 import GridList, {GridListTile} from 'material-ui/GridList';
 import Card, {CardHeader, CardContent} from 'material-ui/Card'
-import Chip from 'material-ui/Chip';
 import Divider from 'material-ui/Divider'
 import moment from 'moment';
-import { grey800 } from 'material-ui/colors';
 
 class StopRouteSchedule extends Component {
   render() {

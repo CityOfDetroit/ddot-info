@@ -1,8 +1,4 @@
 import React from 'react';
-import Card, { CardHeader } from 'material-ui/Card';
-import Tabs, {Tab} from 'material-ui/Tabs'
-import Toolbar from 'material-ui/Toolbar';
-import { AppBar } from 'material-ui';
 
 import List, {ListItem, ListItemText, ListItemIcon} from 'material-ui/List'
 import Collapse from 'material-ui/transitions/Collapse'
@@ -10,7 +6,6 @@ import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
 
 import StopInlineLink from './StopInlineLink';
-import RouteBadge from './RouteBadge'
 import RouteLink from './RouteLink';
 
 import Helpers from '../helpers';

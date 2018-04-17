@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import RouteLinkIcons from './RouteLinkIcons';
+import RouteLink from './RouteLink';
 
 class RoutesList extends Component {
   render() {
@@ -10,7 +10,7 @@ class RoutesList extends Component {
         className="" 
         style={{ display: 'grid', gridTemplateColumns: `repeat(auto-fit, minmax(350px, 1fr))`, gridGap: `.5em`, maxHeight: 370, overflowY: 'scroll' }}>
         {this.props.lines.map(line =>
-          <RouteLinkIcons key={line.id} id={line.id} routeId={line.rt_id} name={line.rt_name} color={line.color} />
+          <RouteLink key={line.id} id={line.id} routeId={line.rt_id} icons />
         )}
       </div>
     )

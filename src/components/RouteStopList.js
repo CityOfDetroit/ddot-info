@@ -4,9 +4,10 @@ import Card, { CardContent } from 'material-ui/Card';
 
 import StopLink from './StopLink';
 import Stops from '../data/stops.js';
-import Helpers from '../helpers';
 import Schedules from '../data/schedules.js';
+import Helpers from '../helpers';
 
+/** List of all stops and transfers for RouteStops */
 class RouteStopList extends Component {
   constructor(props) {
     super(props);
@@ -47,31 +48,29 @@ class RouteStopList extends Component {
       }
     }
 
-    const color = Schedules[this.props.routeNumber].color
+    const color = Schedules[this.props.routeNumber].color;
 
     return (
-      <Card className="">
+      <Card>
         <CardContent>
-          <div className="w-100 f4 pv3" style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', borderBottom: '1px solid #aaa' }}>
-            <div className="w-50 ml3">
-              <span className='db'>Bus stops</span>
-              {/* <span className='db f7 fw5 i'>In order of arrival</span> */}
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', borderBottom: '1px solid #aaa', fontSize: '1.25rem', paddingTop: '1rem', paddingBottom: '1rem', width: '100%' }}>
+            <div style={{ width: '50%', marginLeft: '1rem' }}>
+              <span style={{ display: 'block' }}>Bus stops</span>
             </div>
-            <div className="w-50 ml3">
-              <span className='db'>Transfers</span>
-              {/* <span className='db f7 fw5 i'>Transfer routes board at nearby stops or at the same stop. Check bus stop signs.</span> */}
+            <div style={{ width: '50%', marginLeft: '1rem' }}>
+              <span style={{ display: 'block' }}>Transfers</span>
             </div>
           </div>
-          <div className="overflow-scroll" style={{height: '60vh'}}>
+          <div className="overflow-scroll" style={{ height: '60vh' }}>
             {filteredStops.length > 0 ? filteredStops.map((stop, i) =>
-              <div className="" style={{ display: 'flex', alignItems: 'center', zIndex: 0 }} key={i}>
+              <div style={{ display: 'flex', alignItems: 'center', zIndex: 0 }} key={i}>
                 <StopLink id={stop.slice(5,)} exclude={this.props.routeNumber} color={color} isTimepoint={this.props.timepoints.indexOf(stop.slice(5,)) > -1} showTransfers showBorder/>
               </div>
             ) : `Loading stops...`}
           </div>
         </CardContent>
       </Card>
-    )
+    );
   }
 }
 

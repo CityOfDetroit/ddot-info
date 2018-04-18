@@ -3,6 +3,7 @@ import TextField from 'material-ui/TextField';
 import PropTypes from 'prop-types';
 import Search from 'material-ui-icons/Search';
 
+/** Search input for StopSearch */
 class StopInput extends Component {
   render() {
     return (

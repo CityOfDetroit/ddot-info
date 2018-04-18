@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-
 import Toolbar from 'material-ui/Toolbar';
 import { AppBar } from 'material-ui';
 
@@ -13,11 +12,12 @@ import StopInput from './StopInput';
 import Helpers from '../helpers';
 import Schedules from '../data/schedules.js';
 
+/** All bus stops for a single route at /route/{#}/stops */
 class RouteStops extends React.Component {
   constructor(props) {
     super(props);
 
-    let route = Schedules[this.props.match.params.name]
+    let route = Schedules[this.props.match.params.name];
 
     this.state = {
       routeName: (route.rt_name),

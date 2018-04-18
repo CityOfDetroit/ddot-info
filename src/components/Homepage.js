@@ -73,7 +73,7 @@ class Homepage extends Component {
             {this.state.open === "nearby" ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <Divider />
-          <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+          <Collapse in={true} timeout="auto" unmountOnExit>
             {this.state.open === "routes" ? <RouteSearch /> 
               : this.state.open === "stops" ? <StopSearch /> 
                 : this.state.open === "nearby" ? <Nearby /> 

@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import chroma from 'chroma-js';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 
-
 import Stops from '../data/stops.js';
 
+/** Schedule table for RouteSchedule */
 class ScheduleTable extends Component {
   render() {
     const background = `rgba(${chroma(this.props.color).alpha(0.25).rgba().toString()}`;
     let tripsToHighlight = this.props.liveTrips.map(t => t.slice(8));
 
     return (
-      <div style={{maxWidth: '100vw', overflowX: 'scroll'}}>
+      <div style={{ maxWidth: '100vw', overflowX: 'scroll' }}>
         <Table>
           <TableHead>
             <TableRow>
@@ -21,7 +21,7 @@ class ScheduleTable extends Component {
                 <TableCell 
                 key={i}
                 style={{ borderBottom: '0', textAlign: 'center', padding: '0em 1em' }}>
-                  <Link className="dim black f6 fw7" to={{ pathname: `/stop/${s}/` }}  >
+                  <Link style={{ fontSize: '.875rem', color: 'black', fontWeight: 700 }} to={{ pathname: `/stop/${s}/` }}  >
                     {Stops[s].name.indexOf('Rosa Parks') > -1 ? "Rosa Parks TC" : Stops[s].name}
                   </Link>
                 </TableCell>
@@ -47,8 +47,7 @@ class ScheduleTable extends Component {
               style={tripsToHighlight.indexOf(t.trip_id) > -1 ? { backgroundColor: background } : {}}>
               {t.timepoints.map((tp, k) => (
                 <TableCell
-                  className={tp.indexOf('p') > -1 ? "fw7" : "" }
-                  style={(j+1) % 5 === 0 ? { borderBottom: `2px solid ${this.props.color}`, borderRight: '1px solid #ccc', textAlign: 'center' } : { borderBottom: '0', borderRight: '1px solid #ccc', textAlign: 'center' } }
+                  style={{ borderBottom: (j+1) % 5 === 0 ? `2px solid ${this.props.color}` : 0, borderRight: '1px solid #ccc', textAlign: 'center', fontWeight: tp.indexOf('p') > -1 ? 700 : 500 }}
                   key={k}>
                   {tp === "\u2013" ? `—` : tp.slice(0, -2)}
                 </TableCell>

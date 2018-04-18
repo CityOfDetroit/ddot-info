@@ -8,9 +8,10 @@ import RouteHeader from './RouteHeader'
 import Helpers from '../helpers'
 import Schedules from '../data/schedules.js'
 
+/** Easter egg at /route/{#}/real-time */
 class RouteRealtime extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     let route = Schedules[parseInt(this.props.match.params.name, 10)]
     let tripIds = {}

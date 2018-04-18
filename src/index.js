@@ -34,17 +34,17 @@ const muiTheme = createMuiTheme({
     },
     MuiFormLabel: {
       focused: {
-        color: '#000',
+        color: '#000'
       },
     },
     MuiInput: {
       underline: {
         '&:before': {
           backgroundColor: '#b0d27b',
-          height: '2px',
+          height: '2px'
         },
         '&:after': {
-          backgroundColor: '#000',
+          backgroundColor: '#000'
         },
       }
     },
@@ -65,10 +65,10 @@ const muiTheme = createMuiTheme({
     },
     MuiTableRow: {
       root: {
-        height: '24px',
+        height: '24px'
       },
       head: {
-        height: '24px',
+        height: '24px'
       },
     },
     MuiListItemText: {
@@ -87,8 +87,13 @@ const muiTheme = createMuiTheme({
         padding: '4px 0 4px 0',
         textAlign: 'center',
         '&:last-child': {
-          paddingRight: 0,
+          paddingRight: 0
         },
+      },
+    },
+    MuiAppBar: {
+      colorDefault: {
+        backgroundColor: '#eee'
       },
     },
   },

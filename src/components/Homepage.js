@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Card, { CardHeader, CardContent } from 'material-ui/Card';
 import Collapse from 'material-ui/transitions/Collapse';
 import Divider from 'material-ui/Divider';
 import { withStyles } from 'material-ui/styles' 
-
 import PinIcon from 'material-ui-icons/Place';
 import BusIcon from 'material-ui-icons/Timeline';
-import StopIcon from 'material-ui-icons/DirectionsBus';
+import StopIcon from './BusStop';
 import ExpandLess from 'material-ui-icons/ExpandLess';
 import ExpandMore from 'material-ui-icons/ExpandMore';
 
@@ -75,7 +73,7 @@ class Homepage extends Component {
             {this.state.open === "nearby" ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <Divider />
-          <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+          <Collapse in={true} timeout="auto" unmountOnExit>
             {this.state.open === "routes" ? <RouteSearch /> 
               : this.state.open === "stops" ? <StopSearch /> 
                 : this.state.open === "nearby" ? <Nearby /> 

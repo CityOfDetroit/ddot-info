@@ -2,6 +2,7 @@ import React from 'react';
 import Checkbox from 'material-ui/Checkbox';
 import {FormControlLabel} from 'material-ui';
 
+/** Checkbox to toggle satelite imagery for RouteMap and NearbyMap */
 class MapSatelliteSwitch extends React.Component {
   render() {
     return (
@@ -11,8 +12,7 @@ class MapSatelliteSwitch extends React.Component {
             onChange={this.props.onChange}
             defaultChecked={this.props.checked}
           />}
-          label="Satellite"
-        />
+          label="Satellite" />
       </div>
     );
   }

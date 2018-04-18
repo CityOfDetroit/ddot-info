@@ -8,13 +8,13 @@ import { AppBar } from 'material-ui';
 
 import Schedules from '../data/schedules.js';
 import Helpers from '../helpers.js';
-
 import ScheduleTable from './ScheduleTable';
 import ServicePicker from './ServicePicker';
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
 import RouteBadge from './RouteBadge';
 
+/** Schedule for a single route at /route/{#}/schedule */
 class RouteSchedule extends React.Component {
   constructor(props) {
     super(props);
@@ -98,14 +98,6 @@ class RouteSchedule extends React.Component {
     });
   }
 
-  handleClickOpen = () => {
-    this.setState({ open: true });
-  };
-
-  handleClose = () => {
-    this.setState({ open: false });
-  };
-
   componentDidMount() {
     this.fetchData();
     this.interval = setInterval(() => this.fetchData(), 3000);
@@ -125,10 +117,14 @@ class RouteSchedule extends React.Component {
               <span style={{ margin: 0, padding: '.5em 0em', fontSize: '1.5em', display: 'flex', flexDirection: 'row' }}>
                 Schedule for route <span style={{ marginLeft: '.25em' }}><RouteBadge id={this.props.match.params.name} /></span>
               </span>
-              <span style={{ fontSize: '.9em', marginBottom: '.5em' }}><b>Major stops</b> are shown in order from left to right; look down the column to see scheduled departure times at that stop.</span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', marginBottom: '.5em' }}>
+                <span style={{ fontSize: '.9em' }}><b>Major stops</b> </span>
+                <span style={{ height: '15px', width: '15px', backgroundColor: '#000', border: '1px solid #000', borderRadius: '3em', margin: '.25em' }}></span>
+                <span style={{ fontSize: '.9em' }}> are shown in order from left to right; look down the column to see scheduled departure times from that bus stop.</span>
+              </div>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '.5em' }}>
                 <span style={{ fontSize: '.9em' }}>Displaying AM times, <b>PM times</b>, and </span>
-                <span style={{ background: chroma(this.state.color).alpha(0.25).css(), fontSize: '.9em', marginLeft: '.25em', padding: '.15em' }}> current trips</span>
+                <span style={{ background: chroma(this.state.color).alpha(0.25).css(), fontSize: '.9em', marginLeft: '.25em', padding: '.15em' }}> current trips.</span>
               </div>
             </Toolbar>
           </AppBar>
@@ -154,7 +150,7 @@ class RouteSchedule extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

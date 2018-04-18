@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Card, { CardHeader } from 'material-ui/Card';
-import BusIcon from 'material-ui-icons/DirectionsBus';
-import { withStyles } from 'material-ui/styles';
 
 import Stops from '../data/stops.js';
 import Schedules from '../data/schedules.js';
 
-import Card, { CardHeader } from 'material-ui/Card'
 import BusIcon from './BusStop'
 import { withStyles } from 'material-ui/styles'
 

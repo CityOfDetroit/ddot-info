@@ -6,7 +6,7 @@ import Divider from 'material-ui/Divider';
 import { withStyles } from 'material-ui/styles' 
 import PinIcon from 'material-ui-icons/Place';
 import BusIcon from 'material-ui-icons/Timeline';
-import StopIcon from 'material-ui-icons/DirectionsBus';
+import StopIcon from './BusStop';
 import ExpandLess from 'material-ui-icons/ExpandLess';
 import ExpandMore from 'material-ui-icons/ExpandMore';
 

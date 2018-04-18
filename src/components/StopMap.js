@@ -10,7 +10,6 @@ import Stops from '../data/stops.js';
 
 import {defaultMapStyle, routeLineIndex} from '../style.js';
 import BusStop from './BusStop.js';
-import { Chip } from 'material-ui';
 
 class StopMap extends Component {
   constructor(props) {
@@ -110,8 +109,8 @@ class StopMap extends Component {
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
-          onClick={this._onClick}
-          children={<MapSatelliteSwitch onChange={this.handleChange} checked='true'/>}>
+          onClick={this._onClick}>
+          <MapSatelliteSwitch onChange={this.handleChange} checked='true'/>
           <Marker latitude={stop.lat} longitude={stop.lon} onClick={this._onClick} offsetLeft={-20} offsetTop={-20}>
             <BusStop style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
           </Marker>

@@ -6,7 +6,7 @@ import Stops from '../data/stops.js';
 import Schedules from '../data/schedules.js';
 
 import Card, { CardHeader } from 'material-ui/Card'
-import BusIcon from 'material-ui-icons/DirectionsBus'
+import BusIcon from './BusStop'
 import { withStyles } from 'material-ui/styles'
 
 const styles = {

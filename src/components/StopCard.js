@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Card, { CardHeader } from 'material-ui/Card';
+import BusIcon from 'material-ui-icons/DirectionsBus';
+import { withStyles } from 'material-ui/styles';
 
 import Stops from '../data/stops.js';
 import Schedules from '../data/schedules.js';
-
-import Card, { CardHeader } from 'material-ui/Card'
-import BusIcon from 'material-ui-icons/DirectionsBus'
-import { withStyles } from 'material-ui/styles'
 
 const styles = {
   root: {
@@ -30,15 +29,16 @@ const styles = {
 
 const StopCardRoutes = ({routes}) => {
   return (
-    <div style={{display: 'flex', alignItems: 'center'}}>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
       {routes.map((r, i) => (
-        <Link to={{pathname: `/route/${r}`}} key={i} style={{ display: 'flex', textDecoration: 'none', alignItems:'center', fontWeight: 700, justifyContent: 'center', width: '2em', height: '2em', color: 'white', fontSize: '1em', backgroundColor: Schedules[r].color, marginRight: '.5em' }}>
+        <Link to={{ pathname: `/route/${r}` }} key={i} style={{ display: 'flex', textDecoration: 'none', alignItems:'center', fontWeight: 700, justifyContent: 'center', width: '2em', height: '2em', color: 'white', fontSize: '1em', backgroundColor: Schedules[r].color, marginRight: '.5em' }}>
           {r}
         </Link>))}
     </div>
-  )
+  );
 }
 
+/** Linked individual stops for StopsList */
 class StopCard extends Component {
   render() {
     let routes = [];
@@ -48,23 +48,22 @@ class StopCard extends Component {
     }
 
     return (
-      <Card style={{background: '#eee', margin: 10, minWidth: 300}} classes={{root: this.props.classes.root}}>
+      <Card style={{ background: '#eee', margin: 10, minWidth: 300 }} classes={{ root: this.props.classes.root }}>
         <CardHeader 
           avatar={<BusIcon />} 
           title={
-            <div style={{display: 'flex', alignItems: 'center'}}>
-              <Link to={{pathname: `/stop/${this.props.id}`}} style={{color: 'black', textDecoration: 'none'}}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Link to={{ pathname: `/stop/${this.props.id}` }} style={{ color: 'black', textDecoration: 'none' }}>
                 <span>{Stops[this.props.id].name}</span>
               </Link> 
-              <span style={{background: '#ccc', marginLeft: '.5em', padding: '0px 8px', fontSize: '.85em', fontWeight: 700, color: 'black'}}>
+              <span style={{ background: '#ccc', marginLeft: '.5em', padding: '0px 8px', fontSize: '.85em', fontWeight: 700, color: 'black' }}>
                 #{this.props.id}
               </span> 
             </div>} 
           subheader={<StopCardRoutes routes={routes} />}
-          classes={{title: this.props.classes.title, subheader: this.props.classes.subheader, avatar: this.props.classes.avatar}}
-          />
+          classes={{ title: this.props.classes.title, subheader: this.props.classes.subheader, avatar: this.props.classes.avatar }} />
       </Card>
-    )
+    );
   }
 }
 

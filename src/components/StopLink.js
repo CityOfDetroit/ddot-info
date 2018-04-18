@@ -10,8 +10,11 @@ const defaultStyles = {
   justifyContent: 'center',
   alignItems: 'center',
   borderBottom: '1px dashed #ccc',
+  width: '100%',
+  padding: '.5rem'
 }
 
+/** Linked stop name and id for RouteStopList */
 class StopLink extends Component {
   render() {
     const exclude = this.props.exclude || '';
@@ -22,32 +25,29 @@ class StopLink extends Component {
     }
 
     return (
-      <div className="w-100 pa2" style={this.props.showBorder ? { ...defaultStyles, marginLeft: '1em', borderLeft: `6px solid ${this.props.color}`} : defaultStyles }>  
-        
+      <div style={this.props.showBorder ? { ...defaultStyles, marginLeft: '1em', borderLeft: `6px solid ${this.props.color}`} : defaultStyles }>  
         {this.props.showBorder ? 
-          <span className="" style={{ marginLeft: '-1.25em', border: this.props.isTimepoint ? '.25em solid black' : `.25em solid ${this.props.color}`, backgroundColor: !this.props.isTimepoint ? 'white' : 'black', borderRadius: '4em', height: '11px', width: '11px', marginRight: '1em', zIndex: 2 }} />
+          <span style={{ marginLeft: '-1.25em', border: this.props.isTimepoint ? '.25em solid black' : `.25em solid ${this.props.color}`, backgroundColor: !this.props.isTimepoint ? 'white' : 'black', borderRadius: '4em', height: '11px', width: '11px', marginRight: '1em', zIndex: 2 }} />
           : ``}
-
-          <div className="w-50">
+          <div style={{ width: '50%' }}>
             <Link 
-              className="dim black hover-mid-gray glow db mb1" style={{ fontSize: '1em', fontWeight: !this.props.isTimepoint ? 'normal' : 'bold' }} 
+              style={{ color: '#000', display: 'block', marginBottom: '.25rem', fontSize: '1em', fontWeight: !this.props.isTimepoint ? 'normal' : 'bold' }} 
               to={{ pathname: `/stop/${this.props.id}/` }}>
               <span>{this.props.showDir ? `${Stops[this.props.id].name} (${Stops[this.props.id].dir})` : `${Stops[this.props.id].name}`}</span>
             </Link>
-            <span className="pa1 f7" style={{ background: '#eee' }}>#{this.props.id}</span>
-
+            <span style={{ padding: '.25rem', fontSize: '.75rem', background: '#eee' }}>#{this.props.id}</span>
           </div>
-          <div className="w-50" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', width: '50%' }}>
           {Stops[this.props.id] && routes.length < 25 ? routes.map((r, i) => (
-            <Link className={exclude.toString() === r.toString() ? 'dn' : "dim black link underline-hover hover-mid-gray glow mr2"} to={{pathname: `/route/${r}`}} key={i}>
-              <div className={exclude.toString() === r.toString() ? `dn` : `white fw7 f5 tc mv1`} style={exclude.toString() === r.toString() ? {display: 'none'} : { display: 'flex', alignItems:'center',  justifyContent: 'center', width: '2em', height: '2em', backgroundColor: Schedules[r].color }}>
+            <Link style={exclude.toString() === r.toString() ? { display: 'none' } : { marginRight: '.5rem', textDecoration: 'none' }} to={{pathname: `/route/${r}`}} key={i}>
+              <div style={exclude.toString() === r.toString() ? { display: 'none' } : { display: 'flex', alignItems:'center',  justifyContent: 'center', width: '2em', height: '2em', backgroundColor: Schedules[r].color, color: '#fff', fontWeight: 700 }}>
                 {r}
               </div> 
             </Link>
           )) : `All downtown routes`}
           </div>
       </div>
-    )
+    );
   }
 }
 

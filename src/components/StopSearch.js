@@ -6,11 +6,11 @@ import StopInput from './StopInput';
 import StopsList from './StopsList';
 import Stops from '../data/stops';
 
+/** Search all stops on Homepage, display three random results at first  */
 class StopSearch extends Component {
   constructor(props) {
     super(props);
 
-    console.log(_.sampleSize(Object.values(Stops), 3))
     this.state = {
       allStops: (Object.values(Stops)),
       filteredStops: (_.sampleSize(Object.values(Stops), 3)),
@@ -27,13 +27,11 @@ class StopSearch extends Component {
   }
 
   handleSearchDebounced(value) {
-
     if (value.length < 3) {
-      return
+      return ``
     }
 
     const matched = []
-
     let values = value.split(" ")
 
     Object.values(this.state.allStops).forEach(st => {
@@ -41,10 +39,11 @@ class StopSearch extends Component {
         let stopDidMatch = values.every(val => {
           return ( (st.id.indexOf(val) > -1) || (st.name.toUpperCase().indexOf(val.toUpperCase()) > -1) )
         })
-        if(stopDidMatch) { matched.push(st) };
-      }
-      else {
-        if ( (st.id.indexOf(value) > -1) || (st.name.toUpperCase().indexOf(value.toUpperCase()) > -1) ) {
+        if (stopDidMatch) { 
+          matched.push(st) 
+        }
+      } else {
+        if ((st.id.indexOf(value) > -1) || (st.name.toUpperCase().indexOf(value.toUpperCase()) > -1)) {
           matched.push(st);
         }
       }

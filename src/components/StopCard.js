@@ -8,6 +8,10 @@ import { withStyles } from 'material-ui/styles';
 import Stops from '../data/stops.js';
 import Schedules from '../data/schedules.js';
 
+import Card, { CardHeader } from 'material-ui/Card'
+import BusIcon from './BusStop'
+import { withStyles } from 'material-ui/styles'
+
 const styles = {
   root: {
     padding: 0,

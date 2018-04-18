@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import StopIcon from 'material-ui-icons/DirectionsBus';
+import StopIcon from './BusStop';
 import IconButton from 'material-ui/IconButton';
 import ScheduleIcon from 'material-ui-icons/Schedule';
 

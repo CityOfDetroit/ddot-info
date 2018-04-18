@@ -2,27 +2,26 @@ import React from 'react';
 import { Link }  from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Tabs, {Tab} from 'material-ui/Tabs';
-
 import BusIcon from 'material-ui-icons/Timeline';
 import StopIcon from 'material-ui-icons/DirectionsBus';
-import ScheduleIcon from 'material-ui-icons/Schedule'
+import ScheduleIcon from 'material-ui-icons/Schedule';
 
 import NavLinks from './NavLinks.js';
 
-/** Navigation for /route/{#} page */
+/** Navigation tabs for /route/{#} page */
 class RouteHeader extends React.Component {
   constructor(props) {
     super(props);
 
     switch (this.props.page) {
       case 'schedule':
-        this.state = {currentTab: 2}
+        this.state = { currentTab: 2 }
         break;
       case 'stops':
-        this.state = {currentTab: 1}
+        this.state = { currentTab: 1 }
         break;
       default:
-        this.state = {currentTab: 0}
+        this.state = { currentTab: 0 }
         break;
     }
 
@@ -44,16 +43,16 @@ class RouteHeader extends React.Component {
     
     return (
       <div className="nav header" style={{ background: '#004445' }}>
-        <div className="pa3" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div className="ph3" style={{ fontSize: window.innerWidth < 650 ? '1.25em' : '2em' }}>
-            <Link className="link dim white" to={{ pathname: '/' }}>DDOT</Link>
+        <div style={{ padding: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ paddingLeft: '1rem', paddingRight: '1rem', fontSize: window.innerWidth < 650 ? '1.25em' : '2em' }}>
+            <Link style={{ color: '#fff', textDecoration: 'none' }} to={{ pathname: '/' }}>DDOT</Link>
           </div>
           <NavLinks />
         </div>
         <div>
           <Tabs value={currentTab} onChange={this.handleChange} textColor="white" style={{ fontSize: '1.2em' }}>
             {tabs.map(({ label, path, icon }) =>
-              <Tab key={label} icon={icon} label={label} component={Link} to={path} style={ label !== 'Schedule' ? { borderRight: '.1px solid #fff' } : null }/>
+              <Tab key={label} icon={icon} label={label} component={Link} to={path} style={label !== 'Schedule' ? { borderRight: '.1px solid #fff' } : null}/>
             )}
           </Tabs>
         </div>

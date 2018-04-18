@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MapGL, { Marker } from 'react-map-gl';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import Card from 'material-ui/Card';
 import _ from 'lodash';
 
@@ -87,21 +87,12 @@ class StopMap extends Component {
     let style = defaultMapStyle
     let stop = Stops[this.props.stopId] || null
 
-    // // set style for main stop
-    // style = style.setIn(['layers', highlightPointIndex, 'filter'], ['==', 'stop_id', this.props.stopId])
-    // style = style.setIn(['layers', highlightPointIndex, 'layout', 'visibility'], 'visible')
-    // style = style.setIn(['layers', highlightLabelIndex, 'filter'], ['==', 'stop_id', this.props.stopId])
-    // style = style.setIn(['layers', highlightLabelIndex, 'layout', 'visibility'], 'visible')
-
     style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none')
     _.forEach(style.toJS().layers, (l, i) => {
       if(l['source-layer'] === 'road') {
         style = style.setIn(['layers', i, 'layout', 'visibility'], this.state.showSatellite ? 'none' : 'visible')
       }
     })  
-
-    // // set labels for transfers
-    // style = style.setIn(['layers', stopPointIndexTwo, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 2)))
 
     // eventually set routes?
     const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 0).concat(stop.routes))))
@@ -121,13 +112,14 @@ class StopMap extends Component {
           attributionControl={false}
           onClick={this._onClick}
           children={<MapSatelliteSwitch onChange={this.handleChange} checked='true'/>}>
-          <Marker latitude={stop.lat} longitude={stop.lon} onClick={this._onClick}>
+          <Marker latitude={stop.lat} longitude={stop.lon} onClick={this._onClick} offsetLeft={-20} offsetTop={-20}>
             <BusStop style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
-            {/* <Chip label={stop.name} /> */}
           </Marker>
           {stop.transfers.map(s => (
-            <Marker latitude={Stops[s[2]].lat} longitude={Stops[s[2]].lon}>
-              <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/>
+            <Marker latitude={Stops[s[2]].lat} longitude={Stops[s[2]].lon} offsetLeft={-7.5} offsetTop={-7.5}>
+              <Link to={{pathname: `/stop/${s[2]}`}}>
+                <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/>
+              </Link>
             </Marker>
           ))}
         </MapGL>

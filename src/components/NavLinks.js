@@ -5,6 +5,7 @@ import Feedback from 'material-ui-icons/Feedback';
 import Info from 'material-ui-icons/Info';
 import Home from 'material-ui-icons/Home';
 
+/** Navigation links used in TopNav */
 const NavLinks = () => (
   <div style={{ display: 'flex', alignContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
     <Link to={{ pathname: `/about` }}>
@@ -20,6 +21,6 @@ const NavLinks = () => (
       </Button>
     </a>
   </div>
-)
+);
 
 export default NavLinks;

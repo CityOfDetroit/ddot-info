@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { geolocated } from 'react-geolocated';
-import Card, { CardHeader, CardContent } from 'material-ui/Card'
+import Card, { CardHeader, CardContent } from 'material-ui/Card';
 
 import FeaturesNearLocation from './FeaturesNearLocation';
 import RadiusPicker from './RadiusPicker';
@@ -15,32 +15,31 @@ const radii = [
 
 /** Utility component for fetching current intersection */
 class IntersectionFromCoords extends React.Component {
-
   constructor(props) {
-    super(props)
+    super(props);
+
     this.state = {
       intersection: ''
     }
   }
 
   componentDidMount() {
-    this.fetchData()
+    this.fetchData();
   }
 
   fetchData() {
-    console.log(`${Helpers.geocoder}?location=${this.props.coords.longitude}%2C${this.props.coords.latitude}&returnIntersection=true&f=pjson`)
     fetch(`${Helpers.geocoder}?location=${this.props.coords.longitude}%2C${this.props.coords.latitude}&returnIntersection=true&f=pjson`)
       .then(response => response.json())
       .then(d => {
-        this.setState({intersection: d.address.Street})
-        console.log(d)
+        this.setState({ intersection: d.address.Street })
       })
+      .catch(e => console.log(e));
   }
 
   render() {
     return (
       <span>You're near {this.state.intersection}</span>
-    )
+    );
   }
 }
 

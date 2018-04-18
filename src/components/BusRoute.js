@@ -5,7 +5,6 @@ import Schedules from '../data/schedules.js';
 import RouteHeader from './RouteHeader';
 import RouteMap from './RouteMap';
 import RouteDetails from './RouteDetails';
-
 import Helpers from '../helpers';
 
 /** Top level component for /route/{#} page */

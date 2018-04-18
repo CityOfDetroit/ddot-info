@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Divider from 'material-ui/Divider';
-
 import LiveIcon from 'material-ui-icons/SpeakerPhone';
 import ScheduleIcon from 'material-ui-icons/Schedule';
 import PdfIcon from 'material-ui-icons/PictureAsPdf';
@@ -14,7 +13,7 @@ import TopNav from './TopNav';
 const About = () => (
   <div>
     <TopNav />
-    <div className="mh4">
+    <div style={{ margin: '1em 2em' }}>
       <h1>About</h1>
       <p>This app helps transit riders find bus schedules and real-time arrival information for DDOT routes and bus stops.</p>
       <p>Our goal is to make the DDOT system more transparent and simpler to navigate; this tool helps demystify service areas for new riders and allows regular riders to bookmark schedules for the routes and stops they frequent.</p>

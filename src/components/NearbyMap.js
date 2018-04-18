@@ -61,15 +61,13 @@ class NearbyMap extends Component {
   }
 
   render() {
-
-    let style = defaultMapStyle;
     const stopIds = Object.keys(this.props.stops).map(rid => {
       return this.props.stops[rid].map(r => r[2])
-    })
-    console.log(_.flatten(stopIds))
+    });
+
+    let style = defaultMapStyle;
     style = style.setIn(['layers', stopPointIndexTwo, 'filter'], ["in", "stop_id"].concat(_.flatten(stopIds)));
     style = style.setIn(['layers', stopPointIndex, 'layout', 'visibility'], 'visible');
-
     style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none');
     _.forEach(style.toJS().layers, (l, i) => {
       if(l['source-layer'] === 'road') {
@@ -78,7 +76,7 @@ class NearbyMap extends Component {
     });
 
     // show all nearby routes
-    const routeIds = Object.keys(this.props.stops).map(rid => parseInt(rid, 10))
+    const routeIds = Object.keys(this.props.stops).map(rid => parseInt(rid, 10));
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routeIds));
 
     // set data for geolocated source to coords

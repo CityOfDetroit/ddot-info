@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import Schedules from '../data/schedules.js'
 
+/** Non-linked route number and name for RouteDetails, RouteMap, RouteSchedule, RouteStops and Stop */
 class RouteBadge extends Component {
   render() {
     const route = Schedules[this.props.id];
@@ -10,7 +11,7 @@ class RouteBadge extends Component {
     return (
       <div>  
         <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start' }}>
-          <div className='white fw7 f6 tc' style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: route.color }}>
+          <div style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: route.color, color: '#fff', fontSize: '1rem', textAlign: 'center', fontWeight: 700 }}>
             {this.props.id}
           </div>
           { this.props.showName ? <span style={{ marginLeft: '.25em' }}>{route.rt_name}</span> : null }

@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Card, { CardHeader, CardContent } from 'material-ui/Card';
 import Collapse from 'material-ui/transitions/Collapse';
 import Divider from 'material-ui/Divider';
 import { withStyles } from 'material-ui/styles' 
-
 import PinIcon from 'material-ui-icons/Place';
 import BusIcon from 'material-ui-icons/Timeline';
 import StopIcon from 'material-ui-icons/DirectionsBus';

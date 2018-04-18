@@ -3,7 +3,7 @@ import { Link }  from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Tabs, {Tab} from 'material-ui/Tabs';
 import BusIcon from 'material-ui-icons/Timeline';
-import StopIcon from 'material-ui-icons/DirectionsBus';
+import StopIcon from './BusStop';
 import ScheduleIcon from 'material-ui-icons/Schedule';
 
 import NavLinks from './NavLinks.js';

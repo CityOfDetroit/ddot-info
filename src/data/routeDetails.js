@@ -295,28 +295,28 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Mack & Moross', '7 Mile & Grand River'],
         via: ['8 Mile Road'],
-        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/17EightMile.pdf"],
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/April%202018/17EightMileMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/April%202018/17EightMileSS.pdf"],
         description: "A crosstown route that connects Detroit from Mack & Moross to Seven Mile & Grand River. The main street served by this route is Eight Mile.",
         services: {
             "Monday-Friday": {
-                service_hours: ["4:09am", "2:44am"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["peak", 20],
-                    ["off-peak", 30],
+                    ["peak", 15],
+                    ["off-peak", 25],
                     ["evening", 45],
                 ]
             },
             "Saturday": {
-                service_hours: ["4:51am", "1:42am"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 30],
+                    ["all day", 25],
                     ["evening", 50],
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["5:45am", "11:31pm"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 55],
+                    ["all day", 35],
                     ["evening", 55]
                 ]
             }

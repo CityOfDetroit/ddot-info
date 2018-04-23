@@ -217,5 +217,5 @@ if __name__ == "__main__":
         print("{} - {}".format(r['id'], r['rt_name']))
         route_json = get_route(r)
         file_object[r['id']] = route_json
-        with open("all.json", 'w') as f:
-            f.write(json.dumps(file_object))
+        with open("schedules.js", 'w') as f:
+            f.write("{}{}{}".format("const Schedules = ", json.dumps(file_object), "; export default Schedules"))

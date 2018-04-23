@@ -12,7 +12,7 @@ const RouteDetails = ({ id }) => {
   const obj = _.filter(routeDetails, r => { return id === r.number.toString() })[0];
 
   return (
-    <div className="details">
+    <div className="details" style={{ overflowX: 'scroll' }}>
       <Card>
         <CardHeader title={<RouteBadge id={id} showName />} />
         <CardContent>
@@ -21,7 +21,6 @@ const RouteDetails = ({ id }) => {
             <PrintSchedule routePdf={obj.pdf} />
           </div>
         </CardContent>
-
         {["Monday-Friday", "Saturday", "Sunday/Holiday"].map((d, i) => (
           <div key={i}>
             {obj.services[d] ?
@@ -30,14 +29,14 @@ const RouteDetails = ({ id }) => {
               <Card key={i}>
                 <CardHeader
                   title={d}
-                  subheader={obj.services[d].service_hours.length === 1 ? obj.services[d].service_hours[0] : `${obj.services[d].service_hours[0]} - ${obj.services[d].service_hours[1]}`} />
+                  subheader={obj.services[d].service_hours.length === 1 ? `${obj.services[d].service_hours[0]} (see schedule for all times)` : `${obj.services[d].service_hours[0]} - ${obj.services[d].service_hours[1]} (see schedule for all times)`} />
                 <CardContent>
-                  <table className="w-100">
+                  <table style={{ width: '100%' }}>
                     <tbody>
                       {obj.services[d].frequency.map((f, i) => (
                         <tr key={i}>
-                          <td className='w-50 bg-light-gray pa2'>{_.capitalize(f[0])}</td>
-                          <td className='w-50 bg-light-gray pa2'>Every <span className='fw7'>{f[1]}</span> minutes</td>
+                          <td style={{ padding: '.5rem', backgroundColor: '#eee', width: '50%' }}>{_.capitalize(f[0])}</td>
+                          <td style={{ padding: '.5rem', backgroundColor: '#eee', width: '50%' }}>Every <span><b>{f[1]}</b></span> minutes</td>
                         </tr>
                       ))}
                     </tbody>

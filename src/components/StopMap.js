@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import StaticMap from 'react-map-gl';
-import Card, { CardHeader } from 'material-ui/Card';
+import MapGL, { Marker } from 'react-map-gl';
+import { Redirect, Link } from 'react-router-dom'
+import Card from 'material-ui/Card';
 import _ from 'lodash';
 
 import Helpers from '../helpers.js';
 import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Stops from '../data/stops.js';
 
-import {defaultMapStyle, routeLineIndex, highlightPointIndex, highlightLabelIndex, stopPointIndexTwo} from '../style.js';
+import {defaultMapStyle, routeLineIndex} from '../style.js';
+import BusStop from './BusStop.js';
 
 class StopMap extends Component {
   constructor(props) {
@@ -24,7 +26,8 @@ class StopMap extends Component {
         bearing: 0,
         pitch: 0,
         width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 9 : window.innerWidth,
-        height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8) - 88) : 225
+        height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8)) : 300,
+        clickedStop: null
       }
     }
 
@@ -39,8 +42,14 @@ class StopMap extends Component {
     });
   }
 
+  _onClick = (event) => {
+    console.log(event)
+    this.setState({clickedStop: event.features[0]})
+  }
+
   componentWillReceiveProps(nextProps) {
     this.setState({
+      clickedStop: null,
       viewport: {
         ...this.state.viewport,
         latitude: parseFloat(Stops[nextProps.stopId].lat),
@@ -55,7 +64,7 @@ class StopMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth * (3/8) - 9,
-          height: ((window.innerHeight - 75) * (5/8) - 88)
+          height: ((window.innerHeight - 75) * (5/8))
         }
       });
     } else {
@@ -63,7 +72,7 @@ class StopMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth,
-          height: 225
+          height: 300
         }
       });
     }
@@ -77,12 +86,6 @@ class StopMap extends Component {
     let style = defaultMapStyle
     let stop = Stops[this.props.stopId] || null
 
-    // set style for main stop
-    style = style.setIn(['layers', highlightPointIndex, 'filter'], ['==', 'stop_id', this.props.stopId])
-    style = style.setIn(['layers', highlightPointIndex, 'layout', 'visibility'], 'visible')
-    style = style.setIn(['layers', highlightLabelIndex, 'filter'], ['==', 'stop_id', this.props.stopId])
-    style = style.setIn(['layers', highlightLabelIndex, 'layout', 'visibility'], 'visible')
-
     style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none')
     _.forEach(style.toJS().layers, (l, i) => {
       if(l['source-layer'] === 'road') {
@@ -90,17 +93,14 @@ class StopMap extends Component {
       }
     })  
 
-    // set labels for transfers
-    style = style.setIn(['layers', stopPointIndexTwo, 'filter'], ["in", "stop_id"].concat(_.map(stop.transfers, 2)))
-
     // eventually set routes?
     const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 0).concat(stop.routes))))
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))
 
     return (
+      this.state.clickedStop ? <Redirect push to={`/stop/${this.state.clickedStop.properties.stop_id}`} /> :
       <Card className="map">
-        <CardHeader title={stop.name} subheader={<span>Stop ID #{this.props.stopId}</span>} />
-        <StaticMap
+        <MapGL
           width={this.state.viewport.width}
           height={this.state.viewport.height}
           latitude={this.state.viewport.latitude}
@@ -109,8 +109,19 @@ class StopMap extends Component {
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
-          children={<MapSatelliteSwitch onChange={this.handleChange} checked='true'/>}>
-        </StaticMap>
+          onClick={this._onClick}>
+          <MapSatelliteSwitch onChange={this.handleChange} checked='true'/>
+          <Marker latitude={stop.lat} longitude={stop.lon} onClick={this._onClick} offsetLeft={-20} offsetTop={-20}>
+            <BusStop style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
+          </Marker>
+          {stop.transfers.map(s => (
+            <Marker latitude={Stops[s[2]].lat} longitude={Stops[s[2]].lon} offsetLeft={-7.5} offsetTop={-7.5}>
+              <Link to={{pathname: `/stop/${s[2]}`}}>
+                <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/>
+              </Link>
+            </Marker>
+          ))}
+        </MapGL>
       </Card>
     )
   }

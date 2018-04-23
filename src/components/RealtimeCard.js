@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StaticMap, {Marker} from 'react-map-gl'
+import StaticMap, {Marker} from 'react-map-gl';
 import { Card, CardContent, CardMedia } from 'material-ui';
 import BusIcon from 'material-ui-icons/DirectionsBus';
 import LiveIcon from 'material-ui-icons/SpeakerPhone';
@@ -34,6 +34,7 @@ const styles = {
     }
 }
 
+/** Realtime bus details for RouteRealtime */
 class RealtimeCard extends Component {
     constructor(props) {
         super(props);
@@ -92,35 +93,36 @@ class RealtimeCard extends Component {
 
         return (
             this.state.fetched && this.state.tripData ? 
-            (<Card elevation={3} style={{minWidth: 320, maxHeight: 500, display: 'flex', flexWrap: 'wrap'}}>
+            (<Card elevation={3} style={{ minWidth: 320, maxHeight: 500, display: 'flex', flexWrap: 'wrap' }}>
                 <CardMedia 
-                        image={'something'}
-                        component={StaticMap}
-                        width={window.innerWidth < 500 ? window.innerWidth : 300}
-                        height={280}
-                        latitude={this.state.tripData.position.lat}
-                        longitude={this.state.tripData.position.lon}
-                        zoom={14}
-                        mapStyle={style}
-                        mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
-                        attributionControl={false}
-                        children={[<Marker latitude={this.state.tripData.position.lat} longitude={this.state.tripData.position.lon} offsetLeft={-12} offsetTop={-12}>
-                                    <BusIcon style={{borderRadius: 9999, background: 'rgba(0,0,0,0.75)', padding: 2.5, color: '#eee'}}/>
-                        </Marker>]}
-                        />
+                    image={'something'}
+                    component={StaticMap}
+                    width={window.innerWidth < 500 ? window.innerWidth : 300}
+                    height={280}
+                    latitude={this.state.tripData.position.lat}
+                    longitude={this.state.tripData.position.lon}
+                    zoom={14}
+                    mapStyle={style}
+                    mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
+                    attributionControl={false}
+                    children={[
+                        <Marker latitude={this.state.tripData.position.lat} longitude={this.state.tripData.position.lon} offsetLeft={-12} offsetTop={-12}>
+                            <BusIcon style={{ borderRadius: 9999, background: 'rgba(0,0,0,0.75)', padding: 2.5, color: '#eee' }}/>
+                        </Marker>
+                    ]}/>
                 {/* <CardHeader title={`${this.state.tripData.direction} ${this.state.tripData.tripId}`} subheader={`Next stop: ${Stops[nextStopId].name}`} /> */}
                 <CardContent>
-                    <div style={{display: 'flex', flexDirection: 'column', fontSize: 18, marginTop: window.innerWidth < 650 ? '.5em' : null}}>
-                        <span style={{margin: '.25em 0em', color: '#444', fontSize: '.8em'}}>Now arriving at:</span>
+                    <div style={{ display: 'flex', flexDirection: 'column', fontSize: 18, marginTop: window.innerWidth < 650 ? '.5em' : null }}>
+                        <span style={{ margin: '.25em 0em', color: '#444', fontSize: '.8em' }}>Now arriving at:</span>
                         <StopInlineLink id={nextStopId} />
                         {this.computeStopsAway(nextStopId, this.props.stop) > 0 ?
-                            <span style={{margin: '.25em 0em', color: '#444', fontSize: '.8em'}}>({this.computeStopsAway(nextStopId, this.props.stop)} stops away)</span>
+                            <span style={{ margin: '.25em 0em', color: '#444', fontSize: '.8em' }}>({this.computeStopsAway(nextStopId, this.props.stop)} stops away)</span>
                             : ``} 
                     </div>
                     {this.state.tripData.activeTripId === this.props.trip ?
-                      <div style={{marginTop: '.5em'}}>
+                      <div style={{ marginTop: '.5em' }}>
                           Arrives here in 
-                          <span style={{fontWeight: 700, paddingLeft: '.25em'}}>{this.computeTimeAway(nextStopId, this.props.stop)} minutes</span>
+                          <span style={{ fontWeight: 700, paddingLeft: '.25em' }}>{this.computeTimeAway(nextStopId, this.props.stop)} minutes</span>
                       </div>
                     : <div style={styles.prediction}><Warning style={styles.predictionIcon}/>This bus has not yet started this trip.</div>
                     }
@@ -144,7 +146,7 @@ class RealtimeCard extends Component {
                     }
                 </CardContent>
             </Card>)
-            : <Card style={{minWidth: 320, maxHeight: 500}}><CardContent>{this.state.fetched ? `No data available...` : `Loading...`}</CardContent></Card>
+            : <Card style={{ minWidth: 320, maxHeight: 500 }}><CardContent>{this.state.fetched ? `No data available...` : `Loading...`}</CardContent></Card>
         );
     }
 }

@@ -8544,6 +8544,7 @@
             "id": "busstop-points",
             "type": "circle",
             "source": "busstops",
+            "interactive": true,
             "filter": [
                 "==",
                 "$type",
@@ -8625,6 +8626,7 @@
             "id": "busstop-labels",
             "type": "symbol",
             "source": "busstops",
+            "interactive": true,
             "filter": [
                 "==",
                 "$type",
@@ -8839,6 +8841,7 @@
             "type": "circle",
             "source": "stops",
             "source-layer": "stops",
+            "interactive": true,
             "filter": [
                 "==",
                 "stop_id",

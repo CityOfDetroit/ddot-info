@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-
 import PropTypes from 'prop-types';
 
 import Helpers from '../helpers';
@@ -8,7 +7,7 @@ import Stops from '../data/stops.js'
 import NearbyMap from './NearbyMap';
 import NearbyList from './NearbyList';
 
-/** Fetches data within a certain walk radius of users location for NearbyMap and NearbyList */
+/** Fetches data within a certain walk radius of users location for NearbyList and NearbyMap */
 class FeaturesNearLocation extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +19,7 @@ class FeaturesNearLocation extends Component {
     }
   }
 
+  /** For a unique route, only show the closest stop */
   getClosestStops(coords, data) {
     const nearbyStops = _.sortBy(data, c => { 
       return Math.sqrt(Math.pow(Math.abs(coords.latitude - c.lat), 2) + Math.pow(Math.abs(coords.longitude - c.lon), 2))
@@ -61,12 +61,12 @@ class FeaturesNearLocation extends Component {
   render() {
     return (
       this.state.fetchedData ? 
-        <div style={{display: 'flex', flexWrap: 'wrap'}}>
-          <NearbyList stops={this.state.closeStopsByRoutes}/>
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          <NearbyList stops={this.state.closeStopsByRoutes} />
           <NearbyMap stops={this.state.closeStopsByRoutes} coords={this.props.coords} currentRadius={this.props.meters} />
         </div>
       : null 
-    )
+    );
   }
 }
 

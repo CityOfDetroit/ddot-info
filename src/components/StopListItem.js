@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ListItem, ListItemText } from 'material-ui/List'
+import { ListItem, ListItemText } from 'material-ui/List';
+
 import Stops from '../data/stops.js';
 
+/** Unused? */
 class StopListItem extends Component {
   render() {
-    // const exclude = this.props.exclude || '';
     let routes = [];
 
     if (Stops[this.props.id]) {
@@ -22,15 +23,11 @@ class StopListItem extends Component {
 
     return (
       <ListItem button>
-          <ListItemText
-            primary={Stops[this.props.id].name}
-            secondary=
-              {routes.map((r, i) => (
-                `${r}`
-              )).join(",")}
-              />
+        <ListItemText
+          primary={Stops[this.props.id].name}
+          secondary={routes.map((r, i) => (`${r}`)).join(",")} />
       </ListItem>
-    )
+    );
   }
 }
 

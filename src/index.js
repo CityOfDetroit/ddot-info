@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { createMuiTheme } from 'material-ui/styles';
 
 import './css/index.css';
 import App from './App';
@@ -14,10 +16,6 @@ import BusRoute from './components/BusRoute'
 import Stop from './components/Stop';
 import Nearby from './components/Nearby';
 import TransitCenter from './components/TransitCenter';
-
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {createMuiTheme} from 'material-ui/styles';
-
 
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-107915075-4');
@@ -36,8 +34,19 @@ const muiTheme = createMuiTheme({
     },
     MuiFormLabel: {
       focused: {
-        color: '#004445',
+        color: '#000'
       },
+    },
+    MuiInput: {
+      underline: {
+        '&:before': {
+          backgroundColor: '#b0d27b',
+          height: '2px'
+        },
+        '&:after': {
+          backgroundColor: '#000'
+        },
+      }
     },
     MuiCardContent: {
       root: {
@@ -56,11 +65,18 @@ const muiTheme = createMuiTheme({
     },
     MuiTableRow: {
       root: {
-        height: '24px',
+        height: '24px'
       },
       head: {
-        height: '24px',
+        height: '24px'
       },
+    },
+    MuiListItemText: {
+      primary: {
+        fontSize: '1.25em',
+        fontFamily: 'Gibson Detroit Light',
+        fontWeight: 700
+      }
     },
     MuiTableCell: {
       root: {
@@ -71,8 +87,13 @@ const muiTheme = createMuiTheme({
         padding: '4px 0 4px 0',
         textAlign: 'center',
         '&:last-child': {
-          paddingRight: 0,
+          paddingRight: 0
         },
+      },
+    },
+    MuiAppBar: {
+      colorDefault: {
+        backgroundColor: '#eee'
       },
     },
   },
@@ -99,7 +120,7 @@ class GAListener extends React.Component {
 }
 
 ReactDOM.render(
-  <Router>
+  <Router onUpdate={() => window.scrollTo(0, 0)}>
     <GAListener>
       <MuiThemeProvider theme={muiTheme}>
         <Switch>

@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import StaticMap from 'react-map-gl';
+import StaticMap, {Marker} from 'react-map-gl';
 import _ from 'lodash';
 import buffer from '@turf/buffer';
 import bbox from '@turf/bbox';
 import WebMercatorViewport from 'viewport-mercator-project';
+import {Link} from 'react-router-dom'
 
-import {defaultMapStyle, routeLineIndex, stopPointIndex, stopPointIndexTwo, walkRadiusLabelIndex} from '../style.js'
+import {defaultMapStyle, routeLineIndex, walkRadiusLabelIndex} from '../style.js'
 import MapSatelliteSwitch from './MapSatelliteSwitch';
+import BusStop from './BusStop'
 import Helpers from '../helpers.js';
+import Stops from '../data/stops.js'
 
 /** Map of users location and stops within walk radius */
 class NearbyMap extends Component {
@@ -61,15 +64,12 @@ class NearbyMap extends Component {
   }
 
   render() {
-
-    let style = defaultMapStyle;
     const stopIds = Object.keys(this.props.stops).map(rid => {
       return this.props.stops[rid].map(r => r[2])
-    })
-    console.log(_.flatten(stopIds))
-    style = style.setIn(['layers', stopPointIndexTwo, 'filter'], ["in", "stop_id"].concat(_.flatten(stopIds)));
-    style = style.setIn(['layers', stopPointIndex, 'layout', 'visibility'], 'visible');
+    });
+    const flattenedStops = Array.from(new Set(_.flatten(stopIds)))
 
+    let style = defaultMapStyle;
     style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none');
     _.forEach(style.toJS().layers, (l, i) => {
       if(l['source-layer'] === 'road') {
@@ -78,7 +78,7 @@ class NearbyMap extends Component {
     });
 
     // show all nearby routes
-    const routeIds = Object.keys(this.props.stops).map(rid => parseInt(rid, 10))
+    const routeIds = Object.keys(this.props.stops).map(rid => parseInt(rid, 10));
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routeIds));
 
     // set data for geolocated source to coords
@@ -116,6 +116,7 @@ class NearbyMap extends Component {
     // set walk radius text
     style = style.setIn(['layers', walkRadiusLabelIndex, 'layout', 'text-field'], this.props.currentRadius === "200" ? `5 minute walk` : `10 minute walk`)
 
+
     return (
       <StaticMap
         width={this.state.viewport.width}
@@ -124,8 +125,15 @@ class NearbyMap extends Component {
         longitude={bound.longitude}
         zoom={bound.zoom}
         mapStyle={style}
-        mapboxApiAccessToken={Helpers.mapboxApiAccessToken}
-        children={<MapSatelliteSwitch onChange={this.handleChange} />}>
+        mapboxApiAccessToken={Helpers.mapboxApiAccessToken}>
+        <MapSatelliteSwitch onChange={this.handleChange} />
+        {flattenedStops.map(s => (
+          <Marker latitude={Stops[s].lat} longitude={Stops[s].lon}>
+            <Link to={{pathname: `/stop/${s}`}}>
+              <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/>
+            </Link>
+          </Marker>
+        ))}
       </StaticMap> 
     );
   }

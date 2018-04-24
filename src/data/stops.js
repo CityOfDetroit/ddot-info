@@ -4687,6 +4687,19 @@ const Stops = {
     ],
     "transfers": []
   },
+  "10416": {
+    "id": "10416",
+    "name": "E. Grand Blvd & Jefferson",
+    "dir": "NB",
+    "lat": "42.347675",
+    "lon": "-83.001955",
+    "routes": [
+      ["12", "northbound"]
+    ],
+    "transfers": [
+      ["12", "southbound", "10177"]
+    ]
+  },
   "1045": {
     "id": "1045",
     "name": "WOODWARD & ADELAIDE",
@@ -16197,6 +16210,19 @@ const Stops = {
       ["48", "southbound", "754"]
     ]
   },
+  "2444": {
+    "id": "2444",
+    "name": "E Grand Blvd & E Lafayette St",
+    "dir": "NB",
+    "lat": "42.350629",
+    "lon": "-83.00395",
+    "routes": [
+      ["12", "northbound"]
+    ],
+    "transfers": [
+      ["12", "southbound", "8363"],
+    ]
+  },
   "245": {
     "id": "245",
     "name": "Eastland Center",
@@ -16236,6 +16262,19 @@ const Stops = {
     "transfers": [
       ["48", "northbound", "2450"],
       ["80", "eastbound", "2450"]
+    ]
+  },
+  "2460": {
+    "id": "2460",
+    "name": "E Grand Bl & St Paul",
+    "dir": "SB",
+    "lat": "42.353396",
+    "lon": "-83.006154",
+    "routes": [
+      ["12", "southbound"],
+    ],
+    "transfers": [
+      ["12", "northbound", "50"]
     ]
   },
   "2466": {
@@ -72039,6 +72078,19 @@ const Stops = {
     ],
     "transfers": [
       ["11", "westbound", "8838"]
+    ]
+  },
+  "8363": {
+    "id": "8363",
+    "name": "E Grand Blvd & E Lafayette St",
+    "dir": "EB",
+    "lat": "42.350102",
+    "lon": "-83.003891",
+    "routes": [
+      ["12", "southbound"]
+    ],
+    "transfers": [
+      ["12", "northbound", "2444"]
     ]
   },
   "8365": {

@@ -8,14 +8,14 @@ class StopInput extends Component {
   render() {
     return (
       <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-        <Search style={{ marginRight: '.25em' }} />
+        <Search style={{ marginRight: '.25em', width: '1.25em', height: '1.25em' }} />
         <TextField
           label='Search by street name or stop ID' 
           placeholder='Try "Michigan", "Washington", "1118"'
           value={this.props.input}
           onChange={this.props.onSearchChange}
           fullWidth
-          style={{ marginBottom: '1em' }} />
+          style={{ marginBottom: '1em', }} />
       </div>
     );
   }

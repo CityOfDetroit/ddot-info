@@ -55,7 +55,7 @@ class RouteSearch extends Component {
   render() {
     return (
       <Card>
-        <CardHeader title="Choose your bus route" subheader="Click on a route number or name for an overview, including real-time locations. Click an icon to go directly to that routes bus stops or schedule." />
+        <CardHeader title="Choose your bus route" subheader="Click on a route number or name for an overview, including real-time locations. Click an icon to go directly to that route's bus stops or schedule." />
         <CardContent>
           <RouteInput input={this.state.input} onSearchChange={this.handleSearchChange} />
           { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : '' }

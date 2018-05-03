@@ -33,7 +33,7 @@ class StopLink extends Component {
             <Link 
               style={{ color: '#000', display: 'block', marginBottom: '.25rem', fontSize: '1em', fontWeight: !this.props.isTimepoint ? 'normal' : 'bold' }} 
               to={{ pathname: `/stop/${this.props.id}/` }}>
-              <span>{this.props.showDir ? `${Stops[this.props.id].name} (${Stops[this.props.id].dir})` : `${Stops[this.props.id].name}`}</span>
+              <span>{Stops[this.props.id] ? Stops[this.props.id].name : this.props.id}</span>
             </Link>
             <span style={{ padding: '.25rem', fontSize: '.75rem', background: '#eee' }}>#{this.props.id}</span>
           </div>

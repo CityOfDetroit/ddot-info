@@ -17,7 +17,11 @@ class RouteLink extends Component {
         <div style={{ display: 'flex', alignItems:'center', justifyContent: 'space-between', backgroundColor: '#eee' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: route.color, color: 'white', fontSize: '1.25em', fontWeight: 700 }}>
-              {this.props.id}
+              <Link
+                to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}
+                style={{ textDecoration: 'none', color: '#fff' }}>
+                {this.props.id}
+              </Link>
             </div> 
             <Link  
               to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}

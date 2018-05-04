@@ -49,17 +49,18 @@ class StopCard extends Component {
     }
 
     return (
-      <Card style={{ background: '#eee', margin: 10, minWidth: 300 }} classes={{ root: this.props.classes.root }}>
+      <Card style={{ background: '#eee', margin: '1em', minWidth: 300 }} classes={{ root: this.props.classes.root }}>
         <CardHeader 
-          avatar={<BusIcon />} 
+          avatar={<BusIcon style={{ height: '1.25em', width: '1.25em' }} />} 
           title={
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <Link to={{ pathname: `/stop/${this.props.id}` }} style={{ color: 'black', textDecoration: 'none' }}>
+              <Link to={{ pathname: `/stop/${this.props.id}` }} style={{ color: 'black' }}>
                 <span>{Stops[this.props.id].name}</span>
               </Link> 
+              {this.props.showDirection ? <span style={{ paddingLeft: '.25em' }}>({Stops[this.props.id].dir})</span> : ''}
               <span style={{ background: '#ccc', marginLeft: '.5em', padding: '0px 8px', fontSize: '.85em', fontWeight: 700, color: 'black' }}>
                 #{this.props.id}
-              </span> 
+              </span>
             </div>} 
           subheader={<StopCardRoutes routes={routes} />}
           classes={{ title: this.props.classes.title, subheader: this.props.classes.subheader, avatar: this.props.classes.avatar }} />
@@ -71,6 +72,7 @@ class StopCard extends Component {
 StopCard.propTypes = {
   id: PropTypes.string.isRequired,
   showRoutes: PropTypes.bool,
+  showDirection: PropTypes.bool,
   exclude: PropTypes.string,
 }
 

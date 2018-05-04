@@ -27,6 +27,11 @@ const muiTheme = createMuiTheme({
       '"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
   },
   overrides: {
+    MuiTabScrollButton: {
+      root: {
+        flex: '0 0 0'
+      }
+    },
     MuiRadio: {
       checkedSecondary: {
         color: '#004445'
@@ -40,11 +45,11 @@ const muiTheme = createMuiTheme({
     MuiInput: {
       underline: {
         '&:before': {
-          backgroundColor: '#b0d27b',
+          backgroundColor: '#000',
           height: '2px'
         },
         '&:after': {
-          backgroundColor: '#000'
+          backgroundColor: '#b0d27b'
         },
       }
     },

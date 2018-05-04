@@ -115,7 +115,7 @@ class RouteSchedule extends React.Component {
           <AppBar position="static" color="default" elevation={0} style={{ display: 'flex', background: 'white' }}>
             <Toolbar elevation={0} style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
               <span style={{ margin: 0, padding: '.5em 0em', fontSize: '1.5em', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                <span style={{ marginLeft: '.25em' }}><RouteBadge id={this.props.match.params.name} showName/></span>: Schedule
+                <span style={{ marginLeft: '.25em' }}><RouteBadge id={this.props.match.params.name} showName/></span>: <span style={{ fontWeight: 700, paddingLeft: '.2em' }}>Schedule</span>
               </span>
               <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', marginBottom: '.5em' }}>
                 <span style={{ fontSize: '.9em' }}><b>Major stops</b> </span>

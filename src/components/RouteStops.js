@@ -66,7 +66,7 @@ class RouteStops extends React.Component {
           <AppBar position="static" color="default" elevation={0} style={{ display: 'flex', background: 'white' }}>
             <Toolbar elevation={0} style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
               <span style={{ margin: 0, padding: '.5em 0em', fontSize: '1.5em', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                <span style={{ marginLeft: '.25em' }}><RouteBadge id={thisRoute.id} showName /></span>: Bus stops
+                <span style={{ marginLeft: '.25em' }}><RouteBadge id={thisRoute.id} showName /></span>: <span style={{ fontWeight: 700, paddingLeft: '.2em' }}>Bus stops</span>
               </span>
               <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', marginBottom: '.5em' }}>
                 <span style={{ fontSize: '.9em' }}><b>Major stops</b> </span>
@@ -85,7 +85,7 @@ class RouteStops extends React.Component {
                 currentDirection={this.state.currentDirection}
                 onChange={this.handleDirectionChange}
                 route={thisRoute} />
-              <div style={{ width: 400 }}>
+              <div style={{ width: 400, marginTop: '1em' }}>
                 <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} />
               </div>
             </Toolbar>

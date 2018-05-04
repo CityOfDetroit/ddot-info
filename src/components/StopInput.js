@@ -7,7 +7,7 @@ import Search from 'material-ui-icons/Search';
 class StopInput extends Component {
   render() {
     return (
-      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginBottom: '1em', padding: '.25em', border: '2px solid rgba(0, 68, 69, 0.2)', backgroundColor: '#fff' }}>
         <Search style={{ marginRight: '.25em', width: '1.25em', height: '1.25em' }} />
         <TextField
           label='Search by street name or stop ID' 

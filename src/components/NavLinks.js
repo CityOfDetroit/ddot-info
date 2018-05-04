@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'material-ui/Button';
 import Feedback from 'material-ui-icons/Feedback';
-import Info from 'material-ui-icons/Info';
+import Info from 'material-ui-icons/InfoOutline';
 import Home from 'material-ui-icons/Home';
 
 /** Navigation links used in TopNav */

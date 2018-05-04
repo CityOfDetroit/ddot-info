@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import chroma from 'chroma-js';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import Arrow from 'material-ui-icons/KeyboardArrowRight';
 
 import Stops from '../data/stops.js';
 
@@ -17,11 +18,20 @@ class ScheduleTable extends Component {
         <Table>
           <TableHead>
             <TableRow>
+              {this.props.schedule[this.props.direction].timepoints.map((s, k) => (
+                <TableCell 
+                key={k}
+                style={{ borderBottom: '0', textAlign: 'center', padding: 0 }}>
+                  <Arrow style={{ color: k === this.props.schedule[this.props.direction].timepoints.length - 1 ? '#fff' : 'rgba(0, 68, 69, .5)' }} />
+                </TableCell>
+              ))}
+            </TableRow>
+            <TableRow>
               {this.props.schedule[this.props.direction].timepoints.map((s, i) => (
                 <TableCell 
                 key={i}
-                style={{ borderBottom: '0', textAlign: 'center', padding: '0em 1em' }}>
-                  <Link style={{ fontSize: '.875rem', color: 'black', fontWeight: 700 }} to={{ pathname: `/stop/${s}/` }}  >
+                style={{ borderBottom: '0', textAlign: 'center', padding: '0em 1em', }}>
+                  <Link style={{ fontSize: '1.25em', color: 'black', fontWeight: 700 }} to={{ pathname: `/stop/${s}/` }}  >
                     {Stops[s].name.indexOf('Rosa Parks') > -1 ? "Rosa Parks TC" : Stops[s].name}
                   </Link>
                 </TableCell>

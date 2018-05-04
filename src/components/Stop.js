@@ -21,6 +21,7 @@ import RouteLink from './RouteLink';
 import RoutePredictionList from './RoutePredictionList';
 import Schedules from '../data/schedules.js';
 import Helpers from '../helpers';
+import BusStopIcon from './BusStop';
 
 const styles = {
   title: {
@@ -132,7 +133,10 @@ class Stop extends React.Component {
         <StopMap stopId={stopId} center={stopCoords}/>
         <div className='routes'>
           <Card>
-            <CardHeader title={stopName} subheader={`Stop ID: #${stopId}`} classes={{ title: this.props.classes.title }} />
+            <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
+              <BusStopIcon style={{ marginLeft: '1em', backgroundColor: 'rgba(0, 0, 0, .8)', color: 'yellow', borderRadius: 999, height: '1.8em', width: '1.8em' }}/>
+              <CardHeader title={stopName} subheader={`Stop ID: #${stopId}`} classes={{ title: this.props.classes.title }} style={{ fontSize: '1.2em' }}/>
+            </div>
           </Card>
           <AppBar position="static" color="red" style={{ display: 'flex' }} elevation={0}>
             <Toolbar>

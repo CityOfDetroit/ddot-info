@@ -254,10 +254,10 @@ const Stops = {
   },
   "10017": {
     "id": "10017",
-    "name": "MANCHESTER & WOODWARD NEAR SIDE",
+    "name": "Manchester & Woodward",
     "dir": "NS",
-    "lat": "42.407002",
-    "lon": "-83.098598",
+    "lat": "42.406390",
+    "lon": "-83.099489",
     "routes": [
       ["15", "eastbound"]
     ],

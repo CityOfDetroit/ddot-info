@@ -3,13 +3,24 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import chroma from 'chroma-js';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import { withStyles } from "material-ui/styles";
 import Arrow from 'material-ui-icons/KeyboardArrowRight';
 
 import Stops from '../data/stops.js';
 
+// attempting a fixedHeader like this: https://codesandbox.io/s/k0vwm7xpl3
+const styles = theme => ({
+  head: {
+    position: "sticky",
+    top: 0,
+    // backgroundColor: 'yellow'
+  }
+});
+
 /** Schedule table for RouteSchedule */
 class ScheduleTable extends Component {
   render() {
+    const { classes } = this.props;
     const background = `rgba(${chroma(this.props.color).alpha(0.25).rgba().toString()}`;
     let tripsToHighlight = this.props.liveTrips.map(t => t.slice(8));
 
@@ -20,6 +31,7 @@ class ScheduleTable extends Component {
             <TableRow>
               {this.props.schedule[this.props.direction].timepoints.map((s, k) => (
                 <TableCell 
+                className={classes.head}
                 key={k}
                 style={{ borderBottom: '0', textAlign: 'center', padding: 0 }}>
                   <Arrow style={{ color: k === this.props.schedule[this.props.direction].timepoints.length - 1 ? '#fff' : 'rgba(0, 68, 69, .5)' }} />
@@ -29,6 +41,7 @@ class ScheduleTable extends Component {
             <TableRow>
               {this.props.schedule[this.props.direction].timepoints.map((s, i) => (
                 <TableCell 
+                className={classes.head}
                 key={i}
                 style={{ borderBottom: '0', textAlign: 'center', padding: '0em 1em', }}>
                   <Link style={{ fontSize: '1.25em', color: 'black', fontWeight: 700 }} to={{ pathname: `/stop/${s}/` }}  >
@@ -40,6 +53,7 @@ class ScheduleTable extends Component {
             <TableRow position='sticky'>
               {this.props.schedule[this.props.direction].timepoints.map((s, j) => (
                 <TableCell 
+                  className={classes.head}
                   key={j}
                   style={{ borderBottom: '0' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
@@ -50,23 +64,23 @@ class ScheduleTable extends Component {
               ))}
             </TableRow>
           </TableHead>
-        <TableBody>
-          {this.props.schedule[this.props.direction].trips.map((t, j) => (
-            <TableRow 
-              key={t.trip_id}
-              style={tripsToHighlight.indexOf(t.trip_id) > -1 ? { backgroundColor: background } : {}}>
-              {t.timepoints.map((tp, k) => (
-                <TableCell
-                  style={{ borderBottom: (j+1) % 5 === 0 ? `2px solid ${this.props.color}` : 0, borderRight: '1px solid #ccc', textAlign: 'center', fontWeight: tp.indexOf('p') > -1 ? 700 : 500 }}
-                  key={k}>
-                  {tp === "\u2013" ? `—` : tp.slice(0, -2)}
-                </TableCell>
-              ))}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </div>
+          <TableBody>
+            {this.props.schedule[this.props.direction].trips.map((t, j) => (
+              <TableRow 
+                key={t.trip_id}
+                style={tripsToHighlight.indexOf(t.trip_id) > -1 ? { backgroundColor: background } : {}}>
+                {t.timepoints.map((tp, k) => (
+                  <TableCell
+                    style={{ borderBottom: (j+1) % 5 === 0 ? `2px solid ${this.props.color}` : 0, borderRight: '1px solid #ccc', textAlign: 'center', fontWeight: tp.indexOf('p') > -1 ? 700 : 500 }}
+                    key={k}>
+                    {tp === "\u2013" ? `—` : tp.slice(0, -2)}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
     );
   }
 }
@@ -76,4 +90,4 @@ ScheduleTable.propTypes = {
   liveTrips: PropTypes.array,
 }
 
-export default ScheduleTable;
+export default withStyles(styles)(ScheduleTable);

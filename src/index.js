@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { createMuiTheme } from 'material-ui/styles';
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 
 import './css/index.css';
 import App from './App';
@@ -31,6 +30,7 @@ const muiTheme = createMuiTheme({
       main: '#B0D27B',
     }
   },
+  // eg https://material-ui-next.com/customization/themes/#properties
   props: {
     MuiButtonBase: {
       disableRipple: true
@@ -39,7 +39,13 @@ const muiTheme = createMuiTheme({
   overrides: {
     MuiTouchRipple: {
       root: {
-        display: 'none'
+        display: 'none',
+        '&$focused': {
+          display: 'none'
+        },
+        '&$touched': {
+          display: 'none'
+        }
       }
     },
     MuiTabScrollButton: {

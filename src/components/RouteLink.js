@@ -33,14 +33,12 @@ class RouteLink extends Component {
           </div>
           {this.props.icons ?
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <IconButton component={Link} to={`/route/${this.props.id}/stops`} >
+              <IconButton disableRipple={true} component={Link} to={`/route/${this.props.id}/stops`}>
                 <StopIcon style={{ color: '#ccc', height: 22 }} />
               </IconButton>
-              <Link to={{pathname: `/route/${this.props.id}/schedule`}} >
-                <IconButton>
-                  <ScheduleIcon style={{ color: '#ccc', height: 22 }} />
-                </IconButton>
-              </Link>
+              <IconButton disableRipple={true} component={Link} to={{pathname: `/route/${this.props.id}/schedule`}}>
+                <ScheduleIcon style={{ color: '#ccc', height: 22 }} />
+              </IconButton>
             </div>
           : ``}
         </div>

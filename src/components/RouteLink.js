@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import StopIcon from './BusStop';
-import IconButton from 'material-ui/IconButton';
 import ScheduleIcon from 'material-ui-icons/Schedule';
 
 import Schedules from '../data/schedules.js';
@@ -33,12 +32,12 @@ class RouteLink extends Component {
           </div>
           {this.props.icons ?
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <IconButton disableRipple={true} component={Link} to={`/route/${this.props.id}/stops`}>
+              <Link to={{ pathname: `/route/${this.props.id}/stops` }} style={{ paddingRight: '.75em' }}>
                 <StopIcon style={{ color: '#ccc', height: 22 }} />
-              </IconButton>
-              <IconButton disableRipple={true} component={Link} to={{pathname: `/route/${this.props.id}/schedule`}}>
+              </Link>
+              <Link to={{ pathname: `/route/${this.props.id}/schedule` }} style={{ paddingRight: '.75em' }}>
                 <ScheduleIcon style={{ color: '#ccc', height: 22 }} />
-              </IconButton>
+              </Link>
             </div>
           : ``}
         </div>

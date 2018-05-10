@@ -97,11 +97,6 @@ const muiTheme = createMuiTheme({
         boxShadow: 'none'
       }
     },
-    MuiIconButton: {
-      root: {
-        height: '24px'
-      }
-    },
     MuiTableRow: {
       root: {
         height: '24px'

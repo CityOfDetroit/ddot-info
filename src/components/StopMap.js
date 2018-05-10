@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MapGL, { Marker } from 'react-map-gl';
+import MapGL, { Marker, NavigationControl } from 'react-map-gl';
 import { Redirect, Link } from 'react-router-dom'
 import Card from 'material-ui/Card';
 import _ from 'lodash';
@@ -121,6 +121,9 @@ class StopMap extends Component {
               </Link>
             </Marker>
           ))}
+          <div style={{ position: 'absolute', right: 15, top: 15, transform: 'scale(1.1, 1.1)' }}>
+            <NavigationControl showZoom={false} showCompass={true} />
+          </div>
         </MapGL>
       </Card>
     )

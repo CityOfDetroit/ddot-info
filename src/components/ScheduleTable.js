@@ -13,7 +13,7 @@ const styles = theme => ({
   head: {
     position: "sticky",
     top: 0,
-    // backgroundColor: 'yellow'
+    backgroundColor: 'white'
   }
 });
 
@@ -25,13 +25,12 @@ class ScheduleTable extends Component {
     let tripsToHighlight = this.props.liveTrips.map(t => t.slice(8));
 
     return (
-      <div style={{ maxWidth: '100vw', overflowX: 'scroll' }}>
+      <div style={{ overflow: 'auto', height: '50vh', backgroundColor: 'white' }}>
         <Table>
-          <TableHead>
-            <TableRow>
+          <TableHead className={classes.head}>
+            <TableRow >
               {this.props.schedule[this.props.direction].timepoints.map((s, k) => (
                 <TableCell 
-                className={classes.head}
                 key={k}
                 style={{ borderBottom: '0', textAlign: 'center', padding: 0 }}>
                   <Arrow style={{ color: k === this.props.schedule[this.props.direction].timepoints.length - 1 ? '#fff' : 'rgba(0, 68, 69, .5)' }} />
@@ -41,7 +40,6 @@ class ScheduleTable extends Component {
             <TableRow>
               {this.props.schedule[this.props.direction].timepoints.map((s, i) => (
                 <TableCell 
-                className={classes.head}
                 key={i}
                 style={{ borderBottom: '0', textAlign: 'center', padding: '0em 1em', }}>
                   <Link style={{ fontSize: '1.25em', color: 'black', fontWeight: 700 }} to={{ pathname: `/stop/${s}/` }}  >
@@ -50,10 +48,9 @@ class ScheduleTable extends Component {
                 </TableCell>
               ))}
             </TableRow>
-            <TableRow position='sticky'>
+            <TableRow>
               {this.props.schedule[this.props.direction].timepoints.map((s, j) => (
                 <TableCell 
-                  className={classes.head}
                   key={j}
                   style={{ borderBottom: '0' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>

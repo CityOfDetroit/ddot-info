@@ -141,13 +141,11 @@ class RouteSchedule extends React.Component {
                 route={this.state.route} />
             </Toolbar>
           </AppBar>
-          <div style={{ padding: '1em 0em', backgroundColor: '#fff' }}>
             <ScheduleTable 
               schedule={this.state[this.state.currentSvc]} 
               direction={this.state.currentDirection} 
               liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
               color={this.state.color} />
-          </div>
         </div>
       </div>
     );

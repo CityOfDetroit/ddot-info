@@ -7,13 +7,14 @@ import { withStyles } from "material-ui/styles";
 import Arrow from 'material-ui-icons/KeyboardArrowRight';
 
 import Stops from '../data/stops.js';
+import {VerticalAlignTop} from 'material-ui-icons';
 
 // attempting a fixedHeader like this: https://codesandbox.io/s/k0vwm7xpl3
 const styles = theme => ({
   head: {
     position: "sticky",
     top: 0,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   }
 });
 
@@ -25,30 +26,37 @@ class ScheduleTable extends Component {
     let tripsToHighlight = this.props.liveTrips.map(t => t.slice(8));
 
     return (
-      <div style={{ overflow: 'auto', height: '50vh', backgroundColor: 'white' }}>
+      <div style={{ overflow: 'auto', height: '60vh', backgroundColor: 'white' }}>
         <Table>
-          <TableHead className={classes.head}>
+          <TableHead >
             <TableRow >
               {this.props.schedule[this.props.direction].timepoints.map((s, k) => (
-                <TableCell 
+                <TableCell
+                className={classes.head}
                 key={k}
-                style={{ borderBottom: '0', textAlign: 'center', padding: 0 }}>
-                  <Arrow style={{ color: k === this.props.schedule[this.props.direction].timepoints.length - 1 ? '#fff' : 'rgba(0, 68, 69, .5)' }} />
+                style={{ borderBottom: '0', padding: 0 }}>
+                  <div style={{ borderBottom: '0', height: '50px', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', padding: '.2em .5em' }}>
+                    <Link style={{ fontSize: '1.1em', color: 'black', fontWeight: 700 }} to={{ pathname: `/stop/${s}/` }}  >
+                      {Stops[s].name.indexOf('Rosa Parks') > -1 ? "Rosa Parks TC" : Stops[s].name}
+                    </Link>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '11px', height: '8px', right: k === 0 ? 0 : null, width: k === (this.props.schedule[this.props.direction].timepoints.length - 1) || k === 0 ? '50%' : '100%', backgroundColor: `${this.props.color}`, verticalAlign: 'center'}}></div>
+                    <Arrow style={{ color: k === this.props.schedule[this.props.direction].timepoints.length - 1 ? '#000' : 'white', margin: '0px 0px 10px 0px', backgroundColor: '#000', height: '24px', width: '24px', borderRadius: '2em', border: '3px solid #fff', margin: 'auto', verticalAlign: 'center', zIndex: '200' }} />
+                  </div>
                 </TableCell>
               ))}
             </TableRow>
-            <TableRow>
+            {/* <TableRow>
               {this.props.schedule[this.props.direction].timepoints.map((s, i) => (
                 <TableCell 
                 key={i}
                 style={{ borderBottom: '0', textAlign: 'center', padding: '0em 1em', }}>
-                  <Link style={{ fontSize: '1.25em', color: 'black', fontWeight: 700 }} to={{ pathname: `/stop/${s}/` }}  >
-                    {Stops[s].name.indexOf('Rosa Parks') > -1 ? "Rosa Parks TC" : Stops[s].name}
-                  </Link>
+
                 </TableCell>
               ))}
-            </TableRow>
-            <TableRow>
+            </TableRow> */}
+            {/* <TableRow>
               {this.props.schedule[this.props.direction].timepoints.map((s, j) => (
                 <TableCell 
                   key={j}
@@ -59,7 +67,7 @@ class ScheduleTable extends Component {
                   </div>
                 </TableCell>
               ))}
-            </TableRow>
+            </TableRow> */}
           </TableHead>
           <TableBody>
             {this.props.schedule[this.props.direction].trips.map((t, j) => (

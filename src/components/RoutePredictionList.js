@@ -35,7 +35,7 @@ class RoutePredictionList extends React.Component {
     return (
       <List style={{ paddingTop: 0 }}>
         {predictions.length > 0 ? Helpers.cleanPredictionHeadsign(predictions).map((p, i) => (
-          <div>
+          <div key={i}>
             <ListItem button key={p.tripId} onClick={this.handleClick(p.tripId)} style={{ background: '#fff' }} >
               <ListItemIcon >
                 {this.state.open === p.tripId ? <ExpandLess /> : <ExpandMore />}

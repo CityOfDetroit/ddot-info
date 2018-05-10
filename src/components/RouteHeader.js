@@ -34,9 +34,9 @@ class RouteHeader extends React.Component {
 
   render() {
     const tabs = [
-      { label: "Overview", path: `/route/${this.props.number}`, icon: <BusIcon /> },
-      { label: "Bus stops", path: `/route/${this.props.number}/stops`, icon: <StopIcon /> },
-      { label: "Schedule", path: `/route/${this.props.number}/schedule`, icon: <ScheduleIcon /> },
+      { label: "Overview", path: `/route/${this.props.number}`, icon: <BusIcon style={{ color: '#fff' }} /> },
+      { label: "Bus stops", path: `/route/${this.props.number}/stops`, icon: <StopIcon style={{ color: '#fff' }} /> },
+      { label: "Schedule", path: `/route/${this.props.number}/schedule`, icon: <ScheduleIcon style={{ color: '#fff' }} /> },
     ];
 
     const { currentTab } = this.state;
@@ -50,9 +50,13 @@ class RouteHeader extends React.Component {
           <NavLinks />
         </div>
         <div>
-          <Tabs value={currentTab} onChange={this.handleChange} textColor="white" style={{ fontSize: '1.2em' }}>
+          <Tabs 
+            value={currentTab} 
+            onChange={this.handleChange} 
+            indicatorColor="primary"
+            style={{ fontSize: '1.2em' }}>
             {tabs.map(({ label, path, icon }) =>
-              <Tab key={label} icon={icon} label={label} component={Link} to={path} style={label !== 'Schedule' ? { borderRight: '.1px solid #fff' } : null}/>
+              <Tab key={label} icon={icon} label={label} component={Link} to={path} style={label !== 'Schedule' ? { borderRight: '.1px solid #fff', color: '#fff' } : { color: '#fff' }}/>
             )}
           </Tabs>
         </div>

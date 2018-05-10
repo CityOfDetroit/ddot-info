@@ -247,8 +247,8 @@ class RouteMap extends Component {
             mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
             onViewportChange={this._updateViewport} 
             onClick={this._onClick}>
-            {this.state.realtimeTrips.map(rt => (
-              <div>
+            {this.state.realtimeTrips.map((rt, i) => (
+              <div key={i}>
               <Marker latitude={rt.geometry.coordinates[1]} longitude={rt.geometry.coordinates[0]} offsetLeft={-12} offsetTop={-12} onClick={this._onClick} captureClick={false}>
                 {this.state.viewport.zoom > 14.5 ? 
                   <div>

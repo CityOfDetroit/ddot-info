@@ -143,11 +143,11 @@ class Stop extends React.Component {
               <Tabs
                 onChange={this.handleTabsChange}
                 value={slideIndex}
-                indicatorColor="red"
+                indicatorColor="primary"
                 textColor="primary"
                 scrollable={stopRoutes.length > 5 ? true : false}>
                 {stopRoutes.map((r, i) => (
-                  <Tab label={<RouteBadge id={r[0]} />} value={i} style={{ minWidth: 40, width: 50 }} />
+                  <Tab label={<RouteBadge id={r[0]} />} value={i} style={{ minWidth: 40, width: 50 }} key={i} />
                 ))}
               </Tabs>
             </Toolbar>
@@ -157,14 +157,14 @@ class Stop extends React.Component {
             index={slideIndex}
             onChangeIndex={this.handleSlideChange}>
             {stopRoutes.map((r, i) => (
-              <div>
+              <div key={i}>
                 <AppBar position="static" color="default" elevation={0} style={{ display: 'flex' }}>
                   <Toolbar style={{ justifyContent: 'space-between' }} elevation={0}>
                     <RouteLink id={r[0]} />
                     <Tabs 
                       onChange={this.handleRouteChange} 
                       value={this.state.routeStopType}
-                      indicatorColor="red"
+                      indicatorColor="primary"
                       textColor="primary">
                       <Tab icon={<ScheduleIcon color='black' />} label='Schedule'  value='schedule' style={{ backgroundColor: grey300, color: 'black', padding: '0em 2em', textTransform: 'none' }}/>
                       <Tab icon={<LiveIcon color='black' />} label='Live' value='next' style={{ backgroundColor: grey300, color: 'black', textTransform: 'none' }} />

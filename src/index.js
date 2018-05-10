@@ -26,21 +26,49 @@ const muiTheme = createMuiTheme({
       'Gibson Detroit Regular' +
       '"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
   },
+  palette: {
+    primary: {
+      main: '#B0D27B',
+    }
+  },
+  props: {
+    MuiButtonBase: {
+      disableRipple: true
+    }
+  },
   overrides: {
+    MuiTouchRipple: {
+      root: {
+        display: 'none'
+      }
+    },
     MuiTabScrollButton: {
       root: {
         flex: '0 0 0'
       }
     },
     MuiRadio: {
-      checkedSecondary: {
-        color: '#004445'
-      },
+      colorSecondary: {
+        color: '#004445',
+        '&$checked': {
+          color: '#004445'
+        }
+      }
+    },
+    MuiCheckbox: {
+      colorSecondary: {
+        color: '#004445',
+        '&$checked': {
+          color: '#004445',
+        }
+      }
     },
     MuiFormLabel: {
-      focused: {
-        color: '#000'
-      },
+      root: {
+        '&$focused': {
+          color: '#000'
+        }
+      }
     },
     MuiInput: {
       underline: {

@@ -7,7 +7,6 @@ import { withStyles } from "material-ui/styles";
 import Arrow from 'material-ui-icons/KeyboardArrowRight';
 
 import Stops from '../data/stops.js';
-import {VerticalAlignTop} from 'material-ui-icons';
 
 // attempting a fixedHeader like this: https://codesandbox.io/s/k0vwm7xpl3
 const styles = theme => ({
@@ -28,8 +27,8 @@ class ScheduleTable extends Component {
     return (
       <div style={{ overflow: 'auto', height: '50vh', backgroundColor: 'white' }}>
         <Table>
-          <TableHead >
-            <TableRow >
+          <TableHead>
+            <TableRow>
               {this.props.schedule[this.props.direction].timepoints.map((s, k) => (
                 <TableCell
                 className={classes.head}
@@ -41,33 +40,12 @@ class ScheduleTable extends Component {
                     </Link>
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
-                    <div style={{ position: 'absolute', top: '11px', height: '8px', right: k === 0 ? 0 : null, width: k === (this.props.schedule[this.props.direction].timepoints.length - 1) || k === 0 ? '50%' : '100%', backgroundColor: `${this.props.color}`, verticalAlign: 'center'}}></div>
-                    <Arrow style={{ color: k === this.props.schedule[this.props.direction].timepoints.length - 1 ? '#000' : 'white', margin: '0px 0px 10px 0px', backgroundColor: '#000', height: '24px', width: '24px', borderRadius: '2em', border: '3px solid #fff', margin: 'auto', verticalAlign: 'center', zIndex: '200' }} />
+                    <div style={{ position: 'absolute', top: '11px', height: '8px', right: k === 0 ? 0 : null, width: k === (this.props.schedule[this.props.direction].timepoints.length - 1) || k === 0 ? '50%' : '100%', backgroundColor: `${this.props.color}`, verticalAlign: 'center' }}></div>
+                    <Arrow style={{ color: k === this.props.schedule[this.props.direction].timepoints.length - 1 ? '#000' : 'white', backgroundColor: '#000', height: '24px', width: '24px', borderRadius: '2em', border: '3px solid #fff', margin: 'auto', verticalAlign: 'center', zIndex: '200' }} />
                   </div>
                 </TableCell>
               ))}
             </TableRow>
-            {/* <TableRow>
-              {this.props.schedule[this.props.direction].timepoints.map((s, i) => (
-                <TableCell 
-                key={i}
-                style={{ borderBottom: '0', textAlign: 'center', padding: '0em 1em', }}>
-
-                </TableCell>
-              ))}
-            </TableRow> */}
-            {/* <TableRow>
-              {this.props.schedule[this.props.direction].timepoints.map((s, j) => (
-                <TableCell 
-                  key={j}
-                  style={{ borderBottom: '0' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
-                    <div style={{ position: 'absolute', top: '8px', height: '8px', right: j === 0 ? 0 : null, width: j === (this.props.schedule[this.props.direction].timepoints.length - 1) || j === 0 ? '50%' : '100%', backgroundColor: `${this.props.color}`, verticalAlign: 'center'}}></div>
-                    <div style={{ backgroundColor: '#000', height: '24px', width: '24px', borderRadius: '2em', border: '3px solid #fff', margin: 'auto', verticalAlign: 'center', zIndex: '200' }}></div>
-                  </div>
-                </TableCell>
-              ))}
-            </TableRow> */}
           </TableHead>
           <TableBody>
             {this.props.schedule[this.props.direction].trips.map((t, j) => (

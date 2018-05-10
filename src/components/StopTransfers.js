@@ -31,11 +31,11 @@ class StopTransfers extends React.Component {
             <ListItemText primary="Nearby transfers" />
           </ListItem>
           <Collapse in={this.state.open} style={{ marginBottom: '.5em', background: 'white' }} timeout="auto" unmountOnExit>
-            {Object.keys(this.props.stops).map(s => (
-              <div style={{ background: 'white', margin: 10, padding: 10 }}>
+            {Object.keys(this.props.stops).map((s, i) => (
+              <div key={i} style={{ background: 'white', margin: 10, padding: 10 }}>
                 <RouteLink id={s} />
                 {stops[s].map(st => (
-                  <div style={{ padding: 10 }}>{Helpers.lookup[st[1]]}: <StopInlineLink id={st[2]}/></div>
+                  <div key={st[2]} style={{ padding: 10 }}>{Helpers.lookup[st[1]]}: <StopInlineLink id={st[2]}/></div>
                 ))}
               </div>
             ))}

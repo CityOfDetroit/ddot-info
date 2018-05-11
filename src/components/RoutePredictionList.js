@@ -24,6 +24,7 @@ class RoutePredictionList extends React.Component {
   }
 
   handleClick = tripId => () => {
+    if(this.state.open === tripId) { this.props.onChange(null) }
     this.setState({
       open: this.state.open === tripId ? null : tripId
     });
@@ -40,7 +41,7 @@ class RoutePredictionList extends React.Component {
               <ListItemIcon >
                 {this.state.open === p.tripId ? <ExpandLess /> : <ExpandMore />}
               </ListItemIcon>
-              <ListItemText style={{ fontWeight: this.state.open === p.tripId ? 700 : 300 }} primary={`${p.predicted ? moment(p.predictedArrivalTime).format('h:mma') : moment(p.scheduledArrivalTime).format('h:mma')}`} />
+              <ListItemText style={{ fontWeight: this.state.open === p.tripId ? 700 : 300 }} secondary={p.tripHeadsign} primary={`${p.predicted ? moment(p.predictedArrivalTime).format('h:mma') : moment(p.scheduledArrivalTime).format('h:mma')}`} />
               <ListItemIcon >
                 {p.predicted ? <LiveSVG /> : <SchedSVG />}
               </ListItemIcon>

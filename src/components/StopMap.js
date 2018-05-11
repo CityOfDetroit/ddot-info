@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MapGL, { Marker } from 'react-map-gl';
-import { Redirect, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Card from 'material-ui/Card';
 import _ from 'lodash';
 

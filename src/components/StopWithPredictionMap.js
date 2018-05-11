@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import MapGL, { Marker } from 'react-map-gl';
-import { Redirect, Link } from 'react-router-dom'
 import Card from 'material-ui/Card';
 import _ from 'lodash';
 import WebMercatorViewport from 'viewport-mercator-project';
 
 import Helpers from '../helpers.js';
-import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Stops from '../data/stops.js';
 
 import {defaultMapStyle, routeLineIndex} from '../style.js';

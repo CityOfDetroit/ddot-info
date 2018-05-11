@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
-import StaticMap, {Marker} from 'react-map-gl';
 import {Link} from 'react-router-dom'
-import { Card, CardContent, CardMedia } from 'material-ui';
+import { Card, CardContent } from 'material-ui';
 import BusIcon from 'material-ui-icons/DirectionsBus';
 import BusStop from './BusStop'
 import LiveIcon from 'material-ui-icons/SpeakerPhone';
 import ScheduleIcon from 'material-ui-icons/Schedule';
 import Warning from 'material-ui-icons/Warning';
 import Stops from '../data/stops.js'
-
-import {defaultMapStyle, routeLineIndex} from '../style.js';
-import StopInlineLink from './StopInlineLink';
 import Helpers from '../helpers';
 
 const styles = {
     prediction: {
         display: 'flex',
         alignItems: 'center',
-        opacity: '.5',
+        opacity: '1',
         marginTop: '.5em'
     },
     predictionIcon: {
@@ -68,7 +64,6 @@ class RealtimeCard extends Component {
     }
 
     componentWillUnmount() {
-        this.props.onChange(null);
         clearInterval(this.interval);
     }
 
@@ -87,13 +82,10 @@ class RealtimeCard extends Component {
     }
 
     render() {
-        let style = defaultMapStyle;
-        style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.route, 10));
-        
         let nextStopId, nextStopDirection = null;
         if(this.state.fetched && this.state.tripData) {
             nextStopId = this.state.tripData.nextStop.slice(5,);
-            nextStopDirection = Stops[nextStopId].routes.filter(a => { return parseInt(a) === parseInt(this.props.route)})[0][1];
+            nextStopDirection = Stops[nextStopId].routes.filter(a => { return parseInt(a, 10) === parseInt(this.props.route, 10)})[0][1];
         }
 
         let opposites = {
@@ -116,7 +108,7 @@ class RealtimeCard extends Component {
                             <span style={{ fontWeight: 700, paddingLeft: '.25em' }}>{this.computeTimeAway(nextStopId, this.props.stop)} minutes</span>
                         </div>
                     </div>
-                    : <div style={styles.prediction}><Warning style={styles.predictionIcon}/>This bus is still traveling {opposites[nextStopDirection]} and has not started this {nextStopDirection} trip </div>
+                    : <div style={styles.prediction}><Warning style={styles.predictionIcon}/>This bus is still traveling {nextStopDirection} and has not started this {opposites[nextStopDirection]} trip </div>
                     }
                     <div style={{marginTop: '.5em', display: 'flex', alignItems: 'center'}}>
                         <BusStop style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
@@ -127,14 +119,14 @@ class RealtimeCard extends Component {
                             <span>{Stops[nextStopId].name}</span>
                         </Link>
                         <span style={{ background: '#eee', padding: '.25em', display: 'inline-block' }}>#{nextStopId}</span>
-                        {this.computeStopsAway(nextStopId, this.props.stop) > 0 ?
+                        {/* {this.computeStopsAway(nextStopId, this.props.stop) > 0 ?
                             <span style={{ color: '#444', paddingLeft: 10 }}>({this.computeStopsAway(nextStopId, this.props.stop)} stops away)</span>
-                            : ``} 
+                            : ``}  */}
                     </div>
                     {this.state.tripData.predicted ? 
                         <div style={styles.prediction}>
-                            <LiveIcon style={styles.predictionIcon}/>
-                            <p>Real-time location 
+                            <LiveIcon style={{ height: 20, width: 20, borderRadius: 9999, padding: 2.5, }}/>
+                            <div style={{marginLeft: '.5em'}}>Real-time location 
                             {this.state.tripData.predicted ? 
                                 (<span style={this.state.tripData.scheduleDeviation > 0 ? styles.behind : styles.ahead}>
                                 {this.state.tripData.scheduleDeviation === 0 ? `on time` : (
@@ -142,11 +134,11 @@ class RealtimeCard extends Component {
                                 )}</span>)
                                 
                             : `` }
-                            </p>
+                            </div>
                         </div>
                         : <div style={styles.prediction}>
-                            <ScheduleIcon style={styles.predictionIcon}/>
-                            <p>scheduled location</p>
+                            <ScheduleIcon style={{ height: 20, width: 20, borderRadius: 9999, padding: 2.5, }}/>
+                            <div style={{marginLeft: '.5em'}}>Scheduled location</div>
                           </div>
                     }
                 </CardContent>

@@ -101,6 +101,7 @@ class NearbyMap extends Component {
     // making some walking dist radii
     const walkRadii = buffer(geolocatedPoint[0].geometry, parseInt(this.props.currentRadius, 10)*1.25, {units: 'metres'});
     const radiusBbox = bbox(walkRadii);
+    console.log(radiusBbox)
 
     const viewport = new WebMercatorViewport({width: this.state.viewport.width, height: this.state.viewport.height});
     const bound = viewport.fitBounds(

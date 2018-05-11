@@ -17,7 +17,7 @@ class RoutePredictionList extends React.Component {
     super(props);
     
     this.state = { 
-      open: this.props.predictions.length > 0 ? this.props.predictions[0].tripId : null 
+      open: null 
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -45,8 +45,8 @@ class RoutePredictionList extends React.Component {
                 {p.predicted ? <LiveSVG /> : <SchedSVG />}
               </ListItemIcon>
             </ListItem>
-            <Collapse in={this.state.open === p.tripId} style={{ marginBottom: '.5em' }} timeout="auto" unmountOnExit>
-              <RealtimeCard trip={p.tripId} stop={this.props.stop} route={this.props.route}/>
+            <Collapse in={this.state.open === p.tripId && this.props.isOpen} style={{ marginBottom: '.5em' }} timeout="auto" unmountOnExit>
+              <RealtimeCard trip={p.tripId} stop={this.props.stop} route={this.props.route} onChange={this.props.onChange}/>
             </Collapse>
         </div>
           )) : <Card><CardContent style={{ padding: '1em' }}>There are currently no real-time predictions available.</CardContent></Card>}

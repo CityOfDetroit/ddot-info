@@ -14,6 +14,7 @@ import { withStyles } from 'material-ui/styles';
 import Stops from '../data/stops.js';
 import TopNav from './TopNav';
 import StopMap from './StopMap';
+import StopWithPredictionMap from './StopWithPredictionMap';
 import StopTransfers from './StopTransfers';
 import StopRouteSchedule from './StopRouteSchedule';
 import RouteBadge from './RouteBadge';
@@ -42,10 +43,13 @@ class Stop extends React.Component {
       fetchedPredictions: false,
       multipleDirs: false,
       slideIndex: 0,
-      routeStopType: 'next'
+      routeStopType: 'next',
+      tripData: null,
+      route: null
     }
 
     this.handleRouteChange = this.handleRouteChange.bind(this);
+    this.handleRoutePredictionChange = this.handleRoutePredictionChange.bind(this)
   }
 
   fetchRealtimeData(id) {
@@ -83,17 +87,20 @@ class Stop extends React.Component {
   }
 
   handleTabsChange = (event, slideIndex) => {
-    this.setState({ slideIndex })
-  }
-
-  handleSlideChange = (slideIndex) => {
-    this.setState({ slideIndex });
+    this.setState({ slideIndex: slideIndex, tripData: null })
   }
 
   handleRouteChange(event, value) {
     this.setState({
       routeStopType: value,
     });
+  }
+
+  handleRoutePredictionChange = (tripData, route) => {
+    this.setState({
+      tripData: tripData,
+      route: route
+    })
   }
 
   componentDidMount() {
@@ -130,7 +137,7 @@ class Stop extends React.Component {
     return (
       <div className='App' style={{ background: Helpers.colors['background'] }}>
         <TopNav />
-        <StopMap stopId={stopId} center={stopCoords}/>
+        {this.state.tripData ? <StopWithPredictionMap stopId={stopId} center={stopCoords} prediction={this.state.tripData} route={this.state.route} /> : <StopMap stopId={stopId} center={stopCoords} />}
         <div className='routes'>
           <Card>
             <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
@@ -155,7 +162,7 @@ class Stop extends React.Component {
           <SwipeableViews
             axis='x'
             index={slideIndex}
-            onChangeIndex={this.handleSlideChange}>
+            onChangeIndex={this.handleTabsChange}>
             {stopRoutes.map((r, i) => (
               <div key={i}>
                 <AppBar position="static" color="default" elevation={0} style={{ display: 'flex' }}>
@@ -179,7 +186,9 @@ class Stop extends React.Component {
                         predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r[0].padStart(3, '0')})} 
                         route={r[0]}
                         stop={stopId}
-                        multipleDirs={this.state.multipleDirs} />
+                        multipleDirs={this.state.multipleDirs}
+                        isOpen={i === slideIndex}
+                        onChange={this.handleRoutePredictionChange} />
                     </div>
                     : ``)
                     : (this.state.fetchedStopSchedule && this.state.fetchedPredictions ?

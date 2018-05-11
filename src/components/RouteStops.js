@@ -79,7 +79,7 @@ class RouteStops extends React.Component {
             </Toolbar>
           </AppBar>
           <AppBar position="static" color="default" elevation={0} style={{ display: 'flex', padding: '.5em 0em', marginBottom: '1em' }}>
-            <Toolbar elevation={0} style={{ justifyContent: 'flex-start', flexWrap: 'wrap' }}>
+            <Toolbar elevation={0} style={{ justifyContent: 'flex-start', flexWrap: 'wrap', marginLeft: '.5em' }}>
               <DirectionPicker 
                 directions={this.state.availableDirections}
                 currentDirection={this.state.currentDirection}

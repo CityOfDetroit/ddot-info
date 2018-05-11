@@ -48,6 +48,13 @@ const muiTheme = createMuiTheme({
         }
       }
     },
+    MuiIconButton: {
+      root: {
+        width: '24px',
+        height: '24px',
+        padding: '.2em'
+      }
+    },
     MuiTabScrollButton: {
       root: {
         flex: '0 0 0'

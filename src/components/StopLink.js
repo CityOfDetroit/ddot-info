@@ -38,7 +38,7 @@ class StopLink extends Component {
             <span style={{ padding: '.25rem', fontSize: '.75rem', background: '#eee' }}>#{this.props.id}</span>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', width: '50%' }}>
-          {Stops[this.props.id] && routes.length < 25 ? routes.map((r, i) => (
+          {Stops[this.props.id] && routes.length < 25 ? routes.sort((a, b) => { return parseInt(a) > parseInt(b)}).map((r, i) => (
             <Link style={exclude.toString() === r.toString() ? { display: 'none' } : { marginRight: '.5rem', textDecoration: 'none' }} to={{pathname: `/route/${r}`}} key={i}>
               <div style={exclude.toString() === r.toString() ? { display: 'none' } : { display: 'flex', alignItems:'center',  justifyContent: 'center', width: '2em', height: '2em', backgroundColor: Schedules[r].color, color: '#fff', fontWeight: 700 }}>
                 {r}

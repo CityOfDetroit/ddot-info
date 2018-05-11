@@ -1,7 +1,7 @@
 routes = [
     {
         "id": "7",
-        "rt_name": "Cadillac-Harper",
+        "rt_name": "Cadillac/Harper",
         "color": "#44aa42",
         "rt_id": 6705,
         "timepoints": {
@@ -80,7 +80,7 @@ routes = [
 
     {
         "id": "15",
-        "rt_name": "Chicago Davison",
+        "rt_name": "Chicago/Davison",
         "color": "#0079c2",
         "rt_id": 6712,
         "timepoints": {
@@ -307,7 +307,7 @@ routes = [
 
     {
         "id": "42",
-        "rt_name": "Mid City Loop",
+        "rt_name": "Mid-City Loop",
         "color": "#d07c32",
         "rt_id": 6732,
         "timepoints": {
@@ -362,7 +362,7 @@ routes = [
 
     {
         "id": "48",
-        "rt_name": "Van Dyke - Lafayette",
+        "rt_name": "Van Dyke/Lafayette",
         "color": "#44aa42",
         "rt_id": 6737,
         "timepoints": {

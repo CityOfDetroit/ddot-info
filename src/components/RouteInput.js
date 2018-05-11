@@ -7,8 +7,8 @@ import Search from 'material-ui-icons/Search';
 class RouteInput extends Component {
   render() {
     return (
-      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-        <Search style={{ marginRight: '.25em' }} />
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginBottom: '1em', padding: '.25em', border: '2px solid rgba(0, 68, 69, 0.2)' }}>
+        <Search style={{ marginRight: '.25em', width: '1.25em', height: '1.25em' }} />
         <TextField
           label='Search by route name or number'
           placeholder='Try "Woodward", "Dexter", "53", "16"'

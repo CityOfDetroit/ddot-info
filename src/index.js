@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { createMuiTheme } from 'material-ui/styles';
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 
 import './css/index.css';
 import App from './App';
@@ -26,25 +25,72 @@ const muiTheme = createMuiTheme({
       'Gibson Detroit Regular' +
       '"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
   },
+  palette: {
+    primary: {
+      main: '#B0D27B',
+    }
+  },
+  // eg https://material-ui-next.com/customization/themes/#properties
+  props: {
+    MuiButtonBase: {
+      disableRipple: true
+    }
+  },
   overrides: {
+    MuiTouchRipple: {
+      root: {
+        display: 'none',
+        '&$focused': {
+          display: 'none'
+        },
+        '&$touched': {
+          display: 'none'
+        }
+      }
+    },
+    MuiIconButton: {
+      root: {
+        width: '24px',
+        height: '24px',
+        padding: '.2em'
+      }
+    },
+    MuiTabScrollButton: {
+      root: {
+        flex: '0 0 0'
+      }
+    },
     MuiRadio: {
-      checkedSecondary: {
-        color: '#004445'
-      },
+      colorSecondary: {
+        color: '#004445',
+        '&$checked': {
+          color: '#004445'
+        }
+      }
+    },
+    MuiCheckbox: {
+      colorSecondary: {
+        color: '#004445',
+        '&$checked': {
+          color: '#004445',
+        }
+      }
     },
     MuiFormLabel: {
-      focused: {
-        color: '#000'
-      },
+      root: {
+        '&$focused': {
+          color: '#000'
+        }
+      }
     },
     MuiInput: {
       underline: {
         '&:before': {
-          backgroundColor: '#b0d27b',
+          backgroundColor: '#000',
           height: '2px'
         },
         '&:after': {
-          backgroundColor: '#000'
+          backgroundColor: '#b0d27b'
         },
       }
     },
@@ -56,11 +102,6 @@ const muiTheme = createMuiTheme({
     MuiPaper: {
       elevation2: {
         boxShadow: 'none'
-      }
-    },
-    MuiIconButton: {
-      root: {
-        height: '24px'
       }
     },
     MuiTableRow: {

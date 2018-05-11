@@ -55,10 +55,10 @@ class RouteSearch extends Component {
   render() {
     return (
       <Card>
-        <CardHeader title="Choose your bus route" subheader="DDOT offers local transit service within Detroit" />
+        <CardHeader title="Choose your bus route" subheader="Click on a route number or name for an overview, including real-time locations. Click an icon to go directly to that route's bus stops or schedule." />
         <CardContent>
           <RouteInput input={this.state.input} onSearchChange={this.handleSearchChange} />
-          { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : '' }
+          { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : <span style={{ color: 'red' }}>No routes match your search! Try again.</span> }
           <Divider style={{ marginTop: '1em' }} />
           <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', justifyContent: 'center' }}>
             <div>

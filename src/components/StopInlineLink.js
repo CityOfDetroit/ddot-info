@@ -8,9 +8,9 @@ import Stops from '../data/stops.js';
 class StopInlineLink extends Component {
   render() {
     return (
-      <span style={{ padding: 0, display: 'inline' }}>  
+      <span style={{ paddingLeft: '.25em', display: 'inline' }}>  
         <Link 
-          style={{ fontSize: '1em', color: '#000', marginBottom: '.25rem', fontWeight: 300 }} 
+          style={{ fontSize: '1em', color: '#000', fontWeight: 300 }} 
           to={{ pathname: `/stop/${this.props.id}/` }}>
           <span>{this.props.showDir ? `${Stops[this.props.id].name} (${Stops[this.props.id].dir})` : `${Stops[this.props.id].name}`}</span>
         </Link>

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import StopIcon from './BusStop';
-import IconButton from 'material-ui/IconButton';
 import ScheduleIcon from 'material-ui-icons/Schedule';
 
 import Schedules from '../data/schedules.js';
@@ -17,7 +16,11 @@ class RouteLink extends Component {
         <div style={{ display: 'flex', alignItems:'center', justifyContent: 'space-between', backgroundColor: '#eee' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: route.color, color: 'white', fontSize: '1.25em', fontWeight: 700 }}>
-              {this.props.id}
+              <Link
+                to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}
+                style={{ textDecoration: 'none', color: '#fff' }}>
+                {this.props.id}
+              </Link>
             </div> 
             <Link  
               to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}
@@ -29,13 +32,11 @@ class RouteLink extends Component {
           </div>
           {this.props.icons ?
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <IconButton component={Link} to={`/route/${this.props.id}/stops`} >
+              <Link to={{ pathname: `/route/${this.props.id}/stops` }} style={{ paddingRight: '.75em' }}>
                 <StopIcon style={{ color: '#ccc', height: 22 }} />
-              </IconButton>
-              <Link to={{pathname: `/route/${this.props.id}/schedule`}} >
-                <IconButton>
-                  <ScheduleIcon style={{ color: '#ccc', height: 22 }} />
-                </IconButton>
+              </Link>
+              <Link to={{ pathname: `/route/${this.props.id}/schedule` }} style={{ paddingRight: '.75em' }}>
+                <ScheduleIcon style={{ color: '#ccc', height: 22 }} />
               </Link>
             </div>
           : ``}

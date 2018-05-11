@@ -254,10 +254,10 @@ const Stops = {
   },
   "10017": {
     "id": "10017",
-    "name": "MANCHESTER & WOODWARD NEAR SIDE",
+    "name": "Manchester & Woodward",
     "dir": "NS",
-    "lat": "42.407002",
-    "lon": "-83.098598",
+    "lat": "42.406390",
+    "lon": "-83.099489",
     "routes": [
       ["15", "eastbound"]
     ],
@@ -2155,7 +2155,7 @@ const Stops = {
       ["12", "southbound"]
     ],
     "transfers": [
-      ["12", "northbound", "135"],
+      ["12", "northbound", "10416"],
       ["25", "eastbound", "420"],
       ["25", "westbound", "427"]
     ]
@@ -2170,7 +2170,7 @@ const Stops = {
       ["12", "southbound"]
     ],
     "transfers": [
-      ["12", "northbound", "135"],
+      ["12", "northbound", "10416"],
       ["25", "eastbound", "2045"],
       ["25", "westbound", "427"]
     ]
@@ -2192,17 +2192,6 @@ const Stops = {
       ["9", "northbound", "8218"]
     ]
   },
-  "10179": {
-    "id": "10179",
-    "name": "Somerset Collection",
-    "dir": "ot",
-    "lat": "42.559368537",
-    "lon": "-83.182569364",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": []
-  },
   "10181": {
     "id": "10181",
     "name": "Woodward & Adams",
@@ -2210,48 +2199,11 @@ const Stops = {
     "lat": "42.337383",
     "lon": "-83.050756",
     "routes": [
-      ["498", ""],
       ["53", "northbound"]
     ],
     "transfers": [
       ["53", "southbound", "10231"]
     ]
-  },
-  "10182": {
-    "id": "10182",
-    "name": "Woodward & Milwaukee",
-    "dir": "NB",
-    "lat": "42.369281",
-    "lon": "-83.072611",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": [
-      ["53", "southbound", "9808"],
-      ["53", "northbound", "984"]
-    ]
-  },
-  "10185": {
-    "id": "10185",
-    "name": "Woodward & 13 Mile",
-    "dir": "NB",
-    "lat": "42.518189",
-    "lon": "-83.186211",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": []
-  },
-  "10186": {
-    "id": "10186",
-    "name": "Adams & Bowers",
-    "dir": "NB",
-    "lat": "42.542965",
-    "lon": "-83.205533",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": []
   },
   "10187": {
     "id": "10187",
@@ -2330,59 +2282,6 @@ const Stops = {
     "transfers": [
       ["14", "eastbound", "10188"]
     ]
-  },
-  "10194": {
-    "id": "10194",
-    "name": "Farmer & Monroe",
-    "dir": "SB",
-    "lat": "42.33254855",
-    "lon": "-83.046129216",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": []
-  },
-  "10196": {
-    "id": "10196",
-    "name": "Woodward & Milwaukee",
-    "dir": "SB",
-    "lat": "42.368977",
-    "lon": "-83.07266",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": [
-      ["16", "southbound", "3304"],
-      ["16", "northbound", "3305"],
-      ["53", "southbound", "9808"],
-      ["53", "northbound", "984"],
-      ["80", "westbound", "3305"],
-      ["80", "eastbound", "3304"],
-      ["89", "southbound", "3304"],
-      ["89", "northbound", "3305"]
-    ]
-  },
-  "10197": {
-    "id": "10197",
-    "name": "Woodward & 13 Mile",
-    "dir": "SB",
-    "lat": "42.517026",
-    "lon": "-83.185848",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": []
-  },
-  "10198": {
-    "id": "10198",
-    "name": "Adams & Bowers",
-    "dir": "SB",
-    "lat": "42.542944",
-    "lon": "-83.205684",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": []
   },
   "10200": {
     "id": "10200",
@@ -4161,20 +4060,6 @@ const Stops = {
     ],
     "transfers": []
   },
-  "1037": {
-    "id": "1037",
-    "name": "Woodward & Adams",
-    "dir": "SB",
-    "lat": "42.336607905",
-    "lon": "-83.050739618",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": [
-      ["53", "southbound", "10231"],
-      ["53", "northbound", "10181"]
-    ]
-  },
   "10370": {
     "id": "10370",
     "name": "NORTH PARK DRIVE & NORTHWESTERN HWY",
@@ -4349,17 +4234,6 @@ const Stops = {
     "lon": "-83.102505",
     "routes": [
       ["23", "northbound"]
-    ],
-    "transfers": []
-  },
-  "10386": {
-    "id": "10386",
-    "name": "STATE FAIRGROUNDS TRANSIT CENTER",
-    "dir": "SB",
-    "lat": "42.44174",
-    "lon": "-83.121913",
-    "routes": [
-      ["498", ""]
     ],
     "transfers": []
   },
@@ -4687,6 +4561,19 @@ const Stops = {
     ],
     "transfers": []
   },
+  "10416": {
+    "id": "10416",
+    "name": "E. Grand Blvd & Jefferson",
+    "dir": "NB",
+    "lat": "42.347675",
+    "lon": "-83.001955",
+    "routes": [
+      ["12", "northbound"]
+    ],
+    "transfers": [
+      ["12", "southbound", "10177"]
+    ]
+  },
   "1045": {
     "id": "1045",
     "name": "WOODWARD & ADELAIDE",
@@ -4761,7 +4648,6 @@ const Stops = {
     "lat": "42.35736549",
     "lon": "-83.06440505",
     "routes": [
-      ["498", ""],
       ["53", "northbound"]
     ],
     "transfers": [
@@ -4777,7 +4663,6 @@ const Stops = {
     "lat": "42.35613149",
     "lon": "-83.06412105",
     "routes": [
-      ["498", ""],
       ["53", "southbound"]
     ],
     "transfers": [
@@ -7068,21 +6953,6 @@ const Stops = {
       ["14", "westbound", "1355"]
     ]
   },
-  "135": {
-    "id": "135",
-    "name": "Helen & Jefferson",
-    "dir": "SB",
-    "lat": "42.347042247",
-    "lon": "-83.003233918",
-    "routes": [
-      ["12", "northbound"]
-    ],
-    "transfers": [
-      ["12", "southbound", "10177"],
-      ["25", "eastbound", "2045"],
-      ["25", "westbound", "427"]
-    ]
-  },
   "1350": {
     "id": "1350",
     "name": "Forest & Mt Elliott",
@@ -9314,7 +9184,6 @@ const Stops = {
     "lat": "42.34655249",
     "lon": "-83.05751405",
     "routes": [
-      ["498", ""],
       ["53", "southbound"]
     ],
     "transfers": [
@@ -9348,7 +9217,6 @@ const Stops = {
     "lat": "42.347749646",
     "lon": "-83.05798081",
     "routes": [
-      ["498", ""],
       ["53", "northbound"]
     ],
     "transfers": [
@@ -10257,29 +10125,12 @@ const Stops = {
     "lat": "42.38966349",
     "lon": "-83.08617605",
     "routes": [
-      ["498", ""],
       ["53", "northbound"]
     ],
     "transfers": [
       ["38", "eastbound", "55"],
       ["38", "westbound", "1719"],
       ["53", "southbound", "1721"]
-    ]
-  },
-  "1716": {
-    "id": "1716",
-    "name": "Woodward & Calvert",
-    "dir": "SB",
-    "lat": "42.38983649",
-    "lon": "-83.08660605",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": [
-      ["38", "eastbound", "1714"],
-      ["38", "westbound", "615"],
-      ["53", "southbound", "1721"],
-      ["53", "northbound", "1715"]
     ]
   },
   "1719": {
@@ -13982,7 +13833,7 @@ const Stops = {
     ],
     "transfers": [
       ["12", "southbound", "10177"],
-      ["12", "northbound", "135"],
+      ["12", "northbound", "10416"],
       ["25", "westbound", "427"]
     ]
   },
@@ -16114,74 +15965,6 @@ const Stops = {
       ["43", "westbound", "579"]
     ]
   },
-  "2435": {
-    "id": "2435",
-    "name": "Lafayette & Concord",
-    "dir": "WB",
-    "lat": "42.349001898",
-    "lon": "-83.007404764",
-    "routes": [
-      ["48", "southbound"],
-      ["80", "westbound"]
-    ],
-    "transfers": [
-      ["12", "southbound", "2437"],
-      ["12", "northbound", "2436"],
-      ["48", "northbound", "2437"],
-      ["80", "eastbound", "2437"]
-    ]
-  },
-  "2436": {
-    "id": "2436",
-    "name": "Concord & Lafayette",
-    "dir": "NB",
-    "lat": "42.349385277",
-    "lon": "-83.007210446",
-    "routes": [
-      ["12", "northbound"]
-    ],
-    "transfers": [
-      ["12", "southbound", "2437"],
-      ["48", "northbound", "2437"],
-      ["48", "southbound", "2435"],
-      ["80", "westbound", "2435"],
-      ["80", "eastbound", "2437"]
-    ]
-  },
-  "2437": {
-    "id": "2437",
-    "name": "Lafayette & Concord",
-    "dir": "EB",
-    "lat": "42.349156",
-    "lon": "-83.006751",
-    "routes": [
-      ["12", "southbound"],
-      ["48", "northbound"],
-      ["80", "eastbound"]
-    ],
-    "transfers": [
-      ["12", "northbound", "2438"],
-      ["48", "southbound", "2438"],
-      ["80", "westbound", "2438"]
-    ]
-  },
-  "2438": {
-    "id": "2438",
-    "name": "Lafayette & Canton",
-    "dir": "WB",
-    "lat": "42.349457908",
-    "lon": "-83.006342882",
-    "routes": [
-      ["12", "northbound"],
-      ["48", "southbound"],
-      ["80", "westbound"]
-    ],
-    "transfers": [
-      ["12", "southbound", "2437"],
-      ["48", "northbound", "2437"],
-      ["80", "eastbound", "2437"]
-    ]
-  },
   "244": {
     "id": "244",
     "name": "8 Mile & Van Dyke",
@@ -16195,6 +15978,19 @@ const Stops = {
       ["17", "westbound", "247"],
       ["48", "northbound", "753"],
       ["48", "southbound", "754"]
+    ]
+  },
+  "2444": {
+    "id": "2444",
+    "name": "E Grand Blvd & E Lafayette St",
+    "dir": "NB",
+    "lat": "42.350629",
+    "lon": "-83.00395",
+    "routes": [
+      ["12", "northbound"]
+    ],
+    "transfers": [
+      ["12", "southbound", "8363"],
     ]
   },
   "245": {
@@ -16236,6 +16032,19 @@ const Stops = {
     "transfers": [
       ["48", "northbound", "2450"],
       ["80", "eastbound", "2450"]
+    ]
+  },
+  "2460": {
+    "id": "2460",
+    "name": "E Grand Bl & St Paul",
+    "dir": "SB",
+    "lat": "42.353396",
+    "lon": "-83.006154",
+    "routes": [
+      ["12", "southbound"],
+    ],
+    "transfers": [
+      ["12", "northbound", "50"]
     ]
   },
   "2466": {
@@ -24005,10 +23814,12 @@ const Stops = {
     "lat": "42.355425",
     "lon": "-83.007696",
     "routes": [
-      ["7", "eastbound"]
+      ["7", "eastbound"],
+      ["12", "southbound"]
     ],
     "transfers": [
-      ["7", "westbound", "50"]
+      ["7", "westbound", "50"],
+      ["12", "northbound", "50"]
     ]
   },
   "330": {
@@ -26461,23 +26272,8 @@ const Stops = {
       ["7", "westbound"]
     ],
     "transfers": [
-      ["12", "southbound", "3733"],
+      ["12", "southbound", "3736"],
       ["7", "eastbound", "3733"]
-    ]
-  },
-  "3736": {
-    "id": "3736",
-    "name": "Concord & Kercheval",
-    "dir": "SB",
-    "lat": "42.35418",
-    "lon": "-83.010542",
-    "routes": [
-      ["12", "southbound"]
-    ],
-    "transfers": [
-      ["12", "northbound", "3738"],
-      ["7", "eastbound", "3737"],
-      ["7", "westbound", "3738"]
     ]
   },
   "3737": {
@@ -26487,10 +26283,10 @@ const Stops = {
     "lat": "42.354495",
     "lon": "-83.010249",
     "routes": [
-      ["7", "eastbound"]
+      ["7", "eastbound"],
+      ["12", "southbound"]
     ],
     "transfers": [
-      ["12", "southbound", "3736"],
       ["12", "northbound", "3738"],
       ["7", "westbound", "3738"]
     ]
@@ -28295,19 +28091,6 @@ const Stops = {
       ["7", "westbound", "3895"]
     ]
   },
-  "3899": {
-    "id": "3899",
-    "name": "Concord & St Paul",
-    "dir": "NB",
-    "lat": "42.352865872",
-    "lon": "-83.009494257",
-    "routes": [
-      ["12", "northbound"]
-    ],
-    "transfers": [
-      ["12", "southbound", "3900"]
-    ]
-  },
   "390": {
     "id": "390",
     "name": "Temple & Second",
@@ -28318,19 +28101,6 @@ const Stops = {
       ["23", "southbound"]
     ],
     "transfers": []
-  },
-  "3900": {
-    "id": "3900",
-    "name": "Concord & St Paul",
-    "dir": "SB",
-    "lat": "42.352205",
-    "lon": "-83.009237",
-    "routes": [
-      ["12", "southbound"]
-    ],
-    "transfers": [
-      ["12", "northbound", "3899"]
-    ]
   },
   "3902": {
     "id": "3902",
@@ -31520,7 +31290,7 @@ const Stops = {
     ],
     "transfers": [
       ["12", "southbound", "10176"],
-      ["12", "northbound", "135"],
+      ["12", "northbound", "10416"],
       ["25", "westbound", "8137"]
     ]
   },
@@ -32316,7 +32086,7 @@ const Stops = {
     ],
     "transfers": [
       ["12", "southbound", "10177"],
-      ["12", "northbound", "135"],
+      ["12", "northbound", "10416"],
       ["25", "eastbound", "2045"]
     ]
   },
@@ -35833,7 +35603,6 @@ const Stops = {
     "lat": "42.43248349",
     "lon": "-83.11504205",
     "routes": [
-      ["498", ""],
       ["53", "northbound"]
     ],
     "transfers": [
@@ -35849,7 +35618,6 @@ const Stops = {
     "lat": "42.43172349",
     "lon": "-83.11528105",
     "routes": [
-      ["498", ""],
       ["53", "southbound"]
     ],
     "transfers": [
@@ -40301,10 +40069,12 @@ const Stops = {
     "lat": "42.355552483",
     "lon": "-83.007730945",
     "routes": [
-      ["7", "westbound"]
+      ["7", "westbound"],
+      ["12", "northbound"]
     ],
     "transfers": [
-      ["7", "eastbound", "33"]
+      ["7", "eastbound", "33"],
+      ["12", "southbound", "33"]
     ]
   },
   "500": {
@@ -68131,7 +67901,6 @@ const Stops = {
     "lat": "42.40678349",
     "lon": "-83.09806605",
     "routes": [
-      ["498", ""],
       ["53", "southbound"]
     ],
     "transfers": [
@@ -70543,7 +70312,7 @@ const Stops = {
     ],
     "transfers": [
       ["12", "southbound", "10176"],
-      ["12", "northbound", "135"],
+      ["12", "northbound", "10416"],
       ["25", "eastbound", "420"]
     ]
   },
@@ -72041,21 +71810,17 @@ const Stops = {
       ["11", "westbound", "8838"]
     ]
   },
-  "8365": {
-    "id": "8365",
-    "name": "Lafayette & Helen",
+  "8363": {
+    "id": "8363",
+    "name": "E Grand Blvd & E Lafayette St",
     "dir": "EB",
-    "lat": "42.349961",
-    "lon": "-83.004879",
+    "lat": "42.350102",
+    "lon": "-83.003891",
     "routes": [
-      ["12", "southbound"],
-      ["48", "northbound"],
-      ["80", "eastbound"]
+      ["12", "southbound"]
     ],
     "transfers": [
-      ["12", "northbound", "2438"],
-      ["48", "southbound", "762"],
-      ["80", "westbound", "762"]
+      ["12", "northbound", "2444"]
     ]
   },
   "8368": {
@@ -75998,28 +75763,6 @@ const Stops = {
       ["53", "northbound", "897"]
     ]
   },
-  "8950": {
-    "id": "8950",
-    "name": "Woodward & 9 Mile",
-    "dir": "NB",
-    "lat": "42.460916",
-    "lon": "-83.134501",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": []
-  },
-  "8952": {
-    "id": "8952",
-    "name": "Woodward & 9 Mile",
-    "dir": "SB",
-    "lat": "42.460993",
-    "lon": "-83.135202",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": []
-  },
   "8955": {
     "id": "8955",
     "name": "Warren & Steadman",
@@ -78348,17 +78091,6 @@ const Stops = {
       ["96", "eastbound", "9478"]
     ]
   },
-  "9485": {
-    "id": "9485",
-    "name": "Woodward & 11 Mile",
-    "dir": "SB",
-    "lat": "42.489141",
-    "lon": "-83.158905",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": []
-  },
   "9488": {
     "id": "9488",
     "name": "Plymouth & Inkster",
@@ -78399,17 +78131,6 @@ const Stops = {
     "transfers": [
       ["53", "northbound", "892"]
     ]
-  },
-  "9532": {
-    "id": "9532",
-    "name": "Woodward & 11 Mile",
-    "dir": "NB",
-    "lat": "42.488137",
-    "lon": "-83.157208",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": []
   },
   "9535": {
     "id": "9535",
@@ -80479,27 +80200,6 @@ const Stops = {
     ],
     "transfers": [
       ["32", "westbound", "9818"]
-    ]
-  },
-  "993": {
-    "id": "993",
-    "name": "WOODWARD & MANCHESTER",
-    "dir": "MC",
-    "lat": "42.407476",
-    "lon": "-83.098365",
-    "routes": [
-      ["498", ""]
-    ],
-    "transfers": [
-      ["15", "eastbound", "3002"],
-      ["15", "westbound", "201"],
-      ["39", "eastbound", "196"],
-      ["39", "westbound", "201"],
-      ["42", "clockwise", "571"],
-      ["43", "eastbound", "196"],
-      ["43", "westbound", "201"],
-      ["53", "southbound", "785"],
-      ["53", "northbound", "802"]
     ]
   },
   "9936": {

@@ -3,6 +3,7 @@ import MapGL, { Marker } from 'react-map-gl';
 import { Redirect, Link } from 'react-router-dom'
 import Card from 'material-ui/Card';
 import _ from 'lodash';
+import WebMercatorViewport from 'viewport-mercator-project';
 
 import Helpers from '../helpers.js';
 import MapSatelliteSwitch from './MapSatelliteSwitch';
@@ -10,19 +11,20 @@ import Stops from '../data/stops.js';
 
 import {defaultMapStyle, routeLineIndex} from '../style.js';
 import BusStop from './BusStop.js';
+import BusIcon from 'material-ui-icons/DirectionsBus';
 
-class StopMap extends Component {
+class StopWithPredictionMap extends Component {
   constructor(props) {
     super(props)
 
     let stop = Stops[this.props.stopId] || null;
 
     this.state = {
-      showSatellite: true,
+      showSatellite: false,
       viewport: {
         latitude: parseFloat(stop.lat),
         longitude: parseFloat(stop.lon),
-        zoom: 16.5,
+        zoom: 17,
         bearing: 0,
         pitch: 0,
         width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 9 : window.innerWidth,
@@ -30,15 +32,7 @@ class StopMap extends Component {
       }
     }
 
-    this.handleChange = this.handleChange.bind(this);
     this._resize = this._resize.bind(this);
-  }
-
-  handleChange(event) {
-    console.log(event)
-    this.setState({
-      showSatellite: event.target.checked ? true : false
-    });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -78,7 +72,26 @@ class StopMap extends Component {
   render() {
     let style = defaultMapStyle
     let stop = Stops[this.props.stopId] || null
+    let trip = this.props.prediction
 
+    let bbox = [
+      Math.min(stop.lat, parseFloat(trip.position.lat)), 
+      Math.max(stop.lat, parseFloat(trip.position.lat)), 
+      Math.min(stop.lon, parseFloat(trip.position.lon)), 
+      Math.max(stop.lon, parseFloat(trip.position.lon)), 
+    ]
+    console.log(bbox)
+
+    const viewport = new WebMercatorViewport({width: this.state.viewport.width, height: this.state.viewport.height});
+    const bound = viewport.fitBounds(
+      [
+        [bbox[2], bbox[0]], 
+        [bbox[3], bbox[1]]
+      ],
+        {padding: 50}
+      );
+  
+    style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.route, 10));
     style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none')
     _.forEach(style.toJS().layers, (l, i) => {
       if(l['source-layer'] === 'road') {
@@ -87,36 +100,31 @@ class StopMap extends Component {
     })  
 
     // eventually set routes?
-    const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 0).concat(stop.routes))))
-    style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))
+    // const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 0).concat(stop.routes))))
+    // style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))
 
     return (
       <Card className="map">
         <MapGL
           width={this.state.viewport.width}
           height={this.state.viewport.height}
-          latitude={this.state.viewport.latitude}
-          longitude={this.state.viewport.longitude}
-          zoom={this.state.viewport.zoom}
+          latitude={bound.latitude}
+          longitude={bound.longitude}
+          zoom={bound.zoom < 16.5 ? bound.zoom : 16.5}
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
           onClick={this._onClick}>
-          <MapSatelliteSwitch onChange={this.handleChange} checked='true'/>
           <Marker latitude={stop.lat} longitude={stop.lon} onClick={this._onClick} offsetLeft={-20} offsetTop={-20}>
             <BusStop style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
           </Marker>
-          {stop.transfers.map(s => (
-            <Marker latitude={Stops[s[2]].lat} longitude={Stops[s[2]].lon} offsetLeft={-7.5} offsetTop={-7.5}>
-              <Link to={{pathname: `/stop/${s[2]}`}}>
-                <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/>
-              </Link>
-            </Marker>
-          ))}
+          <Marker latitude={trip.position.lat} longitude={trip.position.lon} onClick={this._onClick} offsetLeft={-20} offsetTop={-20}>
+            <BusIcon style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
+          </Marker>
         </MapGL>
       </Card>
     )
   }
 }
 
-export default StopMap;
+export default StopWithPredictionMap;

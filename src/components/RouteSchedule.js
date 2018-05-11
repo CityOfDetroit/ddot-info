@@ -114,8 +114,8 @@ class RouteSchedule extends React.Component {
         <div className="schedule">
           <AppBar position="static" color="default" elevation={0} style={{ display: 'flex', background: 'white' }}>
             <Toolbar elevation={0} style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
-              <span style={{ margin: 0, padding: '.5em 0em', fontSize: '1.5em', display: 'flex', flexDirection: 'row' }}>
-                Schedule for route <span style={{ marginLeft: '.25em' }}><RouteBadge id={this.props.match.params.name} /></span>
+              <span style={{ margin: 0, padding: '.5em 0em', fontSize: '1.5em', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                <span style={{ marginLeft: '.25em' }}><RouteBadge id={this.props.match.params.name} showName/></span>: <span style={{ fontWeight: 700, paddingLeft: '.2em' }}>Schedule</span>
               </span>
               <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', marginBottom: '.5em' }}>
                 <span style={{ fontSize: '.9em' }}><b>Major stops</b> </span>
@@ -129,7 +129,7 @@ class RouteSchedule extends React.Component {
             </Toolbar>
           </AppBar>
           <AppBar position="static" color="default" elevation={0} style={{ display: 'flex', flexWrap: 'wrap', padding: '.5em 0em', marginBottom: '1em' }}>
-            <Toolbar elevation={0} style={{ justifyContent: 'flex-start' }}>
+            <Toolbar elevation={0} style={{ justifyContent: 'flex-start', marginLeft: '.5em' }}>
               <ServicePicker
                 services={this.state.availableServices}
                 currentSvc={this.state.currentSvc}
@@ -141,13 +141,11 @@ class RouteSchedule extends React.Component {
                 route={this.state.route} />
             </Toolbar>
           </AppBar>
-          <div style={{ padding: '1em 0em', backgroundColor: '#fff' }}>
             <ScheduleTable 
               schedule={this.state[this.state.currentSvc]} 
               direction={this.state.currentDirection} 
               liveTrips={_.map(this.state.realtimeTrips, 'properties.tripId')} 
               color={this.state.color} />
-          </div>
         </div>
       </div>
     );

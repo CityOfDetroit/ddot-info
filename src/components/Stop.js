@@ -113,7 +113,8 @@ class Stop extends React.Component {
     this.setState({
       fetchedStopSchedule: false, 
       slideIndex: 0, 
-      routeStopType: 'schedule'
+      routeStopType: 'schedule',
+      tripData: null
     });
 
     if (this.props.match.params.name !== nextProps.match.params.name) {

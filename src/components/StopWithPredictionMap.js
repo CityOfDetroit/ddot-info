@@ -25,8 +25,8 @@ class StopWithPredictionMap extends Component {
         zoom: 17,
         bearing: 0,
         pitch: 0,
-        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 9 : window.innerWidth,
-        height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8)) : 300,
+        width: window.innerWidth > 768 ? window.innerWidth * (4/8) - 5 : window.innerWidth,
+        height: window.innerWidth > 768 ? ((window.innerHeight - 75) * (5/8)) : 250,
       }
     }
 
@@ -44,11 +44,11 @@ class StopWithPredictionMap extends Component {
   }
 
   _resize = () => {
-    if (window.innerWidth > 650) {
+    if (window.innerWidth > 768) {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth * (3/8) - 9,
+          width: window.innerWidth * (48) - 9,
           height: ((window.innerHeight - 75) * (5/8))
         }
       });
@@ -57,7 +57,7 @@ class StopWithPredictionMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth,
-          height: 300
+          height: 250
         }
       });
     }
@@ -86,7 +86,7 @@ class StopWithPredictionMap extends Component {
         [bbox[2], bbox[0]], 
         [bbox[3], bbox[1]]
       ],
-        {padding: 50}
+        {padding: 60}
       );
   
     style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.route, 10));
@@ -108,15 +108,15 @@ class StopWithPredictionMap extends Component {
           height={this.state.viewport.height}
           latitude={bound.latitude}
           longitude={bound.longitude}
-          zoom={bound.zoom < 16.5 ? bound.zoom : 16.5}
+          zoom={bound.zoom < 15 ? bound.zoom : 15}
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
           onClick={this._onClick}>
-          <Marker latitude={stop.lat} longitude={stop.lon} onClick={this._onClick} offsetLeft={-20} offsetTop={-20}>
+          <Marker latitude={stop.lat} longitude={stop.lon} offsetLeft={-20} offsetTop={-20}>
             <BusStop style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
           </Marker>
-          <Marker latitude={trip.position.lat} longitude={trip.position.lon} onClick={this._onClick} offsetLeft={-20} offsetTop={-20}>
+          <Marker latitude={trip.position.lat} longitude={trip.position.lon} offsetLeft={-20} offsetTop={-20}>
             <BusIcon style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
           </Marker>
         </MapGL>

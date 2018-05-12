@@ -40,13 +40,13 @@ body:after{
   box-shadow: 1px 3px 10px #aaa;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 768px) {
   /* .map {
     height: 400px;
   } */
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 768px) {
   .App, .BusRoute, .nearby {
     display: grid;
     grid-template: auto repeat(8, 1fr) / repeat(8, 1fr);
@@ -108,7 +108,7 @@ body:after{
 
   /* Stop, LineRealTime */
   .map {
-    grid-column: 1/4;
+    grid-column: 1/5;
     grid-row: 2/7;
   }
   .transfers {
@@ -116,7 +116,7 @@ body:after{
     grid-row: 7/11;
   }
   .routes {
-    grid-column: 4/9;
+    grid-column: 5/9;
     grid-row: 2/11;
   }
 

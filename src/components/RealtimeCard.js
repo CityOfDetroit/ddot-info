@@ -13,7 +13,7 @@ const styles = {
     prediction: {
         display: 'flex',
         alignItems: 'center',
-        opacity: '1',
+        opacity: '0.6',
         marginTop: '.5em'
     },
     predictionIcon: {
@@ -116,7 +116,7 @@ class RealtimeCard extends Component {
                         <Link 
                             style={{ fontSize: '1em', color: '#000', fontWeight: 300, padding: '0px 5px 0px 5px' }} 
                             to={{ pathname: `/stop/${nextStopId}/` }}>
-                            <span>{Stops[nextStopId].name}</span>
+                            <span style={{fontWeight: 700}}>{Stops[nextStopId].name}</span>
                         </Link>
                         <span style={{ background: '#eee', padding: '.25em', display: 'inline-block' }}>#{nextStopId}</span>
                         {/* {this.computeStopsAway(nextStopId, this.props.stop) > 0 ?

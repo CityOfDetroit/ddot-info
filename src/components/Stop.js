@@ -112,8 +112,7 @@ class Stop extends React.Component {
   componentWillReceiveProps(nextProps) {
     this.setState({
       fetchedStopSchedule: false, 
-      slideIndex: 0, 
-      routeStopType: 'schedule',
+      slideIndex: 0,
       tripData: null
     });
 
@@ -130,9 +129,11 @@ class Stop extends React.Component {
   render() {
     const stopId = this.props.match.params.name;
     const stopName = Stops[stopId.toString()].name;
-    const stopRoutes = Stops[stopId.toString()].routes;
+    const stopRoutes = Stops[stopId.toString()].routes
+    console.log(stopRoutes)
     const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat];
     const stopTransfers = Stops[stopId.toString()].transfers;
+    console.log(stopTransfers)
     const { slideIndex } = this.state;
 
     return (
@@ -157,6 +158,7 @@ class Stop extends React.Component {
                 {stopRoutes.map((r, i) => (
                   <Tab label={<RouteBadge id={r[0]} />} value={i} style={{ minWidth: 40, width: 50 }} key={i} />
                 ))}
+                <Tab label={'Transfers'} value={stopRoutes.length} style={{fontWeight: 700}} />
               </Tabs>
             </Toolbar>
           </AppBar>
@@ -205,9 +207,11 @@ class Stop extends React.Component {
                   </div>
                 </div>
             ))}
+            <div>
+              {stopTransfers.length > 0 && this.state.fetchedStopSchedule && this.state.fetchedPredictions ? <StopTransfers stops={_.groupBy(stopTransfers, 0)} /> : null}
+            </div>
             </SwipeableViews>
         </div>
-        {stopTransfers.length > 0 && this.state.fetchedStopSchedule && this.state.fetchedPredictions ? <StopTransfers stops={_.groupBy(stopTransfers, 0)} /> : null}
       </div>
     );
   }

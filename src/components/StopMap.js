@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MapGL, { Marker } from 'react-map-gl';
 import { Link } from 'react-router-dom'
 import Card from 'material-ui/Card';
+import Avatar from 'material-ui/Avatar'
 import _ from 'lodash';
 
 import Helpers from '../helpers.js';
@@ -26,7 +27,7 @@ class StopMap extends Component {
         bearing: 0,
         pitch: 0,
         width: window.innerWidth > 768 ? window.innerWidth * (4/8) - 5 : window.innerWidth,
-        height: window.innerWidth > 768 ? ((window.innerHeight - 75) * (5/8)) : 250,
+        height: window.innerWidth > 768 ? (window.innerHeight - 75) : 250,
       }
     }
 
@@ -57,7 +58,7 @@ class StopMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth * (4/8) - 5,
-          height: ((window.innerHeight - 75) * (5/8))
+          height: window.innerHeight - 75
         }
       });
     } else {
@@ -106,10 +107,16 @@ class StopMap extends Component {
           <Marker latitude={stop.lat} longitude={stop.lon} onClick={this._onClick} offsetLeft={-20} offsetTop={-20}>
             <BusStop style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
           </Marker>
-          {stop.transfers.map(s => (
-            <Marker latitude={Stops[s[2]].lat} longitude={Stops[s[2]].lon} offsetLeft={-7.5} offsetTop={-7.5}>
+          {stop.transfers.map((s, i) => (
+            <Marker latitude={Stops[s[2]].lat} longitude={Stops[s[2]].lon} offsetLeft={-20} offsetTop={-20}>
               <Link to={{pathname: `/stop/${s[2]}`}}>
-                <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/>
+                <Avatar
+                  style={{backgroundColor: 'rgba(0,0,0,.65)', fontWeight: 700, color: 'white'}}
+                >
+                  {i+1}
+                </Avatar>
+                {/* <div style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}>{i}</div> */}
+                {/* <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/> */}
               </Link>
             </Marker>
           ))}

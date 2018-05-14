@@ -119,6 +119,7 @@ body:after{
   .routes {
     grid-column: 5/9;
     grid-row: 2/11;
+    overflow-y: auto;
   }
 
   /* / */

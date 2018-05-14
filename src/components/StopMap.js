@@ -6,7 +6,6 @@ import Avatar from 'material-ui/Avatar'
 import _ from 'lodash';
 
 import Helpers from '../helpers.js';
-import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Stops from '../data/stops.js';
 
 import {defaultMapStyle, routeLineIndex} from '../style.js';
@@ -110,7 +109,6 @@ class StopMap extends Component {
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
           onClick={this._onClick}>
-          {/* <MapSatelliteSwitch onChange={this.handleChange} checked='true'/> */}
           <Marker latitude={stop.lat} longitude={stop.lon} onClick={this._onClick} offsetLeft={-20} offsetTop={-20}>
             <BusStop style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
           </Marker>

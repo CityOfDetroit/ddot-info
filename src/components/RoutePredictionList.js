@@ -7,6 +7,7 @@ import SchedSVG from 'material-ui-icons/Schedule';
 import LiveSVG from 'material-ui-icons/SpeakerPhone';
 import ExpandLess from 'material-ui-icons/ExpandLess';
 import ExpandMore from 'material-ui-icons/ExpandMore';
+import _ from 'lodash'
 
 import RealtimeCard from './RealtimeCard';
 import Helpers from '../helpers.js';
@@ -25,6 +26,7 @@ class RoutePredictionList extends React.Component {
 
   handleClick = tripId => () => {
     if(this.state.open === tripId) { this.props.onChange(null) }
+    else {this.props.onChange(tripId, this.props.route)}
     this.setState({
       open: this.state.open === tripId ? null : tripId
     });
@@ -47,7 +49,7 @@ class RoutePredictionList extends React.Component {
               </ListItemIcon>
             </ListItem>
             <Collapse in={this.state.open === p.tripId && this.props.isOpen} style={{ marginBottom: '.5em' }} timeout="auto" unmountOnExit>
-              <RealtimeCard trip={p.tripId} stop={this.props.stop} route={this.props.route} onChange={this.props.onChange}/>
+              <RealtimeCard trip={p.tripId} stop={this.props.stop} status={p} route={this.props.route}/>
             </Collapse>
         </div>
           )) : <Card><CardContent style={{ padding: '1em' }}>There are currently no real-time predictions available.</CardContent></Card>}

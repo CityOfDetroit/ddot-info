@@ -70,14 +70,16 @@ class StopWithPredictionMap extends Component {
   render() {
     let style = defaultMapStyle
     let stop = Stops[this.props.stopId] || null
-    let trip = this.props.prediction
+    let position = this.props.prediction.tripStatus.position
+    console.log(stop)
 
     let bbox = [
-      Math.min(stop.lat, parseFloat(trip.position.lat)), 
-      Math.max(stop.lat, parseFloat(trip.position.lat)), 
-      Math.min(stop.lon, parseFloat(trip.position.lon)), 
-      Math.max(stop.lon, parseFloat(trip.position.lon)), 
+      Math.min(stop.lat, parseFloat(position.lat)), 
+      Math.max(stop.lat, parseFloat(position.lat)), 
+      Math.min(stop.lon, parseFloat(position.lon)), 
+      Math.max(stop.lon, parseFloat(position.lon)), 
     ]
+
     console.log(bbox)
 
     const viewport = new WebMercatorViewport({width: this.state.viewport.width, height: this.state.viewport.height});
@@ -97,10 +99,6 @@ class StopWithPredictionMap extends Component {
       }
     })  
 
-    // eventually set routes?
-    // const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 0).concat(stop.routes))))
-    // style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))
-
     return (
       <Card className="map">
         <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
@@ -113,6 +111,9 @@ class StopWithPredictionMap extends Component {
           latitude={bound.latitude}
           longitude={bound.longitude}
           zoom={bound.zoom < 15 ? bound.zoom : 15}
+          // latitude={42.5}
+          // longitude={-83}
+          // zoom={15}
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
@@ -120,7 +121,7 @@ class StopWithPredictionMap extends Component {
           <Marker latitude={stop.lat} longitude={stop.lon} offsetLeft={-10} offsetTop={-10}>
             <BusStop style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
           </Marker>
-          <Marker latitude={trip.position.lat} longitude={trip.position.lon} offsetLeft={-10} offsetTop={-10}>
+          <Marker latitude={position.lat} longitude={position.lon} offsetLeft={-10} offsetTop={-10}>
             <BusIcon style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
           </Marker>
         </MapGL>

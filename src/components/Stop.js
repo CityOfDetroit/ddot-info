@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import _ from 'lodash';
 import Tabs, { Tab } from 'material-ui/Tabs';
-import { grey300 } from 'material-ui/colors';
-import LiveIcon from 'material-ui-icons/SpeakerPhone';
-import ScheduleIcon from 'material-ui-icons/Schedule';
+
 import Toolbar from 'material-ui/Toolbar';
 import Card, {CardHeader} from 'material-ui/Card';
 import { AppBar } from 'material-ui';
@@ -22,7 +20,6 @@ import RouteLink from './RouteLink';
 import RoutePredictionList from './RoutePredictionList';
 import Schedules from '../data/schedules.js';
 import Helpers from '../helpers';
-import BusStopIcon from './BusStop';
 
 const styles = {
   title: {
@@ -43,12 +40,11 @@ class Stop extends React.Component {
       fetchedPredictions: false,
       multipleDirs: false,
       slideIndex: 0,
-      routeStopType: 'next',
+      tripId: null,
       tripData: null,
       route: null
     }
 
-    this.handleRouteChange = this.handleRouteChange.bind(this);
     this.handleRoutePredictionChange = this.handleRoutePredictionChange.bind(this)
   }
 
@@ -59,9 +55,10 @@ class Stop extends React.Component {
       d.data.entry.arrivalsAndDepartures = _.filter(d.data.entry.arrivalsAndDepartures, ad => {
         return (ad.predicted && ad.predictedArrivalTime > d.currentTime) || !ad.predicted
       })
-      this.setState({ 
+      this.setState({
+        tripData: this.state.tripId ? _.filter(this.state.predictions.data.entry.arrivalsAndDepartures, a => {return a.tripId === this.state.tripId})[0] : null,
         predictions: d, 
-        fetchedPredictions: true 
+        fetchedPredictions: true,
       })
     })
     .catch(e => console.log(e));
@@ -90,15 +87,10 @@ class Stop extends React.Component {
     this.setState({ slideIndex: slideIndex, tripData: null })
   }
 
-  handleRouteChange(event, value) {
+  handleRoutePredictionChange = (tripId, route) => {
     this.setState({
-      routeStopType: value,
-    });
-  }
-
-  handleRoutePredictionChange = (tripData, route) => {
-    this.setState({
-      tripData: tripData,
+      tripData: _.filter(this.state.predictions.data.entry.arrivalsAndDepartures, a => {return a.tripId === tripId})[0],
+      tripId: tripId,
       route: route
     })
   }
@@ -106,14 +98,14 @@ class Stop extends React.Component {
   componentDidMount() {
     this.fetchRealtimeData(this.props.match.params.name);
     this.fetchStopScheduleData(this.props.match.params.name);
-    this.interval = setInterval(() => this.fetchRealtimeData(this.props.match.params.name), 5000);
+    this.interval = setInterval(() => this.fetchRealtimeData(this.props.match.params.name), 2000);
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
       fetchedStopSchedule: false, 
       slideIndex: 0,
-      tripData: null
+      tripId: null
     });
 
     if (this.props.match.params.name !== nextProps.match.params.name) {
@@ -128,7 +120,6 @@ class Stop extends React.Component {
 
   render() {
     const stopId = this.props.match.params.name;
-    const stopName = Stops[stopId.toString()].name;
     const stopRoutes = Stops[stopId.toString()].routes
     const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat];
     const stopTransfers = Stops[stopId.toString()].transfers;
@@ -137,11 +128,13 @@ class Stop extends React.Component {
     return (
       <div className='App' style={{ background: Helpers.colors['background'] }}>
         <TopNav />
-        {this.state.tripData ? <StopWithPredictionMap stopId={stopId} center={stopCoords} prediction={this.state.tripData} route={this.state.route} /> : <StopMap stopId={stopId} center={stopCoords} />}
+        {this.state.tripId ? 
+          <StopWithPredictionMap stopId={stopId} center={stopCoords} prediction={this.state.tripData} route={this.state.route} /> 
+          : 
+          <StopMap stopId={stopId} center={stopCoords} />}
         <div className='routes'>
           <Card>
             <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
-              {/* <BusStopIcon style={{ marginLeft: '1em', backgroundColor: 'rgba(0, 0, 0, .8)', color: 'yellow', borderRadius: 999, height: '1.8em', width: '1.8em' }}/> */}
               <CardHeader title="Bus routes that stop here" subheader="Transfers tab shows nearby stops and routes" classes={{ title: this.props.classes.title }} style={{ fontSize: '1.1em' }}/>
             </div>
           </Card>
@@ -169,14 +162,6 @@ class Stop extends React.Component {
                 <AppBar position="static" color="default" elevation={0} style={{ display: 'flex' }}>
                   <Toolbar style={{ justifyContent: 'space-between' }} elevation={0}>
                     <RouteLink id={r[0]} />
-                    {/* <Tabs 
-                      onChange={this.handleRouteChange} 
-                      value={this.state.routeStopType}
-                      indicatorColor="primary"
-                      textColor="primary">
-                      <Tab icon={<ScheduleIcon color='black' />} label='Schedule'  value='schedule' style={{ backgroundColor: grey300, color: 'black', padding: '0em 2em', textTransform: 'none' }}/>
-                      <Tab icon={<LiveIcon color='black' />} label='Live' value='next' style={{ backgroundColor: grey300, color: 'black', textTransform: 'none' }} />
-                    </Tabs> */}
                   </Toolbar>
                 </AppBar>
                 <div>

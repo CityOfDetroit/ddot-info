@@ -23,7 +23,7 @@ class StopMap extends Component {
       viewport: {
         latitude: parseFloat(stop.lat),
         longitude: parseFloat(stop.lon),
-        zoom: 16.5,
+        zoom: window.innerWidth > 768 ? 17 : 16 ,
         bearing: 0,
         pitch: 0,
         width: window.innerWidth > 768 ? window.innerWidth * (4/8) - 5 : window.innerWidth,
@@ -57,6 +57,7 @@ class StopMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
+          zoom: 17,
           width: window.innerWidth * (4/8) - 5,
           height: window.innerHeight - 75
         }
@@ -65,6 +66,7 @@ class StopMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
+          zoom: 16,
           width: window.innerWidth,
           height: 250
         }

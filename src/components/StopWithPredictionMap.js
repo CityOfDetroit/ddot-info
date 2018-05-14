@@ -22,11 +22,11 @@ class StopWithPredictionMap extends Component {
       viewport: {
         latitude: parseFloat(stop.lat),
         longitude: parseFloat(stop.lon),
-        zoom: 17,
+        zoom: window.innerWidth > 768 ? 17 : 15 ,
         bearing: 0,
         pitch: 0,
         width: window.innerWidth > 768 ? window.innerWidth * (4/8) - 5 : window.innerWidth,
-        height: window.innerWidth > 768 ? ((window.innerHeight - 75) * (5/8)) : 250,
+        height: window.innerWidth > 768 ? (window.innerHeight - 75) : 250,
       }
     }
 
@@ -48,8 +48,8 @@ class StopWithPredictionMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth * (48) - 9,
-          height: ((window.innerHeight - 75) * (5/8))
+          width: window.innerWidth * (1/2) - 5,
+          height: window.innerHeight - 75
         }
       });
     } else {
@@ -86,7 +86,7 @@ class StopWithPredictionMap extends Component {
         [bbox[2], bbox[0]], 
         [bbox[3], bbox[1]]
       ],
-        {padding: 60}
+        {padding: window.innerWidth > 768 ? 60 : 30}
       );
   
     style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.route, 10));
@@ -113,11 +113,11 @@ class StopWithPredictionMap extends Component {
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
           onClick={this._onClick}>
-          <Marker latitude={stop.lat} longitude={stop.lon} offsetLeft={-20} offsetTop={-20}>
-            <BusStop style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
+          <Marker latitude={stop.lat} longitude={stop.lon} offsetLeft={-10} offsetTop={-10}>
+            <BusStop style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
           </Marker>
-          <Marker latitude={trip.position.lat} longitude={trip.position.lon} offsetLeft={-20} offsetTop={-20}>
-            <BusIcon style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
+          <Marker latitude={trip.position.lat} longitude={trip.position.lon} offsetLeft={-10} offsetTop={-10}>
+            <BusIcon style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
           </Marker>
         </MapGL>
       </Card>

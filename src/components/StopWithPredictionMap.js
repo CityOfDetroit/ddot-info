@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MapGL, { Marker } from 'react-map-gl';
-import Card from 'material-ui/Card';
+import Card, {CardHeader} from 'material-ui/Card';
 import _ from 'lodash';
 import WebMercatorViewport from 'viewport-mercator-project';
 
@@ -26,7 +26,7 @@ class StopWithPredictionMap extends Component {
         bearing: 0,
         pitch: 0,
         width: window.innerWidth > 768 ? window.innerWidth * (4/8) - 5 : window.innerWidth,
-        height: window.innerWidth > 768 ? (window.innerHeight - 75) : 250,
+        height: window.innerWidth > 768 ? (window.innerHeight - 75 - 84) : 250,
       }
     }
 
@@ -49,7 +49,7 @@ class StopWithPredictionMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth * (1/2) - 5,
-          height: window.innerHeight - 75
+          height: (window.innerHeight - 75 - 84)
         }
       });
     } else {
@@ -103,6 +103,10 @@ class StopWithPredictionMap extends Component {
 
     return (
       <Card className="map">
+        <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
+          <BusStop style={{ marginLeft: '1em', backgroundColor: 'rgba(0, 0, 0, .8)', color: 'yellow', borderRadius: 999, height: '1.8em', width: '1.8em' }}/>
+          <CardHeader title={stop.name} subheader={`Stop ID: #${stop.id}`} style={{ fontSize: '1.2em' }}/>
+        </div>
         <MapGL
           width={this.state.viewport.width}
           height={this.state.viewport.height}

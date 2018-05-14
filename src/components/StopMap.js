@@ -110,7 +110,7 @@ class StopMap extends Component {
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
           onClick={this._onClick}>
-          <MapSatelliteSwitch onChange={this.handleChange} checked='true'/>
+          {/* <MapSatelliteSwitch onChange={this.handleChange} checked='true'/> */}
           <Marker latitude={stop.lat} longitude={stop.lon} onClick={this._onClick} offsetLeft={-20} offsetTop={-20}>
             <BusStop style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
           </Marker>

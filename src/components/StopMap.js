@@ -27,7 +27,7 @@ class StopMap extends Component {
         bearing: 0,
         pitch: 0,
         width: window.innerWidth > 768 ? window.innerWidth * (4/8) - 5 : window.innerWidth,
-        height: window.innerWidth > 768 ? (window.innerHeight - 75) : 250,
+        height: window.innerWidth > 768 ? (window.innerHeight - 165) : 250,
       }
     }
 
@@ -59,7 +59,7 @@ class StopMap extends Component {
           ...this.state.viewport,
           zoom: 17,
           width: window.innerWidth * (4/8) - 5,
-          height: window.innerHeight - 60 - 84 - 10
+          height: window.innerHeight - 165
         }
       });
     } else {

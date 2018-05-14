@@ -26,7 +26,7 @@ class StopWithPredictionMap extends Component {
         bearing: 0,
         pitch: 0,
         width: window.innerWidth > 768 ? window.innerWidth * (4/8) - 5 : window.innerWidth,
-        height: window.innerWidth > 768 ? (window.innerHeight - 75 - 84) : 250,
+        height: window.innerWidth > 768 ? (window.innerHeight - 165) : 250,
       }
     }
 
@@ -49,7 +49,7 @@ class StopWithPredictionMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth * (1/2) - 5,
-          height: (window.innerHeight - 75 - 84)
+          height: (window.innerHeight - 165)
         }
       });
     } else {

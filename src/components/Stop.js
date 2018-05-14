@@ -143,8 +143,8 @@ class Stop extends React.Component {
         <div className='routes'>
           <Card>
             <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
-              <BusStopIcon style={{ marginLeft: '1em', backgroundColor: 'rgba(0, 0, 0, .8)', color: 'yellow', borderRadius: 999, height: '1.8em', width: '1.8em' }}/>
-              <CardHeader title={stopName} subheader={`Stop ID: #${stopId}`} classes={{ title: this.props.classes.title }} style={{ fontSize: '1.2em' }}/>
+              {/* <BusStopIcon style={{ marginLeft: '1em', backgroundColor: 'rgba(0, 0, 0, .8)', color: 'yellow', borderRadius: 999, height: '1.8em', width: '1.8em' }}/> */}
+              <CardHeader title="Bus routes that stop here" subheader="Transfers tab shows nearby stops and routes" classes={{ title: this.props.classes.title }} style={{ fontSize: '1.1em' }}/>
             </div>
           </Card>
           <AppBar position="static" color="red" style={{ display: 'flex' }} elevation={0}>

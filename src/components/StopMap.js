@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MapGL, { Marker } from 'react-map-gl';
 import { Link } from 'react-router-dom'
-import Card from 'material-ui/Card';
+import Card, {CardHeader} from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar'
 import _ from 'lodash';
 
@@ -59,7 +59,7 @@ class StopMap extends Component {
           ...this.state.viewport,
           zoom: 17,
           width: window.innerWidth * (4/8) - 5,
-          height: window.innerHeight - 75
+          height: window.innerHeight - 60 - 84 - 10
         }
       });
     } else {
@@ -96,6 +96,10 @@ class StopMap extends Component {
 
     return (
       <Card className="map">
+        <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
+          <BusStop style={{ marginLeft: '1em', backgroundColor: 'rgba(0, 0, 0, .8)', color: 'yellow', borderRadius: 999, height: '1.8em', width: '1.8em' }}/>
+          <CardHeader title={stop.name} subheader={`Stop ID: #${stop.id}`} style={{ fontSize: '1.2em' }}/>
+        </div>
         <MapGL
           width={this.state.viewport.width}
           height={this.state.viewport.height}

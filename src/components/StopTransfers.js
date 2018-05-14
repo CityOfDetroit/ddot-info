@@ -13,7 +13,7 @@ class StopTransfers extends React.Component {
     const stops = this.props.stops;
     console.log(stops)
     return (
-      <div className="transfers">
+      <div className="transfers" style={{padding: 10, backgroundColor: 'white'}}>
         {Object.keys(this.props.stops).map((s, i) => (
           <div key={i} style={{ background: 'white', padding: 10 }}>
             <div style={{display: 'flex', alignItems: 'center'}}>

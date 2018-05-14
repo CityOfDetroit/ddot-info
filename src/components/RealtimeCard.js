@@ -8,6 +8,7 @@ import ScheduleIcon from 'material-ui-icons/Schedule';
 import Warning from 'material-ui-icons/Warning';
 import Stops from '../data/stops.js'
 import Helpers from '../helpers';
+import moment from 'moment'
 
 const styles = {
     prediction: {
@@ -34,18 +35,12 @@ const styles = {
 
 /** Realtime bus details for RouteRealtime */
 class RealtimeCard extends Component {
-    computeStopsAway(current, target) {
-        const stopOrder = this.state.allData.data.references.stops.map(s => s.id.slice(5,));
-        const currentPosition = stopOrder.indexOf(current);
-        const targetPosition = stopOrder.indexOf(target);
-        return (targetPosition - currentPosition);
-      }    
-    
-    computeTimeAway(current, target) {
-        const currentTime = this.state.allData.data.entry.schedule.stopTimes.filter(st => { return st.stopId.slice(5,) === current.toString() })[0] || this.state.allData.data.entry.schedule.stopTimes.slice(1)[0];
-        const targetTime = this.state.allData.data.entry.schedule.stopTimes.filter(st => { return st.stopId.slice(5,) === target.toString() })[0];
-        const timeFromTarget = Math.floor((targetTime.departureTime - currentTime.departureTime)/60);
-        return timeFromTarget;
+
+    computeTimeAway(tripStatus) {
+        if (tripStatus.predicted) {
+            return Math.ceil((tripStatus.predictedArrivalTime - moment()) / 60000)
+        }
+        else { return Math.ceil((tripStatus.scheduledArrivalTime - moment()) / 60000) }
     }
 
     render() {
@@ -67,12 +62,12 @@ class RealtimeCard extends Component {
             (<Card elevation={3} style={{ minWidth: 320, maxHeight: 500, display: 'flex', flexWrap: 'wrap' }}>
                 {/* <CardHeader title={`${this.props.status.direction} ${this.props.status.tripId}`} subheader={`Next stop: ${Stops[nextStopId].name}`} /> */}
                 <CardContent>
-                    {this.props.status.activeTripId === this.props.trip ?
+                    {this.props.status.tripStatus.activeTripId === this.props.trip ?
                     <div style={{display: 'flex', alignItems: 'center'}}>
                         <BusIcon style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
                         <div style={{marginLeft: '.5em'}}>
                             Arrives here in 
-                            <span style={{ fontWeight: 700, paddingLeft: '.25em' }}>{this.computeTimeAway(nextStopId, this.props.stop)} minutes</span>
+                            <span style={{ fontWeight: 700, paddingLeft: '.25em' }}>{this.computeTimeAway(this.props.status)} minutes</span>
                         </div>
                     </div>
                     : <div style={styles.prediction}><Warning style={styles.predictionIcon}/>This bus is still traveling {nextStopDirection} and has not started this {opposites[nextStopDirection]} trip </div>
@@ -86,9 +81,6 @@ class RealtimeCard extends Component {
                             <span style={{fontWeight: 700}}>{Stops[nextStopId].name}</span>
                         </Link>
                         <span style={{ background: '#eee', padding: '.25em', display: 'inline-block' }}>#{nextStopId}</span>
-                        {/* {this.computeStopsAway(nextStopId, this.props.stop) > 0 ?
-                            <span style={{ color: '#444', paddingLeft: 10 }}>({this.computeStopsAway(nextStopId, this.props.stop)} stops away)</span>
-                            : ``}  */}
                     </div>
                     {this.props.status.predicted ? 
                         <div style={styles.prediction}>

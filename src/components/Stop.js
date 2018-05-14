@@ -130,10 +130,8 @@ class Stop extends React.Component {
     const stopId = this.props.match.params.name;
     const stopName = Stops[stopId.toString()].name;
     const stopRoutes = Stops[stopId.toString()].routes
-    console.log(stopRoutes)
     const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat];
     const stopTransfers = Stops[stopId.toString()].transfers;
-    console.log(stopTransfers)
     const { slideIndex } = this.state;
 
     return (
@@ -211,7 +209,7 @@ class Stop extends React.Component {
               {stopTransfers.length > 0 && 
                 this.state.fetchedStopSchedule && 
                 this.state.fetchedPredictions ? 
-                <StopTransfers stops={_.groupBy(stopTransfers, 2)} /> : 
+                <StopTransfers stops={stopTransfers} /> : 
                 null}
             </div>
             </SwipeableViews>

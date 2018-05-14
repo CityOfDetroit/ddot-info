@@ -208,7 +208,11 @@ class Stop extends React.Component {
                 </div>
             ))}
             <div>
-              {stopTransfers.length > 0 && this.state.fetchedStopSchedule && this.state.fetchedPredictions ? <StopTransfers stops={_.groupBy(stopTransfers, 0)} /> : null}
+              {stopTransfers.length > 0 && 
+                this.state.fetchedStopSchedule && 
+                this.state.fetchedPredictions ? 
+                <StopTransfers stops={_.groupBy(stopTransfers, 2)} /> : 
+                null}
             </div>
             </SwipeableViews>
         </div>

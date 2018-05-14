@@ -81,6 +81,7 @@ class StopMap extends Component {
   render() {
     let style = defaultMapStyle
     let stop = Stops[this.props.stopId] || null
+    let transfers = _.groupBy(stop.transfers, 2)
 
     style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none')
     _.forEach(style.toJS().layers, (l, i) => {
@@ -109,16 +110,14 @@ class StopMap extends Component {
           <Marker latitude={stop.lat} longitude={stop.lon} onClick={this._onClick} offsetLeft={-20} offsetTop={-20}>
             <BusStop style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
           </Marker>
-          {stop.transfers.map((s, i) => (
-            <Marker latitude={Stops[s[2]].lat} longitude={Stops[s[2]].lon} offsetLeft={-20} offsetTop={-20}>
-              <Link to={{pathname: `/stop/${s[2]}`}}>
+          {Object.keys(transfers).map((s, i) => (
+            <Marker latitude={Stops[s].lat} longitude={Stops[s].lon} offsetLeft={-20} offsetTop={-20}>
+              <Link to={{pathname: `/stop/${s}`}}>
                 <Avatar
                   style={{backgroundColor: 'rgba(0,0,0,.65)', fontWeight: 700, color: 'white'}}
                 >
                   {i+1}
                 </Avatar>
-                {/* <div style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}>{i}</div> */}
-                {/* <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/> */}
               </Link>
             </Marker>
           ))}

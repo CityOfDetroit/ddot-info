@@ -114,9 +114,9 @@ class StopMap extends Component {
           </Marker>
           {Object.keys(transfers).map((s, i) => (
             <Marker latitude={Stops[s].lat} longitude={Stops[s].lon} offsetLeft={-20} offsetTop={-20}>
-              <Link to={{pathname: `/stop/${s}`}}>
+              <Link to={{pathname: `/stop/${s}`}} style={{textDecoration: 'none'}}>
                 <Avatar
-                  style={{backgroundColor: 'rgba(0,0,0,.65)', fontWeight: 700, color: 'white'}}
+                  style={{backgroundColor: 'rgba(0,0,0,.65)', fontWeight: 700, color: 'white', textDecoration: 'none'}}
                 >
                   {i+1}
                 </Avatar>

@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import MapGL, { Marker } from 'react-map-gl';
-import { Redirect, Link } from 'react-router-dom'
-import Card from 'material-ui/Card';
+import Card, {CardHeader} from 'material-ui/Card';
 import _ from 'lodash';
 import WebMercatorViewport from 'viewport-mercator-project';
 
 import Helpers from '../helpers.js';
-import MapSatelliteSwitch from './MapSatelliteSwitch';
 import Stops from '../data/stops.js';
 
 import {defaultMapStyle, routeLineIndex} from '../style.js';
@@ -24,11 +22,11 @@ class StopWithPredictionMap extends Component {
       viewport: {
         latitude: parseFloat(stop.lat),
         longitude: parseFloat(stop.lon),
-        zoom: 17,
+        zoom: window.innerWidth > 768 ? 17 : 15 ,
         bearing: 0,
         pitch: 0,
-        width: window.innerWidth > 650 ? window.innerWidth * (3/8) - 9 : window.innerWidth,
-        height: window.innerWidth > 650 ? ((window.innerHeight - 75) * (5/8)) : 300,
+        width: window.innerWidth > 768 ? window.innerWidth * (4/8) - 5 : window.innerWidth,
+        height: window.innerWidth > 768 ? (window.innerHeight - 165) : 250,
       }
     }
 
@@ -46,12 +44,12 @@ class StopWithPredictionMap extends Component {
   }
 
   _resize = () => {
-    if (window.innerWidth > 650) {
+    if (window.innerWidth > 768) {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth * (3/8) - 9,
-          height: ((window.innerHeight - 75) * (5/8))
+          width: window.innerWidth * (1/2) - 5,
+          height: (window.innerHeight - 165)
         }
       });
     } else {
@@ -59,7 +57,7 @@ class StopWithPredictionMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth,
-          height: 300
+          height: 250
         }
       });
     }
@@ -72,14 +70,16 @@ class StopWithPredictionMap extends Component {
   render() {
     let style = defaultMapStyle
     let stop = Stops[this.props.stopId] || null
-    let trip = this.props.prediction
+    let position = this.props.prediction.tripStatus.position
+    console.log(stop)
 
     let bbox = [
-      Math.min(stop.lat, parseFloat(trip.position.lat)), 
-      Math.max(stop.lat, parseFloat(trip.position.lat)), 
-      Math.min(stop.lon, parseFloat(trip.position.lon)), 
-      Math.max(stop.lon, parseFloat(trip.position.lon)), 
+      Math.min(stop.lat, parseFloat(position.lat)), 
+      Math.max(stop.lat, parseFloat(position.lat)), 
+      Math.min(stop.lon, parseFloat(position.lon)), 
+      Math.max(stop.lon, parseFloat(position.lon)), 
     ]
+
     console.log(bbox)
 
     const viewport = new WebMercatorViewport({width: this.state.viewport.width, height: this.state.viewport.height});
@@ -88,7 +88,7 @@ class StopWithPredictionMap extends Component {
         [bbox[2], bbox[0]], 
         [bbox[3], bbox[1]]
       ],
-        {padding: 50}
+        {padding: window.innerWidth > 768 ? 60 : 30}
       );
   
     style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.route, 10));
@@ -99,27 +99,30 @@ class StopWithPredictionMap extends Component {
       }
     })  
 
-    // eventually set routes?
-    // const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 0).concat(stop.routes))))
-    // style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))
-
     return (
       <Card className="map">
+        <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
+          <BusStop style={{ marginLeft: '1em', backgroundColor: 'rgba(0, 0, 0, .8)', color: 'yellow', borderRadius: 999, height: '1.8em', width: '1.8em' }}/>
+          <CardHeader title={stop.name} subheader={`Stop ID: #${stop.id}`} style={{ fontSize: '1.2em' }}/>
+        </div>
         <MapGL
           width={this.state.viewport.width}
           height={this.state.viewport.height}
           latitude={bound.latitude}
           longitude={bound.longitude}
-          zoom={bound.zoom < 16.5 ? bound.zoom : 16.5}
+          zoom={bound.zoom < 15 ? bound.zoom : 15}
+          // latitude={42.5}
+          // longitude={-83}
+          // zoom={15}
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
           onClick={this._onClick}>
-          <Marker latitude={stop.lat} longitude={stop.lon} onClick={this._onClick} offsetLeft={-20} offsetTop={-20}>
-            <BusStop style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
+          <Marker latitude={stop.lat} longitude={stop.lon} offsetLeft={-10} offsetTop={-10}>
+            <BusStop style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
           </Marker>
-          <Marker latitude={trip.position.lat} longitude={trip.position.lon} onClick={this._onClick} offsetLeft={-20} offsetTop={-20}>
-            <BusIcon style={{ height: 30, width: 30, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
+          <Marker latitude={position.lat} longitude={position.lon} offsetLeft={-10} offsetTop={-10}>
+            <BusIcon style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
           </Marker>
         </MapGL>
       </Card>

@@ -6,6 +6,7 @@ import GridList, { GridListTile } from 'material-ui/GridList';
 import Card, { CardHeader, CardContent } from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
 import moment from 'moment';
+import ScheduleIcon from 'material-ui-icons/Schedule'
 
 import Schedules from '../data/schedules.js';
 import Stops from '../data/stops.js';
@@ -24,13 +25,17 @@ class StopRouteSchedule extends Component {
           <div>
             {i === 1 ? <Divider /> : ``}
             <Card style={{ padding: 10 }}>
+            <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
+              <ScheduleIcon style={{ marginLeft: '.5em', color: '#aaa', borderRadius: 999, height: '1.25em', width: '1.25em' }}/>
               <CardHeader
                 title={_.capitalize(rds.tripHeadsign)}
                 subheader={`to ${Stops[Schedules[this.props.route].timepoints[rds.tripHeadsign].slice(-1)[0]].name}`}
-                style={{ padding: '16px 10px 0px 10px' }} />
+                style={{padding: 10, marginLeft: 10}}
+             />
+            </div>
               <CardContent style={{ padding: 10 }}>
                 <GridList 
-                  cellHeight={20} 
+                  cellHeight={18} 
                   cols={Math.ceil(rds.scheduleStopTimes) / 8} 
                   padding={0} 
                   style={{
@@ -56,8 +61,7 @@ class StopRouteSchedule extends Component {
             </Card>
           </div>
         ))}
-        <Divider />
-        <div style={{ display: 'flex', alignItems: 'center', background: 'white', padding: '.5em' }}>
+        <div style={{ display: 'flex', alignItems: 'center', background: 'white', padding: '0em 1.5em 1em 1.5em' }}>
           <span style={{ fontSize: '.9em' }}>Displaying AM times, <b>PM times</b>, and </span>
           <span style={{ background: chroma(Schedules[this.props.route].color).alpha(0.25).css(), fontSize: '.9em', marginLeft: '.25em', padding: '.15em' }}> next departures</span>
         </div>

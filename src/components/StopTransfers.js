@@ -1,46 +1,33 @@
 import React from 'react';
-import List, {ListItem, ListItemText, ListItemIcon} from 'material-ui/List';
-import Collapse from 'material-ui/transitions/Collapse';
-import ExpandLess from 'material-ui-icons/ExpandLess';
-import ExpandMore from 'material-ui-icons/ExpandMore';
-
-import StopInlineLink from './StopInlineLink';
+import _ from 'lodash';
 import RouteLink from './RouteLink';
+import StopInlineLink from './StopInlineLink'
 import Helpers from '../helpers';
 
 /** List of nearby stops where you can transfer to other routes by direction for Stop */
 class StopTransfers extends React.Component {
-  state = {
-    open: false
-  }
-
-  handleChange = () => {
-    this.setState({ open: !this.state.open });
-  }
   
   render() {
-    const stops = this.props.stops;
-
+    const stops = _.groupBy(this.props.stops, 2);
+    const routes = _.groupBy(this.props.stops, 0)
+    console.log(stops)
     return (
-      <div className="transfers">
-        <List style={{ paddingTop: 0 }}>
-          <ListItem button style={{ background: '#fff' }} onClick={this.handleChange} >
-            <ListItemIcon >
-              {this.state.open ? <ExpandLess /> : <ExpandMore />}
-            </ListItemIcon>          
-            <ListItemText primary="Nearby transfers" />
-          </ListItem>
-          <Collapse in={this.state.open} style={{ marginBottom: '.5em', background: 'white' }} timeout="auto" unmountOnExit>
-            {Object.keys(this.props.stops).map((s, i) => (
-              <div key={i} style={{ background: 'white', margin: 10, padding: 10 }}>
-                <RouteLink id={s} />
-                {stops[s].map(st => (
-                  <div key={st[2]} style={{ padding: 10 }}>{Helpers.lookup[st[1]]}: <StopInlineLink id={st[2]}/></div>
-                ))}
+      <div className="transfers" style={{padding: 10, backgroundColor: 'white'}}>
+        {Object.keys(routes).map((s, i) => (
+          <div key={i} style={{ background: 'white', margin: 10, padding: 10 }}>
+            <RouteLink id={s} />
+            {routes[s].map(st => (
+              <div style={{display: 'flex', alignItems: 'center', textAlign: 'center'}}>
+              <div key={st[2]} style={{ padding: 10 }}>{Helpers.lookup[st[1]]}: <StopInlineLink id={st[2]}/></div>
+              <div
+                style={{backgroundColor: 'rgba(0,0,0,.65)', width: 25, height: 25, fontWeight: 700, color: 'white', padding: '.5em', borderRadius: 9999, display: 'flex', alignItems: 'center', alignContent: 'center'}}
+                >
+                {Object.keys(stops).indexOf(st[2]) + 1}
+              </div>
               </div>
             ))}
-          </Collapse>
-        </List>
+          </div>
+        ))}
       </div>
     );
   }

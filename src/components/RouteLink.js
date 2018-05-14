@@ -27,6 +27,7 @@ class RouteLink extends Component {
               style={{ textDecoration: 'none' }}>
               <span style={{ fontSize: `1.1em`, fontFamily: "Gibson Detroit Light", fontWeight: 600, color: 'black', marginLeft: '.4em', paddingRight: '1em' }}>
                 {route.rt_name}
+                {this.props.direction ? ` (${this.props.direction})` : ``}
               </span>
             </Link>
           </div>

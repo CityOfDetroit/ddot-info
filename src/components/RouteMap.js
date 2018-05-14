@@ -84,9 +84,9 @@ class RouteMap extends Component {
       }
     });
 
-    const viewport = new WebMercatorViewport({width: window.innerWidth > 650 ? window.innerWidth * (4/8) - 7.5 : window.innerWidth, height: window.innerWidth > 650 ? ((window.innerHeight - 128) * 1 - 114) : 250});
+    const viewport = new WebMercatorViewport({width: window.innerWidth > 768 ? window.innerWidth * (4/8) - 7.5 : window.innerWidth, height: window.innerWidth > 768 ? ((window.innerHeight - 128) * 1 - 114) : 250});
     const bound = viewport.fitBounds(route.bbox,
-      { padding: window.innerWidth > 650 ? 50 : window.innerWidth / 20 }
+      { padding: window.innerWidth > 768 ? 50 : window.innerWidth / 20 }
     );
 
     this.state = {
@@ -95,8 +95,8 @@ class RouteMap extends Component {
         longitude: bound.longitude,
         zoom: bound.zoom,
         bearing: 0,
-        width: window.innerWidth > 650 ? window.innerWidth * (4/8) - 7.5 : window.innerWidth,
-        height: window.innerWidth > 650 ? ((window.innerHeight - 128) * 1 - 114) : 250
+        width: window.innerWidth > 768 ? window.innerWidth * (4/8) - 7.5 : window.innerWidth,
+        height: window.innerWidth > 768 ? ((window.innerHeight - 128) * 1 - 114) : 250
       },
       settings: {
         dragPan: true,
@@ -163,7 +163,7 @@ class RouteMap extends Component {
   }
 
   _resize = () => {
-    if (window.innerWidth > 650) {
+    if (window.innerWidth > 768) {
       this.setState({
         viewport: {
           ...this.state.viewport,

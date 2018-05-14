@@ -60,7 +60,6 @@ class RealtimeCard extends Component {
         return (
             this.props.status ? 
             (<Card elevation={3} style={{ minWidth: 320, maxHeight: 500, display: 'flex', flexWrap: 'wrap' }}>
-                {/* <CardHeader title={`${this.props.status.direction} ${this.props.status.tripId}`} subheader={`Next stop: ${Stops[nextStopId].name}`} /> */}
                 <CardContent>
                     {this.props.status.tripStatus.activeTripId === this.props.trip ?
                     <div style={{display: 'flex', alignItems: 'center'}}>

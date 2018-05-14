@@ -84,7 +84,7 @@ class Stop extends React.Component {
   }
 
   handleTabsChange = (event, slideIndex) => {
-    this.setState({ slideIndex: slideIndex, tripData: null })
+    this.setState({ slideIndex: slideIndex, tripData: null, tripId: null })
   }
 
   handleRoutePredictionChange = (tripId, route) => {
@@ -105,7 +105,8 @@ class Stop extends React.Component {
     this.setState({
       fetchedStopSchedule: false, 
       slideIndex: 0,
-      tripId: null
+      tripId: null,
+      tripData: null
     });
 
     if (this.props.match.params.name !== nextProps.match.params.name) {

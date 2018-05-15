@@ -45,7 +45,9 @@ class RoutePredictionList extends React.Component {
               </ListItemIcon>
               <ListItemText style={{ fontWeight: this.state.open === p.tripId ? 700 : 300 }} secondary={_.capitalize(p.tripHeadsign)} primary={`${p.predicted ? moment(p.predictedArrivalTime).format('h:mma') : moment(p.scheduledArrivalTime).format('h:mma')}`} />
               <ListItemIcon>
-                {this.state.open === p.tripId ? <ExpandLess /> : <span style={{ display: 'flex', alignItems: 'center', fontSize: '.9em' }}>{ i === 0 ? `Where is this bus?` : null}<ExpandMore /></span>}
+                {this.state.open === p.tripId ? 
+                  <span style={{ display: 'flex', alignItems: 'center', fontSize: '.9em' }}>Showing live map<ExpandLess /></span> 
+                  : <span style={{ display: 'flex', alignItems: 'center', fontSize: '.9em' }}>{ i === 0 ? `Where is this bus?` : null}<ExpandMore /></span>}
               </ListItemIcon>
             </ListItem>
             <Collapse in={this.state.open === p.tripId && this.props.isOpen} style={{ marginBottom: '.5em' }} timeout="auto" unmountOnExit>

@@ -6,9 +6,8 @@ import BusStop from './BusStop'
 import LiveIcon from 'material-ui-icons/SpeakerPhone';
 import ScheduleIcon from 'material-ui-icons/Schedule';
 import Warning from 'material-ui-icons/Warning';
-import Stops from '../data/stops.js'
-import Helpers from '../helpers';
-import moment from 'moment'
+import moment from 'moment';
+import Stops from '../data/stops.js';
 
 const styles = {
     prediction: {

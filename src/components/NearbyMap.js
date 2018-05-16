@@ -25,8 +25,8 @@ class NearbyMap extends Component {
         zoom: 17,
         bearing: 0,
         pitch: 0,
-        width: window.innerWidth > 650 ? window.innerWidth/2 : window.innerWidth,
-        height: window.innerWidth > 650 ? 500 : 350
+        width: window.innerWidth > 768 ? (window.innerWidth - 48) / 2 : window.innerWidth - 48,
+        height: window.innerWidth > 768 ? 500 : 350
       }
     }
 
@@ -40,11 +40,11 @@ class NearbyMap extends Component {
   }
 
   _resize = () => {
-    if (window.innerWidth > 650) {
+    if (window.innerWidth > 768) {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth/2,
+          width: (window.innerWidth - 48) / 2,
           height: 500
         }
       });
@@ -52,7 +52,7 @@ class NearbyMap extends Component {
       this.setState({
         viewport: {
           ...this.state.viewport,
-          width: window.innerWidth,
+          width: window.innerWidth - 38,
           height: 350
         }
       });
@@ -109,7 +109,7 @@ class NearbyMap extends Component {
       [radiusBbox[0], radiusBbox[1]], 
       [radiusBbox[2], radiusBbox[3]]
     ],
-      {padding: window.innerWidth > 650 ? 50 : window.innerWidth / 30}
+      {padding: window.innerWidth > 768 ? 50 : 30}
     );
 
     style = style.setIn(['sources', 'walk-radius', 'data'], {"type": "FeatureCollection", "features": [walkRadii]});

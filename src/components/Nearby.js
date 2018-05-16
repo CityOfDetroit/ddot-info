@@ -69,9 +69,8 @@ class Nearby extends React.Component {
         ? <div>Geolocation is not enabled</div> : this.props.coords
           ? 
             <Card>
-              <CardHeader title="Service near you" subheader={<IntersectionFromCoords coords={this.props.coords} />} />
+              <CardHeader title={<RadiusPicker radii={radii} currentRadius={this.state.currentRadius} onChange={this.onRadiusChange}/>} subheader={<IntersectionFromCoords coords={this.props.coords} />} />
               <CardContent>
-                <RadiusPicker radii={radii} currentRadius={this.state.currentRadius} onChange={this.onRadiusChange} />
                 <FeaturesNearLocation coords={this.props.coords} meters={this.state.currentRadius} />
               </CardContent>
             </Card>

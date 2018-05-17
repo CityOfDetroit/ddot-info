@@ -7,12 +7,16 @@ import StopCard from './StopCard';
 class StopsList extends Component {
   render() {
     return (
-      <div className="overflow-scroll" style={{ display: 'flex', flexWrap: 'wrap', height: 350 }}>
+      <div className="overflow-scroll" style={{ display: 'grid', gridTemplateColumns: `repeat(auto-fit, minmax(350px, 1fr))`, height: 400 }}>
         {this.props.stops.map((stop, i) =>
           <div key={i}>
             <StopCard id={stop.id} showTransfers={true} showRoutes showDirection />
           </div>
         )}
+        {this.props.dummy ?
+        <div style={{background: '#eee', margin: '.25em', minWidth: 300, height: 142, display: 'flex', alignItems: 'center', justifyContent: 'center', alignContent: 'center'}}>
+          <span style={{fontSize: '1.5em', color: '#444'}}>Plus 5,000 more!</span>
+        </div> : ``}
       </div>
     );
   }

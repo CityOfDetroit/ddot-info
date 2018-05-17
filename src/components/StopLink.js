@@ -37,10 +37,10 @@ class StopLink extends Component {
             </Link>
             <span style={{ padding: '.25rem', fontSize: '.75rem', background: '#eee' }}>#{this.props.id}</span>
           </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', width: '50%' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', width: '50%', marginTop: '-.25em' }}>
           {Stops[this.props.id] && routes.length < 25 ? routes.sort((a, b) => { return parseInt(a, 10) > parseInt(b, 10)}).map((r, i) => (
             <Link style={exclude.toString() === r.toString() ? { display: 'none' } : { marginRight: '.5rem', textDecoration: 'none' }} to={{pathname: `/route/${r}`}} key={i}>
-              <div style={exclude.toString() === r.toString() ? { display: 'none' } : { display: 'flex', alignItems:'center',  justifyContent: 'center', width: '2em', height: '2em', backgroundColor: Schedules[r].color, color: '#fff', fontWeight: 700 }}>
+              <div style={exclude.toString() === r.toString() ? { display: 'none' } : { display: 'flex', alignItems:'center',  justifyContent: 'center', width: '2em', height: '2em', backgroundColor: Schedules[r].color, color: '#fff', fontWeight: 700, marginTop: '.25em' }}>
                 {r}
               </div> 
             </Link>

@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
-import Card, { CardContent } from 'material-ui/Card';
-import List, {ListItem, ListItemIcon, ListItemText} from 'material-ui/List';
+import Card, { CardContent, CardHeader } from 'material-ui/Card';
+import List, {ListItem, ListItemIcon, ListItemText, ListSubheader} from 'material-ui/List';
 import Collapse from 'material-ui/transitions/Collapse';
 import SchedSVG from 'material-ui-icons/Schedule';
 import LiveSVG from 'material-ui-icons/SpeakerPhone';
@@ -36,6 +36,7 @@ class RoutePredictionList extends React.Component {
     const {predictions} = this.props;
 
     return (
+      <Card style={{margin:'0px 0px 10px 0px'}}>
       <List style={{ paddingTop: 0 }}>
         {predictions.length > 0 ? Helpers.cleanPredictionHeadsign(predictions).map((p, i) => (
           <div key={i}>
@@ -47,7 +48,7 @@ class RoutePredictionList extends React.Component {
               <ListItemIcon>
                 {this.state.open === p.tripId ? 
                   <span style={{ display: 'flex', alignItems: 'center', fontSize: '.9em' }}>Showing live map<ExpandLess /></span> 
-                  : <span style={{ display: 'flex', alignItems: 'center', fontSize: '.9em' }}>{ i === 0 ? `Where is this bus?` : null}<ExpandMore /></span>}
+                  : <span style={{ display: 'flex', alignItems: 'center', fontSize: '.9em' }}>{ i === 0 && !this.state.open ? `Where is this bus?` : null}<ExpandMore /></span>}
               </ListItemIcon>
             </ListItem>
             <Collapse in={this.state.open === p.tripId && this.props.isOpen} style={{ marginBottom: '.5em' }} timeout="auto" unmountOnExit>
@@ -56,6 +57,7 @@ class RoutePredictionList extends React.Component {
         </div>
           )) : <Card><CardContent style={{ padding: '1em' }}>There are currently no real-time predictions available, see the schedule below.</CardContent></Card>}
       </List>
+      </Card>
     );
   }
 }

@@ -96,7 +96,7 @@ class RouteMap extends Component {
         zoom: bound.zoom,
         bearing: 0,
         width: window.innerWidth > 768 ? window.innerWidth * (4/8) - 7.5 : window.innerWidth,
-        height: window.innerWidth > 768 ? ((window.innerHeight - 128) * 1 - 114) : 250
+        height: window.innerWidth > 768 ? ((window.innerHeight - 128) * 1 - 114) : 300
       },
       settings: {
         dragPan: true,
@@ -176,7 +176,7 @@ class RouteMap extends Component {
         viewport: {
           ...this.state.viewport,
           width: window.innerWidth,
-          height: 225
+          height: 300
         }
       });
     }

@@ -136,7 +136,7 @@ class RouteSchedule extends React.Component {
             </Toolbar>
           </AppBar>
           <AppBar position="static" color="default" elevation={0} style={{ display: 'flex', flexWrap: 'wrap', padding: '.5em 0em', marginBottom: '1em' }}>
-            <Toolbar elevation={0} style={{ justifyContent: 'flex-start', marginLeft: '.5em' }}>
+            <Toolbar elevation={0} style={{ justifyContent: 'flex-start', alignItems: 'start', marginLeft: '.5em' }}>
               <ServicePicker
                 services={this.state.availableServices}
                 currentSvc={this.state.currentSvc}

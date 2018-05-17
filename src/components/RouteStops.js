@@ -78,14 +78,14 @@ class RouteStops extends React.Component {
               <span style={{ fontSize: '.9em', marginBottom: '.5em' }}>Transfer to other routes from the same stop or a nearby stop.</span>
             </Toolbar>
           </AppBar>
-          <AppBar position="static" color="default" elevation={0} style={{ display: 'flex', padding: '.5em 0em', marginBottom: '1em' }}>
-            <Toolbar elevation={0} style={{ justifyContent: 'flex-start', flexWrap: 'wrap', marginLeft: '.5em' }}>
+          <AppBar position="static" color="default" elevation={0} style={{ display: 'flex', padding: '.5em 0em'}}>
+            <Toolbar elevation={0} style={{ justifyContent: 'flex-start', flexWrap: 'wrap', marginLeft: '.5em', alignItems: 'start' }}>
               <DirectionPicker 
                 directions={this.state.availableDirections}
                 currentDirection={this.state.currentDirection}
                 onChange={this.handleDirectionChange}
                 route={thisRoute} />
-              <div style={{ width: 400, marginTop: '1em' }}>
+              <div style={{ width: 400 }}>
                 <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} />
               </div>
             </Toolbar>

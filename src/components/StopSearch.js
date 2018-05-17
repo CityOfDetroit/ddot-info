@@ -59,8 +59,8 @@ class StopSearch extends Component {
         <CardHeader title="Find your bus stop" subheader="DDOT has more than 5,000 bus stops. Bus stop signs are placed every 2-3 blocks along each route" />
         <CardContent>
           <StopInput input={this.state.input} onSearchChange={this.handleSearchChange} />
-          { !this.state.enteredInput ? <span style={{color: '#333', fontSize: '1.2em', marginBottom: '1em'}}>Here's a few random bus stops. Start typing in the box above to find your closest stop.</span> : ``}
-          { (this.state.input !== '' && this.state.filteredStops.length > 0) ? <span>Found {this.state.filteredStops.length} stops</span>: '' }
+          { !this.state.enteredInput ? <div style={{color: '#333', fontSize: '1.2em', marginTop: '1em'}}>Here's a few random bus stops. Start typing in the box above to find your closest stop.</div> : ``}
+          { (this.state.input !== '' && this.state.filteredStops.length > 0) ? <div style={{marginTop: '1em'}}>Found {this.state.filteredStops.length} stops</div>: '' }
           { this.state.filteredStops.length > 0 ? <StopsList stops={this.state.filteredStops} dummy={!this.state.enteredInput}/> : <span style={{ color: 'red' }}>No bus stops match your search! Try again</span> }
         </CardContent>
       </Card>

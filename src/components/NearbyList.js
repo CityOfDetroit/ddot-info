@@ -9,7 +9,7 @@ import RouteLink from './RouteLink';
 class NearbyList extends React.Component {
   render() {
    return (
-      <GridList cellHeight='auto' cols={1} style={{ overflowY: 'scroll', padding: '.5em', height: window.innerWidth < 650 ? 400 : 500, maxWidth: 450 }} spacing={20}>
+      <GridList cellHeight='auto' cols={window.innerWidth > 768 ? 2 : 1} style={{ overflowY: 'scroll', height: window.innerWidth < 768 ? 400 : 500, maxWidth: window.innerWidth > 768 ? (window.innerWidth - 48 / 2) : (window.innerWidth - 48) }} spacing={20}>
         {Object.keys(this.props.stops).map(k => (
           <GridListTile key={k}>
             <RouteLink id={k} />

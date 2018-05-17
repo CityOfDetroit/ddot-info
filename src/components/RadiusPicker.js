@@ -7,15 +7,15 @@ class RadiusPicker extends React.Component {
   render() {
     return (
       <div style={{ fontSize: '1em' }}>
-        <span style={{ marginRight: '.5em' }}>These bus routes and stops are within a </span>
+        <span style={{ marginRight: '.5em' }}>Routes and stops within a </span>
         <FormControl component="fieldset" required>
-          <Select native name="radii" value={this.props.currentRadius} onChange={this.props.onChange} inputProps={{ id: 'radius-picker' }}>
+          <Select native name="radii" style={{fontSize: '1em'}}value={this.props.currentRadius} onChange={this.props.onChange} inputProps={{ id: 'radius-picker' }}>
             {this.props.radii.map(r => (
               <option key={r.meters} value={r.meters}>{r.label}</option>
             ))}
           </Select>
         </FormControl>
-        <span style={{ marginLeft: '.5em' }}> of your current location:</span>
+        <span style={{ marginLeft: '.5em' }}> of your location:</span>
       </div>
     );
   }

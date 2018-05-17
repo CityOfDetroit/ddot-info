@@ -61,9 +61,9 @@ class FeaturesNearLocation extends Component {
   render() {
     return (
       this.state.fetchedData ? 
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-          <NearbyList stops={this.state.closeStopsByRoutes} />
+        <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', gridGap: 10}}>
           <NearbyMap stops={this.state.closeStopsByRoutes} coords={this.props.coords} currentRadius={this.props.meters} />
+          <NearbyList stops={this.state.closeStopsByRoutes} />
         </div>
       : null 
     );

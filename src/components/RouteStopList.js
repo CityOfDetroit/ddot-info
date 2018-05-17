@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import Card, { CardContent } from 'material-ui/Card';
+import TransferIcon from 'material-ui-icons/SwapHoriz'
+import BusStopIcon from './BusStop'
 
 import StopLink from './StopLink';
 import Stops from '../data/stops.js';
@@ -54,11 +56,13 @@ class RouteStopList extends Component {
       <Card>
         <CardContent>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'top', borderBottom: '1px solid #aaa', fontSize: '1.25rem', paddingTop: '1rem', paddingBottom: '1rem', width: '100%' }}>
-            <div style={{ width: '50%', marginLeft: '1rem' }}>
-              <span style={{ display: 'block' }}>Bus stops</span>
+            <div style={{ width: '50%', marginLeft: '1rem', display: 'flex', alignItems: 'center' }}>
+              <BusStopIcon />
+              <span style={{ display: 'block', marginLeft: '.5em' }}>Bus stops</span>
             </div>
-            <div style={{ width: '50%', marginLeft: '1rem' }}>
-              <span style={{ display: 'block' }}>Transfers</span>
+            <div style={{ width: '50%', marginLeft: '1rem', display: 'flex', alignItems: 'center' }}>
+              <TransferIcon />
+              <span style={{ display: 'block', marginLeft: '.5em' }}>Transfers</span>
             </div>
           </div>
           <div className="overflow-scroll" style={{ height: '60vh' }}>

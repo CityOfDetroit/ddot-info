@@ -8,6 +8,7 @@ import Toolbar from 'material-ui/Toolbar';
 import Card, {CardHeader} from 'material-ui/Card';
 import { AppBar } from 'material-ui';
 import { withStyles } from 'material-ui/styles';
+import TransferIcon from 'material-ui-icons/SwapHoriz'
 
 import Stops from '../data/stops.js';
 import TopNav from './TopNav';
@@ -84,7 +85,13 @@ class Stop extends React.Component {
   }
 
   handleTabsChange = (event, slideIndex) => {
-    this.setState({ slideIndex: slideIndex, tripData: null, tripId: null })
+    console.log(event, slideIndex)
+    if(typeof event === 'number') {
+      this.setState({ slideIndex: event, tripData: null, tripId: null })
+    }
+    else {
+      this.setState({ slideIndex: slideIndex, tripData: null, tripId: null })
+    }
   }
 
   handleRoutePredictionChange = (tripId, route) => {
@@ -129,14 +136,11 @@ class Stop extends React.Component {
     return (
       <div className='App' style={{ background: Helpers.colors['background'] }}>
         <TopNav />
-        {this.state.tripId ? 
-          <StopWithPredictionMap stopId={stopId} center={stopCoords} prediction={this.state.tripData} route={this.state.route} /> 
-          : 
-          <StopMap stopId={stopId} center={stopCoords} />}
+        <StopWithPredictionMap stopId={stopId} center={stopCoords} prediction={this.state.tripData} route={this.state.route} /> 
         <div className='routes'>
           <Card>
             <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
-              <CardHeader title="Bus routes that stop here" subheader="Transfers tab shows nearby stops and routes" classes={{ title: this.props.classes.title }} style={{ fontSize: '1.1em' }}/>
+              <CardHeader title="Bus routes that stop here" subheader="Showing next arrivals and today's schedule. Transfers tab shows nearby routes" classes={{ title: this.props.classes.title }} style={{ fontSize: '1.1em' }}/>
             </div>
           </Card>
           <AppBar position="static" color="red" style={{ display: 'flex' }} elevation={0}>
@@ -150,7 +154,7 @@ class Stop extends React.Component {
                 {stopRoutes.map((r, i) => (
                   <Tab label={<RouteBadge id={r[0]} />} value={i} style={{ minWidth: 40, width: 50 }} key={i} />
                 ))}
-                <Tab label={'Transfers'} value={stopRoutes.length} style={{fontWeight: 700}} />
+                <Tab label={<div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}><TransferIcon />Transfers</div>} value={stopRoutes.length} style={{fontWeight: 700}} />
               </Tabs>
             </Toolbar>
           </AppBar>

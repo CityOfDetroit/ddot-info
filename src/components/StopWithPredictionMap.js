@@ -7,6 +7,8 @@ import WebMercatorViewport from 'viewport-mercator-project';
 import Helpers from '../helpers.js';
 import Stops from '../data/stops.js';
 
+import {Link} from 'react-router-dom'
+
 import {defaultMapStyle, routeLineIndex} from '../style.js';
 import BusStop from './BusStop.js';
 import BusIcon from 'material-ui-icons/DirectionsBus';
@@ -38,7 +40,7 @@ class StopWithPredictionMap extends Component {
       viewport: {
         ...this.state.viewport,
         latitude: parseFloat(Stops[nextProps.stopId].lat),
-        longitude: parseFloat(Stops[nextProps.stopId].lon),
+        longitude: parseFloat(Stops[nextProps.stopId].lon)
       }
     })
   }
@@ -70,34 +72,41 @@ class StopWithPredictionMap extends Component {
   render() {
     let style = defaultMapStyle
     let stop = Stops[this.props.stopId] || null
-    let position = this.props.prediction.tripStatus.position
-    console.log(stop)
+    let transfers = _.groupBy(stop.transfers, 2)
+    let bound, position = null
+    if(this.props.prediction) {
+      position = this.props.prediction.tripStatus.position
+      let bbox = [
+        Math.min(stop.lat, parseFloat(position.lat)), 
+        Math.max(stop.lat, parseFloat(position.lat)), 
+        Math.min(stop.lon, parseFloat(position.lon)), 
+        Math.max(stop.lon, parseFloat(position.lon)), 
+      ]
+      let viewport = new WebMercatorViewport({width: this.state.viewport.width, height: this.state.viewport.height});
+      bound = viewport.fitBounds(
+        [
+          [bbox[2], bbox[0]], 
+          [bbox[3], bbox[1]]
+        ],
+          {padding: window.innerWidth > 768 ? 60 : 30}
+        );
+    }
 
-    let bbox = [
-      Math.min(stop.lat, parseFloat(position.lat)), 
-      Math.max(stop.lat, parseFloat(position.lat)), 
-      Math.min(stop.lon, parseFloat(position.lon)), 
-      Math.max(stop.lon, parseFloat(position.lon)), 
-    ]
-
-    console.log(bbox)
-
-    const viewport = new WebMercatorViewport({width: this.state.viewport.width, height: this.state.viewport.height});
-    const bound = viewport.fitBounds(
-      [
-        [bbox[2], bbox[0]], 
-        [bbox[3], bbox[1]]
-      ],
-        {padding: window.innerWidth > 768 ? 60 : 30}
-      );
-  
-    style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.route, 10));
-    style = style.setIn(['layers', 1, 'layout', 'visibility'], this.state.showSatellite ? 'visible' : 'none')
-    _.forEach(style.toJS().layers, (l, i) => {
-      if(l['source-layer'] === 'road') {
-        style = style.setIn(['layers', i, 'layout', 'visibility'], this.state.showSatellite ? 'none' : 'visible')
-      }
-    })  
+    if (this.props.prediction) {
+      style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.route, 10));
+    }
+    else {
+      const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 0).concat(stop.routes))))
+      style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))   
+      style = style.setIn(['layers', 1, 'layout', 'visibility'], 'visible')
+      _.forEach(style.toJS().layers, (l, i) => {
+        if(l['source-layer'] === 'road') {
+          style = style.setIn(['layers', i, 'layout', 'visibility'], 'none')
+        }
+      })  
+    }
+    
+    
 
     return (
       <Card className="map">
@@ -108,12 +117,9 @@ class StopWithPredictionMap extends Component {
         <MapGL
           width={this.state.viewport.width}
           height={this.state.viewport.height}
-          latitude={bound.latitude}
-          longitude={bound.longitude}
-          zoom={bound.zoom < 15 ? bound.zoom : 15}
-          // latitude={42.5}
-          // longitude={-83}
-          // zoom={15}
+          latitude={this.props.prediction ? bound.latitude : this.state.viewport.latitude}
+          longitude={this.props.prediction ? bound.longitude : this.state.viewport.longitude}
+          zoom={this.props.prediction ? (bound.zoom < 15 ? bound.zoom : 15) : 16.5}
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
@@ -121,9 +127,27 @@ class StopWithPredictionMap extends Component {
           <Marker latitude={stop.lat} longitude={stop.lon} offsetLeft={-10} offsetTop={-10}>
             <BusStop style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
           </Marker>
+          {this.props.prediction ? 
           <Marker latitude={position.lat} longitude={position.lon} offsetLeft={-10} offsetTop={-10}>
             <BusIcon style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
-          </Marker>
+          </Marker> :
+          Object.keys(transfers).map((s, i) => (
+            <Marker latitude={Stops[s].lat} longitude={Stops[s].lon} offsetLeft={-7.5} offsetTop={-7.5}>
+              <Link to={{pathname: `/stop/${s}`}}>
+                <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/>
+              </Link>
+            </Marker>
+            // <Marker latitude={Stops[s].lat} longitude={Stops[s].lon} offsetLeft={-20} offsetTop={-20}>
+            //   <Link to={{pathname: `/stop/${s}`}} style={{textDecoration: 'none'}}>
+            //     <Avatar
+            //       style={{backgroundColor: 'rgba(0,0,0,.65)', fontWeight: 700, color: 'white', textDecoration: 'none'}}
+            //     >
+            //       {i+1}
+            //     </Avatar>
+            //   </Link>
+            // </Marker>
+          ))
+          }
         </MapGL>
       </Card>
     )

@@ -129,10 +129,7 @@ class Stop extends React.Component {
     return (
       <div className='App' style={{ background: Helpers.colors['background'] }}>
         <TopNav />
-        {this.state.tripId ? 
-          <StopWithPredictionMap stopId={stopId} center={stopCoords} prediction={this.state.tripData} route={this.state.route} /> 
-          : 
-          <StopMap stopId={stopId} center={stopCoords} />}
+        <StopWithPredictionMap stopId={stopId} center={stopCoords} prediction={this.state.tripData} route={this.state.route} /> 
         <div className='routes'>
           <Card>
             <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>

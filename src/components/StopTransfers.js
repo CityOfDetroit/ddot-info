@@ -19,11 +19,6 @@ class StopTransfers extends React.Component {
             {routes[s].map(st => (
               <div style={{display: 'flex', alignItems: 'center', textAlign: 'center'}}>
               <div key={st[2]} style={{ padding: 10 }}>{Helpers.lookup[st[1]]}: <StopInlineLink id={st[2]}/></div>
-              <div
-                style={{backgroundColor: 'rgba(0,0,0,.65)', width: 25, height: 25, fontWeight: 700, color: 'white', padding: '.5em', borderRadius: 9999, display: 'flex', alignItems: 'center', alignContent: 'center'}}
-                >
-                {Object.keys(stops).indexOf(st[2]) + 1}
-              </div>
               </div>
             ))}
           </div>

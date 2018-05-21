@@ -606,18 +606,18 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Fairgrounds TC', 'W. Jefferson & Brennan'],
         via: ['Livernois'],
-        description: "A west side route that connects Detroit from the Fairgrounds to W. Jefferson & Brennan. The main street served is Livernois.",
+        description: "Connects neighborhoods between northwest Detroit to southwest Detroit from 8 Mile & Jefferson. Main streets served are Livernois, Jefferson & Dragoon.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/30LivernoisMS.pdf?ver=2016-04-22-151449-233"],
         services: {
             "Monday-Friday": {
-                service_hours: ["6:00am", "9:46pm"],
+                service_hours: ["6:00am", "9:45pm"],
                 frequency: [
-                    ["peak", 40],
+                    ["peak", 30],
                     ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["6:57am", "9:45pm"],
+                service_hours: ["7:00am", "9:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -933,23 +933,24 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Redford Plaza', '8 Mile & Ryan'],
         via: ['Schoolcraft', 'Oakman Blvd', 'Manchester', 'Oakland'],
-        description: "A crosstown route that connects Detroit from Eight Mile & Ryan to Redford Plaza. The main streets used are Schoolcraft, Ewald, Oakman and Dequindre.",
+        description: "Connects Redford, Detroit & Highland Park between Redford Plaza and Woodward & Manchester. Monday-Friday peak hour trips extend to 8 Mile & Ryan. The main streets served are Schoolcraft, Telegraph, Davison, Ewald Circle, Oakman, Oakland, Manchester, Dequindre, Conant, E Outer Dr & Ryan.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/43Schoolcraft.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:10am", "8:24pm"],
+                service_hours: ["5:00am", "8:00pm"],
                 frequency: [
-                    ["all day", 50]
+                    ["peak", 50],
+                    ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7:00am", "7:10pm"],
+                service_hours: ["7:00am", "7:00pm"],
                 frequency: [
-                    ["all day", 50]
+                    ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["10:05am", "7:02pm"],
+                service_hours: ["10:00am", "7:00pm"],
                 frequency: [
                     ["all day", 50]
                 ]
@@ -965,28 +966,27 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Meijer Old Redford', 'Mack & Moross'],
         via: ['Lahser', '7 Mile', 'Morang', 'Moross'],
-        description: "A crosstown route that connects Detroit from Old Redford Meijer to Mack & Moross. The main street used is Seven Mile.",
+        description: "Connects Redford and Detroit with 24 hour service between Meijer Old Redford and St John Hospital. Main streets served are Grand River, Lasher, 7 mile, Cadieux, Morang and Moross.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/45SevenMileMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/45SevenMileSS.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["peak", 15],
-                    ["off-peak", 30],
+                    ["day", 20],
                     ["evening", 60]
                 ]
             },
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 40],
+                    ["day", 40],
                     ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 45],
+                    ["day", 45],
                     ["evening", 60]                
                 ]
             }
@@ -1083,25 +1083,25 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Michigan & Schaefer', 'Rosa Parks TC'],
         via: ['Vernor', 'Bagley', 'Lafayette'],
-        description: "A west side route that connects Detroit from Michigan & Schaefer to Downtown Rosa Parks Transit Center. The main streets served are Vernor and Miller. In Addition to Detroit, this route serves Dearborn.",
+        description: "Connects Detroit & Dearborn between Rosa Parks Transit Center and Schaefer & Michigan. The main streets served are Lafayette, Trumbull, Bagley, Vernor, Wyoming & Michigan.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/49VernorMS.pdf?ver=2017-06-26-142208-523"],
         services: {
             "Monday-Friday": {
-                service_hours: ["4:40am", "1:18am"],
+                service_hours: ["4:30am", "12:30am"],
                 frequency: [
-                    ["peak", 25],
-                    ["off-peak", 45]
+                    ["day", 25],
+                    ["evening", 45]
                 ]
             },
             "Saturday": {
-                service_hours: ["4:59am", "1:03am"],
+                service_hours: ["5:00am", "1:00am"],
                 frequency: [
-                    ["peak", 25],
-                    ["off-peak", 45]
+                    ["day", 25],
+                    ["evening", 45]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["6:03am", "12:00am"],
+                service_hours: ["6:00am", "12:00am"],
                 frequency: [
                     ["all day", 55]
                 ]
@@ -1117,30 +1117,29 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Fairgrounds TC', 'Downtown'],
         via: ['Woodward Avenue'],
-        description: "A central route that connects Detroit from the Fairgrounds to Downtown. The main street used is Woodward Ave.",
+        description: "The 24 hour service connects Detroit and Highland Park between State Fairgrounds Transit Center and Renaissance Center in Downtown Detroit. The main streets served are Woodward, Park, Washington Blvd and Larned.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/53WoodwardMS.pdf?ver=2017-06-26-135605-973"],
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["peak", 10],
-                    ["off-peak", 15],
+                    ["day", 10],
                     ["evening", 30]
                 ]
             },
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["daytime", 10],
+                    ["day", 10],
                     ["evening", 30] 
                 ]               
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["daytime", 15],
-                    ["evening", 30]
-                ]         
+                    ["day", 20],
+                    ["evening", 60]
+                ]        
             }
         },
         notes: ""
@@ -1239,13 +1238,14 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Trumbull & W. Grand Blvd.', 'W. Outer Dr. & Fort'],
         via: ['Bassett', 'Vernor', 'Cass', 'W. Grand Blvd.'],
-        description: "A southwest peak hour route that connects Detroit from Fort & W Outer Dr to Trumbull & W Grand Blvd. This route connects highly populated residential neighborhoods in Southwest Detroit to a resource intensive neighborhood using both streets and highways. The main streets served are Bassett, S Schafer Hwy, Springwells, W Vernor and Cass Ave.",
+        description: "Connects Lincoln Park and Detroit with express service on I-75 freeway (Fisher) between Fort & W Outer Dr and Henry Ford Hospital. The main streets served are Fort, Outer Dr, Bassett, Schaefer, Vernor, Michigan, Trumbull and Cass. Service is available during morning and evening peak hours Monday thru Friday.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/89SouthwestDirectMF.pdf?ver=2017-04-21-171512-467"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:35am", "6:55pm"],
+                service_hours: ["5:30am", "8:00pm"],
                 frequency: [
-                    ["peak", 40],
+                    ["morning (5:30am-10am)", 40],
+                    ["evening (2:45pm-8pm)", 45]
                 ]
             }
         },

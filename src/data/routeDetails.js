@@ -10,20 +10,20 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/07CadilllacHarper.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:08am", "12:02am"],
+                service_hours: ["5:00am", "12:00am"],
                 frequency: [
-                    ["peak", 30],
+                    ["peak", 35],
                     ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["6:55am", "11:49pm"],
+                service_hours: ["7:00am", "11:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7:00am", "8:48pm"],
+                service_hours: ["7:00am", "8:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -43,20 +43,20 @@ const routeDetails = [{
         description: "An east side route that connects Detroit from Jefferson & Maryland to 7 Mile & Gratiot. The main streets served are Chalmers and Schoenherr St.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5:15am", "8:52pm"],
+                service_hours: ["5:15am", "8:45pm"],
                 frequency: [
                     ["peak", 30],
                     ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["6:45am", "7:52pm"],
+                service_hours: ["6:45am", "7:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["8:20am", "5:04pm"],
+                service_hours: ["8:15am", "5:00pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -129,19 +129,19 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/12ConantMS.pdf?ver=2016-04-22-150443-267"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:50am", "8:43pm"],
+                service_hours: ["5:45am", "8:45pm"],
                 frequency: [
                     ["all day", 50],
                 ]
             },
             "Saturday": {
-                service_hours: ["7:30am", "8:43pm"],
+                service_hours: ["7:30am", "8:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["8:00am", "6:43pm"],
+                service_hours: ["8:00am", "6:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -161,20 +161,20 @@ const routeDetails = [{
         description: "An east Side route that connects Detroit from Conner & Jefferson to Bel-Air Center. The main streets served are Conner St, Hoover St.",
         services: {
             "Monday-Friday": {
-                service_hours: ["6:15am", "9:49pm"],
+                service_hours: ["6:15am", "9:45pm"],
                 frequency: [
                     ["peak", 40],
                     ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["5:33am", "8:27pm"],
+                service_hours: ["5:30am", "8:30pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["6:55am", "7:04pm"],
+                service_hours: ["7:00am", "7:00pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -204,14 +204,14 @@ const routeDetails = [{
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 45],
+                    ["day", 45],
                     ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 45],
+                    ["day", 45],
                     ["evening", 60]
                 ]
             }
@@ -273,14 +273,14 @@ const routeDetails = [{
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 30],
+                    ["day", 30],
                     ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 30],
+                    ["day", 30],
                     ["evening", 60]
                 ]
             }
@@ -309,14 +309,14 @@ const routeDetails = [{
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 25],
+                    ["day", 25],
                     ["evening", 50],
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 35],
+                    ["day", 35],
                     ["evening", 55]
                 ]
             }
@@ -335,7 +335,7 @@ const routeDetails = [{
         description: "A west side route that connects Detroit from Downtown Rosa Parks Transit Center to Fenkell & Telegraph. The main streets served are Fenkell, 14th (northbound) and 12th (southbound).",
         services: {
             "Monday-Friday": {
-                service_hours: ["5:10am", "11:02pm"],
+                service_hours: ["5:10am", "11:00pm"],
                 frequency: [
                     ["peak", 25],
                     ["off-peak", 45],
@@ -343,16 +343,16 @@ const routeDetails = [{
                 ]
             },
             "Saturday": {
-                service_hours: ["6:00am", "10L57pm"],
+                service_hours: ["6:00am", "11:00pm"],
                 frequency: [
-                    ["all day", 45],
+                    ["day", 45],
                     ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7:41am", "8:28pm"],
+                service_hours: ["7:45am", "8:30pm"],
                 frequency: [
-                    ["all day", 45],
+                    ["day", 45],
                     ["evening", 60]
                 ]
             }
@@ -381,7 +381,7 @@ const routeDetails = [{
             "Saturday": {
                 service_hours: ["5:00am", "12:28am"],
                 frequency: [
-                    ["all day", 40],
+                    ["day", 40],
                     ["evening", 65]
                 ]
             },
@@ -445,21 +445,21 @@ const routeDetails = [{
                 service_hours: ["4:30am", "1:30am"],
                 frequency: [
                     ["day", 15],
-                    ["evening", 60]
+                    ["evening", "30-60"]
                 ]
             },
             "Saturday": {
                 service_hours: ["5:30am", "12:30am"],
                 frequency: [
                     ["day", 20],
-                    ["evening", 60]
+                    ["evening", "30-60"]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["6:00am", "11:00pm"],
                 frequency: [
-                    ["all day", 30],
-                    ["evening", 60]
+                    ["day", 30],
+                    ["evening", "35-60"]
                 ]
             }
         },
@@ -479,7 +479,7 @@ const routeDetails = [{
             "Monday-Friday": {
                 service_hours: ["5:37am", "11:23pm"],
                 frequency: [
-                    ["all day", 40],
+                    ["day", 40],
                     ["evening", 60]
                 ]
             },
@@ -580,17 +580,17 @@ const routeDetails = [{
                 service_hours: ["5:15am", "11:30pm"],
                 frequency: [
                     ["peak", 35],
-                    ["all day", 60]
+                    ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["6:51am", "9:35pm"],
+                service_hours: ["6:45am", "9:30pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7:00am", "7:40pm"],
+                service_hours: ["7:00am", "7:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -639,26 +639,26 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Mack & Moross', 'Rosa Parks TC'],
         via: ['Mack', 'Cass'],
-        description: "An east side route that connects Detroit from Mack & Moross to Downtown Rosa Parks Transit Center. The main streets used are Mack, Cass and Moross.",
+        description: "An East side route that connects Detroit from Mack & Moross to Downtown Rosa Parks Transit Center. The main streets served are Mack and Cass.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/31MackMS.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["4:47am", "12:44am"],
+                service_hours: ["4:45am", "12:45am"],
                 frequency: [
                     ["peak", 20],
                     ["off-peak", 30],
-                    ["evening", 60]
+                    ["evening", "30-60"]
                 ]
             },
             "Saturday": {
-                service_hours: ["5:39am", "10:51am"],
+                service_hours: ["5:30am", "10:45pm"],
                 frequency: [
-                    ["peak", 30],
-                    ["off-peak", 60]
+                    ["day", 30],
+                    ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["6:40am", "9:47pm"],
+                service_hours: ["6:45am", "9:45pm"],
                 frequency: [
                     ["all day", 55]
                 ]
@@ -678,21 +678,21 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/32McNichols.pdf?ver=2017-01-30-160912-920"],
         services: {
             "Monday-Friday": {
-                service_hours: ["4:55am", "1:40am"],
+                service_hours: ["5:00am", "1:30am"],
                 frequency: [
                     ["peak", 35],
                     ["off-peak", 50]
                 ]
             },
             "Saturday": {
-                service_hours: ["5:49am", "12:54am"],
+                service_hours: ["5:45am", "1:00am"],
                 frequency: [
-                    ["daytime", 45],
+                    ["day", 45],
                     ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7:04am", "10:13pm"],
+                service_hours: ["7:00am", "10:15pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -761,14 +761,14 @@ const routeDetails = [{
                 service_hours: ["24 hours"],
                 frequency: [
                     ["day", 30],
-                    ["evening", 60],
+                    ["evening", "30-60"],
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["day", 40],
-                    ["evening", 60],
+                    ["day", 35],
+                    ["evening", "35-60"],
                 ]
             }
         },
@@ -819,13 +819,13 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/39Puritan.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["6:00am", "8:27pm"],
+                service_hours: ["6:00am", "8:30pm"],
                 frequency: [
                     ["all day", 60],
                 ]
             },
             "Saturday": {
-                service_hours: ["7:00am", "6:24pm"],
+                service_hours: ["7:00am", "6:30pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -903,7 +903,7 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/42%20Mid-City%20Loop.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:20am", "8:59pm"],
+                service_hours: ["5:20am", "9:00pm"],
                 frequency: [
                     ["peak", 25],
                     ["off-peak", 30],
@@ -972,22 +972,22 @@ const routeDetails = [{
             "Monday-Friday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["day", 20],
-                    ["evening", 60]
+                    ["day", "15-20"],
+                    ["evening", "30-60"]
                 ]
             },
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
                     ["day", 40],
-                    ["evening", 60]
+                    ["evening", "40-60"]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
                     ["day", 45],
-                    ["evening", 60]                
+                    ["evening", "45-60"]                
                 ]
             }
         },
@@ -1055,20 +1055,20 @@ const routeDetails = [{
                 frequency: [
                     ["peak", 20],
                     ["off-peak", 30],
-                    ["evening", 60]
+                    ["evening", "30-60"]
                 ]
             },
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 35],
-                    ["evening", 60]
+                    ["day", 35],
+                    ["evening", "35-60"]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 50],
+                    ["day", 50],
                     ["evening", 60]
                 ]
             }
@@ -1138,7 +1138,7 @@ const routeDetails = [{
                 service_hours: ["24 hours"],
                 frequency: [
                     ["day", 20],
-                    ["evening", 60]
+                    ["evening", "30-60"]
                 ]        
             }
         },
@@ -1222,9 +1222,10 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/80VillagesDirectMF.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:37am", "8:10pm"],
+                service_hours: ["5:30am", "7:30pm"],
                 frequency: [
-                    ["peak", 30],
+                    ["morning (5:30am - 9:30am)", 30],
+                    ["evening (3:00pm - 7:30pm)", 30]
                 ]
             }
         },
@@ -1245,7 +1246,7 @@ const routeDetails = [{
                 service_hours: ["5:30am", "8:00pm"],
                 frequency: [
                     ["morning (5:30am - 10am)", 40],
-                    ["evening (2:45pm - 8pm)", 45]
+                    ["evening (2:45pm - 8pm)", "40-45"]
                 ]
             }
         },
@@ -1266,7 +1267,7 @@ const routeDetails = [{
                 service_hours: ["5:25am", "6:50pm"],
                 frequency: [
                     ["morning (5:25am - 9:00am)", 35],
-                    ["evening (3:15pm - 6:50pm)", 40]
+                    ["evening (3:15pm - 6:50pm)", "35-40"]
                 ]
             }
         },

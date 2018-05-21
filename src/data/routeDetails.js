@@ -72,24 +72,24 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Varjo & Van Dyke'],
         via: ['Lafayette', 'Chene', 'Jos. Campau', 'Nevada'],
-        description: "An east side route that connects Detroit from Varjo & Van Dyke to Downtown Rosa Parks Transit Center. The main streets served are E Nevada St, Caniff St and Chene St.",
+        description: "An east side route that connects Detroit from Varjo & Van Dyke to Downtown Rosa Parks Transit Center. The main streets served are Nevada, Joseph Campau and Chene.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/10CheneMS.pdf?ver=2016-04-22-150329-977"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "10:46pm"],
+                service_hours: ["5:00am", "10:45pm"],
                 frequency: [
                     ["peak", 40],
                     ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["6:00am", "8:46pm"],
+                service_hours: ["6:00am", "9:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["8:00am", "7:50pm"],
+                service_hours: ["8:00am", "7:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -105,11 +105,11 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Clark & Fort', 'Lycaste & Jefferson'],
         via: ['Junction', 'Epworth', 'Joy', 'Harper', 'St. Jean'],
-        description: "Connects Detroit from E Jefferson & Lycaste St to Clark & Fort. The main streets served are Junction, St. Jean, Clairmount St and Harper Ave.",
+        description: "Connects various neighborhoods between Jefferson & Lycaste and Clark & Fort. Main streets served are St Jean, Shoemaker, Harper, Owen, Clairmount, Epworth and Junction.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/11Clairmount.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:10am", "9:03pm"],
+                service_hours: ["5:00am", "9:00pm"],
                 frequency: [
                     ["all day", 45],
                 ]
@@ -226,26 +226,26 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rouge Park', 'Woodward & Manchester'],
         via: [''],
-        description: "A crosstown route that connects Detroit from Rouge Park to Woodward & Manchester. The main streets served are Chicago and Davidson.",
+        description: "A crosstown route that connects Detroit from Rouge Park to Woodward & Manchester. The main streets served are Chicago and Davison. In addition to Detroit, this route also serves Highland Park.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/15ChicagoDavison.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:02am", "9:16pm"],
+                service_hours: ["5:00am", "9:15pm"],
                 frequency: [
                     ["peak", 25],
                     ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["6:55am", "8:19pm"],
+                service_hours: ["7:00am", "9:00pm"],
                 frequency: [
-                    ["all day", 45]
+                    ["all day", 50]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7:00am", "7:39pm"],
+                service_hours: ["7:00am", "8:00pm"],
                 frequency: [
-                    ["all day", 45]
+                    ["all day", 50]
                 ]
             }
         },
@@ -416,15 +416,15 @@ const routeDetails = [{
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 20],
-                    ["evening", 60]
+                    ["day", 20],
+                    ["evening", "30-60"]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 30],
-                    ["evening", 60]
+                    ["day", 30],
+                    ["evening", "30-60"]
                 ]
             }
         },
@@ -439,26 +439,26 @@ const routeDetails = [{
         between: ['Northland Mall', 'Fairlane Mall'],
         via: ["Greenfield"],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/22Greenfield.pdf"],
-        description: "A west side route that connects Detroit from Providence Hospital to Fairlane Mall. The main street used for this route is Greenfield. In addition to Detroit, this route serves Southfield and Dearborn.",
+        description: "Connects Southfield, Detroit and Dearborn between Providence Hospital and Fairlane Town Center. The main street served in Greenfield.",
         services: {
             "Monday-Friday": {
-                service_hours: ["4:28am", "1:40am"],
+                service_hours: ["4:30am", "1:30am"],
                 frequency: [
-                    ["all day", 15],
+                    ["day", 15],
                     ["evening", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["5:15am", "12:39am"],
+                service_hours: ["5:30am", "12:30am"],
                 frequency: [
-                    ["all day", 20],
-                    ["evening", 30]
+                    ["day", 20],
+                    ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["6:05am", "10:38pm"],
+                service_hours: ["6:00am", "11:00pm"],
                 frequency: [
-                    ["all day", 35],
+                    ["all day", 30],
                     ["evening", 60]
                 ]
             }
@@ -782,24 +782,24 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['I-96 & Middlebelt', '8 Mile & Hayes'],
         via: ['Plymouth', 'Elmhurst', 'Caniff'],
-        description: "A crosstown route that connects Detroit from I-96 & Middlebelt to Eight Mile and Hayes. The main streets used are Hayes, Calvert, Elmhurst St and Plymouth Rd. In addition to Detroit, this route serves Livonia and Redford Township.",
+        description: "Connects Livonia, Redford, Detroit and Hamtramck between Millennium Park and Gratiot & French. Monday-Friday peak-hour trips extend to Hayes & 8 Mile. The main streets served are Plymouth, Elmhurst, Calvert/Trowbridge, Harmon/Collingwood, Caniff, Mt Elliott, Miller, Georgia, E Outer Dr and Hayes.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/38Plymouth.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["4:10am", "12:11am"],
+                service_hours: ["4:00am", "12:00am"],
                 frequency: [
-                    ["peak", 45],
-                    ["off-peak", 60]
+                    ["day", 45],
+                    ["evening", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["4:22am", "10:15pm"],
+                service_hours: ["4:00am", "10:30pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["4:22am", "8:20pm"],
+                service_hours: ["4:00am", "8:30pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -1244,8 +1244,8 @@ const routeDetails = [{
             "Monday-Friday": {
                 service_hours: ["5:30am", "8:00pm"],
                 frequency: [
-                    ["morning (5:30am-10am)", 40],
-                    ["evening (2:45pm-8pm)", 45]
+                    ["morning (5:30am - 10am)", 40],
+                    ["evening (2:45pm - 8pm)", 45]
                 ]
             }
         },
@@ -1259,13 +1259,14 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Friday'],
         between: ['8 Mile & Evergreen', 'Downtown'],
         via: ['Grand River', 'I-96'],
-        description: "A west side express route that connects Detroit from Pembroke St & Evergreen to Downtown E Jefferson & St Antoine. This route provides express service by using highways to decrease travel time. The main streets served are Evergreen and Grand River.",
+        description: "Connects various neighborhoods with express service on I-96 freeway (Jeffries) between Pembroke & Vaughan and Larned & St Antoine. Service operates Monday-Friday during morning and evening peak hours. The main streets served are Pembroke, Burt Rd, 8 Mile, Evergreen, Grand River, Washington Blvd and Larned.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/92RosedaleExpressMF.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:35am", "6:55pm"],
+                service_hours: ["5:25am", "6:50pm"],
                 frequency: [
-                    ["peak", 35],
+                    ["morning (5:25am - 9:00am)", 35],
+                    ["evening (3:15pm - 6:50pm)", 40]
                 ]
             }
         },

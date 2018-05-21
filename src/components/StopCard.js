@@ -21,7 +21,7 @@ const styles = {
     padding: '0px 0px',
   },
   subheader: {
-    fontSize: '1em',
+    fontSize: '.9em',
     padding: '0',
   },
   avatar: {
@@ -33,7 +33,7 @@ const StopCardRoutes = ({routes}) => {
   return (
     <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', marginTop: '-.5em' }}>
       {routes.map((r, i) => (
-        <Link to={{ pathname: `/route/${r}` }} key={i} style={{ display: 'flex', textDecoration: 'none', alignItems:'center', fontWeight: 700, justifyContent: 'center', width: '2em', height: '2em', color: 'white', fontSize: '1em', backgroundColor: Schedules[r].color, marginRight: '.5em', marginTop: '.5em' }}>
+        <Link to={{ pathname: `/route/${r}` }} key={i} style={{ display: 'flex', textDecoration: 'none', alignItems:'center', fontWeight: 700, justifyContent: 'center', width: '1.8em', height: '1.8em', color: 'white', fontSize: '.9em', backgroundColor: Schedules[r].color, marginRight: '.5em', marginTop: '.5em' }}>
           {r}
         </Link>))}
     </div>
@@ -54,7 +54,7 @@ class StopCard extends Component {
         <CardHeader 
           avatar={<BusStopIcon style={{ height: '1em', width: '1em' }} />} 
           title={
-              <Link to={{ pathname: `/stop/${this.props.id}` }} style={{ color: 'black' }}>
+              <Link to={{ pathname: `/stop/${this.props.id}` }} style={{ color: 'black', fontSize: '1.2em' }}>
                 <span>{Stops[this.props.id].name}</span>
               </Link> 
               } 

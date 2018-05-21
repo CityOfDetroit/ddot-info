@@ -10,20 +10,20 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/07CadilllacHarper.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:08am", "12:02am"],
+                service_hours: ["5:00am", "12:00am"],
                 frequency: [
-                    ["peak", 30],
+                    ["peak", 35],
                     ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["6:55am", "11:49pm"],
+                service_hours: ["7:00am", "11:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7:00am", "8:48pm"],
+                service_hours: ["7:00am", "8:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -43,20 +43,20 @@ const routeDetails = [{
         description: "An east side route that connects Detroit from Jefferson & Maryland to 7 Mile & Gratiot. The main streets served are Chalmers and Schoenherr St.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5:15am", "8:52pm"],
+                service_hours: ["5:15am", "8:45pm"],
                 frequency: [
                     ["peak", 30],
                     ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["6:45am", "7:52pm"],
+                service_hours: ["6:45am", "7:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["8:20am", "5:04pm"],
+                service_hours: ["8:15am", "5:00pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -72,24 +72,24 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Varjo & Van Dyke'],
         via: ['Lafayette', 'Chene', 'Jos. Campau', 'Nevada'],
-        description: "An east side route that connects Detroit from Varjo & Van Dyke to Downtown Rosa Parks Transit Center. The main streets served are E Nevada St, Caniff St and Chene St.",
+        description: "An east side route that connects Detroit from Varjo & Van Dyke to Downtown Rosa Parks Transit Center. The main streets served are Nevada, Joseph Campau and Chene.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/10CheneMS.pdf?ver=2016-04-22-150329-977"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5am", "10:46pm"],
+                service_hours: ["5:00am", "10:45pm"],
                 frequency: [
                     ["peak", 40],
                     ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["6:00am", "8:46pm"],
+                service_hours: ["6:00am", "9:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["8:00am", "7:50pm"],
+                service_hours: ["8:00am", "7:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -105,11 +105,11 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Clark & Fort', 'Lycaste & Jefferson'],
         via: ['Junction', 'Epworth', 'Joy', 'Harper', 'St. Jean'],
-        description: "Connects Detroit from E Jefferson & Lycaste St to Clark & Fort. The main streets served are Junction, St. Jean, Clairmount St and Harper Ave.",
+        description: "Connects various neighborhoods between Jefferson & Lycaste and Clark & Fort. Main streets served are St Jean, Shoemaker, Harper, Owen, Clairmount, Epworth and Junction.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/11Clairmount.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:10am", "9:03pm"],
+                service_hours: ["5:00am", "9:00pm"],
                 frequency: [
                     ["all day", 45],
                 ]
@@ -129,19 +129,19 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/12ConantMS.pdf?ver=2016-04-22-150443-267"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:50am", "8:43pm"],
+                service_hours: ["5:45am", "8:45pm"],
                 frequency: [
                     ["all day", 50],
                 ]
             },
             "Saturday": {
-                service_hours: ["7:30am", "8:43pm"],
+                service_hours: ["7:30am", "8:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["8:00am", "6:43pm"],
+                service_hours: ["8:00am", "6:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -161,20 +161,20 @@ const routeDetails = [{
         description: "An east Side route that connects Detroit from Conner & Jefferson to Bel-Air Center. The main streets served are Conner St, Hoover St.",
         services: {
             "Monday-Friday": {
-                service_hours: ["6:15am", "9:49pm"],
+                service_hours: ["6:15am", "9:45pm"],
                 frequency: [
                     ["peak", 40],
                     ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["5:33am", "8:27pm"],
+                service_hours: ["5:30am", "8:30pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["6:55am", "7:04pm"],
+                service_hours: ["7:00am", "7:00pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -204,14 +204,14 @@ const routeDetails = [{
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 45],
+                    ["day", 45],
                     ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 45],
+                    ["day", 45],
                     ["evening", 60]
                 ]
             }
@@ -226,26 +226,26 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rouge Park', 'Woodward & Manchester'],
         via: [''],
-        description: "A crosstown route that connects Detroit from Rouge Park to Woodward & Manchester. The main streets served are Chicago and Davidson.",
+        description: "A crosstown route that connects Detroit from Rouge Park to Woodward & Manchester. The main streets served are Chicago and Davison. In addition to Detroit, this route also serves Highland Park.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/15ChicagoDavison.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:02am", "9:16pm"],
+                service_hours: ["5:00am", "9:15pm"],
                 frequency: [
                     ["peak", 25],
                     ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["6:55am", "8:19pm"],
+                service_hours: ["7:00am", "9:00pm"],
                 frequency: [
-                    ["all day", 45]
+                    ["all day", 50]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7:00am", "7:39pm"],
+                service_hours: ["7:00am", "8:00pm"],
                 frequency: [
-                    ["all day", 45]
+                    ["all day", 50]
                 ]
             }
         },
@@ -273,14 +273,14 @@ const routeDetails = [{
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 30],
+                    ["day", 30],
                     ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 30],
+                    ["day", 30],
                     ["evening", 60]
                 ]
             }
@@ -309,14 +309,14 @@ const routeDetails = [{
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 25],
+                    ["day", 25],
                     ["evening", 50],
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 35],
+                    ["day", 35],
                     ["evening", 55]
                 ]
             }
@@ -335,7 +335,7 @@ const routeDetails = [{
         description: "A west side route that connects Detroit from Downtown Rosa Parks Transit Center to Fenkell & Telegraph. The main streets served are Fenkell, 14th (northbound) and 12th (southbound).",
         services: {
             "Monday-Friday": {
-                service_hours: ["5:10am", "11:02pm"],
+                service_hours: ["5:10am", "11:00pm"],
                 frequency: [
                     ["peak", 25],
                     ["off-peak", 45],
@@ -343,16 +343,16 @@ const routeDetails = [{
                 ]
             },
             "Saturday": {
-                service_hours: ["6:00am", "10L57pm"],
+                service_hours: ["6:00am", "11:00pm"],
                 frequency: [
-                    ["all day", 45],
+                    ["day", 45],
                     ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7:41am", "8:28pm"],
+                service_hours: ["7:45am", "8:30pm"],
                 frequency: [
-                    ["all day", 45],
+                    ["day", 45],
                     ["evening", 60]
                 ]
             }
@@ -381,7 +381,7 @@ const routeDetails = [{
             "Saturday": {
                 service_hours: ["5:00am", "12:28am"],
                 frequency: [
-                    ["all day", 40],
+                    ["day", 40],
                     ["evening", 65]
                 ]
             },
@@ -416,15 +416,15 @@ const routeDetails = [{
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 20],
-                    ["evening", 60]
+                    ["day", 20],
+                    ["evening", "30-60"]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 30],
-                    ["evening", 60]
+                    ["day", 30],
+                    ["evening", "30-60"]
                 ]
             }
         },
@@ -439,27 +439,27 @@ const routeDetails = [{
         between: ['Northland Mall', 'Fairlane Mall'],
         via: ["Greenfield"],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/22Greenfield.pdf"],
-        description: "A west side route that connects Detroit from Providence Hospital to Fairlane Mall. The main street used for this route is Greenfield. In addition to Detroit, this route serves Southfield and Dearborn.",
+        description: "Connects Southfield, Detroit and Dearborn between Providence Hospital and Fairlane Town Center. The main street served in Greenfield.",
         services: {
             "Monday-Friday": {
-                service_hours: ["4:28am", "1:40am"],
+                service_hours: ["4:30am", "1:30am"],
                 frequency: [
-                    ["all day", 15],
-                    ["evening", 60]
+                    ["day", 15],
+                    ["evening", "30-60"]
                 ]
             },
             "Saturday": {
-                service_hours: ["5:15am", "12:39am"],
+                service_hours: ["5:30am", "12:30am"],
                 frequency: [
-                    ["all day", 20],
-                    ["evening", 30]
+                    ["day", 20],
+                    ["evening", "30-60"]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["6:05am", "10:38pm"],
+                service_hours: ["6:00am", "11:00pm"],
                 frequency: [
-                    ["all day", 35],
-                    ["evening", 60]
+                    ["day", 30],
+                    ["evening", "35-60"]
                 ]
             }
         },
@@ -479,7 +479,7 @@ const routeDetails = [{
             "Monday-Friday": {
                 service_hours: ["5:37am", "11:23pm"],
                 frequency: [
-                    ["all day", 40],
+                    ["day", 40],
                     ["evening", 60]
                 ]
             },
@@ -580,17 +580,17 @@ const routeDetails = [{
                 service_hours: ["5:15am", "11:30pm"],
                 frequency: [
                     ["peak", 35],
-                    ["all day", 60]
+                    ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["6:51am", "9:35pm"],
+                service_hours: ["6:45am", "9:30pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7:00am", "7:40pm"],
+                service_hours: ["7:00am", "7:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -606,18 +606,18 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Fairgrounds TC', 'W. Jefferson & Brennan'],
         via: ['Livernois'],
-        description: "A west side route that connects Detroit from the Fairgrounds to W. Jefferson & Brennan. The main street served is Livernois.",
+        description: "Connects neighborhoods between northwest Detroit to southwest Detroit from 8 Mile & Jefferson. Main streets served are Livernois, Jefferson & Dragoon.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/30LivernoisMS.pdf?ver=2016-04-22-151449-233"],
         services: {
             "Monday-Friday": {
-                service_hours: ["6:00am", "9:46pm"],
+                service_hours: ["6:00am", "9:45pm"],
                 frequency: [
-                    ["peak", 40],
+                    ["peak", 30],
                     ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["6:57am", "9:45pm"],
+                service_hours: ["7:00am", "9:45pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -639,26 +639,26 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Mack & Moross', 'Rosa Parks TC'],
         via: ['Mack', 'Cass'],
-        description: "An east side route that connects Detroit from Mack & Moross to Downtown Rosa Parks Transit Center. The main streets used are Mack, Cass and Moross.",
+        description: "An East side route that connects Detroit from Mack & Moross to Downtown Rosa Parks Transit Center. The main streets served are Mack and Cass.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/31MackMS.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["4:47am", "12:44am"],
+                service_hours: ["4:45am", "12:45am"],
                 frequency: [
                     ["peak", 20],
                     ["off-peak", 30],
-                    ["evening", 60]
+                    ["evening", "30-60"]
                 ]
             },
             "Saturday": {
-                service_hours: ["5:39am", "10:51am"],
+                service_hours: ["5:30am", "10:45pm"],
                 frequency: [
-                    ["peak", 30],
-                    ["off-peak", 60]
+                    ["day", 30],
+                    ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["6:40am", "9:47pm"],
+                service_hours: ["6:45am", "9:45pm"],
                 frequency: [
                     ["all day", 55]
                 ]
@@ -678,21 +678,21 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/32McNichols.pdf?ver=2017-01-30-160912-920"],
         services: {
             "Monday-Friday": {
-                service_hours: ["4:55am", "1:40am"],
+                service_hours: ["5:00am", "1:30am"],
                 frequency: [
                     ["peak", 35],
                     ["off-peak", 50]
                 ]
             },
             "Saturday": {
-                service_hours: ["5:49am", "12:54am"],
+                service_hours: ["5:45am", "1:00am"],
                 frequency: [
-                    ["daytime", 45],
+                    ["day", 45],
                     ["evening", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["7:04am", "10:13pm"],
+                service_hours: ["7:00am", "10:15pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -761,14 +761,14 @@ const routeDetails = [{
                 service_hours: ["24 hours"],
                 frequency: [
                     ["day", 30],
-                    ["evening", 60],
+                    ["evening", "30-60"],
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["day", 40],
-                    ["evening", 60],
+                    ["day", 35],
+                    ["evening", "35-60"],
                 ]
             }
         },
@@ -782,24 +782,24 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['I-96 & Middlebelt', '8 Mile & Hayes'],
         via: ['Plymouth', 'Elmhurst', 'Caniff'],
-        description: "A crosstown route that connects Detroit from I-96 & Middlebelt to Eight Mile and Hayes. The main streets used are Hayes, Calvert, Elmhurst St and Plymouth Rd. In addition to Detroit, this route serves Livonia and Redford Township.",
+        description: "Connects Livonia, Redford, Detroit and Hamtramck between Millennium Park and Gratiot & French. Monday-Friday peak-hour trips extend to Hayes & 8 Mile. The main streets served are Plymouth, Elmhurst, Calvert/Trowbridge, Harmon/Collingwood, Caniff, Mt Elliott, Miller, Georgia, E Outer Dr and Hayes.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/38Plymouth.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["4:10am", "12:11am"],
+                service_hours: ["4:00am", "12:00am"],
                 frequency: [
-                    ["peak", 45],
-                    ["off-peak", 60]
+                    ["day", 45],
+                    ["evening", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["4:22am", "10:15pm"],
+                service_hours: ["4:00am", "10:30pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["4:22am", "8:20pm"],
+                service_hours: ["4:00am", "8:30pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -819,13 +819,13 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/39Puritan.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["6:00am", "8:27pm"],
+                service_hours: ["6:00am", "8:30pm"],
                 frequency: [
                     ["all day", 60],
                 ]
             },
             "Saturday": {
-                service_hours: ["7:00am", "6:24pm"],
+                service_hours: ["7:00am", "6:30pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -903,7 +903,7 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/42%20Mid-City%20Loop.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:20am", "8:59pm"],
+                service_hours: ["5:20am", "9:00pm"],
                 frequency: [
                     ["peak", 25],
                     ["off-peak", 30],
@@ -933,23 +933,24 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Redford Plaza', '8 Mile & Ryan'],
         via: ['Schoolcraft', 'Oakman Blvd', 'Manchester', 'Oakland'],
-        description: "A crosstown route that connects Detroit from Eight Mile & Ryan to Redford Plaza. The main streets used are Schoolcraft, Ewald, Oakman and Dequindre.",
+        description: "Connects Redford, Detroit & Highland Park between Redford Plaza and Woodward & Manchester. Monday-Friday peak hour trips extend to 8 Mile & Ryan. The main streets served are Schoolcraft, Telegraph, Davison, Ewald Circle, Oakman, Oakland, Manchester, Dequindre, Conant, E Outer Dr & Ryan.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/43Schoolcraft.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:10am", "8:24pm"],
+                service_hours: ["5:00am", "8:00pm"],
                 frequency: [
-                    ["all day", 50]
+                    ["peak", 50],
+                    ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["7:00am", "7:10pm"],
+                service_hours: ["7:00am", "7:00pm"],
                 frequency: [
-                    ["all day", 50]
+                    ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["10:05am", "7:02pm"],
+                service_hours: ["10:00am", "7:00pm"],
                 frequency: [
                     ["all day", 50]
                 ]
@@ -965,29 +966,28 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Meijer Old Redford', 'Mack & Moross'],
         via: ['Lahser', '7 Mile', 'Morang', 'Moross'],
-        description: "A crosstown route that connects Detroit from Old Redford Meijer to Mack & Moross. The main street used is Seven Mile.",
+        description: "Connects Redford and Detroit with 24 hour service between Meijer Old Redford and St John Hospital. Main streets served are Grand River, Lasher, 7 mile, Cadieux, Morang and Moross.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/45SevenMileMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/45SevenMileSS.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["peak", 15],
-                    ["off-peak", 30],
-                    ["evening", 60]
+                    ["day", "15-20"],
+                    ["evening", "30-60"]
                 ]
             },
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 40],
-                    ["evening", 60]
+                    ["day", 40],
+                    ["evening", "40-60"]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 45],
-                    ["evening", 60]                
+                    ["day", 45],
+                    ["evening", "45-60"]                
                 ]
             }
         },
@@ -1055,20 +1055,20 @@ const routeDetails = [{
                 frequency: [
                     ["peak", 20],
                     ["off-peak", 30],
-                    ["evening", 60]
+                    ["evening", "30-60"]
                 ]
             },
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 35],
-                    ["evening", 60]
+                    ["day", 35],
+                    ["evening", "35-60"]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 50],
+                    ["day", 50],
                     ["evening", 60]
                 ]
             }
@@ -1083,25 +1083,25 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Michigan & Schaefer', 'Rosa Parks TC'],
         via: ['Vernor', 'Bagley', 'Lafayette'],
-        description: "A west side route that connects Detroit from Michigan & Schaefer to Downtown Rosa Parks Transit Center. The main streets served are Vernor and Miller. In Addition to Detroit, this route serves Dearborn.",
+        description: "Connects Detroit & Dearborn between Rosa Parks Transit Center and Schaefer & Michigan. The main streets served are Lafayette, Trumbull, Bagley, Vernor, Wyoming & Michigan.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/49VernorMS.pdf?ver=2017-06-26-142208-523"],
         services: {
             "Monday-Friday": {
-                service_hours: ["4:40am", "1:18am"],
+                service_hours: ["4:30am", "12:30am"],
                 frequency: [
-                    ["peak", 25],
-                    ["off-peak", 45]
+                    ["day", 25],
+                    ["evening", 45]
                 ]
             },
             "Saturday": {
-                service_hours: ["4:59am", "1:03am"],
+                service_hours: ["5:00am", "1:00am"],
                 frequency: [
-                    ["peak", 25],
-                    ["off-peak", 45]
+                    ["day", 25],
+                    ["evening", 45]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["6:03am", "12:00am"],
+                service_hours: ["6:00am", "12:00am"],
                 frequency: [
                     ["all day", 55]
                 ]
@@ -1117,30 +1117,29 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Fairgrounds TC', 'Downtown'],
         via: ['Woodward Avenue'],
-        description: "A central route that connects Detroit from the Fairgrounds to Downtown. The main street used is Woodward Ave.",
+        description: "The 24 hour service connects Detroit and Highland Park between State Fairgrounds Transit Center and Renaissance Center in Downtown Detroit. The main streets served are Woodward, Park, Washington Blvd and Larned.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/53WoodwardMS.pdf?ver=2017-06-26-135605-973"],
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["peak", 10],
-                    ["off-peak", 15],
+                    ["day", 10],
                     ["evening", 30]
                 ]
             },
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["daytime", 10],
+                    ["day", 10],
                     ["evening", 30] 
                 ]               
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["daytime", 15],
-                    ["evening", 30]
-                ]         
+                    ["day", 20],
+                    ["evening", "30-60"]
+                ]        
             }
         },
         notes: ""
@@ -1223,9 +1222,10 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/80VillagesDirectMF.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:37am", "8:10pm"],
+                service_hours: ["5:30am", "7:30pm"],
                 frequency: [
-                    ["peak", 30],
+                    ["morning (5:30am - 9:30am)", 30],
+                    ["evening (3:00pm - 7:30pm)", 30]
                 ]
             }
         },
@@ -1239,13 +1239,14 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Trumbull & W. Grand Blvd.', 'W. Outer Dr. & Fort'],
         via: ['Bassett', 'Vernor', 'Cass', 'W. Grand Blvd.'],
-        description: "A southwest peak hour route that connects Detroit from Fort & W Outer Dr to Trumbull & W Grand Blvd. This route connects highly populated residential neighborhoods in Southwest Detroit to a resource intensive neighborhood using both streets and highways. The main streets served are Bassett, S Schafer Hwy, Springwells, W Vernor and Cass Ave.",
+        description: "Connects Lincoln Park and Detroit with express service on I-75 freeway (Fisher) between Fort & W Outer Dr and Henry Ford Hospital. The main streets served are Fort, Outer Dr, Bassett, Schaefer, Vernor, Michigan, Trumbull and Cass. Service is available during morning and evening peak hours Monday thru Friday.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/89SouthwestDirectMF.pdf?ver=2017-04-21-171512-467"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:35am", "6:55pm"],
+                service_hours: ["5:30am", "8:00pm"],
                 frequency: [
-                    ["peak", 40],
+                    ["morning (5:30am - 10am)", 40],
+                    ["evening (2:45pm - 8pm)", "40-45"]
                 ]
             }
         },
@@ -1259,13 +1260,14 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Friday'],
         between: ['8 Mile & Evergreen', 'Downtown'],
         via: ['Grand River', 'I-96'],
-        description: "A west side express route that connects Detroit from Pembroke St & Evergreen to Downtown E Jefferson & St Antoine. This route provides express service by using highways to decrease travel time. The main streets served are Evergreen and Grand River.",
+        description: "Connects various neighborhoods with express service on I-96 freeway (Jeffries) between Pembroke & Vaughan and Larned & St Antoine. Service operates Monday-Friday during morning and evening peak hours. The main streets served are Pembroke, Burt Rd, 8 Mile, Evergreen, Grand River, Washington Blvd and Larned.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/92RosedaleExpressMF.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:35am", "6:55pm"],
+                service_hours: ["5:25am", "6:50pm"],
                 frequency: [
-                    ["peak", 35],
+                    ["morning (5:25am - 9:00am)", 35],
+                    ["evening (3:15pm - 6:50pm)", "35-40"]
                 ]
             }
         },

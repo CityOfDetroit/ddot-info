@@ -70,8 +70,8 @@
     "build": "node scripts/build.js && cp build/index.html build/404.html",
     "test": "node scripts/test.js --env=jsdom",
     "css": "tachyons src/css/app.css > src/css/index.css --minify",
-    "prestart": "npm run css",
-    "prebuild": "npm run css"
+    "prestart": "yarn run css",
+    "prebuild": "yarn run css"
   },
   "devDependencies": {
     "tachyons-flexbox": "^2.1.0"

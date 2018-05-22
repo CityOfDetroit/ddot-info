@@ -25,7 +25,7 @@ class ScheduleTable extends Component {
     let tripsToHighlight = this.props.liveTrips.map(t => t.slice(8));
 
     return (
-      <div style={{ overflow: 'auto', height: '50vh', backgroundColor: 'white' }}>
+      <div style={{ overflow: 'auto', maxHeight: '50vh', backgroundColor: 'white' }}>
         <Table>
           <TableHead>
             <TableRow>

@@ -6,7 +6,7 @@ import bbox from '@turf/bbox';
 import WebMercatorViewport from 'viewport-mercator-project';
 import {Link} from 'react-router-dom'
 
-import {defaultMapStyle, routeLineIndex, walkRadiusLabelIndex} from '../style.js'
+import {defaultMapStyle, routeLineIndex, walkRadiusLabelIndex, routeLabelIndex, routeCaseIndex} from '../style.js'
 import MapSatelliteSwitch from './MapSatelliteSwitch';
 import BusStop from './BusStop'
 import Helpers from '../helpers.js';
@@ -80,6 +80,8 @@ class NearbyMap extends Component {
     // show all nearby routes
     const routeIds = Object.keys(this.props.stops).map(rid => parseInt(rid, 10));
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routeIds));
+    style = style.setIn(['layers', routeLabelIndex, 'filter'], ["in", "route_num"].concat(routeIds));
+    style = style.setIn(['layers', routeCaseIndex, 'filter'], ["in", "route_num"].concat(routeIds));
 
     // set data for geolocated source to coords
     const geolocatedPoint = [

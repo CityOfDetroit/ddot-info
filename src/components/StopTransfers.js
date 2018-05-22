@@ -8,7 +8,6 @@ import Helpers from '../helpers';
 class StopTransfers extends React.Component {
   
   render() {
-    const stops = _.groupBy(this.props.stops, 2);
     const routes = _.groupBy(this.props.stops, 0)
     return (
       <div className="transfers" style={{padding: 10, backgroundColor: 'white'}}>

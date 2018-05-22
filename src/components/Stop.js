@@ -12,7 +12,6 @@ import TransferIcon from 'material-ui-icons/SwapHoriz'
 
 import Stops from '../data/stops.js';
 import TopNav from './TopNav';
-import StopMap from './StopMap';
 import StopWithPredictionMap from './StopWithPredictionMap';
 import StopTransfers from './StopTransfers';
 import StopRouteSchedule from './StopRouteSchedule';

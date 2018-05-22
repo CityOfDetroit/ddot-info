@@ -9,7 +9,7 @@ import Stops from '../data/stops.js';
 
 import {Link} from 'react-router-dom'
 
-import {defaultMapStyle, routeLineIndex} from '../style.js';
+import {defaultMapStyle, routeLineIndex, routeLabelIndex, routeCaseIndex} from '../style.js';
 import BusStop from './BusStop.js';
 import BusIcon from 'material-ui-icons/DirectionsBus';
 
@@ -94,10 +94,14 @@ class StopWithPredictionMap extends Component {
 
     if (this.props.prediction) {
       style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.route, 10));
+      style = style.setIn(['layers', routeLabelIndex, 'filter', 2], parseInt(this.props.route, 10));
+      style = style.setIn(['layers', routeCaseIndex, 'filter', 2], parseInt(this.props.route, 10));
     }
     else {
       const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 0).concat(stop.routes))))
       style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))   
+      style = style.setIn(['layers', routeLabelIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))   
+      style = style.setIn(['layers', routeCaseIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))   
       style = style.setIn(['layers', 1, 'layout', 'visibility'], 'visible')
       _.forEach(style.toJS().layers, (l, i) => {
         if(l['source-layer'] === 'road') {
@@ -137,15 +141,6 @@ class StopWithPredictionMap extends Component {
                 <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/>
               </Link>
             </Marker>
-            // <Marker latitude={Stops[s].lat} longitude={Stops[s].lon} offsetLeft={-20} offsetTop={-20}>
-            //   <Link to={{pathname: `/stop/${s}`}} style={{textDecoration: 'none'}}>
-            //     <Avatar
-            //       style={{backgroundColor: 'rgba(0,0,0,.65)', fontWeight: 700, color: 'white', textDecoration: 'none'}}
-            //     >
-            //       {i+1}
-            //     </Avatar>
-            //   </Link>
-            // </Marker>
           ))
           }
         </MapGL>

@@ -112,7 +112,7 @@
     "pitch": 0.5,
     "sources": {
         "composite": {
-            "url": "mapbox://mapbox.9g9sq3ys,mapbox.92olaqdt,mapbox.mapbox-streets-v7,mapbox.mapbox-terrain-v2,mapbox.b1l3wqbs,mapbox.8x70v9py,mapbox.443y3dl2,mapbox.3656mpur",
+            "url": "mapbox://mapbox.9g9sq3ys,mapbox.92olaqdt,mapbox.mapbox-streets-v7,mapbox.mapbox-terrain-v2,mapbox.b1l3wqbs,mapbox.8x70v9py,mapbox.443y3dl2,mapbox.3656mpur,cityofdetroit.bvmcgwpu",
             "type": "vector"
         },
         "satellite": {
@@ -141,7 +141,7 @@
             "data": {}
         }
     },
-    "sprite": "mapbox://sprites/cityofdetroit/cjdndtywb04ee2slc79udmzn8",
+    "sprite": "mapbox://sprites/cityofdetroit/cjhe6cx480zdc2sn0frdifb0w",
     "glyphs": "mapbox://fonts/cityofdetroit/{fontstack}/{range}.pbf",
     "layers": [{
             "id": "background",
@@ -2990,62 +2990,6 @@
                         ]
                     ]
                 }
-            }
-        },
-        {
-            "id": "ferry-label",
-            "type": "symbol",
-            "metadata": {
-                "mapbox:group": "3c6447486d5a2d73e7921d12ecc1044e"
-            },
-            "source": "composite",
-            "source-layer": "road_label",
-            "minzoom": 15,
-            "filter": [
-                "all", [
-                    "==",
-                    "$type",
-                    "LineString"
-                ],
-                [
-                    "==",
-                    "class",
-                    "ferry"
-                ]
-            ],
-            "layout": {
-                "text-size": {
-                    "base": 1,
-                    "stops": [
-                        [
-                            15,
-                            10
-                        ],
-                        [
-                            20,
-                            13
-                        ]
-                    ]
-                },
-                "text-max-angle": 30,
-                "symbol-spacing": 250,
-                "text-font": [
-                    "Barlow Semi Condensed Regular",
-                    "Arial Unicode MS Regular"
-                ],
-                "symbol-placement": "line",
-                "text-padding": 1,
-                "text-rotation-alignment": "map",
-                "text-pitch-alignment": "viewport",
-                "text-field": "{name_en}",
-                "text-letter-spacing": 0.1
-            },
-            "paint": {
-                "text-color": "hsl(0, 0%, 20%)",
-                "text-halo-color": "hsl(188, 13%, 84%)",
-                "text-halo-width": 1.25,
-                "text-halo-blur": 1,
-                "text-opacity": 1
             }
         },
         {
@@ -9214,83 +9158,6 @@
             }
         },
         {
-            "id": "rail-label",
-            "type": "symbol",
-            "source": "composite",
-            "source-layer": "rail_station_label",
-            "minzoom": 13,
-            "filter": [
-                "!=",
-                "maki",
-                "entrance"
-            ],
-            "layout": {
-                "text-line-height": 1.1,
-                "text-size": {
-                    "base": 1,
-                    "stops": [
-                        [
-                            16,
-                            11
-                        ],
-                        [
-                            20,
-                            13
-                        ]
-                    ]
-                },
-                "icon-image": "{network}",
-                "symbol-spacing": 250,
-                "text-font": [
-                    "Heebo Regular",
-                    "Arial Unicode MS Regular"
-                ],
-                "text-offset": [
-                    0,
-                    0.85
-                ],
-                "text-rotation-alignment": "viewport",
-                "text-anchor": "top",
-                "text-field": {
-                    "base": 1,
-                    "stops": [
-                        [
-                            0,
-                            ""
-                        ],
-                        [
-                            13,
-                            "{name_en}"
-                        ]
-                    ]
-                },
-                "text-letter-spacing": 0.01,
-                "icon-padding": 0,
-                "text-max-width": 7
-            },
-            "paint": {
-                "text-color": "hsl(211, 59%, 44%)",
-                "text-halo-color": "hsl(0, 0%, 100%)",
-                "text-halo-width": 0.5,
-                "icon-halo-width": 4,
-                "icon-halo-color": "#fff",
-                "text-opacity": {
-                    "base": 1,
-                    "stops": [
-                        [
-                            13.99,
-                            0
-                        ],
-                        [
-                            14,
-                            1
-                        ]
-                    ]
-                },
-                "text-halo-blur": 0.5
-            }
-        },
-        {
             "id": "water-label-sm",
             "type": "symbol",
             "metadata": {
@@ -11710,6 +11577,105 @@
                         ]
                     ]
                 }
+            }
+        },
+        {
+            "id": "ddot-new copy",
+            "type": "symbol",
+            "source": "composite",
+            "source-layer": "ddot_new",
+            "filter": [
+                "==",
+                "route_num",
+                ""
+            ],
+            "layout": {
+                "text-line-height": 1,
+                "text-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    18,
+                    19,
+                    12
+                ],
+                "icon-image": [
+                    "match",
+                    [
+                        "get",
+                        "orientation"
+                    ],
+                    "Special",
+                    "special",
+                    "East-West",
+                    "eastwest",
+                    "North-South",
+                    "northsouth",
+                    "Downtown",
+                    "downtown",
+                    "square-15"
+                ],
+                "icon-rotation-alignment": "viewport",
+                "symbol-avoid-edges": true,
+                "symbol-spacing": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    180,
+                    16,
+                    280,
+                    18,
+                    250,
+                    22,
+                    100
+                ],
+                "text-font": [
+                    "Gibson Detroit SemiBold",
+                    "Open Sans ExtraBold",
+                    "Arial Unicode MS Regular"
+                ],
+                "symbol-placement": "line",
+                "text-padding": 0,
+                "text-rotation-alignment": "viewport",
+                "text-field": [
+                    "to-string",
+                    [
+                        "get",
+                        "route_num"
+                    ]
+                ],
+                "text-anchor": "center",
+                "text-offset": [0,0.1],
+                "text-letter-spacing": -0.02,
+                "icon-padding": 0,
+                "icon-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    2,
+                    19,
+                    1.2
+                ]
+            },
+            "paint": {
+                "text-color": "hsl(0, 0%, 100%)",
+                "text-halo-width": 0,
+                "icon-translate-anchor": "viewport"
             }
         }
     ],

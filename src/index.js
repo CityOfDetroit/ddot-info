@@ -14,6 +14,7 @@ import RouteStops from './components/RouteStops';
 import BusRoute from './components/BusRoute'
 import Stop from './components/Stop';
 import Nearby from './components/Nearby';
+import SystemMap from './components/SystemMap'
 import TransitCenter from './components/TransitCenter';
 
 import ReactGA from 'react-ga';
@@ -168,6 +169,7 @@ ReactDOM.render(
           <Route exact path='/' component={App} />
           <Route path='/about' component={About} />
           <Route path='/nearby' component={Nearby} />
+          <Route path='/system' component={SystemMap} />
           <Route path='/stop/rosa-parks-tc' component={TransitCenter} />
           <Route path='/stop/:name' component={Stop} />
           <Route path="/route/:name/real-time" component={RouteRealtime} />

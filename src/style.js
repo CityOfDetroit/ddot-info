@@ -16,6 +16,69 @@ Object.assign(MAP_STYLE.sources, {
     }
 });
 
+MAP_STYLE.layers.splice(
+    MAP_STYLE.layers.findIndex(layer => layer.id === 'road-label-small'), 0,
+    {
+        "id": "ddot-routes-highlight",
+        "type": "line",
+        "source": "ddotroutes",
+        "source-layer": "ddot_new",
+        "interactive": "true",
+        "filter": [
+            "==",
+            "route_num",
+            ""
+        ],
+        "layout": {
+            "visibility": "visible",
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": {
+                "base": 1,
+                "type": "categorical",
+                "property": "orientation",
+                "stops": [
+                    [
+                        "Downtown",
+                        // "rgba(0,0,0,1)"
+                        // "#44aa42"
+                        // "#78AA77"
+                        "#499147"
+                    ],
+                    [
+                        "East-West",
+                        // "rgba(0,0,0,1)"
+                        // "#0079c2"
+                        // "#619EC2"
+                        "#116FA8"
+                    ],
+                    [
+                        "North-South",
+                        // "rgba(0,0,0,1)"
+                        // "#9b5ba5"
+                        // "#A081A5"
+                        "#865B8C"
+                    ],
+                    [
+                        "Special",
+                        // "rgba(0,0,0,1)"
+                        "#d07c32"
+                        // "#D0A681"
+                        // "#B8773E"
+                    ]
+                ]
+            },
+            "line-width": {
+                "base": 1,
+                "stops": [[9,6],[16,24],[22,90]]
+            },
+            "line-offset": 0,
+            "line-opacity": 0.6,
+        }
+    }
+    );
 
 MAP_STYLE.layers.splice(
 MAP_STYLE.layers.findIndex(layer => layer.id === 'road-label-small'), 0,
@@ -24,6 +87,7 @@ MAP_STYLE.layers.findIndex(layer => layer.id === 'road-label-small'), 0,
     "type": "line",
     "source": "ddotroutes",
     "source-layer": "ddot_new",
+    "interactive": "true",
     "filter": [
         "==",
         "route_num",
@@ -36,10 +100,10 @@ MAP_STYLE.layers.findIndex(layer => layer.id === 'road-label-small'), 0,
     },
     "paint": {
         // "line-color": "red",
-        "line-color": "#555",
+        "line-color": "black",
         "line-width": {
             "base": 1,
-            "stops": [[9,3],[18,14],[22,50]]
+            "stops": [[9,1.5],[16,8],[22,69]]
         },
         "line-offset": 0,
         "line-opacity": 1,
@@ -60,6 +124,7 @@ MAP_STYLE.layers.findIndex(layer => layer.id === 'road-label-small'), 0,
         "route_num",
         ""
     ],
+    "interactive": "true",
     "layout": {
         "visibility": "visible",
         "line-cap": "round",
@@ -77,33 +142,37 @@ MAP_STYLE.layers.findIndex(layer => layer.id === 'road-label-small'), 0,
                     // "rgba(0,0,0,1)"
                     // "#44aa42"
                     "#78AA77"
+                    // "#499147"
                 ],
                 [
                     "East-West",
                     // "rgba(0,0,0,1)"
                     // "#0079c2"
                     "#619EC2"
+                    // "#116FA8"
                 ],
                 [
                     "North-South",
                     // "rgba(0,0,0,1)"
                     // "#9b5ba5"
                     "#A081A5"
+                    // "#865B8C"
                 ],
                 [
                     "Special",
                     // "rgba(0,0,0,1)"
                     // "#d07c32"
                     "#D0A681"
+                    // "#B8773E"
                 ]
             ]
         },
         "line-width": {
             "base": 1,
-            "stops": [[9,2],[18,12],[22,45]]
+            "stops": [[9,1],[16,6],[22,60]]
         },
         "line-offset": 0,
-        "line-opacity": 0.85,
+        "line-opacity": 1,
     }
 }
 );
@@ -112,6 +181,8 @@ export const routeLineIndex =
 MAP_STYLE.layers.findIndex(layer => layer.id === 'ddot-routes');
 export const routeCaseIndex =
 MAP_STYLE.layers.findIndex(layer => layer.id === 'ddot-routes-case');
+export const routeHighlightIndex =
+MAP_STYLE.layers.findIndex(layer => layer.id === 'ddot-routes-highlight');
 export const routeLabelIndex =
 MAP_STYLE.layers.findIndex(layer => layer.id === 'ddot-new copy');
 export const timepointLabelIndex =

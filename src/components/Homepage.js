@@ -76,7 +76,7 @@ class Homepage extends Component {
           <Collapse in={true} timeout="auto" unmountOnExit>
             {this.state.open === "routes" ? <RouteSearch /> 
               : this.state.open === "stops" ? <StopSearch /> 
-                : this.state.open === "nearby" ? <Nearby /> 
+                : this.state.open === "nearby" ? <Nearby />
                   : null}
           </Collapse>
         </List>

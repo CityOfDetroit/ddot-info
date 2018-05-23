@@ -12,7 +12,7 @@ import ScheduleIcon from 'material-ui-icons/Schedule';
 
 import Stops from '../data/stops.js';
 import Helpers from '../helpers.js';
-import {defaultMapStyle, routeLineIndex, timepointLabelIndex} from '../style.js';
+import {defaultMapStyle, routeLineIndex, routeCaseIndex, timepointLabelIndex} from '../style.js';
 import {stopPointIndex} from '../style';
 import RouteBadge from './RouteBadge';
 
@@ -209,6 +209,7 @@ class RouteMap extends Component {
 
     let style = defaultMapStyle;
     style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(route.id, 10));
+    style = style.setIn(['layers', routeCaseIndex, 'filter', 2], parseInt(route.id, 10));
     style = style.setIn(['sources', 'timepoints', 'data'], {"type": "FeatureCollection", "features": this.state.timepointFeatures})
     style = style.setIn(['sources', 'busstops', 'data'], {"type": "FeatureCollection", "features": this.state.stopFeatures})
     style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-color'], chroma(this.props.route.color).darken(2).hex())

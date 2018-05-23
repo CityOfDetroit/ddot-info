@@ -11580,6 +11580,90 @@
             }
         },
         {
+            "id": "ddot-new-label-mask",
+            "type": "symbol",
+            "source": "composite",
+            "source-layer": "ddot_new",
+            "filter": [
+                "==",
+                "route_num",
+                ""
+            ],
+            "layout": {
+                "text-line-height": 1,
+                "text-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    14,
+                    19,
+                    10
+                ],
+                "icon-image": "square-15",
+                "icon-rotation-alignment": "viewport",
+                "symbol-avoid-edges": true,
+                "symbol-spacing": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    180,
+                    16,
+                    280,
+                    18,
+                    250,
+                    22,
+                    100
+                ],
+                "text-font": [
+                    "Gibson Detroit SemiBold",
+                    "Open Sans ExtraBold",
+                    "Arial Unicode MS Regular"
+                ],
+                "symbol-placement": "line",
+                "text-padding": 0,
+                "text-rotation-alignment": "viewport",
+                "text-field": [
+                    "to-string",
+                    [
+                        "get",
+                        "route_num"
+                    ]
+                ],
+                "text-anchor": "center",
+                "text-offset": [0,0.1],
+                "text-letter-spacing": -0.02,
+                "icon-padding": 0,
+                "icon-size": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    10,
+                    1.5,
+                    19,
+                    1
+                ]
+            },
+            "paint": {
+                "text-color": "#bbb",
+                "text-halo-width": 0,
+                "icon-translate-anchor": "viewport"
+            }
+        },
+        {
             "id": "ddot-new copy",
             "type": "symbol",
             "source": "composite",

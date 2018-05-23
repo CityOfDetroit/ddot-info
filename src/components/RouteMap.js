@@ -12,7 +12,7 @@ import ScheduleIcon from 'material-ui-icons/Schedule';
 
 import Stops from '../data/stops.js';
 import Helpers from '../helpers.js';
-import {defaultMapStyle, routeLineIndex, timepointLabelIndex, routeLabelIndex, routeCaseIndex} from '../style.js';
+import {defaultMapStyle, routeLineIndex, routeCaseIndex, timepointLabelIndex} from '../style.js';
 import {stopPointIndex} from '../style';
 import RouteBadge from './RouteBadge';
 
@@ -49,7 +49,6 @@ class RouteMap extends Component {
     // make timepoint GeoJSON
     const firstDir = Object.keys(this.props.route.schedules.weekday)[0]
     const firstDirTimepoints = this.props.route.timepoints[firstDir]
-    console.log(firstDirTimepoints)
     const timepointFeatures = firstDirTimepoints.map(t => {      
       return {
         "type": "Feature",
@@ -190,6 +189,11 @@ class RouteMap extends Component {
     this.setState({ clickedStop: event.features[0] })
   }
   
+  _onBusClick = (x) => {
+    console.log(x)
+    // this.setState({ clickedStop: event.features[0] })
+  }
+  
   componentDidMount() {
     window.addEventListener('resize', this._resize);
     this.fetchData();
@@ -205,7 +209,6 @@ class RouteMap extends Component {
 
     let style = defaultMapStyle;
     style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(route.id, 10));
-    style = style.setIn(['layers', routeLabelIndex, 'filter', 2], parseInt(route.id, 10));
     style = style.setIn(['layers', routeCaseIndex, 'filter', 2], parseInt(route.id, 10));
     style = style.setIn(['sources', 'timepoints', 'data'], {"type": "FeatureCollection", "features": this.state.timepointFeatures})
     style = style.setIn(['sources', 'busstops', 'data'], {"type": "FeatureCollection", "features": this.state.stopFeatures})
@@ -251,7 +254,7 @@ class RouteMap extends Component {
             onClick={this._onClick}>
             {this.state.realtimeTrips.map((rt, i) => (
               <div key={i}>
-              <Marker latitude={rt.geometry.coordinates[1]} longitude={rt.geometry.coordinates[0]} offsetLeft={-12} offsetTop={-12} onClick={this._onClick} captureClick={false}>
+              <Marker latitude={rt.geometry.coordinates[1]} longitude={rt.geometry.coordinates[0]} offsetLeft={-12} offsetTop={-12} >
                 {this.state.viewport.zoom > 14.5 ? 
                   <div>
                     <BusIcon style={{ borderRadius: 9999, background: 'rgba(0,0,0,.9)', padding: 2.5, color: 'white' }} />

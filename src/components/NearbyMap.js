@@ -80,7 +80,7 @@ class NearbyMap extends Component {
     // show all nearby routes
     const routeIds = Object.keys(this.props.stops).map(rid => parseInt(rid, 10));
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routeIds));
-    // style = style.setIn(['layers', routeLabelIndex, 'filter'], ["in", "route_num"].concat(routeIds));
+    style = style.setIn(['layers', routeLabelIndex, 'filter'], ["in", "route_num"].concat(routeIds));
     style = style.setIn(['layers', routeCaseIndex, 'filter'], ["in", "route_num"].concat(routeIds));
 
     // set data for geolocated source to coords

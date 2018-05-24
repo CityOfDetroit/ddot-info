@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MapGL, { Marker } from 'react-map-gl';
-import {Card, CardHeader} from '@material-ui/core';
+import {Card, CardHeader} from '@material-ui/core/core';
 import _ from 'lodash';
 import WebMercatorViewport from 'viewport-mercator-project';
 
@@ -116,7 +116,7 @@ class StopWithPredictionMap extends Component {
       <Card className="map">
         <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
           <BusStop style={{ marginLeft: '1em', backgroundColor: 'rgba(0, 0, 0, .8)', color: 'yellow', borderRadius: 999, height: '1.8em', width: '1.8em' }}/>
-          <CardHeader title={stop.name} subheader={`Stop ID: #${stop.id}`} style={{ fontSize: '1.2em' }}/>
+          <CardHeader title={stop.name} subheader={`Stop ID: #${stop.id}`} style={{ fontSize: '1.2em', position: 'sticky'}}/>
         </div>
         <MapGL
           width={this.state.viewport.width}
@@ -127,7 +127,8 @@ class StopWithPredictionMap extends Component {
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
-          onClick={this._onClick}>
+          onClick={this._onClick}
+          >
           <Marker latitude={stop.lat} longitude={stop.lon} offsetLeft={-10} offsetTop={-10}>
             <BusStop style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
           </Marker>

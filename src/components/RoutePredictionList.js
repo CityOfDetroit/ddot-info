@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
-import { Card, CardContent } from '@material-ui/core';
-import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import Collapse from '@material-ui/core/Collapse';
+import { Card, CardContent } from '@material-ui/core/core';
+import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core/core';
+import Collapse from '@material-ui/core/core/Collapse';
 import SchedSVG from '@material-ui/icons/Schedule';
 import LiveSVG from '@material-ui/icons/SpeakerPhone';
 import ExpandLess from '@material-ui/icons/ExpandLess';

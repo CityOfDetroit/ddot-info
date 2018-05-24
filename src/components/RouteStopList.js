@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import {Card, CardContent } from '@material-ui/core';
+import {Card, CardContent } from '@material-ui/core/core';
 import TransferIcon from '@material-ui/icons/SwapHoriz'
 import BusStopIcon from './BusStop'
 

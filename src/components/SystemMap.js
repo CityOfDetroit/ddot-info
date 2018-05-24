@@ -4,7 +4,7 @@ import Helpers from '../helpers.js';
 import {defaultMapStyle, routeLineIndex, routeLabelIndex, routeCaseIndex, routeHighlightIndex} from '../style.js';
 import RouteLink from './RouteLink';
 import routeDetails from '../data/routeDetails.js'
-import { Card, CardHeader, CardContent } from '@material-ui/core';
+import { Card, CardHeader, CardContent } from '@material-ui/core/core';
 
 /** Interactive map of the DDOT system, showing all routes.  */
 class SystemMap extends Component {

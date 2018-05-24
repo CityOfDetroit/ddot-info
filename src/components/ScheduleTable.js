@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import chroma from 'chroma-js';
-import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
-import { withStyles } from "@material-ui/core";
+import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core/core';
+import { withStyles } from "@material-ui/core/core";
 import Arrow from '@material-ui/icons/KeyboardArrowRight';
 
 import Stops from '../data/stops.js';
@@ -25,7 +25,7 @@ class ScheduleTable extends Component {
     let tripsToHighlight = this.props.liveTrips.map(t => t.slice(8));
 
     return (
-      <div style={{ overflow: 'auto', maxHeight: '50vh', backgroundColor: 'white' }}>
+      <div style={{ overflow: 'auto', maxHeight: window.innerHeight / 2, backgroundColor: 'white' }}>
         <Table>
           <TableHead>
             <TableRow>

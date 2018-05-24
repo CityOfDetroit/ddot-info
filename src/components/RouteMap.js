@@ -5,7 +5,7 @@ import _ from 'lodash';
 import moment from 'moment';
 import WebMercatorViewport from 'viewport-mercator-project';
 import chroma from 'chroma-js';
-import {Card, CardHeader, CardContent} from '@material-ui/core';
+import {Card, CardHeader, CardContent} from '@material-ui/core/core';
 import DirectionsBus from '@material-ui/icons/DirectionsBus';
 import LiveIcon from '@material-ui/icons/SpeakerPhone';
 import ScheduleIcon from '@material-ui/icons/Schedule';

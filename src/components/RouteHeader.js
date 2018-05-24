@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link }  from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {Tabs, Tab} from '@material-ui/core';
+import {Tabs, Tab} from '@material-ui/core/core';
 import BusIcon from '@material-ui/icons/Timeline';
 import StopIcon from './BusStop';
 import ScheduleIcon from '@material-ui/icons/Schedule';

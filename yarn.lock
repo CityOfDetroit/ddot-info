@@ -1380,6 +1380,10 @@ bser@^2.0.0:
   dependencies:
     node-int64 "^0.4.0"
 
+btoa@^1.1.2:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/btoa/-/btoa-1.2.1.tgz#01a9909f8b2c93f6bf680ba26131eb30f7fa3d73"
+
 buble@^0.15.1:
   version "0.15.2"
   resolved "https://registry.yarnpkg.com/buble/-/buble-0.15.2.tgz#547fc47483f8e5e8176d82aa5ebccb183b02d613"
@@ -2205,6 +2209,10 @@ dns-txt@^2.0.2:
   resolved "https://registry.yarnpkg.com/dns-txt/-/dns-txt-2.0.2.tgz#b91d806f5d27188e4ab3e7d107d881a1cc4642b6"
   dependencies:
     buffer-indexof "^1.0.0"
+
+docopt@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/docopt/-/docopt-0.6.2.tgz#b28e9e2220da5ec49f7ea5bb24a47787405eeb11"
 
 doctrine@1.5.0:
   version "1.5.0"
@@ -5190,6 +5198,10 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
+open@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/open/-/open-0.0.5.tgz#42c3e18ec95466b6bf0dc42f3a2945c3f0cad8fc"
+
 opn@5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/opn/-/opn-5.1.0.tgz#72ce2306a17dbea58ff1041853352b4a8fc77519"
@@ -6058,6 +6070,12 @@ react-lifecycles-compat@^3.0.2:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.3.tgz#473820154732f1ccd762e89324abab154255da6b"
 
+react-loadable@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/react-loadable/-/react-loadable-5.4.0.tgz#3b6b7d51121a7868fd155be848a36e02084742c9"
+  dependencies:
+    prop-types "^15.5.0"
+
 react-map-gl@^3.2.4:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/react-map-gl/-/react-map-gl-3.2.4.tgz#5e384c49e9b1a9adaf6553661816fa0a6400fdd7"
@@ -6519,6 +6537,10 @@ rimraf@2, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
+rimraf@~2.2.6:
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
+
 ripemd160@^2.0.0, ripemd160@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/ripemd160/-/ripemd160-2.0.1.tgz#0f4584295c53a3628af7e6d79aca21ce57d1c6e7"
@@ -6794,13 +6816,26 @@ source-list-map@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-2.0.0.tgz#aaa47403f7b245a92fbc97ea08f250d6087ed085"
 
+source-map-explorer@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/source-map-explorer/-/source-map-explorer-1.5.0.tgz#654e2ba0db158fecfc99b9cefdf891b755b767d1"
+  dependencies:
+    btoa "^1.1.2"
+    convert-source-map "^1.1.1"
+    docopt "^0.6.2"
+    glob "^7.1.2"
+    open "0.0.5"
+    source-map "^0.5.1"
+    temp "^0.8.3"
+    underscore "^1.8.3"
+
 source-map-support@^0.4.15:
   version "0.4.18"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.18.tgz#0286a6de8be42641338594e97ccea75f0a2c585f"
   dependencies:
     source-map "^0.5.6"
 
-source-map@0.5.x, source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.1, source-map@~0.5.6:
+source-map@0.5.x, source-map@^0.5.1, source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.1, source-map@~0.5.6:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
 
@@ -7140,6 +7175,13 @@ tar@^2.0.0, tar@^2.2.1:
     fstream "^1.0.2"
     inherits "2"
 
+temp@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/temp/-/temp-0.8.3.tgz#e0c6bc4d26b903124410e4fed81103014dfc1f59"
+  dependencies:
+    os-tmpdir "^1.0.0"
+    rimraf "~2.2.6"
+
 term-size@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/term-size/-/term-size-1.2.0.tgz#458b83887f288fc56d6fffbfad262e26638efa69"
@@ -7349,6 +7391,10 @@ unassertify@^2.0.0:
     multi-stage-sourcemap "^0.2.1"
     through "^2.3.7"
     unassert "^1.3.1"
+
+underscore@^1.8.3:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.9.0.tgz#31dbb314cfcc88f169cd3692d9149d81a00a73e4"
 
 underscore@~1.6.0:
   version "1.6.0"

@@ -28,3 +28,5 @@ We're using [Create React App](https://github.com/facebook/create-react-app) wit
 `yarn css` will compile style files
 
 `yarn deploy` will publish to `gh-pages`
+
+`yarn analyze` will run the source-map-explorer so we can see how large our bundle is.

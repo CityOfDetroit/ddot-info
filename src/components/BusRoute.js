@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Schedules from '../data/schedules.js';
+import routeDetails from '../data/routeDetails.js';
+import _ from 'lodash';
 import RouteHeader from './RouteHeader';
 import RouteMap from './RouteMap';
 import RouteDetails from './RouteDetails';
@@ -21,15 +22,15 @@ class BusRoute extends React.Component {
   }
  
   render() {
-    const thisRoute = Schedules[this.props.match.params.name];
+    const route = _.find(routeDetails, a => { return a.number === parseInt(this.props.match.params.name, 10) })
+    console.log(route)
     
     return (
       <div className="BusRoute" style={{ background: Helpers.colors['background'] }}>
         <RouteHeader number={this.props.match.params.name} page={this.props.match.url.split("/").slice(-1)} />
-        <RouteMap route={thisRoute} />
+        <RouteMap route={route} />
         <RouteDetails id={this.props.match.params.name} />
         <Footer />
-
       </div>
     );
   }

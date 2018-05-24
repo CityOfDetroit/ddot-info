@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
-import Schedules from '../data/schedules.js'
+import routeDetails from '../data/routeDetails.js'
+import _ from 'lodash'
 
 /** Non-linked route number and name for RouteDetails, RouteMap, RouteSchedule, RouteStops and Stop */
 class RouteBadge extends Component {
   render() {
-    const route = Schedules[this.props.id];
+    // lookup route number in routeDetails
+    const route = _.find(routeDetails, a => { return a.number === parseInt(this.props.id, 10) })
+    console.log(route)
 
     return (
       <div>  
@@ -14,7 +16,7 @@ class RouteBadge extends Component {
           <div style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '1.75em', height: '1.75em', backgroundColor: route.color, color: '#fff', fontSize: '1.1em', textAlign: 'center', fontWeight: 700, }}>
             {this.props.id}
           </div>
-          { this.props.showName ? <span style={{ marginLeft: '.25em' }}>{route.rt_name}</span> : null }
+          { this.props.showName ? <span style={{ marginLeft: '.25em' }}>{route.name}</span> : null }
         </div>
       </div>
     );

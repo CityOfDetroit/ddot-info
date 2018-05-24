@@ -16,6 +16,8 @@ import {defaultMapStyle, routeLineIndex, routeCaseIndex, timepointLabelIndex} fr
 import {stopPointIndex} from '../style';
 import RouteBadge from './RouteBadge';
 
+import Schedules from '../data/schedules.js';
+
 const styles = {
   ahead: {
       color: 'darkgreen',
@@ -36,19 +38,22 @@ class RouteMap extends Component {
   constructor(props) {
     super(props);
 
-    let tripIds = {}; 
-    Object.keys(this.props.route.schedules).forEach(svc => {
-      Object.keys(this.props.route.schedules.weekday).forEach(dir => {
+    let tripIds = {};
+    let scheduleRoute = Schedules[this.props.route.number]
+    let schedule = scheduleRoute.schedules
+    console.log(schedule)
+    Object.keys(schedule).forEach(svc => {
+      Object.keys(schedule.weekday).forEach(dir => {
         if (!tripIds[dir]) {
           tripIds[dir] = [];
         }
-        tripIds[dir] = tripIds[dir].concat(this.props.route.schedules[svc][dir].trips.map(trip => trip.trip_id));
+        tripIds[dir] = tripIds[dir].concat(schedule[svc][dir].trips.map(trip => trip.trip_id));
       });
     });
 
     // make timepoint GeoJSON
-    const firstDir = Object.keys(this.props.route.schedules.weekday)[0]
-    const firstDirTimepoints = this.props.route.timepoints[firstDir]
+    const firstDir = Object.keys(schedule.weekday)[0]
+    const firstDirTimepoints = scheduleRoute.timepoints[firstDir]
     const timepointFeatures = firstDirTimepoints.map(t => {      
       return {
         "type": "Feature",
@@ -66,9 +71,7 @@ class RouteMap extends Component {
       }
     })
 
-    const route = this.props.route
-
-    const stopFeatures = _.filter(Stops, s => { return s.routes.map(r => r[0]).indexOf(route.id) > -1 }).map(t => {
+    const stopFeatures = _.filter(Stops, s => { return s.routes.map(r => r[0]).indexOf(scheduleRoute.id) > -1 }).map(t => {
       return {
         "type": "Feature",
         "geometry": {
@@ -84,7 +87,7 @@ class RouteMap extends Component {
     });
 
     const viewport = new WebMercatorViewport({width: window.innerWidth > 768 ? window.innerWidth * (4/8) - 7.5 : window.innerWidth, height: window.innerWidth > 768 ? ((window.innerHeight - 128) * 1 - 114) : 250});
-    const bound = viewport.fitBounds(route.bbox,
+    const bound = viewport.fitBounds(scheduleRoute.bbox,
       { padding: window.innerWidth > 768 ? 50 : window.innerWidth / 20 }
     );
 
@@ -108,9 +111,8 @@ class RouteMap extends Component {
         maxZoom: 19,
         minPitch: 0,
         maxPitch: 0,
-        maxBounds: route.bbox
       },
-      directions: Object.keys(route.timepoints),
+      directions: Object.keys(scheduleRoute.timepoints),
       realtimeTrips: [],
       showRealtime: true,
       fetched: false,
@@ -118,7 +120,8 @@ class RouteMap extends Component {
       timepointFeatures: timepointFeatures,
       stopFeatures: stopFeatures,
       showTimepoints: false,
-      clickedStop: null
+      clickedStop: null,
+      scheduleRoute: scheduleRoute
     };
 
     this._resize = this._resize.bind(this);
@@ -147,7 +150,7 @@ class RouteMap extends Component {
             "scheduleDeviation": bus.status.scheduleDeviation,
             "updateTime": moment(bus.status.lastUpdateTime).format("h:mm:ss a"),
             "onTime": bus.status.scheduleDeviation / 60,
-            "lastStop": this.props.route.timepoints[direction] ? this.props.route.timepoints[direction].slice(-1)[0] : ``,
+            "lastStop": this.state.scheduleRoute.timepoints[direction] ? this.state.scheduleRoute.timepoints[direction].slice(-1)[0] : ``,
             "direction": direction
           }
         }
@@ -206,14 +209,15 @@ class RouteMap extends Component {
 
   render() {
     const route = this.props.route;
+    console.log(route)
 
     let style = defaultMapStyle;
-    style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(route.id, 10));
-    style = style.setIn(['layers', routeCaseIndex, 'filter', 2], parseInt(route.id, 10));
+    style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(route.number, 10));
+    style = style.setIn(['layers', routeCaseIndex, 'filter', 2], parseInt(route.number, 10));
     style = style.setIn(['sources', 'timepoints', 'data'], {"type": "FeatureCollection", "features": this.state.timepointFeatures})
     style = style.setIn(['sources', 'busstops', 'data'], {"type": "FeatureCollection", "features": this.state.stopFeatures})
-    style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-color'], chroma(this.props.route.color).darken(2).hex())
-    style = style.setIn(['layers', stopPointIndex, 'paint', 'circle-stroke-color'], chroma(this.props.route.color).darken().hex())
+    style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-color'], chroma(route.color).darken(2).hex())
+    style = style.setIn(['layers', stopPointIndex, 'paint', 'circle-stroke-color'], chroma(route.color).darken().hex())
     style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-halo-color'], "#fff")
 
     return (
@@ -222,7 +226,7 @@ class RouteMap extends Component {
         <CardContent style={{ padding: 0, margin: 0 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <CardHeader 
-              title={<RouteBadge id={route.id} showName />} 
+              title={<RouteBadge id={route.number.toString()} showName />} 
               subheader={
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   Zoom in for all stops and real-time bus info.
@@ -262,7 +266,7 @@ class RouteMap extends Component {
                       <CardHeader 
                         avatar={rt.properties.predicted ? <LiveIcon /> : <ScheduleIcon />}
                         title={_.capitalize(rt.properties.direction)} 
-                        subheader={`to ${Stops[this.props.route.timepoints[rt.properties.direction].slice(-1)].name}`} 
+                        subheader={`to ${Stops[this.state.scheduleRoute.timepoints[rt.properties.direction].slice(-1)].name}`} 
                         style={{ fontSize: '.75em' }} />
                       <CardContent>
                         <span style={{ display: 'block' }}>Next stop: {Stops[rt.properties.nextStop.slice(5,)].name}</span>

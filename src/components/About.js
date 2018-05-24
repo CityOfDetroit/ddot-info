@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Divider from 'material-ui/Divider';
-import LiveIcon from 'material-ui-icons/SpeakerPhone';
-import ScheduleIcon from 'material-ui-icons/Schedule';
-import PdfIcon from 'material-ui-icons/PictureAsPdf';
-import Bus from 'material-ui-icons/DirectionsBus';
-import NearbyIcon from 'material-ui-icons/Place';
+import Divider from '@material-ui/core/Divider';
+import LiveIcon from '@material-ui/icons/SpeakerPhone';
+import ScheduleIcon from '@material-ui/icons/Schedule';
+import PdfIcon from '@material-ui/icons/PictureAsPdf';
+import Bus from '@material-ui/icons/DirectionsBus';
+import NearbyIcon from '@material-ui/icons/Place';
 
 import BusIcon from './BusStop'
 import TopNav from './TopNav';

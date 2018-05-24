@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Card, { CardHeader, CardContent } from 'material-ui/Card';
+import { Card, CardHeader, CardContent } from '@material-ui/core';
 
 import Stops from '../data/stops.js';
 import Schedules from '../data/schedules.js';
 
 import BusStopIcon from './BusStop'
-import BusIcon from 'material-ui-icons/Timeline'
-import { withStyles } from 'material-ui/styles'
+import BusIcon from '@material-ui/icons/Timeline'
+import { withStyles } from '@material-ui/core/styles'
 
 const styles = {
   root: {

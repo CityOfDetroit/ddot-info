@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Card, { CardHeader, CardContent } from 'material-ui/Card';
-import Divider from 'material-ui/Divider';
-import Chip from 'material-ui/Chip';
+import { Card, CardHeader, CardContent } from '@material-ui/core';
+import Divider from '@material-ui/core/Divider';
+import Chip from '@material-ui/core/Chip';
 
 import RouteInput from './RouteInput';
 import RoutesList from './RoutesList';

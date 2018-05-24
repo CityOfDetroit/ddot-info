@@ -1,5 +1,5 @@
 import React from 'react';
-import GridList, { GridListTile } from 'material-ui/GridList'
+import { GridList, GridListTile } from '@material-ui/core'
 
 import Helpers from '../helpers.js'
 import StopInlineLink from './StopInlineLink';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {TextField} from 'material-ui';
+import {TextField} from '@material-ui/core';
 import PropTypes from 'prop-types';
-import Search from 'material-ui-icons/Search';
+import Search from '@material-ui/icons/Search';
 
 /** Text input for RouteSearch */
 class RouteInput extends Component {

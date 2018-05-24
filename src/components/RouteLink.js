@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import StopIcon from './BusStop';
-import ScheduleIcon from 'material-ui-icons/Schedule';
+import ScheduleIcon from '@material-ui/icons/Schedule';
 
 import Schedules from '../data/schedules.js';
 

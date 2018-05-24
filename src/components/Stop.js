@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import _ from 'lodash';
-import Tabs, { Tab } from 'material-ui/Tabs';
+import { Tabs, Tab } from '@material-ui/core';
 
-import Toolbar from 'material-ui/Toolbar';
-import Card, {CardHeader} from 'material-ui/Card';
-import { AppBar } from 'material-ui';
-import { withStyles } from 'material-ui/styles';
-import TransferIcon from 'material-ui-icons/SwapHoriz'
+import Toolbar from '@material-ui/core/Toolbar';
+import {Card, CardHeader} from '@material-ui/core';
+import { AppBar } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
+import TransferIcon from '@material-ui/icons/SwapHoriz'
 
 import Stops from '../data/stops.js';
 import TopNav from './TopNav';

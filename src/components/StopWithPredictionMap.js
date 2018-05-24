@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MapGL, { Marker } from 'react-map-gl';
-import Card, {CardHeader} from 'material-ui/Card';
+import {Card, CardHeader} from '@material-ui/core';
 import _ from 'lodash';
 import WebMercatorViewport from 'viewport-mercator-project';
 
@@ -11,7 +11,7 @@ import {Link} from 'react-router-dom'
 
 import {defaultMapStyle, routeLineIndex, routeLabelIndex, routeCaseIndex} from '../style.js';
 import BusStop from './BusStop.js';
-import BusIcon from 'material-ui-icons/DirectionsBus';
+import BusIcon from '@material-ui/icons/DirectionsBus';
 
 class StopWithPredictionMap extends Component {
   constructor(props) {

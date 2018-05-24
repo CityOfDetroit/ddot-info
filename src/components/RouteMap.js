@@ -5,10 +5,10 @@ import _ from 'lodash';
 import moment from 'moment';
 import WebMercatorViewport from 'viewport-mercator-project';
 import chroma from 'chroma-js';
-import Card, {CardHeader, CardContent} from 'material-ui/Card';
-import BusIcon from 'material-ui-icons/DirectionsBus';
-import LiveIcon from 'material-ui-icons/SpeakerPhone';
-import ScheduleIcon from 'material-ui-icons/Schedule';
+import {Card, CardHeader, CardContent} from '@material-ui/core';
+import DirectionsBus from '@material-ui/icons/DirectionsBus';
+import LiveIcon from '@material-ui/icons/SpeakerPhone';
+import ScheduleIcon from '@material-ui/icons/Schedule';
 
 import Stops from '../data/stops.js';
 import Helpers from '../helpers.js';
@@ -232,7 +232,7 @@ class RouteMap extends Component {
                   <span style={{textAlign: 'center', textSize: '1.5em'}}></span>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center', alignContent: 'space-between'}}>
-                  <BusIcon style={{height: 17, width: 17, padding: 1, borderRadius: 9999, color: 'white', background: 'rgba(0,0,0,1)'}}/>
+                  <DirectionsBus style={{height: 17, width: 17, padding: 1, borderRadius: 9999, color: 'white', background: 'rgba(0,0,0,1)'}}/>
                   <span style={{marginLeft: '.5em'}}>Active buses</span>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center', alignContent: 'space-between'}}>
@@ -257,7 +257,7 @@ class RouteMap extends Component {
               <Marker latitude={rt.geometry.coordinates[1]} longitude={rt.geometry.coordinates[0]} offsetLeft={-12} offsetTop={-12} >
                 {this.state.viewport.zoom > 14.5 ? 
                   <div>
-                    <BusIcon style={{ borderRadius: 9999, background: 'rgba(0,0,0,.9)', padding: 2.5, color: 'white' }} />
+                    <DirectionsBus style={{ borderRadius: 9999, background: 'rgba(0,0,0,.9)', padding: 2.5, color: 'white' }} />
                     <Card style={{ background: 'rgba(255,255,255,0.95)' }}>
                       <CardHeader 
                         avatar={rt.properties.predicted ? <LiveIcon /> : <ScheduleIcon />}
@@ -276,7 +276,7 @@ class RouteMap extends Component {
                       </CardContent>
                     </Card>
                   </div>
-                : <BusIcon style={{ height: 20, padding: 1, borderRadius: 9999, color: 'white', background: 'rgba(0,0,0,1)' }} />}
+                : <DirectionsBus style={{ height: 20, padding: 1, borderRadius: 9999, color: 'white', background: 'rgba(0,0,0,1)' }} />}
               </Marker>
               </div>
             ))}

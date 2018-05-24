@@ -1,12 +1,12 @@
 import React from 'react';
 import moment from 'moment';
-import Card, { CardContent } from 'material-ui/Card';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import Collapse from 'material-ui/transitions/Collapse';
-import SchedSVG from 'material-ui-icons/Schedule';
-import LiveSVG from 'material-ui-icons/SpeakerPhone';
-import ExpandLess from 'material-ui-icons/ExpandLess';
-import ExpandMore from 'material-ui-icons/ExpandMore';
+import { Card, CardContent } from '@material-ui/core';
+import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import Collapse from '@material-ui/core/Collapse';
+import SchedSVG from '@material-ui/icons/Schedule';
+import LiveSVG from '@material-ui/icons/SpeakerPhone';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
 import _ from 'lodash';
 
 import RealtimeCard from './RealtimeCard';

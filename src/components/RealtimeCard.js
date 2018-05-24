@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
-import { Card, CardContent } from 'material-ui';
-import BusIcon from 'material-ui-icons/DirectionsBus';
+import { Card, CardContent } from '@material-ui/core';
+import BusIcon from '@material-ui/icons/DirectionsBus';
 import BusStop from './BusStop'
-import LiveIcon from 'material-ui-icons/SpeakerPhone';
-import ScheduleIcon from 'material-ui-icons/Schedule';
-import Warning from 'material-ui-icons/Warning';
+import LiveIcon from '@material-ui/icons/SpeakerPhone';
+import ScheduleIcon from '@material-ui/icons/Schedule';
+import Warning from '@material-ui/icons/Warning';
 import moment from 'moment';
 import Stops from '../data/stops.js';
 

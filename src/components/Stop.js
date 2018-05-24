@@ -198,7 +198,6 @@ class Stop extends React.Component {
             </div>
             </SwipeableViews>
         </div>
-        <Footer />
       </div>
     );
   }

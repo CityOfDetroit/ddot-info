@@ -53,8 +53,6 @@
     "react-tabs": "^2.2.1",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
-    "tachyons": "^4.9.0",
-    "tachyons-cli": "^1.2.0",
     "url-loader": "0.6.2",
     "viewport-mercator-project": "^5.0.0",
     "webpack": "3.8.1",
@@ -68,13 +66,7 @@
     "deploy": "netlify deploy",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js && cp build/index.html build/404.html",
-    "test": "node scripts/test.js --env=jsdom",
-    "css": "tachyons src/css/app.css > src/css/index.css --minify",
-    "prestart": "yarn run css",
-    "prebuild": "yarn run css"
-  },
-  "devDependencies": {
-    "tachyons-flexbox": "^2.1.0"
+    "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
     "collectCoverageFrom": [

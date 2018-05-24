@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 
-import './css/index.css';
+import './css/app.css';
 import App from './App';
 import About from './components/About';
 import RouteRealtime from './components/RouteRealtime';
@@ -15,7 +15,6 @@ import BusRoute from './components/BusRoute'
 import Stop from './components/Stop';
 import Nearby from './components/Nearby';
 import SystemMap from './components/SystemMap'
-import TransitCenter from './components/TransitCenter';
 
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-107915075-4');
@@ -170,7 +169,6 @@ ReactDOM.render(
           <Route path='/about' component={About} />
           <Route path='/nearby' component={Nearby} />
           <Route path='/system' component={SystemMap} />
-          <Route path='/stop/rosa-parks-tc' component={TransitCenter} />
           <Route path='/stop/:name' component={Stop} />
           <Route path="/route/:name/real-time" component={RouteRealtime} />
           <Route path="/route/:name/schedule" component={RouteSchedule} />

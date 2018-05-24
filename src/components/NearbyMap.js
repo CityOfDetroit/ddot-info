@@ -80,7 +80,7 @@ class NearbyMap extends Component {
     // show all nearby routes
     const routeIds = Object.keys(this.props.stops).map(rid => parseInt(rid, 10));
     style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routeIds));
-    style = style.setIn(['layers', routeLabelIndex, 'filter'], ["in", "route_num"].concat(routeIds));
+    // style = style.setIn(['layers', routeLabelIndex, 'filter'], ["in", "route_num"].concat(routeIds));
     style = style.setIn(['layers', routeCaseIndex, 'filter'], ["in", "route_num"].concat(routeIds));
 
     // set data for geolocated source to coords
@@ -117,7 +117,7 @@ class NearbyMap extends Component {
     style = style.setIn(['sources', 'walk-radius', 'data'], {"type": "FeatureCollection", "features": [walkRadii]});
     
     // set walk radius text
-    style = style.setIn(['layers', walkRadiusLabelIndex, 'layout', 'text-field'], this.props.currentRadius === "200" ? `5 minute walk` : `10 minute walk`)
+    style = style.setIn(['layers', walkRadiusLabelIndex, 'layout', 'text-field'], `${this.props.currentRadius/80} minute walk`)
 
 
     return (

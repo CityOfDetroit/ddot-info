@@ -1,9 +1,13 @@
-import React, {Component} from 'react';
-import {Divider} from '@material-ui/core/core'
+import React from 'react';
+import Logo from '../data/codlogo.png';
 
 const Footer = () => (
-  <div className="footer" style={{ height: 100, borderTop: '1px solid black', marginTop: 10 }}>
-    this is a footer
+  <div 
+    className="footer" 
+    style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '1em', marginTop: 10, backgroundColor: '#eee' }}>
+    <a href="http://www.detroitmi.gov/">
+      <img src={Logo} style={{ height: '60px' }} alt="City of Detroit website" />
+    </a>
   </div>
 );
 

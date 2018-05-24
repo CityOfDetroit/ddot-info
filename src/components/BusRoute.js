@@ -6,7 +6,6 @@ import _ from 'lodash';
 import RouteHeader from './RouteHeader';
 import RouteMap from './RouteMap';
 import RouteDetails from './RouteDetails';
-import Footer from './Footer'
 import Helpers from '../helpers';
 
 /** Top level component for /route/{#} page */
@@ -30,7 +29,6 @@ class BusRoute extends React.Component {
         <RouteHeader number={this.props.match.params.name} page={this.props.match.url.split("/").slice(-1)} />
         <RouteMap route={route} />
         <RouteDetails id={this.props.match.params.name} />
-        <Footer />
       </div>
     );
   }

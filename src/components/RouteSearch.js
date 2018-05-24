@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, CardContent } from '@material-ui/core/core';
-import Divider from '@material-ui/core/core/Divider';
-import Chip from '@material-ui/core/core/Chip';
 
 import RouteInput from './RouteInput';
 import RoutesList from './RoutesList';
 import Schedules from '../data/schedules';
-
 import Helpers from '../helpers.js';
 
 class RouteSearch extends Component {
@@ -59,21 +56,16 @@ class RouteSearch extends Component {
         <CardContent>
           <RouteInput input={this.state.input} onSearchChange={this.handleSearchChange} />
           { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : <span style={{ color: 'red' }}>No routes match your search! Try again.</span> }
-          <Divider style={{ marginTop: '1em' }} />
-          <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <div>
-              <p style={{ fontSize: '.9em', marginLeft: '.5em' }}>Colors indicate where routes travel:</p>
-            </div>
-            <div style={{ display: 'flex' }}>
-              <Chip style={{ margin: 6, backgroundColor: 'rgb(68, 170, 66)', color: '#fff' }} labelstyle={{ fontSize: '.8em' }} label="Downtown" />
-              <Chip style={{ margin: 6, backgroundColor: 'rgb(155, 91, 165)', color: '#fff' }} labelstyle={{ fontSize: '.8em' }} label="North/South" />
-              <Chip style={{ margin: 6, backgroundColor: 'rgb(0, 121, 194)', color: '#fff' }} labelstyle={{ fontSize: '.8em' }} label="East/West" />
-              <Chip style={{ margin: 6, backgroundColor: 'rgb(208, 124, 50)', color: '#fff' }} labelstyle={{ fontSize: '.8em' }} label="Special" />
-            </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '1.25em' }}>
+            <span style={{ padding: '.2em .2em .2em 0' }}>Bus routes are color coded by their service direction and frequency:</span>
+            <span style={{ padding: '.2em .2em .2em 0' }}><span style={{ borderBottom: '4px solid rgb(68, 170, 66)' }}>downtown</span>,</span> 
+            <span style={{ padding: '.2em .2em .2em 0' }}><span style={{ borderBottom: '4px solid rgb(155, 91, 165)' }}>northbound/southbound</span>,</span> 
+            <span style={{ padding: '.2em .2em .2em 0' }}><span style={{ borderBottom: '4px solid rgb(0, 121, 194)' }}>eastbound/westbound</span> and</span> 
+            <span style={{ padding: '.2em .2em .2em 0' }}><span style={{ borderBottom: '4px solid rgb(208, 124, 50)' }}>special routes</span>.</span> 
           </div>
         </CardContent>
       </Card>
-    )
+    );
   }
 }
 

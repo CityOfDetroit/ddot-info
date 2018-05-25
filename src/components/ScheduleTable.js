@@ -70,7 +70,9 @@ class ScheduleTable extends Component {
 
 ScheduleTable.propTypes = {
   color: PropTypes.string,
+  direction: PropTypes.string,
   liveTrips: PropTypes.array,
+  schedule: PropTypes.object,
 }
 
 export default withStyles(styles)(ScheduleTable);

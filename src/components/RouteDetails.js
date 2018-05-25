@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
 import { Card, CardContent, CardHeader } from '@material-ui/core/core';
 import Divider from '@material-ui/core/core/Divider';
@@ -46,6 +47,10 @@ const RouteDetails = ({ id }) => {
       </Card>
     </div>
   );
+}
+
+RouteDetails.propTypes = {
+  id: PropTypes.string.isRequired,
 }
 
 export default RouteDetails;

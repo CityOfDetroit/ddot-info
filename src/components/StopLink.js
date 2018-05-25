@@ -54,6 +54,10 @@ class StopLink extends Component {
 StopLink.propTypes = {
   id: PropTypes.string.isRequired,
   exclude: PropTypes.string,
+  color: PropTypes.string,
+  isTimepoint: PropTypes.bool,
+  showBorder: PropTypes.bool,
+  showTransfers: PropTypes.bool,
 }
 
 export default StopLink;

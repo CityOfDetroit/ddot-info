@@ -22,7 +22,6 @@ class StopInlineLink extends Component {
 
 StopInlineLink.propTypes = {
   id: PropTypes.string.isRequired,
-  exclude: PropTypes.string,
 }
 
 export default StopInlineLink;

@@ -173,6 +173,8 @@ RouteSchedule.propTypes = {
     path: PropTypes.string,
     url: PropTypes.string,
   }).isRequired,
+  location: PropTypes.object,
+  history: PropTypes.object,
 }
 
 export default RouteSchedule;

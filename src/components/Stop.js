@@ -5,7 +5,7 @@ import _ from 'lodash';
 import Toolbar from '@material-ui/core/Toolbar';
 import { Card, CardHeader, Tabs, Tab, AppBar } from '@material-ui/core/core';
 import { withStyles } from '@material-ui/core/styles';
-import TransferIcon from '@material-ui/icons/SwapHoriz'
+import TransferIcon from '@material-ui/icons/SwapHoriz';
 
 import Stops from '../data/stops.js';
 import TopNav from './TopNav';
@@ -81,11 +81,9 @@ class Stop extends React.Component {
   }
 
   handleTabsChange = (event, slideIndex) => {
-    console.log(event, slideIndex)
-    if(typeof event === 'number') {
+    if (typeof event === 'number') {
       this.setState({ slideIndex: event, tripData: null, tripId: null })
-    }
-    else {
+    } else {
       this.setState({ slideIndex: slideIndex, tripData: null, tripId: null })
     }
   }
@@ -210,6 +208,8 @@ Stop.propTypes = {
     path: PropTypes.string,
     url: PropTypes.string,
   }).isRequired,
+  location: PropTypes.object,
+  history: PropTypes.object,
 }
 
 export default withStyles(styles)(Stop);

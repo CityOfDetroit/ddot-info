@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import MapGL, { Marker } from 'react-map-gl';
-import {Card, CardHeader} from '@material-ui/core/core';
+import { Card, CardHeader } from '@material-ui/core/core';
 import _ from 'lodash';
 import WebMercatorViewport from 'viewport-mercator-project';
 
 import Helpers from '../helpers.js';
 import Stops from '../data/stops.js';
-
-import {Link} from 'react-router-dom'
-
 import {defaultMapStyle, routeLineIndex, routeLabelIndex, routeCaseIndex} from '../style.js';
 import BusStop from './BusStop.js';
 import BusIcon from '@material-ui/icons/DirectionsBus';
 
+/** Map rendered on Stop page when a RoutePredictionList item is expanded */
 class StopWithPredictionMap extends Component {
   constructor(props) {
     super(props)
@@ -74,7 +74,7 @@ class StopWithPredictionMap extends Component {
     let stop = Stops[this.props.stopId] || null
     let transfers = _.groupBy(stop.transfers, 2)
     let bound, position = null
-    if(this.props.prediction) {
+    if (this.props.prediction) {
       position = this.props.prediction.tripStatus.position
       let bbox = [
         Math.min(stop.lat, parseFloat(position.lat)), 
@@ -96,8 +96,7 @@ class StopWithPredictionMap extends Component {
       style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.route, 10));
       style = style.setIn(['layers', routeLabelIndex, 'filter', 2], parseInt(this.props.route, 10));
       style = style.setIn(['layers', routeCaseIndex, 'filter', 2], parseInt(this.props.route, 10));
-    }
-    else {
+    } else {
       const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 0).concat(stop.routes))))
       style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))   
       style = style.setIn(['layers', routeLabelIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))   
@@ -109,8 +108,6 @@ class StopWithPredictionMap extends Component {
         }
       })  
     }
-    
-    
 
     return (
       <Card className="map">
@@ -145,8 +142,14 @@ class StopWithPredictionMap extends Component {
           }
         </MapGL>
       </Card>
-    )
+    );
   }
+}
+
+StopWithPredictionMap.propTypes = {
+  center: PropTypes.array,
+  route: PropTypes.string,
+  stopId: PropTypes.string,
 }
 
 export default StopWithPredictionMap;

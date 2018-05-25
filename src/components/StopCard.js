@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Card, CardHeader, CardContent } from '@material-ui/core/core';
+import BusIcon from '@material-ui/icons/Timeline';
+import { withStyles } from '@material-ui/core/styles';
 
 import Stops from '../data/stops.js';
 import Schedules from '../data/schedules.js';
-
-import BusStopIcon from './BusStop'
-import BusIcon from '@material-ui/icons/Timeline'
-import { withStyles } from '@material-ui/core/styles'
+import BusStopIcon from './BusStop';
 
 const styles = {
   root: {
@@ -81,7 +80,7 @@ StopCard.propTypes = {
   id: PropTypes.string.isRequired,
   showRoutes: PropTypes.bool,
   showDirection: PropTypes.bool,
-  exclude: PropTypes.string,
+  showTransfers: PropTypes.bool,
 }
 
 export default withStyles(styles)(StopCard);

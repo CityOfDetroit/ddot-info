@@ -50,7 +50,7 @@ class RouteLink extends Component {
 
 RouteLink.propTypes = {
   id: PropTypes.string.isRequired,
-  icons: PropTypes.bool
+  icons: PropTypes.bool,
 }
 
 export default RouteLink;

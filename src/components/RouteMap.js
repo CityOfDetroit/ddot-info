@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import MapGL, {Marker, NavigationControl} from 'react-map-gl';
 import { Redirect } from 'react-router-dom';
 import _ from 'lodash';
@@ -15,7 +16,6 @@ import Helpers from '../helpers.js';
 import {defaultMapStyle, routeLineIndex, routeCaseIndex, timepointLabelIndex} from '../style.js';
 import {stopPointIndex} from '../style';
 import RouteBadge from './RouteBadge';
-
 import Schedules from '../data/schedules.js';
 
 const styles = {
@@ -292,6 +292,10 @@ class RouteMap extends Component {
       </Card>
     );
   }
+}
+
+RouteMap.propTypes = {
+  route: PropTypes.object.isRequired,
 }
 
 export default RouteMap;

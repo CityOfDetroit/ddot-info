@@ -110,6 +110,8 @@ RouteStops.propTypes = {
     path: PropTypes.string,
     url: PropTypes.string,
   }).isRequired,
+  history: PropTypes.object,
+  location: PropTypes.object,
 }
 
 export default RouteStops;

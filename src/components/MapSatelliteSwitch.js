@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Checkbox from '@material-ui/core/core/Checkbox';
-import {FormControlLabel} from '@material-ui/core/core';
+import { FormControlLabel } from '@material-ui/core/core';
 
 /** Checkbox to toggle satelite imagery for RouteMap and NearbyMap */
 class MapSatelliteSwitch extends React.Component {
@@ -16,6 +17,11 @@ class MapSatelliteSwitch extends React.Component {
       </div>
     );
   }
+}
+
+MapSatelliteSwitch.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  defaultChecked: PropTypes.bool.isRequired
 }
 
 export default MapSatelliteSwitch;

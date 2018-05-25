@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FormControl } from '@material-ui/core/core';
 import Select from '@material-ui/core/core/Select';
 
@@ -19,6 +20,12 @@ class RadiusPicker extends React.Component {
       </div>
     );
   }
+}
+
+RadiusPicker.propTypes = {
+  radii: PropTypes.array.isRequired,
+  currentRadius: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 }
 
 export default RadiusPicker;

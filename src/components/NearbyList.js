@@ -1,7 +1,8 @@
 import React from 'react';
-import { GridList, GridListTile } from '@material-ui/core/core'
+import PropTypes from 'prop-types';
+import { GridList, GridListTile } from '@material-ui/core/core';
 
-import Helpers from '../helpers.js'
+import Helpers from '../helpers.js';
 import StopInlineLink from './StopInlineLink';
 import RouteLink from './RouteLink';
 
@@ -21,6 +22,10 @@ class NearbyList extends React.Component {
       </GridList>
     );
   }
+}
+
+NearbyList.propTypes = {
+  stops: PropTypes.object,
 }
 
 export default NearbyList;

@@ -8,7 +8,6 @@ class RouteBadge extends Component {
   render() {
     // lookup route number in routeDetails
     const route = _.find(routeDetails, a => { return a.number === parseInt(this.props.id, 10) })
-    console.log(route)
 
     return (
       <div>  

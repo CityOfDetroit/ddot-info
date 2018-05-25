@@ -127,22 +127,21 @@ class StopWithPredictionMap extends Component {
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}
-          onClick={this._onClick}
-          >
+          onClick={this._onClick}>
           <Marker latitude={stop.lat} longitude={stop.lon} offsetLeft={-10} offsetTop={-10}>
             <BusStop style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
           </Marker>
           {this.props.prediction ? 
-          <Marker latitude={position.lat} longitude={position.lon} offsetLeft={-10} offsetTop={-10}>
-            <BusIcon style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
-          </Marker> :
-          Object.keys(transfers).map((s, i) => (
-            <Marker latitude={Stops[s].lat} longitude={Stops[s].lon} offsetLeft={-7.5} offsetTop={-7.5}>
-              <Link to={{pathname: `/stop/${s}`}}>
-                <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/>
-              </Link>
-            </Marker>
-          ))
+            <Marker latitude={position.lat} longitude={position.lon} offsetLeft={-10} offsetTop={-10}>
+              <BusIcon style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
+            </Marker> :
+            Object.keys(transfers).map((s, i) => (
+              <Marker key={i} latitude={Stops[s].lat} longitude={Stops[s].lon} offsetLeft={-7.5} offsetTop={-7.5}>
+                <Link to={{pathname: `/stop/${s}`}}>
+                  <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/>
+                </Link>
+              </Marker>
+            ))
           }
         </MapGL>
       </Card>

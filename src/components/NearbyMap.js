@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import StaticMap, {Marker} from 'react-map-gl';
 import _ from 'lodash';
 import buffer from '@turf/buffer';
@@ -129,9 +130,9 @@ class NearbyMap extends Component {
         zoom={bound.zoom}
         mapStyle={style}
         mapboxApiAccessToken={Helpers.mapboxApiAccessToken}>
-        <MapSatelliteSwitch onChange={this.handleChange} />
+        <MapSatelliteSwitch onChange={this.handleChange} defaultChecked={false} />
         {flattenedStops.map(s => (
-          <Marker latitude={Stops[s].lat} longitude={Stops[s].lon}>
+          <Marker key={s} latitude={Stops[s].lat} longitude={Stops[s].lon}>
             <Link to={{pathname: `/stop/${s}`}}>
               <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/>
             </Link>
@@ -140,6 +141,15 @@ class NearbyMap extends Component {
       </StaticMap> 
     );
   }
+}
+
+NearbyMap.propTypes = {
+  coords: PropTypes.shape({
+    latitude: PropTypes.number,
+    longitude: PropTypes.number,
+  }),
+  currentRadius: PropTypes.string.isRequired,
+  stops: PropTypes.object,
 }
 
 export default NearbyMap;

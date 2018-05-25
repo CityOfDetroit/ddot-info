@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { geolocated } from 'react-geolocated';
-import {Card, CardHeader, CardContent } from '@material-ui/core/core';
+import { Card, CardHeader, CardContent } from '@material-ui/core/core';
 
 import FeaturesNearLocation from './FeaturesNearLocation';
 import RadiusPicker from './RadiusPicker';
@@ -82,6 +82,10 @@ class Nearby extends React.Component {
 Nearby.propTypes = {
   isGeolocationAvailable: PropTypes.bool,
   isGeolocationEnabled: PropTypes.bool,
+  coords: PropTypes.shape({
+    latitude: PropTypes.number,
+    longitude: PropTypes.number,
+  }),
 }
 
 export default geolocated({

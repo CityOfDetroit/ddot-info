@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import _ from 'lodash';
-
 import Toolbar from '@material-ui/core/Toolbar';
-import {Card, CardHeader, Tabs, Tab, AppBar} from '@material-ui/core/core';
+import { Card, CardHeader, Tabs, Tab, AppBar } from '@material-ui/core/core';
 import { withStyles } from '@material-ui/core/styles';
 import TransferIcon from '@material-ui/icons/SwapHoriz'
 
@@ -16,7 +15,6 @@ import StopRouteSchedule from './StopRouteSchedule';
 import RouteBadge from './RouteBadge';
 import RouteLink from './RouteLink';
 import RoutePredictionList from './RoutePredictionList';
-import Footer from './Footer'
 import Schedules from '../data/schedules.js';
 import Helpers from '../helpers';
 

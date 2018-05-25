@@ -21,8 +21,7 @@ class BusRoute extends React.Component {
   }
  
   render() {
-    const route = _.find(routeDetails, a => { return a.number === parseInt(this.props.match.params.name, 10) })
-    console.log(route)
+    const route = _.find(routeDetails, a => { return a.number === parseInt(this.props.match.params.name, 10) });
     
     return (
       <div className="BusRoute" style={{ background: Helpers.colors['background'] }}>
@@ -43,6 +42,8 @@ BusRoute.propTypes = {
     path: PropTypes.string,
     url: PropTypes.string,
   }).isRequired,
+  location: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
 }
 
 export default BusRoute;

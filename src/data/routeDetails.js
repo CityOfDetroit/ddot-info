@@ -44,23 +44,23 @@ const routeDetails = [{
         between: ['Jefferson & Maryland', '7 Mile & Gratiot'],
         via: ['Chalmers', "Schoenherr"],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/9ChalmersMS.pdf"],
-        description: "An east side route that connects Detroit from Jefferson & Maryland to 7 Mile & Gratiot. The main streets served are Chalmers and Schoenherr St.",
+        description: "An east side route that connects Detroit from Jefferson & Maryland to 7 Mile & Gratiot. Some trips extend to Waltham & 8 Mile. The main streets served are Chalmers and Schoenherr St.",
         services: {
             "Monday-Friday": {
-                service_hours: ["5:15am", "8:45pm"],
+                service_hours: ["5:30am", "8:45pm"],
                 frequency: [
                     ["peak", 30],
                     ["off-peak", 60]
                 ]
             },
             "Saturday": {
-                service_hours: ["6:45am", "7:45pm"],
+                service_hours: ["6:45am", "8:00pm"],
                 frequency: [
                     ["all day", 60]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["8:15am", "5:00pm"],
+                service_hours: ["8:30am", "4:30pm"],
                 frequency: [
                     ["all day", 60]
                 ]
@@ -135,7 +135,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Fairgrounds TC', 'Belle Isle'],
         via: ['Conant', 'E. Outer Dr'],
-        description: "An east side route that connects Detroit from Belle Isle to Fairgrounds. The main streets served are Conant St, Mt. Elliot and State Fair. In addition to Detroit, this route also serves Hamtramck.",
+        description: "An east side route that connects Detroit from Belle Isle to Fairgrounds. The main streets served are Conant Street, Mt Elliot, E Grand Blvd and State Fair. In addition to Detroit, this route also serves Hamtramck.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/12ConantMS.pdf?ver=2016-04-22-150443-267"],
         services: {
             "Monday-Friday": {
@@ -544,20 +544,22 @@ const routeDetails = [{
             "Monday-Friday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["peak", 35],
+                    ["peak", 17],
                     ["off-peak", 35]
                 ]
             },
             "Saturday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["day", 25],
+                    ["evening", "30-60"]
                 ]
             },
             "Sunday/Holiday": {
                 service_hours: ["24 hours"],
                 frequency: [
-                    ["all day", 60]
+                    ["day", 35],
+                    ["evening", "35-60"]
                 ]
             }
         },
@@ -720,7 +722,7 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/32McNichols.pdf?ver=2017-01-30-160912-920"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:00am", "1:30am"],
+                service_hours: ["5:00am", "1:45am"],
                 frequency: [
                     ["peak", 35],
                     ["off-peak", 50]
@@ -729,7 +731,7 @@ const routeDetails = [{
             "Saturday": {
                 service_hours: ["5:45am", "1:00am"],
                 frequency: [
-                    ["day", 45],
+                    ["day", 40],
                     ["evening", 60]
                 ]
             },
@@ -899,11 +901,11 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Friday'],
         between: ['Rosa Parks TC', 'Van Dyke & E. Outer Dr'],
         via: [''],
-        description: "An east side route that connects Detroit from Downtown Rosa Parks Transit Center to E outer Dr & Van Dyke. The main streets served are Russell and E Outer Dr.",
+        description: "An east side route that connects Detroit from Downtown Rosa Parks Transit Center to E outer Dr & Van Dyke. The main streets served are Russell, Dequindre and E Outer Dr.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/40RussellMF.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["6:00am", "7:49pm"],
+                service_hours: ["5:00am", "7:45pm"],
                 frequency: [
                     ["all day", 65]
                 ]
@@ -1063,13 +1065,14 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Friday'],
         between: ['9 Mile & Rutland', 'Fairlane Mall'],
         via: ['Southfield Service Drive'],
-        description: "A west side peak hour route that connects Detroit from Nine Mile & Rutland to Fairelane Mall. The main street served is Southfield. In addition to Detroit, this route also serves Dearborn and Southfield.",
+        description: "A west side peak hour route that connects Detroit from Nine Mile & Rutland to Fairelane Mall. The main streets served are Southfield and Paul Street. In addition to Detroit, this route also serves Dearborn and Southfield.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/46Southfield.pdf"],
         services: {
             "Monday-Friday": {
-                service_hours: ["5:48am", "8:20pm"],
+                service_hours: ["5:45am", "7:45pm"],
                 frequency: [
-                    ["all day", 50]
+                    ["morning (5:45am - 9:15am)", 50],
+                    ["evening (2:30pm - 7:45pm)", 50]
                 ]
             }
         },

@@ -11524,7 +11524,7 @@
                 "text-font": ["Gibson Detroit SemiBold"],
                 "text-size": 20,
                 "text-letter-spacing": 0,
-                "text-padding": 150
+                "text-padding": 0
             },
             "paint": {
                 "text-color": "rgba(216, 46, 34, 0.6)",

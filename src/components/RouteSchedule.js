@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 import _ from 'lodash';
 import chroma from 'chroma-js';
-import Toolbar from 'material-ui/Toolbar';
-import { AppBar } from 'material-ui';
-import Card, { CardContent } from 'material-ui/Card';
+import Toolbar from '@material-ui/core/Toolbar';
+import { AppBar } from '@material-ui/core/core';
+import {Card, CardContent } from '@material-ui/core/core';
 
 import Schedules from '../data/schedules.js';
 import routeDetails from '../data/routeDetails.js';
@@ -173,6 +173,8 @@ RouteSchedule.propTypes = {
     path: PropTypes.string,
     url: PropTypes.string,
   }).isRequired,
+  location: PropTypes.object,
+  history: PropTypes.object,
 }
 
 export default RouteSchedule;

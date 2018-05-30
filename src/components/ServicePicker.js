@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import Radio, {RadioGroup} from 'material-ui/Radio';
-import { FormControl, FormControlLabel } from 'material-ui/Form';
+import {Radio, RadioGroup} from '@material-ui/core/core';
+import { FormControl, FormControlLabel } from '@material-ui/core/core';
 
 /** Service day picker for RouteSchedule */
 class ServicePicker extends React.Component {

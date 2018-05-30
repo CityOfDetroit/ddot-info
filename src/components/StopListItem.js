@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ListItem, ListItemText } from 'material-ui/List';
+import { ListItem, ListItemText } from '@material-ui/core/List';
 
 import Stops from '../data/stops.js';
 

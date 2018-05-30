@@ -1,4 +1,5 @@
 import React from 'react';
+
 import NavLinks from './NavLinks';
 
 /** Unused in lieu of TopNav */
@@ -8,7 +9,7 @@ const StopHeader = ({ id, name }) => (
       <span className="pa2 fw5 white">
         {name}
       </span>
-      <span className="fw7 f5 mr2 pa2" style={{background: '#ddd'}}>
+      <span className="fw7 f5 mr2 pa2" style={{ background: '#ddd' }}>
         Stop ID #{id}
       </span>
     </div>

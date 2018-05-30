@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/core/core": "^1.0.0",
+    "@material-ui/icons": "^1.0.0",
     "@turf/bbox": "^5.1.5",
     "@turf/buffer": "^5.1.5",
     "autoprefixer": "7.1.6",
@@ -31,8 +34,6 @@
     "html-webpack-plugin": "2.29.0",
     "immutable": "^3.8.2",
     "jest": "20.0.4",
-    "material-ui": "^1.0.0-beta.47",
-    "material-ui-icons": "^1.0.0-beta.36",
     "moment": "^2.19.3",
     "node-sass-chokidar": "0.0.3",
     "object-assign": "4.1.1",
@@ -47,14 +48,14 @@
     "react-dom": "^16.1.1",
     "react-ga": "^2.4.1",
     "react-geolocated": "^2.2.1",
+    "react-loadable": "^5.4.0",
     "react-map-gl": "^3.2.4",
     "react-router-dom": "^4.2.2",
     "react-swipeable-views": "^0.12.13",
     "react-tabs": "^2.2.1",
+    "source-map-explorer": "^1.5.0",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
-    "tachyons": "^4.9.0",
-    "tachyons-cli": "^1.2.0",
     "url-loader": "0.6.2",
     "viewport-mercator-project": "^5.0.0",
     "webpack": "3.8.1",
@@ -68,13 +69,7 @@
     "deploy": "netlify deploy",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js && cp build/index.html build/404.html",
-    "test": "node scripts/test.js --env=jsdom",
-    "css": "tachyons src/css/app.css > src/css/index.css --minify",
-    "prestart": "yarn run css",
-    "prebuild": "yarn run css"
-  },
-  "devDependencies": {
-    "tachyons-flexbox": "^2.1.0"
+    "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
     "collectCoverageFrom": [

@@ -2,13 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import _ from 'lodash';
-import Tabs, { Tab } from 'material-ui/Tabs';
-
-import Toolbar from 'material-ui/Toolbar';
-import Card, {CardHeader} from 'material-ui/Card';
-import { AppBar } from 'material-ui';
-import { withStyles } from 'material-ui/styles';
-import TransferIcon from 'material-ui-icons/SwapHoriz'
+import Toolbar from '@material-ui/core/Toolbar';
+import { Card, CardHeader, Tabs, Tab, AppBar } from '@material-ui/core/core';
+import { withStyles } from '@material-ui/core/styles';
+import TransferIcon from '@material-ui/icons/SwapHoriz';
 
 import Stops from '../data/stops.js';
 import TopNav from './TopNav';
@@ -84,11 +81,9 @@ class Stop extends React.Component {
   }
 
   handleTabsChange = (event, slideIndex) => {
-    console.log(event, slideIndex)
-    if(typeof event === 'number') {
+    if (typeof event === 'number') {
       this.setState({ slideIndex: event, tripData: null, tripId: null })
-    }
-    else {
+    } else {
       this.setState({ slideIndex: slideIndex, tripData: null, tripId: null })
     }
   }
@@ -133,7 +128,7 @@ class Stop extends React.Component {
     const { slideIndex } = this.state;
 
     return (
-      <div className='App' style={{ background: Helpers.colors['background'] }}>
+      <div className='App' style={{ background: Helpers.colors['background']}}>
         <TopNav />
         <StopWithPredictionMap stopId={stopId} center={stopCoords} prediction={this.state.tripData} route={this.state.route} /> 
         <div className='routes'>
@@ -153,7 +148,7 @@ class Stop extends React.Component {
                 {stopRoutes.map((r, i) => (
                   <Tab label={<RouteBadge id={r[0]} />} value={i} style={{ minWidth: 40, width: 50 }} key={i} />
                 ))}
-                <Tab label={<div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}><TransferIcon />Transfers</div>} value={stopRoutes.length} style={{fontWeight: 700}} />
+                <Tab label={<div style={{display: 'flex', alignItems: 'center', flexDirection: 'column', height: 120}}><TransferIcon />Transfers</div>} value={stopRoutes.length} style={{fontWeight: 700}} />
               </Tabs>
             </Toolbar>
           </AppBar>
@@ -213,6 +208,8 @@ Stop.propTypes = {
     path: PropTypes.string,
     url: PropTypes.string,
   }).isRequired,
+  location: PropTypes.object,
+  history: PropTypes.object,
 }
 
 export default withStyles(styles)(Stop);

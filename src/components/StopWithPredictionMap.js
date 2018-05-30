@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import MapGL, { Marker } from 'react-map-gl';
-import Card, {CardHeader} from 'material-ui/Card';
+import { Card, CardHeader } from '@material-ui/core/core';
 import _ from 'lodash';
 import WebMercatorViewport from 'viewport-mercator-project';
 
 import Helpers from '../helpers.js';
 import Stops from '../data/stops.js';
-
-import {Link} from 'react-router-dom'
-
 import {defaultMapStyle, routeLineIndex, routeLabelIndex, routeCaseIndex} from '../style.js';
 import BusStop from './BusStop.js';
-import BusIcon from 'material-ui-icons/DirectionsBus';
+import BusIcon from '@material-ui/icons/DirectionsBus';
 
+/** Map rendered on Stop page when a RoutePredictionList item is expanded */
 class StopWithPredictionMap extends Component {
   constructor(props) {
     super(props)
@@ -74,7 +74,7 @@ class StopWithPredictionMap extends Component {
     let stop = Stops[this.props.stopId] || null
     let transfers = _.groupBy(stop.transfers, 2)
     let bound, position = null
-    if(this.props.prediction) {
+    if (this.props.prediction) {
       position = this.props.prediction.tripStatus.position
       let bbox = [
         Math.min(stop.lat, parseFloat(position.lat)), 
@@ -96,8 +96,7 @@ class StopWithPredictionMap extends Component {
       style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(this.props.route, 10));
       style = style.setIn(['layers', routeLabelIndex, 'filter', 2], parseInt(this.props.route, 10));
       style = style.setIn(['layers', routeCaseIndex, 'filter', 2], parseInt(this.props.route, 10));
-    }
-    else {
+    } else {
       const routesHere = Array.from(new Set(_.flattenDeep(_.map(stop.transfers, 0).concat(stop.routes))))
       style = style.setIn(['layers', routeLineIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))   
       style = style.setIn(['layers', routeLabelIndex, 'filter'], ["in", "route_num"].concat(routesHere.map(r => parseInt(r, 10))))   
@@ -109,14 +108,12 @@ class StopWithPredictionMap extends Component {
         }
       })  
     }
-    
-    
 
     return (
       <Card className="map">
         <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
           <BusStop style={{ marginLeft: '1em', backgroundColor: 'rgba(0, 0, 0, .8)', color: 'yellow', borderRadius: 999, height: '1.8em', width: '1.8em' }}/>
-          <CardHeader title={stop.name} subheader={`Stop ID: #${stop.id}`} style={{ fontSize: '1.2em' }}/>
+          <CardHeader title={stop.name} subheader={`Stop ID: #${stop.id}`} style={{ fontSize: '1.2em', position: 'sticky'}}/>
         </div>
         <MapGL
           width={this.state.viewport.width}
@@ -132,21 +129,27 @@ class StopWithPredictionMap extends Component {
             <BusStop style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'yellow' }} />
           </Marker>
           {this.props.prediction ? 
-          <Marker latitude={position.lat} longitude={position.lon} offsetLeft={-10} offsetTop={-10}>
-            <BusIcon style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
-          </Marker> :
-          Object.keys(transfers).map((s, i) => (
-            <Marker latitude={Stops[s].lat} longitude={Stops[s].lon} offsetLeft={-7.5} offsetTop={-7.5}>
-              <Link to={{pathname: `/stop/${s}`}}>
-                <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/>
-              </Link>
-            </Marker>
-          ))
+            <Marker latitude={position.lat} longitude={position.lon} offsetLeft={-10} offsetTop={-10}>
+              <BusIcon style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
+            </Marker> :
+            Object.keys(transfers).map((s, i) => (
+              <Marker key={i} latitude={Stops[s].lat} longitude={Stops[s].lon} offsetLeft={-7.5} offsetTop={-7.5}>
+                <Link to={{pathname: `/stop/${s}`}}>
+                  <BusStop style={{ height: 15, width: 15, borderRadius: 9999, background: 'rgba(0,0,0,.65)', padding: 2.5, color: 'white' }}/>
+                </Link>
+              </Marker>
+            ))
           }
         </MapGL>
       </Card>
-    )
+    );
   }
+}
+
+StopWithPredictionMap.propTypes = {
+  center: PropTypes.array,
+  route: PropTypes.string,
+  stopId: PropTypes.string,
 }
 
 export default StopWithPredictionMap;

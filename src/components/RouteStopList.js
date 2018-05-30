@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import Card, { CardContent } from 'material-ui/Card';
-import TransferIcon from 'material-ui-icons/SwapHoriz'
-import BusStopIcon from './BusStop'
+import PropTypes from 'prop-types';
+import {Card, CardContent } from '@material-ui/core/core';
+import TransferIcon from '@material-ui/icons/SwapHoriz';
 
+import BusStopIcon from './BusStop';
 import StopLink from './StopLink';
 import Stops from '../data/stops.js';
 import Schedules from '../data/schedules.js';
@@ -76,6 +77,13 @@ class RouteStopList extends Component {
       </Card>
     );
   }
+}
+
+RouteStopList.propTypes = {
+  id: PropTypes.number,
+  input: PropTypes.string,
+  routeNumber: PropTypes.string,
+  timepoints: PropTypes.array,
 }
 
 export default RouteStopList;

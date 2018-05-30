@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import Toolbar from 'material-ui/Toolbar';
-import { AppBar } from 'material-ui';
+import Toolbar from '@material-ui/core/Toolbar';
+import { AppBar } from '@material-ui/core/core';
 
 import DirectionPicker from './DirectionPicker';
 import RouteHeader from './RouteHeader';
@@ -110,6 +110,8 @@ RouteStops.propTypes = {
     path: PropTypes.string,
     url: PropTypes.string,
   }).isRequired,
+  history: PropTypes.object,
+  location: PropTypes.object,
 }
 
 export default RouteStops;

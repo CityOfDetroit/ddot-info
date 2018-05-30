@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import MapGL, { NavigationControl} from 'react-map-gl';
-import Helpers from '../helpers.js';
-import {defaultMapStyle, routeLineIndex, routeLabelIndex, routeCaseIndex, routeHighlightIndex} from '../style.js';
+import { Card, CardHeader, CardContent } from '@material-ui/core/core';
+
+import { defaultMapStyle, routeLineIndex, routeLabelIndex, routeCaseIndex, routeHighlightIndex } from '../style.js';
 import RouteLink from './RouteLink';
 import routeDetails from '../data/routeDetails.js'
-import Card, { CardHeader, CardContent } from 'material-ui/Card';
+import Helpers from '../helpers.js';
 
 /** Interactive map of the DDOT system, showing all routes.  */
 class SystemMap extends Component {
@@ -114,6 +116,12 @@ class SystemMap extends Component {
         </div>
     );
   }
+}
+
+SystemMap.propTypes = {
+  match: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
 }
 
 export default SystemMap;

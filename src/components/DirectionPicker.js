@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import Radio, {RadioGroup} from 'material-ui/Radio';
-import { FormControl, FormControlLabel  } from 'material-ui/Form';
+import { Radio, RadioGroup } from '@material-ui/core/core';
+import { FormControl, FormControlLabel } from '@material-ui/core/core';
 
 import Stops from '../data/stops.js';
 
@@ -22,9 +22,18 @@ class DirectionPicker extends React.Component {
 }
 
 DirectionPicker.propTypes = {
-  directions: PropTypes.array,
-  currentDirection: PropTypes.string,
-  onChange:PropTypes.func.isRequired
+  directions: PropTypes.array.isRequired,
+  currentDirection: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  route: PropTypes.shape({
+    bbox: PropTypes.array,
+    color: PropTypes.string,
+    id: PropTypes.string,
+    rt_id: PropTypes.number,
+    rt_name: PropTypes.string,
+    schedules: PropTypes.object,
+    timepoints: PropTypes.object
+  }).isRequired,
 }
 
 export default DirectionPicker;

@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import StopIcon from './BusStop';
-import ScheduleIcon from 'material-ui-icons/Schedule';
+import ScheduleIcon from '@material-ui/icons/Schedule';
 
-import Schedules from '../data/schedules.js';
+import routeDetails from '../data/routeDetails.js'
+import _ from 'lodash'
 
 /** Linked route number and name with optional icons for RoutesList, NearbyList, StopTransfers and Stop */
 class RouteLink extends Component {
   render() {
-    const route = Schedules[this.props.id];
+    const route = _.find(routeDetails, a => { return a.number === parseInt(this.props.id, 10) })
 
     return (
       <div>
@@ -17,16 +18,16 @@ class RouteLink extends Component {
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: route.color, color: 'white', fontSize: '1.25em', fontWeight: 700 }}>
               <Link
-                to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}
+                to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id } }}
                 style={{ textDecoration: 'none', color: '#fff' }}>
                 {this.props.id}
               </Link>
             </div> 
             <Link  
-              to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id, routeId: route.rt_id, name: route.rt_name } }}
+              to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id } }}
               style={{ textDecoration: 'none' }}>
               <span style={{ fontSize: `1.1em`, fontFamily: "Gibson Detroit Light", fontWeight: 600, color: 'black', marginLeft: '.4em', paddingRight: '1em' }}>
-                {route.rt_name}
+                {route.name}
                 {this.props.direction ? ` (${this.props.direction})` : ``}
               </span>
             </Link>
@@ -49,7 +50,7 @@ class RouteLink extends Component {
 
 RouteLink.propTypes = {
   id: PropTypes.string.isRequired,
-  icons: PropTypes.bool
+  icons: PropTypes.bool,
 }
 
 export default RouteLink;

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import { Card, CardContent, CardHeader } from '@material-ui/core/core';
-import Divider from '@material-ui/core/core/Divider';
+import { Card, CardContent, CardHeader } from '@material-ui/core';
+import Divider from '@material-ui/core/Divider';
 
 import routeDetails from '../data/routeDetails.js';
 import RouteBadge from './RouteBadge';

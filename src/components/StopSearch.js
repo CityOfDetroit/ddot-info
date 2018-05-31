@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import { Card, CardHeader, CardContent } from '@material-ui/core/core';
+import { Card, CardHeader, CardContent } from '@material-ui/core';
 
 import StopInput from './StopInput';
 import StopsList from './StopsList';

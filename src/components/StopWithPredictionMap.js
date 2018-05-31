@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import MapGL, { Marker } from 'react-map-gl';
-import { Card, CardHeader } from '@material-ui/core/core';
+import { Card, CardHeader } from '@material-ui/core';
 import _ from 'lodash';
 import WebMercatorViewport from 'viewport-mercator-project';
 

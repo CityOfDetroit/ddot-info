@@ -5,8 +5,8 @@ import moment from 'moment';
 import _ from 'lodash';
 import chroma from 'chroma-js';
 import Toolbar from '@material-ui/core/Toolbar';
-import { AppBar } from '@material-ui/core/core';
-import {Card, CardContent } from '@material-ui/core/core';
+import { AppBar } from '@material-ui/core';
+import {Card, CardContent } from '@material-ui/core';
 
 import Schedules from '../data/schedules.js';
 import routeDetails from '../data/routeDetails.js';

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { geolocated } from 'react-geolocated';
-import { Card, CardHeader, CardContent } from '@material-ui/core/core';
+import { Card, CardHeader, CardContent } from '@material-ui/core';
 
 import FeaturesNearLocation from './FeaturesNearLocation';
 import RadiusPicker from './RadiusPicker';

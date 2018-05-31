@@ -7,7 +7,7 @@ import StopCard from './StopCard';
 class StopsList extends Component {
   render() {
     return (
-      <div className="overflow-scroll" style={{ display: 'grid', gridTemplateColumns: `repeat(auto-fit, minmax(350px, 1fr))`, height: 400 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: `repeat(auto-fit, minmax(350px, 1fr))`, height: 400, overflowY: 'scroll' }}>
         {this.props.stops.map((stop, i) =>
           <div key={i}>
             <StopCard id={stop.id} showTransfers={true} showRoutes showDirection />

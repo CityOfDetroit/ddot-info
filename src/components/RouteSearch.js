@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardHeader, CardContent } from '@material-ui/core/core';
+import { Card, CardHeader, CardContent } from '@material-ui/core';
 
 import RouteInput from './RouteInput';
 import RoutesList from './RoutesList';

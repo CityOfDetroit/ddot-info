@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import chroma from 'chroma-js';
-import { GridList, GridListTile } from '@material-ui/core/core';
-import { Card, CardHeader, CardContent } from '@material-ui/core/core';
-import Divider from '@material-ui/core/core/Divider';
+import { GridList, GridListTile } from '@material-ui/core';
+import { Card, CardHeader, CardContent } from '@material-ui/core';
+import Divider from '@material-ui/core/Divider';
 import moment from 'moment';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 

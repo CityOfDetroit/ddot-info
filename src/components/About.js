@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Divider from 'material-ui/Divider';
-import LiveIcon from 'material-ui-icons/SpeakerPhone';
-import ScheduleIcon from 'material-ui-icons/Schedule';
-import PdfIcon from 'material-ui-icons/PictureAsPdf';
-import Bus from 'material-ui-icons/DirectionsBus';
-import NearbyIcon from 'material-ui-icons/Place';
+import Divider from '@material-ui/core/core/Divider';
+import LiveIcon from '@material-ui/icons/SpeakerPhone';
+import ScheduleIcon from '@material-ui/icons/Schedule';
+import PdfIcon from '@material-ui/icons/PictureAsPdf';
+import Bus from '@material-ui/icons/DirectionsBus';
+import NearbyIcon from '@material-ui/icons/Place';
+
+import Footer from './Footer';
 
 import BusIcon from './BusStop'
 import TopNav from './TopNav';
@@ -110,6 +112,7 @@ const About = () => (
       <p>This app is developed by <a href="https://cityofdetroit.github.io/iet" target="_blank" rel="noopener noreferrer">IET</a>. Our code is on <a href="https://github.com/CityOfDetroit/route-explorer" target="_blank" rel="noopener noreferrer">Github</a>.</p>
       <p>Find a bug or have an idea for the project team? Reach out by <a href="mailto:iet@detroitmi.gov">email</a> or leave us a <a href="https://github.com/CityOfDetroit/route-explorer/issues" target="_blank" rel="noopener noreferrer">Github Issue</a>.</p>
     </div>
+    <Footer />
   </div>
 )
 

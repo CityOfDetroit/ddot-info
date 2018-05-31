@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Feedback from 'material-ui-icons/Feedback';
-import Info from 'material-ui-icons/InfoOutline';
-import Home from 'material-ui-icons/Home';
+import Feedback from '@material-ui/icons/Feedback';
+import Info from '@material-ui/icons/InfoOutline';
+import Home from '@material-ui/icons/Home';
 
 /** Navigation links used in TopNav */
 const NavLinks = () => (

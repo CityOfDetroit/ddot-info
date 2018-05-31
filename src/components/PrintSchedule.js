@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
-import PdfIcon from 'material-ui-icons/PictureAsPdf';
+import Button from '@material-ui/core/core/Button';
+import PdfIcon from '@material-ui/icons/PictureAsPdf';
 
 /** Print PDF button(s) for RouteDetails */
 const PrintSchedule = ({ routePdf }) => (

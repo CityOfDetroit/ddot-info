@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import Card, { CardHeader, CardContent } from 'material-ui/Card';
-import Collapse from 'material-ui/transitions/Collapse';
-import Divider from 'material-ui/Divider';
-import { withStyles } from 'material-ui/styles' 
-import PinIcon from 'material-ui-icons/Place';
-import BusIcon from 'material-ui-icons/Timeline';
+import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core/core';
+import { Card, CardHeader, CardContent } from '@material-ui/core/core';
+import Collapse from '@material-ui/core/core/Collapse';
+import Divider from '@material-ui/core/core/Divider';
+import { withStyles } from '@material-ui/core/core/styles' 
+import PinIcon from '@material-ui/icons/Place';
+import BusIcon from '@material-ui/icons/Timeline';
 import StopIcon from './BusStop';
-import ExpandLess from 'material-ui-icons/ExpandLess';
-import ExpandMore from 'material-ui-icons/ExpandMore';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
 
 import TopNav from './TopNav';
 import RouteSearch from './RouteSearch';
 import StopSearch from './StopSearch';
+import Footer from './Footer';
 import Nearby from './Nearby';
 import Helpers from '../helpers';
 
@@ -76,10 +77,11 @@ class Homepage extends Component {
           <Collapse in={true} timeout="auto" unmountOnExit>
             {this.state.open === "routes" ? <RouteSearch /> 
               : this.state.open === "stops" ? <StopSearch /> 
-                : this.state.open === "nearby" ? <Nearby /> 
+                : this.state.open === "nearby" ? <Nearby />
                   : null}
           </Collapse>
         </List>
+        <Footer />
       </div>
     );
   }

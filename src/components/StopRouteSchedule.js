@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import chroma from 'chroma-js';
-import GridList, { GridListTile } from 'material-ui/GridList';
-import Card, { CardHeader, CardContent } from 'material-ui/Card';
-import Divider from 'material-ui/Divider';
+import { GridList, GridListTile } from '@material-ui/core/core';
+import { Card, CardHeader, CardContent } from '@material-ui/core/core';
+import Divider from '@material-ui/core/core/Divider';
 import moment from 'moment';
-import ScheduleIcon from 'material-ui-icons/Schedule'
+import ScheduleIcon from '@material-ui/icons/Schedule';
 
 import Schedules from '../data/schedules.js';
 import Stops from '../data/stops.js';
@@ -22,17 +22,16 @@ class StopRouteSchedule extends Component {
     return (
       <div>
         {Helpers.cleanScheduleHeadsign(this.props.schedules[0]).stopRouteDirectionSchedules.map((rds, i) => (
-          <div>
+          <div key={i}>
             {i === 1 ? <Divider /> : ``}
             <Card style={{ padding: 10 }}>
-            <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
-              <ScheduleIcon style={{ marginLeft: '.5em', color: '#aaa', borderRadius: 999, height: '1.25em', width: '1.25em' }}/>
-              <CardHeader
-                title={_.capitalize(rds.tripHeadsign)}
-                subheader={`to ${Stops[Schedules[this.props.route].timepoints[rds.tripHeadsign].slice(-1)[0]].name}`}
-                style={{padding: 10, marginLeft: 10}}
-             />
-            </div>
+              <div style={{ display: 'flex', alignItems: 'center', padding: 0 }}>
+                <ScheduleIcon style={{ marginLeft: '.5em', color: '#aaa', borderRadius: 999, height: '1.25em', width: '1.25em' }}/>
+                <CardHeader
+                  title={_.capitalize(rds.tripHeadsign)}
+                  subheader={`to ${Stops[Schedules[this.props.route].timepoints[rds.tripHeadsign].slice(-1)[0]].name}`}
+                  style={{ padding: 10, marginLeft: 10 }} />
+              </div>
               <CardContent style={{ padding: 10 }}>
                 <GridList 
                   cellHeight={18} 
@@ -44,15 +43,17 @@ class StopRouteSchedule extends Component {
                     flexFlow: 'column wrap', 
                     justifyContent: 'start' }}>
                   {rds.scheduleStopTimes.map((sst, i) => (
-                    <GridListTile style={{
-                      backgroundColor: this.props.predictions.indexOf(sst.tripId) > -1 ? chroma(Schedules[this.props.route].color).alpha(0.25).css() : 'rgba(255,255,255,1)',
-                      textAlign: 'center',
-                      verticalAlign: 'center',
-                      letterSpacing: '-0.25px',
-                      borderRight: '1px solid #ccc',
-                      fontSize: '.9em',
-                      paddingTop: '.25em',
-                      fontWeight: moment(sst.arrivalTime).format('a') === 'am' ? 300 : 700 }}>
+                    <GridListTile 
+                      key={sst.tripId}
+                      style={{
+                        backgroundColor: this.props.predictions.indexOf(sst.tripId) > -1 ? chroma(Schedules[this.props.route].color).alpha(0.25).css() : 'rgba(255,255,255,1)',
+                        textAlign: 'center',
+                        verticalAlign: 'center',
+                        letterSpacing: '-0.25px',
+                        borderRight: '1px solid #ccc',
+                        fontSize: '.9em',
+                        paddingTop: '.25em',
+                        fontWeight: moment(sst.arrivalTime).format('a') === 'am' ? 300 : 700 }}>
                       {(i === 0 || moment(rds.scheduleStopTimes[i-1].arrivalTime).format('a') !== moment(sst.arrivalTime).format('a')) ? moment(sst.arrivalTime).format('h:mma').slice(0,-1) : moment(sst.arrivalTime).format('h:mm')}
                     </GridListTile>
                   ))}

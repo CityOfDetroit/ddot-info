@@ -66,7 +66,7 @@ class RouteStopList extends Component {
               <span style={{ display: 'block', marginLeft: '.5em' }}>Transfers</span>
             </div>
           </div>
-          <div className="overflow-scroll" style={{ height: '60vh' }}>
+          <div style={{ height: '60vh', overflowY: 'scroll' }}>
             {filteredStops.length > 0 ? filteredStops.map((stop, i) =>
               <div style={{ display: 'flex', alignItems: 'center', zIndex: 0 }} key={i}>
                 <StopLink id={stop.slice(5,)} exclude={this.props.routeNumber} color={color} isTimepoint={this.props.timepoints.indexOf(stop.slice(5,)) > -1} showTransfers showBorder/>

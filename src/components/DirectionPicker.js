@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import { Radio, RadioGroup } from '@material-ui/core/core';
-import { FormControl, FormControlLabel } from '@material-ui/core/core';
+import { Radio, RadioGroup } from '@material-ui/core';
+import { FormControl, FormControlLabel } from '@material-ui/core';
 
 import Stops from '../data/stops.js';
 

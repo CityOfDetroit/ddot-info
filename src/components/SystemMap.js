@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MapGL, { NavigationControl} from 'react-map-gl';
-import { Card, CardHeader, CardContent } from '@material-ui/core/core';
+import { Card, CardHeader, CardContent } from '@material-ui/core';
 
 import { defaultMapStyle, routeLineIndex, routeLabelIndex, routeCaseIndex, routeHighlightIndex } from '../style.js';
 import RouteLink from './RouteLink';

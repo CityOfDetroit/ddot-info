@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import _ from 'lodash';
 import Toolbar from '@material-ui/core/Toolbar';
-import { Card, CardHeader, Tabs, Tab, AppBar } from '@material-ui/core/core';
+import { Card, CardHeader, Tabs, Tab, AppBar } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import TransferIcon from '@material-ui/icons/SwapHoriz';
 

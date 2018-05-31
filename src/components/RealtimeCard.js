@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Card, CardContent } from '@material-ui/core/core';
+import { Card, CardContent } from '@material-ui/core';
 import BusIcon from '@material-ui/icons/DirectionsBus';
 import BusStop from './BusStop';
 import LiveIcon from '@material-ui/icons/SpeakerPhone';

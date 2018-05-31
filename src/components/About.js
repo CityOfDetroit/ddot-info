@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Divider from '@material-ui/core/core/Divider';
+import Divider from '@material-ui/core/Divider';
 import LiveIcon from '@material-ui/icons/SpeakerPhone';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import PdfIcon from '@material-ui/icons/PictureAsPdf';

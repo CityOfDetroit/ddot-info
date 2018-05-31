@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormControl } from '@material-ui/core/core';
-import Select from '@material-ui/core/core/Select';
+import { FormControl } from '@material-ui/core';
+import Select from '@material-ui/core/Select';
 
 /** Walk radius distance picker for Nearby */
 class RadiusPicker extends React.Component {

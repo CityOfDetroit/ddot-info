@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Checkbox from '@material-ui/core/core/Checkbox';
-import { FormControlLabel } from '@material-ui/core/core';
+import Checkbox from '@material-ui/core/Checkbox';
+import { FormControlLabel } from '@material-ui/core';
 
 /** Checkbox to toggle satelite imagery for RouteMap and NearbyMap */
 class MapSatelliteSwitch extends React.Component {

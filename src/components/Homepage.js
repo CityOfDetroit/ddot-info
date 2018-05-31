@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core/core';
-import { Card, CardHeader, CardContent } from '@material-ui/core/core';
-import Collapse from '@material-ui/core/core/Collapse';
-import Divider from '@material-ui/core/core/Divider';
-import { withStyles } from '@material-ui/core/core/styles' 
+import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import { Card, CardHeader, CardContent } from '@material-ui/core';
+import Collapse from '@material-ui/core/Collapse';
+import Divider from '@material-ui/core/Divider';
+import { withStyles } from '@material-ui/core/styles' 
 import PinIcon from '@material-ui/icons/Place';
 import BusIcon from '@material-ui/icons/Timeline';
 import StopIcon from './BusStop';

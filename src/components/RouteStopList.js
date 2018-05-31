@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import {Card, CardContent } from '@material-ui/core/core';
+import {Card, CardContent } from '@material-ui/core';
 import TransferIcon from '@material-ui/icons/SwapHoriz';
 
 import BusStopIcon from './BusStop';

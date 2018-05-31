@@ -15,7 +15,7 @@ We're using [Create React App](https://github.com/facebook/create-react-app) wit
 ## Data sources
 
 - DDOT GTFS
-- OneBusAway API
+- [OneBusAway API](http://developer.onebusaway.org/modules/onebusaway-application-modules/1.1.14/api/where/index.html)
 
 # Install
 

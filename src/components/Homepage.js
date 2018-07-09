@@ -15,8 +15,6 @@ import RouteSearch from './RouteSearch';
 import StopSearch from './StopSearch';
 import Nearby from './Nearby';
 import Helpers from '../helpers';
-import Feedback from '@material-ui/icons/Feedback';
-
 
 const styles = {
   root: {

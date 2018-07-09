@@ -1,0 +1,2 @@
+# Redirect domain aliases to primary domain
+https://ddot.fun/* https://ddot.info/:splat 301!

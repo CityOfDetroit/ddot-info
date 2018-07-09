@@ -13,9 +13,10 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import TopNav from './TopNav';
 import RouteSearch from './RouteSearch';
 import StopSearch from './StopSearch';
-import Footer from './Footer';
 import Nearby from './Nearby';
 import Helpers from '../helpers';
+import Feedback from '@material-ui/icons/Feedback';
+
 
 const styles = {
   root: {
@@ -44,6 +45,9 @@ class Homepage extends Component {
     return (
       <div style={{ background: Helpers.colors.background }}>
         <TopNav />
+        <div style={{background: "#B0D27B", padding: '.5em', textAlign: 'center', display: 'flex', fontFamily: 'Gibson Detroit Light', alignItems: 'vertical', justifyContent: 'center', fontSize: '1.2em'}}>
+          <span>This is a <b>beta</b> tool, which means we want <a href="https://app.smartsheet.com/b/form/28665a43770d48b5bbdfe35f3b7b45ac">your feedback!</a></span>
+        </div>
         <Card>
           <CardHeader title="Welcome to DDOT's new bus schedule tool" />
           <CardContent>
@@ -81,7 +85,6 @@ class Homepage extends Component {
                   : null}
           </Collapse>
         </List>
-        <Footer />
       </div>
     );
   }

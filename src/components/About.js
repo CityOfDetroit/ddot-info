@@ -7,7 +7,6 @@ import PdfIcon from '@material-ui/icons/PictureAsPdf';
 import Bus from '@material-ui/icons/DirectionsBus';
 import NearbyIcon from '@material-ui/icons/Place';
 
-import Footer from './Footer';
 
 import BusIcon from './BusStop'
 import TopNav from './TopNav';
@@ -55,7 +54,7 @@ const About = () => (
           </tr>
           <tr>
             <td style={tdStyle}><ScheduleIcon /></td>
-            <td style={tdRightStyle}>Scheduled time of departure based on the fixed bus route</td>
+            <td style={tdRightStyle}>Scheduled time of departure based on the printed schedule</td>
           </tr>
           <tr>
             <td style={tdStyle}><Bus /></td>
@@ -95,7 +94,8 @@ const About = () => (
       <Divider />
       <h2 style={{ fontWeight: 400 }}>FAQ</h2>
       <h4>Where does the data come from?</h4>
-      <p>This app uses GTFS data and the OneBusAway API.</p>
+      <p>This app uses DDOT's GTFS data (available <a href="https://data.detroitmi.gov/Transportation/DDOT-GTFS-file/y62d-bvsz">here</a>; learn more about the GTFS format <a href="https://developers.google.com/transit/gtfs/">here</a>) and the <a href="http://developer.onebusaway.org/modules/onebusaway-application-modules/1.1.14/api/where/index.html">OneBusAway API.</a></p>
+      <p>You can access Detroit's endpoint at this URL: https://ddot-beta.herokuapp.com/api/api/where - you'll need to add the <b>key</b> parameter with a value of <b>beta</b>.</p>
 
       <h4>How accurate are real-time predictions?</h4>
       <p>The real-time data, indicated by the speaker phone icon, are generated using a bus' Automatic Vehicle Location (AVL). Currently, about 75% of DDOT buses are outfitted with AVL technology. As DDOT undergoes a technology upgrade in the coming months, all buses will be outfitted with AVL technology and existing AVL will be improved.</p>
@@ -105,14 +105,13 @@ const About = () => (
       <h4>What about trip-planning?</h4>
       <p>This app does not currently support trip planning. Trip planning means asking something like, "I am here and want to go there, which bus(es) should I get on?"</p>
       <p>We may build trip planning in a future iteration, but our current goal is to explain DDOT service. Trip planning will require a more regional scope.</p>
-      <p>DDOT recommends downloading Transit App from your app store for trip planning. Transit App utilizes the same data sources as this app, but also incorporates transit data from SMART, QLine, People Mover, MoGo bike-share docks and ride-sharing.</p>
+      <p>DDOT recommends downloading <a href="https://transitapp.com/">Transit App</a> from your app store for trip planning. Transit App utilizes the same data sources as this app, but also incorporates transit data from SMART, QLine, People Mover, MoGo bike-share docks and ride-sharing.</p>
 
       <Divider />
       <h2 style={{ fontWeight: 400 }}>Feedback</h2>
-      <p>This app is developed by <a href="https://cityofdetroit.github.io/iet" target="_blank" rel="noopener noreferrer">IET</a>. Our code is on <a href="https://github.com/CityOfDetroit/route-explorer" target="_blank" rel="noopener noreferrer">Github</a>.</p>
-      <p>Find a bug or have an idea for the project team? Reach out by <a href="mailto:iet@detroitmi.gov">email</a> or leave us a <a href="https://github.com/CityOfDetroit/route-explorer/issues" target="_blank" rel="noopener noreferrer">Github Issue</a>.</p>
+      <p>This app is developed by the <a href="https://cityofdetroit.github.io/iet" target="_blank" rel="noopener noreferrer">Innovation and Emerging Technology</a> team at the city of Detroit in partnership with DDOT. Our code is on <a href="https://github.com/CityOfDetroit/route-explorer" target="_blank" rel="noopener noreferrer">Github</a>.</p>
+      <p>Find a bug or have an idea for the project team? Leave a note on our <a href="https://app.smartsheet.com/b/form/28665a43770d48b5bbdfe35f3b7b45ac">feedback form</a>, reach out by <a href="mailto:iet@detroitmi.gov">email</a> or leave us a <a href="https://github.com/CityOfDetroit/route-explorer/issues" target="_blank" rel="noopener noreferrer">Github Issue</a>.</p>
     </div>
-    <Footer />
   </div>
 )
 

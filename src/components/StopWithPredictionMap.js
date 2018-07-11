@@ -120,7 +120,7 @@ class StopWithPredictionMap extends Component {
           height={this.state.viewport.height}
           latitude={this.props.prediction ? bound.latitude : this.state.viewport.latitude}
           longitude={this.props.prediction ? bound.longitude : this.state.viewport.longitude}
-          zoom={this.props.prediction ? (bound.zoom < 16 ? Math.round(bound.zoom, 1) : 16) : 16.5}
+          zoom={this.props.prediction ? (bound.zoom < 16 ? Math.floor(bound.zoom*3)/3 : 16) : 16.5}
           mapStyle={style}
           mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
           attributionControl={false}

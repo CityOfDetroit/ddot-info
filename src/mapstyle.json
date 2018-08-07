@@ -112,7 +112,7 @@
     "pitch": 0.5,
     "sources": {
         "composite": {
-            "url": "mapbox://mapbox.9g9sq3ys,mapbox.92olaqdt,mapbox.mapbox-streets-v7,mapbox.mapbox-terrain-v2,mapbox.b1l3wqbs,mapbox.8x70v9py,mapbox.443y3dl2,mapbox.3656mpur,cityofdetroit.bvmcgwpu",
+            "url": "mapbox://mapbox.9g9sq3ys,mapbox.92olaqdt,mapbox.mapbox-streets-v7,mapbox.mapbox-terrain-v2,mapbox.b1l3wqbs,mapbox.8x70v9py,mapbox.443y3dl2,mapbox.3656mpur,cityofdetroit.cjkjs4nce0223gco5juvtgqt2-34mle",
             "type": "vector"
         },
         "satellite": {
@@ -11583,7 +11583,7 @@
             "id": "ddot-new-label-mask",
             "type": "symbol",
             "source": "composite",
-            "source-layer": "ddot_new",
+            "source-layer": "ddot_routes",
             "filter": [
                 "==",
                 "route_num",
@@ -11667,7 +11667,7 @@
             "id": "ddot-new copy",
             "type": "symbol",
             "source": "composite",
-            "source-layer": "ddot_new",
+            "source-layer": "ddot_routes",
             "filter": [
                 "==",
                 "route_num",

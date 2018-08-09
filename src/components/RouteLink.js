@@ -16,18 +16,18 @@ class RouteLink extends Component {
       <div>
         <div style={{ display: 'flex', alignItems:'center', justifyContent: 'space-between', backgroundColor: '#eee' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <div style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: route.color, color: 'white', fontSize: '1.25em', fontWeight: 700 }}>
+            <div style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: route.color, border: `1px solid ${route.color}`, borderRadius: route.radius, color: 'white', fontSize: '1.25em', fontWeight: 700 }}>
               <Link
                 to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id } }}
                 style={{ textDecoration: 'none', color: '#fff' }}>
-                {this.props.id}
+                {route.new_number || this.props.id}
               </Link>
             </div> 
             <Link  
               to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id } }}
               style={{ textDecoration: 'none' }}>
               <span style={{ fontSize: `1.1em`, fontFamily: "Gibson Detroit Light", fontWeight: 600, color: 'black', marginLeft: '.4em', paddingRight: '1em' }}>
-                {route.name}
+                {route.new_name || route.name}
                 {this.props.direction ? ` (${this.props.direction})` : ``}
               </span>
             </Link>

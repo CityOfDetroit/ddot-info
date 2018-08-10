@@ -58,6 +58,7 @@ class RouteSearch extends Component {
           { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : <span style={{ color: 'red' }}>No routes match your search! Try again.</span> }
           <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '1.25em' }}>
             <span style={{ padding: '.2em .2em .2em 0' }}>Bus routes are color coded by their service direction and frequency:</span>
+            <span style={{ padding: '.2em .2em .2em 0' }}><span style={{ borderBottom: '4px solid #004445' }}>ConnectTen</span>,</span>
             <span style={{ padding: '.2em .2em .2em 0' }}><span style={{ borderBottom: '4px solid rgb(68, 170, 66)' }}>downtown</span>,</span> 
             <span style={{ padding: '.2em .2em .2em 0' }}><span style={{ borderBottom: '4px solid rgb(155, 91, 165)' }}>northbound/southbound</span>,</span> 
             <span style={{ padding: '.2em .2em .2em 0' }}><span style={{ borderBottom: '4px solid rgb(0, 121, 194)' }}>eastbound/westbound</span> and</span> 

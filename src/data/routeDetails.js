@@ -1201,21 +1201,21 @@ const routeDetails = [{
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/49VernorMS.pdf?ver=2017-06-26-142208-523"],
         services: {
             "Monday-Friday": {
-                service_hours: ["4:30am", "12:30am"],
+                service_hours: ["24 hours"],
                 frequency: [
-                    ["day", 25],
+                    ["day", 20],
                     ["evening", 45]
                 ]
             },
             "Saturday": {
-                service_hours: ["5:00am", "1:00am"],
+                service_hours: ["24 hours"],
                 frequency: [
                     ["day", 25],
                     ["evening", 45]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["6:00am", "12:00am"],
+                service_hours: ["24 hours"],
                 frequency: [
                     ["all day", 55]
                 ]

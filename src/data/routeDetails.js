@@ -10,7 +10,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Mack and Moross', 'Rosa Parks TC'],
         via: [''],
-        description: "An east side route that connects Detroit from Mack & Moross to Downtown Rosa Parks Transit Center. The main streets served are Harper Ave. E Larned St. Cadillac Blvd.",
+        description: "An east side route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit from Mack & Moross to Downtown Rosa Parks Transit Center. The main streets served are Harper Ave. E Larned St. Cadillac Blvd.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/07CadilllacHarper.pdf"],
         services: {
             "Monday-Friday": {
@@ -48,7 +48,7 @@ const routeDetails = [{
         between: ['Jefferson & Maryland', '7 Mile & Gratiot'],
         via: ['Chalmers', "Schoenherr"],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/9ChalmersMS.pdf"],
-        description: "An east side route that connects Detroit from Jefferson & Maryland to 7 Mile & Gratiot. Some trips extend to Waltham & 8 Mile. The main streets served are Chalmers and Schoenherr St.",
+        description: "An east side route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit from Jefferson & Maryland to 7 Mile & Gratiot; some trips extend to Waltham & 8 Mile. The main streets served are Chalmers and Schoenherr St.",
         services: {
             "Monday-Friday": {
                 service_hours: ["5:30am", "8:45pm"],
@@ -84,7 +84,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Varjo & Van Dyke'],
         via: ['Lafayette', 'Chene', 'Jos. Campau', 'Nevada'],
-        description: "An east side route that connects Detroit from Varjo & Van Dyke to Downtown Rosa Parks Transit Center. The main streets served are Nevada, Joseph Campau and Chene.",
+        description: "An east side route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit from Varjo & Van Dyke to Downtown Rosa Parks Transit Center. The main streets served are Nevada, Joseph Campau and Chene.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/April%202016/10CheneMS.pdf?ver=2016-04-22-150329-977"],
         services: {
             "Monday-Friday": {
@@ -120,7 +120,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Clark & Fort', 'Lycaste & Jefferson'],
         via: ['Junction', 'Epworth', 'Joy', 'Harper', 'St. Jean'],
-        description: "Connects various neighborhoods between Jefferson & Lycaste and Clark & Fort. Main streets served are St Jean, Shoemaker, Harper, Owen, Clairmount, Epworth and Junction.",
+        description: "Connects various neighborhoods between Jefferson & Lycaste and Clark & Fort. The main streets served are St Jean, Shoemaker, Harper, Owen, Clairmount, Epworth and Junction.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2016/January/11Clairmount.pdf"],
         services: {
             "Monday-Friday": {
@@ -217,7 +217,7 @@ const routeDetails = [{
         between: ['Warren & Telegraph', 'Warren & Moross'],
         via: ['Warren', 'Forest'],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/14CrosstownMS.pdf?ver=2017-04-21-164624-043"],
-        description: "A crosstown route that connects Detroit from Mack & Moross to Warren & Telegraph. The main street served is Warren Ave. In addition to Detroit, this route also serves Dearborn.",
+        description: "A crosstown route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit from Mack & Moross to Warren & Telegraph. The main street served is Warren Ave. In addition to Detroit, this route also serves Dearborn.",
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
@@ -292,7 +292,7 @@ const routeDetails = [{
         between: ['Rosa Parks TC', 'Providence Hospital'],
         via: ['Cass', 'West Grand Bl.', 'Dexter', 'Greenfield', 'Livernois', 'Curtis'],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/16DexterMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/16DexterSS.pdf"],
-        description: "A route that connects Detroit from Downtown Rosa Parks Transit Center to Providence Hospital (JL Hudson & Greenfield). The main streets served are W Outer Drive, Cass, Dexter, W Grand Blvd and Greenfield. In addition to Detroit, this route also serves Southfield.",
+        description: "Connects Detroit from Downtown Rosa Parks Transit Center to Providence Hospital (JL Hudson & Greenfield). The main streets served are W Outer Drive, Cass, Dexter, W Grand Blvd and Greenfield. In addition to Detroit, this route also serves Southfield.",
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
@@ -448,7 +448,7 @@ const routeDetails = [{
         between: ['Rosa Parks TC', 'West 7 Mile'],
         via: ['Grand River'],
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/21GrandRiverMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/21GrandRiverSS.pdf"],
-        description: "A west side route that connects Detroit from Larned & St Antoine to 7 Mile & Grand River. The main street served is Grand River.",
+        description: "A west side route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit from Larned & St Antoine to 7 Mile & Grand River. The main street served is Grand River.",
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
@@ -562,7 +562,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Jefferson & Maryland'],
         via: ['Jefferson'],
-        description: "An east side route that connects Detroit from Downtown Rosa Parks Transit Center to Maryland & Jefferson. The main street used is Jefferson.",
+        description: "An east side route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit from Downtown Rosa Parks Transit Center to Maryland & Jefferson. The main street used is Jefferson.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/25JeffersonMS.pdf?ver=2017-04-21-170105-283"],
         services: {
             "Monday-Friday": {
@@ -785,7 +785,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['3rd & Abbott', '8 Mile & Gratiot'],
         via: ['Gratiot'],
-        description: "An east side route that connects Detroit from 3rd & Michigan to Gratiot & 8 Mile. The main street served is Gratiot.",
+        description: "An east side route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit from 3rd & Michigan to Gratiot & 8 Mile. The main street served is Gratiot.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/34GratiotMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/34GratiotSS.pdf"],
         services: {
             "Monday-Friday": {
@@ -822,7 +822,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'Fairlane Mall'],
         via: ['Michigan Ave'],
-        description: "A west side route that connects Detroit from Downtown Rosa Parks Transit Center to Fairlane Mall. The main street used is Michigan.",
+        description: "A west side route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit from Downtown Rosa Parks Transit Center to Fairlane Mall. The main street used is Michigan.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/37Michigan.pdf"],
         services: {
             "Monday-Friday": {
@@ -1064,7 +1064,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Meijer Old Redford', 'Mack & Moross'],
         via: ['Lahser', '7 Mile', 'Morang', 'Moross'],
-        description: "Connects Redford and Detroit with 24 hour service between Meijer Old Redford and St John Hospital. Main streets served are Grand River, Lasher, 7 mile, Cadieux, Morang and Moross.",
+        description: "Offers 24 /7 service and improved frequency as part of the ConnectTen network. Connects Redford and Detroit between Meijer Old Redford and St John Hospital. Main streets served are Grand River, Lasher, 7 mile, Cadieux, Morang and Moross.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/45SevenMileMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/45SevenMileSS.pdf"],
         services: {
             "Monday-Friday": {
@@ -1157,7 +1157,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Bel Air Center', 'Rosa Parks TC'],
         via: ['Lafayette', 'Van Dyke'],
-        description: "An east side route that connects Detroit form Bel Air Center to Downtown Rosa Parks Transit Center. The main streets served are Van Dyke and E Lafayette.",
+        description: "An east side route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit form Bel Air Center to Downtown Rosa Parks Transit Center. The main streets served are Van Dyke and E Lafayette.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/48VanDykeLafayette.pdf?ver=2017-01-27-121537-590"],
         services: {
             "Monday-Friday": {
@@ -1197,7 +1197,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Michigan & Schaefer', 'Rosa Parks TC'],
         via: ['Vernor', 'Bagley', 'Lafayette'],
-        description: "Connects Detroit & Dearborn between Rosa Parks Transit Center and Schaefer & Michigan. The main streets served are Lafayette, Trumbull, Bagley, Vernor, Wyoming & Michigan.",
+        description: "Offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit & Dearborn between Rosa Parks Transit Center and Schaefer & Michigan. The main streets served are Lafayette, Trumbull, Bagley, Vernor, Wyoming & Michigan.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/49VernorMS.pdf?ver=2017-06-26-142208-523"],
         services: {
             "Monday-Friday": {
@@ -1235,7 +1235,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Fairgrounds TC', 'Downtown'],
         via: ['Woodward Avenue'],
-        description: "The 24 hour service connects Detroit and Highland Park between State Fairgrounds Transit Center and Renaissance Center in Downtown Detroit. The main streets served are Woodward, Park, Washington Blvd and Larned.",
+        description: "Offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit and Highland Park between State Fairgrounds Transit Center and Renaissance Center in Downtown Detroit. The main streets served are Woodward, Park, Washington Blvd and Larned.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/53WoodwardMS.pdf?ver=2017-06-26-135605-973"],
         services: {
             "Monday-Friday": {

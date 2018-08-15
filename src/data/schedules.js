@@ -1874,7 +1874,7 @@ const Schedules = {
     "14": {
         "id": "14",
         "rt_name": "Crosstown",
-        "color": "#0079c2",
+        "color": "#004445",
         "rt_id": 6711,
         "timepoints": {
             "eastbound": [10187, 7141, 161, 162, 163, 164, 165, 169, 171, 172, 41],
@@ -5713,7 +5713,7 @@ const Schedules = {
     "21": {
         "id": "21",
         "rt_name": "Grand River",
-        "color": "#44aa42",
+        "color": "#004445",
         "rt_id": 6717,
         "notes": "nonstandard schedule",
         "timepoints": {
@@ -6774,7 +6774,7 @@ const Schedules = {
     "22": {
         "id": "22",
         "rt_name": "Greenfield",
-        "color": "#9b5ba5",
+        "color": "#004445",
         "notes": "nonstandard schedule",
         "rt_id": 6718,
         "timepoints": {
@@ -8016,7 +8016,7 @@ const Schedules = {
     "25": {
         "id": "25",
         "rt_name": "Jefferson",
-        "color": "#44aa42",
+        "color": "#004445",
         "rt_id": 6720,
         "timepoints": {
             "eastbound": [9970, 9021, 420, 421, 422, 10178],
@@ -10985,7 +10985,7 @@ const Schedules = {
     "34": {
         "id": "34",
         "rt_name": "Gratiot",
-        "color": "#44aa42",
+        "color": "#004445",
         "rt_id": 6726,
         "timepoints": {
             "northbound": [9963, 167, 547, 549, 550, 552, 62],
@@ -12180,7 +12180,7 @@ const Schedules = {
     "37": {
         "id": "37",
         "rt_name": "Michigan",
-        "color": "#44aa42",
+        "color": "#004445",
         "rt_id": 6727,
         "timepoints": {
             "eastbound": [368, 6578, 2287, 591, 1489, 8945],
@@ -14586,7 +14586,7 @@ const Schedules = {
     "45": {
         "id": "45",
         "rt_name": "Seven Mile",
-        "color": "#0079c2",
+        "color": "#004445",
         "rt_id": 6734,
         "timepoints": {
             "eastbound": [10157, 689, 6074, 384, 9635, 695, 520, 79, 42, 41],
@@ -15697,7 +15697,7 @@ const Schedules = {
     "48": {
         "id": "48",
         "rt_name": "Van Dyke/Lafayette",
-        "color": "#44aa42",
+        "color": "#004445",
         "rt_id": 6737,
         "timepoints": {
             "northbound": [8989, 745, 3757, 747, 749, 750, 752, 753, 93],
@@ -16367,7 +16367,7 @@ const Schedules = {
     "49": {
         "id": "49",
         "rt_name": "Vernor",
-        "color": "#44aa42",
+        "color": "#004445",
         "rt_id": 6738,
         "timepoints": {
             "eastbound": [6578, 10264, 765, 766, 767, 768, 8915],
@@ -17007,7 +17007,7 @@ const Schedules = {
     "53": {
         "id": "53",
         "rt_name": "Woodward",
-        "color": "#44aa42",
+        "color": "#004445",
         "rt_id": 6739,
         "timepoints": {
             "southbound": [127, 4604, 784, 785, 787, 788, 1064, 1608, 394, 8926],

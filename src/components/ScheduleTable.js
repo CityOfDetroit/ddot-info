@@ -36,7 +36,7 @@ class ScheduleTable extends Component {
                 style={{ borderBottom: '0', padding: 0 }}>
                   <div style={{ borderBottom: '0', height: '50px', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', padding: '.2em .5em' }}>
                     <Link style={{ fontSize: '1.1em', color: 'black', fontWeight: 700 }} to={{ pathname: `/stop/${s}/` }}  >
-                      {Stops[s].name.indexOf('Rosa Parks') > -1 ? "Rosa Parks TC" : Stops[s].name}
+                      {Stops[s].name.indexOf('Rosa Parks T') > -1 ? "Rosa Parks TC" : Stops[s].name}
                     </Link>
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>

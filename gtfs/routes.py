@@ -1,6 +1,6 @@
 routes = [
     {
-        "id": "7",
+        "id": "67",
         "rt_name": "Cadillac/Harper",
         "color": "#44aa42",
         "rt_id": 6705,
@@ -11,7 +11,7 @@ routes = [
     },
 
     {
-        "id": "9",
+        "id": "68",
         "rt_name": "Chalmers",
         "color": "#9b5ba5",
         "rt_id": 6706,
@@ -23,7 +23,7 @@ routes = [
     },
 
     {
-        "id": "10",
+        "id": "52",
         "rt_name": "Chene",
         "color": "#44aa42",
         "rt_id": 6707,
@@ -68,9 +68,9 @@ routes = [
     },
 
     {
-        "id": "14",
-        "rt_name": "Crosstown",
-        "color": "#0079c2",
+        "id": "8",
+        "rt_name": "Warren",
+        "color": "#004445",
         "rt_id": 6711,
         "timepoints": {
             "eastbound": [10187, 7141, 161, 162, 163, 164, 165, 169, 171, 172, 41],
@@ -142,15 +142,15 @@ routes = [
         "rt_id": 6717,
         "notes": "nonstandard schedule",
         "timepoints": {
-            "eastbound": [324, 325, 328, 330, 331, 332, 334, 335, 337, 8100],
-            "westbound": [397, 346, 347, 349, 350, 351, 353, 356, 324]
+            "eastbound": [{Seven Mile}, 325, 328, 330, 331, 332, 334, 335, 337, {Beaubien/Jefferson}],
+            "westbound": [972, 1102, 346, 347, 2726, 352, 354, {Seven Mile}]
         }
     },
 
     {
-        "id": "22",
+        "id": "10",
         "rt_name": "Greenfield",
-        "color": "#9b5ba5",
+        "color": "#004445",
         "notes": "nonstandard schedule",
         "rt_id": 6718,
         "timepoints": {
@@ -171,9 +171,9 @@ routes = [
     },
 
     {
-        "id": "25",
+        "id": "0",
         "rt_name": "Jefferson",
-        "color": "#44aa42",
+        "color": "#004445",
         "rt_id": 6720,
         "timepoints": {
             "eastbound": [9970, 9021, 420, 421, 422, 10178],
@@ -239,24 +239,24 @@ routes = [
     },
 
     {
-        "id": "34",
+        "id": "6",
         "rt_name": "Gratiot",
-        "color": "#44aa42",
+        "color": "#004445",
         "rt_id": 6726,
         "timepoints": {
             "northbound": [9963, 167, 547, 549, 550, 552, 62],
-            "southbound": [554, 555, 557, 558, 178, 179, 9963]
+            "southbound": [554, 555, 550, 558, 178, 179, 9963]
         }
     },
 
     {
-        "id": "37",
+        "id": "2",
         "rt_name": "Michigan",
-        "color": "#44aa42",
+        "color": "#004445",
         "rt_id": 6727,
         "timepoints": {
-            "eastbound": [368, 6578, 2287, 591, 1489, 8945],
-            "westbound": [8945, 1490, 599, 9040, 6577, 368]
+            "eastbound": [368, 590, 6578, 591, 1489, 8945],
+            "westbound": [8945, 1490, 599, 6577, 600, 368]
         }
     },
 
@@ -327,9 +327,9 @@ routes = [
     },
 
     {
-        "id": "45",
+        "id": "7",
         "rt_name": "Seven Mile",
-        "color": "#0079c2",
+        "color": "#004445",
         "rt_id": 6734,
         "timepoints": {
             "eastbound": [10157, 689, 6074, 384, 9635, 695, 520, 79, 42, 41],
@@ -361,9 +361,9 @@ routes = [
     },
 
     {
-        "id": "48",
+        "id": "5",
         "rt_name": "Van Dyke/Lafayette",
-        "color": "#44aa42",
+        "color": "#004445",
         "rt_id": 6737,
         "timepoints": {
             "northbound": [8989, 745, 3757, 747, 749, 750, 752, 753, 93],
@@ -372,9 +372,9 @@ routes = [
     },
 
     {
-        "id": "49",
+        "id": "1",
         "rt_name": "Vernor",
-        "color": "#44aa42",
+        "color": "#004445",
         "rt_id": 6738,
         "timepoints": {
             "eastbound": [6578, 10264, 765, 766, 767, 768, 8915],
@@ -383,13 +383,13 @@ routes = [
     },
 
     {
-        "id": "53",
+        "id": "4",
         "rt_name": "Woodward",
-        "color": "#44aa42",
+        "color": "#004445",
         "rt_id": 6739,
         "timepoints": {
-            "southbound": [127, 4604, 784, 785, 787, 788, 1064, 1608, 394, 8926],
-            "northbound": [394, 8926, 1611, 1061, 899, 8848, 802, 803, 4603, 127]
+            "southbound": [127, 4604, 785, 787, 788, 1064, {Larned}],
+            "northbound": [{Larned}, 1061, 799, 8848, 802, 4603, 127]
         }
     },
 

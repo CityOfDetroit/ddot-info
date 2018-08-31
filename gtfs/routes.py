@@ -142,8 +142,8 @@ routes = [
         "rt_id": 6814,
         "notes": "nonstandard schedule",
         "timepoints": {
-            "eastbound": [{Seven Mile}, 325, 328, 330, 331, 332, 334, 335, 337, {Beaubien/Jefferson}],
-            "westbound": [972, 1102, 346, 347, 2726, 352, 354, {Seven Mile}]
+            "eastbound": [324, 325, 328, 330, 331, 332, 334, 335, 337, 394],
+            "westbound": [972, 1102, 346, 347, 2726, 352, 354, 324]
         }
     },
 
@@ -388,8 +388,8 @@ routes = [
         "color": "#004445",
         "rt_id": 6836,
         "timepoints": {
-            "southbound": [127, 4604, 785, 787, 788, 1064, {Larned}],
-            "northbound": [{Larned}, 1061, 799, 8848, 802, 4603, 127]
+            "southbound": [127, 4604, 785, 787, 788, 1064, 9694],
+            "northbound": [9694, 1061, 799, 8848, 802, 4603, 127]
         }
     },
 

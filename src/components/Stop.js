@@ -126,6 +126,11 @@ class Stop extends React.Component {
     const stopCoords = [Stops[stopId.toString()].lon, Stops[stopId.toString()].lat];
     const stopTransfers = Stops[stopId.toString()].transfers;
     const { slideIndex } = this.state;
+    
+    // sort routes that stop here by route number
+    stopRoutes.sort(function(a, b) {
+      return a[0] - b[0];
+    });
 
     return (
       <div className='App' style={{ background: Helpers.colors['background']}}>

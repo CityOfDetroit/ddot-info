@@ -211,7 +211,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Warren & Telegraph', 'Warren & Moross'],
         via: ['Warren', 'Forest'],
-        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/14CrosstownMS.pdf?ver=2017-04-21-164624-043"],
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/8WarrenMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/8WarrenSS.pdf"],
         description: "A crosstown route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit from Mack & Moross to Warren & Telegraph. The main street served is Warren Ave. In addition to Detroit, this route also serves Dearborn.",
         services: {
             "Monday-Friday": {
@@ -441,7 +441,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Rosa Parks TC', 'West 7 Mile'],
         via: ['Grand River'],
-        pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/21GrandRiverMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/21GrandRiverSS.pdf"],
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/3GrandRiverMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/3GrandRiverSS.pdf"],
         description: "A west side route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit from Larned & St Antoine to 7 Mile & Grand River. The main street served is Grand River.",
         services: {
             "Monday-Friday": {
@@ -480,25 +480,25 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Northland Mall', 'Fairlane Mall'],
         via: ["Greenfield"],
-        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/September2017Schedules/22Greenfield.pdf"],
-        description: "Connects Southfield, Detroit and Dearborn between Providence Hospital and Fairlane Town Center. The main street served in Greenfield.",
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/10GreenfieldMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/10GreenfieldSS.pdf"],
+        description: "Offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Southfield, Detroit and Dearborn between Providence Hospital and Fairlane Town Center. The main street served in Greenfield.",
         services: {
             "Monday-Friday": {
-                service_hours: ["4:30am", "1:30am"],
+                service_hours: ["24 hours"],
                 frequency: [
                     ["day", 15],
                     ["evening", "30-60"]
                 ]
             },
             "Saturday": {
-                service_hours: ["5:30am", "12:30am"],
+                service_hours: ["24 hours"],
                 frequency: [
                     ["day", 20],
                     ["evening", "30-60"]
                 ]
             },
             "Sunday/Holiday": {
-                service_hours: ["6:00am", "11:00pm"],
+                service_hours: ["24 hours"],
                 frequency: [
                     ["day", 30],
                     ["evening", "35-60"]
@@ -555,7 +555,7 @@ const routeDetails = [{
         between: ['Rosa Parks TC', 'Jefferson & Maryland'],
         via: ['Jefferson'],
         description: "An east side route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit from Downtown Rosa Parks Transit Center to Maryland & Jefferson. The main street used is Jefferson.",
-        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/April2017schedules/25JeffersonMS.pdf?ver=2017-04-21-170105-283"],
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/9JeffersonMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/9JeffersonSS.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
@@ -777,7 +777,7 @@ const routeDetails = [{
         between: ['3rd & Abbott', '8 Mile & Gratiot'],
         via: ['Gratiot'],
         description: "An east side route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit from 3rd & Michigan to Gratiot & 8 Mile. The main street served is Gratiot.",
-        pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/34GratiotMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/34GratiotSS.pdf"],
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/6GratiotMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/6GratiotSS.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
@@ -813,7 +813,7 @@ const routeDetails = [{
         between: ['Rosa Parks TC', 'Fairlane Mall'],
         via: ['Michigan Ave'],
         description: "A west side route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit from Downtown Rosa Parks Transit Center to Fairlane Mall. The main street used is Michigan.",
-        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/37Michigan.pdf"],
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/2MichiganMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/2MichiganSS.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
@@ -1054,7 +1054,7 @@ const routeDetails = [{
         between: ['Meijer Old Redford', 'Mack & Moross'],
         via: ['Lahser', '7 Mile', 'Morang', 'Moross'],
         description: "Offers 24 /7 service and improved frequency as part of the ConnectTen network. Connects Redford and Detroit between Meijer Old Redford and St John Hospital. Main streets served are Grand River, Lasher, 7 mile, Cadieux, Morang and Moross.",
-        pdf: ["http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/45SevenMileMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/Bus%20Schedules/January%202018/45SevenMileSS.pdf"],
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/7SevenMileMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/7SevenMileSS.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
@@ -1145,7 +1145,7 @@ const routeDetails = [{
         between: ['Bel Air Center', 'Rosa Parks TC'],
         via: ['Lafayette', 'Van Dyke'],
         description: "An east side route that offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit form Bel Air Center to Downtown Rosa Parks Transit Center. The main streets served are Van Dyke and E Lafayette.",
-        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/Jan2017schedules/48VanDykeLafayette.pdf?ver=2017-01-27-121537-590"],
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/5VanDykeLafMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/5VanDykeLafSS.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
@@ -1184,7 +1184,7 @@ const routeDetails = [{
         between: ['Michigan & Schaefer', 'Rosa Parks TC'],
         via: ['Vernor', 'Bagley', 'Lafayette'],
         description: "Offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit & Dearborn between Rosa Parks Transit Center and Schaefer & Michigan. The main streets served are Lafayette, Trumbull, Bagley, Vernor, Wyoming & Michigan.",
-        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/49VernorMS.pdf?ver=2017-06-26-142208-523"],
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/1VernorMS.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],
@@ -1221,7 +1221,7 @@ const routeDetails = [{
         between: ['Fairgrounds TC', 'Downtown'],
         via: ['Woodward Avenue'],
         description: "Offers 24/7 service and improved frequency as part of the ConnectTen network. Connects Detroit and Highland Park between State Fairgrounds Transit Center and Renaissance Center in Downtown Detroit. The main streets served are Woodward, Park, Washington Blvd and Larned.",
-        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2017/June2017Schedules/53WoodwardMS.pdf?ver=2017-06-26-135605-973"],
+        pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/4WoodwardMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/4WoodwardSat.pdf", "http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/4WoodwardSun.pdf"],
         services: {
             "Monday-Friday": {
                 service_hours: ["24 hours"],

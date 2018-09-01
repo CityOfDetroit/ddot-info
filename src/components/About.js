@@ -73,6 +73,10 @@ const About = () => (
             <td style={tdRightStyle}>Download the current route schedule as a PDF</td>
           </tr>
           <tr>
+            <td style={tdStyle}><div style={{ height: '25px', width: '25px', backgroundColor: '#004445', margin: 'auto', border: '1px solid #004445', borderRadius: 99  }}></div></td>
+            <td style={tdRightStyle}>ConnectTen routes with 24/7 service and improved frequency</td>
+          </tr>
+          <tr>
             <td style={tdStyle}><div style={{ height: '20px', width: '50px', backgroundColor: '#44aa42', margin: 'auto' }}></div></td>
             <td style={tdRightStyle}>Downtown routes</td>
           </tr>

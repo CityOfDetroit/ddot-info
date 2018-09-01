@@ -5,7 +5,7 @@ import MAP_STYLE from './mapstyle.json';
 Object.assign(MAP_STYLE.sources, {
     ddotroutes: {
       type: 'vector',
-      url: 'mapbox://cityofdetroit.cjkjs4nce0223gco5juvtgqt2-34mle'
+      url: 'mapbox://cityofdetroit.cjljmaojh22zo2wogr9f5fzts-6wa2r'
     }
   });
   
@@ -46,6 +46,13 @@ MAP_STYLE.layers.splice(
                         // "#44aa42"
                         // "#78AA77"
                         "#499147"
+                    ],
+                    [
+                        "Connect Ten",
+                        // "rgba(0,0,0,1)"
+                        // "#44aa42"
+                        // "#78AA77"
+                        "#00787a"
                     ],
                     [
                         "East-West",
@@ -143,6 +150,10 @@ MAP_STYLE.layers.findIndex(layer => layer.id === 'road-label-small'), 0,
                     // "#44aa42"
                     "#78AA77"
                     // "#499147"
+                ],
+                [
+                    "Connect Ten",
+                    "#006466"
                 ],
                 [
                     "East-West",

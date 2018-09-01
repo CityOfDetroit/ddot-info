@@ -4,7 +4,6 @@ import { Card, CardHeader, CardContent } from '@material-ui/core';
 import RouteInput from './RouteInput';
 import RoutesList from './RoutesList';
 import Schedules from '../data/schedules';
-import Helpers from '../helpers.js';
 
 class RouteSearch extends Component {
   constructor(props) {
@@ -18,19 +17,6 @@ class RouteSearch extends Component {
     };
 
     this.handleSearchChange = this.handleSearchChange.bind(this);
-  }
-
-  componentDidMount() {
-    fetch(`${Helpers.endpoint}/routes-for-agency/DDOT.json?key=BETA`)
-      .then(response => response.json())
-      .then(d => {
-        let sorted = d.data.list.sort((a,b) => {
-          return parseInt(a.id, 10) > parseInt(b.id, 10);
-        })
-        this.setState({
-          realTime: sorted
-        })
-      })
   }
 
   handleSearchChange(event) {
@@ -58,6 +44,7 @@ class RouteSearch extends Component {
           { this.state.filteredLines.length > 0 ? <RoutesList lines={this.state.filteredLines} /> : <span style={{ color: 'red' }}>No routes match your search! Try again.</span> }
           <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '1.25em' }}>
             <span style={{ padding: '.2em .2em .2em 0' }}>Bus routes are color coded by their service direction and frequency:</span>
+            <span style={{ padding: '.2em .2em .2em 0' }}><span style={{ borderBottom: '4px solid #004445' }}>ConnectTen</span>,</span>
             <span style={{ padding: '.2em .2em .2em 0' }}><span style={{ borderBottom: '4px solid rgb(68, 170, 66)' }}>downtown</span>,</span> 
             <span style={{ padding: '.2em .2em .2em 0' }}><span style={{ borderBottom: '4px solid rgb(155, 91, 165)' }}>northbound/southbound</span>,</span> 
             <span style={{ padding: '.2em .2em .2em 0' }}><span style={{ borderBottom: '4px solid rgb(0, 121, 194)' }}>eastbound/westbound</span> and</span> 

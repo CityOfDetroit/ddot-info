@@ -12,10 +12,10 @@ class RouteBadge extends Component {
     return (
       <div>  
         <div style={{ display: 'flex', alignItems:'center', justifyContent: 'flex-start'}}>
-          <div style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '1.75em', height: '1.75em', backgroundColor: route.color, color: '#fff', fontSize: '1.1em', textAlign: 'center', fontWeight: 700, }}>
-            {this.props.id}
+          <div style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '1.75em', height: '1.75em', backgroundColor: route.color, border: `1px solid ${route.color}`, borderRadius: route.radius, color: '#fff', fontSize: '1.1em', textAlign: 'center', fontWeight: 700, }}>
+            {route.new_number || this.props.id}
           </div>
-          { this.props.showName ? <span style={{ marginLeft: '.25em' }}>{route.name}</span> : null }
+          { this.props.showName ? <span style={{ marginLeft: '.25em' }}>{route.new_name || route.name}</span> : null }
         </div>
       </div>
     );

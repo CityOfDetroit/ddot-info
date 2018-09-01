@@ -10,7 +10,7 @@ import Helpers from '../helpers';
 class StopTransfers extends React.Component {
   render() {
     const routes = _.groupBy(this.props.stops, 0);
-    
+
     return (
       <div className="transfers" style={{ padding: 10, backgroundColor: 'white' }}>
         {Object.keys(routes).map((s, i) => (

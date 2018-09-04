@@ -5704,7 +5704,7 @@ const Schedules = {
   "3": {
     "id": "3",
     "rt_name": "Grand River",
-    "color": "#44aa42",
+    "color": "#004445",
     "rt_id": 6814,
     "notes": "nonstandard schedule",
     "timepoints": {

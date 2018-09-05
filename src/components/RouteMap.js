@@ -189,7 +189,10 @@ class RouteMap extends Component {
   }
 
   _onClick = (event) => {
-    this.setState({ clickedStop: event.features[0] })
+    console.log(event)
+    if(this.state.viewport.zoom > 12) {
+      this.setState({ clickedStop: event.features[0] })
+    }
   }
   
   _onBusClick = (x) => {
@@ -209,7 +212,6 @@ class RouteMap extends Component {
 
   render() {
     const route = this.props.route;
-    console.log(route)
 
     let style = defaultMapStyle;
     style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(route.number, 10));

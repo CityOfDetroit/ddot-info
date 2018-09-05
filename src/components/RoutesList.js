@@ -5,14 +5,27 @@ import RouteLink from './RouteLink';
 
 /** List of all routes matching search input for RouteSearch on Homepage */
 class RoutesList extends Component {
+
   render() {
+
+    const gridStyle = {
+      display: 'grid', 
+      gridTemplateColumns: `repeat(auto-fit, minmax(350px, 1fr))`, 
+      gridGap: `.5em`, 
+      maxHeight: 370, 
+      overflowY: 'scroll',
+      boxSizing: 'border-box',
+      padding: 10
+    }
+
     return (
-      <div style={{ display: 'grid', gridTemplateColumns: `repeat(auto-fit, minmax(350px, 1fr))`, gridGap: `.5em`, maxHeight: 370, overflowY: 'scroll' }}>
+      <div style={gridStyle}>
         {this.props.lines.map(line =>
           <RouteLink key={line.id} id={line.id} routeId={line.rt_id} icons />
         )}
       </div>
     );
+
   }
 }
 

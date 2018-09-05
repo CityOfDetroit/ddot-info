@@ -65,7 +65,7 @@ class RealtimeCard extends Component {
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <BusIcon style={{ height: 20, width: 20, borderRadius: 9999, background: 'rgba(0,0,0,.75)', padding: 2.5, color: 'white' }} />
                 <div style={{ marginLeft: '.5em' }}>
-                  Arrives here in 
+                  {this.props.status.predicted ? `Arrives here` : `Scheduled to arrive`} in 
                   <span style={{ fontWeight: 700, paddingLeft: '.25em' }}>{this.computeTimeAway(this.props.status)} minutes</span>
                 </div>
               </div>

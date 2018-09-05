@@ -99,7 +99,7 @@ class Stop extends React.Component {
   componentDidMount() {
     this.fetchRealtimeData(this.props.match.params.name);
     this.fetchStopScheduleData(this.props.match.params.name);
-    this.interval = setInterval(() => this.fetchRealtimeData(this.props.match.params.name), 2000);
+    this.interval = setInterval(() => this.fetchRealtimeData(this.props.match.params.name), 4000);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -173,6 +173,7 @@ class Stop extends React.Component {
                     <div style={{ display: 'block', padding: '0em 0em', width: '100%' }}>
                       <RoutePredictionList
                         predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r[0].padStart(3, '0')})} 
+                        references={this.state.predictions.data.references}
                         route={r[0]}
                         stop={stopId}
                         multipleDirs={this.state.multipleDirs}

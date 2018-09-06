@@ -12,37 +12,80 @@ class RouteLink extends Component {
   render() {
     const route = _.find(routeDetails, a => { return a.number === parseInt(this.props.id, 10) })
 
+    const styles = {
+      wrapper: {
+        display: "flex",
+        justifyContent: "space-between",
+        backgroundColor: '#eee',
+      },
+      badge: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '2em',
+        height: '2em',
+        margin: 5,
+        backgroundColor: route.color,
+        borderRadius: route.radius,
+        // border: `1px solid ${route.color}`,
+        color: '#fff',
+        fontSize: '1.25em',
+        fontWeight: 700
+      },
+      name: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'left',
+        flexGrow: 1,
+        marginLeft: 5
+      },
+      span: {
+        fontSize: `1.1em`, 
+        fontFamily: "Gibson Detroit Light", 
+        fontWeight: 600,
+        color: 'black', 
+      },
+      icons: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        width: 60,
+        padding: 10
+      },
+      svg: {
+        height: 30,
+        color: "#ccc"
+      }
+
+    }
     return (
-      <div>
-        <div style={{ display: 'flex', alignItems:'center', justifyContent: 'space-between', backgroundColor: '#eee' }}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <div style={{ display: 'flex', alignItems:'center', justifyContent: 'center', width: '2em', height: '2em', backgroundColor: route.color, border: `1px solid ${route.color}`, borderRadius: route.radius, color: 'white', fontSize: '1.25em', fontWeight: 700 }}>
-              <Link
-                to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id } }}
-                style={{ textDecoration: 'none', color: '#fff' }}>
-                {route.new_number || this.props.id}
-              </Link>
-            </div> 
-            <Link  
+      <div style={styles.wrapper}>
+        <div style={styles.badge}>
+          <Link
+            to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id } }}
+            style={{ textDecoration: 'none', color: '#fff' }}>
+            {this.props.id}
+          </Link>
+        </div>
+        <div style={styles.name}>
+          <Link  
               to={{ pathname: `/route/${this.props.id}`, state: { id: this.props.id } }}
               style={{ textDecoration: 'none' }}>
-              <span style={{ fontSize: `1.1em`, fontFamily: "Gibson Detroit Light", fontWeight: 600, color: 'black', marginLeft: '.4em', paddingRight: '1em' }}>
-                {route.new_name || route.name}
-                {this.props.direction ? ` (${this.props.direction})` : ``}
+              <span style={styles.span}>
+                {route.name} {this.props.direction ? ` (${this.props.direction})` : ``}
               </span>
-            </Link>
-          </div>
-          {this.props.icons ?
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <Link to={{ pathname: `/route/${this.props.id}/stops` }} style={{ paddingRight: '.75em' }}>
-                <StopIcon style={{ color: '#ccc', height: 22 }} />
+          </Link>
+        </div>
+        {this.props.icons ?
+            <div style={styles.icons}>
+              <Link to={{ pathname: `/route/${this.props.id}/stops` }}>
+                <StopIcon style={styles.svg} />
               </Link>
-              <Link to={{ pathname: `/route/${this.props.id}/schedule` }} style={{ paddingRight: '.75em' }}>
-                <ScheduleIcon style={{ color: '#ccc', height: 22 }} />
+              <Link to={{ pathname: `/route/${this.props.id}/schedule` }}>
+                <ScheduleIcon style={styles.svg} />
               </Link>
             </div>
           : ``}
-        </div>
       </div>
     );
   }

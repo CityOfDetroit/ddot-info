@@ -1283,7 +1283,7 @@ const Stops = {
   },
   "10097": {
     "id": "10097",
-    "name": "VERNOR & MILITARY",
+    "name": "Vernor & Military",
     "dir": "WB",
     "lat": 42.316293,
     "lon": -83.10753,
@@ -2285,7 +2285,7 @@ const Stops = {
   },
   "10200": {
     "id": "10200",
-    "name": "CONANT &CANIFF",
+    "name": "Conant & Caniff",
     "dir": "SB",
     "lat": 42.402657,
     "lon": -83.052843,
@@ -2302,7 +2302,7 @@ const Stops = {
   },
   "10201": {
     "id": "10201",
-    "name": "LUMPKIN & HOLBROOK",
+    "name": "Lumpkin & Holbrook",
     "dir": "SB",
     "lat": 42.390976,
     "lon": -83.061399,
@@ -2317,7 +2317,7 @@ const Stops = {
   },
   "10202": {
     "id": "10202",
-    "name": "GRATIOT & BEAUBIEN",
+    "name": "Gratiot & Beaubien",
     "dir": "SB",
     "lat": 42.33699,
     "lon": -83.044088,
@@ -2366,7 +2366,7 @@ const Stops = {
   },
   "10204": {
     "id": "10204",
-    "name": "LARNED & SHELBY",
+    "name": "Larned & Shelby",
     "dir": "PM",
     "lat": 42.328891,
     "lon": -83.046829,
@@ -2426,7 +2426,7 @@ const Stops = {
   },
   "10207": {
     "id": "10207",
-    "name": "CANIFF & CONANT",
+    "name": "Caniff & Conant",
     "dir": "NB",
     "lat": 42.402844,
     "lon": -83.052635,
@@ -2443,7 +2443,7 @@ const Stops = {
   },
   "10208": {
     "id": "10208",
-    "name": "RYAN & NEVADA",
+    "name": "Ryan & Nevada",
     "dir": "NB",
     "lat": 42.426012,
     "lon": -83.062456,
@@ -2460,7 +2460,7 @@ const Stops = {
   },
   "10209": {
     "id": "10209",
-    "name": "CONANT & HAROLD ST",
+    "name": "Conant & Harold St.",
     "dir": "NB",
     "lat": 42.40433,
     "lon": -83.053659,
@@ -2475,7 +2475,7 @@ const Stops = {
   },
   "10210": {
     "id": "10210",
-    "name": "CONANT & MINNESOTA",
+    "name": "Conant & Minnesota",
     "dir": "NB",
     "lat": 42.423789,
     "lon": -83.066814,
@@ -2490,7 +2490,7 @@ const Stops = {
   },
   "10211": {
     "id": "10211",
-    "name": "NEVADA & CONANT",
+    "name": "Nevada & Conant",
     "dir": "EB",
     "lat": 42.425892,
     "lon": -83.068192,
@@ -2510,7 +2510,7 @@ const Stops = {
   },
   "10212": {
     "id": "10212",
-    "name": "EAST OUTER DRIVER & JUSTINE",
+    "name": "E. Outer Dr. & Justine",
     "dir": "NB",
     "lat": 42.440472,
     "lon": -83.05915,
@@ -2525,7 +2525,7 @@ const Stops = {
   },
   "10213": {
     "id": "10213",
-    "name": "EAST OUTER DRIVE & HASSE",
+    "name": "E. Outer Dr. & Hasse",
     "dir": "NB",
     "lat": 42.440577,
     "lon": -83.057192,
@@ -2540,7 +2540,7 @@ const Stops = {
   },
   "10214": {
     "id": "10214",
-    "name": "EAST OUTER DRIVE & MOUND RD",
+    "name": "E. Outer Dr. & Mound Rd.",
     "dir": "EB",
     "lat": 42.440624,
     "lon": -83.043871,
@@ -2555,7 +2555,7 @@ const Stops = {
   },
   "10216": {
     "id": "10216",
-    "name": "EAST OTER DRIVE & ROGGE ST",
+    "name": "E. Outer Dr. & Rogge",
     "dir": "EB",
     "lat": 42.44092,
     "lon": -83.02973,
@@ -2570,7 +2570,7 @@ const Stops = {
   },
   "10218": {
     "id": "10218",
-    "name": "EAST OUTER DRIVE & ROGGE",
+    "name": "E. Outer Dr. & Rogge",
     "dir": "WB",
     "lat": 42.441206,
     "lon": -83.029399,
@@ -2585,7 +2585,7 @@ const Stops = {
   },
   "10219": {
     "id": "10219",
-    "name": "EAST OUTER DRIVE & MT ELLIOTT",
+    "name": "E. Outer Dr. & Mt. Elliott",
     "dir": "SB",
     "lat": 42.440816,
     "lon": -83.039455,
@@ -2600,7 +2600,7 @@ const Stops = {
   },
   "10220": {
     "id": "10220",
-    "name": "EAST OUTER DRIVE & MOUND",
+    "name": "E. Outer Dr. & Mound Rd.",
     "dir": "WB",
     "lat": 42.440929,
     "lon": -83.044519,
@@ -2615,7 +2615,7 @@ const Stops = {
   },
   "10221": {
     "id": "10221",
-    "name": "EAST OUTER DRIVE & HEALY ST",
+    "name": "E. Outer Dr. & Healy",
     "dir": "WB",
     "lat": 42.440835,
     "lon": -83.056323,
@@ -2630,7 +2630,7 @@ const Stops = {
   },
   "10222": {
     "id": "10222",
-    "name": "EAST OUTER DRIVE & EUREKA ST",
+    "name": "E. Outer Dr. & Eureka",
     "dir": "WB",
     "lat": 42.440685,
     "lon": -83.057804,
@@ -2645,7 +2645,7 @@ const Stops = {
   },
   "10223": {
     "id": "10223",
-    "name": "CONANT & NEVADA",
+    "name": "Conant & Nevada",
     "dir": "NE",
     "lat": 42.425588,
     "lon": -83.068388,
@@ -2664,7 +2664,7 @@ const Stops = {
   },
   "10224": {
     "id": "10224",
-    "name": "CONANT & MINNESOTA",
+    "name": "Conant & Minnesota",
     "dir": "SB",
     "lat": 42.4237,
     "lon": -83.067181,
@@ -2679,7 +2679,7 @@ const Stops = {
   },
   "10225": {
     "id": "10225",
-    "name": "CONANT & 6MILE RD",
+    "name": "Conant & 6 Mile Rd",
     "dir": "6M",
     "lat": 42.418509,
     "lon": -83.063547,
@@ -2696,7 +2696,7 @@ const Stops = {
   },
   "10226": {
     "id": "10226",
-    "name": "CONANT & CARPENTER",
+    "name": "Conant & Carpenter",
     "dir": "SB",
     "lat": 42.408762,
     "lon": -83.057232,
@@ -2711,7 +2711,7 @@ const Stops = {
   },
   "10227": {
     "id": "10227",
-    "name": "CONANT & CASMERE",
+    "name": "Conant & Casmere",
     "dir": "SB",
     "lat": 42.404671,
     "lon": -83.054416,
@@ -2726,7 +2726,7 @@ const Stops = {
   },
   "10228": {
     "id": "10228",
-    "name": "CANIFF & CHAREST ST",
+    "name": "Caniff & Charest St",
     "dir": "WB",
     "lat": 42.401195,
     "lon": -83.057003,
@@ -2769,7 +2769,7 @@ const Stops = {
   },
   "10230": {
     "id": "10230",
-    "name": "CHRYSLER DRIVE & HOLBROOK",
+    "name": "Chrysler Drive & Holbrook",
     "dir": "SB",
     "lat": 42.385858,
     "lon": -83.068242,
@@ -2988,7 +2988,7 @@ const Stops = {
   },
   "10264": {
     "id": "10264",
-    "name": "VERNOR & SALINA",
+    "name": "Vernor & Salina",
     "dir": "EB",
     "lat": 42.303811,
     "lon": -83.145905,
@@ -3014,7 +3014,7 @@ const Stops = {
   },
   "10267": {
     "id": "10267",
-    "name": "MARYLAND & JEFFERSON",
+    "name": "Maryland & Jefferson",
     "dir": "EB",
     "lat": 42.376156,
     "lon": -82.938044,
@@ -3334,7 +3334,7 @@ const Stops = {
   },
   "10291": {
     "id": "10291",
-    "name": "EAST GRAND BLVD AND BEAUBIEN",
+    "name": "E. Grand Blvd. & Beaubien",
     "dir": "WB",
     "lat": 42.373414,
     "lon": -83.065002,
@@ -3356,7 +3356,7 @@ const Stops = {
   },
   "10294": {
     "id": "10294",
-    "name": "ROSA PARKS BLVD AND SEWARD",
+    "name": "Rosa Parks Blvd. & Seward",
     "dir": "NB",
     "lat": 42.368879,
     "lon": -83.094326,
@@ -3370,7 +3370,7 @@ const Stops = {
   },
   "10295": {
     "id": "10295",
-    "name": "ROSA PARKS BLVD AND PINGREE",
+    "name": "Rosa Parks Blvd. & Pingree",
     "dir": "NB",
     "lat": 42.372244,
     "lon": -83.096606,
@@ -3384,7 +3384,7 @@ const Stops = {
   },
   "10296": {
     "id": "10296",
-    "name": "ROSA PARKS BLVD AND EDISON",
+    "name": "Rosa Parks Blvd. & Edison",
     "dir": "NB",
     "lat": 42.378409,
     "lon": -83.100667,
@@ -3398,7 +3398,7 @@ const Stops = {
   },
   "10297": {
     "id": "10297",
-    "name": "ROSA PARKS AND CALVERT",
+    "name": "Rosa Parks & Calvert",
     "dir": "NB",
     "lat": 42.383197,
     "lon": -83.103936,
@@ -3472,7 +3472,7 @@ const Stops = {
   },
   "10300": {
     "id": "10300",
-    "name": "MANCHESTER AND 3RD",
+    "name": "Manchester & 3rd",
     "dir": "EB",
     "lat": 42.40511,
     "lon": -83.103943,
@@ -3503,7 +3503,7 @@ const Stops = {
   },
   "10315": {
     "id": "10315",
-    "name": "SFTC",
+    "name": "State Fairgrounds TC",
     "dir": "SB",
     "lat": 42.44199,
     "lon": -83.121668,
@@ -3564,7 +3564,7 @@ const Stops = {
   },
   "10318": {
     "id": "10318",
-    "name": "WOODWARD & ADAMS",
+    "name": "Woodward & Adams",
     "dir": "SB",
     "lat": 42.337652,
     "lon": -83.051317,
@@ -3937,7 +3937,7 @@ const Stops = {
   },
   "10358": {
     "id": "10358",
-    "name": "WASHINGTON BLVD & LAFAYETTE",
+    "name": "Washington Blvd. & Lafayette",
     "dir": "SB",
     "lat": 42.330255,
     "lon": -83.050465,
@@ -4081,7 +4081,7 @@ const Stops = {
   },
   "10367": {
     "id": "10367",
-    "name": "CONGRESS AND GRISWOLD",
+    "name": "Congress & Griswold",
     "dir": "WB",
     "lat": 42.330027,
     "lon": -83.047046,
@@ -4112,7 +4112,7 @@ const Stops = {
   },
   "10368": {
     "id": "10368",
-    "name": "WASHINGTON AND LAFAYETTE",
+    "name": "Washington & Lafayette",
     "dir": "NB",
     "lat": 42.331247,
     "lon": -83.050476,
@@ -4180,7 +4180,7 @@ const Stops = {
   },
   "10371": {
     "id": "10371",
-    "name": "WASHINGTON AND JEFFERSON",
+    "name": "Washington Blvd. & Jefferson",
     "dir": "NB",
     "lat": 42.327882,
     "lon": -83.048211,
@@ -4476,7 +4476,7 @@ const Stops = {
   },
   "10392": {
     "id": "10392",
-    "name": "MC NICHOLS AND JOHN R",
+    "name": "McNichols & John R",
     "dir": "WB",
     "lat": 42.417997,
     "lon": -83.102605,
@@ -4565,7 +4565,7 @@ const Stops = {
   },
   "10398": {
     "id": "10398",
-    "name": "CAS AND COLUMBIA",
+    "name": "Cass & Columbia",
     "dir": "SB",
     "lat": 42.336852,
     "lon": -83.055936,
@@ -4588,7 +4588,7 @@ const Stops = {
   },
   "10399": {
     "id": "10399",
-    "name": "CASS COLUMBIA",
+    "name": "Cass & Columbia",
     "dir": "NB",
     "lat": 42.336834,
     "lon": -83.055545,
@@ -4622,7 +4622,7 @@ const Stops = {
   },
   "10400": {
     "id": "10400",
-    "name": "WOODWARD AND 75",
+    "name": "Woodward & I-75",
     "dir": "SB",
     "lat": 42.339585,
     "lon": -83.052571,
@@ -4694,7 +4694,7 @@ const Stops = {
   },
   "10405": {
     "id": "10405",
-    "name": "7 MILE & SAN JUAN",
+    "name": "7 Mile & San Juan",
     "dir": "WB",
     "lat": 42.431582,
     "lon": -83.146875,
@@ -4707,7 +4707,7 @@ const Stops = {
   },
   "10406": {
     "id": "10406",
-    "name": "TIREMAN & ASBURY PARK",
+    "name": "Tireman & Asbury Park",
     "dir": "EB",
     "lat": 42.350514,
     "lon": -83.205866,
@@ -4733,7 +4733,7 @@ const Stops = {
   },
   "10410": {
     "id": "10410",
-    "name": "WOODWARD & KIRBY",
+    "name": "Woodward & Kirby",
     "dir": "NB",
     "lat": 42.359659,
     "lon": -83.065945,
@@ -4746,7 +4746,7 @@ const Stops = {
   },
   "10412": {
     "id": "10412",
-    "name": "GRAND RIVER & BURGESS",
+    "name": "Grand River & Burgess",
     "dir": "EB",
     "lat": 42.414987,
     "lon": -83.25492,
@@ -4793,7 +4793,7 @@ const Stops = {
   },
   "10415": {
     "id": "10415",
-    "name": "FENKELL & ROSA PARKS BLVD",
+    "name": "Fenkell & Rosa Parks",
     "dir": "WB",
     "lat": 42.403223,
     "lon": -83.118189,
@@ -4820,7 +4820,7 @@ const Stops = {
   },
   "10418": {
     "id": "10418",
-    "name": "RUSSELL & WILKINS",
+    "name": "Russell & Wilkins",
     "dir": "NB",
     "lat": 42.349375,
     "lon": -83.042289,
@@ -4856,7 +4856,7 @@ const Stops = {
   },
   "10431": {
     "id": "10431",
-    "name": "WOODWARD & GRATIOT",
+    "name": "Woodward & Gratiot",
     "dir": "NB",
     "lat": 42.333185,
     "lon": -83.047601,
@@ -8141,7 +8141,7 @@ const Stops = {
   },
   "1429": {
     "id": "1429",
-    "name": "EAGLE & MILLER",
+    "name": "Eagle Dr. & Miller Rd.",
     "dir": "EB",
     "lat": 42.310505,
     "lon": -83.158183,
@@ -16273,7 +16273,7 @@ const Stops = {
   },
   "249": {
     "id": "249",
-    "name": "STATE FAIR GRND LOOP & Clairmount St",
+    "name": "State Fairgrounds TC",
     "dir": "WB",
     "lat": 42.442115,
     "lon": -83.120457,
@@ -27975,7 +27975,7 @@ const Stops = {
   },
   "3885": {
     "id": "3885",
-    "name": "MOROSS & BERDEN",
+    "name": "Moross & Berden",
     "dir": "WB",
     "lat": 42.42145,
     "lon": -82.921097,
@@ -54709,7 +54709,7 @@ const Stops = {
   },
   "6416": {
     "id": "6416",
-    "name": "MACK & LORAINE",
+    "name": "Mack & Loraine",
     "dir": "EB",
     "lat": 42.395522,
     "lon": -82.921811,
@@ -69441,7 +69441,7 @@ const Stops = {
   },
   "8133": {
     "id": "8133",
-    "name": "JEFFERSON & BELLEVUE",
+    "name": "Jefferson & Bellevue",
     "dir": "WB",
     "lat": 42.345437,
     "lon": -83.006298,
@@ -70532,7 +70532,7 @@ const Stops = {
   },
   "8293": {
     "id": "8293",
-    "name": "MACK & MANOR",
+    "name": "Mack & Manor",
     "dir": "EB",
     "lat": 42.409556,
     "lon": -82.913612,

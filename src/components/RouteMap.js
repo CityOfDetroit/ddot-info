@@ -54,6 +54,7 @@ class RouteMap extends Component {
     // make timepoint GeoJSON
     const firstDir = Object.keys(schedule.weekday)[0]
     const firstDirTimepoints = scheduleRoute.timepoints[firstDir]
+    console.log(firstDirTimepoints)
     const timepointFeatures = firstDirTimepoints.map(t => {      
       return {
         "type": "Feature",

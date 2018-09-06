@@ -31,7 +31,7 @@ const styles = {
 const StopCardRoutes = ({routes}) => {
   return (
     <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', marginTop: '-.5em' }}>
-      {routes.map((r, i) => (
+      {routes.sort((a, b) => { return a - b}).map((r, i) => (
         <Link to={{ pathname: `/route/${r}` }} key={i} style={{ display: 'flex', textDecoration: 'none', alignItems:'center', fontWeight: 700, justifyContent: 'center', width: '1.8em', height: '1.8em', color: 'white', fontSize: '.9em', backgroundColor: Schedules[r].color, border: `1px solid ${Schedules[r].color}`, borderRadius: Schedules[r].color === '#004445' ? 99 : 0, marginRight: '.5em', marginTop: '.5em' }}>
           {r}
         </Link>))}

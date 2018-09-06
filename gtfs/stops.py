@@ -10,7 +10,7 @@ if __name__ == "__main__":
       select 
       sp.stop_id, 
       right(sp.stop_code, 2) as stop_dir,
-      sp.stop_name, 
+      sp.stop_desc as stop_name, 
       sp.stop_lat, 
       sp.stop_lon,
       json_agg(distinct regexp_replace(rt.route_short_name, '^0{1,}', ''))
@@ -18,14 +18,14 @@ if __name__ == "__main__":
     inner join gtfs.stop_times st on sp.stop_id = st.stop_id
     inner join gtfs.trips tr on tr.trip_id = st.trip_id
     inner join gtfs.routes rt on tr.route_id = rt.route_id
-    group by sp.stop_id, sp.stop_name, sp.stop_lat, sp.stop_lon, stop_dir"""
+    group by sp.stop_id, sp.stop_desc , sp.stop_lat, sp.stop_lon, stop_dir"""
   res = conn.execute(query)
   stops_object = { int(row[0]): { 'id': row[0], 'name': row[2], 'dir': row[1], 'lat': row[3], 'lon': row[4], 'routes': row[5]} for row in res.fetchall() }
   
   def routes_near_stop(stop):
     query = """
         select json_agg(distinct(ltrim(r.route_short_name, '0'))) as xfers from gtfs.stops a
-          inner join gtfs.shape_geoms b on st_dwithin(a.geom, b.the_geom, 0.0015)
+          inner join gtfs.shape_geoms b on st_dwithin(a.the_geom, b.the_geom, 0.0015)
           inner join gtfs.trips t on b.shape_id = t.shape_id
           inner join gtfs.routes r on r.route_id = t.route_id
         where a.stop_id = '{}'
@@ -55,7 +55,7 @@ if __name__ == "__main__":
     direction_id = list(thisRouteDirections[0]).index(direction)
     query = """
         select b.stop_id from gtfs.stops a
-        inner join gtfs.stops b on st_dwithin(a.geom, b.geom, 0.0045)
+        inner join gtfs.stops b on st_dwithin(a.the_geom, b.the_geom, 0.0045)
         inner join gtfs.stop_times st on b.stop_id = st.stop_id
         inner join gtfs.trips tr on tr.trip_id = st.trip_id
         inner join gtfs.routes rt on tr.route_id = rt.route_id
@@ -63,7 +63,7 @@ if __name__ == "__main__":
         and tr.direction_id = '{}'
         and rt.route_short_name = '{}'
         and a.stop_id != b.stop_id
-        order by st_distance(a.geom, b.geom) asc limit 1""".format(origin_stop, direction_id, route.zfill(3))
+        order by st_distance(a.the_geom, b.the_geom) asc limit 1""".format(origin_stop, direction_id, route.zfill(3))
     res = conn.execute(query)
     return res.fetchone()[0]
 

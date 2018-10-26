@@ -41,7 +41,6 @@ class RouteMap extends Component {
     let tripIds = {};
     let scheduleRoute = Schedules[this.props.route.number]
     let schedule = scheduleRoute.schedules
-    console.log(schedule)
     Object.keys(schedule).forEach(svc => {
       Object.keys(schedule.weekday).forEach(dir => {
         if (!tripIds[dir]) {
@@ -54,7 +53,6 @@ class RouteMap extends Component {
     // make timepoint GeoJSON
     const firstDir = Object.keys(schedule.weekday)[0]
     const firstDirTimepoints = scheduleRoute.timepoints[firstDir]
-    console.log(firstDirTimepoints)
     const timepointFeatures = firstDirTimepoints.map(t => {      
       return {
         "type": "Feature",
@@ -190,15 +188,9 @@ class RouteMap extends Component {
   }
 
   _onClick = (event) => {
-    console.log(event)
     if(this.state.viewport.zoom > 12) {
       this.setState({ clickedStop: event.features[0] })
     }
-  }
-  
-  _onBusClick = (x) => {
-    console.log(x)
-    // this.setState({ clickedStop: event.features[0] })
   }
   
   componentDidMount() {

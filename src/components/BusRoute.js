@@ -10,15 +10,6 @@ import Helpers from '../helpers';
 
 /** Top level component for /route/{#} page */
 class BusRoute extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.onTabsChange = this.onTabsChange.bind(this);
-  }
-
-  onTabsChange(event) {
-    console.log(event);
-  }
  
   render() {
     const route = _.find(routeDetails, a => { return a.number === parseInt(this.props.match.params.name, 10) });

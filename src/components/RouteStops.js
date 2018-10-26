@@ -38,7 +38,6 @@ class RouteStops extends React.Component {
   }
 
   handleSearchChange(event) {
-    console.log(event)
     this.setState({ 
       input: event.target.value.toLowerCase()
     });

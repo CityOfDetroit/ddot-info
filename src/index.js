@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 
@@ -179,4 +178,3 @@ ReactDOM.render(
     </GAListener>
   </Router>,
   document.getElementById('root'));
-registerServiceWorker();

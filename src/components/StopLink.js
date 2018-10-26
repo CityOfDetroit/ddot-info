@@ -24,7 +24,6 @@ class StopLink extends Component {
       routes = Array.from(new Set(Stops[this.props.id].routes.map(r => r[0]).concat(Stops[this.props.id].transfers.map(r => r[0]))))
     }
 
-    console.log(routes.map(r => parseInt(r, 10)).sort((a, b) => { return a - b }))
     return (
       <div style={this.props.showBorder ? { ...defaultStyles, marginLeft: '1em', borderLeft: `6px solid ${this.props.color}`} : defaultStyles }>  
         {this.props.showBorder ? 

@@ -17,29 +17,6 @@ body {
   padding: 0;
 }
 
-/* BETA tag */
-body:after{
-  content: "beta";
-  position: fixed;
-  width: 70px;
-  height: 20px;
-  background: #B0D27B;
-  top: 5px;
-  left: -20px;
-  text-align: center;
-  font-size: 13px;
-  font-family: "Gibson Detroit Regular", sans-serif;
-  text-transform: uppercase;
-  font-weight: normal;
-  color: #000;
-  line-height: 19px;
-  -ms-transform:rotate(-45deg);
-  -webkit-transform:rotate(-45deg);
-  transform:rotate(-45deg);
-  z-index: 2500;
-  box-shadow: 1px 3px 10px #aaa;
-}
-
 @media screen and (max-width: 768px) {
   /* .map {
     height: 400px;

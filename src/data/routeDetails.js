@@ -1053,7 +1053,7 @@ const routeDetails = [{
         days_per_week: ['Monday', 'Sunday'],
         between: ['Meijer Old Redford', 'Mack & Moross'],
         via: ['Lahser', '7 Mile', 'Morang', 'Moross'],
-        description: "Offers 24 /7 service and improved frequency as part of the ConnectTen network. Connects Redford and Detroit between Meijer Old Redford and St John Hospital. Main streets served are Grand River, Lasher, 7 mile, Cadieux, Morang and Moross.",
+        description: "Offers 24 /7 service and improved frequency as part of the ConnectTen network. Connects Redford and Detroit between Meijer Old Redford and St John Hospital. Main streets served are Grand River, Lahser, 7 Mile, Cadieux, Morang and Moross.",
         pdf: ["http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/7SevenMileMF.pdf", "http://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/2018/7SevenMileSS.pdf"],
         services: {
             "Monday-Friday": {

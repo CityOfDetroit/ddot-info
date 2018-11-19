@@ -186,19 +186,13 @@ class Stop extends React.Component {
                       route={r[0]}
                       multipleDirs={this.state.multipleDirs}
                       predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r[0].padStart(3, '0')}).map(p => p.tripId)} />
-                  </div> :
-                  <div style={{ padding: '.5em .5em', border: '2px solid red', backgroundColor: '#fff' }}>
-                    Sorry, we can't display next arrivals for this stop right now. Please check back soon!
-                  </div>}
+                  </div> : `Loading data...`}
                 </div>
               </div>
             ))}
             <div>
               {stopTransfers.length > 0 && this.state.fetchedStopSchedule && this.state.fetchedPredictions ? 
-                <StopTransfers stops={stopTransfers} /> : 
-                <div style={{ padding: '.5em .5em', border: '2px solid red', backgroundColor: '#fff' }}>
-                  Sorry, we can't display transfers from this stop right now. Please check back soon!
-                </div>}
+                <StopTransfers stops={stopTransfers} /> : `Loading data...`}
             </div>
             </SwipeableViews>
         </div>

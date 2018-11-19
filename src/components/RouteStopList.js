@@ -68,9 +68,7 @@ class RouteStopList extends Component {
           </div>
           <div style={{ height: '60vh', overflowY: 'scroll' }}>
             {filteredStops.length === 0 ? 
-              <div style={{ padding: '.5em .5em', border: '2px solid red', backgroundColor: '#fff' }}>
-                Sorry, we can't load bus stops for this route right now. Please check back soon!
-              </div> : 
+              `Loading...` : 
               filteredStops.length > 0 ? 
                 filteredStops.map((stop, i) =>
                   <div style={{ display: 'flex', alignItems: 'center', zIndex: 0 }} key={i}>

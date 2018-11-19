@@ -66,9 +66,9 @@ class StopCard extends Component {
             </div>}
           classes={{ title: this.props.classes.title, subheader: this.props.classes.subheader, avatar: this.props.classes.avatar }} />
         <CardContent>
-          <div style={{display: 'flex', alignItems: 'center'}}>
-          <BusIcon style={{marginRight: '.65em'}}/>
-          <StopCardRoutes routes={routes} />
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <BusIcon style={{marginRight: '.65em'}} />
+            <StopCardRoutes routes={routes} />
           </div>
         </CardContent>
       </Card>

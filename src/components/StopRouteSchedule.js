@@ -16,7 +16,7 @@ import Helpers from '../helpers.js';
 class StopRouteSchedule extends Component {
   render() {
     if (!this.props.schedules[0]) {
-      return ``
+      return ``;
     }
 
     return (

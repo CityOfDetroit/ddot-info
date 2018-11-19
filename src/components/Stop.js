@@ -58,7 +58,7 @@ class Stop extends React.Component {
         fetchedPredictions: true,
       })
     })
-    .catch(e => console.log(e));
+    .catch(e => console.log('fetchRealtimeData: ', e));
   }
 
   fetchStopScheduleData(id) {
@@ -77,7 +77,7 @@ class Stop extends React.Component {
         multipleDirs: multipleDirs
       })
     })
-    .catch(e => console.log(e));
+    .catch(e => console.log('fetchStopScheduleData: ', e));
   }
 
   handleTabsChange = (event, slideIndex) => {
@@ -170,33 +170,35 @@ class Stop extends React.Component {
                 </AppBar>
                 <div>
                 {this.state.fetchedPredictions && this.state.fetchedStopSchedule ?
-                    <div style={{ display: 'block', padding: '0em 0em', width: '100%' }}>
-                      <RoutePredictionList
-                        predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r[0].padStart(3, '0')})} 
-                        references={this.state.predictions.data.references}
-                        route={r[0]}
-                        stop={stopId}
-                        multipleDirs={this.state.multipleDirs}
-                        isOpen={i === slideIndex}
-                        onChange={this.handleRoutePredictionChange} />
+                  <div style={{ display: 'block', padding: '0em 0em', width: '100%' }}>
+                    <RoutePredictionList
+                      predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r[0].padStart(3, '0')})} 
+                      references={this.state.predictions.data.references}
+                      route={r[0]}
+                      stop={stopId}
+                      multipleDirs={this.state.multipleDirs}
+                      isOpen={i === slideIndex}
+                      onChange={this.handleRoutePredictionChange} />
                     <StopRouteSchedule 
                       schedules={_.filter(this.state.scheduledStops.data.entry.stopRouteSchedules, s => {
                         return s.routeId.split("_").pop() === Schedules[r[0]].rt_id.toString()
                       })} 
                       route={r[0]}
                       multipleDirs={this.state.multipleDirs}
-                      predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r[0].padStart(3, '0')}).map(p => p.tripId)} 
-                      />
-                      </div> : ``}
-                  </div>
+                      predictions={_.filter(this.state.predictions.data.entry.arrivalsAndDepartures, function(o) { return o.routeShortName === r[0].padStart(3, '0')}).map(p => p.tripId)} />
+                  </div> :
+                  <div style={{ padding: '.5em .5em', border: '2px solid red', backgroundColor: '#fff' }}>
+                    Sorry, we can't display next arrivals for this stop right now. Please check back soon!
+                  </div>}
                 </div>
+              </div>
             ))}
             <div>
-              {stopTransfers.length > 0 && 
-                this.state.fetchedStopSchedule && 
-                this.state.fetchedPredictions ? 
+              {stopTransfers.length > 0 && this.state.fetchedStopSchedule && this.state.fetchedPredictions ? 
                 <StopTransfers stops={stopTransfers} /> : 
-                null}
+                <div style={{ padding: '.5em .5em', border: '2px solid red', backgroundColor: '#fff' }}>
+                  Sorry, we can't display transfers from this stop right now. Please check back soon!
+                </div>}
             </div>
             </SwipeableViews>
         </div>

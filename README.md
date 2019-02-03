@@ -10,7 +10,7 @@ We're using [Create React App](https://github.com/facebook/create-react-app) wit
 - time aware ui that defaults to show today's service and current trips
 - live departure, scheduled departure, and nearby transfer info for every DDOT bus stop
 - location aware component to see routes and stops within a 5 minute walk of your current location
-- digital schedule tables! (meaning we'll no longer exclusively offer PDFs [here](http://www.detroitmi.gov/How-Do-I/Locate-Transportation/Bus-Schedules))
+- digital schedule tables! (meaning we'll no longer exclusively offer PDFs [here](https://detroitmi.gov/departments/detroit-department-transportation/bus-schedules))
 
 ## Data sources
 

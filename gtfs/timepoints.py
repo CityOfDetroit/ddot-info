@@ -5,7 +5,7 @@ import pandas
 import json
 from routes import routes
 from pprint import pprint
-engine = sqlalchemy.create_engine('postgresql://localhost/gtfs')
+engine = sqlalchemy.create_engine('postgresql://localhost/ddotinfo')
 conn = engine.connect()
 
 # def rename_tables():
@@ -37,10 +37,10 @@ conn = engine.connect()
 def set_timepoints(route, service, direction, seq_of_stop_ids):
     """Set timepoint = 1 on an array stops for a given route/service/direction """
     query = """
-    update gtfs_stop_times
+    update gtfs.stop_times
       set timepoint = 1
       where trip_id in
-          (select trip_id from gtfs_trips where
+          (select trip_id from gtfs.trips where
               route_id = '{}'
               and service_id = '{}'
               and direction_id = '{}')
@@ -71,11 +71,11 @@ def get_stops(route):
         stops.stop_id,
         times.timepoint,
         trips.trip_id
-    from gtfs_stop_times times
-        inner join gtfs_trips trips on trips.trip_id = times.trip_id
-        inner join gtfs_stops stops on stops.stop_id = times.stop_id
+    from gtfs.stop_times times
+        inner join gtfs.trips trips on trips.trip_id = times.trip_id
+        inner join gtfs.stops stops on stops.stop_id = times.stop_id
     where trips.trip_id in
-        (select trip_id from gtfs_trips
+        (select trip_id from gtfs.trips
             where route_id = '{}')
     order by
         arrival_time asc,
@@ -116,7 +116,7 @@ def format_hms_nicely(hms):
         return '–'
 
 def stop_desc_from_stop_id(id):
-    query = "select stop_name, stop_desc from gtfs_stops where stop_id = '{}'".format(id)
+    query = "select stop_name, stop_desc from gtfs.stops where stop_id = '{}'".format(id)
     res = conn.execute(query)
     return res.fetchone()
 

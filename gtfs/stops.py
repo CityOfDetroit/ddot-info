@@ -1,6 +1,6 @@
 import sqlalchemy
 import json
-engine = sqlalchemy.create_engine('postgresql://jimmy@localhost/gtfs')
+engine = sqlalchemy.create_engine('postgresql://gisteam@localhost/ddotinfo')
 conn = engine.connect()
 
 import routes
@@ -67,39 +67,12 @@ if __name__ == "__main__":
     res = conn.execute(query)
     return res.fetchone()[0]
 
-  timepoint_edits = {
-    # 43 Schoolcraft
-    "429": {"offset": [0, -2]},
-    "674": {"offset": [0, 1.5]},
-    "676": {"offset": [0, 1.5]},
-    "677": {"offset": [-2, 1.5]},
-    "678": {"offset": [2, -1.5]},
-
-    # 45 Seven Mile
-    "10157": {"offset": [3, 1.5], "align": "left"},
-    "689": {"offset": [0, -1.75]},
-    "6074": {"offset": [0, 2]},
-    "384": {"offset": [0, 2]},
-    "9635": {"offset": [2.75, 1.75], "align": "left"},
-    "695": {"offset": [0, -1.5]},
-    "520": {"offset": [0, 2]},
-    "79": {"offset": [0, -1.5]},
-    "42": {"offset": [-2.5, 1.25], "align": "right"},
-    "41": {"offset": [0, 2]}
-  }
-
   for k in stops_object.keys():
     routesList = []
     for r in stops_object[k]['routes']:
       routesList.append(stop_direction(k, r))
     stops_object[k]['routes'] = routesList
 
-    # add offset
-    if str(k) in timepoint_edits.keys():
-      stops_object[k]['offset'] = timepoint_edits[str(k)]['offset']
-      if "align" in timepoint_edits[str(k)].keys():
-        stops_object[k]['align'] = timepoint_edits[str(k)]['align']
-      
     xfers = routes_near_stop(k)
 
     transferArray = []

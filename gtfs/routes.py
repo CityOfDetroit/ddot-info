@@ -3,7 +3,7 @@ routes = [
         "id": "67",
         "rt_name": "Cadillac/Harper",
         "color": "#44aa42",
-        "rt_id": 6802,
+        "rt_id": 6939,
         "timepoints": {
             "eastbound": [8911, 32, 34, 35, 36, 38, 42, 41],
             "westbound": [41, 8963, 44, 46, 47, 49, 51, 8911]
@@ -14,11 +14,11 @@ routes = [
         "id": "68",
         "rt_name": "Chalmers",
         "color": "#9b5ba5",
-        "rt_id": 6803,
+        "rt_id": 6940,
         "notes": "nonstandard schedule",
         "timepoints": {
-            "northbound": [10178, 74, 75, 76, 77],
-            "southbound": [77, 79, 80, 83, 10178]
+            "northbound": [10445, 2075, 9791, 74, 75, 76, 3682],
+            "southbound": [3682, 79, 80, 83, 8215, 2076, 10446]
         }
     },
 
@@ -26,7 +26,7 @@ routes = [
         "id": "52",
         "rt_name": "Chene",
         "color": "#44aa42",
-        "rt_id": 6804,
+        "rt_id": 6936,
         "timepoints": {
             "northbound": [8892, 87, 118, 89, 90, 91, 92],
             "southbound": [95, 96, 97, 98, 99, 100, 503, 8892]
@@ -37,7 +37,7 @@ routes = [
         "id": "11",
         "rt_name": "Clairmount",
         "color": "#0079c2",
-        "rt_id": 6805,
+        "rt_id": 6914,
         "timepoints": {
             "eastbound": [103, 2491, 107, 800, 111, 112, 115],
             "westbound": [115, 1236, 118, 8248, 122, 2492, 103]
@@ -48,7 +48,7 @@ routes = [
         "id": "12",
         "rt_name": "Conant",        
         "color": "#9b5ba5",
-        "rt_id": 6806,
+        "rt_id": 6915,
         "timepoints": {
             "southbound": [127, 7864, 129, 130, 9034, 5525, 132, 10176, 10167],
             "northbound": [10167, 135, 136, 5524, 9035, 138, 139, 140, 127]
@@ -59,11 +59,11 @@ routes = [
         "id": "13",
         "rt_name": "Conner",
         "color": "#9b5ba5",
-        "rt_id": 6807,
+        "rt_id": 6916,
         "notes": "nonstandard schedule",
         "timepoints": {
-            "southbound": [93, 8552, 144, 145, 9033, 147, 148, 149, 150],
-            "northbound": [153, 154, 1989, 10031, 157, 8591, 93]
+            "southbound": [93, 2025, 145, 147, 148, 421],
+            "northbound": [421, 153, 154, 10031, 2024, 93]
         }
     },
 
@@ -71,10 +71,10 @@ routes = [
         "id": "8",
         "rt_name": "Warren",
         "color": "#004445",
-        "rt_id": 6808,
+        "rt_id": 6911,
         "timepoints": {
-            "eastbound": [10187, 7141, 161, 162, 163, 164, 165, 169, 171, 172, 41],
-            "westbound": [41, 175, 48, 177, 181, 182, 183, 184, 185, 7140, 10192]
+            "eastbound": [10187, 7141, 161, 162, 163, 5920, 165, 169, 171, 172, 41],
+            "westbound": [41, 175, 48, 177, 181, 5921, 183, 184, 185, 7140, 10187]
         }
     },
 
@@ -82,7 +82,7 @@ routes = [
         "id": "15",
         "rt_name": "Chicago/Davison",
         "color": "#0079c2",
-        "rt_id": 6809,
+        "rt_id": 6917,
         "timepoints": {
             "eastbound": [10414, 190, 191, 192, 193, 194, 195, 196, 197, 198],
             "westbound": [198, 200, 201, 202, 203, 204, 205, 206, 207, 10414]
@@ -93,7 +93,7 @@ routes = [
         "id": "16",
         "rt_name": "Dexter",
         "color": "#44aa42",
-        "rt_id": 6810,
+        "rt_id": 6918,
         "notes": "nonstandard schedule",
         "timepoints": {
             "southbound": [10340, 10325, 212, 213, 214, 215, 216, 218, 220, 221, 8913, 223],
@@ -105,7 +105,7 @@ routes = [
         "id": "17",
         "rt_name": "Eight Mile",
         "color": "#0079c2",
-        "rt_id": 6811,
+        "rt_id": 6919,
         "notes": "nonstandard schedule",
         "timepoints": {
             "eastbound": [236, 238, 10325, 240, 242, 243, 144, 62, 245, 40],
@@ -117,7 +117,7 @@ routes = [
         "id": "18",
         "rt_name": "Fenkell",
         "color": "#44aa42",
-        "rt_id": 6812,
+        "rt_id": 6920,
         "timepoints": {
             "eastbound": [256, 258, 260, 262, 263, 265, 266, 267, 8928],
             "westbound": [8928, 272, 273, 274, 3377, 276, 277, 279, 286, 288]
@@ -128,7 +128,7 @@ routes = [
         "id": "19",
         "rt_name": "Fort",
         "color": "#44aa42",
-        "rt_id": 6813,
+        "rt_id": 6921,
         "timepoints": {
             "westbound": [8891, 290, 291, 2558, 294, 295],
             "eastbound": [298, 299, 2561, 302, 303, 8891]
@@ -136,10 +136,10 @@ routes = [
     },
 
     {
-        "id": "21",
+        "id": "3",
         "rt_name": "Grand River",
         "color": "#44aa42",
-        "rt_id": 6814,
+        "rt_id": 6906,
         "notes": "nonstandard schedule",
         "timepoints": {
             "eastbound": [324, 325, 328, 330, 331, 332, 334, 335, 337, 394],
@@ -152,7 +152,7 @@ routes = [
         "rt_name": "Greenfield",
         "color": "#004445",
         "notes": "nonstandard schedule",
-        "rt_id": 6815,
+        "rt_id": 6913,
         "timepoints": {
             "southbound": [210, 10325, 358, 359, 361, 363, 600, 368],
             "northbound": [368, 372, 374, 376, 378, 379, 10326, 210]
@@ -163,7 +163,7 @@ routes = [
         "id": "23",
         "rt_name": "Hamilton",
         "color": "#44aa42",
-        "rt_id": 6816,
+        "rt_id": 6922,
         "timepoints": {
             "northbound": [8933, 9474, 401, 402, 403, 9658, 10145],
             "southbound": [1045, 9690, 386, 387, 10339, 9475, 8933]
@@ -171,10 +171,10 @@ routes = [
     },
 
     {
-        "id": "0",
+        "id": "9",
         "rt_name": "Jefferson",
         "color": "#004445",
-        "rt_id": 6817,
+        "rt_id": 6912,
         "timepoints": {
             "eastbound": [9970, 9021, 420, 421, 422, 10178],
             "westbound": [10178, 425, 426, 427, 341, 9970]
@@ -185,7 +185,7 @@ routes = [
         "id": "27",
         "rt_name": "Joy",
         "color": "#44aa42",
-        "rt_id": 6818,
+        "rt_id": 6923,
         "timepoints": {
             "eastbound": [429, 432, 434, 435, 437, 438, 439, 441, 443, 8910],
             "westbound": [8910, 444, 446, 737, 448, 449, 451, 452, 454, 429]
@@ -196,7 +196,7 @@ routes = [
         "id": "29",
         "rt_name": "Linwood",
         "color": "#44aa42",
-        "rt_id": 6819,
+        "rt_id": 6924,
         "timepoints": {
             "southbound": [2781, 465, 467, 469, 470, 8912],
             "northbound": [8912, 474, 475, 477, 479, 2781]
@@ -208,7 +208,7 @@ routes = [
         "rt_name": "Livernois",
         "color": "#9b5ba5",
         "notes": "nonstandard schedule",
-        "rt_id": 6820,
+        "rt_id": 6925,
         "timepoints": {
             "southbound": [127, 481, 8987, 482, 483, 484, 486, 487, 488],
             "northbound": [488, 490, 491, 493, 494, 495, 230, 496, 127]
@@ -219,7 +219,7 @@ routes = [
         "id": "31",
         "rt_name": "Mack",
         "color": "#44aa42",
-        "rt_id": 6821,
+        "rt_id": 6926,
         "timepoints": {
             "westbound": [41, 497, 498, 499, 6334, 502, 1616, 8918],
             "eastbound": [8918, 21, 505, 6336, 508, 509, 510, 41]
@@ -231,7 +231,7 @@ routes = [
         "rt_name": "McNichols",
         "color": "#0079c2",
         "notes": "nonstandard schedule",
-        "rt_id": 6822,
+        "rt_id": 6927,
         "timepoints": {
             "eastbound": [9860, 7230, 514, 515, 517, 519, 524, 510, 41],
             "westbound": [41, 527, 529, 534, 536, 538, 539, 10157, 9860]
@@ -242,7 +242,7 @@ routes = [
         "id": "6",
         "rt_name": "Gratiot",
         "color": "#004445",
-        "rt_id": 6823,
+        "rt_id": 6909,
         "timepoints": {
             "northbound": [9963, 167, 547, 549, 550, 552, 62],
             "southbound": [554, 555, 550, 558, 178, 179, 9963]
@@ -253,7 +253,7 @@ routes = [
         "id": "2",
         "rt_name": "Michigan",
         "color": "#004445",
-        "rt_id": 6824,
+        "rt_id": 6905,
         "timepoints": {
             "eastbound": [368, 590, 6578, 591, 1489, 8945],
             "westbound": [8945, 1490, 599, 6577, 600, 368]
@@ -265,10 +265,10 @@ routes = [
         "rt_name": "Plymouth",
         "color": "#0079c2",
         "notes": "nonstandard schedule",
-        "rt_id": 6825,
+        "rt_id": 6928,
         "timepoints": {
-            "eastbound": [9776, 9572, 8874, 603, 607, 608, 54, 55, 1804, 59, 60, 61, 613, 1927],
-            "westbound": [1927, 614, 65, 66, 67, 615, 71, 619, 620, 624, 626, 9549, 9776]
+            "eastbound": [9776, 9572, 8874, 607, 619, 54, 55, 10449, 59, 613, 1927],
+            "westbound": [1927, 614, 66, 10448, 615, 71, 619, 620, 8874, 9549, 9776]
         }
     },
 
@@ -276,7 +276,7 @@ routes = [
         "id": "39",
         "rt_name": "Puritan",
         "color": "#44aa42",
-        "rt_id": 6826,
+        "rt_id": 6929,
         "timepoints": {
             "eastbound": [627, 628, 629, 630, 3032, 196],
             "westbound": [201, 634, 635, 636, 637, 638]
@@ -287,9 +287,9 @@ routes = [
         "id": "40",
         "rt_name": "Russell",
         "color": "#44aa42",
-        "rt_id": 6827,
+        "rt_id": 6930,
         "timepoints": {
-            "northbound": [8944, 8777, 7414, 641, 644, 645, 646, 647, 648],
+            "northbound": [8944, 8777, 7414, 641, 644, 645, 648],
             "southbound": [648, 649, 650, 652, 7415, 655, 8944]
         }
     },
@@ -298,7 +298,7 @@ routes = [
         "id": "41",
         "rt_name": "Schaefer",
         "color": "#9b5ba5",
-        "rt_id": 6828,
+        "rt_id": 6931,
         "timepoints": {
             "southbound": [656, 657, 659, 660, 6627, 661, 662, 663, 664],
             "northbound": [664, 9561, 662, 668, 6630, 669, 670, 672, 673]
@@ -309,7 +309,7 @@ routes = [
         "id": "42",
         "rt_name": "Mid-City Loop",
         "color": "#d07c32",
-        "rt_id": 6829,
+        "rt_id": 6932,
         "timepoints": {
             "clockwise": [571, 584, 568, 7831, 4388, 8263, 3381]
         }
@@ -318,7 +318,7 @@ routes = [
         "id": "43",
         "rt_name": "Schoolcraft",
         "color": "#0079c2",
-        "rt_id": 6830,
+        "rt_id": 6933,
         "notes": "nonstandard schedule",
         "timepoints": {
             "eastbound": [429, 674, 676, 677, 678, 679, 680, 196, 570, 572, 574, 9609, 576],
@@ -330,7 +330,7 @@ routes = [
         "id": "7",
         "rt_name": "Seven Mile",
         "color": "#004445",
-        "rt_id": 6831,
+        "rt_id": 6910,
         "timepoints": {
             "eastbound": [10157, 689, 6074, 384, 9635, 695, 520, 79, 42, 41],
             "westbound": [41, 8963, 76, 533, 699, 9638, 405, 6073, 705, 10157]
@@ -341,7 +341,7 @@ routes = [
         "id": "46",
         "rt_name": "Southfield",
         "color": "#9b5ba5",
-        "rt_id": 6832,
+        "rt_id": 6934,
         "timepoints": {
             "southbound": [7282, 707, 708, 709, 710, 712, 843, 368],
             "northbound": [368, 843, 715, 717, 718, 719, 10341, 7282]
@@ -353,7 +353,7 @@ routes = [
         "rt_name": "Tireman",
         "color": "#0079c2",
         "notes": "nonstandard schedule",
-        "rt_id": 6833,
+        "rt_id": 6935,
         "timepoints": {
             "eastbound": [159, 721, 722, 724, 439, 727, 729, 1616],
             "westbound": [1616, 734, 736, 737, 739, 741, 742, 159]
@@ -364,7 +364,7 @@ routes = [
         "id": "5",
         "rt_name": "Van Dyke/Lafayette",
         "color": "#004445",
-        "rt_id": 6834,
+        "rt_id": 6908,
         "timepoints": {
             "northbound": [8989, 745, 3757, 747, 749, 750, 752, 753, 93],
             "southbound": [93, 754, 755, 757, 758, 760, 3759, 762, 8989]
@@ -375,7 +375,7 @@ routes = [
         "id": "1",
         "rt_name": "Vernor",
         "color": "#004445",
-        "rt_id": 6835,
+        "rt_id": 6904,
         "timepoints": {
             "eastbound": [6578, 10264, 765, 766, 767, 768, 8915],
             "westbound": [8915, 770, 8774, 772, 773, 10265, 6578]
@@ -386,7 +386,7 @@ routes = [
         "id": "4",
         "rt_name": "Woodward",
         "color": "#004445",
-        "rt_id": 6836,
+        "rt_id": 6907,
         "timepoints": {
             "southbound": [127, 4604, 785, 787, 788, 1064, 9694],
             "northbound": [9694, 1061, 799, 8848, 802, 4603, 127]
@@ -397,7 +397,7 @@ routes = [
         "id": "54",
         "rt_name": "Wyoming",
         "color": "#9b5ba5",
-        "rt_id": 6837,
+        "rt_id": 6937,
         "timepoints": {
             "southbound": [127, 250, 805, 807, 808, 809, 810, 811, 322, 323, 815],
             "northbound": [815, 304, 15, 820, 821, 823, 824, 826, 241, 127]
@@ -408,7 +408,7 @@ routes = [
         "id": "60",
         "rt_name": "Evergreen",
         "color": "#9b5ba5",
-        "rt_id": 6838,
+        "rt_id": 6938,
         "timepoints": {
             "southbound": [10329, 380, 838, 839, 7154, 842, 843, 368],
             "northbound": [368, 843, 844, 7156, 846, 847, 848, 849, 10328]
@@ -419,7 +419,7 @@ routes = [
         "id": "80",
         "rt_name": "Villages Direct",
         "color": "#d07c32",
-        "rt_id": 6839,
+        "rt_id": 6941,
         "timepoints": {
             "westbound": [10178, 8167, 8148, 4841, 10258, 8263],
             "eastbound": [2507, 10259, 4838, 8147, 8166, 10267]
@@ -430,7 +430,7 @@ routes = [
         "id": "89",
         "rt_name": "Southwest Direct",
         "color": "#d07c32",
-        "rt_id": 6840,
+        "rt_id": 6942,
         "timepoints": {
             "southbound": [2507, 3412, 1490, 772, 10260, 295],
             "northbound": [295, 10261, 766, 1489, 3411, 8263]
@@ -441,7 +441,7 @@ routes = [
         "id": "92",
         "rt_name": "Rosedale Express",
         "color": "#d07c32",
-        "rt_id": 6841,
+        "rt_id": 6943,
         "timepoints": {
             "eastbound": [10253, 327, 330, 10231, 8100],
             "westbound": [341, 8441, 351, 847, 7258]
@@ -452,7 +452,7 @@ routes = [
         "id": "95",
         "rt_name": "Ryan Express",
         "color": "#d07c32",
-        "rt_id": 6843,
+        "rt_id": 6945,
         "timepoints": {
             "northbound": [10204, 10205, 7328, 10207, 10208, 646],
             "southbound": [648, 4931, 10200, 10201, 10202, 10203]
@@ -463,7 +463,7 @@ routes = [
         "id": "96",
         "rt_name": "Joy Express",
         "color": "#d07c32",
-        "rt_id": 6844,
+        "rt_id": 6946,
         "timepoints": {
             "eastbound": [7158, 7214, 434, 437, 10231, 8100],
             "westbound": [341, 8441, 449, 452, 845, 7151]

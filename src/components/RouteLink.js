@@ -11,6 +11,8 @@ import _ from 'lodash'
 class RouteLink extends Component {
   render() {
     const route = _.find(routeDetails, a => { return a.number === parseInt(this.props.id, 10) })
+    console.log('Here', route);
+    console.log('Id', this.props.id)
 
     const styles = {
       wrapper: {
@@ -25,7 +27,7 @@ class RouteLink extends Component {
         width: '2em',
         height: '2em',
         margin: 5,
-        backgroundColor: route.color,
+        backgroundColor: `${route.color}`,
         borderRadius: route.radius,
         // border: `1px solid ${route.color}`,
         color: '#fff',

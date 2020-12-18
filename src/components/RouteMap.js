@@ -1,296 +1,336 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import MapGL, {Marker, NavigationControl} from 'react-map-gl';
-import { Redirect } from 'react-router-dom';
-import _ from 'lodash';
-import moment from 'moment';
-import WebMercatorViewport from 'viewport-mercator-project';
-import chroma from 'chroma-js';
-import {Card, CardHeader, CardContent} from '@material-ui/core';
-import DirectionsBus from '@material-ui/icons/DirectionsBus';
-import LiveIcon from '@material-ui/icons/SpeakerPhone';
-import ScheduleIcon from '@material-ui/icons/Schedule';
+import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
+import 'mapbox-gl/dist/mapbox-gl.css';
+import bbox from "@turf/bbox";
+import busstop from '../images/busstop.png'
+import bus from '../images/Bus-logo.png'
+import arrow from '../images/arrow-up-solid.png'
 
-import Stops from '../data/stops.js';
-import Helpers from '../helpers.js';
-import {defaultMapStyle, routeLineIndex, routeCaseIndex, timepointLabelIndex} from '../style.js';
-import {stopPointIndex} from '../style';
-import RouteBadge from './RouteBadge';
-import Schedules from '../data/schedules.js';
+import React, { useEffect, useState } from "react";
+import {navigate} from 'gatsby'
 
-const styles = {
-  ahead: {
-      color: 'darkgreen',
-      fontWeight: 700,
-      display: 'block',
-      opacity: 0.75
-  },
-  behind: {
-      color: 'darkred',
-      fontWeight: 700,
-      display: 'block',
-      opacity: 0.75
-  }
-}
+import style from "../css/mapstyle.json";
 
-/** Map of a single route, all its' stops and active buses for BusRoute */
-class RouteMap extends Component {
-  constructor(props) {
-    super(props);
+const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) => {
 
-    let tripIds = {};
-    let scheduleRoute = Schedules[this.props.route.number]
-    let schedule = scheduleRoute.schedules
-    Object.keys(schedule).forEach(svc => {
-      Object.keys(schedule.weekday).forEach(dir => {
-        if (!tripIds[dir]) {
-          tripIds[dir] = [];
-        }
-        tripIds[dir] = tripIds[dir].concat(schedule[svc][dir].trips.map(trip => trip.trip_id));
-      });
+  let timepointsFeatures = timepoints.map(t => {
+    let { theGeom, ...props } = t
+    return {
+      "type": "Feature",
+      "geometry": theGeom['geojson'],
+      "properties": props
+    }
+  })
+  let stopsFeatures = stops.map(t => {
+    let { theGeom, ...props } = t
+    return {
+      "type": "Feature",
+      "geometry": theGeom['geojson'],
+      "properties": props
+    }
+  })
+
+  let bounds = bbox({ type: "FeatureCollection", features: routes })
+
+  let [theMap, setTheMap] = useState(null)
+
+  // here's the initial map setup useEffect; we'll store the map in state
+  useEffect(() => {
+
+    let map = new mapboxgl.Map({
+      container: "map",
+      style: style,
+      bounds: bounds,
+      fitBoundsOptions: {
+        padding: 50
+      },
+      zoom: 12.75 // starting zoom
     });
 
-    // make timepoint GeoJSON
-    const firstDir = Object.keys(schedule.weekday)[0]
-    const firstDirTimepoints = scheduleRoute.timepoints[firstDir]
-    const timepointFeatures = firstDirTimepoints.map(t => {      
-      return {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [Stops[t].lon, Stops[t].lat]
-        },
-        "properties": {
-          "id": t,
-          "name": Stops[t].name.toUpperCase().indexOf('ROSA PARKS TR') > -1 ? "Rosa Parks TC" : Stops[t].name,
-          "stop_code": Stops[t].dir,
-          "offset": Stops[t].offset || [3,1],
-          "align": Stops[t].align || 'center'
-        }
-      }
+    map.addControl(new mapboxgl.FullscreenControl());
+
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+      positionOptions: {
+      enableHighAccuracy: true
+      },
+      trackUserLocation: true
+      })
+      );
+
+    let ctrl = new mapboxgl.NavigationControl({
+      showCompass: false
+    });
+
+    map.addControl(ctrl, "bottom-left");
+
+    map.loadImage(busstop, (error, image) => {
+      map.addImage('bus-stop', image)
     })
 
-    const stopFeatures = _.filter(Stops, s => { return s.routes.map(r => r[0]).indexOf(scheduleRoute.id) > -1 }).map(t => {
-      return {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [t.lon, t.lat]
-        },
-        "properties": {
-          "id": t.id,
-          "name": t.name.toUpperCase().indexOf('ROSA PARKS TR') > -1 ? "Rosa Parks TC" : t.name,
-          "stop_code": t.dir,
+    map.loadImage(bus, (error, image) => {
+      map.addImage('bus', image)
+    })
+
+    map.loadImage(arrow, (error, image) => {
+      map.addImage('arrow', image)
+    })
+
+
+
+    map.on("load", () => {
+
+      setTheMap(map)
+
+      // routes
+      map.getSource("routes").setData({ type: "FeatureCollection", features: routes });
+
+      // timepoints
+      map.addSource("timepoints", {
+        type: 'geojson',
+        data: {
+          type: "FeatureCollection",
+          features: timepointsFeatures
         }
-      }
-    });
-
-    const viewport = new WebMercatorViewport({width: window.innerWidth > 768 ? window.innerWidth * (4/8) - 7.5 : window.innerWidth, height: window.innerWidth > 768 ? ((window.innerHeight - 128) * 1 - 114) : 250});
-    const bound = viewport.fitBounds(scheduleRoute.bbox,
-      { padding: window.innerWidth > 768 ? 50 : window.innerWidth / 20 }
-    );
-
-    this.state = {
-      viewport: {
-        latitude: bound.latitude,
-        longitude: bound.longitude,
-        zoom: bound.zoom,
-        bearing: 0,
-        width: window.innerWidth > 768 ? window.innerWidth * (4/8) - 7.5 : window.innerWidth,
-        height: window.innerWidth > 768 ? ((window.innerHeight - 128) * 1 - 114) : 300
-      },
-      settings: {
-        dragPan: true,
-        scrollZoom: true,
-        touchZoom: true,
-        touchRotate: true,
-        keyboard: true,
-        doubleClickZoom: true,
-        minZoom: 9,
-        maxZoom: 19,
-        minPitch: 0,
-        maxPitch: 0,
-      },
-      directions: Object.keys(scheduleRoute.timepoints),
-      realtimeTrips: [],
-      showRealtime: true,
-      fetched: false,
-      tripIds: tripIds,
-      timepointFeatures: timepointFeatures,
-      stopFeatures: stopFeatures,
-      showTimepoints: false,
-      clickedStop: null,
-      scheduleRoute: scheduleRoute
-    };
-
-    this._resize = this._resize.bind(this);
-    this._updateViewport = this._updateViewport.bind(this);
-  }
-
-  fetchData() {
-    fetch(`${Helpers.endpoint}/trips-for-route/DDOT_${this.props.route.rt_id}.json?key=BETA&includeStatus=true&includePolylines=false`)
-    .then(response => response.json())
-    .then(d => {
-      let geojson = _.sortBy(d.data.list, 'status.tripId').map((bus, i) => {
-        let direction = _.findKey(this.state.tripIds, t => { return t.indexOf(bus.status.activeTripId.slice(-4)) > -1});
-        return {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [bus.status.position.lon, bus.status.position.lat]
+      })
+      map.addLayer({
+        id: "timepoint-points",
+        type: "circle",
+        source: "timepoints",
+        interactive: true,
+        maxzoom: 15,
+        layout: {},
+        paint: {
+          "circle-color": "#444",
+          "circle-stroke-color": "black",
+          "circle-stroke-width": {
+            stops: [[8, 1], [19, 3]]
           },
-          "properties": {
-            "tripId": bus.status.activeTripId,
-            "displayTripId": bus.status.activeTripId.slice(-4,),
-            "scheduledDistanceAlongTrip": bus.status.scheduledDistanceAlongTrip,
-            "nextStop": bus.status.nextStop,
-            "nextStopOffset": bus.status.nextStopTimeOffset,
-            "predicted": bus.status.predicted,
-            "scheduleDeviation": bus.status.scheduleDeviation,
-            "updateTime": moment(bus.status.lastUpdateTime).format("h:mm:ss a"),
-            "onTime": bus.status.scheduleDeviation / 60,
-            "lastStop": this.state.scheduleRoute.timepoints[direction] ? this.state.scheduleRoute.timepoints[direction].slice(-1)[0] : ``,
-            "direction": direction
+          "circle-stroke-opacity": 1,
+          "circle-opacity": 1,
+          "circle-radius": {
+            stops: [[8, 0.5], [10.5, 2.5], [15, 4]]
           }
         }
       });
-      let realtimeTrips = _.filter(geojson, o => { return o.properties.direction !== undefined });
-      this.setState({ 
-        realtimeTrips: realtimeTrips,
-        fetched: true
-      });
-    })
-    .catch(e => console.log(e));
-  }
-
-  _resize = () => {
-    if (window.innerWidth > 768) {
-      this.setState({
-        viewport: {
-          ...this.state.viewport,
-          width: window.innerWidth * (4/8) - 7.5,
-          height: ((window.innerHeight - 128) * 1 - 104)
+      map.addLayer({
+        id: "timepoint-labels",
+        type: "symbol",
+        source: "timepoints",
+        maxzoom: 15,
+        layout: {
+          "text-line-height": 0.8,
+          "text-size": {
+            base: 1,
+            stops: [[6, 6], [11, 10], [13, 14]]
+          },
+          "text-allow-overlap": false,
+          "text-padding": 10,
+          "text-offset": [0, 1.5],
+          "text-font": ["AvenirNext LT Pro Regular Bold"],
+          visibility: "visible",
+          "text-field": ['get', 'stopName'],
+          "text-max-width": 5
+        },
+        paint: {
+          "text-translate": [0, 0],
+          "text-halo-color": "white",
+          "text-halo-width": 2,
+          "text-opacity": {
+            stops: [[9.5, 0], [9.51, 0.1], [9.6, 0.9], [14.9, 0.9], [15, 0]]
+          },
+          "text-color": "black"
         }
       });
-    } else {
-      this.setState({
-        viewport: {
-          ...this.state.viewport,
-          width: window.innerWidth,
-          height: 300
+
+
+      // stops
+      map.addSource("stops", {
+        type: 'geojson',
+        data: {
+          type: "FeatureCollection",
+          features: stopsFeatures
+        }
+      })
+      map.addLayer({
+        id: "stop-points",
+        type: "circle",
+        source: "stops",
+        interactive: true,
+        filter: ["==", "$type", "Point"],
+        layout: {},
+        minzoom: 14,
+        paint: {
+          "circle-color": "white",
+          "circle-stroke-color": "#222",
+          "circle-stroke-width": {
+            stops: [[13, 1], [19, 3]]
+          },
+          "circle-stroke-opacity": {
+            stops: [[13, 0], [13.1, 0.1], [13.2, 0.8]]
+          },
+          "circle-opacity": {
+            stops: [[13, 0], [13.1, 0.1], [13.2, 0.8]]
+          },
+          "circle-radius": {
+            stops: [[13, 1.5], [19, 12]]
+          }
         }
       });
+      map.addLayer({
+        id: "stop-labels",
+        type: "symbol",
+        source: "stops",
+        minzoom: 15,
+        layout: {
+          "text-line-height": 1,
+          "text-size": {
+            base: 1,
+            stops: [[15, 7], [18, 15]]
+          },
+          "text-allow-overlap": true,
+          "text-ignore-placement": true,
+          "text-font": ["AvenirNext LT Pro Regular Bold"],
+          "text-justify": "center",
+          "text-padding": 0,
+          "text-offset": [0, 1],
+          'text-anchor': 'top',
+          // "text-offset": {
+          //   base: 1,
+          //   type: "categorical",
+          //   property: "direction",
+          //   stops: [["eastbound", [0.5, 0.5]], ["westbound", [-0.5, -0.5]], ["northbound", [0.5, -0.5]], ["southbound", [-0.5, 0.5]]]
+          // },
+          // "text-anchor": {
+          //   base: 1,
+          //   type: "categorical",
+          //   property: "direction",
+          //   stops: [["southbound", "top-right"], ["northbound", "bottom-left"], ["eastbound", "top-left"], ["westbound", "bottom-right"]],
+          //   default: "center"
+          // },
+          "text-field": ["get", "stopName"],
+          "text-letter-spacing": -0.01,
+          "text-max-width": 5
+        },
+        paint: {
+          "text-translate": [0, 0],
+          "text-halo-color": "hsl(0, 0%, 100%)",
+          "text-halo-width": 2,
+          "text-color": "hsl(0, 0%, 0%)",
+          "text-opacity": {
+            base: 1,
+            stops: [[15, 0], [15.1, 0.1], [15.2, 1]]
+          }
+        }
+      });
+
+
+      // realtime
+      map.addSource("realtime", {
+        type: "geojson",
+        data: {
+          type: 'FeatureCollection',
+          features: []
+        }
+      })
+      map.addLayer({
+        id: "realtime-highlight",
+        type: "circle",
+        source: "realtime",
+        filter: ["==", ["get", "vid"], tracked],
+        paint: {
+          "circle-radius": 14,
+          "circle-color": "rgba(233,212,96,0.95)"
+        }
+      });
+      map.addLayer({
+        id: "realtime-circle",
+        type: "circle",
+        source: "realtime",
+        paint: {
+          "circle-radius": 8,
+          "circle-color": "rgba(189,189,189,0.97)",
+          "circle-stroke-width": 2
+        }
+      });
+      map.addLayer({
+        id: "realtime-icons",
+        type: "symbol",
+        source: "realtime",
+        layout: {
+          "icon-image": "arrow",
+          "icon-allow-overlap": true,
+          "icon-size": 0.1,
+          // "icon-offset": [0,-100],
+          "icon-rotate": ['to-number', ['get', 'hdg']]
+        }
+      });
+      // map.addLayer({
+      //   id: "realtime-icons",
+      //   type: "symbol",
+      //   source: "realtime",
+      //   layout: {
+      //     "icon-image": "bus",
+      //     "icon-allow-overlap": true,
+      //     "icon-size": 0.3,
+      //     "icon-offset": [0, -50]
+      //   }
+      // });
+
+      map.on("click", "stop-points", e => {
+        let stop = map.queryRenderedFeatures(e.point, {
+          layers: ["stop-points"]
+        })[0];
+
+        navigate(`/stop/${stop.properties.stopCode}`)
+      });
+
+      map.on("click", "realtime-circle", e => {
+        let clickedTrip = map.queryRenderedFeatures(e.point, {
+          layers: ["realtime-circle"]
+        })[0];
+
+        // let matchedTrip = activeTrips.filter(at => at.status.vehicleId === clickedTrip.properties.vehicleId)[0];
+        setTracked(clickedTrip.properties.vid);
+      });
+
+      map.on("mouseover", "stop-points", () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+
+      map.on("mouseleave", "stop-points", () => {
+        map.getCanvas().style.cursor = "";
+      });
+
+    });
+  }, []);
+
+  useEffect(() => {
+    if (theMap && vehicles) {
+      theMap.getSource("realtime").setData({ type: "FeatureCollection", features: vehicles })
+      if (tracked) {
+        let filtered = vehicles.filter(trip => trip.properties.vid === tracked);
+        theMap.setFilter("realtime-highlight", ["==", ['get', 'vid'], tracked])
+
+        if (filtered.length === 0) {
+          return;
+        } else {
+          theMap.easeTo({
+            center: filtered[0].geometry.coordinates,
+            zoom: 15.5
+          });
+        }
+      }
+
+      else {
+        theMap.setFilter("realtime-highlight", ["==", ['get', 'vid'], ''])
+      }
     }
-  }
+  }, [vehicles, theMap, tracked])
 
-  _updateViewport = (viewport) => {
-    this.setState({viewport});
-  }
 
-  _onClick = (event) => {
-    if(this.state.viewport.zoom > 12) {
-      this.setState({ clickedStop: event.features[0] })
-    }
-  }
-  
-  componentDidMount() {
-    window.addEventListener('resize', this._resize);
-    this.fetchData();
-    this.interval = setInterval(() => this.fetchData(), 3000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  render() {
-    const route = this.props.route;
-
-    let style = defaultMapStyle;
-    style = style.setIn(['layers', routeLineIndex, 'filter', 2], parseInt(route.number, 10));
-    style = style.setIn(['layers', routeCaseIndex, 'filter', 2], parseInt(route.number, 10));
-    style = style.setIn(['sources', 'timepoints', 'data'], {"type": "FeatureCollection", "features": this.state.timepointFeatures})
-    style = style.setIn(['sources', 'busstops', 'data'], {"type": "FeatureCollection", "features": this.state.stopFeatures})
-    style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-color'], chroma(route.color).darken(2).hex())
-    style = style.setIn(['layers', stopPointIndex, 'paint', 'circle-stroke-color'], chroma(route.color).darken().hex())
-    style = style.setIn(['layers', timepointLabelIndex, 'paint', 'text-halo-color'], "#fff")
-
-    return (
-      this.state.clickedStop ? <Redirect push to={`/stop/${this.state.clickedStop.properties.id}`} /> :
-      <Card className="routeMap" elevation={0}>
-        <CardContent style={{ padding: 0, margin: 0 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <CardHeader 
-              title={<RouteBadge id={route.number.toString()} showName />} 
-              subheader={
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  Zoom in for all stops and real-time bus info.
-                </div>} />
-              <div style={{display: 'grid', gridTemplate: 'repeat(2, 1fr) / 1fr 1fr', gridGap: 10, marginRight: '.5em', background: 'rgba(0,0,0,0.05)', padding: 10}}>
-                <div style={{display: 'flex', alignItems: 'center', alignContent: 'center', fontWeight: 700}}>
-                  <span style={{textAlign: 'center', textSize: '1.5em'}}></span>
-                </div>
-                <div style={{display: 'flex', alignItems: 'center', alignContent: 'space-between'}}>
-                  <DirectionsBus style={{height: 17, width: 17, padding: 1, borderRadius: 9999, color: 'white', background: 'rgba(0,0,0,1)'}}/>
-                  <span style={{marginLeft: '.5em'}}>Active buses</span>
-                </div>
-                <div style={{display: 'flex', alignItems: 'center', alignContent: 'space-between'}}>
-                  <span style={{borderRadius: 9999, border: '3px solid black', width: 13, height: 13, background: '#000'}}></span>
-                  <span style={{marginLeft: '.5em', textAlign: 'center'}}>Major stops</span>
-                </div>
-                <div style={{display: 'flex', alignItems: 'center', alignContent: 'space-between'}}>
-                  <span style={{borderRadius: 9999, border: `3px solid ${this.props.route.color}`, width: 13, height: 13, background: '#fff'}}></span>
-                  <span style={{marginLeft: '.5em'}}>Local stops</span>
-                </div>
-              </div>
-          </div>
-          <MapGL
-            {...this.state.viewport}
-            {...this.state.settings}
-            mapStyle={style}
-            mapboxApiAccessToken={Helpers.mapboxApiAccessToken} 
-            onViewportChange={this._updateViewport} 
-            onClick={this._onClick}>
-            {this.state.realtimeTrips.map((rt, i) => (
-              <div key={i}>
-              <Marker latitude={rt.geometry.coordinates[1]} longitude={rt.geometry.coordinates[0]} offsetLeft={-12} offsetTop={-12} >
-                {this.state.viewport.zoom > 14.5 ? 
-                  <div>
-                    <DirectionsBus style={{ borderRadius: 9999, background: 'rgba(0,0,0,.9)', padding: 2.5, color: 'white' }} />
-                    <Card style={{ background: 'rgba(255,255,255,0.95)' }}>
-                      <CardHeader 
-                        avatar={rt.properties.predicted ? <LiveIcon /> : <ScheduleIcon />}
-                        title={_.capitalize(rt.properties.direction)} 
-                        subheader={`to ${Stops[this.state.scheduleRoute.timepoints[rt.properties.direction].slice(-1)].name}`} 
-                        style={{ fontSize: '.75em' }} />
-                      <CardContent>
-                        <span style={{ display: 'block' }}>Next stop: {Stops[rt.properties.nextStop.slice(5,)].name}</span>
-                        {rt.properties.predicted ? 
-                                    (<span style={rt.properties.scheduleDeviation > 0 ? styles.behind : styles.ahead}>
-                                    {rt.properties.scheduleDeviation === 0 ? `on time` : (
-                                        `${Math.abs(rt.properties.scheduleDeviation/60)} min ${rt.properties.scheduleDeviation >= 0 ? ' late' : ' early'}`
-                                    )}</span>)
-                                    
-                                : `` }                      
-                      </CardContent>
-                    </Card>
-                  </div>
-                : <DirectionsBus style={{ height: 20, padding: 1, borderRadius: 9999, color: 'white', background: 'rgba(0,0,0,1)' }} />}
-              </Marker>
-              </div>
-            ))}
-            <div style={{ position: 'absolute', right: 15, top: 15, transform: 'scale(1.1, 1.1)' }}>
-              <NavigationControl onViewportChange={this._updateViewport} showCompass={false} />
-            </div>
-          </MapGL>
-        </CardContent>
-      </Card>
-    );
-  }
-}
-
-RouteMap.propTypes = {
-  route: PropTypes.object.isRequired,
-}
+  return (
+    <div id="map" />
+  );
+};
 
 export default RouteMap;

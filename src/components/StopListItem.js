@@ -1,39 +1,32 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { ListItem, ListItemText } from '@material-ui/core/List';
+import { Link } from "gatsby";
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 
-import Stops from '../data/stops.js';
 
-/** Unused? */
-class StopListItem extends Component {
-  render() {
-    let routes = [];
+export const StopListItem = ({ stopTime, routeColor, small=false }) => {
 
-    if (Stops[this.props.id]) {
-      if (this.props.showTransfers && Stops[this.props.id] && Stops[this.props.id].transfers.length > 0) {
-        routes = Stops[this.props.id].routes;
-        Stops[this.props.id].transfers.map(t => {
-          return routes = routes.concat(t[1])
-        })
-        routes = Array.from(new Set(routes)).sort()
-      } else {
-        routes = Stops[this.props.id].routes.sort()
-      }
-    }
+  let liStyle = {
+    borderColor: `#${routeColor}`,
+  };
 
-    return (
-      <ListItem button>
-        <ListItemText
-          primary={Stops[this.props.id].name}
-          secondary={routes.map((r, i) => (`${r}`)).join(",")} />
-      </ListItem>
-    );
-  }
-}
+  let normalStopStyle = {
+    borderColor: `#${routeColor}`,
+    backgroundColor: `white`,
+  };
 
-StopListItem.propTypes = {
-  id: PropTypes.string.isRequired,
-  exclude: PropTypes.string,
-}
+  let timepointStyle = {
+    borderColor: `black`,
+    backgroundColor: `black`,
+  };
 
-export default StopListItem;
+  return (
+    <div className={"flex items-center border-l-4 py-2 ml-2"} style={liStyle} key={stopTime.stop.stopCode}>
+      <span className={small ? `w-3 h-3 rounded-full border-4 -ml-2` : `w-5 h-5 rounded-full border-4 -ml-3`} style={stopTime.timepoint ? timepointStyle : normalStopStyle}></span>
+      <Link to={`/stop/${stopTime.stop.stopCode}`}>
+        <span className="ml-2">{stopTime.stop.stopName.replace(" - Deboarding", "")}</span>
+        <span className="text-xs text-gray-700 bg-gray-200 p-1 mx-3">#{stopTime.stop.stopCode}</span>
+      </Link>
+    </div>
+  );
+};

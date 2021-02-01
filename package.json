@@ -4,6 +4,10 @@
   "description": "GTFS => A schedule browser",
   "version": "1.0.0",
   "author": "Jimmy McBroom <james.mcbroom@gmail.com>",
+  "contributors": [
+    "Jimmy McBroom",
+    "Jessica McInchak"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
@@ -12,7 +16,7 @@
     "@graphile/postgis": "^0.1.0",
     "@mdx-js/mdx": "^1.6.17",
     "@turf/bbox": "^6.0.1",
-    "gatsby": "^2.24.54",
+    "gatsby": "^2.31.1",
     "gatsby-image": "^2.4.17",
     "gatsby-plugin-manifest": "^2.4.28",
     "gatsby-plugin-offline": "^3.2.27",
@@ -24,15 +28,19 @@
     "gatsby-transformer-sharp": "^2.5.14",
     "mapbox-gl": "^1.12.0",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
+    "react": "^17.0.1",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
+    "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "tailwindcss": "^1.8.10"
   },
   "devDependencies": {
     "@tailwindcss/custom-forms": "^0.2.1",
     "prettier": "2.1.1"
+  },
+  "resolutions": {
+    "graphql": "14.x"
   },
   "keywords": [
     "gatsby"

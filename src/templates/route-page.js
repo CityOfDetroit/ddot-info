@@ -13,7 +13,7 @@ import SectionHeader from '../components/SectionHeader';
 import SectionContainer from '../components/SectionContainer';
 import { Vehicle } from '../components/Vehicle';
 
-export default ({ data, pageContext }) => {
+const RoutePage = ({ data, pageContext }) => {
 
   let r = data.postgres.route[0];
   let { trips, longTrips, routeColor, routeType } = r;
@@ -90,7 +90,6 @@ export default ({ data, pageContext }) => {
 
   let [tracked, setTracked] = useState(null)
 
-  console.log(ddotRt)
   return (
     <Layout gridClass={"route-grid"}>
       <div>
@@ -213,7 +212,7 @@ export const query = graphql`
     }
     postgres {
       route: allRoutesList(
-        condition: { routeShortName: $routeNo, feedIndex: 1 }
+        condition: { routeShortName: $routeNo, feedIndex: 4 }
       ) {
         agencyId
         routeShortName
@@ -288,3 +287,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default RoutePage;

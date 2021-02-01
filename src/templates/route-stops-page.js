@@ -6,7 +6,7 @@ import { RouteTitle } from '../components/RouteSign'
 import DirectionPicker from '../components/DirectionPicker'
 import { RouteStopsList } from "../components/RouteStopsList";
 
-export default ({ data }) => {
+const RouteStopsPage = ({ data }) => {
 
   let ddotRoutes = data.allDdotRoute.edges.map(e => e.node);
   let routeOrientation;
@@ -81,7 +81,7 @@ query($routeNo: String!) {
   }
   postgres {
     route: allRoutesList(
-      condition: { routeShortName: $routeNo, feedIndex: 1 }
+      condition: { routeShortName: $routeNo, feedIndex: 4 }
     ) {
       agencyId
       routeShortName
@@ -138,3 +138,5 @@ query($routeNo: String!) {
 }
 
 `;
+
+export default RouteStopsPage;

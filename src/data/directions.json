@@ -8,6 +8,7 @@
         "1": "East"
     },
     "CW": {
-        "0": "Clockwise"
+        "0": "Clockwise",
+        "1": "Clockwise"
     }
 }

@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 
 import style from "../css/mapstyle.json";
 
-const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentTrip, predictions }) => {
+const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentRoute, currentTrip, predictions }) => {
 
   let [theMap, setTheMap] = useState(null)
 
@@ -45,7 +45,6 @@ const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentTrip, predi
       // routes
       map.getSource("routes").setData({ type: "FeatureCollection", features: routeFeatures });
 
-
       map.addSource("stop", {
         type: 'geojson',
         data: {
@@ -67,16 +66,14 @@ const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentTrip, predi
           "circle-color": "yellow",
           "circle-stroke-color": "#222",
           "circle-stroke-width": {
-            stops: [[13, 1], [19, 3]]
+            stops: [[10, 1], [19, 3]]
           },
           "circle-stroke-opacity": {
-            stops: [[13, 0], [13.1, 0.1], [13.2, 0.8]]
+            stops: [[8, 0], [8.1, 0.1], [13.2, 0.8]]
           },
-          "circle-opacity": {
-            stops: [[13, 0], [13.1, 0.1], [13.2, 0.8]]
-          },
+          "circle-opacity": 1,
           "circle-radius": {
-            stops: [[13, 1.5], [19, 12]]
+            stops: [[8, 3.5], [13, 3.5], [19, 12]]
           }
         }
       });
@@ -89,7 +86,7 @@ const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentTrip, predi
           "text-line-height": 1,
           "text-size": {
             base: 1,
-            stops: [[15, 7], [18, 15]]
+            stops: [[8, 7], [18, 15]]
           },
           "text-allow-overlap": true,
           "text-ignore-placement": true,
@@ -109,7 +106,7 @@ const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentTrip, predi
           "text-color": "hsl(0, 0%, 0%)",
           "text-opacity": {
             base: 1,
-            stops: [[15, 0], [15.1, 0.1], [15.2, 1]]
+            stops: [[8, 0], [8.1, 0.8], [15.2, 1]]
           }
         }
       });
@@ -182,6 +179,13 @@ const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentTrip, predi
       }
     }
   }, [predictions, theMap, currentTrip])
+
+  useEffect(() => {
+    if (theMap) {
+      let filteredRoutes = routeFeatures.filter(rf => rf.properties.short === currentRoute.toString())
+      theMap.getSource("routes").setData({ type: "FeatureCollection", features: filteredRoutes });
+    }
+  }, [theMap, currentRoute])
 
   return (
     <div id="map" />

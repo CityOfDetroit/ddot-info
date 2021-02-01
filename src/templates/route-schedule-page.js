@@ -8,7 +8,7 @@ import DirectionPicker from '../components/DirectionPicker'
 import ServicePicker from "../components/ServicePicker";
 import RouteTimetable from "../components/RouteTimetable";
 
-export default ({ data }) => {
+const RouteSchedulePage = ({ data }) => {
 
   let ddotRoutes = data.allDdotRoute.edges.map(e => e.node);
   let routeOrientation;
@@ -37,7 +37,12 @@ export default ({ data }) => {
   
   // get services
   let services = Array.from(new Set(trips.map(t => t.service))).sort((a, b) => a > b)
-  let [service, setService] = useState(services[0])
+  let now = new Date
+  let dow = now.getDay()
+  let currentService = services[0];
+  if (dow === 6 && services.length > 1) { currentService = services[2]}
+  if (dow === 0 && services.length > 2) { currentService = services[1]}
+  let [service, setService] = useState(currentService)
 
   return (
     <Layout>
@@ -77,7 +82,7 @@ query($routeNo: String!) {
     }
   }
   postgres {
-    route: allRoutesList(condition: { routeShortName: $routeNo, feedIndex: 1 }) {
+    route: allRoutesList(condition: { routeShortName: $routeNo, feedIndex: 4 }) {
       agencyId
       routeShortName
       routeLongName
@@ -100,7 +105,7 @@ query($routeNo: String!) {
           }
           stop: stopByFeedIndexAndStopId {
             stopId
-            stopName
+            stopCode
             stopName
           }
         }
@@ -120,10 +125,12 @@ query($routeNo: String!) {
           stop: stopByFeedIndexAndStopId {
             stopId
             stopName
-            stopName
+            stopCode
           }
         }
       }
     }
   }
 }`;
+
+export default RouteSchedulePage;

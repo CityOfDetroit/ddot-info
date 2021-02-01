@@ -42,8 +42,8 @@ exports.sourceNodes = async ({
     if (properties.Direction === 'Northbound') {
       directionId = 1
     }
-    if (properties.Direction === 'Clockwise') {
-      directionId = 0
+    if (properties.Direction === 'Loop') {
+      directionId = 1
     }
     
     let props = {
@@ -111,12 +111,12 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   const result = await graphql(`
     {
       postgres {
-        routes: allRoutesList(condition: { feedIndex: 1 }, orderBy: ROUTE_SHORT_NAME_ASC) {
+        routes: allRoutesList(condition: { feedIndex: 4 }, orderBy: ROUTE_SHORT_NAME_ASC) {
           agencyId
           short: routeShortName
           long: routeLongName
         }
-        stops: allStopsList(condition: { feedIndex: 1 }, orderBy: STOP_ID_ASC, first: 200 ) {
+        stops: allStopsList(condition: { feedIndex: 4 }, orderBy: STOP_ID_ASC ) {
           feedIndex
           stopId
           stopCode

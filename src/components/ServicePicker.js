@@ -3,6 +3,9 @@ import React from 'react';
 import feedServices from '../data/services.json'
 
 const ServicePicker = ({ services, service, setService, inline = true }) => {
+    if (services.length === 3) {
+        services = ["1", "3", "2"]
+    }
     return (
         <div className="py-2 px-2 bg-gray-100 text-sm">
             <h3>Day of week:</h3>

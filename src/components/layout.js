@@ -39,8 +39,13 @@ const Layout = ({ gridClass=null, children }) => {
       >
         <main className={gridClass}>{children}</main>
       </div>
-      <footer className="p-2 bg-gray-100 w-100 text-xs" style={maxWidthStyle}>
-        © {new Date().getFullYear()}, <a href="https://detroitmi.gov/departments/detroit-department-transportation">Detroit Department of Transporation.</a>
+      <footer className="p-2 bg-gray-100 w-100 text-xs flex justify-between " style={maxWidthStyle}>
+        <span>
+          © {new Date().getFullYear()}, <a href="https://detroitmi.gov/departments/detroit-department-transportation">Detroit Department of Transportation.</a>
+        </span>
+        <span>
+          <a href="https://airtable.com/shrugiMUTLnAn77Xd">Have a question or comment? Tell us here.</a>
+        </span>
       </footer>
     </>
   )

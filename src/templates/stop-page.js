@@ -47,12 +47,12 @@ const NextArrivals = ({ routeFeatures, predictions, currentTrip, setCurrentTrip 
   return (
     <SectionContainer>
       <SectionHeader icon={faRss} title="Next arrivals here" />
-      {nextBuses.map((nb, i) => <Prediction prediction={nb} {...{currentTrip, setCurrentTrip, routeFeatures}} />)}
+      {nextBuses.map((nb, i) => <Prediction prediction={nb} key={nb.vid} {...{currentTrip, setCurrentTrip, routeFeatures}} />)}
     </SectionContainer>
   )
 }
 
-export default ({ data }) => {
+const StopPage = ({ data }) => {
   const s = data.postgres.stop;
 
   let { stopLon, stopLat, stopName, routes, times } = s;
@@ -98,7 +98,7 @@ export default ({ data }) => {
         <StopHeader {...{ stop: s }} />
         <SectionContainer>
           <SectionHeader icon={faMap} title={`Stop map`} />
-          <StopMap {...{ stopLon, stopLat, stopName, routeFeatures, currentTrip, predictions }} />
+          <StopMap {...{ stopLon, stopLat, stopName, routeFeatures, currentRoute, currentTrip, predictions }} />
         </SectionContainer>
         {predictions && <NextArrivals {...{ routeFeatures, predictions, currentTrip, setCurrentTrip }} />}
       </div>
@@ -122,19 +122,21 @@ export const query = graphql`
           direction
           orientation
           directionId
+          localService
+          RouteType: routeType
           route {
+            type
             geometry {
               coordinates
               type
             }
-            type
           }
           short
         }
       }
     }
     postgres {
-      stop: stopByFeedIndexAndStopId(stopId: $stopId, feedIndex: 1) {
+      stop: stopByFeedIndexAndStopId(stopId: $stopId, feedIndex: 4) {
         stopId
         stopCode
         stopName
@@ -180,3 +182,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default StopPage;

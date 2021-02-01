@@ -41,14 +41,14 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   {
     postgres {
-      routes: allRoutesList(condition: { feedIndex: 1 }, orderBy: ROUTE_SORT_ORDER_ASC) {
+      routes: allRoutesList(condition: { feedIndex: 4 }, orderBy: ROUTE_SORT_ORDER_ASC) {
         short: routeShortName
         long: routeLongName
         color: routeColor
         desc: routeDesc
         routeId
       }
-      stops: allStopsList(condition: { feedIndex: 1 }) {
+      stops: allStopsList(condition: { feedIndex: 4 }) {
         stopId
         stopName
       }

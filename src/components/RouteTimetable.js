@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
+import {Link} from 'gatsby';
 
 const arrivalTimeDisplay = (time, showAp) => {
     let hour = time.hours;
@@ -81,7 +82,10 @@ const RouteTimetable = ({ trips, longTrips, service, direction, routeColor }) =>
                             <th key={`${s.stop.stopCode} + ${k}`} className="text-sm timetable-header mb-2 w-40">
                                 <div className="flex flex-col items-center justify-end h-20">
                                     <p className="mb-1 mx-1">
-                                        {s.stop.stopName.replace(" - Deboarding", "")}
+                                        <Link to={`/stop/${s.stop.stopCode}`}>
+                                            
+                                            {s.stop.stopName.replace(" - Deboarding", "")}
+                                            </Link>
                                     </p>
                                     <FontAwesomeIcon icon={faChevronCircleRight} size="lg" className="relative z-10 bg-white" />
                                 </div>

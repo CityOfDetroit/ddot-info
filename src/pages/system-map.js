@@ -58,7 +58,7 @@ query MyQuery {
     }
   }
   pg: postgres {
-    allRoutes(condition: {feedIndex: 1}) {
+    allRoutes(condition: {feedIndex: 4}) {
       edges {
         node {
           routeColor

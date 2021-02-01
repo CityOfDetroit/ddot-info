@@ -158,7 +158,7 @@ const RoutePage = ({ data, pageContext }) => {
             </tr>}</>}</tbody>
           </table>
           <div className="text-md text-gray-700 gibson-bold p-2 flex items-center">
-            <Link to="./schedule" >
+            <Link to="./schedule" aria-label="Schedule" >
               <span>View full schedule</span>
               <FontAwesomeIcon icon={faArrowCircleRight} className="ml-1" />
             </Link>
@@ -169,7 +169,7 @@ const RoutePage = ({ data, pageContext }) => {
           <DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} className="bg-gray-200 text-gray-700 px-2 text-xs mb-1" />
           <RouteStopsList {...{ longTrips, direction, routeColor }} timepointsOnly small />
           <div className="text-md text-gray-700 gibson-bold p-2 flex items-center">
-            <Link to="./stops" >
+            <Link to="./stops" aria-label="Stops" >
               <span>View all stops</span>
               <FontAwesomeIcon icon={faArrowCircleRight} className="ml-1" />
             </Link>

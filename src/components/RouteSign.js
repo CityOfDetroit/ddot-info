@@ -6,10 +6,10 @@ import RouteNumber from "./RouteNumber"
 
 export const RouteLinks = ({ number }) => {
   return (<div>
-    <Link to={`/route/${number}/stops`} prefetch={"false"}>
+    <Link to={`/route/${number}/stops`} aria-label={`route ${number} stops page`} prefetch={"false"}>
       <FontAwesomeIcon icon={faBus} className='opacity-25 mx-3 text-lg' />
     </Link>
-    <Link to={`/route/${number}/schedule`} prefetch={"false"}>
+    <Link to={`/route/${number}/schedule`} aria-label={`route ${number} schedule page`} prefetch={"false"}>
       <FontAwesomeIcon icon={faClock} className='opacity-25 mx-3 text-lg' />
     </Link>
   </div>
@@ -19,7 +19,7 @@ export const RouteLinks = ({ number }) => {
 export const RouteTitle = ({ short, color, long, bold=true, link=false }) => (
   <div className="flex items-center content-start">
     <RouteNumber number={short} color={color} />
-    <Link to={`/route/${short}`} prefetch={"false"}>
+    <Link aria-label={`${long} route page`} to={`/route/${short}`} prefetch={"false"}>
       <span className={bold ? "flex items-center font-semibold" : "flex items-center font-thin"}>
         {long}
       </span>

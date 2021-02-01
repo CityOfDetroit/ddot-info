@@ -19,6 +19,7 @@ const Header = ({ siteTitle }) => (
     >      <h1 style={{ margin: 0 }}>
         <Link
           to="/"
+          aria-label="Home"
           style={{
             color: `white`,
             textDecoration: `none`,
@@ -28,10 +29,10 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
         <div className="flex">
-          <Link to={`/about`}>
+          <Link to={`/about`} aria-label="About">
             <FontAwesomeIcon icon={faInfoCircle} className='header-icon' />
             </Link>
-          <Link to={`/`}>
+          <Link to={`/`} aria-label="Home">
           <FontAwesomeIcon icon={faHome} className='header-icon' />
             </Link>
         </div>

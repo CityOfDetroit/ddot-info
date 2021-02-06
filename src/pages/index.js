@@ -4,6 +4,8 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/layout"
 import RoutesList from '../components/RoutesList'
 import SystemMap from '../components/SystemMap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBus, faClock, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 
 const nodeToFeature = (node, matching) => {
   let { route, ...props } = node
@@ -17,7 +19,7 @@ const nodeToFeature = (node, matching) => {
 
 const IndexPage = ({ data }) => {
 
-  let {routes} = data.postgres
+  let { routes } = data.postgres
 
   let features = data.allDdotRoute.edges.map(e => {
     let match = routes.filter(f => f.short === e.node.short)[0]
@@ -28,10 +30,11 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout gridClass="index-grid">
-      <h1 className="text-lg font-semibold">Welcome to ddot.info</h1>
-      <section className="mb-3">
-        <h2>Choose your route</h2>
-        <p className="gibson mb-2">Click on a route number or name for an overview. Click an icon to go directly to that route's bus stops or schedule.</p>
+      <h1 className="text-2xl">Welcome to ddot.info</h1>
+      <p className="py-1">You can find a description, map, and real-time information for your bus route by clicking the name of the route.</p>
+      <p className="py-1">Click the bus icon <FontAwesomeIcon icon={faBus} className="mx-1" /> for a listing of bus stops, or the schedule <FontAwesomeIcon icon={faClock} className="mx-1" /> icon for a timetable at major stops.</p>
+      <section className="mb-3 mt-4">
+        <h2 className="text-xl mb-3">Choose your route</h2>
         <RoutesList routes={routes} />
       </section>
     </Layout>

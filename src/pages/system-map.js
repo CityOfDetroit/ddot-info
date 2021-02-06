@@ -18,6 +18,8 @@ export default ({ data }) => {
 
   let pgRoutes = data.pg.allRoutes.edges.map(e => e.node)
 
+  let stops = data.pg.allStops
+
   let features = data.allDdotRoute.edges.map(e => {
 
     let match = pgRoutes.filter(f => f.routeShortName === e.node.short)[0]
@@ -26,9 +28,18 @@ export default ({ data }) => {
 
   let routeFeatures = { type: "FeatureCollection", features: features }
 
+  let stopsFeatures = stops.map(t => {
+    let { theGeom, ...props } = t
+    return {
+      "type": "Feature",
+      "geometry": theGeom['geojson'],
+      "properties": props
+    }
+  })
+
   return (
     <Layout>
-      <SystemMap {...{ routeFeatures }} />
+      <SystemMap {...{ routeFeatures, stopsFeatures }} />
     </Layout>
 
   );
@@ -65,6 +76,13 @@ query MyQuery {
           routeDesc
           routeShortName
         }
+      }
+    }
+    allStops: allStopsList(condition: {feedIndex: 4}) {
+      stopName
+      stopCode
+      theGeom {
+				geojson
       }
     }
   }

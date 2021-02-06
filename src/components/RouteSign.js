@@ -17,7 +17,7 @@ export const RouteLinks = ({ number }) => {
 }
 
 export const RouteTitle = ({ short, color, long, bold=true, link=false }) => (
-  <div className="flex items-center content-start">
+  <div className="flex items-center content-start text-lg">
     <RouteNumber number={short} color={color} />
     <Link aria-label={`${long} route page`} to={`/route/${short}`} prefetch={"false"}>
       <span className={bold ? "flex items-center font-semibold" : "flex items-center font-thin"}>

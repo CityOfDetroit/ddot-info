@@ -1,39 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import _ from 'lodash';
-import { Radio, RadioGroup } from '@material-ui/core';
-import { FormControl, FormControlLabel } from '@material-ui/core';
 
-import Stops from '../data/stops.js';
+import feedDirs from '../data/directions.json'
 
-/** Service direction picker for RouteSchedule and RouteStopList */
-class DirectionPicker extends React.Component {
-  render() {
+const DirectionPicker = ({ directions, direction, setDirection, routeOrientation, className, inline=true }) => {
+
     return (
-      <FormControl component="fieldset" required>
-        <RadioGroup name="directions" value={this.props.currentDirection} onChange={this.props.onChange}>
-          {this.props.directions.map(s => (
-            <FormControlLabel key={s} value={s} control={<Radio/>} label={window.innerWidth > 650 ? `${_.capitalize(s)} to ${Stops[this.props.route.timepoints[s].slice(-1)].name}` : `${_.capitalize(s)}`} />
-          ))}
-        </RadioGroup>
-      </FormControl>
-    );
-  }
+        <div className={"py-2 bg-gray-100 text-sm px-2"}>
+            <h3>Direction:</h3>
+            <div>
+            {directions.map(d => (
+                <div className={inline ? " inline mr-3 items-center" : "flex items-center"} key={d} role="presentation" onClick={() => setDirection(d)} onKeyDown={(e) => e.keycode === 13 && setDirection(d)}>
+                    <label className="inline">
+                        <input type='radio' checked={direction === d} readOnly />
+                        <span className="pl-2">{feedDirs[routeOrientation][d]}</span>
+                    </label>
+                </div>
+            ))}
+            </div>
+        </div>
+    )
 }
 
-DirectionPicker.propTypes = {
-  directions: PropTypes.array.isRequired,
-  currentDirection: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  route: PropTypes.shape({
-    bbox: PropTypes.array,
-    color: PropTypes.string,
-    id: PropTypes.string,
-    rt_id: PropTypes.number,
-    rt_name: PropTypes.string,
-    schedules: PropTypes.object,
-    timepoints: PropTypes.object
-  }).isRequired,
-}
-
-export default DirectionPicker;
+export default DirectionPicker

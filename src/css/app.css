@@ -1,118 +1,133 @@
-@font-face{
+@font-face {
   font-family: "Gibson Detroit Regular";
   src: url("./fonts/GibsonDetroit-Reg.eot");
-  src: url("./fonts/GibsonDetroit-Reg.woff") format("woff"),
-       url("./fonts/GibsonDetroit-Reg.svg#filename") format("svg")
+  src: url("./fonts/GibsonDetroit-Reg.woff") format("woff"), url("./fonts/GibsonDetroit-Reg.svg#filename") format("svg");
 }
-@font-face{
+@font-face {
   font-family: "Gibson Detroit Light";
   src: url("./fonts/GibsonDetroit-Light.eot");
-  src: url("./fonts/GibsonDetroit-Light.woff") format("woff"),
-       url("./fonts/GibsonDetroit-Light.svg#filename") format("svg")
+  src: url("./fonts/GibsonDetroit-Light.woff") format("woff"), url("./fonts/GibsonDetroit-Light.svg#filename") format("svg");
 }
 
-body {
-  font-family: "Gibson Detroit Regular", "Gibson Detroit Light", sans-serif;
-  margin: 0;
-  padding: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+span, p {
+  font-family: "Gibson Detroit Regular";
 }
 
-@media screen and (max-width: 768px) {
-  /* .map {
-    height: 400px;
-  } */
+h1, h2, h3, h4 {
+  font-family: "Gibson Detroit Regular";
+  @apply font-semibold;
+  @apply mb-1;
 }
 
-@media screen and (min-width: 768px) {
-  .App, .BusRoute, .nearby {
+a {
+  text-decoration: underline;
+}
+
+li {
+  @apply m-0;
+  @apply p-0;
+  @apply text-xs;
+}
+
+.header-icon {
+  @apply ml-4;
+  color: white;
+}
+
+.gibson {
+  font-family: 'Gibson Detroit Light';
+}
+
+.gibson-bold {
+  font-family: 'Gibson Detroit Regular';
+}
+
+/* timetable */
+
+.timetable {
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+.timetable-header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  min-width: 6rem;
+}
+
+.section-scroll {
+  max-height: 45vh;
+  overflow-y: auto;
+}
+
+#map {
+  min-height: 200px;
+}
+
+.schedule-table {
+  font-family: "Gibson Detroit Regular";
+  @apply w-full;
+  @apply text-sm;
+}
+
+.schedule-table td, .schedule-table th {
+  @apply px-2;
+  @apply py-1;
+}
+
+.schedule-table th {
+  @apply text-left;
+  @apply text-xs;
+}
+
+@media only screen and (max-width: 600px) {
+  .route-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stop-grid {
+    display: flex;
+    flex-direction: column;
+  }  
+
+  .main-layout {
+    @apply px-2;
+  }
+
+  #map {
+    height: 35vh;
+  }
+
+  #system-map {
+    height: 75vh;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+
+  .route-grid {
     display: grid;
-    grid-template: auto repeat(8, 1fr) auto / repeat(8, 1fr);
-    grid-gap: 15px;
-    height: 100vh;
-    width: 100vw;
+    grid-template-columns: 3fr 2fr;
+    gap: 1em;
   }
 
-  .nav {
-    grid-row: 1/2;
-    grid-column: 1/9;
+  .stop-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1em;
+  }  
+
+  #map {
+    height: 45vh;
   }
 
-  .footer {
-    grid-column: 1/9;
-    grid-row: 10/11;
-  }
-  
-  .header {
-    grid-row: 1/2;
-    grid-column: 1/9;
-  }
-
-  /* Homepage */
-  .explainer {
-    grid-row: 2/3;
-    grid-column: 1/9;
-  }
-
-  .routes-homepage {
-    grid-row: 3/6;
-    grid-column: 1/6;
-  }
-
-  .stops {
-    grid-row: 3/6;
-    grid-column: 6/9;
-  }
-
-  .systemMap {
-    grid-row: 7/8;
-    grid-column: 1/9;
-  }
-
-  .footer-homepage {
-    grid-row: 8/9;
-    grid-column: 1/9;
-  }
-
-  .details {
-    grid-row: 2/10;
-    grid-column: 5/9;
-  }
-  .routeMap {
-    grid-column: 1/5;
-    grid-row: 2/11;
-  }
-
-  .stopList {
-    grid-row: 2/11;
-    grid-column: 5/9;
-    overflow-y: scroll;
-  }
-
-  /* Stop, LineRealTime */
-  .map {
-    grid-column: 1/5;
-    grid-row: 2/11;
-    border: 5px solid white;
-  }
-  .routes {
-    grid-column: 5/9;
-    grid-row: 2/11;
-    overflow-y: auto;
-  }
-
-  /* / */
-  .search {
-    grid-column: 1/4;
-    grid-row: 2/11;
-  }
-  .geolocate {
-    grid-column: 5/9;
-    grid-row: 2/9;
-  }
-
-  /* LineSchedule */
-  .schedule {
-    grid-column: 1/9;
-    grid-row: 2/9;
+  #system-map {
+    height: 80vh;
   }
 }

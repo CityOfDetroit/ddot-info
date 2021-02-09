@@ -81,6 +81,11 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
 
       setTheMap(map)
 
+      routes.forEach((r, i) => {
+        if(r.properties.color = '#FFFFFF') {
+          routes[i].properties.color='#5f6369'
+        }
+      })
       // routes
       map.getSource("routes").setData({ type: "FeatureCollection", features: routes });
 

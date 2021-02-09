@@ -6,11 +6,21 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `DDOT`,
+    title: `DDOT.info`,
     description: `Schedule information and more for Detroit's bus system`,
     author: `@rideddot`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-107915075-4",
+        // this option places the tracking script into the head of the DOM
+        head: true,
+        // other options
+        respectDNT: true
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     {
@@ -44,6 +54,6 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }

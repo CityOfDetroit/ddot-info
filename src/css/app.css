@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "Gibson Detroit Regular";
   src: url("./fonts/GibsonDetroit-Reg.eot");
@@ -8,10 +12,6 @@
   src: url("./fonts/GibsonDetroit-Light.eot");
   src: url("./fonts/GibsonDetroit-Light.woff") format("woff"), url("./fonts/GibsonDetroit-Light.svg#filename") format("svg");
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 span, p {
   font-family: "Gibson Detroit Regular";

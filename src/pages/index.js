@@ -6,6 +6,13 @@ import RoutesList from '../components/RoutesList'
 import SystemMap from '../components/SystemMap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBus, faClock, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
+import { config } from '@fortawesome/fontawesome-svg-core';
+
+import '../css/app.css'
+
+config.autoAddCss = false;
 
 const nodeToFeature = (node, matching) => {
   let { route, ...props } = node
@@ -44,14 +51,14 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   {
     postgres {
-      routes: allRoutesList(condition: { feedIndex: 4 }, orderBy: ROUTE_SORT_ORDER_ASC) {
+      routes: allRoutesList(condition: { feedIndex: 5 }, orderBy: ROUTE_SORT_ORDER_ASC) {
         short: routeShortName
         long: routeLongName
         color: routeColor
         desc: routeDesc
         routeId
       }
-      stops: allStopsList(condition: { feedIndex: 4 }) {
+      stops: allStopsList(condition: { feedIndex: 5 }) {
         stopId
         stopName
       }

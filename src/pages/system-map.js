@@ -14,7 +14,7 @@ const nodeToFeature = (node, matching) => {
   }
 }
 
-export default ({ data }) => {
+const SystemMapPage = ({ data }) => {
 
   let pgRoutes = data.pg.allRoutes.edges.map(e => e.node)
 
@@ -69,7 +69,7 @@ query MyQuery {
     }
   }
   pg: postgres {
-    allRoutes(condition: {feedIndex: 4}) {
+    allRoutes(condition: {feedIndex: 5}) {
       edges {
         node {
           routeColor
@@ -78,7 +78,7 @@ query MyQuery {
         }
       }
     }
-    allStops: allStopsList(condition: {feedIndex: 4}) {
+    allStops: allStopsList(condition: {feedIndex: 5}) {
       stopName
       stopCode
       theGeom {
@@ -87,3 +87,5 @@ query MyQuery {
     }
   }
 }`
+
+export default SystemMapPage;

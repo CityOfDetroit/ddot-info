@@ -19,7 +19,7 @@ const RoutesPage = ({ data }) => {
 export const query = graphql`
   {
     postgres {
-      routes: allRoutesList(condition: { feedIndex: 4 }) {
+      routes: allRoutesList(condition: { feedIndex: 5 }) {
         short: routeShortName
         long: routeLongName
         color: routeColor

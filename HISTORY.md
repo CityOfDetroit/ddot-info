@@ -12,6 +12,11 @@ Updated to latest GTFS version, valid 2021-02-08 through 2021-04-30.
 
 - Mask-required alert banner and COVID policy page.
 
+### Fixed
+
+- Weird bug where FontAwesome icons flashed very big on the screen before anything else loaded.
+- Google Analytics tracking; we do respect the DNT option.
+
 ## 1.0.1 - 2021-01-31
 
 Updated to latest GTFS version, valid 2020-12-21 through 2021-02-28.

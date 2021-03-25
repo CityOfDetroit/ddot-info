@@ -41,12 +41,13 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
       style: style,
       bounds: bounds,
       fitBoundsOptions: {
-        padding: 50
+        padding: 20
       },
       zoom: 12.75 // starting zoom
     });
 
-    map.addControl(new mapboxgl.FullscreenControl());
+    map.addControl(new mapboxgl.FullscreenControl(), 
+    'bottom-right');
 
     map.addControl(
       new mapboxgl.GeolocateControl({
@@ -54,7 +55,8 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
       enableHighAccuracy: true
       },
       trackUserLocation: true
-      })
+      }), 
+      'bottom-right'
       );
 
     let ctrl = new mapboxgl.NavigationControl({

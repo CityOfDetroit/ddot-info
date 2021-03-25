@@ -20,7 +20,7 @@ export const RoutesHere = ({ routes, currentRoute, setCurrentRoute }) => {
               value={r.short}
               readOnly
               checked={currentRoute === r.short} />
-            <RouteNumber number={r.short} color={r.color} />
+            <RouteNumber number={r.short} color={r.color} size="small" />
             <Link aria-label={`${r.long} route page`} to={`/route/${r.short}`}>
               <span className="">{r.long}</span>
             </Link>

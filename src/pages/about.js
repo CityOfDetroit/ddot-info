@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 const About = () => {
     return (
         <Layout>
+          <div className="mx-2">
+
             <section className="my-1">
                 <h1 className="text-lg py-2 border-bottom">About</h1>
                 <p className="py-2">This app helps bus riders find schedules and real-time arrival information for all DDOT routes and bus stops.</p>
@@ -28,6 +30,7 @@ const About = () => {
             <p>This app is developed by the Department of Innovation and Technology (DoIT) at the city of Detroit.</p>
             <p>You can find the code for this app in <a href="https://github.com/CityOfDetroit/route-explorer">this GitHub repository.</a></p>
             <p>Find a bug or have an idea for improvements? Please leave a note on our <a href="https://airtable.com/shrugiMUTLnAn77Xd">feedback form.</a></p>
+          </div>
         </Layout>
     );
 };

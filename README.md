@@ -37,16 +37,16 @@ The database structure is based on the one from **gtfs-sql-importer**, but we ad
 
 You can create a database and import the project database structure from the command line:
 
-```
+```bash
 createdb ddotinfo
 psql -d ddotinfo -c 'CREATE EXTENSION postgis;'
-psql -d ddotinfo ./gtfs.sql
+psql -d ddotinfo < ./gtfs.sql
 ```
 
 Next, grab the latest version of DDOT's GTFS data and import it to this database using `make` from the **gtfs-sql-importer**:
 
-```
-curl -o ddot_gtfs.zip "https://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/ddot_gtfs.zip"
+```bash
+curl -o ddot_gtfs.zip "https://detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/ddot_gtfs.zip"
 export PGDATABASE=ddotinfo && make load GTFS=ddot_gtfs.zip
 ```
 

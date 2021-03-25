@@ -34,7 +34,7 @@ export const arrivalTimeDisplay = (time, showAp) => {
 };
 
 const StopHeader = ({ stop }) => (
-  <section className="flex items-center mb-2">
+  <section className="flex items-center px-2 justify-between">
       <h1 className="font-bold text-lg">{stop.stopName}</h1> 
       <h2 className="text-md text-gray-700 bg-gray-200 p-2 mx-3">#{stop.stopCode}</h2>
   </section>
@@ -136,7 +136,7 @@ export const query = graphql`
       }
     }
     postgres {
-      stop: stopByFeedIndexAndStopId(stopId: $stopId, feedIndex: 5) {
+      stop: stopByFeedIndexAndStopId(stopId: $stopId, feedIndex: 1) {
         stopId
         stopCode
         stopName

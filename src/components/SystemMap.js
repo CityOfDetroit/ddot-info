@@ -12,17 +12,21 @@ import routeLabels from '../data/route_labels.json'
 
 const SystemMap = ({ routeFeatures, stopsFeatures }) => {
 
+    // use these to set the initial bbox
+    let connectTenFeatures = routeFeatures.features.filter(r => r.properties.RouteType === 'ConnectTen')
+    let systemMapBbox = bbox({type: "FeatureCollection", features: connectTenFeatures})
+
     useEffect(() => {
         let map = new mapboxgl.Map({
           container: "system-map",
           style: style,
-          bounds: bbox(routeFeatures),
+          bounds: systemMapBbox,
           fitBoundsOptions: {
-            padding: 50
+            padding: 10
           },
         });
     
-        map.addControl(new mapboxgl.FullscreenControl());
+        map.addControl(new mapboxgl.FullscreenControl(), 'bottom-right');
     
         map.addControl(
           new mapboxgl.GeolocateControl({
@@ -30,7 +34,7 @@ const SystemMap = ({ routeFeatures, stopsFeatures }) => {
           enableHighAccuracy: true
           },
           trackUserLocation: true
-          })
+          }), 'bottom-right'
           );
     
         let ctrl = new mapboxgl.NavigationControl({

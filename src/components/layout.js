@@ -25,7 +25,7 @@ const Layout = ({ gridClass=null, children }) => {
   `)
 
   const maxWidthStyle = {
-    margin: `1em auto 0 auto`,
+    margin: `.25em auto 0 auto`,
     maxWidth: 960,
     gridArea: 'f'
   }

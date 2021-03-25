@@ -36,8 +36,8 @@ const IndexPage = ({ data }) => {
   let routeFeatures = { type: "FeatureCollection", features: features }
 
   return (
-    <Layout gridClass="index-grid">
-      <h1 className="text-2xl">Welcome to ddot.info</h1>
+    <Layout gridClass="index-grid px-2">
+      <h1 className="text-xl">Welcome to ddot.info</h1>
       <p className="py-1">You can find a description, map, and real-time information for your bus route by clicking the name of the route.</p>
       <p className="py-1">Click the bus icon <FontAwesomeIcon icon={faBus} className="mx-1" /> for a listing of bus stops, or the schedule <FontAwesomeIcon icon={faClock} className="mx-1" /> icon for a timetable at major stops.</p>
       <section className="mb-3 mt-4">
@@ -51,14 +51,14 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   {
     postgres {
-      routes: allRoutesList(condition: { feedIndex: 5 }, orderBy: ROUTE_SORT_ORDER_ASC) {
+      routes: allRoutesList(condition: { feedIndex: 1 }, orderBy: ROUTE_SORT_ORDER_ASC) {
         short: routeShortName
         long: routeLongName
         color: routeColor
         desc: routeDesc
         routeId
       }
-      stops: allStopsList(condition: { feedIndex: 5 }) {
+      stops: allStopsList(condition: { feedIndex: 1 }) {
         stopId
         stopName
       }

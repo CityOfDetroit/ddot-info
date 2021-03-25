@@ -85,6 +85,8 @@ li {
   @apply text-xs;
 }
 
+
+/* rules for mobile */
 @media only screen and (max-width: 600px) {
   .route-grid {
     display: flex;
@@ -97,7 +99,7 @@ li {
   }  
 
   .main-layout {
-    @apply px-2;
+    @apply px-1;
   }
 
   #map {
@@ -105,7 +107,11 @@ li {
   }
 
   #system-map {
-    height: 75vh;
+    height: 35vh;
+  }
+  
+  .alert {
+    @apply text-sm;
   }
 }
 
@@ -128,6 +134,6 @@ li {
   }
 
   #system-map {
-    height: 80vh;
+    height: 45vh;
   }
 }

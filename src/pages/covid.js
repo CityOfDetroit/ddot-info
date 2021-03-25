@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 const Covid = () => {
     return (
         <Layout>
+          <div className="px-2 my-2">
+
             <h1 className="text-2xl">Responding to COVID-19</h1>
             <p className="py-2 text-lg">
             The Detroit Department of Transportation takes the COVID-19 situation very seriously. We are working with the City of Detroit, state and local public health officials and following the CDC’s guidance to reduce the spread of COVID-19.
@@ -45,6 +47,7 @@ const Covid = () => {
                 Disinfect frequently touched objects and surfaces.
             </li>            
         </ul>
+          </div>
         </Layout>
     );
 };

@@ -89,16 +89,17 @@ const RoutePage = ({ data, pageContext }) => {
   }, [r.routeShortName, now])
 
   let [tracked, setTracked] = useState(null)
+  console.log(ddotRt)
 
   return (
     <Layout gridClass={"route-grid"}>
       <div>
         <header>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center px-2">
             <RouteTitle long={r.routeLongName} short={r.routeShortName} color={r.routeColor} />
-            <p className="text-sm text-gray-600 mr-2">{ddotRt.routeType}</p>
+            <p className="text-sm text-gray-600 mr-2">{ddotRt.RouteType}</p>
           </div>
-          <p className="text-sm py-2">{r.routeDesc}</p>
+          <p className="text-xs px-2 bg-gray-100 my-2 py-2 text-justify leading-tight">{ddotRt.description}</p>
         </header>
         <SectionContainer>
           <SectionHeader icon={faMap} title={`Map`} />
@@ -212,7 +213,7 @@ export const query = graphql`
     }
     postgres {
       route: allRoutesList(
-        condition: { routeShortName: $routeNo, feedIndex: 5 }
+        condition: { routeShortName: $routeNo, feedIndex: 1 }
       ) {
         agencyId
         routeShortName

@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout gridClass="index-grid px-2">
-      <h1 className="text-xl">Welcome to ddot.info</h1>
+      <h1 className="text-xl mt-3">Welcome to ddot.info</h1>
       <p className="py-1">You can find a description, map, and real-time information for your bus route by clicking the name of the route.</p>
       <p className="py-1">Click the bus icon <FontAwesomeIcon icon={faBus} className="mx-1" /> for a listing of bus stops, or the schedule <FontAwesomeIcon icon={faClock} className="mx-1" /> icon for a timetable at major stops.</p>
       <section className="mb-3 mt-4">

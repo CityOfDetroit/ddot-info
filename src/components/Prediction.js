@@ -20,7 +20,7 @@ export const Prediction = ({ prediction, currentTrip, setCurrentTrip, routeFeatu
     <div className="flex items-center">
       <div className={isLive ? "bg-yellow-200 my-1 p-2 w-full" : "bg-gray-200 my-1 p-2 w-full"}>
         <div className="flex items-center">
-          <RouteNumber number={route.properties.short} color={route.properties.color} small />
+          <RouteNumber number={route.properties.short} color={route.properties.color} size='small' />
           <span>{prediction.des} {readable[prediction.rtdir]}</span>
         </div>
         <div className="flex items-center justify-between flex-row-reverse">

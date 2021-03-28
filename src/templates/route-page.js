@@ -93,13 +93,13 @@ const RoutePage = ({ data, pageContext }) => {
 
   return (
     <Layout gridClass={"route-grid"}>
-      <div>
+      <div className="mt-2">
         <header>
           <div className="flex justify-between items-center px-2">
             <RouteTitle long={r.routeLongName} short={r.routeShortName} color={r.routeColor} />
-            <p className="text-sm text-gray-600 mr-2">{ddotRt.RouteType}</p>
+            <p className="text-sm text-gray-600 mr-2">{ddotRt.RouteType} route</p>
           </div>
-          <p className="text-xs px-2 bg-gray-100 my-2 py-2 text-justify leading-tight">{ddotRt.description}</p>
+          <p className="text-sm p-3 bg-gray-100 my-2  text-justify leading-tight">{ddotRt.description}</p>
         </header>
         <SectionContainer>
           <SectionHeader icon={faMap} title={`Map`} />
@@ -158,23 +158,23 @@ const RoutePage = ({ data, pageContext }) => {
               <td>every {ddotRt.frqSuNight} minutes</td>
             </tr>}</>}</tbody>
           </table>
-          <div className="text-md text-gray-700 gibson-bold p-2 flex items-center">
-            <Link to="./schedule" aria-label="Schedule" >
-              <span>View full schedule</span>
-              <FontAwesomeIcon icon={faArrowCircleRight} className="ml-1" />
-            </Link>
-          </div>
+          <Link to="./schedule" aria-label="Schedule" className="flex items-center my-4 text-center justify-around" >
+            <span className="bg-gray-300 p-2 text-gray-800 px-4 flex items-center justify-around w-2/3">
+              View full schedule
+              <FontAwesomeIcon icon={faArrowCircleRight} className="text-gray-800" style={{fontSize: '1.5rem'}} />
+            </span>
+          </Link>
         </SectionContainer>
         <SectionContainer>
           <SectionHeader icon={faBus} title={`Major stops`} />
           <DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} className="bg-gray-200 text-gray-700 px-2 text-xs mb-1" />
           <RouteStopsList {...{ longTrips, direction, routeColor }} timepointsOnly small />
-          <div className="text-md text-gray-700 gibson-bold p-2 flex items-center">
-            <Link to="./stops" aria-label="Stops" >
-              <span>View all stops</span>
-              <FontAwesomeIcon icon={faArrowCircleRight} className="ml-1" />
-            </Link>
-          </div>
+          <Link to="./stops" aria-label="Stops" className="flex items-center my-4 text-center justify-around" >
+          <span className="bg-gray-300 p-2 text-gray-800 px-4 flex items-center justify-around w-2/3">
+              View all stops
+              <FontAwesomeIcon icon={faArrowCircleRight} className="text-gray-800" style={{fontSize: '1.5rem'}} />
+            </span>
+          </Link>
         </SectionContainer>
       </section>
     </Layout>

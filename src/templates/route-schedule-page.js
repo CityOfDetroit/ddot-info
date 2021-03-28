@@ -46,7 +46,7 @@ const RouteSchedulePage = ({ data }) => {
 
   return (
     <Layout>
-      <section>
+      <section className="px-2 mt-3">
         <RouteTitle short={r.routeShortName} long={r.routeLongName} color={r.routeColor} />
         <h2 className="text-xl mt-2">Timetable</h2>
         <p className="py-1">

@@ -1,6 +1,6 @@
 import React from "react";
 
-const RouteNumber = ({ number, color, textColor='#5f6369', size="base" }) => {
+const RouteNumber = ({ number, color, textColor='#5f6369', size="base", active=true, onClick }) => {
 
   let widths = {
     "base": '2.25rem',
@@ -21,6 +21,7 @@ const RouteNumber = ({ number, color, textColor='#5f6369', size="base" }) => {
     background: color[0] !== '#' ? `#${color}` : color,
     width: widths[size],
     fontSize: fontSizes[size],
+    opacity: active ? 1 : 0.5,
     border: number > 90 ? `${borderSizes[size]} solid #5f6369` : `${borderSizes[size]} solid ${'#' + color}`
   };
 
@@ -36,6 +37,7 @@ const RouteNumber = ({ number, color, textColor='#5f6369', size="base" }) => {
           : "opacity-100 flex justify-center mr-2 no-underline"
         } 
         style={numberStyle}
+        onClick={onClick}
     >
       <span className="font-extrabold text-center gibson-bold no-underline" style={{color: textColor}}>
         {number}

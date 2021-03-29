@@ -25,7 +25,7 @@ const Layout = ({ gridClass=null, children }) => {
   `)
 
   const maxWidthStyle = {
-    margin: `.25em auto 0 auto`,
+    margin: `0 auto 0 auto`,
     maxWidth: 960,
     gridArea: 'f'
   }
@@ -34,7 +34,7 @@ const Layout = ({ gridClass=null, children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
-        className="h-100 mb-4 main-layout"
+        className="mb-4 main-layout"
         style={maxWidthStyle}
       >
         <main className={gridClass}>{children}</main>

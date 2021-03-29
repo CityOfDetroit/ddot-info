@@ -89,7 +89,6 @@ const RoutePage = ({ data, pageContext }) => {
   }, [r.routeShortName, now])
 
   let [tracked, setTracked] = useState(null)
-  console.log(ddotRt)
 
   return (
     <Layout gridClass={"route-grid"}>

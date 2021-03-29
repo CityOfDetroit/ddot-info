@@ -30,11 +30,11 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
       <div className="flex text-lg">
-        {/* <Link to={`/system-map`} aria-label="System Map">
+        <Link to={`/system-map`} aria-label="System Map">
           <FontAwesomeIcon icon={faMapMarked} className='header-icon' />
-        </Link> */}
+        </Link>
         <Link to={`/`} aria-label="Routes">
-          <FontAwesomeIcon icon={faHome} className='header-icon' />
+          <FontAwesomeIcon icon={faList} className='header-icon' />
         </Link>
         <Link to={`/about`} aria-label="About">
           <FontAwesomeIcon icon={faInfoCircle} className='header-icon' />
@@ -51,8 +51,8 @@ const Header = ({ siteTitle }) => (
         maxWidth: 960,
       }}
     >
-      <FontAwesomeIcon icon={faHeadSideMask} size="2x" className="mx-2 py-1" />
-      <p className="text-gray-900">Masks are <strong>required</strong> on board. <Link to={`/covid`}>More info here.</Link></p>
+      <FontAwesomeIcon icon={faHeadSideMask} className="mx-2" />
+      <p className="text-gray-900 text-xs">Masks are <strong>required</strong> on board. <Link to={`/covid`}>More info here.</Link></p>
     </div>
   </header>
   </>

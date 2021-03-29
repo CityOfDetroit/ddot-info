@@ -98,16 +98,12 @@ li {
     flex-direction: column;
   }  
 
-  .main-layout {
-    @apply px-1;
-  }
-
   #map {
-    height: 35vh;
+    height: 40vh;
   }
 
   #system-map {
-    height: 35vh;
+    height: 40vh;
   }
   
   .alert {

@@ -5,18 +5,21 @@ import Layout from "../components/layout"
 import RoutesList from '../components/RoutesList'
 import SystemMap from '../components/SystemMap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBus, faClock, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+import { faBus, faClock, faExclamationTriangle, faHome } from "@fortawesome/free-solid-svg-icons";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { config } from '@fortawesome/fontawesome-svg-core';
 
 import '../css/app.css'
+import PageTitle from "../components/PageTitle";
+import SiteSection from "../components/SiteSection";
 
 config.autoAddCss = false;
 
 const nodeToFeature = (node, matching) => {
   let { route, ...props } = node
   props.color = '#' + matching.color;
+  props.textColor = '#' + matching.textColor;
   return {
     "type": "Feature",
     "geometry": route.geometry,
@@ -36,15 +39,14 @@ const IndexPage = ({ data }) => {
   let routeFeatures = { type: "FeatureCollection", features: features }
 
   return (
-    <Layout gridClass="index-grid px-2">
-      <h1 className="text-xl mt-3">Welcome to ddot.info</h1>
-      <p className="py-1">You can find a description, map, and real-time information for your bus route by clicking the name of the route.</p>
-      <p className="py-1">Click the bus icon <FontAwesomeIcon icon={faBus} className="mx-1" /> for a listing of bus stops, or the schedule <FontAwesomeIcon icon={faClock} className="mx-1" /> icon for a timetable at major stops.</p>
-      <section className="mb-3 mt-4">
-        <h2 className="text-xl mb-3">Choose your route</h2>
-        <RoutesList routes={routes} />
-      </section>
-    </Layout>
+    <>
+      <PageTitle text={'Welcome to ddot.info'} icon={faHome} />
+      <SiteSection>
+        <p>You can find a description, map, and real-time information for your bus route by clicking the name of the route.</p>
+        <p>Click the bus icon <FontAwesomeIcon icon={faBus} className="mx-1" /> for a listing of bus stops, or the schedule <FontAwesomeIcon icon={faClock} className="mx-1" /> icon for a timetable at major stops.</p>
+      </SiteSection>
+      <RoutesList routes={routes} />
+    </>
   )
 }
 
@@ -55,6 +57,7 @@ export const query = graphql`
         short: routeShortName
         long: routeLongName
         color: routeColor
+        textColor: routeTextColor
         desc: routeDesc
         routeId
       }

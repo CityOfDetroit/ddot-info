@@ -5,14 +5,20 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import React, { useState } from "react"
 import '../css/app.css'
+import FareAlert from "./FareAlert"
+import Header from "./header"
+import MaskAlert from "./MaskAlert"
 
 const Layout = ({ gridClass=null, children }) => {
+
+  const [showAlert, setShowAlert] = useState({
+    mask: true,
+    fare: true
+  })
   
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -32,12 +38,17 @@ const Layout = ({ gridClass=null, children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title}>
+        {showAlert.mask && <MaskAlert {...{showAlert, setShowAlert}} />}
+        {showAlert.fare && <FareAlert {...{showAlert, setShowAlert}} />}
+      </Header>
       <div
-        className="mb-4 main-layout"
+        className="main-layout"
         style={maxWidthStyle}
       >
-        <main className={gridClass}>{children}</main>
+        <main className={gridClass}>
+          {children}
+        </main>
       </div>
       <footer className="p-2 bg-gray-100 w-100 text-xs flex justify-between " style={maxWidthStyle}>
         <span>

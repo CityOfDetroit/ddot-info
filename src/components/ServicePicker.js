@@ -1,24 +1,26 @@
 import React from 'react';
-
 import feedServices from '../data/services.json'
+import SiteSection from './SiteSection';
+import { ToggleButton } from './ToggleButton';
 
-const ServicePicker = ({ services, service, setService, inline = true }) => {
-    if (services.length === 3) {
-        services = ["1", "3", "2"]
-    }
-    return (
-        <div className="py-2 px-2 bg-gray-100 text-sm">
-            <h3>Day of week:</h3>
-            {services.map(s => (
-                <div key={s} className={inline ? " inline mr-3 items-center" : "flex items-center"} role="presentation" onClick={() => setService(s)} onKeyDown={(e) => e.keycode === 13 && setService(s)}>
-                    <label className="inline">
-                        <input type='radio' checked={service === s} readOnly />
-                        <span className="pl-2">{feedServices[s]}</span>
-                    </label>
-                </div>
-            ))}
-        </div>
-    )
+const ServicePicker = ({ services, service, setService, inline = true, expands = true, startsClosed = true, className="" }) => {
+  if (services.length === 3) {
+    services = ["1", "3", "2"]
+  }
+  return (
+    <SiteSection className={className} title={<span>Day of week: <b>{feedServices[service]}</b></span>} {...{ expands, startsClosed }} fullWidth>
+      <div className="flex w-100">
+        {services.map(s => (
+          <ToggleButton
+            key={s}
+            title={feedServices[s]}
+            active={service === s}
+            onClick={() => setService(s)}
+          />
+        ))}
+      </div>
+    </SiteSection>
+  )
 }
 
 export default ServicePicker

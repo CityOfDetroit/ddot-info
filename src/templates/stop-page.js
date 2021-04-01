@@ -1,13 +1,12 @@
-import { faMap, faRss } from "@fortawesome/free-solid-svg-icons";
+import { faBusAlt, faClock, faMap, faMapSigns, faRss } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from "gatsby";
-import React, { useState, useEffect } from "react";
-import Layout from "../components/layout";
-import StopMap from "../components/StopMap";
-import SectionHeader from '../components/SectionHeader';
-import SectionContainer from '../components/SectionContainer'
-import { TimesHere } from "../components/TimesHere";
-import { RoutesHere } from "../components/RoutesHere";
+import React, { useEffect, useState } from "react";
+import PageTitle from '../components/PageTitle';
 import Prediction from "../components/Prediction";
+import { RoutesHere } from "../components/RoutesHere";
+import SiteSection from "../components/SiteSection";
+import StopMap from "../components/StopMap";
+import { TimesHere } from "../components/TimesHere";
 
 export const arrivalTimeDisplay = (time, showAp) => {
   let hour = time.hours;
@@ -33,22 +32,14 @@ export const arrivalTimeDisplay = (time, showAp) => {
   return `${hour}:${minutes}${showAp ? ap : ``}`;
 };
 
-const StopHeader = ({ stop }) => (
-  <section className="flex items-center px-2 justify-between">
-      <h1 className="font-bold text-lg">{stop.stopName}</h1> 
-      <h2 className="text-md text-gray-700 bg-gray-200 p-2 mx-3">#{stop.stopCode}</h2>
-  </section>
-)
-
 const NextArrivals = ({ routeFeatures, predictions, currentTrip, setCurrentTrip }) => {
 
   let nextBuses = predictions['bustime-response'].prd
 
   return (
-    <SectionContainer>
-      <SectionHeader icon={faRss} title="Next arrivals here" />
-      {nextBuses.map((nb, i) => <Prediction prediction={nb} key={nb.vid} {...{currentTrip, setCurrentTrip, routeFeatures}} />)}
-    </SectionContainer>
+    <SiteSection icon={faRss} title="Next arrivals here" fullWidth expands>
+      {nextBuses.slice(0,4).map((nb, i) => <Prediction prediction={nb} last={i === nextBuses.length - 1} key={nb.vid} {...{currentTrip, setCurrentTrip, routeFeatures}} />)}
+    </SiteSection>
   )
 }
 
@@ -93,21 +84,24 @@ const StopPage = ({ data }) => {
   }, [s.stopId, s.stopCode])
 
   return (
-    <Layout gridClass='stop-grid'>
-      <div>
-        <StopHeader {...{ stop: s }} />
-        <SectionContainer>
-          <SectionHeader icon={faMap} title={`Stop map`} />
-          <StopMap {...{ stopLon, stopLat, stopName, routeFeatures, currentRoute, currentTrip, predictions }} />
-        </SectionContainer>
-        {predictions && <NextArrivals {...{ routeFeatures, predictions, currentTrip, setCurrentTrip }} />}
-      </div>
-      <div>
+    <>
+      <PageTitle icon={faBusAlt}>
+        <h1 className="m-0 font-thin">{s.stopName}</h1> 
+        <h2 className="text-base font-thin text-gray-700 bg-white py-0 px-2 m-0 mr-3">#{s.stopCode}</h2>
+      </PageTitle>
+      {predictions && <NextArrivals {...{ routeFeatures, predictions, currentTrip, setCurrentTrip }} />}
+      <SiteSection fullWidth title='Routes at this stop' icon={faMapSigns}>
         <RoutesHere {...{ routes, currentRoute, setCurrentRoute }} />
-        <TimesHere {...{ times, currentRoute }} />
+      </SiteSection>
+      <SiteSection icon={faMap} title={`Stop map`} fullWidth expands>
+        <StopMap {...{ stopLon, stopLat, stopName, routeFeatures, currentRoute, currentTrip, predictions }} />
+      </SiteSection>
+
+      <SiteSection fullWidth title='Scheduled arrivals here' icon={faClock} expands startsClosed className="mb-0">
+        <TimesHere {...{ times, currentRoute, routes }} />
         {/* <StopTransfers /> */}
-      </div>
-    </Layout>
+      </SiteSection>
+    </>
   );
 };
 

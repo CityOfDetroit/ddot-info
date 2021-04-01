@@ -1,23 +1,24 @@
 import React from "react";
 
-import {RouteSign} from './RouteSign'
+import RouteListItem from './RouteListItem'
+import SiteSection from "./SiteSection";
 
-const RoutesList = ({ routes }) => {
+const RoutesList = ({ routes, scroll=true }) => {
 
-  const gridStyle = {
-    gridTemplateColumns: `repeat(auto-fit, minmax(250px, 1fr))`,
-    gridGap: `.5rem`,
-    boxSizing: "border-box",
-    WebkitOverflowScrolling: "touch",
-    height: 'auto'
-  };
+  // const gridStyle = {
+  //   gridTemplateColumns: `repeat(auto-fit, minmax(250px, 1fr))`,
+  //   gridGap: `.5rem`,
+  //   boxSizing: "border-box",
+  //   WebkitOverflowScrolling: "touch",
+  //   height: 'auto'
+  // };
 
   return (
-    <div className="grid p-0" style={gridStyle}>
+    <SiteSection title="All bus routes" scroll={scroll} fullWidth>
       {
-        routes.map(r => (<RouteSign route={r} key={r.short} />))
+        routes.map(r => (<RouteListItem route={r} key={r.short} />))
       }
-    </div>
+    </SiteSection>
   );
 };
 

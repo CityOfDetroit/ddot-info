@@ -13,8 +13,12 @@
   src: url("./fonts/GibsonDetroit-Light.woff") format("woff"), url("./fonts/GibsonDetroit-Light.svg#filename") format("svg");
 }
 
-span, p {
+span, p, ul, li {
   font-family: "Gibson Detroit Regular";
+}
+
+p, li {
+  @apply my-3;
 }
 
 h1, h2, h3, h4 {
@@ -25,12 +29,6 @@ h1, h2, h3, h4 {
 
 a {
   text-decoration: underline;
-}
-
-li {
-  @apply m-0;
-  @apply p-0;
-  @apply text-xs;
 }
 
 .header-icon {
@@ -56,12 +54,12 @@ li {
 .timetable-header {
   position: sticky;
   top: 0;
-  background-color: white;
   min-width: 6rem;
 }
 
-.section-scroll {
+.scroll {
   max-height: 45vh;
+  height: 45vh;
   overflow-y: auto;
 }
 
@@ -103,7 +101,7 @@ li {
   }
 
   #system-map {
-    height: 40vh;
+    height: 45vh;
   }
   
   .alert {

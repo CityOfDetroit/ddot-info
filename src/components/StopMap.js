@@ -7,7 +7,7 @@ import arrow from '../images/arrow-up-solid.png'
 
 import React, { useEffect, useState } from "react";
 
-import style from "../css/mapstyle.json";
+import baseStyle from "../css/mapstyle";
 
 const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentRoute, currentTrip, predictions }) => {
 
@@ -18,7 +18,7 @@ const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentRoute, curr
 
     let map = new mapboxgl.Map({
       container: "map",
-      style: style,
+      style: baseStyle,
       center: [stopLon, stopLat],
       zoom: 16.75 // starting zoom
     });

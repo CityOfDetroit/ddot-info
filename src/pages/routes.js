@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby";
-
-import Layout from "../components/layout"
 import RoutesList from '../components/RoutesList'
+import PageTitle from "../components/PageTitle";
+import { faList } from "@fortawesome/free-solid-svg-icons";
 
 const RoutesPage = ({ data }) => {
 
@@ -10,9 +10,10 @@ const RoutesPage = ({ data }) => {
 
   let sortedRoutes = routes.sort((a, b) => {return parseInt(b.short) < parseInt(a.short)})
   return (
-    <Layout>
-      <RoutesList routes={sortedRoutes} />
-    </Layout>
+    <>
+      <PageTitle text={'All bus routes'} icon={faList} />
+      <RoutesList routes={sortedRoutes} scroll={false} />
+    </>
   )
 }
 

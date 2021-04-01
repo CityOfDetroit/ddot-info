@@ -1,12 +1,12 @@
-import { Link, graphql } from "gatsby";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
+import { graphql } from "gatsby";
 import React, { useState } from "react";
-
-import Layout from '../components/layout'
-import {RouteTitle} from '../components/RouteSign'
-import { RouteNumber } from "../components/RouteNumber";
-import DirectionPicker from '../components/DirectionPicker'
-import ServicePicker from "../components/ServicePicker";
+import DirectionPicker from '../components/DirectionPicker';
+import PageTitle from "../components/PageTitle";
+import RouteNumber from "../components/RouteNumber";
 import RouteTimetable from "../components/RouteTimetable";
+import ServicePicker from "../components/ServicePicker";
+import SiteSection from "../components/SiteSection";
 
 const RouteSchedulePage = ({ data }) => {
 
@@ -40,32 +40,36 @@ const RouteSchedulePage = ({ data }) => {
   let now = new Date
   let dow = now.getDay()
   let currentService = services[0];
-  if (dow === 6 && services.length > 1) { currentService = services[2]}
-  if (dow === 0 && services.length > 2) { currentService = services[1]}
+  if (dow === 0 && services.length > 1) { currentService = "2"}
+  if (dow === 6 && services.length > 1) { currentService = "3"}
   let [service, setService] = useState(currentService)
 
   return (
-    <Layout>
-      <section className="px-2 mt-3">
-        <RouteTitle short={r.routeShortName} long={r.routeLongName} color={r.routeColor} />
-        <h2 className="text-xl mt-2">Timetable</h2>
-        <p className="py-1">
-        Major stops are shown in order in the top row; look down the column to see scheduled departure times from that bus stop.
-        Buses make additional stops between major stops; see a list of all stops on the <a href="./stops" className="text-underline">stops page</a>.
-        </p>
+    <>
+      <PageTitle icon={faClock} text={<RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />}>
+        <h2 className="m-0 font-thin">Schedule</h2>
+      </PageTitle>
 
-      </section>
+      <SiteSection>
+        <p>
+          Major stops are shown in order in the top row; look down the column to see scheduled departure times from that bus stop.
+          Buses make additional stops between major stops; see a list of all stops on the <a href="./stops" className="text-underline">stops page</a>.
+        </p>
+        <p className="text-sm">
+          AM times are shown normally; <span className="font-semibold">PM times are in bold</span>.
+        </p>
+      </SiteSection>
+
       <section className="">
-        <DirectionPicker inline {...{directions, direction, setDirection, routeOrientation}} className="mr-4 bg-gray-100 px-3 text-sm" />
         <ServicePicker {...{services, service, setService}} />
+        <DirectionPicker inline {...{directions, direction, setDirection, routeOrientation}} className="mr-4 bg-gray-100 px-3 text-sm" />
       </section>
+
       <section>
         <RouteTimetable {...{trips, longTrips, service, direction, routeColor}} />
-        <p className="py-2 text-sm">
-          Displaying AM times and <span className="font-semibold">PM times in bold</span>.
-        </p>
       </section>
-    </Layout>
+
+    </>
   );
 };
 

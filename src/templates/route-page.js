@@ -1,16 +1,14 @@
+import { faArrowCircleRight, faBus, faCalendar, faMap, faRss } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { graphql, Link } from 'gatsby';
 import React, { useEffect, useState } from 'react';
-
-import { graphql, Link } from 'gatsby'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowCircleRight, faBus, faCalendar, faMap, faRoute, faRss } from '@fortawesome/free-solid-svg-icons';
-
-import Layout from '../components/layout'
-import DirectionPicker from '../components/DirectionPicker'
+import DirectionPicker from '../components/DirectionPicker';
+import PageTitle from '../components/PageTitle';
 import RouteMap from '../components/RouteMap';
-import { RouteTitle } from '../components/RouteSign';
+import RouteTitle from '../components/RouteTitle';
 import { RouteStopsList } from '../components/RouteStopsList';
-import SectionHeader from '../components/SectionHeader';
-import SectionContainer from '../components/SectionContainer';
+import SiteSection from '../components/SiteSection';
+import SiteButton from '../components/SiteButton';
 import { Vehicle } from '../components/Vehicle';
 
 const RoutePage = ({ data, pageContext }) => {
@@ -24,7 +22,7 @@ const RoutePage = ({ data, pageContext }) => {
     properties.color = '#' + r.routeColor
     return { ...route, properties: properties }
   })
-
+  
   let routeOrientation;
 
   if (info[0].direction === 'Northbound' || info[0].direction === 'Southbound') {
@@ -91,30 +89,29 @@ const RoutePage = ({ data, pageContext }) => {
   let [tracked, setTracked] = useState(null)
 
   return (
-    <Layout gridClass={"route-grid"}>
-      <div className="mt-2">
-        <header>
-          <div className="flex justify-between items-center px-2">
-            <RouteTitle long={r.routeLongName} short={r.routeShortName} color={r.routeColor} />
-            <p className="text-sm text-gray-600 mr-2">{ddotRt.RouteType} route</p>
-          </div>
-          <p className="text-sm p-3 bg-gray-100 my-2  text-justify leading-tight">{ddotRt.description}</p>
-        </header>
-        <SectionContainer>
-          <SectionHeader icon={faMap} title={`Map`} />
-          <RouteMap routes={geojson} stops={r.stopsList} timepoints={r.timepointsList} vehicles={vehicles} {...{ tracked, setTracked }} />
-        </SectionContainer>
-        {vehicles && patterns && <SectionContainer className="section-scroll" header={<SectionHeader icon={faRss} title={"Real-time bus locations"} />} scroll>
-          {vehicles.map(v => <Vehicle vehicle={v} key={v.properties.vid} {...{ patterns, tracked, setTracked }} />)}
-        </SectionContainer>}
-      </div>
-      <section className="">
-        <SectionContainer>
-          <SectionHeader icon={faCalendar} title={`Schedule`} />
-          <table className="schedule-table">
-            <tbody>
+    <div>
+      <PageTitle>
+        <RouteTitle long={r.routeLongName} short={r.routeShortName} color={r.routeColor} size="small" />
+        <span className="text-sm font-thin text-gray-600 py-1">{ddotRt.RouteType} route</span>
+      </PageTitle>
+      <SiteSection>
+        <p className="text-sm text-left leading-tight">{ddotRt.description}</p>
+      </SiteSection>
+      <SiteSection title={`Map`} icon={faMap} fullWidth expands>
+        <RouteMap routes={geojson} stops={r.stopsList} timepoints={r.timepointsList} vehicles={vehicles} {...{ tracked, setTracked }} />
+      </SiteSection>
+      {vehicles && patterns && <SiteSection title="Real-time bus locations" icon={faRss} fullWidth expands startsClosed isOpen={tracked}>
+        {
+          tracked ?
+          vehicles.filter(v => v.properties.vid === tracked).map(v => <Vehicle vehicle={v} key={v.properties.vid} {...{ patterns, tracked, setTracked }} />)
+          : vehicles.map(v => <Vehicle vehicle={v} key={v.properties.vid} {...{ patterns, tracked, setTracked }} />)
+        }
+      </SiteSection>}
+      <SiteSection icon={faCalendar} title={`Schedule`} expands fullWidth>
+        <table className="schedule-table">
+          <tbody>
             <tr className="bg-gray-200">
-              <th className="text-left">Weekday</th>
+              <th className="text-left font-thin">Weekday</th>
               <th></th>
             </tr>
             <tr>
@@ -130,53 +127,42 @@ const RoutePage = ({ data, pageContext }) => {
               <td>every {ddotRt.frqWkNight} minutes</td>
             </tr>}
             {ddotRt.days !== "Mon-Fri" &&
-            <>
-            <tr className="bg-gray-200">
-              <th>Saturday</th>
-              <th></th>
-            </tr>
-            {ddotRt.frqSaBase > 0 && <tr>
-              <td>Daytime</td>
-              <td>every {ddotRt.frqSaBase} minutes</td>
-            </tr>}
-            {ddotRt.frqSaNight > 0 && <tr>
-              <td className="px-2 py-1">Nighttime</td>
-              <td>every {ddotRt.frqSaNight} minutes</td>
-            </tr>}
-            </>}
+              <>
+                <tr className="bg-gray-200">
+                  <th className="font-thin">Saturday</th>
+                  <th></th>
+                </tr>
+                {ddotRt.frqSaBase > 0 && <tr>
+                  <td>Daytime</td>
+                  <td>every {ddotRt.frqSaBase} minutes</td>
+                </tr>}
+                {ddotRt.frqSaNight > 0 && <tr>
+                  <td className="px-2 py-1">Nighttime</td>
+                  <td>every {ddotRt.frqSaNight} minutes</td>
+                </tr>}
+              </>}
             {ddotRt.days !== 'Mon-Fri' && ddotRt.days !== 'Mon-Sat' && <><tr className="bg-gray-200">
-              <th>Sunday</th>
+              <th className="font-thin">Sunday</th>
               <th></th>
             </tr>
-            {ddotRt.frqSuBase > 0 && <tr>
-              <td>Daytime</td>
-              <td>every {ddotRt.frqSuBase} minutes</td>
-            </tr>}
-            {ddotRt.frqSuNight > 0 && <tr>
-              <td>Nighttime</td>
-              <td>every {ddotRt.frqSuNight} minutes</td>
-            </tr>}</>}</tbody>
-          </table>
-          <Link to="./schedule" aria-label="Schedule" className="flex items-center my-4 text-center justify-around" >
-            <span className="bg-gray-300 p-2 text-gray-800 px-4 flex items-center justify-around w-2/3">
-              View full schedule
-              <FontAwesomeIcon icon={faArrowCircleRight} className="text-gray-800" style={{fontSize: '1.5rem'}} />
-            </span>
-          </Link>
-        </SectionContainer>
-        <SectionContainer>
-          <SectionHeader icon={faBus} title={`Major stops`} />
-          <DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} className="bg-gray-200 text-gray-700 px-2 text-xs mb-1" />
-          <RouteStopsList {...{ longTrips, direction, routeColor }} timepointsOnly small />
-          <Link to="./stops" aria-label="Stops" className="flex items-center my-4 text-center justify-around" >
-          <span className="bg-gray-300 p-2 text-gray-800 px-4 flex items-center justify-around w-2/3">
-              View all stops
-              <FontAwesomeIcon icon={faArrowCircleRight} className="text-gray-800" style={{fontSize: '1.5rem'}} />
-            </span>
-          </Link>
-        </SectionContainer>
-      </section>
-    </Layout>
+              {ddotRt.frqSuBase > 0 && <tr>
+                <td>Daytime</td>
+                <td>every {ddotRt.frqSuBase} minutes</td>
+              </tr>}
+              {ddotRt.frqSuNight > 0 && <tr>
+                <td>Nighttime</td>
+                <td>every {ddotRt.frqSuNight} minutes</td>
+              </tr>}</>}</tbody>
+        </table>
+        <SiteButton link='./schedule' ariaLabel='Schedule' text='Schedule' icon={faArrowCircleRight} />
+      </SiteSection>
+
+      <SiteSection icon={faBus} title={`Major stops`} expands startsClosed fullWidth>
+        <DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} className="bg-gray-200 text-gray-700 px-2 text-xs mb-1" />
+        <RouteStopsList {...{ longTrips, direction, routeColor }} timepointsOnly small />
+        <SiteButton link='./stops' ariaLabel='Stops' text='View all stops' icon={faArrowCircleRight} />
+      </SiteSection>
+    </div>
   )
 }
 

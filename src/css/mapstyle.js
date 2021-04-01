@@ -1,4 +1,4 @@
-{
+const baseStyle = {
   "version": 8,
   "metadata": {
     "arcgisStyleUrl": "https://www.arcgis.com/sharing/rest/content/items/273bf8d5c8ac400183fc24e109d20bcf/resources/styles/root.json",
@@ -2798,6 +2798,25 @@
       }
     },
     {
+      "id": "ddot-route-highlight",
+      "type": "line",
+      "source": "routes",
+      "filter": ['==', 'short', ''],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "yellow",
+        "line-width": {
+          "base": 1,
+          "stops": [[8.9, 3.5], [9, 6.5], [16, 20], [19, 32]]
+        },
+        "line-offset": 0
+      }
+    },
+    {
       "id": "ddot-part-time-case",
       "type": "line",
       "source": "routes",
@@ -2812,7 +2831,30 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#444",
+        "line-color": ["get", "textColor"],
+        "line-width": {
+          "base": 1,
+          "stops": [[10.75, 2.5], [10.85, 3.5], [16, 8.5], [19, 14.5]]
+        },
+        "line-offset": 0
+      }
+    },
+    {
+      "id": "ddot-part-time-case-express",
+      "type": "line",
+      "source": "routes",
+      "filter": [
+        "all",
+        ["==", ["get", "RouteType"], "Peak-Hour"],
+        ["!=", ["get", "localService"], 1]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#888",
         "line-width": {
           "base": 1,
           "stops": [[10.75, 1], [10.85, 2], [16, 7], [19, 12]]
@@ -2831,10 +2873,10 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#444",
+        "line-color": "#999999",
         "line-width": {
           "base": 1,
-          "stops": [[10.75, 1], [10.85, 2], [16, 8], [19, 14]]
+          "stops": [[10.75, 2], [10.85, 3.5], [16, 12], [19, 18]]
         },
         "line-offset": 0
       }
@@ -2850,10 +2892,10 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#555",
+        "line-color": "#9bb4d1",
         "line-width": {
           "base": 1,
-          "stops": [[9.9, 1], [10, 2.25], [16, 10], [19, 18]]
+          "stops": [[9.9, 2.5], [10, 3.25], [16, 14], [19, 24]]
         },
         "line-offset": 0
       }
@@ -2869,10 +2911,10 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#666",
+        "line-color": "#85947f",
         "line-width": {
           "base": 1,
-          "stops": [[8.9, 1], [9, 3], [16, 11], [19, 24]]
+          "stops": [[8.9, 2.5], [9, 4.5], [16, 16], [19, 28]]
         },
         "line-offset": 0
       }
@@ -2912,7 +2954,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": ["get", "color"],
+        "line-color": "#dedede",
         "line-width": {
           "base": 1,
           "stops": [[10.75, 1], [10.85, 2.25], [16, 7], [19, 16]]
@@ -4864,7 +4906,7 @@
           "base": 1,
           "stops": [[10, 0], [10.01, 0.1], [10.1, 1]]
         },
-        "circle-stroke-color": "#0088ce",
+        "circle-stroke-color": "#9bb4d1",
         "circle-stroke-width": {"base": 1, "stops": [[10, 1], [15, 2]]}
       }
     },
@@ -4881,7 +4923,7 @@
           "base": 1,
           "stops": [[9, 0], [9.01, 0.1], [9.1, 1]]
         },
-        "circle-stroke-color": "#044455",
+        "circle-stroke-color": "#85947f",
         "circle-stroke-width": {"base": 1, "stops": [[9, 1], [15, 2]]}
       }
     },
@@ -4967,6 +5009,7 @@
         "text-opacity": {"base": 1, "stops": [[9, 0], [9.01, 0.1], [9.1, 1]]}
       }
     }
-  ],
-  "id": "sy9mytywr"
+  ]
 }
+
+export default baseStyle;

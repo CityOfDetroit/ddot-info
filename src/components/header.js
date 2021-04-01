@@ -1,69 +1,51 @@
-import { faHome, faInfoCircle, faExclamationTriangle, faHeadSideMask, faMapMarked, faList } from "@fortawesome/free-solid-svg-icons"
+import { faInfoCircle, faList, faMapMarked, faHome } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <>
-  <header
-    style={{
-      background: `rgba(0,68,69,1)`,
-    }}
-  >
-    <div
-      className="py-2 px-4 flex items-center justify-between header"
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-      }}
-    >      <h1 className="text-lg" style={{ margin: 0 }}>
-        <Link
-          to="/"
-          aria-label="Home"
+const Header = ({ siteTitle, children }) => {
+  return (
+    <>
+      <header
+        style={{
+          background: `rgba(0,68,69,1)`,
+        }}
+      >
+        <div
+          className="p-3 flex items-center justify-between header"
           style={{
-            color: `white`,
-            textDecoration: `none`,
+            margin: `0 auto`,
+            maxWidth: 960,
           }}
-        >
-          {siteTitle.replace(".info", "")}
-        </Link>
-      </h1>
-      <div className="flex text-lg">
-        <Link to={`/system-map`} aria-label="System Map">
-          <FontAwesomeIcon icon={faMapMarked} className='header-icon' />
-        </Link>
-        <Link to={`/`} aria-label="Routes">
-          <FontAwesomeIcon icon={faList} className='header-icon' />
-        </Link>
-        <Link to={`/about`} aria-label="About">
-          <FontAwesomeIcon icon={faInfoCircle} className='header-icon' />
-        </Link>
-      </div>
-    </div>
-  </header>
-  <header style={{background: "#feb70d"}}
-  >
-    <div
-      className="py-1 px-1 flex items-center justify-center alert "
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-      }}
-    >
-      <FontAwesomeIcon icon={faHeadSideMask} className="mx-2" />
-      <p className="text-gray-900 text-xs">Masks are <strong>required</strong> on board. <Link to={`/covid`}>More info here.</Link></p>
-    </div>
-  </header>
-  </>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+        >      
+          <h1 className="text-xl" style={{ margin: 0 }}>
+            <Link
+              to="/"
+              aria-label="Home"
+              className="text-white"
+            >
+              {siteTitle.replace(".info", "")}
+            </Link>
+          </h1>
+          <div className="flex text-xl">
+            <Link to={`/`} aria-label="Home">
+              <FontAwesomeIcon icon={faHome} className='header-icon' />
+            </Link>
+            <Link to={`/system-map`} aria-label="System Map">
+              <FontAwesomeIcon icon={faMapMarked} className='header-icon' />
+            </Link>
+            <Link to={`/routes`} aria-label="All bus routes">
+              <FontAwesomeIcon icon={faList} className='header-icon' />
+            </Link>
+            <Link to={`/about`} aria-label="About">
+              <FontAwesomeIcon icon={faInfoCircle} className='header-icon' />
+            </Link>
+          </div>
+        </div>
+      </header>
+      {children}
+    </>
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default Header;

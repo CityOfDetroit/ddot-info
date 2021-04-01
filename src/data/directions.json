@@ -1,11 +1,11 @@
 {
     "NS": {
-        "0": "South",
-        "1": "North"
+        "0": "Southbound",
+        "1": "Northbound"
     },
     "EW": {
-        "0": "West",
-        "1": "East"
+        "0": "Westbound",
+        "1": "Eastbound"
     },
     "CW": {
         "0": "Clockwise",

@@ -8,7 +8,7 @@
 
 const path = require("path");
 const axios = require("axios")
-const routes = require('./src/data/ddot_routes.json')
+const { shapes } = require('./src/data/shapes')
 
 // here's where we generate GraphQL nodes from our ArcGIS Hub data.json
 exports.sourceNodes = async ({
@@ -24,7 +24,7 @@ exports.sourceNodes = async ({
   // let root = await axios.get(routesUrl)
 
   // for each node, register it with Gatsby
-  routes.features.forEach((n, i) => {
+  shapes.features.forEach((n, i) => {
     let {properties, geometry} = n
 
     let directionId;

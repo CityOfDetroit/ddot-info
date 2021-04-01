@@ -1,11 +1,10 @@
 import { graphql } from "gatsby";
 import React, { useState } from "react";
-
-import Layout from '../components/layout';
-import { RouteTitle } from '../components/RouteSign'
+import RouteNumber from '../components/RouteNumber'
 import DirectionPicker from '../components/DirectionPicker'
 import { RouteStopsList } from "../components/RouteStopsList";
-
+import {faBus} from '@fortawesome/free-solid-svg-icons'
+import PageTitle from '../components/PageTitle'
 const RouteStopsPage = ({ data }) => {
 
   let ddotRoutes = data.allDdotRoute.edges.map(e => e.node);
@@ -31,9 +30,10 @@ const RouteStopsPage = ({ data }) => {
   let [direction, setDirection] = useState(directions[0])
 
   return (
-    <Layout>
-      <RouteTitle short={r.routeShortName} long={r.routeLongName} color={r.routeColor} />
-      <h2 className="text-xl mt-2">Stops</h2>
+    <>
+      <PageTitle icon={faBus} text={<RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />}>
+        <h2 className="m-0 font-thin">All stops</h2>
+      </PageTitle>
       <section>
       </section>
       <section className="">
@@ -64,7 +64,7 @@ const RouteStopsPage = ({ data }) => {
         </section>
         <RouteStopsList {...{ longTrips, direction, routeColor }} />
       </section>
-    </Layout>
+    </>
   );
 };
 

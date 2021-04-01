@@ -1,15 +1,22 @@
-import { faBaby, faCrosshairs } from "@fortawesome/free-solid-svg-icons";
+import { faBaby, faClock, faCrosshairs, faMap, faMapMarked, faBus, faRoute } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { graphql, Link } from 'gatsby';
 import React, { useState } from "react";
 import Layout from '../components/layout';
+import PageTitle from "../components/PageTitle";
+import SiteSection from "../components/SiteSection";
 import SystemMap from '../components/SystemMap';
+import RouteTitle from '../components/RouteTitle';
 import SystemMapRouteType from '../components/SystemMapRouteType';
 import routeTypes from '../data/routeTypes';
+import allRoutes from '../data/allRoutes.json';
+import { RouteButton } from '../components/RouteListItem';
+import SiteButton from "../components/SiteButton";
 
 const nodeToFeature = (node, matching) => {
   let { route, ...props } = node
   props.color = '#' + matching.routeColor;
+  props.textColor = '#' + matching.routeTextColor
   return {
     "type": "Feature",
     "geometry": route.geometry,
@@ -30,6 +37,8 @@ const SystemMapPage = ({ data }) => {
     return nodeToFeature(e.node, match)
   })
 
+  console.log(pgRoutes)
+
   let routeFeatures = { type: "FeatureCollection", features: features }
 
   let stopsFeatures = stops.map(t => {
@@ -48,18 +57,53 @@ const SystemMapPage = ({ data }) => {
   }), {})
   let [clicked, setClicked] = useState(defaultClicked)
 
+  // show a popup with this state.
+  let [selected, setSelected] = useState([])
+
+  console.log(selected)
+
+  console.log(routes)
   return (
-    <Layout>
-      <SystemMap {...{ routeFeatures, stopsFeatures, clicked }} />
-      <div className="" style={{ height: 'auto', overflowY: 'scroll' }}>
+    <>
+      <PageTitle text='System map' icon={faMapMarked} />
+      <SystemMap {...{ routeFeatures, stopsFeatures, clicked, selected, setSelected }} />
+      {selected.map((s, i) => {
+        let matching = routes.filter(r => r.short === s)[0]
+        let matchingAllRoute = allRoutes.filter(r => r.RouteNum.toString() === s)[0]
+        console.log(matchingAllRoute)
+        return (
+          <SiteSection
+            key={s}
+            titleClassName="border-l-8 border-yellow-300"
+            title={<RouteTitle
+              long={matching.long}
+              color={matching.color}
+              short={s}
+              size='small'
+            />}
+            dismissable
+            onDismiss={() => setSelected(selected.filter(se => se !== s))}>
+            <p className="text-sm leading-tight">
+              {matchingAllRoute.Descriptio}
+            </p>
+            <div className="flex items-center justify-between mb-2">
+              <RouteButton icon={faBus} text='Stops' link={`/route/${matching.short}/stops`} ariaLabel={`Stops for ${matching.long}`} />
+              <RouteButton icon={faClock} text='Schedule' link={`/route/${matching.short}/schedule`} ariaLabel={`Schedule for ${matching.long}`} />
+              <RouteButton icon={faRoute} text='Main page' link={`/route/${matching.short}`} ariaLabel={`Main page for ${matching.long}`} />
+            </div>
+
+          </SiteSection>
+        )
+      })}
+      <SiteSection scroll fullWidth title={`Select routes to show on the map`}>
         {
           Object.keys(routeTypes).map(rt => {
             let filtered = routes.filter(r => r.color === routeTypes[rt].color)
-            return <SystemMapRouteType {...{clicked, setClicked, routeType: rt, filtered: filtered, startsOpen: rt === 'ConnectTen'}} />
+            return <SystemMapRouteType key={rt} {...{ clicked, setClicked, routeType: rt, filtered: filtered, startsOpen: rt === 'ConnectTen' }} />
           })
         }
-      </div>
-    </Layout>
+      </SiteSection>
+    </>
 
   );
 };
@@ -92,6 +136,7 @@ query MyQuery {
       edges {
         node {
           routeColor
+          routeTextColor
           routeDesc
           routeShortName
         }
@@ -108,6 +153,7 @@ query MyQuery {
       short: routeShortName
       long: routeLongName
       color: routeColor
+      textColor: routeTextColor
       desc: routeDesc
       routeId
     }

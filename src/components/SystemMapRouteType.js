@@ -24,7 +24,7 @@ const SystemMapRouteType = ({ routeType, filtered, clicked, setClicked, startsOp
               setClicked(reduced)
               setAllVisible(!allVisible)
             }} />
-            <FontAwesomeIcon icon={faChevronDown} className="mr-3" size="lg" onClick={() => setOpen(false)} />
+            <FontAwesomeIcon icon={faChevronCircleDown} className="mr-3" size="lg" onClick={() => setOpen(false)} />
           </div>
         </div>
         <div className="px-4 grid grid-cols-2 bg-gray-200 py-1" style={{borderLeft: `5px solid #${routeTypes[routeType].color}`}}>
@@ -40,13 +40,9 @@ const SystemMapRouteType = ({ routeType, filtered, clicked, setClicked, startsOp
                   active={clicked[f.short]}
                   onClick={() => {
                     if (filtered.every(fl => (clicked[fl.short] === true || fl.short === f.short))) {
-                      console.log(filtered, clicked)
-                      console.log(`all on`)
                       setAllVisible(true)
                     }
                     if (filtered.filter(fa => fa.short !== f.short).every(fl => (clicked[fl.short] === false))) {
-                      console.log(filtered, clicked)
-                      console.log(`all off`)
                       setAllVisible(false)
                     }
                     setClicked({ ...clicked, [f.short]: !clicked[f.short] })
@@ -76,7 +72,7 @@ const SystemMapRouteType = ({ routeType, filtered, clicked, setClicked, startsOp
             setClicked(reduced)
             setAllVisible(!allVisible)
           }} />
-          <FontAwesomeIcon icon={faChevronRight} className="mr-3" size="lg" onClick={() => setOpen(true)} />
+          <FontAwesomeIcon icon={faChevronCircleRight} className="mr-3" size="lg" onClick={() => setOpen(true)} />
         </div>
       </div>
     )

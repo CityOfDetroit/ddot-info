@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 
 const Covid = () => {
     return (
-        <Layout>
+        <>
           <div className="px-4 my-4">
 
             <h1 className="text-2xl">Responding to COVID-19</h1>
@@ -51,7 +51,7 @@ const Covid = () => {
             </li>            
         </ul>
           </div>
-        </Layout>
+        </>
     );
 };
 

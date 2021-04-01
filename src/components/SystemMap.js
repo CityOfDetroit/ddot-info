@@ -3,10 +3,10 @@ import { navigate } from 'gatsby';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
 import React, { useEffect, useState } from "react";
-import style from "../css/mapstyle.json";
-import routeLabels from '../data/route_labels.json';
+import baseStyle from "../css/mapstyle";
+import {labels} from '../data/labels.js';
 
-const SystemMap = ({ routeFeatures, stopsFeatures, clicked }) => {
+const SystemMap = ({ routeFeatures, stopsFeatures, clicked, selected, setSelected }) => {
 
   const [theMap, setTheMap] = useState(null)
   
@@ -17,8 +17,9 @@ const SystemMap = ({ routeFeatures, stopsFeatures, clicked }) => {
   useEffect(() => {
     let map = new mapboxgl.Map({
       container: "system-map",
-      style: style,
+      style: baseStyle,
       bounds: systemMapBbox,
+      minZoom: 9,
       fitBoundsOptions: {
         padding: 10
       },
@@ -47,7 +48,7 @@ const SystemMap = ({ routeFeatures, stopsFeatures, clicked }) => {
     map.on("load", () => {
 
       map.getSource("routes").setData(routeFeatures);
-      map.getSource("labels").setData(routeLabels)
+      map.getSource("labels").setData(labels)
 
       // stops
       map.addSource("stops", {
@@ -64,21 +65,21 @@ const SystemMap = ({ routeFeatures, stopsFeatures, clicked }) => {
         interactive: true,
         filter: ["==", "$type", "Point"],
         layout: {},
-        minzoom: 14.75,
+        minzoom: 12,
         paint: {
           "circle-color": "white",
           "circle-stroke-color": "#222",
           "circle-stroke-width": {
-            stops: [[13, 1], [19, 3]]
+            stops: [[12, 0.1], [19, 1.5]]
           },
           "circle-stroke-opacity": {
-            stops: [[13, 0], [13.1, 0.1], [13.2, 0.8]]
+            stops: [[12, 0], [13.1, 0.1], [13.2, 0.8]]
           },
           "circle-opacity": {
-            stops: [[13, 0], [13.1, 0.1], [13.2, 0.8]]
+            stops: [[12, 0], [13.1, 0.1], [13.2, 0.8]]
           },
           "circle-radius": {
-            stops: [[13, 1.5], [19, 12]]
+            stops: [[12, 0.5], [19, 4]]
           }
         }
       });
@@ -137,6 +138,16 @@ const SystemMap = ({ routeFeatures, stopsFeatures, clicked }) => {
         navigate(`/stop/${stop.properties.stopCode}`)
       });
 
+      map.on("click", e => {
+        let clickedRoutes = map.queryRenderedFeatures(e.point, {
+          layers: ["ddot-part-time-case", "ddot-part-time-case-express", "ddot-part-time-case", "ddot-neighborhood-case", "ddot-key-case", "ddot-connect-ten-case"]
+        });
+        
+        if(clickedRoutes.length > 0) {
+          setSelected([...new Set(clickedRoutes.map(r => r.properties.short))].sort((a, b) => a - b))
+        }
+      });
+
       setTheMap(map)
 
 
@@ -148,10 +159,18 @@ const SystemMap = ({ routeFeatures, stopsFeatures, clicked }) => {
       let clickedRoutes = Object.keys(clicked).filter(k => clicked[k] === true)
       let filteredRouteFeatures = routeFeatures.features.filter(rf => clickedRoutes.indexOf(rf.properties.short) > -1)
       theMap.getSource('routes').setData({type: "FeatureCollection", features: filteredRouteFeatures})
-      let filteredRouteLabels = routeLabels.features.filter(rl => clickedRoutes.indexOf(rl.properties.RouteNum.toString()) > -1)
+      console.log(filteredRouteFeatures)
+      let filteredRouteLabels = labels.features.filter(rl => clickedRoutes.indexOf(rl.properties.RouteNum.toString()) > -1)
       theMap.getSource('labels').setData({type: "FeatureCollection", features: filteredRouteLabels})
     }
   }, [clicked, theMap])
+
+  useEffect(() => {
+    if (theMap) {
+      console.log(selected)
+      theMap.setFilter("ddot-route-highlight", ["in", "short"].concat(selected))
+    }
+  }, [selected, theMap])
 
   return (
     <div id="system-map" />

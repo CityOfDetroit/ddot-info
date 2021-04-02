@@ -317,7 +317,7 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
         } else {
           theMap.easeTo({
             center: filtered[0].geometry.coordinates,
-            zoom: 15.5
+            zoom: 16.5
           });
         }
       }

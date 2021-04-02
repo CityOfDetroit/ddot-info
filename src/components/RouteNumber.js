@@ -4,7 +4,7 @@ const RouteNumber = ({ number, color, textColor='#5f6369', size="base", active=t
 
   let widths = {
     "base": '2.25rem',
-    "small": '1.45rem'
+    "small": '1.4rem'
   }
 
   let fontSizes = {

@@ -9,6 +9,8 @@ import SystemMap from '../components/SystemMap';
 import SystemMapRouteType from '../components/SystemMapRouteType';
 import allRoutes from '../data/allRoutes.json';
 import routeTypes from '../data/routeTypes';
+import logo from '../images/ddot-logo.png';
+import Helmet from 'react-helmet';
 
 const nodeToFeature = (node, matching) => {
   let { route, ...props } = node
@@ -27,8 +29,6 @@ const SystemMapPage = ({ data }) => {
 
   let { routes } = data.pg
 
-  let stops = data.pg.allStops
-
   let features = data.allDdotRoute.edges.map(e => {
     let match = pgRoutes.filter(f => f.routeShortName === e.node.short)[0]
     return nodeToFeature(e.node, match)
@@ -36,19 +36,19 @@ const SystemMapPage = ({ data }) => {
 
   let routeFeatures = { type: "FeatureCollection", features: features }
 
-  let stopsFeatures = stops.map(t => {
-    let { theGeom, ...props } = t
-    return {
-      "type": "Feature",
-      "geometry": theGeom['geojson'],
-      "properties": props
-    }
-  })
+  // let stopsFeatures = stops.map(t => {
+  //   let { theGeom, ...props } = t
+  //   return {
+  //     "type": "Feature",
+  //     "geometry": theGeom['geojson'],
+  //     "properties": props
+  //   }
+  // })
 
   // get a default object marking all routes as true
   let defaultClicked = routes.reduce((total, item) => ({
     ...total,
-    [item.short]: item.short < 11 ? true : false
+    [item.short]: true
   }), {})
   let [clicked, setClicked] = useState(defaultClicked)
 
@@ -57,8 +57,16 @@ const SystemMapPage = ({ data }) => {
 
   return (
     <>
+      <Helmet>
+        <title>{`DDOT.info: System map`}</title>
+        <meta property="og:url" content={`https://ddot.info/system-map/`} />
+        <meta property="og:type" content={`website`} />
+        <meta property="og:title" content={`DDOT system map`} />
+        <meta property="og:description" content={`DDOT system map. Get more information about DDOT's 43 routes.`} />
+        <meta property="og:image" content={logo} />
+      </Helmet>
       <PageTitle text='System map' icon={faMapMarked} />
-      <SystemMap {...{ routeFeatures, stopsFeatures, clicked, selected, setSelected }} />
+      <SystemMap {...{ routeFeatures, clicked, selected, setSelected }} />
       {selected.map((s, i) => {
         let matching = routes.filter(r => r.short === s)[0]
         let matchingAllRoute = allRoutes.filter(r => r.RouteNum.toString() === s)[0]
@@ -86,11 +94,11 @@ const SystemMapPage = ({ data }) => {
           </SiteSection>
         )
       })}
-      <SiteSection fullWidth title={`Select routes to show on the map`}>
+      <SiteSection fullWidth title={`Route types`} subtitle={`Showing ${Object.keys(clicked).filter(k => clicked[k]).length} of 43 routes`}>
         {
           Object.keys(routeTypes).map(rt => {
             let filtered = routes.filter(r => r.color === routeTypes[rt].color)
-            return <SystemMapRouteType key={rt} {...{ clicked, setClicked, routeType: rt, filtered: filtered, startsOpen: rt === 'ConnectTen' }} />
+            return <SystemMapRouteType key={rt} {...{ clicked, setClicked, routeType: rt, filtered: filtered, startsOpen: false }} />
           })
         }
       </SiteSection>
@@ -131,13 +139,6 @@ query MyQuery {
           routeDesc
           routeShortName
         }
-      }
-    }
-    allStops: allStopsList(condition: {feedIndex: 1}) {
-      stopName
-      stopCode
-      theGeom {
-				geojson
       }
     }
     routes: allRoutesList(condition: { feedIndex: 1 }, orderBy: ROUTE_SORT_ORDER_ASC) {

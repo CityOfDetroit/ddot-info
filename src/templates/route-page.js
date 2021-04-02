@@ -10,6 +10,8 @@ import { RouteStopsList } from '../components/RouteStopsList';
 import SiteSection from '../components/SiteSection';
 import SiteButton from '../components/SiteButton';
 import { Vehicle } from '../components/Vehicle';
+import logo from '../images/ddot-logo.png';
+import Helmet from 'react-helmet';
 
 const RoutePage = ({ data, pageContext }) => {
 
@@ -90,6 +92,14 @@ const RoutePage = ({ data, pageContext }) => {
 
   return (
     <div>
+      <Helmet>
+        <title>{`DDOT.info: Route ${r.routeShortName} ${r.routeLongName}`}</title>
+        <meta property="og:url" content={`https://ddot.info/route/${r.routeShortName}/`} />
+        <meta property="og:type" content={`website`} />
+        <meta property="og:title" content={`DDOT bus route: ${r.routeShortName} ${r.routeLongName}`} />
+        <meta property="og:description" content={`DDOT bus route ${r.routeShortName} ${r.routeLongName}: ${ddotRt.description}`} />
+        <meta property="og:image" content={logo} />
+      </Helmet>
       <PageTitle>
         <RouteTitle long={r.routeLongName} short={r.routeShortName} color={r.routeColor} size="small" />
         <span className="text-sm font-thin text-gray-600 py-1">{ddotRt.RouteType} route</span>
@@ -97,10 +107,10 @@ const RoutePage = ({ data, pageContext }) => {
       <SiteSection>
         <p className="text-sm text-left leading-tight">{ddotRt.description}</p>
       </SiteSection>
-      <SiteSection title={`Map`} icon={faMap} fullWidth expands>
+      <SiteSection title={`Map`} subtitle={!tracked && vehicles ? "Tap the bus icon to show more information" : null} icon={faMap} fullWidth expands>
         <RouteMap routes={geojson} stops={r.stopsList} timepoints={r.timepointsList} vehicles={vehicles} {...{ tracked, setTracked }} />
       </SiteSection>
-      {vehicles && patterns && <SiteSection title="Real-time bus locations" icon={faRss} fullWidth expands startsClosed isOpen={tracked}>
+      {vehicles && patterns && <SiteSection title="Real-time bus locations" subtitle={`Tap the pop-up to ${tracked ? `stop` : `start`} tracking`} icon={faRss} fullWidth expands startsClosed isOpen={tracked}>
         {
           tracked ?
           vehicles.filter(v => v.properties.vid === tracked).map(v => <Vehicle vehicle={v} key={v.properties.vid} {...{ patterns, tracked, setTracked }} />)

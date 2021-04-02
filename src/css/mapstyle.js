@@ -4857,7 +4857,7 @@ const baseStyle = {
       "filter": ["==", ["get", "RouteType"], "Peak-Hour"],
       "paint": {
         "circle-color": "white",
-        "circle-radius": {"base": 1, "stops": [[11.25, 5], [15, 11]]},
+        "circle-radius": {"base": 1, "stops": [[11.25, 6], [13, 7.75], [16, 13]]},
         "circle-opacity": {
           "base": 1,
           "stops": [[11.25, 0], [11.26, 0.1], [11.35, 1]]
@@ -4877,7 +4877,7 @@ const baseStyle = {
       "filter": ["==", ["get", "RouteType"], "Neighborhood"],
       "paint": {
         "circle-color": "#5f6369",
-        "circle-radius": {"base": 1, "stops": [[10.75, 5], [15, 11]]},
+        "circle-radius": {"base": 1, "stops": [[10.75, 7], [13.5, 8], [16, 14]]},
         "circle-opacity": {
           "base": 1,
           "stops": [[10.75, 0], [10.76, 0.1], [10.85, 1]]
@@ -4897,7 +4897,7 @@ const baseStyle = {
       "filter": ["==", ["get", "RouteType"], "Key"],
       "paint": {
         "circle-color": "#0088ce",
-        "circle-radius": {"base": 1, "stops": [[10, 5], [15, 11]]},
+        "circle-radius": {"base": 1, "stops": [[10, 7], [13.5, 8], [16, 14]]},
         "circle-opacity": {
           "base": 1,
           "stops": [[10, 0], [10.01, 0.1], [10.1, 1]]
@@ -4917,7 +4917,7 @@ const baseStyle = {
       "filter": ["==", ["get", "RouteType"], "ConnectTen"],
       "paint": {
         "circle-color": "#044455",
-        "circle-radius": {"base": 1, "stops": [[9, 6], [15, 12]]},
+        "circle-radius": {"base": 1, "stops": [[9, 6], [13.5, 8.5], [16, 14]]},
         "circle-opacity": {"base": 1, "stops": [[9, 0], [9.01, 0.1], [9.1, 1]]},
         "circle-stroke-opacity": {
           "base": 1,
@@ -4937,7 +4937,7 @@ const baseStyle = {
         "text-font": ["AvenirNext LT Pro Medium Bold"],
         "text-anchor": "center",
         "text-letter-spacing": -0.05,
-        "text-size": {"base": 1, "stops": [[11.25, 7.5], [15, 13]]},
+        "text-size": {"base": 1, "stops": [[11.25, 7.5], [13.5, 7.5], [15, 13]]},
         "text-offset": [0, 0.25],
         "text-allow-overlap": true
       },
@@ -4959,7 +4959,7 @@ const baseStyle = {
         "text-font": ["AvenirNext LT Pro Medium Bold"],
         "text-anchor": "center",
         "text-letter-spacing": -0.05,
-        "text-size": {"base": 1, "stops": [[10.75, 7.5], [15, 13]]},
+        "text-size": {"base": 1, "stops": [[10.75, 8], [13.5, 8.5], [15, 13]]},
         "text-offset": [0, 0.25],
         "text-allow-overlap": true
       },
@@ -4981,7 +4981,7 @@ const baseStyle = {
         "text-font": ["AvenirNext LT Pro Medium Bold"],
         "text-anchor": "center",
         "text-letter-spacing": -0.05,
-        "text-size": {"base": 1, "stops": [[10, 7.5], [15, 13]]},
+        "text-size": {"base": 1, "stops": [[10, 8], [13.5, 8.5], [15, 13]]},
         "text-offset": [0, 0.25],
         "text-allow-overlap": true
       },
@@ -5000,7 +5000,7 @@ const baseStyle = {
         "text-font": ["AvenirNext LT Pro Medium Bold"],
         "text-anchor": "center",
         "text-letter-spacing": -0.1,
-        "text-size": {"base": 1, "stops": [[9, 8.5], [15, 14]]},
+        "text-size": {"base": 1, "stops": [[9, 8.5], [13.5, 11], [15, 14]]},
         "text-offset": [0, 0.25],
         "text-allow-overlap": true
       },

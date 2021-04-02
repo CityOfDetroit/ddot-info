@@ -10,6 +10,7 @@ const DirectionPicker = ({ directions, direction, setDirection, routeOrientation
       <div className="flex">
       {directions.map(d => (
         <ToggleButton
+        key={d}
         onClick={() => setDirection(d)}
         title={feedDirs[routeOrientation][d]}
         active={direction === d} />

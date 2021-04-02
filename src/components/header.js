@@ -2,6 +2,7 @@ import { faInfoCircle, faList, faMapMarked, faHome } from "@fortawesome/free-sol
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "gatsby"
 import React from "react"
+import logo from '../images/ddot-logo-white.png'
 
 const Header = ({ siteTitle, children }) => {
   return (
@@ -9,6 +10,7 @@ const Header = ({ siteTitle, children }) => {
       <header
         style={{
           background: `rgba(0,68,69,1)`,
+          // background: `rgba(255,255,255,1)`,
         }}
       >
         <div
@@ -18,7 +20,8 @@ const Header = ({ siteTitle, children }) => {
             maxWidth: 960,
           }}
         >      
-          <h1 className="text-xl" style={{ margin: 0 }}>
+          <h1 className="text-xl flex" style={{ margin: 0 }}>
+          <img src={logo} className="h-8 mr-3"/>
             <Link
               to="/"
               aria-label="Home"

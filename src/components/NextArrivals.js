@@ -21,7 +21,7 @@ export const NextArrivals = ({ routeFeatures, predictions, currentTrip, setCurre
   }, [predictions])
 
   return (
-    <SiteSection icon={faRss} title="Next arrivals here" fullWidth expands>
+    <SiteSection icon={faRss} title="Next buses at this stop" subtitle={`Tap ${!currentTrip ? `to track this bus on the map` : `to stop tracking this bus`}`} fullWidth expands>
       {data && nextBuses.slice(0, 4).map((nb, i) => {
           return (<Prediction
             prediction={nb}

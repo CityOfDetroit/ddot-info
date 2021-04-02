@@ -7,6 +7,8 @@ import SiteSection from "../components/SiteSection";
 import StopMap from "../components/StopMap";
 import { TimesHere } from "../components/TimesHere";
 import { NextArrivals } from "../components/NextArrivals";
+import logo from '../images/ddot-logo.png';
+import Helmet from 'react-helmet';
 
 export const arrivalTimeDisplay = (time, showAp) => {
   let hour = time.hours;
@@ -55,6 +57,8 @@ const StopPage = ({ data }) => {
     return { ...route, properties: properties }
   })
 
+  console.log(routeFeatures)
+
   const [predictions, setPredictions] = useState(null)
 
   const [currentRoute, setCurrentRoute] = useState(routes[0].short)
@@ -92,19 +96,26 @@ const StopPage = ({ data }) => {
 
   return (
     <>
+      <Helmet>
+        <title>{`DDOT.info: ${s.stopName} #${s.stopCode}`}</title>
+        <meta property="og:url" content={`https://ddot.info/stop/${s.stopCode}`} />
+        <meta property="og:type" content={`website`} />
+        <meta property="og:title" content={`DDOT bus stop: ${s.stopName}`} />
+        <meta property="og:description" content={`DDOT bus stop #${s.stopCode}, at ${s.stopName}. Routes that stop here: ${[...new Set(routeFeatures.map(rf => rf.properties.long))].join(", ")}`} />
+        <meta property="og:image" content={logo} />
+      </Helmet>
       <PageTitle icon={faBusAlt}>
         <h1 className="m-0 font-thin">{s.stopName}</h1>
         <h2 className="text-base font-thin text-gray-700 bg-white py-0 px-2 m-0">#{s.stopCode}</h2>
       </PageTitle>
       {predictions && <NextArrivals {...{ routeFeatures, predictions, currentTrip, setCurrentTrip }} />}
-      <SiteSection fullWidth title='Routes at this stop' icon={faMapSigns} expands>
-        <RoutesHere {...{ routes, currentRoute, setCurrentRoute }} />
-      </SiteSection>
       <SiteSection icon={faMap} title={`Stop map`} fullWidth expands>
         <StopMap {...{ stopLon, stopLat, stopName, routeFeatures, currentRoute, currentTrip, predictions }} />
       </SiteSection>
-
-      <SiteSection fullWidth title='Scheduled arrivals here' icon={faClock} expands startsClosed className="mb-0">
+      <SiteSection fullWidth title='Routes at this stop' icon={faMapSigns} expands>
+        <RoutesHere {...{ routes, currentRoute, setCurrentRoute }} />
+      </SiteSection>
+      <SiteSection fullWidth title='Scheduled arrival times' icon={faClock} expands startsClosed className="mb-0">
         <TimesHere {...{ times, currentRoute, routes }} />
         {/* <StopTransfers /> */}
       </SiteSection>

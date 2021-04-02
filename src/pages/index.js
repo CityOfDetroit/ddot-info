@@ -1,20 +1,15 @@
-import React from "react"
-import { graphql, Link } from "gatsby";
-
-import Layout from "../components/layout"
-import RoutesList from '../components/RoutesList'
-import SystemMap from '../components/SystemMap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBus, faClock, faExclamationTriangle, faHome } from "@fortawesome/free-solid-svg-icons";
-import '@fortawesome/fontawesome-svg-core/styles.css';
-
 import { config } from '@fortawesome/fontawesome-svg-core';
-
-import '../css/app.css'
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { faBus, faClock, faHome } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { graphql } from "gatsby";
+import React from "react";
+import Helmet from 'react-helmet';
 import PageTitle from "../components/PageTitle";
+import RoutesList from '../components/RoutesList';
 import SiteSection from "../components/SiteSection";
-
-config.autoAddCss = false;
+import '../css/app.css';
+import logo from '../images/ddot-logo.png';
 
 const nodeToFeature = (node, matching) => {
   let { route, ...props } = node
@@ -40,6 +35,14 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
+      <Helmet>
+        <title>{`DDOT.info`}</title>
+        <meta property="og:url" content={`https://ddot.info/`} />
+        <meta property="og:type" content={`website`} />
+        <meta property="og:title" content={`DDOT.info`} />
+        <meta property="og:description" content={`DDOT.info: online route pages, schedules, and real-time information for the city of Detroit's public transit system.`} />
+        <meta property="og:image" content={logo} />
+      </Helmet>
       <PageTitle text={'Welcome to ddot.info'} icon={faHome} />
       <SiteSection>
         <p>You can find a description, map, and real-time information for your bus route by clicking the name of the route.</p>

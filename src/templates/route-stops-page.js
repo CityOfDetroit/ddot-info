@@ -6,6 +6,9 @@ import { RouteStopsList } from "../components/RouteStopsList";
 import {faBus} from '@fortawesome/free-solid-svg-icons'
 import PageTitle from '../components/PageTitle'
 import SiteSection from "../components/SiteSection";
+import Helmet from 'react-helmet';
+import logo from '../images/ddot-logo.png';
+
 const RouteStopsPage = ({ data }) => {
 
   let ddotRoutes = data.allDdotRoute.edges.map(e => e.node);
@@ -32,6 +35,14 @@ const RouteStopsPage = ({ data }) => {
 
   return (
     <>
+      <Helmet>
+        <title>{`DDOT.info: Stops for route ${r.routeShortName} ${r.routeLongName}`}</title>
+        <meta property="og:url" content={`https://ddot.info/route/${r.routeShortName}/stops`} />
+        <meta property="og:type" content={`website`} />
+        <meta property="og:title" content={`Stops for DDOT bus route:${r.routeShortName} ${r.routeLongName}`} />
+        <meta property="og:description" content={`Stops for DDOT bus route ${r.routeShortName} ${r.routeLongName}.`} />
+        <meta property="og:image" content={logo} />
+      </Helmet>
       <PageTitle icon={faBus} text={<RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />}>
         <h2 className="m-0 font-thin">All stops</h2>
       </PageTitle>

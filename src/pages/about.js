@@ -3,10 +3,20 @@ import React from "react";
 import Layout from "../components/layout"
 import PageTitle from "../components/PageTitle";
 import SiteSection from "../components/SiteSection";
+import logo from '../images/ddot-logo.png';
+import Helmet from 'react-helmet';
 
 const About = () => {
   return (
     <>
+      <Helmet>
+        <title>{`DDOT.info: About this site`}</title>
+        <meta property="og:url" content={`https://ddot.info/about/`} />
+        <meta property="og:type" content={`website`} />
+        <meta property="og:title" content={`About DDOT.info`} />
+        <meta property="og:description" content={`About page for DDOT.info: technical information, FAQ, and feedback form.`} />
+        <meta property="og:image" content={logo} />
+      </Helmet>
       <PageTitle text={`About`} icon={faInfoCircle} />
 
       <SiteSection>

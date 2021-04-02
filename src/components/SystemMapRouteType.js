@@ -8,13 +8,13 @@ import routeTypes from '../data/routeTypes';
 const SystemMapRouteType = ({ routeType, filtered, clicked, setClicked, startsOpen = false }) => {
 
   let [open, setOpen] = useState(startsOpen)
-  let [allVisible, setAllVisible] = useState(startsOpen)
+  let [allVisible, setAllVisible] = useState(true)
 
   if (open) {
     return (
       <div key={routeType} >
         <div className="flex items-center justify-between px-2 py-2" style={{borderLeft: `5px solid #${routeTypes[routeType].color}`}}>
-          <div >
+          <div onClick={() => setOpen(false)}>
             <h2 className="m-0 leading-tight">{routeType}</h2>
             <span className="text-xs font-thin leading-none">{routeTypes[routeType].desc}</span>
           </div>
@@ -62,7 +62,7 @@ const SystemMapRouteType = ({ routeType, filtered, clicked, setClicked, startsOp
   else {
     return (
       <div key={routeType} className="flex items-center justify-between px-2 py-2" style={{borderLeft: `5px solid #${routeTypes[routeType].color}`}}>
-        <div>
+        <div onClick={() => setOpen(true)}>
           <h2 className="m-0 leading-tight">{routeType}</h2>
           <span className="text-xs font-thin leading-none">{routeTypes[routeType].desc}</span>
         </div>

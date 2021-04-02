@@ -41,7 +41,7 @@ export const TimesHere = ({ currentRoute, times, routes }) => {
       {Object.keys(timesByRoute).map(r => {
         let filtered = routes.filter(rt => r === rt.short)[0]
         return (
-          <SiteSection title={ <RouteTitle size="small" short={r} color={filtered.color} long={filtered.long} />}>
+          <SiteSection key={r} title={ <RouteTitle size="small" short={r} color={filtered.color} long={filtered.long} />}>
            
             <div
               className="mb-3"

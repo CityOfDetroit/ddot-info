@@ -7,6 +7,8 @@ import RouteNumber from "../components/RouteNumber";
 import RouteTimetable from "../components/RouteTimetable";
 import ServicePicker from "../components/ServicePicker";
 import SiteSection from "../components/SiteSection";
+import logo from '../images/ddot-logo.png';
+import Helmet from 'react-helmet';
 
 const RouteSchedulePage = ({ data }) => {
 
@@ -46,6 +48,14 @@ const RouteSchedulePage = ({ data }) => {
 
   return (
     <>
+      <Helmet>
+        <title>{`DDOT.info: Schedule for route ${r.routeShortName} ${r.routeLongName}`}</title>
+        <meta property="og:url" content={`https://ddot.info/route/${r.routeShortName}/schedule`} />
+        <meta property="og:type" content={`website`} />
+        <meta property="og:title" content={`Schedule for DDOT bus route: ${r.routeShortName} ${r.routeLongName}`} />
+        <meta property="og:description" content={`Schedule for DDOT bus route ${r.routeShortName} ${r.routeLongName}.`} />
+        <meta property="og:image" content={logo} />
+      </Helmet>
       <PageTitle icon={faClock} text={<RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />}>
         <h2 className="m-0 font-thin">Schedule</h2>
       </PageTitle>
@@ -53,7 +63,7 @@ const RouteSchedulePage = ({ data }) => {
       <SiteSection>
         <p>
           Major stops are shown in order in the top row; look down the column to see scheduled departure times from that bus stop.
-          Buses make additional stops between major stops; see a list of all stops on the <a href="./stops" className="text-underline">stops page</a>.
+          Buses make additional stops between major stops; see a list of all stops on the <a href="../stops" className="text-underline">stops page</a>.
         </p>
         <p className="text-sm">
           AM times are shown normally; <span className="font-semibold">PM times are in bold</span>.

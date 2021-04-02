@@ -8,7 +8,7 @@ import logo from '../images/ddot-logo.png';
 
 const RoutesPage = ({ data }) => {
 
-  let {routes, stops} = data.postgres
+  let {routes} = data.postgres
 
   let sortedRoutes = routes.sort((a, b) => {return parseInt(b.short) < parseInt(a.short)})
   return (

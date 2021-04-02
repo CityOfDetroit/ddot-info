@@ -57,8 +57,6 @@ const StopPage = ({ data }) => {
     return { ...route, properties: properties }
   })
 
-  console.log(routeFeatures)
-
   const [predictions, setPredictions] = useState(null)
 
   const [currentRoute, setCurrentRoute] = useState(routes[0].short)

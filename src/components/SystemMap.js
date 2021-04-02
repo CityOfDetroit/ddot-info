@@ -45,7 +45,6 @@ const SystemMap = ({ routeFeatures, clicked, selected, setSelected }) => {
 
     map.on('moveend', () => {
       setZoom(map.getZoom())
-      console.log(map.getZoom())
     })
 
     map.on("load", () => {
@@ -147,8 +146,6 @@ const SystemMap = ({ routeFeatures, clicked, selected, setSelected }) => {
         let clickedRoutes = map.queryRenderedFeatures(e.point, {
           layers: ["part-time-background", "neighborhood-background", "key-background", "connect-ten-background"]
         });
-
-        console.log([...new Set(clickedRoutes.map(r => r.properties.RouteNum))].sort((a, b) => a - b))
         
         if(clickedRoutes.length > 0) {
           setSelected([...new Set(clickedRoutes.map(r => r.properties.RouteNum.toString()))].sort((a, b) => a - b))

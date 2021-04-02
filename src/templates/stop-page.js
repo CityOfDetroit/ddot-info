@@ -94,7 +94,7 @@ const StopPage = ({ data }) => {
     <>
       <PageTitle icon={faBusAlt}>
         <h1 className="m-0 font-thin">{s.stopName}</h1>
-        <h2 className="text-base font-thin text-gray-700 bg-white py-0 px-2 m-0 mr-3">#{s.stopCode}</h2>
+        <h2 className="text-base font-thin text-gray-700 bg-white py-0 px-2 m-0">#{s.stopCode}</h2>
       </PageTitle>
       {predictions && <NextArrivals {...{ routeFeatures, predictions, currentTrip, setCurrentTrip }} />}
       <SiteSection fullWidth title='Routes at this stop' icon={faMapSigns} expands>

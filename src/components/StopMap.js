@@ -179,7 +179,6 @@ const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentRoute, curr
           ]
         }
 
-        console.log(bbox(both))
         theMap.fitBounds(bbox(both), {
           padding: 50,
           maxZoom: 17

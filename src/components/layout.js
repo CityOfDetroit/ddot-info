@@ -17,7 +17,7 @@ const Layout = ({ gridClass=null, children }) => {
 
   const [showAlert, setShowAlert] = useState({
     mask: true,
-    fare: true
+    fare: false
   })
   
   const data = useStaticQuery(graphql`

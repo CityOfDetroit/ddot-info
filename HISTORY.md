@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.1.0 - 2021-04-01
+
+This is still using the same GTFS: 2021-02-08 thru 2021-04-30.
+
+### Added
+
+- Interactive system map at /system-map :tada:
+- More coherent UI across all pages
+- Stop pages now allow you to see where next arrivals are currently
+
+### Changed
+
+- Reclassified 46 Southfield, 80 Villages Direct, 89 Southwest Direct to peak-hour/part-time routes
+
 ## 1.0.2 - 2021-02-08
 
 Updated to latest GTFS version, valid 2021-02-08 through 2021-04-30.

@@ -1,5 +1,5 @@
+import { faChevronCircleDown, faChevronCircleRight, faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronCircleDown, faChevronDown, faChevronCircleRight, faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from "react";
 
 const SiteSection = ({ children, className = "", titleClassName = "", icon = null, title = null, fullWidth = false, expands = false, startsClosed = false, isOpen = false, scroll = false, dismissable = false, onDismiss = null }) => {

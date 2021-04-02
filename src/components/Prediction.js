@@ -22,31 +22,31 @@ export const Prediction = ({ prediction, vehicle, currentTrip, setCurrentTrip, r
   let notLiveStyle = baseStyle + " bg-gray-200"
 
   useEffect(() => {
-    if(isLive) {
+    if (isLive) {
       setCurrentTrip(prediction)
     }
   }, [vehicle])
 
   return (
     <div className={
-        last ? 
-            isLive ? liveStyle + " border-b-2" : notLiveStyle + " border-b-2"
-          : isLive ? liveStyle : notLiveStyle
-        }
-        onClick={() => isLive ? setCurrentTrip(null) : setCurrentTrip(prediction)}
-        >
+      last ?
+        isLive ? liveStyle + " border-b-2" : notLiveStyle + " border-b-2"
+        : isLive ? liveStyle : notLiveStyle
+    }
+      onClick={() => isLive ? setCurrentTrip(null) : setCurrentTrip(prediction)}
+    >
 
-        <div className="flex items-center justify-between">
-          <RouteTitle short={route.properties.short} color={route.properties.color} long={route.properties.long} size='small' />
-          <span>in {prediction.prdctdn} minutes</span>
-        </div>
+      <div className="flex items-center justify-between">
+        <RouteTitle short={route.properties.short} color={route.properties.color} long={route.properties.long} size='small' />
+        <span>in {prediction.prdctdn} minutes</span>
+      </div>
 
-        <div className="flex items-center justify-between flex-row-reverse">
-          <span className="text-sm text-gray-500">
-          #{prediction.vid} <FontAwesomeIcon icon={faBus} className="ml-1" /> 
-          </span>
-          <span>{readable[prediction.rtdir]}</span>
-        </div>
+      <div className="flex items-center justify-between flex-row-reverse">
+        <span className="text-sm text-gray-500">
+          #{prediction.vid} <FontAwesomeIcon icon={faBus} className="ml-1" />
+        </span>
+        <span>{readable[prediction.rtdir]}</span>
+      </div>
     </div>
   );
 };

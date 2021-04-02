@@ -1,7 +1,7 @@
+import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons'
-import React from 'react';
 import { Link } from 'gatsby';
+import React from 'react';
 
 const arrivalTimeDisplay = (time, showAp) => {
   let hour = time.hours;

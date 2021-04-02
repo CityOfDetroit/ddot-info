@@ -43,6 +43,7 @@ const SystemMap = ({ routeFeatures, stopsFeatures, clicked, selected, setSelecte
     map.addControl(ctrl, "bottom-left");
 
     map.on('moveend', () => {
+      console.log(map.getZoom())
     })
 
     map.on("load", () => {

@@ -10,7 +10,7 @@ export const NextArrivals = ({ routeFeatures, predictions, currentTrip, setCurre
   let [data, setData] = useState(null)
 
   useEffect(() => {
-    fetch(`/.netlify/functions/vehicle?vid=${nextBuses.map(nb => nb.vid).toString()}`)
+    fetch(`/.netlify/functions/vehicle?vid=${nextBuses.slice(0,4).map(nb => nb.vid).toString()}`)
       .then(r => r.json())
       .then(d => {
         if (d['bustime-response'].vehicle && d['bustime-response'].vehicle.length > 0) {

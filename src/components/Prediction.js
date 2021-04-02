@@ -1,33 +1,52 @@
-import React from 'react';
-import RouteNumber from './RouteNumber';
+import { faBus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect } from 'react';
+import RouteTitle from './RouteTitle';
 
-export const Prediction = ({ prediction, currentTrip, setCurrentTrip, routeFeatures, last }) => {
+export const Prediction = ({ prediction, vehicle, currentTrip, setCurrentTrip, routeFeatures, last }) => {
 
   let readable = {
-    'EAST': 'Eastbound',
-    'WEST': 'Westbound',
-    'NORTH': 'Northbound',
-    'SOUTH': 'Southbound'
+    'EAST': 'eastbound',
+    'WEST': 'westbound',
+    'NORTH': 'northbound',
+    'SOUTH': 'southbound'
   }
 
-  let isLive = currentTrip === prediction.vid;
+  prediction.vehicle = vehicle
 
+  let isLive = currentTrip ? currentTrip.vid === prediction.vid : false;
   let route = routeFeatures.filter(r => r.properties.short === prediction.rt)[0]
 
+  let baseStyle = "w-full px-4 py-2"
+  let liveStyle = baseStyle + " bg-yellow-200"
+  let notLiveStyle = baseStyle + " bg-gray-200"
+
+  useEffect(() => {
+    if(isLive) {
+      setCurrentTrip(prediction)
+    }
+  }, [vehicle])
+
   return (
-    <div className={last ? "flex items-center" : "flex items-center border-b-2"}>
-      <div className={isLive ? "bg-yellow-200 p-2 w-full" : "bg-gray-200 p-2 w-full"}>
-        <div className="flex items-center">
-          <RouteNumber number={route.properties.short} color={route.properties.color} size='small' />
-          <span>{prediction.des} {readable[prediction.rtdir]}</span>
+    <div className={
+        last ? 
+            isLive ? liveStyle + " border-b-2" : notLiveStyle + " border-b-2"
+          : isLive ? liveStyle : notLiveStyle
+        }
+        onClick={() => isLive ? setCurrentTrip(null) : setCurrentTrip(prediction)}
+        >
+
+        <div className="flex items-center justify-between">
+          <RouteTitle short={route.properties.short} color={route.properties.color} long={route.properties.long} size='small' />
+          <span>in {prediction.prdctdn} minutes</span>
         </div>
+
         <div className="flex items-center justify-between flex-row-reverse">
-        <span>in {prediction.prdctdn} minutes</span>
-        <span className="text-sm text-gray-700">
-          #{prediction.vid}
-        </span>
+          <span className="text-sm text-gray-500">
+          #{prediction.vid} <FontAwesomeIcon icon={faBus} className="ml-1" /> 
+          </span>
+          <span>{readable[prediction.rtdir]}</span>
         </div>
-      </div>
     </div>
   );
 };

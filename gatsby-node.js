@@ -51,6 +51,7 @@ exports.sourceNodes = async ({
       direction: properties.Direction,
       directionId: directionId,
       short: properties.RouteNum.toString(),
+      long: properties.RouteName,
       orientation: properties.Orientatio,
       localService: properties.LocalServi,
       description: properties.Descriptio,

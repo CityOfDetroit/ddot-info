@@ -1,12 +1,12 @@
-import { faBusAlt, faClock, faMap, faMapSigns, faRss } from "@fortawesome/free-solid-svg-icons";
+import { faBusAlt, faClock, faMap, faMapSigns } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from "gatsby";
 import React, { useEffect, useState } from "react";
 import PageTitle from '../components/PageTitle';
-import Prediction from "../components/Prediction";
 import { RoutesHere } from "../components/RoutesHere";
 import SiteSection from "../components/SiteSection";
 import StopMap from "../components/StopMap";
 import { TimesHere } from "../components/TimesHere";
+import { NextArrivals } from "../components/NextArrivals";
 
 export const arrivalTimeDisplay = (time, showAp) => {
   let hour = time.hours;
@@ -32,17 +32,6 @@ export const arrivalTimeDisplay = (time, showAp) => {
   return `${hour}:${minutes}${showAp ? ap : ``}`;
 };
 
-const NextArrivals = ({ routeFeatures, predictions, currentTrip, setCurrentTrip }) => {
-
-  let nextBuses = predictions['bustime-response'].prd
-
-  return (
-    <SiteSection icon={faRss} title="Next arrivals here" fullWidth expands>
-      {nextBuses.slice(0,4).map((nb, i) => <Prediction prediction={nb} last={i === nextBuses.length - 1} key={nb.vid} {...{currentTrip, setCurrentTrip, routeFeatures}} />)}
-    </SiteSection>
-  )
-}
-
 const StopPage = ({ data }) => {
   const s = data.postgres.stop;
 
@@ -54,7 +43,7 @@ const StopPage = ({ data }) => {
   let stopRoutes = []
 
   allRoutes.forEach(r => {
-    if(routeDirectionCombos.indexOf(JSON.stringify([r.short, r.directionId])) > -1) {
+    if (routeDirectionCombos.indexOf(JSON.stringify([r.short, r.directionId])) > -1) {
       stopRoutes.push(r)
     }
   })
@@ -72,6 +61,15 @@ const StopPage = ({ data }) => {
 
   const [currentTrip, setCurrentTrip] = useState(null)
 
+  // set up a 10s 'tick' using `now`
+  let [now, setNow] = useState(new Date());
+  useEffect(() => {
+    let tick = setInterval(() => {
+      setNow(new Date());
+    }, 10000);
+    return () => clearInterval(tick);
+  }, []);
+
   useEffect(() => {
     fetch(`/.netlify/functions/stop?stopId=${s.stopCode}`)
       .then(r => r.json())
@@ -81,16 +79,25 @@ const StopPage = ({ data }) => {
         }
         else { return; }
       })
-  }, [s.stopId, s.stopCode])
+  }, [s.stopId, s.stopCode, now])
+
+  useEffect(() => {
+    if (currentTrip) {
+      setCurrentRoute(currentTrip.rt)
+    }
+    else {
+      return;
+    }
+  }, [currentTrip])
 
   return (
     <>
       <PageTitle icon={faBusAlt}>
-        <h1 className="m-0 font-thin">{s.stopName}</h1> 
+        <h1 className="m-0 font-thin">{s.stopName}</h1>
         <h2 className="text-base font-thin text-gray-700 bg-white py-0 px-2 m-0 mr-3">#{s.stopCode}</h2>
       </PageTitle>
       {predictions && <NextArrivals {...{ routeFeatures, predictions, currentTrip, setCurrentTrip }} />}
-      <SiteSection fullWidth title='Routes at this stop' icon={faMapSigns}>
+      <SiteSection fullWidth title='Routes at this stop' icon={faMapSigns} expands>
         <RoutesHere {...{ routes, currentRoute, setCurrentRoute }} />
       </SiteSection>
       <SiteSection icon={faMap} title={`Stop map`} fullWidth expands>
@@ -116,6 +123,7 @@ export const query = graphql`
           direction
           orientation
           directionId
+          long
           localService
           RouteType: routeType
           route {

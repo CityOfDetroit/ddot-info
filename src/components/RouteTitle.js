@@ -2,7 +2,8 @@ import { Link } from "gatsby"
 import React from "react"
 import RouteNumber from "./RouteNumber"
 
-const RouteTitle = ({ short, color, long, size='base', bold=false, link=false }) => (
+const RouteTitle = ({ short, color, long, size='base', bold=false, link=false }) => {
+  return(
   <div className="flex items-center content-start text-lg">
     <RouteNumber number={short} color={color} size={size} />
     <Link aria-label={`${long} route page`} to={`/route/${short}`} prefetch={"false"}>
@@ -15,5 +16,5 @@ const RouteTitle = ({ short, color, long, size='base', bold=false, link=false })
     </Link>
   </div>
 )
-
+      }
 export default RouteTitle;

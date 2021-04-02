@@ -1,9 +1,9 @@
-import routeTypes from '../data/routeTypes'
-import React, { useState } from 'react'
-import RouteNumber from "../components/RouteNumber";
-import { Link } from 'gatsby';
+import { faChevronCircleDown, faChevronCircleRight, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faChevronCircleRight, faChevronCircleDown, faEye, faEyeSlash, faChevronRight, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'gatsby';
+import React, { useState } from 'react';
+import RouteNumber from "../components/RouteNumber";
+import routeTypes from '../data/routeTypes';
 
 const SystemMapRouteType = ({ routeType, filtered, clicked, setClicked, startsOpen = false }) => {
 

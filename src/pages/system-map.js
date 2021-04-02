@@ -1,17 +1,14 @@
-import { faBaby, faClock, faCrosshairs, faMap, faMapMarked, faBus, faRoute } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { graphql, Link } from 'gatsby';
+import { faArrowCircleRight, faBus, faClock, faMapMarked, faRoute } from "@fortawesome/free-solid-svg-icons";
+import { graphql } from 'gatsby';
 import React, { useState } from "react";
-import Layout from '../components/layout';
 import PageTitle from "../components/PageTitle";
+import { RouteButton } from '../components/RouteListItem';
+import RouteTitle from '../components/RouteTitle';
 import SiteSection from "../components/SiteSection";
 import SystemMap from '../components/SystemMap';
-import RouteTitle from '../components/RouteTitle';
 import SystemMapRouteType from '../components/SystemMapRouteType';
-import routeTypes from '../data/routeTypes';
 import allRoutes from '../data/allRoutes.json';
-import { RouteButton } from '../components/RouteListItem';
-import SiteButton from "../components/SiteButton";
+import routeTypes from '../data/routeTypes';
 
 const nodeToFeature = (node, matching) => {
   let { route, ...props } = node
@@ -37,8 +34,6 @@ const SystemMapPage = ({ data }) => {
     return nodeToFeature(e.node, match)
   })
 
-  console.log(pgRoutes)
-
   let routeFeatures = { type: "FeatureCollection", features: features }
 
   let stopsFeatures = stops.map(t => {
@@ -60,9 +55,6 @@ const SystemMapPage = ({ data }) => {
   // show a popup with this state.
   let [selected, setSelected] = useState([])
 
-  console.log(selected)
-
-  console.log(routes)
   return (
     <>
       <PageTitle text='System map' icon={faMapMarked} />
@@ -70,7 +62,6 @@ const SystemMapPage = ({ data }) => {
       {selected.map((s, i) => {
         let matching = routes.filter(r => r.short === s)[0]
         let matchingAllRoute = allRoutes.filter(r => r.RouteNum.toString() === s)[0]
-        console.log(matchingAllRoute)
         return (
           <SiteSection
             key={s}
@@ -87,15 +78,15 @@ const SystemMapPage = ({ data }) => {
               {matchingAllRoute.Descriptio}
             </p>
             <div className="flex items-center justify-between mb-2">
-              <RouteButton icon={faBus} text='Stops' link={`/route/${matching.short}/stops`} ariaLabel={`Stops for ${matching.long}`} />
+              <RouteButton icon={faArrowCircleRight} text='Main page' link={`/route/${matching.short}`} ariaLabel={`Main page for ${matching.long}`} />
               <RouteButton icon={faClock} text='Schedule' link={`/route/${matching.short}/schedule`} ariaLabel={`Schedule for ${matching.long}`} />
-              <RouteButton icon={faRoute} text='Main page' link={`/route/${matching.short}`} ariaLabel={`Main page for ${matching.long}`} />
+              <RouteButton icon={faBus} text='Stops' link={`/route/${matching.short}/stops`} ariaLabel={`Stops for ${matching.long}`} />
             </div>
 
           </SiteSection>
         )
       })}
-      <SiteSection scroll fullWidth title={`Select routes to show on the map`}>
+      <SiteSection fullWidth title={`Select routes to show on the map`}>
         {
           Object.keys(routeTypes).map(rt => {
             let filtered = routes.filter(r => r.color === routeTypes[rt].color)

@@ -159,7 +159,6 @@ const SystemMap = ({ routeFeatures, stopsFeatures, clicked, selected, setSelecte
       let clickedRoutes = Object.keys(clicked).filter(k => clicked[k] === true)
       let filteredRouteFeatures = routeFeatures.features.filter(rf => clickedRoutes.indexOf(rf.properties.short) > -1)
       theMap.getSource('routes').setData({type: "FeatureCollection", features: filteredRouteFeatures})
-      console.log(filteredRouteFeatures)
       let filteredRouteLabels = labels.features.filter(rl => clickedRoutes.indexOf(rl.properties.RouteNum.toString()) > -1)
       theMap.getSource('labels').setData({type: "FeatureCollection", features: filteredRouteLabels})
     }
@@ -167,7 +166,6 @@ const SystemMap = ({ routeFeatures, stopsFeatures, clicked, selected, setSelecte
 
   useEffect(() => {
     if (theMap) {
-      console.log(selected)
       theMap.setFilter("ddot-route-highlight", ["in", "short"].concat(selected))
     }
   }, [selected, theMap])

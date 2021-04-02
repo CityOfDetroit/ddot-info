@@ -5,6 +5,7 @@ import DirectionPicker from '../components/DirectionPicker'
 import { RouteStopsList } from "../components/RouteStopsList";
 import {faBus} from '@fortawesome/free-solid-svg-icons'
 import PageTitle from '../components/PageTitle'
+import SiteSection from "../components/SiteSection";
 const RouteStopsPage = ({ data }) => {
 
   let ddotRoutes = data.allDdotRoute.edges.map(e => e.node);
@@ -34,36 +35,33 @@ const RouteStopsPage = ({ data }) => {
       <PageTitle icon={faBus} text={<RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />}>
         <h2 className="m-0 font-thin">All stops</h2>
       </PageTitle>
-      <section>
-      </section>
-      <section className="">
-        <DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} />
-        <section className="bg-gray-100 flex items-center p-2">
-          <p className="flex items-center mr-3">Major stops: <span
-            style={{
-              display: "inline-block",
-              height: "1em",
-              width: "1em",
-              backgroundColor: "#000",
-              border: "1px solid #000",
-              borderRadius: "3em",
-              margin: ".25em"
-            }}
+      <DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} />
+        <div className="flex px-4">
+          
+        <p className="flex items-center mr-3">Major stops: <span
+          style={{
+            display: "inline-block",
+            height: "1em",
+            width: "1em",
+            backgroundColor: "#000",
+            border: "1px solid #000",
+            borderRadius: "3em",
+            margin: ".25em"
+          }}
           /></p>
-          <p className="flex items-center">Local stops: <span
-            style={{
-              display: "inline-block",
-              height: "1em",
-              width: "1em",
-              backgroundColor: "#fff",
-              border: `3px solid #${r.routeColor}`,
-              borderRadius: "3em",
-              margin: ".25em"
-            }}
+        <p className="flex items-center">Local stops: <span
+          style={{
+            display: "inline-block",
+            height: "1em",
+            width: "1em",
+            backgroundColor: "#fff",
+            border: `3px solid #${r.routeColor}`,
+            borderRadius: "3em",
+            margin: ".25em"
+          }}
           /></p>
-        </section>
-        <RouteStopsList {...{ longTrips, direction, routeColor }} />
-      </section>
+        </div>
+      <RouteStopsList {...{ longTrips, direction, routeColor }} />
     </>
   );
 };

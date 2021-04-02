@@ -6,8 +6,8 @@ import { ToggleButton } from './ToggleButton';
 
 const DirectionPicker = ({ directions, direction, setDirection, routeOrientation, className, inline = true }) => {
   return (
-    <SiteSection title={`Direction: ${feedDirs[routeOrientation][direction]}`} fullWidth>
-      <div className="flex mb-3">
+    <SiteSection title={`Direction: ${feedDirs[routeOrientation][direction]}`} className="mb-0" fullWidth>
+      <div className="flex">
       {directions.map(d => (
         <ToggleButton
         onClick={() => setDirection(d)}

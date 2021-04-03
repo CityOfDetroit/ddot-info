@@ -1,10 +1,9 @@
 import bbox from "@turf/bbox";
-import { navigate } from 'gatsby';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
 import React, { useEffect, useState } from "react";
 import baseStyle from "../css/mapstyle";
-import {labels, downtownLabels} from '../data/labels.js';
+import { downtownLabels, labels } from '../data/labels.js';
 
 const SystemMap = ({ routeFeatures, clicked, selected, setSelected }) => {
 
@@ -22,7 +21,7 @@ const SystemMap = ({ routeFeatures, clicked, selected, setSelected }) => {
       bounds: systemMapBbox,
       minZoom: 9,
       fitBoundsOptions: {
-        padding: 10
+        padding: 20
       },
     });
 

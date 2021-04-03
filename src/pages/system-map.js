@@ -1,6 +1,7 @@
-import { faArrowCircleRight, faBus, faClock, faMapMarked, faRoute } from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleRight, faBus, faClock, faMapMarked } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from 'gatsby';
 import React, { useState } from "react";
+import Helmet from 'react-helmet';
 import PageTitle from "../components/PageTitle";
 import { RouteButton } from '../components/RouteListItem';
 import RouteTitle from '../components/RouteTitle';
@@ -9,8 +10,6 @@ import SystemMap from '../components/SystemMap';
 import SystemMapRouteType from '../components/SystemMapRouteType';
 import allRoutes from '../data/allRoutes.json';
 import routeTypes from '../data/routeTypes';
-import logo from '../images/ddot-logo.png';
-import Helmet from 'react-helmet';
 
 const nodeToFeature = (node, matching) => {
   let { route, ...props } = node
@@ -63,7 +62,6 @@ const SystemMapPage = ({ data }) => {
         <meta property="og:type" content={`website`} />
         <meta property="og:title" content={`DDOT system map`} />
         <meta property="og:description" content={`DDOT system map. Get more information about DDOT's 43 routes.`} />
-        <meta property="og:image" content={logo} />
       </Helmet>
       <PageTitle text='System map' icon={faMapMarked} />
       <SystemMap {...{ routeFeatures, clicked, selected, setSelected }} />

@@ -1,14 +1,13 @@
 import { faBusAlt, faClock, faMap, faMapSigns } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from "gatsby";
 import React, { useEffect, useState } from "react";
+import Helmet from 'react-helmet';
+import { NextArrivals } from "../components/NextArrivals";
 import PageTitle from '../components/PageTitle';
 import { RoutesHere } from "../components/RoutesHere";
 import SiteSection from "../components/SiteSection";
 import StopMap from "../components/StopMap";
 import { TimesHere } from "../components/TimesHere";
-import { NextArrivals } from "../components/NextArrivals";
-import logo from '../images/ddot-logo.png';
-import Helmet from 'react-helmet';
 
 export const arrivalTimeDisplay = (time, showAp) => {
   let hour = time.hours;
@@ -100,7 +99,6 @@ const StopPage = ({ data }) => {
         <meta property="og:type" content={`website`} />
         <meta property="og:title" content={`DDOT bus stop: ${s.stopName}`} />
         <meta property="og:description" content={`DDOT bus stop #${s.stopCode}, at ${s.stopName}. Routes that stop here: ${[...new Set(routeFeatures.map(rf => rf.properties.long))].join(", ")}`} />
-        <meta property="og:image" content={logo} />
       </Helmet>
       <PageTitle icon={faBusAlt}>
         <h1 className="m-0 font-thin">{s.stopName}</h1>

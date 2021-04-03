@@ -1,13 +1,11 @@
+import { faBus } from '@fortawesome/free-solid-svg-icons';
 import { graphql } from "gatsby";
 import React, { useState } from "react";
-import RouteNumber from '../components/RouteNumber'
-import DirectionPicker from '../components/DirectionPicker'
-import { RouteStopsList } from "../components/RouteStopsList";
-import {faBus} from '@fortawesome/free-solid-svg-icons'
-import PageTitle from '../components/PageTitle'
-import SiteSection from "../components/SiteSection";
 import Helmet from 'react-helmet';
-import logo from '../images/ddot-logo.png';
+import DirectionPicker from '../components/DirectionPicker';
+import PageTitle from '../components/PageTitle';
+import RouteNumber from '../components/RouteNumber';
+import { RouteStopsList } from "../components/RouteStopsList";
 
 const RouteStopsPage = ({ data }) => {
 
@@ -41,7 +39,6 @@ const RouteStopsPage = ({ data }) => {
         <meta property="og:type" content={`website`} />
         <meta property="og:title" content={`Stops for DDOT bus route:${r.routeShortName} ${r.routeLongName}`} />
         <meta property="og:description" content={`Stops for DDOT bus route ${r.routeShortName} ${r.routeLongName}.`} />
-        <meta property="og:image" content={logo} />
       </Helmet>
       <PageTitle icon={faBus} text={<RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />}>
         <h2 className="m-0 font-thin">All stops</h2>

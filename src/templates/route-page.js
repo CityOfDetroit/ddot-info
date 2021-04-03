@@ -1,17 +1,15 @@
 import { faArrowCircleRight, faBus, faCalendar, faMap, faRss } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import React, { useEffect, useState } from 'react';
+import Helmet from 'react-helmet';
 import DirectionPicker from '../components/DirectionPicker';
 import PageTitle from '../components/PageTitle';
 import RouteMap from '../components/RouteMap';
-import RouteTitle from '../components/RouteTitle';
 import { RouteStopsList } from '../components/RouteStopsList';
-import SiteSection from '../components/SiteSection';
+import RouteTitle from '../components/RouteTitle';
 import SiteButton from '../components/SiteButton';
+import SiteSection from '../components/SiteSection';
 import { Vehicle } from '../components/Vehicle';
-import logo from '../images/ddot-logo.png';
-import Helmet from 'react-helmet';
 
 const RoutePage = ({ data, pageContext }) => {
 
@@ -98,7 +96,6 @@ const RoutePage = ({ data, pageContext }) => {
         <meta property="og:type" content={`website`} />
         <meta property="og:title" content={`DDOT bus route: ${r.routeShortName} ${r.routeLongName}`} />
         <meta property="og:description" content={`DDOT bus route ${r.routeShortName} ${r.routeLongName}: ${ddotRt.description}`} />
-        <meta property="og:image" content={logo} />
       </Helmet>
       <PageTitle>
         <RouteTitle long={r.routeLongName} short={r.routeShortName} color={r.routeColor} size="small" />

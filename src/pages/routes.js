@@ -19,7 +19,6 @@ const RoutesPage = ({ data }) => {
         <meta property="og:type" content={`website`} />
         <meta property="og:title" content={`DDOT bus routes`} />
         <meta property="og:description" content={`List of all DDOT bus routes, with links to their main page, along with stops and schedules.`} />
-        <meta property="og:image" content={logo} />
       </Helmet>
       <PageTitle text={'All bus routes'} icon={faList} />
       <RoutesList routes={sortedRoutes} scroll={false} />

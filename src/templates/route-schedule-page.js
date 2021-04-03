@@ -1,14 +1,13 @@
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from "gatsby";
 import React, { useState } from "react";
+import Helmet from 'react-helmet';
 import DirectionPicker from '../components/DirectionPicker';
 import PageTitle from "../components/PageTitle";
 import RouteNumber from "../components/RouteNumber";
 import RouteTimetable from "../components/RouteTimetable";
 import ServicePicker from "../components/ServicePicker";
 import SiteSection from "../components/SiteSection";
-import logo from '../images/ddot-logo.png';
-import Helmet from 'react-helmet';
 
 const RouteSchedulePage = ({ data }) => {
 
@@ -54,7 +53,6 @@ const RouteSchedulePage = ({ data }) => {
         <meta property="og:type" content={`website`} />
         <meta property="og:title" content={`Schedule for DDOT bus route: ${r.routeShortName} ${r.routeLongName}`} />
         <meta property="og:description" content={`Schedule for DDOT bus route ${r.routeShortName} ${r.routeLongName}.`} />
-        <meta property="og:image" content={logo} />
       </Helmet>
       <PageTitle icon={faClock} text={<RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />}>
         <h2 className="m-0 font-thin">Schedule</h2>

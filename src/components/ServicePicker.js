@@ -7,9 +7,13 @@ const ServicePicker = ({ services, service, setService, inline = true, expands =
   if (services.length === 3) {
     services = ["1", "3", "2"]
   }
+  if (services.length === 1) {
+    expands = false;
+    startsClosed = false;
+  }
   return (
     <SiteSection className={className} title={<span>Day of week: <b>{feedServices[service]}</b></span>} {...{ expands, startsClosed }} fullWidth>
-      <div className="flex w-100">
+      {services.length > 1 && <div className="flex w-100">
         {services.map(s => (
           <ToggleButton
             key={s}
@@ -18,7 +22,7 @@ const ServicePicker = ({ services, service, setService, inline = true, expands =
             onClick={() => setService(s)}
           />
         ))}
-      </div>
+      </div>}
     </SiteSection>
   )
 }

@@ -41,9 +41,24 @@ const RouteSchedulePage = ({ data }) => {
   let now = new Date
   let dow = now.getDay()
   let currentService = services[0];
-  if (dow === 0 && services.length > 1) { currentService = "2"}
-  if (dow === 6 && services.length > 1) { currentService = "3"}
+  console.log(dow, services)
+  if (dow === 0 && services.indexOf("2") > -1) { currentService = "2"}
+  if (dow === 6 && services.indexOf("3") > -1) { currentService = "3"}
   let [service, setService] = useState(currentService)
+
+  let serviceDesc = `Service is provided`
+  if (services.length === 1) {
+    serviceDesc = serviceDesc + ` on weekdays only.`
+  }
+  if (services.length === 2) {
+    serviceDesc = serviceDesc + ` on weekdays and Saturdays.`
+  }
+  if (services.length === 3) {
+    serviceDesc = serviceDesc + ` on weekdays, Saturdays, and Sundays..`
+  }
+
+  let routeDesc = `between ${longTrips[0].stopTimes[0].stop.stopName} and ${longTrips[0].stopTimes.slice(-1)[0].stop.stopName}`
+  console.log(routeDesc.replace(" - Deboarding", ''))
 
   return (
     <>
@@ -51,8 +66,8 @@ const RouteSchedulePage = ({ data }) => {
         <title>{`DDOT.info: Schedule for route ${r.routeShortName} ${r.routeLongName}`}</title>
         <meta property="og:url" content={`https://ddot.info/route/${r.routeShortName}/schedule`} />
         <meta property="og:type" content={`website`} />
-        <meta property="og:title" content={`Schedule for DDOT bus route: ${r.routeShortName} ${r.routeLongName}`} />
-        <meta property="og:description" content={`Schedule for DDOT bus route ${r.routeShortName} ${r.routeLongName}.`} />
+        <meta property="og:title" content={`${r.routeShortName} ${r.routeLongName} schedule`} />
+        <meta property="og:description" content={`Schedule for DDOT bus route ${r.routeShortName} ${r.routeLongName}. Service is provided on ${serviceDesc}, ${routeDesc}.`} />
       </Helmet>
       <PageTitle icon={faClock} text={<RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />}>
         <h2 className="m-0 font-thin">Schedule</h2>

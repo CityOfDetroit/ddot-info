@@ -38,14 +38,16 @@ export const Prediction = ({ prediction, vehicle, currentTrip, setCurrentTrip, r
 
       <div className="flex items-center justify-between">
         <RouteTitle short={route.properties.short} color={route.properties.color} long={route.properties.long} size='small' />
-        <span>in {prediction.prdctdn} minutes</span>
+        <span className={prediction.prdctdn === 'DUE' ? 'font-bold' : ''}>
+          {prediction.prdctdn === 'DUE' ? `Arriving now` : `in ${prediction.prdctdn} minutes`}
+        </span>
       </div>
 
       <div className="flex items-center justify-between flex-row-reverse">
         <span className="text-sm text-gray-500">
           #{prediction.vid} <FontAwesomeIcon icon={faBus} className="ml-1" />
         </span>
-        <span>{readable[prediction.rtdir]}</span>
+        <span className={'font-bold text-sm text-gray-700'}>{readable[prediction.rtdir]}</span>
       </div>
     </div>
   );

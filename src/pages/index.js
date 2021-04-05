@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => {
         <meta property="og:url" content={`https://ddot.info/`} />
         <meta property="og:type" content={`website`} />
         <meta property="og:title" content={`DDOT.info`} />
-        <meta property="og:description" content={`DDOT.info: online route pages, schedules, and real-time information for the city of Detroit's public transit system.`} />
+        <meta property="og:description" content={`Route pages, schedules, and real-time information for the city of Detroit's public transit system.`} />
       </Helmet>
       <PageTitle text={'Welcome to ddot.info'} icon={faHome} />
       <SiteSection>

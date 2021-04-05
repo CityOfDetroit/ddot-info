@@ -62,6 +62,9 @@ const StopPage = ({ data }) => {
 
   const [currentTrip, setCurrentTrip] = useState(null)
 
+  console.log(predictions)
+  console.log(times)
+
   // set up a 10s 'tick' using `now`
   let [now, setNow] = useState(new Date());
   useEffect(() => {

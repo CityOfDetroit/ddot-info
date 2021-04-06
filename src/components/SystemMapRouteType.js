@@ -61,12 +61,12 @@ const SystemMapRouteType = ({ routeType, filtered, clicked, setClicked, startsOp
 
   else {
     return (
-      <div key={routeType} className="flex items-center justify-between px-2 py-2" style={{borderLeft: `5px solid #${routeTypes[routeType].color}`}}>
-        <div onClick={() => setOpen(true)}>
+      <div key={routeType} className="flex items-center justify-between px-2 py-2 w-full" style={{borderLeft: `5px solid #${routeTypes[routeType].color}`}}>
+        <div onClick={() => setOpen(true)} className="w-3/4">
           <h2 className="m-0 leading-tight">{routeType}</h2>
           <span className="text-xs font-thin leading-none">{routeTypes[routeType].desc}</span>
         </div>
-        <div>
+        <div className="w-1/4 flex justify-around items-center">
           <FontAwesomeIcon icon={allVisible ? faEye : faEyeSlash} className="mr-4" onClick={() => {
             let reduced = filtered.reduce((end, item) => { return { ...end, [item.short]: allVisible ? false : true } }, clicked)
             setClicked(reduced)

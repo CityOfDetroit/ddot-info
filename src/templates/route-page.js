@@ -99,7 +99,7 @@ const RoutePage = ({ data, pageContext }) => {
       </Helmet>
       <PageTitle>
         <RouteTitle long={r.routeLongName} short={r.routeShortName} color={r.routeColor} size="small" />
-        <span className="text-sm font-thin text-gray-600 py-1">{ddotRt.RouteType} route</span>
+        <span className="text-sm font-thin text-gray-800 py-1">{ddotRt.RouteType} route</span>
       </PageTitle>
       <SiteSection>
         <p className="text-sm text-left leading-tight">{ddotRt.description}</p>

@@ -71,12 +71,11 @@ const SystemMapPage = ({ data }) => {
         return (
           <SiteSection
             key={s}
-            titleClassName="border-l-8 border-yellow-300"
+            titleClassName="border-l-8 border-yellow-300 py-2 bg-gray-200"
             title={<RouteTitle
               long={matching.long}
               color={matching.color}
               short={s}
-              size='small'
             />}
             dismissable
             onDismiss={() => setSelected(selected.filter(se => se !== s))}>
@@ -92,14 +91,14 @@ const SystemMapPage = ({ data }) => {
           </SiteSection>
         )
       })}
-      <SiteSection fullWidth title={`Route types`} subtitle={`Showing ${Object.keys(clicked).filter(k => clicked[k]).length} of 43 routes`}>
+      {selected.length === 0 && <SiteSection fullWidth title={`Route types`} subtitle={`Select a badge for more info about that route.`}>
         {
           Object.keys(routeTypes).map(rt => {
             let filtered = routes.filter(r => r.color === routeTypes[rt].color)
             return <SystemMapRouteType key={rt} {...{ clicked, setClicked, routeType: rt, filtered: filtered, startsOpen: false }} />
           })
         }
-      </SiteSection>
+      </SiteSection>}
     </>
 
   );

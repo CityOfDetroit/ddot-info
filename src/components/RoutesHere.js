@@ -5,7 +5,7 @@ import RouteNumber from './RouteNumber';
 export const RoutesHere = ({ routes, currentRoute, setCurrentRoute }) => {
 
   return (
-    <div className="px-4 pt-2 pb-1">
+    <div className="px-4 pt-2 pb-2">
       {routes.map(r => (
         <label key={r.short} className="inline-block flex items-center py-1" onClick={() => setCurrentRoute(r.short)}>
           <input

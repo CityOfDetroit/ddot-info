@@ -33,8 +33,6 @@ const RouteTimetable = ({ trips, longTrips, service, direction, routeColor }) =>
     return (t.direction === direction && t.service === service)
   })
 
-  console.log(trips)
-
   // We have to sort these routes somewhat elaborately;
   // Let's find the timepoint that occurs amongst the most trips and sort by time on that.
 
@@ -123,7 +121,7 @@ const RouteTimetable = ({ trips, longTrips, service, direction, routeColor }) =>
                 };
                 return (
                   <td key={`${t.id}-${i}-${j}`}
-                    className={`text-center timetable-entry ${filtered.length === 0 && `bg-gray-100`} ${arrivalTimeDisplay(filtered[0].arrivalTime).indexOf("p") > -1 ? `font-medium` : `font-light`}`}>
+                    className={`text-center text-sm timetable-entry ${filtered.length === 0 && `bg-gray-100`} ${arrivalTimeDisplay(filtered[0].arrivalTime).indexOf("p") > -1 ? `font-medium` : `font-light`}`}>
                     {filtered.length > 0 ?
                       arrivalTimeDisplay(filtered[0].arrivalTime).slice(0, -3) :
                       `-`

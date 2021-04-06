@@ -41,7 +41,6 @@ const RouteSchedulePage = ({ data }) => {
   let now = new Date
   let dow = now.getDay()
   let currentService = services[0];
-  console.log(dow, services)
   if (dow === 0 && services.indexOf("2") > -1) { currentService = "2"}
   if (dow === 6 && services.indexOf("3") > -1) { currentService = "3"}
   let [service, setService] = useState(currentService)
@@ -58,7 +57,6 @@ const RouteSchedulePage = ({ data }) => {
   }
 
   let routeDesc = `between ${longTrips[0].stopTimes[0].stop.stopName} and ${longTrips[0].stopTimes.slice(-1)[0].stop.stopName}`
-  console.log(routeDesc.replace(" - Deboarding", ''))
 
   return (
     <>

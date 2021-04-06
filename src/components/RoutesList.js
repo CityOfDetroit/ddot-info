@@ -4,7 +4,7 @@ import SiteSection from "./SiteSection";
 
 const RoutesList = ({ routes, scroll=true }) => {
   return (
-    <SiteSection title="All bus routes" scroll={scroll} fullWidth>
+    <SiteSection scroll={scroll} fullWidth>
       {
         routes.map(r => (<RouteListItem route={r} key={r.short} />))
       }

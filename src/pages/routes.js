@@ -14,13 +14,13 @@ const RoutesPage = ({ data }) => {
   return (
     <>
       <Helmet>
-        <title>{`DDOT.info: All bus routes`}</title>
+        <title>{`DDOT.info: List of routes`}</title>
         <meta property="og:url" content={`https://ddot.info/routes/`} />
         <meta property="og:type" content={`website`} />
         <meta property="og:title" content={`DDOT bus routes`} />
         <meta property="og:description" content={`List of all DDOT bus routes, with links to their main page, along with stops and schedules.`} />
       </Helmet>
-      <PageTitle text={'All bus routes'} icon={faList} />
+      <PageTitle text={'List of routes'} icon={faList} />
       <RoutesList routes={sortedRoutes} scroll={false} />
     </>
   )

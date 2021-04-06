@@ -47,7 +47,7 @@ a {
 /* timetable */
 
 .timetable {
-  max-height: 75vh;
+  max-height: 100vh;
   overflow-y: auto;
 }
 

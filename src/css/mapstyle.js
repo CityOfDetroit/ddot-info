@@ -2798,25 +2798,6 @@ const baseStyle = {
       }
     },
     {
-      "id": "ddot-route-highlight",
-      "type": "line",
-      "source": "routes",
-      "filter": ['==', 'short', ''],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "round",
-        "line-join": "round"
-      },
-      "paint": {
-        "line-color": "yellow",
-        "line-width": {
-          "base": 1,
-          "stops": [[8.9, 3.5], [9, 6.5], [16, 20], [19, 32]]
-        },
-        "line-offset": 0
-      }
-    },
-    {
       "id": "ddot-part-time-case",
       "type": "line",
       "source": "routes",
@@ -3016,6 +2997,26 @@ const baseStyle = {
           "base": 1,
           "stops": [[8.9, 1], [9, 2.75], [16, 9], [19, 20]]
         },
+        "line-offset": 0
+      }
+    },
+    {
+      "id": "ddot-route-highlight",
+      "type": "line",
+      "source": "routes",
+      "filter": ['==', 'short', ''],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#feb70d",
+        "line-width": {
+          "base": 1,
+          "stops": [[8.9, 4.5], [9, 7.5], [16, 22], [19, 38]]
+        },
+        "line-opacity": 0.25,
         "line-offset": 0
       }
     },

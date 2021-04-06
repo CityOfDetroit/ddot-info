@@ -50,11 +50,11 @@ const Layout = ({ gridClass=null, children }) => {
           {children}
         </main>
       </div>
-      <footer className="p-2 bg-gray-100 w-100 text-xs flex justify-between " style={maxWidthStyle}>
-        <span>
+      <footer className="pt-8 pb-2 px-2 bg-gray-100 w-100 text-sm text-center" style={maxWidthStyle}>
+        <span className="w-full text-center py-1 block">
           © {new Date().getFullYear()}, <a href="https://detroitmi.gov/departments/detroit-department-transportation">Detroit Department of Transportation.</a>
         </span>
-        <span>
+        <span className="w-full text-center py-1 block ">
           <a href="https://airtable.com/shrugiMUTLnAn77Xd">Have a question or comment? Tell us here.</a>
         </span>
       </footer>

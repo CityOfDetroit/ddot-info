@@ -4,8 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const Vehicle = ({ vehicle, patterns, tracked, setTracked }) => {
 
-  let pattern = patterns.filter(p => p.pid === vehicle.properties.pid)[0];
   let nextStop = null;
+  let pattern;
+  let filtered = patterns.filter(p => p.pid === vehicle.properties.pid)
+  if (filtered.length > 0) {
+    pattern = filtered[0]
+  }
+
   if (pattern) {
     for (let pt of pattern.pt) {
     if (pt.pdist > vehicle.properties.pdist && pt.stpnm) {

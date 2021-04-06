@@ -21,7 +21,7 @@ const SystemMap = ({ routeFeatures, clicked, selected, setSelected }) => {
       bounds: systemMapBbox,
       minZoom: 9,
       fitBoundsOptions: {
-        padding: 20
+        padding: 10
       },
     });
 

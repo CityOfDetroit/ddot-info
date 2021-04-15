@@ -143,11 +143,12 @@ const SystemMap = ({ routeFeatures, clicked, selected, setSelected }) => {
 
       map.on("click", e => {
         let clickedRoutes = map.queryRenderedFeatures(e.point, {
-          layers: ["part-time-background", "neighborhood-background", "key-background", "connect-ten-background"]
+          layers: ["ddot-part-time-case", "ddot-part-time-case-express", "ddot-part-time-case", "ddot-neighborhood-case", "ddot-key-case", "ddot-connect-ten-case"]
         });
         
         if(clickedRoutes.length > 0) {
-          setSelected([...new Set(clickedRoutes.map(r => r.properties.RouteNum.toString()))].sort((a, b) => a - b))
+          console.log(clickedRoutes)
+          setSelected([...new Set(clickedRoutes.map(r => r.properties.short.toString()))].sort((a, b) => a - b))
         }
       });
 

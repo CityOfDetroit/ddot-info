@@ -23,11 +23,6 @@ const Header = ({ siteTitle, children }) => {
       link: `/routes`
     },
     {
-      title: `Nearby`,
-      icon: faLocationArrow,
-      link: `/nearby`
-    },
-    {
       title: `About this site`,
       icon: faInfoCircle,
       link: `/about`

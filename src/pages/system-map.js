@@ -91,7 +91,7 @@ const SystemMapPage = ({ data }) => {
           </SiteSection>
         )
       })}
-      {selected.length === 0 && <SiteSection fullWidth title={`Route types`} subtitle={`Select a badge for more info about that route.`}>
+      {selected.length === 0 && <SiteSection fullWidth title={`Route types`} subtitle={`Click a route for links and information.`}>
         {
           Object.keys(routeTypes).map(rt => {
             let filtered = routes.filter(r => r.color === routeTypes[rt].color)

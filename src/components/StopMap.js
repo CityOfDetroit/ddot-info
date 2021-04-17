@@ -7,7 +7,7 @@ import arrow from '../images/arrow-up-solid.png'
 
 import React, { useEffect, useState } from "react";
 
-import style from "../css/mapstyle.json";
+import baseStyle from "../css/mapstyle";
 
 const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentRoute, currentTrip, predictions }) => {
 
@@ -18,7 +18,7 @@ const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentRoute, curr
 
     let map = new mapboxgl.Map({
       container: "map",
-      style: style,
+      style: baseStyle,
       center: [stopLon, stopLat],
       zoom: 16.75 // starting zoom
     });
@@ -155,29 +155,44 @@ const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentRoute, curr
   }, []);
 
   useEffect(() => {
-    if (theMap && predictions) {
-      // theMap.getSource("realtime").setData({ type: "FeatureCollection", features: vehicles })
-      if (currentTrip) {
-        // let filtered = vehicles.filter(trip => trip.properties.vid === tracked);
-        // theMap.setFilter("realtime-highlight", ["==", ['get', 'vid'], tracked])
+    if (theMap && currentTrip) {
+      if (currentTrip.vehicle) {
+        let trackedFeature = {
+          type: "Feature",
+          properties: {
+            hdg: currentTrip.vehicle ? currentTrip.vehicle.hdg : '90',
+            ...currentTrip
+          },
+          geometry: {
+            type: "Point",
+            coordinates: [parseFloat(currentTrip.vehicle.lon), parseFloat(currentTrip.vehicle.lat)]
+          }
+        }
 
-        // if (filtered.length === 0) {
-        //   return;
-        // } else {
-        //   theMap.easeTo({
-        //     center: filtered[0].geometry.coordinates,
-        //     zoom: 15.5
-        //   });
-        // }
+        theMap.getSource("realtime").setData({ type: "FeatureCollection", features: [trackedFeature]})
+
+        let both = {
+          type: "FeatureCollection",
+          features: [
+            { type: "Feature", geometry: { "type": "Point", coordinates: [stopLon, stopLat] }, properties: {"name": stopName} },
+            trackedFeature
+          ]
+        }
+
+        theMap.fitBounds(bbox(both), {
+          padding: 50,
+          maxZoom: 17
+        })
       }
 
       else {
-        // theMap.setFilter("realtime-highlight", ["==", ['get', 'vid'], ''])
-        // theMap.fitBounds(bounds, {
-        //   padding: 50
-        // })
+        theMap.getSource("realtime").setData({ type: "FeatureCollection", features: []})
       }
     }
+    if(theMap && !currentTrip) {
+      theMap.getSource("realtime").setData({ type: "FeatureCollection", features: []})
+    }
+
   }, [predictions, theMap, currentTrip])
 
   useEffect(() => {

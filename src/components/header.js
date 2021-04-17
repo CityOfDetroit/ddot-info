@@ -1,66 +1,81 @@
-import { faHome, faInfoCircle, faExclamationTriangle, faHeadSideMask } from "@fortawesome/free-solid-svg-icons"
+import { faInfoCircle, faList, faMapMarked, faHome, faChevronCircleDown, faChevronCircleRight, faLocationArrow } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
+import logo from '../images/ddot-logo-white.png'
 
-const Header = ({ siteTitle }) => (
-  <>
-  <header
-    style={{
-      background: `rgba(0,68,69,1)`,
-    }}
-  >
-    <div
-      className="py-2 px-2 text-xl flex items-center justify-between"
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-      }}
-    >      <h1 className="text-2xl" style={{ margin: 0 }}>
-        <Link
-          to="/"
-          aria-label="Home"
+const Header = ({ siteTitle, children }) => {
+
+  let items = [
+    {
+      title: `Home`,
+      icon: faHome,
+      link: `/`
+    },
+    {
+      title: `System map`,
+      icon: faMapMarked,
+      link: `/system-map`
+    },
+    {
+      title: `List of routes`,
+      icon: faList,
+      link: `/routes`
+    },
+    {
+      title: `About this site`,
+      icon: faInfoCircle,
+      link: `/about`
+    }
+  ]
+
+  let [open, setOpen] = useState(false)
+  return (
+    <>
+      <header
+        style={{
+          background: `rgba(0,68,69,1)`,
+          // background: `rgba(255,255,255,1)`,
+        }}
+      >
+        <div
+          className="px-3 py-2 flex items-center justify-between header"
           style={{
-            color: `white`,
-            textDecoration: `none`,
+            margin: `0 auto`,
+            maxWidth: 960,
           }}
         >
-          {siteTitle}
-        </Link>
-      </h1>
-      <div className="flex text-2xl">
-        <Link to={`/about`} aria-label="About">
-          <FontAwesomeIcon icon={faInfoCircle} className='header-icon' />
-        </Link>
-        <Link to={`/`} aria-label="Home">
-          <FontAwesomeIcon icon={faHome} className='header-icon' />
-        </Link>
-      </div>
-    </div>
-  </header>
-  <header style={{background: "#feb70d"}}
-  >
-    <div
-      className="py-1 px-2 flex items-center justify-center"
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-      }}
-    >
-      <FontAwesomeIcon icon={faHeadSideMask} size="2x" className="mx-3 py-1" />
-      <p>Masks are currently <strong>required</strong> on board. <Link to={`/covid`}>Click here for more information.</Link></p>
-    </div>
-  </header>
-  </>
-)
+          <h1 className="text-xl flex items-center" style={{ margin: 0 }}>
+            <img src={logo} className="h-6 mr-3" />
+            <Link
+              to="/"
+              aria-label="Home"
+              className="text-white"
+            >
+              {siteTitle.replace(".info", "")}
+            </Link>
+          </h1>
+          <div className="flex items-center justify-between text-xl">
+            <div className="text-2xl">
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+            <FontAwesomeIcon icon={open ? faChevronCircleDown : faChevronCircleRight} onClick={() => setOpen(!open)} className='header-icon mr-2' />
+            </div>
+          </div>
+        </div>
+        {open && <div className="py-2 px-2 border-b-4 border-gray-700 grid grid-cols-2 gap-2" style={{ background: 'rgba(255, 255, 255, 0.9)', margin: `0 auto`, maxWidth: 960 }}>
+          {items.map(i => (
+            <Link key={i.title} to={i.link} className="flex items-center no-underline p-1 bg-opacity-50" aria-label={i.title} onClick={() => setOpen(false)}>
+              <div className="w-8 text-right">
+                <FontAwesomeIcon icon={i.icon} className='mr-2 text-gray-700' />
+              </div>
+              <span className="text-base ">{i.title}</span>
+            </Link>
+          ))}
+        </div>}
+      </header>
+      {children}
+    </>
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default Header;

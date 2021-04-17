@@ -1,34 +1,53 @@
-import React from 'react';
 import { faBus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import RouteNumber from './RouteNumber';
+import React, { useEffect } from 'react';
+import RouteTitle from './RouteTitle';
 
-export const Prediction = ({ prediction, currentTrip, setCurrentTrip, routeFeatures }) => {
+export const Prediction = ({ prediction, vehicle, currentTrip, setCurrentTrip, routeFeatures, last }) => {
 
   let readable = {
-    'EAST': 'Eastbound',
-    'WEST': 'Westbound',
-    'NORTH': 'Northbound',
-    'SOUTH': 'Southbound'
+    'EAST': 'eastbound',
+    'WEST': 'westbound',
+    'NORTH': 'northbound',
+    'SOUTH': 'southbound'
   }
 
-  let isLive = currentTrip === prediction.vid;
+  prediction.vehicle = vehicle
 
+  let isLive = currentTrip ? currentTrip.vid === prediction.vid : false;
   let route = routeFeatures.filter(r => r.properties.short === prediction.rt)[0]
 
+  let baseStyle = "w-full px-4 py-2"
+  let liveStyle = baseStyle + " bg-yellow-200"
+  let notLiveStyle = baseStyle + " bg-gray-200"
+
+  useEffect(() => {
+    if (isLive) {
+      setCurrentTrip(prediction)
+    }
+  }, [vehicle])
+
   return (
-    <div className="flex items-center">
-      <div className={isLive ? "bg-yellow-200 my-1 p-2 w-full" : "bg-gray-200 my-1 p-2 w-full"}>
-        <div className="flex items-center">
-          <RouteNumber number={route.properties.short} color={route.properties.color} small />
-          <span>{prediction.des} {readable[prediction.rtdir]}</span>
-        </div>
-        <div className="flex items-center justify-between flex-row-reverse">
-        <span>in {prediction.prdctdn} minutes</span>
-        <span className="text-sm text-gray-700">
-          #{prediction.vid}
+    <div className={
+      last ?
+        isLive ? liveStyle + " border-b-2" : notLiveStyle + " border-b-2"
+        : isLive ? liveStyle : notLiveStyle
+    }
+      onClick={() => isLive ? setCurrentTrip(null) : setCurrentTrip(prediction)}
+    >
+
+      <div className="flex items-center justify-between">
+        <RouteTitle short={route.properties.short} color={route.properties.color} long={route.properties.long} size='small' />
+        <span className={prediction.prdctdn === 'DUE' ? 'font-bold' : ''}>
+          {prediction.prdctdn === 'DUE' ? `Arriving now` : `in ${prediction.prdctdn} minutes`}
         </span>
-        </div>
+      </div>
+
+      <div className="flex items-center justify-between flex-row-reverse">
+        <span className="text-sm text-gray-500">
+          #{prediction.vid} <FontAwesomeIcon icon={faBus} className="ml-1" />
+        </span>
+        <span className={'font-bold text-sm text-gray-700'}>{readable[prediction.rtdir]}</span>
       </div>
     </div>
   );

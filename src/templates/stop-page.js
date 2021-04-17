@@ -1,13 +1,13 @@
-import { faMap, faRss } from "@fortawesome/free-solid-svg-icons";
+import { faBusAlt, faClock, faMap, faMapSigns } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from "gatsby";
-import React, { useState, useEffect } from "react";
-import Layout from "../components/layout";
-import StopMap from "../components/StopMap";
-import SectionHeader from '../components/SectionHeader';
-import SectionContainer from '../components/SectionContainer'
-import { TimesHere } from "../components/TimesHere";
+import React, { useEffect, useState } from "react";
+import Helmet from 'react-helmet';
+import { NextArrivals } from "../components/NextArrivals";
+import PageTitle from '../components/PageTitle';
 import { RoutesHere } from "../components/RoutesHere";
-import Prediction from "../components/Prediction";
+import SiteSection from "../components/SiteSection";
+import StopMap from "../components/StopMap";
+import { TimesHere } from "../components/TimesHere";
 
 export const arrivalTimeDisplay = (time, showAp) => {
   let hour = time.hours;
@@ -33,25 +33,6 @@ export const arrivalTimeDisplay = (time, showAp) => {
   return `${hour}:${minutes}${showAp ? ap : ``}`;
 };
 
-const StopHeader = ({ stop }) => (
-  <section className="flex items-center mb-2">
-      <h1 className="font-bold text-lg">{stop.stopName}</h1> 
-      <h2 className="text-md text-gray-700 bg-gray-200 p-2 mx-3">#{stop.stopCode}</h2>
-  </section>
-)
-
-const NextArrivals = ({ routeFeatures, predictions, currentTrip, setCurrentTrip }) => {
-
-  let nextBuses = predictions['bustime-response'].prd
-
-  return (
-    <SectionContainer>
-      <SectionHeader icon={faRss} title="Next arrivals here" />
-      {nextBuses.map((nb, i) => <Prediction prediction={nb} key={nb.vid} {...{currentTrip, setCurrentTrip, routeFeatures}} />)}
-    </SectionContainer>
-  )
-}
-
 const StopPage = ({ data }) => {
   const s = data.postgres.stop;
 
@@ -63,7 +44,7 @@ const StopPage = ({ data }) => {
   let stopRoutes = []
 
   allRoutes.forEach(r => {
-    if(routeDirectionCombos.indexOf(JSON.stringify([r.short, r.directionId])) > -1) {
+    if (routeDirectionCombos.indexOf(JSON.stringify([r.short, r.directionId])) > -1) {
       stopRoutes.push(r)
     }
   })
@@ -81,6 +62,15 @@ const StopPage = ({ data }) => {
 
   const [currentTrip, setCurrentTrip] = useState(null)
 
+  // set up a 10s 'tick' using `now`
+  let [now, setNow] = useState(new Date());
+  useEffect(() => {
+    let tick = setInterval(() => {
+      setNow(new Date());
+    }, 10000);
+    return () => clearInterval(tick);
+  }, []);
+
   useEffect(() => {
     fetch(`/.netlify/functions/stop?stopId=${s.stopCode}`)
       .then(r => r.json())
@@ -90,24 +80,42 @@ const StopPage = ({ data }) => {
         }
         else { return; }
       })
-  }, [s.stopId, s.stopCode])
+  }, [s.stopId, s.stopCode, now])
+
+  useEffect(() => {
+    if (currentTrip) {
+      setCurrentRoute(currentTrip.rt)
+    }
+    else {
+      return;
+    }
+  }, [currentTrip])
 
   return (
-    <Layout gridClass='stop-grid'>
-      <div>
-        <StopHeader {...{ stop: s }} />
-        <SectionContainer>
-          <SectionHeader icon={faMap} title={`Stop map`} />
-          <StopMap {...{ stopLon, stopLat, stopName, routeFeatures, currentRoute, currentTrip, predictions }} />
-        </SectionContainer>
-        {predictions && <NextArrivals {...{ routeFeatures, predictions, currentTrip, setCurrentTrip }} />}
-      </div>
-      <div>
+    <>
+      <Helmet>
+        <title>{`DDOT.info: ${s.stopName} #${s.stopCode}`}</title>
+        <meta property="og:url" content={`https://ddot.info/stop/${s.stopCode}`} />
+        <meta property="og:type" content={`website`} />
+        <meta property="og:title" content={`DDOT bus stop: ${s.stopName}`} />
+        <meta property="og:description" content={`DDOT bus stop #${s.stopCode}, at ${s.stopName}. Routes that stop here: ${[...new Set(routeFeatures.map(rf => rf.properties.long))].join(", ")}`} />
+      </Helmet>
+      <PageTitle icon={faBusAlt}>
+        <h1 className="m-0 font-thin">{s.stopName}</h1>
+        <h2 className="text-base font-thin text-gray-700 bg-white py-0 px-2 m-0">#{s.stopCode}</h2>
+      </PageTitle>
+      {predictions && <NextArrivals {...{ routeFeatures, predictions, currentTrip, setCurrentTrip }} />}
+      <SiteSection icon={faMap} title={`Stop map`} fullWidth expands>
+        <StopMap {...{ stopLon, stopLat, stopName, routeFeatures, currentRoute, currentTrip, predictions }} />
+      </SiteSection>
+      <SiteSection fullWidth title='Routes at this stop' icon={faMapSigns} expands>
         <RoutesHere {...{ routes, currentRoute, setCurrentRoute }} />
-        <TimesHere {...{ times, currentRoute }} />
+      </SiteSection>
+      <SiteSection fullWidth title='Scheduled departures' icon={faClock} expands className="mb-0">
+        <TimesHere {...{ times, currentRoute, routes }} />
         {/* <StopTransfers /> */}
-      </div>
-    </Layout>
+      </SiteSection>
+    </>
   );
 };
 
@@ -122,6 +130,7 @@ export const query = graphql`
           direction
           orientation
           directionId
+          long
           localService
           RouteType: routeType
           route {
@@ -136,7 +145,7 @@ export const query = graphql`
       }
     }
     postgres {
-      stop: stopByFeedIndexAndStopId(stopId: $stopId, feedIndex: 5) {
+      stop: stopByFeedIndexAndStopId(stopId: $stopId, feedIndex: 1) {
         stopId
         stopCode
         stopName
@@ -171,7 +180,11 @@ export const query = graphql`
             directionId
             serviceId
             tripHeadsign
+            stopTimesByFeedIndexAndTripId {
+              totalCount
+            }
           }
+          stopSequence
           arrivalTime {
             hours
             minutes

@@ -1,9 +1,10 @@
+import { faBus } from '@fortawesome/free-solid-svg-icons';
 import { graphql } from "gatsby";
 import React, { useState } from "react";
-
-import Layout from '../components/layout';
-import { RouteTitle } from '../components/RouteSign'
-import DirectionPicker from '../components/DirectionPicker'
+import Helmet from 'react-helmet';
+import DirectionPicker from '../components/DirectionPicker';
+import PageTitle from '../components/PageTitle';
+import RouteNumber from '../components/RouteNumber';
 import { RouteStopsList } from "../components/RouteStopsList";
 
 const RouteStopsPage = ({ data }) => {
@@ -31,40 +32,45 @@ const RouteStopsPage = ({ data }) => {
   let [direction, setDirection] = useState(directions[0])
 
   return (
-    <Layout>
-      <RouteTitle short={r.routeShortName} long={r.routeLongName} color={r.routeColor} />
-      <h2 className="text-xl mt-2">Stops</h2>
-      <section>
-      </section>
-      <section className="">
-        <DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} />
-        <section className="bg-gray-100 flex items-center p-2">
-          <p className="flex items-center mr-3">Major stops: <span
-            style={{
-              display: "inline-block",
-              height: "1em",
-              width: "1em",
-              backgroundColor: "#000",
-              border: "1px solid #000",
-              borderRadius: "3em",
-              margin: ".25em"
-            }}
+    <>
+      <Helmet>
+        <title>{`DDOT.info: Stops for route ${r.routeShortName} ${r.routeLongName}`}</title>
+        <meta property="og:url" content={`https://ddot.info/route/${r.routeShortName}/stops`} />
+        <meta property="og:type" content={`website`} />
+        <meta property="og:title" content={`Stops for DDOT bus route:${r.routeShortName} ${r.routeLongName}`} />
+        <meta property="og:description" content={`Stops for DDOT bus route ${r.routeShortName} ${r.routeLongName}.`} />
+      </Helmet>
+      <PageTitle icon={faBus} text={<RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />}>
+        <h2 className="m-0 font-thin">All stops</h2>
+      </PageTitle>
+      <DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} />
+        <div className="flex px-4">
+          
+        <p className="flex items-center mr-3">Major stops: <span
+          style={{
+            display: "inline-block",
+            height: "1em",
+            width: "1em",
+            backgroundColor: "#000",
+            border: "1px solid #000",
+            borderRadius: "3em",
+            margin: ".25em"
+          }}
           /></p>
-          <p className="flex items-center">Local stops: <span
-            style={{
-              display: "inline-block",
-              height: "1em",
-              width: "1em",
-              backgroundColor: "#fff",
-              border: `3px solid #${r.routeColor}`,
-              borderRadius: "3em",
-              margin: ".25em"
-            }}
+        <p className="flex items-center">Local stops: <span
+          style={{
+            display: "inline-block",
+            height: "1em",
+            width: "1em",
+            backgroundColor: "#fff",
+            border: `3px solid #${r.routeColor}`,
+            borderRadius: "3em",
+            margin: ".25em"
+          }}
           /></p>
-        </section>
-        <RouteStopsList {...{ longTrips, direction, routeColor }} />
-      </section>
-    </Layout>
+        </div>
+      <RouteStopsList {...{ longTrips, direction, routeColor }} />
+    </>
   );
 };
 
@@ -81,7 +87,7 @@ query($routeNo: String!) {
   }
   postgres {
     route: allRoutesList(
-      condition: { routeShortName: $routeNo, feedIndex: 5 }
+      condition: { routeShortName: $routeNo, feedIndex: 1 }
     ) {
       agencyId
       routeShortName

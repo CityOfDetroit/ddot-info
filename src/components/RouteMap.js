@@ -1,14 +1,12 @@
-import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
-import 'mapbox-gl/dist/mapbox-gl.css';
 import bbox from "@turf/bbox";
-import busstop from '../images/busstop.png'
-import bus from '../images/Bus-logo.png'
-import arrow from '../images/arrow-up-solid.png'
-
+import { navigate } from 'gatsby';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
 import React, { useEffect, useState } from "react";
-import {navigate} from 'gatsby'
-
-import style from "../css/mapstyle.json";
+import baseStyle from "../css/mapstyle";
+import arrow from '../images/arrow-up-solid.png';
+import bus from '../images/Bus-logo.png';
+import busstop from '../images/busstop.png';
 
 const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) => {
 
@@ -38,15 +36,17 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
 
     let map = new mapboxgl.Map({
       container: "map",
-      style: style,
+      style: baseStyle,
       bounds: bounds,
       fitBoundsOptions: {
-        padding: 50
+        padding: 20
       },
-      zoom: 12.75 // starting zoom
+      zoom: 12.75, // starting zoom,
+      minZoom: 8.5
     });
 
-    map.addControl(new mapboxgl.FullscreenControl());
+    map.addControl(new mapboxgl.FullscreenControl(), 
+    'bottom-right');
 
     map.addControl(
       new mapboxgl.GeolocateControl({
@@ -54,7 +54,8 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
       enableHighAccuracy: true
       },
       trackUserLocation: true
-      })
+      }), 
+      'bottom-right'
       );
 
     let ctrl = new mapboxgl.NavigationControl({
@@ -81,11 +82,6 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
 
       setTheMap(map)
 
-      routes.forEach((r, i) => {
-        if(r.properties.color === '#FFFFFF') {
-          routes[i].properties.color='#5f6369'
-        }
-      })
       // routes
       map.getSource("routes").setData({ type: "FeatureCollection", features: routes });
 
@@ -321,12 +317,12 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
         } else {
           theMap.easeTo({
             center: filtered[0].geometry.coordinates,
-            zoom: 15.5
+            zoom: 16.5
           });
         }
       }
-
       else {
+        theMap.fitBounds(bounds, { padding: 20 })
         theMap.setFilter("realtime-highlight", ["==", ['get', 'vid'], ''])
       }
     }

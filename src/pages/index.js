@@ -1,22 +1,18 @@
-import React from "react"
-import { graphql, Link } from "gatsby";
-
-import Layout from "../components/layout"
-import RoutesList from '../components/RoutesList'
-import SystemMap from '../components/SystemMap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBus, faClock, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 import '@fortawesome/fontawesome-svg-core/styles.css';
-
-import { config } from '@fortawesome/fontawesome-svg-core';
-
-import '../css/app.css'
-
-config.autoAddCss = false;
+import { faBus, faClock, faHome } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { graphql, Link } from "gatsby";
+import React from "react";
+import Helmet from 'react-helmet';
+import PageTitle from "../components/PageTitle";
+import RoutesList from '../components/RoutesList';
+import SiteSection from "../components/SiteSection";
+import '../css/app.css';
 
 const nodeToFeature = (node, matching) => {
   let { route, ...props } = node
   props.color = '#' + matching.color;
+  props.textColor = '#' + matching.textColor;
   return {
     "type": "Feature",
     "geometry": route.geometry,
@@ -36,29 +32,36 @@ const IndexPage = ({ data }) => {
   let routeFeatures = { type: "FeatureCollection", features: features }
 
   return (
-    <Layout gridClass="index-grid">
-      <h1 className="text-2xl">Welcome to ddot.info</h1>
-      <p className="py-1">You can find a description, map, and real-time information for your bus route by clicking the name of the route.</p>
-      <p className="py-1">Click the bus icon <FontAwesomeIcon icon={faBus} className="mx-1" /> for a listing of bus stops, or the schedule <FontAwesomeIcon icon={faClock} className="mx-1" /> icon for a timetable at major stops.</p>
-      <section className="mb-3 mt-4">
-        <h2 className="text-xl mb-3">Choose your route</h2>
-        <RoutesList routes={routes} />
-      </section>
-    </Layout>
+    <>
+      <Helmet>
+        <title>{`DDOT.info`}</title>
+        <meta property="og:url" content={`https://ddot.info/`} />
+        <meta property="og:type" content={`website`} />
+        <meta property="og:title" content={`DDOT.info`} />
+        <meta property="og:description" content={`Route pages, schedules, and real-time information for the city of Detroit's public transit system.`} />
+      </Helmet>
+      <PageTitle text={'Welcome to ddot.info'} icon={faHome} />
+      <SiteSection>
+        <p className="mt-4 text-sm leading-none text-gray-500">{new Date().toLocaleDateString()}</p>
+        <p>New on ddot.info: <Link to={`/system-map`}>an interactive system map.</Link> View all the routes together, or view a few at a time. Click on a route for more information.</p>
+      </SiteSection>
+      <RoutesList routes={routes} />
+    </>
   )
 }
 
 export const query = graphql`
   {
     postgres {
-      routes: allRoutesList(condition: { feedIndex: 5 }, orderBy: ROUTE_SORT_ORDER_ASC) {
+      routes: allRoutesList(condition: { feedIndex: 1 }, orderBy: ROUTE_SORT_ORDER_ASC) {
         short: routeShortName
         long: routeLongName
         color: routeColor
+        textColor: routeTextColor
         desc: routeDesc
         routeId
       }
-      stops: allStopsList(condition: { feedIndex: 5 }) {
+      stops: allStopsList(condition: { feedIndex: 1 }) {
         stopId
         stopName
       }

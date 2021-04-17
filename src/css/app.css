@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @font-face {
   font-family: "Gibson Detroit Regular";
@@ -13,8 +14,12 @@
   src: url("./fonts/GibsonDetroit-Light.woff") format("woff"), url("./fonts/GibsonDetroit-Light.svg#filename") format("svg");
 }
 
-span, p {
+span, p, ul, li {
   font-family: "Gibson Detroit Regular";
+}
+
+p, li {
+  @apply my-3;
 }
 
 h1, h2, h3, h4 {
@@ -27,15 +32,14 @@ a {
   text-decoration: underline;
 }
 
-li {
-  @apply m-0;
-  @apply p-0;
-  @apply text-xs;
-}
-
 .header-icon {
   @apply ml-4;
   color: white;
+}
+
+.tabular {
+  font-family: "Inter";
+  font-feature-settings: "tnum" 1;
 }
 
 .gibson {
@@ -49,19 +53,19 @@ li {
 /* timetable */
 
 .timetable {
-  max-height: 75vh;
+  max-height: 100vh;
   overflow-y: auto;
 }
 
 .timetable-header {
   position: sticky;
   top: 0;
-  background-color: white;
   min-width: 6rem;
 }
 
-.section-scroll {
+.scroll {
   max-height: 45vh;
+  height: 45vh;
   overflow-y: auto;
 }
 
@@ -85,6 +89,8 @@ li {
   @apply text-xs;
 }
 
+
+/* rules for mobile */
 @media only screen and (max-width: 600px) {
   .route-grid {
     display: flex;
@@ -96,16 +102,16 @@ li {
     flex-direction: column;
   }  
 
-  .main-layout {
-    @apply px-2;
-  }
-
   #map {
-    height: 35vh;
+    height: 40vh;
   }
 
   #system-map {
-    height: 75vh;
+    height: 50vh;
+  }
+  
+  .alert {
+    @apply text-sm;
   }
 }
 
@@ -128,6 +134,6 @@ li {
   }
 
   #system-map {
-    height: 80vh;
+    height: 45vh;
   }
 }

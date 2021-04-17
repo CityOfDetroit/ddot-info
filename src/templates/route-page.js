@@ -1,16 +1,14 @@
+import { faArrowCircleRight, faBus, faCalendar, faMap, faRss } from '@fortawesome/free-solid-svg-icons';
+import { graphql } from 'gatsby';
 import React, { useEffect, useState } from 'react';
-
-import { graphql, Link } from 'gatsby'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowCircleRight, faBus, faCalendar, faMap, faRoute, faRss } from '@fortawesome/free-solid-svg-icons';
-
-import Layout from '../components/layout'
-import DirectionPicker from '../components/DirectionPicker'
+import Helmet from 'react-helmet';
+import DirectionPicker from '../components/DirectionPicker';
+import PageTitle from '../components/PageTitle';
 import RouteMap from '../components/RouteMap';
-import { RouteTitle } from '../components/RouteSign';
 import { RouteStopsList } from '../components/RouteStopsList';
-import SectionHeader from '../components/SectionHeader';
-import SectionContainer from '../components/SectionContainer';
+import RouteTitle from '../components/RouteTitle';
+import SiteButton from '../components/SiteButton';
+import SiteSection from '../components/SiteSection';
 import { Vehicle } from '../components/Vehicle';
 
 const RoutePage = ({ data, pageContext }) => {
@@ -24,7 +22,7 @@ const RoutePage = ({ data, pageContext }) => {
     properties.color = '#' + r.routeColor
     return { ...route, properties: properties }
   })
-
+  
   let routeOrientation;
 
   if (info[0].direction === 'Northbound' || info[0].direction === 'Southbound') {
@@ -91,30 +89,36 @@ const RoutePage = ({ data, pageContext }) => {
   let [tracked, setTracked] = useState(null)
 
   return (
-    <Layout gridClass={"route-grid"}>
-      <div>
-        <header>
-          <div className="flex justify-between items-center">
-            <RouteTitle long={r.routeLongName} short={r.routeShortName} color={r.routeColor} />
-            <p className="text-sm text-gray-600 mr-2">{ddotRt.routeType}</p>
-          </div>
-          <p className="text-sm py-2">{r.routeDesc}</p>
-        </header>
-        <SectionContainer>
-          <SectionHeader icon={faMap} title={`Map`} />
-          <RouteMap routes={geojson} stops={r.stopsList} timepoints={r.timepointsList} vehicles={vehicles} {...{ tracked, setTracked }} />
-        </SectionContainer>
-        {vehicles && patterns && <SectionContainer className="section-scroll" header={<SectionHeader icon={faRss} title={"Real-time bus locations"} />} scroll>
-          {vehicles.map(v => <Vehicle vehicle={v} key={v.properties.vid} {...{ patterns, tracked, setTracked }} />)}
-        </SectionContainer>}
-      </div>
-      <section className="">
-        <SectionContainer>
-          <SectionHeader icon={faCalendar} title={`Schedule`} />
-          <table className="schedule-table">
-            <tbody>
+    <div>
+      <Helmet>
+        <title>{`DDOT.info: Route ${r.routeShortName} ${r.routeLongName}`}</title>
+        <meta property="og:url" content={`https://ddot.info/route/${r.routeShortName}/`} />
+        <meta property="og:type" content={`website`} />
+        <meta property="og:title" content={`DDOT bus route: ${r.routeShortName} ${r.routeLongName}`} />
+        <meta property="og:description" content={`DDOT bus route ${r.routeShortName} ${r.routeLongName}: ${ddotRt.description}`} />
+      </Helmet>
+      <PageTitle>
+        <RouteTitle long={r.routeLongName} short={r.routeShortName} color={r.routeColor} size="small" />
+        <span className="text-sm font-thin text-gray-800 py-1">{ddotRt.RouteType} route</span>
+      </PageTitle>
+      <SiteSection>
+        <p className="text-sm text-left leading-tight">{ddotRt.description}</p>
+      </SiteSection>
+      <SiteSection title={`Map`} subtitle={!tracked && vehicles ? "Tap the bus icon to show more information" : null} icon={faMap} fullWidth expands>
+        <RouteMap routes={geojson} stops={r.stopsList} timepoints={r.timepointsList} vehicles={vehicles} {...{ tracked, setTracked }} />
+      </SiteSection>
+      {vehicles && patterns && <SiteSection title="Real-time bus locations" subtitle={`Tap the pop-up to ${tracked ? `stop` : `start`} tracking`} icon={faRss} fullWidth expands startsClosed isOpen={tracked}>
+        {
+          tracked ?
+          vehicles.filter(v => v.properties.vid === tracked).map(v => <Vehicle vehicle={v} key={v.properties.vid} {...{ patterns, tracked, setTracked }} />)
+          : vehicles.map(v => <Vehicle vehicle={v} key={v.properties.vid} {...{ patterns, tracked, setTracked }} />)
+        }
+      </SiteSection>}
+      <SiteSection icon={faCalendar} title={`Schedule`} expands fullWidth>
+        <table className="schedule-table">
+          <tbody>
             <tr className="bg-gray-200">
-              <th className="text-left">Weekday</th>
+              <th className="text-left font-thin">Weekday</th>
               <th></th>
             </tr>
             <tr>
@@ -130,53 +134,42 @@ const RoutePage = ({ data, pageContext }) => {
               <td>every {ddotRt.frqWkNight} minutes</td>
             </tr>}
             {ddotRt.days !== "Mon-Fri" &&
-            <>
-            <tr className="bg-gray-200">
-              <th>Saturday</th>
-              <th></th>
-            </tr>
-            {ddotRt.frqSaBase > 0 && <tr>
-              <td>Daytime</td>
-              <td>every {ddotRt.frqSaBase} minutes</td>
-            </tr>}
-            {ddotRt.frqSaNight > 0 && <tr>
-              <td className="px-2 py-1">Nighttime</td>
-              <td>every {ddotRt.frqSaNight} minutes</td>
-            </tr>}
-            </>}
+              <>
+                <tr className="bg-gray-200">
+                  <th className="font-thin">Saturday</th>
+                  <th></th>
+                </tr>
+                {ddotRt.frqSaBase > 0 && <tr>
+                  <td>Daytime</td>
+                  <td>every {ddotRt.frqSaBase} minutes</td>
+                </tr>}
+                {ddotRt.frqSaNight > 0 && <tr>
+                  <td className="px-2 py-1">Nighttime</td>
+                  <td>every {ddotRt.frqSaNight} minutes</td>
+                </tr>}
+              </>}
             {ddotRt.days !== 'Mon-Fri' && ddotRt.days !== 'Mon-Sat' && <><tr className="bg-gray-200">
-              <th>Sunday</th>
+              <th className="font-thin">Sunday</th>
               <th></th>
             </tr>
-            {ddotRt.frqSuBase > 0 && <tr>
-              <td>Daytime</td>
-              <td>every {ddotRt.frqSuBase} minutes</td>
-            </tr>}
-            {ddotRt.frqSuNight > 0 && <tr>
-              <td>Nighttime</td>
-              <td>every {ddotRt.frqSuNight} minutes</td>
-            </tr>}</>}</tbody>
-          </table>
-          <div className="text-md text-gray-700 gibson-bold p-2 flex items-center">
-            <Link to="./schedule" aria-label="Schedule" >
-              <span>View full schedule</span>
-              <FontAwesomeIcon icon={faArrowCircleRight} className="ml-1" />
-            </Link>
-          </div>
-        </SectionContainer>
-        <SectionContainer>
-          <SectionHeader icon={faBus} title={`Major stops`} />
-          <DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} className="bg-gray-200 text-gray-700 px-2 text-xs mb-1" />
-          <RouteStopsList {...{ longTrips, direction, routeColor }} timepointsOnly small />
-          <div className="text-md text-gray-700 gibson-bold p-2 flex items-center">
-            <Link to="./stops" aria-label="Stops" >
-              <span>View all stops</span>
-              <FontAwesomeIcon icon={faArrowCircleRight} className="ml-1" />
-            </Link>
-          </div>
-        </SectionContainer>
-      </section>
-    </Layout>
+              {ddotRt.frqSuBase > 0 && <tr>
+                <td>Daytime</td>
+                <td>every {ddotRt.frqSuBase} minutes</td>
+              </tr>}
+              {ddotRt.frqSuNight > 0 && <tr>
+                <td>Nighttime</td>
+                <td>every {ddotRt.frqSuNight} minutes</td>
+              </tr>}</>}</tbody>
+        </table>
+        <SiteButton link='./schedule' ariaLabel='Schedule' text='Schedule' icon={faArrowCircleRight} />
+      </SiteSection>
+
+      <SiteSection icon={faBus} title={`Major stops`} expands startsClosed fullWidth>
+        <DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} className="bg-gray-200 text-gray-700 px-2 text-xs mb-1" />
+        <RouteStopsList {...{ longTrips, direction, routeColor }} timepointsOnly small />
+        <SiteButton link='./stops' ariaLabel='Stops' text='View all stops' icon={faArrowCircleRight} />
+      </SiteSection>
+    </div>
   )
 }
 
@@ -212,7 +205,7 @@ export const query = graphql`
     }
     postgres {
       route: allRoutesList(
-        condition: { routeShortName: $routeNo, feedIndex: 5 }
+        condition: { routeShortName: $routeNo, feedIndex: 1 }
       ) {
         agencyId
         routeShortName

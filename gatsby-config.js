@@ -12,7 +12,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-analytics`, 
       options: {
         trackingId: "UA-107915075-4",
         // this option places the tracking script into the head of the DOM
@@ -35,13 +35,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `ddot.info`,
+        short_name: `ddot.info`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `./src/images/Bus-logo.png`
+        background_color: `#eee`,
+        theme_color: `#004851`,
+        display: `standalone`,
+        icon: `./src/images/ddot-logo.png`
       },
     },
     {
@@ -50,6 +50,12 @@ module.exports = {
         connectionString: process.env.PG_CONN,
         schema: `gtfs`,
         appendPlugins: [require("@graphile/postgis").default]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve('./src/components/layout')
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

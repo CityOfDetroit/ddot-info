@@ -1,4 +1,5 @@
 import React from "react";
+import SiteSection from "./SiteSection";
 import { StopListItem } from "./StopListItem";
 
 export const RouteStopsList = ({ longTrips, direction, routeColor, className, small = false, timepointsOnly = false }) => {
@@ -12,10 +13,10 @@ export const RouteStopsList = ({ longTrips, direction, routeColor, className, sm
   }
 
   return (
-    <div className={small ? "grid w-100 col-span-2 overflow-y-auto px-2 text-sm section-scroll" : "grid w-100 col-span-2 overflow-y-auto px-2 section-scroll"}>
+    <SiteSection className={small ? "grid w-100 col-span-2 overflow-y-auto px-2 text-sm section-scroll" : "grid w-100 col-span-2 overflow-y-auto px-2 section-scroll"} fullWidth>
       {times.map((stopTime, i) => (
         <StopListItem key={stopTime.stop.stopCode} {...{ stopTime, routeColor }} small={small} />
       ))}
-    </div>
+    </SiteSection>
   );
 };

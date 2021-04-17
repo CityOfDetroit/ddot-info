@@ -1,7 +1,7 @@
 let rp = require('request-promise')
 
 exports.handler = function(event, context, callback) {
-  let url = `https://myddotbus.com/bustime/api/v3/getvehicles?key=${process.env.DDOT_KEY}&format=json&rt=${event.queryStringParameters.rt}`
+  let url = `http://myddotbus.com/bustime/api/v3/getvehicles?key=${process.env.DDOT_KEY}&format=json&rt=${event.queryStringParameters.rt}`
 
   rp(url)
     .then(body => {

@@ -8,7 +8,7 @@
 
 const path = require("path");
 const axios = require("axios")
-const routes = require('./src/data/ddot_routes.json')
+const { shapes } = require('./src/data/shapes')
 
 // here's where we generate GraphQL nodes from our ArcGIS Hub data.json
 exports.sourceNodes = async ({
@@ -24,7 +24,7 @@ exports.sourceNodes = async ({
   // let root = await axios.get(routesUrl)
 
   // for each node, register it with Gatsby
-  routes.features.forEach((n, i) => {
+  shapes.features.forEach((n, i) => {
     let {properties, geometry} = n
 
     let directionId;
@@ -51,6 +51,7 @@ exports.sourceNodes = async ({
       direction: properties.Direction,
       directionId: directionId,
       short: properties.RouteNum.toString(),
+      long: properties.RouteName,
       orientation: properties.Orientatio,
       localService: properties.LocalServi,
       description: properties.Descriptio,
@@ -111,12 +112,12 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   const result = await graphql(`
     {
       postgres {
-        routes: allRoutesList(condition: { feedIndex: 5 }, orderBy: ROUTE_SHORT_NAME_ASC) {
+        routes: allRoutesList(condition: { feedIndex: 1 }, orderBy: ROUTE_SHORT_NAME_ASC) {
           agencyId
           short: routeShortName
           long: routeLongName
         }
-        stops: allStopsList(condition: { feedIndex: 5 }, orderBy: STOP_ID_ASC ) {
+        stops: allStopsList(condition: { feedIndex: 1 }, orderBy: STOP_ID_ASC ) {
           feedIndex
           stopId
           stopCode

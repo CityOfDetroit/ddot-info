@@ -111,7 +111,7 @@ const StopPage = ({ data }) => {
       <SiteSection fullWidth title='Routes at this stop' icon={faMapSigns} expands>
         <RoutesHere {...{ routes, currentRoute, setCurrentRoute }} />
       </SiteSection>
-      <SiteSection fullWidth title='Scheduled arrival times' icon={faClock} expands startsClosed className="mb-0">
+      <SiteSection fullWidth title='Scheduled departures' icon={faClock} expands className="mb-0">
         <TimesHere {...{ times, currentRoute, routes }} />
         {/* <StopTransfers /> */}
       </SiteSection>
@@ -180,7 +180,11 @@ export const query = graphql`
             directionId
             serviceId
             tripHeadsign
+            stopTimesByFeedIndexAndTripId {
+              totalCount
+            }
           }
+          stopSequence
           arrivalTime {
             hours
             minutes

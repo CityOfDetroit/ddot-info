@@ -74,17 +74,15 @@ const RouteTimetable = ({ trips, longTrips, service, direction, routeColor }) =>
   }
 
   return (
-    <section className="timetable mt-3">
+    <section className="timetable mt-3 tabular">
       <table>
-        <thead style={{ position: 'sticky' }}>
+        <thead className="z-10" style={{ position: 'sticky' }}>
           <tr style={{ position: 'sticky' }}>
             {timepoints.map((s, k) => (
-              <th key={`${s.stop.stopCode} + ${k}`} className="text-sm timetable-header w-40">
-                <div className="flex flex-col items-center justify-end h-20 bg-white -mt-1">
-                  <Link to={`/stop/${s.stop.stopCode}`} className="leading-tight text-sm bg-white mb-2">
-                    <span className="font-thin">
-                      {s.stop.stopName.replace(" - Deboarding", "").replace("Transit Center", "TC")}
-                    </span>
+              <th key={`${s.stop.stopCode} + ${k}`} className="text-sm timetable-header w-40 p-0 p-0 bg-white">
+                <div className="flex flex-col items-center justify-end h-20 bg-white">
+                  <Link to={`/stop/${s.stop.stopCode}`} className="leading-tight text-sm font-bold bg-white mb-2 px-2">
+                    {s.stop.stopName.replace(" - Deboarding", "").replace("Transit Center", "TC")}
                   </Link>
                   <FontAwesomeIcon icon={faChevronCircleRight} size="lg" className="relative z-10 bg-white text-gray-700" />
                 </div>
@@ -119,9 +117,19 @@ const RouteTimetable = ({ trips, longTrips, service, direction, routeColor }) =>
                     </td>
                   )
                 };
+                if (filtered.length > 1) {
+                  let indices = timepoints.map(t => t.stop.stopId === tp.stop.stopId).reduce((a, e, i) => (e === true) ? a.concat(i) : a, [])
+                  let value = indices.indexOf(j)
+                  return (
+                    <td key={`${t.id}-${i}-${j}`}
+                      className={`text-center text-sm border-r-2 timetable-entry ${arrivalTimeDisplay(filtered[value].arrivalTime).indexOf("p") > -1 ? `font-semibold` : `font-base`}`}>
+                      {arrivalTimeDisplay(filtered[value].arrivalTime).slice(0, -3)}
+                    </td>
+                  )
+                }
                 return (
                   <td key={`${t.id}-${i}-${j}`}
-                    className={`text-center text-sm timetable-entry ${filtered.length === 0 && `bg-gray-100`} ${arrivalTimeDisplay(filtered[0].arrivalTime).indexOf("p") > -1 ? `font-medium` : `font-light`}`}>
+                    className={`text-center text-sm  border-r-2 border-opacity-25 border-dotted border-gray-700 z-0 timetable-entry ${filtered.length === 0 && `bg-gray-100`} ${arrivalTimeDisplay(filtered[0].arrivalTime).indexOf("p") > -1 ? `font-semibold` : `font-base`}`}>
                     {filtered.length > 0 ?
                       arrivalTimeDisplay(filtered[0].arrivalTime).slice(0, -3) :
                       `-`

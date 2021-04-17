@@ -1,7 +1,7 @@
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faBus, faClock, faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import React from "react";
 import Helmet from 'react-helmet';
 import PageTitle from "../components/PageTitle";
@@ -42,8 +42,8 @@ const IndexPage = ({ data }) => {
       </Helmet>
       <PageTitle text={'Welcome to ddot.info'} icon={faHome} />
       <SiteSection>
-        <p>You can find a description, map, and real-time information for your bus route by clicking the name of the route.</p>
-        <p>Click the bus icon <FontAwesomeIcon icon={faBus} className="mx-1" /> for a listing of bus stops, or the schedule <FontAwesomeIcon icon={faClock} className="mx-1" /> icon for a timetable at major stops.</p>
+        <p className="mt-4 text-sm leading-none text-gray-500">{new Date().toLocaleDateString()}</p>
+        <p>New on ddot.info: <Link to={`/system-map`}>an interactive system map.</Link> View all the routes together, or view a few at a time. Click on a route for more information.</p>
       </SiteSection>
       <RoutesList routes={routes} />
     </>

@@ -21,7 +21,7 @@ const RoutesPage = ({ data }) => {
         <meta property="og:description" content={`List of all DDOT bus routes, with links to their main page, along with stops and schedules.`} />
       </Helmet>
       <PageTitle text={'List of routes'} icon={faList} />
-      <RoutesList routes={sortedRoutes} scroll={false} />
+      <RoutesList routes={sortedRoutes} title={null} scroll={false} />
     </>
   )
 }

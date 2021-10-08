@@ -4,8 +4,12 @@ import SiteSection from './SiteSection';
 import { ToggleButton } from './ToggleButton';
 
 const ServicePicker = ({ services, service, setService, inline = true, expands = true, startsClosed = true, className="" }) => {
+
+  // stupid hack because there's a ghost service id
+  services = services.filter(s => s !== "2")
+
   if (services.length === 3) {
-    services = ["1", "3", "2"]
+    services = ["3", "4", "1"]
   }
   if (services.length === 1) {
     expands = false;

@@ -107,7 +107,7 @@ const RoutePage = ({ data, pageContext }) => {
       <SiteSection title={`Map`} subtitle={!tracked && vehicles ? "Tap the bus icon to show more information" : null} icon={faMap} fullWidth expands>
         <RouteMap routes={geojson} stops={r.stopsList} timepoints={r.timepointsList} vehicles={vehicles} {...{ tracked, setTracked }} />
       </SiteSection>
-      {vehicles && patterns && <SiteSection title="Real-time bus locations" subtitle={`Tap the pop-up to ${tracked ? `stop` : `start`} tracking`} icon={faRss} fullWidth expands startsClosed isOpen={tracked}>
+      {vehicles && patterns && <SiteSection title="Real-time bus locations" subtitle={`Tap ${tracked ? `the` : `a`} bus to ${tracked ? `stop` : `start`} following the bus location`} icon={faRss} fullWidth expands startsClosed isOpen={tracked}>
         {
           tracked ?
           vehicles.filter(v => v.properties.vid === tracked).map(v => <Vehicle vehicle={v} key={v.properties.vid} {...{ patterns, tracked, setTracked }} />)
@@ -205,7 +205,7 @@ export const query = graphql`
     }
     postgres {
       route: allRoutesList(
-        condition: { routeShortName: $routeNo, feedIndex: 1 }
+        condition: { routeShortName: $routeNo, feedIndex: 7 }
       ) {
         agencyId
         routeShortName

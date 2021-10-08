@@ -3,6 +3,10 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+:root {
+  --speed: 500ms;
+}
+
 @font-face {
   font-family: "Gibson Detroit Regular";
   src: url("./fonts/GibsonDetroit-Reg.eot");
@@ -22,14 +26,16 @@ p, li {
   @apply my-3;
 }
 
+a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.01em;
+}
+
+
 h1, h2, h3, h4 {
   font-family: "Gibson Detroit Regular";
   @apply font-semibold;
   @apply mb-1;
-}
-
-a {
-  text-decoration: underline;
 }
 
 .header-icon {
@@ -52,14 +58,10 @@ a {
 
 /* timetable */
 
-.timetable {
-  max-height: 100vh;
-  overflow-y: auto;
-}
-
 .timetable-header {
   position: sticky;
   top: 0;
+  z-index: 1;
   min-width: 6rem;
 }
 
@@ -89,19 +91,22 @@ a {
   @apply text-xs;
 }
 
+.menu-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  transition: background 250ms; 
+  @apply text-lg;
+  @apply rounded-md;
+  @apply p-1;
+}
+
+.menu-item:hover {
+  @apply bg-spirit-green;
+}
 
 /* rules for mobile */
 @media only screen and (max-width: 600px) {
-  .route-grid {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .stop-grid {
-    display: flex;
-    flex-direction: column;
-  }  
-
   #map {
     height: 40vh;
   }
@@ -116,19 +121,6 @@ a {
 }
 
 @media only screen and (min-width: 601px) {
-
-  .route-grid {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 1em;
-  }
-
-  .stop-grid {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 1em;
-  }  
-
   #map {
     height: 45vh;
   }
@@ -136,4 +128,10 @@ a {
   #system-map {
     height: 45vh;
   }
+}
+
+.dropdown {
+  display: grid;
+  grid-gap: .25em;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }

@@ -128,7 +128,7 @@ query MyQuery {
     }
   }
   pg: postgres {
-    allRoutes(condition: {feedIndex: 1}) {
+    allRoutes(condition: {feedIndex: 7}) {
       edges {
         node {
           routeColor
@@ -138,7 +138,7 @@ query MyQuery {
         }
       }
     }
-    routes: allRoutesList(condition: { feedIndex: 1 }, orderBy: ROUTE_SORT_ORDER_ASC) {
+    routes: allRoutesList(condition: { feedIndex: 7 }, orderBy: ROUTE_SORT_ORDER_ASC) {
       short: routeShortName
       long: routeLongName
       color: routeColor

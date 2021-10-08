@@ -50,7 +50,7 @@ const Layout = ({ gridClass=null, children }) => {
           {children}
         </main>
       </div>
-      <footer className="pt-8 pb-2 px-2 bg-gray-100 w-100 text-sm text-center" style={maxWidthStyle}>
+      <footer className="py-4 px-2 bg-gray-100 w-100 text-sm text-center border-t-4" style={maxWidthStyle}>
         <span className="w-full text-center py-1 block">
           © {new Date().getFullYear()}, <a href="https://detroitmi.gov/departments/detroit-department-transportation">Detroit Department of Transportation.</a>
         </span>

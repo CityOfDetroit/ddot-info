@@ -42,7 +42,7 @@ const IndexPage = ({ data }) => {
       </Helmet>
       <PageTitle text={'Welcome to ddot.info'} icon={faHome} />
       <SiteSection>
-        <p className="mt-4 text-sm leading-none text-gray-500">{new Date().toLocaleDateString()}</p>
+        <p className="mt-4 text-sm leading-none text-gray-500">06/28/2021</p>
         <p>New on ddot.info: <Link to={`/system-map`}>an interactive system map.</Link> View all the routes together, or view a few at a time. Click on a route for more information.</p>
       </SiteSection>
       <RoutesList routes={routes} />
@@ -53,7 +53,7 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   {
     postgres {
-      routes: allRoutesList(condition: { feedIndex: 7 }, orderBy: ROUTE_SORT_ORDER_ASC) {
+      routes: allRoutesList(condition: {feedIndex: 7, routeType: 3}, orderBy: ROUTE_SORT_ORDER_ASC) {
         short: routeShortName
         long: routeLongName
         color: routeColor

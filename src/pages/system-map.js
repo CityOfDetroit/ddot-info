@@ -138,7 +138,7 @@ query MyQuery {
         }
       }
     }
-    routes: allRoutesList(condition: { feedIndex: 7 }, orderBy: ROUTE_SORT_ORDER_ASC) {
+    routes: allRoutesList(condition: {feedIndex: 7, routeType: 3}, orderBy: ROUTE_SORT_ORDER_ASC) {
       short: routeShortName
       long: routeLongName
       color: routeColor

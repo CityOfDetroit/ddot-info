@@ -33,7 +33,7 @@ const RouteNumber = ({ number, color, textColor='#5f6369', size="base", active=t
 
   let round = number < 11;
 
-  textColor = ["46", "80", "89", "92", "95", "96"].indexOf(number) > -1 ? '#5f6369' : '#fff'
+  textColor = ["46", "80", "89", "92", "95", "96"].indexOf(number) > -1 ? '#fff' : '#fff'
 
   return (
     <div 

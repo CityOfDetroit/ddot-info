@@ -40,9 +40,9 @@ const RouteSchedulePage = ({ data }) => {
   let services = Array.from(new Set(trips.map(t => t.service))).sort((a, b) => a > b)
   let now = new Date
   let dow = now.getDay()
-  let currentService = services[0];
-  if (dow === 0 && services.indexOf("2") > -1) { currentService = "2"}
-  if (dow === 6 && services.indexOf("3") > -1) { currentService = "3"}
+  let currentService = "3";
+  if (dow === 0 && services.indexOf("1") > -1) { currentService = "1"}
+  if (dow === 6 && services.indexOf("4") > -1) { currentService = "4"}
   let [service, setService] = useState(currentService)
 
   let serviceDesc = `Service is provided`

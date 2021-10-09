@@ -1,9 +1,9 @@
-CREATE FUNCTION gtfs.routes_longest_trips(r gtfs.routes) RETURNS SETOF gtfs.trips
+CREATE OR REPLACE FUNCTION gtfs.routes_longest_trips(r gtfs.routes) RETURNS SETOF gtfs.trips
     LANGUAGE sql STABLE
     AS $$
 
 with longest_trips as (select distinct on (t.direction_id) t.feed_index, t.trip_id from gtfs.trips t
-inner join gtfs.stop_times st on t.trip_id = st.trip_id
+inner join gtfs.stop_times st on t.trip_id = st.trip_id and t.feed_index = st.feed_index
 where t.route_id = r.route_id and t.feed_index = r.feed_index
 group by t.feed_index, t.trip_id 
 order by t.direction_id, count(st.*) desc)

@@ -7,6 +7,7 @@ import PageTitle from "../components/PageTitle";
 import RouteNumber from "../components/RouteNumber";
 import RouteTimetable from "../components/RouteTimetable";
 import ServicePicker from "../components/ServicePicker";
+import ServiceSuspended from '../components/ServiceSuspended';
 import SiteSection from "../components/SiteSection";
 
 const RouteSchedulePage = ({ data }) => {
@@ -56,7 +57,10 @@ const RouteSchedulePage = ({ data }) => {
     serviceDesc = serviceDesc + ` on weekdays, Saturdays, and Sundays..`
   }
 
-  let routeDesc = `between ${longTrips[0].stopTimes[0].stop.stopName} and ${longTrips[0].stopTimes.slice(-1)[0].stop.stopName}`
+  let routeDesc;
+  if (longTrips.length > 0) {
+    routeDesc = `between ${longTrips[0].stopTimes[0].stop.stopName} and ${longTrips[0].stopTimes.slice(-1)[0].stop.stopName}`
+  }
 
   return (
     <>
@@ -71,7 +75,9 @@ const RouteSchedulePage = ({ data }) => {
         <h2 className="m-0 font-thin">Schedule</h2>
       </PageTitle>
 
-      <SiteSection>
+      {longTrips.length === 0 && <ServiceSuspended at='route'/>}
+
+      {longTrips.length > 0 && <><SiteSection>
         <p>
           Major stops are shown in order in the top row; look down the column to see scheduled departure times from that bus stop.
           Buses make additional stops between major stops; see a list of all stops on the <a href="../stops" className="text-underline">stops page</a>.
@@ -81,14 +87,14 @@ const RouteSchedulePage = ({ data }) => {
         </p>
       </SiteSection>
 
-      <section className="">
+     <section className="">
         <ServicePicker {...{services, service, setService}} />
         <DirectionPicker inline {...{directions, direction, setDirection, routeOrientation}} className="mr-4 bg-gray-100 px-3 text-sm" />
       </section>
 
       <section>
         <RouteTimetable {...{trips, longTrips, service, direction, routeColor}} />
-      </section>
+      </section></>}
 
     </>
   );
@@ -107,7 +113,7 @@ query($routeNo: String!) {
     }
   }
   postgres {
-    route: allRoutesList(condition: { routeShortName: $routeNo, feedIndex: 7 }) {
+    route: allRoutesList(condition: { routeShortName: $routeNo, feedIndex: 8 }) {
       agencyId
       routeShortName
       routeLongName

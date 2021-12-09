@@ -6,6 +6,7 @@ import DirectionPicker from '../components/DirectionPicker';
 import PageTitle from '../components/PageTitle';
 import RouteNumber from '../components/RouteNumber';
 import { RouteStopsList } from "../components/RouteStopsList";
+import ServiceSuspended from '../components/ServiceSuspended';
 
 const RouteStopsPage = ({ data }) => {
 
@@ -43,7 +44,8 @@ const RouteStopsPage = ({ data }) => {
       <PageTitle icon={faBus} text={<RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />}>
         <h2 className="m-0 font-thin">All stops</h2>
       </PageTitle>
-      <DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} />
+      {longTrips.length === 0 && <ServiceSuspended at='route'/>}
+      {longTrips.length > 0 && <><DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} />
         <div className="flex px-4">
           
         <p className="flex items-center mr-3">Major stops: <span
@@ -70,6 +72,7 @@ const RouteStopsPage = ({ data }) => {
           /></p>
         </div>
       <RouteStopsList {...{ longTrips, direction, routeColor }} />
+      </>}
     </>
   );
 };
@@ -87,7 +90,7 @@ query($routeNo: String!) {
   }
   postgres {
     route: allRoutesList(
-      condition: { routeShortName: $routeNo, feedIndex: 7 }
+      condition: { routeShortName: $routeNo, feedIndex: 8 }
     ) {
       agencyId
       routeShortName

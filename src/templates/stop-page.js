@@ -1,10 +1,11 @@
-import { faBusAlt, faClock, faMap, faMapSigns } from "@fortawesome/free-solid-svg-icons";
+import { faBusAlt, faClock, faDoorClosed, faMap, faMapSigns } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from "gatsby";
 import React, { useEffect, useState } from "react";
 import Helmet from 'react-helmet';
 import { NextArrivals } from "../components/NextArrivals";
 import PageTitle from '../components/PageTitle';
 import { RoutesHere } from "../components/RoutesHere";
+import ServiceSuspended from "../components/ServiceSuspended";
 import SiteSection from "../components/SiteSection";
 import StopMap from "../components/StopMap";
 import { TimesHere } from "../components/TimesHere";
@@ -58,7 +59,7 @@ const StopPage = ({ data }) => {
 
   const [predictions, setPredictions] = useState(null)
 
-  const [currentRoute, setCurrentRoute] = useState(routes[0].short)
+  const [currentRoute, setCurrentRoute] = useState(routes.length > 0 ? routes[0].short : null) 
 
   const [currentTrip, setCurrentTrip] = useState(null)
 
@@ -104,6 +105,7 @@ const StopPage = ({ data }) => {
         <h1 className="m-0 font-thin">{s.stopName}</h1>
         <h2 className="text-base font-thin text-gray-700 bg-white py-0 px-2 m-0">#{s.stopCode}</h2>
       </PageTitle>
+      {times.length === 0 && <ServiceSuspended at='stop' />}
       {predictions && <NextArrivals {...{ routeFeatures, predictions, currentTrip, setCurrentTrip }} />}
       <SiteSection icon={faMap} title={`Stop map`} fullWidth expands>
         <StopMap {...{ stopLon, stopLat, stopName, routeFeatures, currentRoute, currentTrip, predictions }} />
@@ -145,7 +147,7 @@ export const query = graphql`
       }
     }
     postgres {
-      stop: stopByFeedIndexAndStopId(stopId: $stopId, feedIndex: 7) {
+      stop: stopByFeedIndexAndStopId(stopId: $stopId, feedIndex: 8) {
         stopId
         stopCode
         stopName

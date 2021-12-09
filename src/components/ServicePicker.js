@@ -9,7 +9,7 @@ const ServicePicker = ({ services, service, setService, inline = true, expands =
   services = services.filter(s => s !== "2")
 
   if (services.length === 3) {
-    services = ["3", "4", "1"]
+    services = ["3", "2", "4"]
   }
   if (services.length === 1) {
     expands = false;

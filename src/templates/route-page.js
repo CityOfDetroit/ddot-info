@@ -10,34 +10,38 @@ import RouteTitle from '../components/RouteTitle';
 import SiteButton from '../components/SiteButton';
 import SiteSection from '../components/SiteSection';
 import { Vehicle } from '../components/Vehicle';
+import ServiceSuspended from '../components/ServiceSuspended';
 
 const RoutePage = ({ data, pageContext }) => {
 
   let r = data.postgres.route[0];
   let { trips, longTrips, routeColor, routeType } = r;
+  console.log(trips)
   let info = data.allDdotRoute.edges.map(e => e.node)
   let ddotRt = info[0]
+
   let geojson = info.map(i => {
     let { route, ...properties } = i
     properties.color = '#' + r.routeColor
     return { ...route, properties: properties }
   })
   
-  let routeOrientation;
-
-  if (info[0].direction === 'Northbound' || info[0].direction === 'Southbound') {
-    routeOrientation = 'NS'
-  }
-  if (info[0].direction === 'Eastbound' || info[0].direction === 'Westbound') {
-    routeOrientation = 'EW'
-  }
-  if (info[0].direction === 'Loop') {
-    routeOrientation = 'CW'
+  let routeOrientation = 'NS';
+  if(info.length > 0) {
+    if (info[0].direction === 'Northbound' || info[0].direction === 'Southbound') {
+      routeOrientation = 'NS'
+    }
+    if (info[0].direction === 'Eastbound' || info[0].direction === 'Westbound') {
+      routeOrientation = 'EW'
+    }
+    if (info[0].direction === 'Loop') {
+      routeOrientation = 'CW'
+    }
   }
 
   // get directions
   let directions = longTrips.map(lt => lt.directionId)
-  let [direction, setDirection] = useState(directions[0])
+  let [direction, setDirection] = useState(directions.length > 0 ? directions[0] : null)
 
   // set up a 15s 'tick' using `now`
   let [now, setNow] = useState(new Date());
@@ -104,6 +108,7 @@ const RoutePage = ({ data, pageContext }) => {
       <SiteSection>
         <p className="text-sm text-left leading-tight">{ddotRt.description}</p>
       </SiteSection>
+      {trips.length === 0 && <ServiceSuspended at='route'/>}
       <SiteSection title={`Map`} subtitle={!tracked && vehicles ? "Tap the bus icon to show more information" : null} icon={faMap} fullWidth expands>
         <RouteMap routes={geojson} stops={r.stopsList} timepoints={r.timepointsList} vehicles={vehicles} {...{ tracked, setTracked }} />
       </SiteSection>
@@ -114,7 +119,7 @@ const RoutePage = ({ data, pageContext }) => {
           : vehicles.map(v => <Vehicle vehicle={v} key={v.properties.vid} {...{ patterns, tracked, setTracked }} />)
         }
       </SiteSection>}
-      <SiteSection icon={faCalendar} title={`Schedule`} expands fullWidth>
+      {trips.length > 0 && <SiteSection icon={faCalendar} title={`Schedule`} expands fullWidth>
         <table className="schedule-table">
           <tbody>
             <tr className="bg-gray-200">
@@ -162,13 +167,13 @@ const RoutePage = ({ data, pageContext }) => {
               </tr>}</>}</tbody>
         </table>
         <SiteButton link='./schedule' ariaLabel='Schedule' text='Schedule' icon={faArrowCircleRight} />
-      </SiteSection>
+      </SiteSection>}
 
-      <SiteSection icon={faBus} title={`Major stops`} expands startsClosed fullWidth>
+      {trips.length > 0 && <SiteSection icon={faBus} title={`Major stops`} expands startsClosed fullWidth>
         <DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} className="bg-gray-200 text-gray-700 px-2 text-xs mb-1" />
         <RouteStopsList {...{ longTrips, direction, routeColor }} timepointsOnly small />
         <SiteButton link='./stops' ariaLabel='Stops' text='View all stops' icon={faArrowCircleRight} />
-      </SiteSection>
+      </SiteSection>}
     </div>
   )
 }
@@ -205,7 +210,7 @@ export const query = graphql`
     }
     postgres {
       route: allRoutesList(
-        condition: { routeShortName: $routeNo, feedIndex: 7 }
+        condition: { routeShortName: $routeNo, feedIndex: 8 }
       ) {
         agencyId
         routeShortName

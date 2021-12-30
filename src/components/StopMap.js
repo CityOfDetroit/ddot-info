@@ -152,7 +152,7 @@ const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentRoute, curr
         }
       });
     });
-  }, []);
+  }, [currentTrip, routeFeatures, stopLat, stopLon, stopName]);
 
   useEffect(() => {
     if (theMap && currentTrip) {
@@ -193,14 +193,14 @@ const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentRoute, curr
       theMap.getSource("realtime").setData({ type: "FeatureCollection", features: []})
     }
 
-  }, [predictions, theMap, currentTrip])
+  }, [predictions, theMap, currentTrip, stopLat, stopLon, stopName])
 
   useEffect(() => {
     if (theMap) {
       let filteredRoutes = routeFeatures.filter(rf => rf.properties.short === currentRoute.toString())
       theMap.getSource("routes").setData({ type: "FeatureCollection", features: filteredRoutes });
     }
-  }, [theMap, currentRoute])
+  }, [theMap, currentRoute, routeFeatures])
 
   return (
     <div id="map" />

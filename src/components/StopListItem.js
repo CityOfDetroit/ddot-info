@@ -1,8 +1,5 @@
 import { Link } from "gatsby";
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
-
 
 export const StopListItem = ({ stopTime, routeColor, small=false }) => {
 

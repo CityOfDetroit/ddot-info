@@ -44,6 +44,9 @@ const RouteNumber = ({ number, color, textColor='#5f6369', size="base", active=t
         } 
         style={numberStyle}
         onClick={onClick}
+        onKeyDown={onClick}
+        role="button"
+        tabIndex={0}
     >
       <span className="text-center gibson-bold no-underline" style={{color: textColor}}>
         {number}

@@ -303,7 +303,7 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
       });
 
     });
-  }, []);
+  }, [bounds, routes, setTracked, stopsFeatures, timepointsFeatures, tracked]);
 
   useEffect(() => {
     if (theMap && vehicles) {
@@ -326,7 +326,7 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
         theMap.setFilter("realtime-highlight", ["==", ['get', 'vid'], ''])
       }
     }
-  }, [vehicles, theMap, tracked])
+  }, [vehicles, theMap, tracked, bounds])
 
 
   return (

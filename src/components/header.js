@@ -1,9 +1,8 @@
-import { faInfoCircle, faList, faMapMarked, faHome, faChevronCircleDown, faChevronCircleRight, faLocationArrow } from "@fortawesome/free-solid-svg-icons"
+import { faInfoCircle, faList, faMapMarked, faHome, faChevronCircleDown, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "gatsby"
 import React, { useState } from "react"
 import logo from '../images/ddot-logo-white.png'
-import {CSSTransition} from 'react-transition-group';
 import AnimateHeight from 'react-animate-height';
 
 
@@ -68,7 +67,7 @@ const Header = ({ siteTitle, children }) => {
           }}
         >
           <h1 className="text-xl flex items-center" style={{ margin: 0 }}>
-            <img src={logo} className="h-6 mr-3" />
+            <img src={logo} alt="DDOT logo" className="h-6 mr-3" />
             <Link
               to="/"
               aria-label="Home"

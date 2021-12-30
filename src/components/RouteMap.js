@@ -303,7 +303,7 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
       });
 
     });
-  }, [bounds, routes, setTracked, stopsFeatures, timepointsFeatures, tracked]);
+  }, []);
 
   useEffect(() => {
     if (theMap && vehicles) {
@@ -327,7 +327,6 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
       }
     }
   }, [vehicles, theMap, tracked, bounds])
-
 
   return (
     <div id="map" />

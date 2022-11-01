@@ -1,7 +1,6 @@
 import { faChevronCircleDown, faChevronCircleRight, faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import {CSSTransition} from 'react-transition-group';
 import AnimateHeight from 'react-animate-height';
 
 const SiteSection = ({ children, className = "", titleClassName = "", subtitle = null, icon = null, title = null, fullWidth = false, expands = false, startsClosed = false, isOpen = false, scroll = false, dismissable = false, onDismiss = null }) => {
@@ -12,7 +11,7 @@ const SiteSection = ({ children, className = "", titleClassName = "", subtitle =
   if (visible) {
     return (
       <section className={className}>
-        {(icon || title) && <div className={titleClassName + " flex justify-between items-center px-4 py-1 bg-city-green-muted"} onClick={expands ? () => setOpen(!open) : null}>
+        {(icon || title) && <div className={titleClassName + " flex justify-between items-center px-4 py-1 bg-city-green-muted"} onClick={expands ? () => setOpen(!open) : null} onKeyDown={expands ? () => setOpen(!open) : null} role="button" tabIndex={0}>
           {icon &&
             <div className="w-8">
               <FontAwesomeIcon icon={icon} className={(open || isOpen) ? "mr-2" : "mr-2 text-gray-600"} />

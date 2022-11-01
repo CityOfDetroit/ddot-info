@@ -326,8 +326,7 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
         theMap.setFilter("realtime-highlight", ["==", ['get', 'vid'], ''])
       }
     }
-  }, [vehicles, theMap, tracked])
-
+  }, [vehicles, theMap, tracked, bounds])
 
   return (
     <div id="map" />

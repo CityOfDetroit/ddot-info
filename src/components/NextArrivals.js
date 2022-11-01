@@ -18,7 +18,7 @@ export const NextArrivals = ({ routeFeatures, predictions, currentTrip, setCurre
         }
         else { return; }
       })
-  }, [predictions])
+  }, [predictions, nextBuses])
 
   return (
     <SiteSection icon={faRss} title="Next buses at this stop" subtitle={`Tap ${!currentTrip ? `to track this bus on the map` : `to stop tracking this bus`}`} fullWidth expands>

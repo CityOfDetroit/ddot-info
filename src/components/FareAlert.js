@@ -1,4 +1,4 @@
-import { faHeadSideMask, faTicketAlt, faWindowClose } from "@fortawesome/free-solid-svg-icons";
+import { faTicketAlt, faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "gatsby";
 import React from "react";

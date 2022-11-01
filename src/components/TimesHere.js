@@ -2,7 +2,7 @@ import { faClock } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import SectionHeader from './SectionHeader';
 import ServicePicker from './ServicePicker';
-import { arrivalTimeDisplay } from "../templates/stop-page";
+import { arrivalTimeDisplay } from "./arrivalTimeDisplay";
 import _ from 'lodash'
 import RouteTitle from './RouteTitle'
 import SiteSection from "./SiteSection";
@@ -29,8 +29,8 @@ export const TimesHere = ({ currentRoute, times, routes }) => {
 
   let now = new Date
   let dow = now.getDay()
-  let currentService = "3";
-  if (dow === 0 && services.length > 1) { currentService = "1" }
+  let currentService = "2";
+  if (dow === 0 && services.length > 1) { currentService = "3" }
   if (dow === 6 && services.length > 1) { currentService = "4" }
 
   const [service, setService] = useState(currentService);
@@ -77,8 +77,6 @@ export const TimesHere = ({ currentRoute, times, routes }) => {
         else {
           let filtered = routes.filter(rt => r === rt.short)[0]
           let rt = allRoutes.find(ar => ar.RouteNum === parseInt(r))
-          console.log(rt)
-          console.log(directions)
           let lookup = {
             "North - South": "NS",
             "East - West": "EW",

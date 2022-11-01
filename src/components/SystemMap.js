@@ -147,7 +147,6 @@ const SystemMap = ({ routeFeatures, clicked, selected, setSelected }) => {
         });
         
         if(clickedRoutes.length > 0) {
-          console.log(clickedRoutes)
           setSelected([...new Set(clickedRoutes.map(r => r.properties.short.toString()))].sort((a, b) => a - b))
         }
       });

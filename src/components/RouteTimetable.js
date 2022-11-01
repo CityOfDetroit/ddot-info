@@ -30,7 +30,9 @@ const arrivalTimeDisplay = (time, showAp) => {
 
 const RouteTimetable = ({ trips, longTrips, service, direction, routeColor }) => {
 
+
   console.log(trips)
+  console.log(service, direction)
   let tripsToShow = trips.filter(t => {
     return (t.direction === direction && t.service === service)
   })
@@ -76,8 +78,6 @@ const RouteTimetable = ({ trips, longTrips, service, direction, routeColor }) =>
   let borderedRowStyle = {
     borderBottom: `2px solid #${routeColor}`
   }
-
-  console.log(routeColor)
 
   return (
     <div style={{width: '100%', overflow: 'auto', maxHeight: 'calc(100vh - 94px)'}}>

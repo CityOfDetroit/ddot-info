@@ -39,11 +39,12 @@ const RouteSchedulePage = ({ data }) => {
   
   // get services
   let services = Array.from(new Set(trips.map(t => t.service))).sort((a, b) => a > b)
-  let now = new Date
+  let now = new Date()
   let dow = now.getDay()
   let currentService = "3";
-  if (dow === 0 && services.indexOf("1") > -1) { currentService = "1"}
-  if (dow === 6 && services.indexOf("4") > -1) { currentService = "4"}
+  if (dow === 0 && services.length > 1) { currentService = "1" }
+  if (dow === 6 && services.length > 1) { currentService = "2" }
+
   let [service, setService] = useState(currentService)
 
   let serviceDesc = `Service is provided`
@@ -113,7 +114,7 @@ query($routeNo: String!) {
     }
   }
   postgres {
-    route: allRoutesList(condition: { routeShortName: $routeNo, feedIndex: 8 }) {
+    route: allRoutesList(condition: { routeShortName: $routeNo, feedIndex: 19 }) {
       agencyId
       routeShortName
       routeLongName

@@ -16,7 +16,6 @@ const RoutePage = ({ data, pageContext }) => {
 
   let r = data.postgres.route[0];
   let { trips, longTrips, routeColor, routeType } = r;
-  console.log(trips)
   let info = data.allDdotRoute.edges.map(e => e.node)
   let ddotRt = info[0]
 
@@ -48,7 +47,7 @@ const RoutePage = ({ data, pageContext }) => {
   useEffect(() => {
     let tick = setInterval(() => {
       setNow(new Date());
-    }, 20000);
+    }, 15000);
     return () => clearInterval(tick);
   }, []);
 
@@ -210,7 +209,7 @@ export const query = graphql`
     }
     postgres {
       route: allRoutesList(
-        condition: { routeShortName: $routeNo, feedIndex: 8 }
+        condition: { routeShortName: $routeNo, feedIndex: 19 }
       ) {
         agencyId
         routeShortName

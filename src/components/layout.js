@@ -16,7 +16,7 @@ import MaskAlert from "./MaskAlert"
 const Layout = ({ gridClass=null, children }) => {
 
   const [showAlert, setShowAlert] = useState({
-    mask: true,
+    mask: false,
     fare: false
   })
   

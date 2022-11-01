@@ -6,10 +6,10 @@ import { ToggleButton } from './ToggleButton';
 const ServicePicker = ({ services, service, setService, inline = true, expands = true, startsClosed = true, className="" }) => {
 
   // stupid hack because there's a ghost service id
-  services = services.filter(s => s !== "2")
+  services = services.filter(s => s !== "4")
 
   if (services.length === 3) {
-    services = ["3", "2", "4"]
+    services = ["3", "2", "1"]
   }
   if (services.length === 1) {
     expands = false;

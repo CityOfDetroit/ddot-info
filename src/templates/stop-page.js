@@ -10,30 +10,6 @@ import SiteSection from "../components/SiteSection";
 import StopMap from "../components/StopMap";
 import { TimesHere } from "../components/TimesHere";
 
-export const arrivalTimeDisplay = (time, showAp) => {
-  let hour = time.hours;
-  let minutes = time.minutes ? time.minutes.toString().padStart(2, "0") : "00";
-  let ap = "a";
-
-  // vary hours & am/pm based on what hour it is
-  // gtfs has hours that are greater than 24
-  if (time.hours < 12 && time.hours > 0) {
-    hour = time.hours;
-    ap = "a";
-  } else if (time.hours > 12 && time.hours < 24) {
-    hour = time.hours - 12;
-    ap = "p";
-  } else if (time.hours % 12 === 0) {
-    hour = 12;
-    ap = time.hours === 12 ? "p" : "a";
-  } else if (time.hours >= 24) {
-    hour = time.hours - 24;
-    ap = "a";
-  }
-
-  return `${hour}:${minutes}${showAp ? ap : ``}`;
-};
-
 const StopPage = ({ data }) => {
   const s = data.postgres.stop;
 
@@ -68,7 +44,7 @@ const StopPage = ({ data }) => {
   useEffect(() => {
     let tick = setInterval(() => {
       setNow(new Date());
-    }, 10000);
+    }, 15000);
     return () => clearInterval(tick);
   }, []);
 
@@ -147,7 +123,7 @@ export const query = graphql`
       }
     }
     postgres {
-      stop: stopByFeedIndexAndStopId(stopId: $stopId, feedIndex: 8) {
+      stop: stopByFeedIndexAndStopId(stopId: $stopId, feedIndex: 19) {
         stopId
         stopCode
         stopName

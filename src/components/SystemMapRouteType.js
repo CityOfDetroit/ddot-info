@@ -15,7 +15,7 @@ const SystemMapRouteType = ({ routeType, filtered, clicked, setClicked, startsOp
   return (
       <div key={routeType} >
         <div className="flex items-center justify-between px-2 py-2" style={{borderLeft: `5px solid #${routeTypes[routeType].color}`}}>
-          <div className="w-2/3" onClick={() => setOpen(!open)}>
+          <div className="w-2/3" onClick={() => setOpen(!open)} onKeyDown={() => setOpen(!open)} role="button" tabIndex={0}>
             <h2 className="m-0 leading-tight">{routeType}</h2>
             <span className="text-xs font-thin leading-none">{routeTypes[routeType].desc}</span>
           </div>

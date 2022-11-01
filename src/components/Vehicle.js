@@ -29,7 +29,13 @@ export const Vehicle = ({ vehicle, patterns, tracked, setTracked }) => {
   let isLive = tracked === vehicle.properties.vid;
 
   return (
-    <div className="flex items-center" key={vehicle.properties.vid} onClick={() => { isLive ? setTracked(null) : setTracked(vehicle.properties.vid); }}>
+    <div className="flex items-center" 
+      key={vehicle.properties.vid} 
+      onClick={() => { isLive ? setTracked(null) : setTracked(vehicle.properties.vid); }} 
+      onKeyDown={() => { isLive ? setTracked(null) : setTracked(vehicle.properties.vid); }}
+      role="button" 
+      tabIndex={0}
+    >
       <div className={isLive ? "bg-yellow-200 w-full p-3 border-b-2" : "bg-gray-100 w-full p-3 border-b-2"}>
         <div className="flex items-center justify-between">
           <span>{lookup[pattern.rtdir]}</span>

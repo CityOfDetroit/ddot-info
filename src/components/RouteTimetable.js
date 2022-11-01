@@ -1,7 +1,6 @@
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
-import { clearConfigCache } from 'prettier';
 import React from 'react';
 
 const arrivalTimeDisplay = (time, showAp) => {

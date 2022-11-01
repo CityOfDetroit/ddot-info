@@ -1,4 +1,4 @@
-import { faBusAlt, faClock, faDoorClosed, faMap, faMapSigns } from "@fortawesome/free-solid-svg-icons";
+import { faBusAlt, faClock, faMap, faMapSigns } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from "gatsby";
 import React, { useEffect, useState } from "react";
 import Helmet from 'react-helmet';

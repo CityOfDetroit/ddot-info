@@ -25,7 +25,7 @@ export const Prediction = ({ prediction, vehicle, currentTrip, setCurrentTrip, r
     if (isLive) {
       setCurrentTrip(prediction)
     }
-  }, [vehicle])
+  }, [vehicle, isLive, prediction, setCurrentTrip])
 
   return (
     <div className={
@@ -34,6 +34,9 @@ export const Prediction = ({ prediction, vehicle, currentTrip, setCurrentTrip, r
         : isLive ? liveStyle : notLiveStyle
     }
       onClick={() => isLive ? setCurrentTrip(null) : setCurrentTrip(prediction)}
+      onKeyDown={() => isLive ? setCurrentTrip(null) : setCurrentTrip(prediction)}
+      role="button"
+      tabIndex={0}
     >
 
       <div className="flex items-center justify-between">

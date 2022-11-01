@@ -155,7 +155,7 @@ const SystemMap = ({ routeFeatures, clicked, selected, setSelected }) => {
 
 
     });
-  }, []);
+  }, [routeFeatures, setSelected, systemMapBbox]);
 
   useEffect(() => {
     if (theMap) {
@@ -171,7 +171,7 @@ const SystemMap = ({ routeFeatures, clicked, selected, setSelected }) => {
       }
       theMap.getSource('labels').setData({type: "FeatureCollection", features: filteredRouteLabels})
     }
-  }, [clicked, theMap, zoom])
+  }, [clicked, theMap, zoom, routeFeatures.features])
 
   useEffect(() => {
     if (theMap) {

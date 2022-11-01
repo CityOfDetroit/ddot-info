@@ -15,7 +15,7 @@ import ServiceSuspended from '../components/ServiceSuspended';
 const RoutePage = ({ data, pageContext }) => {
 
   let r = data.postgres.route[0];
-  let { trips, longTrips, routeColor, routeType } = r;
+  let { trips, longTrips, routeColor } = r;
   let info = data.allDdotRoute.edges.map(e => e.node)
   let ddotRt = info[0]
 
@@ -59,7 +59,7 @@ const RoutePage = ({ data, pageContext }) => {
       .then(d => {
         setPatterns(d['bustime-response'].ptr)
       })
-  }, [])
+  }, [r.routeShortName])
 
   // fetch vehicle data into this state object
   let [vehicles, setVehicles] = useState(null)
@@ -123,7 +123,7 @@ const RoutePage = ({ data, pageContext }) => {
           <tbody>
             <tr className="bg-gray-200">
               <th className="text-left font-thin">Weekday</th>
-              <th></th>
+              <th aria-label="Weekday frequency"></th>
             </tr>
             <tr>
               <td>Peak-hour</td>
@@ -141,7 +141,7 @@ const RoutePage = ({ data, pageContext }) => {
               <>
                 <tr className="bg-gray-200">
                   <th className="font-thin">Saturday</th>
-                  <th></th>
+                  <th aria-label="Saturday frequency"></th>
                 </tr>
                 {ddotRt.frqSaBase > 0 && <tr>
                   <td>Daytime</td>
@@ -154,7 +154,7 @@ const RoutePage = ({ data, pageContext }) => {
               </>}
             {ddotRt.days !== 'Mon-Fri' && ddotRt.days !== 'Mon-Sat' && <><tr className="bg-gray-200">
               <th className="font-thin">Sunday</th>
-              <th></th>
+              <th aria-label="Sunday frequency"></th>
             </tr>
               {ddotRt.frqSuBase > 0 && <tr>
                 <td>Daytime</td>

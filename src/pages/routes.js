@@ -4,7 +4,6 @@ import RoutesList from '../components/RoutesList'
 import PageTitle from "../components/PageTitle";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import Helmet from 'react-helmet';
-import logo from '../images/ddot-logo.png';
 
 const RoutesPage = ({ data }) => {
 

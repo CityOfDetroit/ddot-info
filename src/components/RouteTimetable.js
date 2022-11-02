@@ -29,14 +29,9 @@ const arrivalTimeDisplay = (time, showAp) => {
 
 const RouteTimetable = ({ trips, longTrips, service, direction, routeColor }) => {
 
-
-  console.log(trips)
-  console.log(service, direction)
   let tripsToShow = trips.filter(t => {
     return (t.direction === direction && t.service === service)
   })
-
-  console.log(tripsToShow)
 
   // We have to sort these routes somewhat elaborately;
   // Let's find the timepoint that occurs amongst the most trips and sort by time on that.

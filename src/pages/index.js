@@ -8,32 +8,9 @@ import RoutesList from '../components/RoutesList';
 import SiteSection from "../components/SiteSection";
 import '../css/app.css';
 
-// const nodeToFeature = (node, matching) => {
-//   let { route, ...props } = node
-//   props.color = '#' + matching.color || '333';
-//   props.textColor = '#' + matching.textColor || 'fff';
-//   return {
-//     "type": "Feature",
-//     "geometry": route.geometry,
-//     "properties": props
-//   }
-// }
-
 const IndexPage = ({ data }) => {
 
   let { routes } = data.postgres
-
-  // let features = data.allDdotRoute.edges.map(e => {
-  //   let match = routes.filter(f => f.short === e.node.short)[0]
-  //   if(match) {
-  //     return nodeToFeature(e.node, match)
-  //   }
-  //   else {
-  //     return;
-  //   }
-  // })
-
-  // let routeFeatures = { type: "FeatureCollection", features: features }
 
   return (
     <>

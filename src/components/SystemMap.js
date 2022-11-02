@@ -53,94 +53,6 @@ const SystemMap = ({ routeFeatures, clicked, selected, setSelected }) => {
       map.getSource("routes").setData(routeFeatures);
       map.getSource("labels").setData(downtownLabels)
 
-      // // stops
-      // map.addSource("stops", {
-      //   type: 'geojson',
-      //   data: {
-      //     type: "FeatureCollection",
-      //     features: stopsFeatures
-      //   }
-      // })
-      // map.addLayer({
-      //   id: "stop-points",
-      //   type: "circle",
-      //   source: "stops",
-      //   interactive: true,
-      //   filter: ["==", "$type", "Point"],
-      //   layout: {},
-      //   minzoom: 12,
-      //   paint: {
-      //     "circle-color": "white",
-      //     "circle-stroke-color": "#222",
-      //     "circle-stroke-width": {
-      //       stops: [[12, 0.1], [19, 1.5]]
-      //     },
-      //     "circle-stroke-opacity": {
-      //       stops: [[12, 0], [13.1, 0.1], [13.2, 0.8]]
-      //     },
-      //     "circle-opacity": {
-      //       stops: [[12, 0], [13.1, 0.1], [13.2, 0.8]]
-      //     },
-      //     "circle-radius": {
-      //       stops: [[12, 0.5], [19, 4]]
-      //     }
-      //   }
-      // });
-      // map.addLayer({
-      //   id: "stop-labels",
-      //   type: "symbol",
-      //   source: "stops",
-      //   minzoom: 16.75,
-      //   layout: {
-      //     "text-line-height": 1,
-      //     "text-size": {
-      //       base: 1,
-      //       stops: [[15, 7], [18, 15]]
-      //     },
-      //     "text-allow-overlap": true,
-      //     "text-ignore-placement": true,
-      //     "text-font": ["AvenirNext LT Pro Regular Bold"],
-      //     "text-justify": "center",
-      //     "text-padding": 0,
-      //     "text-offset": [0, 1],
-      //     'text-anchor': 'top',
-      //     // "text-offset": {
-      //     //   base: 1,
-      //     //   type: "categorical",
-      //     //   property: "direction",
-      //     //   stops: [["eastbound", [0.5, 0.5]], ["westbound", [-0.5, -0.5]], ["northbound", [0.5, -0.5]], ["southbound", [-0.5, 0.5]]]
-      //     // },
-      //     // "text-anchor": {
-      //     //   base: 1,
-      //     //   type: "categorical",
-      //     //   property: "direction",
-      //     //   stops: [["southbound", "top-right"], ["northbound", "bottom-left"], ["eastbound", "top-left"], ["westbound", "bottom-right"]],
-      //     //   default: "center"
-      //     // },
-      //     "text-field": ["get", "stopName"],
-      //     "text-letter-spacing": -0.01,
-      //     "text-max-width": 5
-      //   },
-      //   paint: {
-      //     "text-translate": [0, 0],
-      //     "text-halo-color": "hsl(0, 0%, 100%)",
-      //     "text-halo-width": 2,
-      //     "text-color": "hsl(0, 0%, 0%)",
-      //     "text-opacity": {
-      //       base: 1,
-      //       stops: [[15, 0], [15.1, 0.1], [15.2, 1]]
-      //     }
-      //   }
-      // });
-
-      // map.on("click", "stop-points", e => {
-      //   let stop = map.queryRenderedFeatures(e.point, {
-      //     layers: ["stop-points"]
-      //   })[0];
-
-      //   navigate(`/stop/${stop.properties.stopCode}`)
-      // });
-
       map.on("click", e => {
         let clickedRoutes = map.queryRenderedFeatures(e.point, {
           layers: ["ddot-part-time-case", "ddot-part-time-case-express", "ddot-part-time-case", "ddot-neighborhood-case", "ddot-key-case", "ddot-connect-ten-case"]
@@ -155,7 +67,7 @@ const SystemMap = ({ routeFeatures, clicked, selected, setSelected }) => {
 
 
     });
-  }, [routeFeatures, setSelected, systemMapBbox]);
+  }, []);
 
   useEffect(() => {
     if (theMap) {
@@ -171,13 +83,13 @@ const SystemMap = ({ routeFeatures, clicked, selected, setSelected }) => {
       }
       theMap.getSource('labels').setData({type: "FeatureCollection", features: filteredRouteLabels})
     }
-  }, [clicked, theMap, zoom, routeFeatures.features])
+  }, [clicked, theMap, routeFeatures.features])
 
   useEffect(() => {
     if (theMap) {
       theMap.setFilter("ddot-route-highlight", ["in", "short"].concat(selected))
     }
-  }, [selected, theMap])
+  }, [selected])
 
   return (
     <div id="system-map" />

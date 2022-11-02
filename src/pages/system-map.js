@@ -35,15 +35,6 @@ const SystemMapPage = ({ data }) => {
 
   let routeFeatures = { type: "FeatureCollection", features: features }
 
-  // let stopsFeatures = stops.map(t => {
-  //   let { theGeom, ...props } = t
-  //   return {
-  //     "type": "Feature",
-  //     "geometry": theGeom['geojson'],
-  //     "properties": props
-  //   }
-  // })
-
   // get a default object marking all routes as true
   let defaultClicked = routes.reduce((total, item) => ({
     ...total,

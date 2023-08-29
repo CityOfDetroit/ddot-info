@@ -27,6 +27,12 @@ const Layout = ({ gridClass=null, children }) => {
           title
         }
       }
+      postgres {
+        feed: allFeedInfosList(condition: {feedIndex: 29}) {
+          feedStartDate
+          feedEndDate
+        }
+      }
     }
   `)
 
@@ -53,6 +59,9 @@ const Layout = ({ gridClass=null, children }) => {
       <footer className="py-4 px-2 bg-gray-100 w-100 text-sm text-center border-t-4" style={maxWidthStyle}>
         <span className="w-full text-center py-1 block">
           © {new Date().getFullYear()}, <a href="https://detroitmi.gov/departments/detroit-department-transportation">Detroit Department of Transportation.</a>
+        </span>
+        <span>
+          Showing service for dates: {data.postgres.feed[0].feedStartDate} to {data.postgres.feed[0].feedEndDate}.
         </span>
         <span className="w-full text-center py-1 block ">
           <a href="https://airtable.com/shrugiMUTLnAn77Xd">Have a question or comment? Tell us here.</a>

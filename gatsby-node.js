@@ -112,12 +112,12 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   const result = await graphql(`
     {
       postgres {
-        routes: allRoutesList(condition: {feedIndex: 19 }, orderBy: ROUTE_SORT_ORDER_ASC) {
+        routes: allRoutesList(condition: {feedIndex: 29 }, orderBy: ROUTE_SORT_ORDER_ASC) {
           agencyId
           short: routeShortName
           long: routeLongName
         }
-        stops: allStopsList(condition: { feedIndex: 19 }, orderBy: STOP_ID_ASC ) {
+        stops: allStopsList(condition: { feedIndex: 29 }, orderBy: STOP_ID_ASC ) {
           feedIndex
           stopId
           stopCode

@@ -209,7 +209,7 @@ export const query = graphql`
     }
     postgres {
       route: allRoutesList(
-        condition: { routeShortName: $routeNo, feedIndex: 29 }
+        condition: { routeShortName: $routeNo, feedIndex: 32 }
       ) {
         agencyId
         routeShortName

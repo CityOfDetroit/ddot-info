@@ -90,7 +90,7 @@ query($routeNo: String!) {
   }
   postgres {
     route: allRoutesList(
-      condition: { routeShortName: $routeNo, feedIndex: 29 }
+      condition: { routeShortName: $routeNo, feedIndex: 32 }
     ) {
       agencyId
       routeShortName

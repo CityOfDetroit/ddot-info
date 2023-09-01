@@ -33,31 +33,33 @@ We recommend installing Postgres 12 along with the latest PostGIS extension that
 
 We use [gtfs-sql-importer](https://github.com/fitnr/gtfs-sql-importer) to import GTFS files into a database.
 
-The database structure is based on the one from **gtfs-sql-importer**, but we add a few helper SQL functions which make new fields and relationships in the GraphQL server, provided by [gatsby-source-pg](https://www.gatsbyjs.com/plugins/gatsby-source-pg/).
+The database structure is based on the one from **gtfs-sql-importer**, but we add a few helper SQL functions (defined in functions.sql) which make new fields and relationships in the GraphQL server, provided by [gatsby-source-pg](https://www.gatsbyjs.com/plugins/gatsby-source-pg/).
 
-You can create a database and import the project database structure from the command line:
+You can create a database (here, named `transit`) and import the project database structure from the command line.
 
 ```bash
-createdb ddotinfo
-psql -d ddotinfo -c 'CREATE EXTENSION postgis;'
-psql -d ddotinfo < ./gtfs.sql
+createdb transit
+psql -d transit -c 'CREATE EXTENSION postgis;'
+psql -d transit < ./gtfs.sql
 ```
 
 Next, grab the latest version of DDOT's GTFS data and import it to this database using `make` from the **gtfs-sql-importer**:
 
 ```bash
 curl -o ddot_gtfs.zip "https://detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/ddot_gtfs.zip"
-export PGDATABASE=ddotinfo && make load GTFS=ddot_gtfs.zip
+export PGDATABASE=transit && make load GTFS=ddot_gtfs.zip
 ```
 
 You should see the output from SQL insert commands. Importing the DDOT GTFS file typically takes about 2-3 minutes on a newer machine.
 
 ### Configuration
 
-Create a `.env.development` file from the given example file, filling in your database details and the API key you've received from DDOT.
+Create a `.env.development` file from the given `.env.example` file, filling in your database details and the `DDOT_KEY` API key, which can be self-provisioned at [myddotbus.com](http://www.myddotbus.com/).
 
 ### Running the development server
 
 You should be able to run the development server with the `netlify dev` command.
 
-This will run a local Functions server that mirrors how the serverless functions operate in production. In order to deploy this site to production, you would need a Netlify account.
+This will run a local Functions server that mirrors how the serverless functions operate in production. 
+
+In order to deploy this site to production, you would need a Netlify account.

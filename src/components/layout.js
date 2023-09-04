@@ -28,7 +28,7 @@ const Layout = ({ gridClass=null, children }) => {
         }
       }
       postgres {
-        feed: allFeedInfosList(condition: {feedIndex: 29}) {
+        feed: allFeedInfosList(condition: {feedIndex: 32}) {
           feedStartDate
           feedEndDate
         }

@@ -7,8 +7,17 @@ export const Vehicle = ({ vehicle, patterns, tracked, setTracked }) => {
   let nextStop = null;
   let pattern;
   let filtered = patterns.filter(p => p.pid === vehicle.properties.pid)
-  if (filtered.length > 0) {
+
+  if (filtered.length == 1) {
     pattern = filtered[0]
+  }
+  else {
+    patterns.forEach(pat => {
+      let lastStopName = pat.dtrpt.slice(-1)[0].stpnm
+      if (vehicle.properties.des.slice(0,10) === lastStopName.slice(0,10)) {
+        pattern = pat
+      }
+    })
   }
 
   if (pattern) {
@@ -38,7 +47,7 @@ export const Vehicle = ({ vehicle, patterns, tracked, setTracked }) => {
     >
       <div className={isLive ? "bg-yellow-200 w-full p-3 border-b-2" : "bg-gray-100 w-full p-3 border-b-2"}>
         <div className="flex items-center justify-between">
-          <span>{lookup[pattern.rtdir]}</span>
+          <span>{pattern ? lookup[pattern.rtdir] : `null`}</span>
           <span className="text-sm">{nextStop ? `next stop:` : `-`}</span>
         </div>
         <div className="flex items-center justify-between">

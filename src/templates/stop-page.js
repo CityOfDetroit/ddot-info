@@ -123,7 +123,7 @@ export const query = graphql`
       }
     }
     postgres {
-      stop: stopByFeedIndexAndStopId(stopId: $stopId, feedIndex: 32) {
+      stop: stopByFeedIndexAndStopId(stopId: $stopId, feedIndex: 33) {
         stopId
         stopCode
         stopName

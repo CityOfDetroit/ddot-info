@@ -13,13 +13,21 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify`,
     {
-      resolve: `gatsby-plugin-google-analytics`, 
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: "UA-107915075-4",
-        // this option places the tracking script into the head of the DOM
-        head: true,
-        // other options
-        respectDNT: true
+        trackingIds: [
+          "G-293WGMRKP9", // Google Analytics / G4A
+        ],
+        gtagConfig: {
+          // Anonymize IP addresses collected.
+          anonymize_ip: true,
+        },
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body.
+          head: true,
+          // Respect browsers that request no tracking.
+          respectDNT: true,
+        },
       },
     },
     `gatsby-plugin-react-helmet`,

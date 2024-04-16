@@ -239,8 +239,20 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
         source: "realtime",
         filter: ["==", ["get", "vid"], tracked],
         paint: {
-          "circle-radius": 14,
+          "circle-radius": 18,
           "circle-color": "rgba(233,212,96,0.95)"
+        }
+      });
+      map.addLayer({
+        id: "realtime-arrow",
+        type: "symbol",
+        source: "realtime",
+        layout: {
+          "icon-image": "arrow",
+          "icon-allow-overlap": true,
+          "icon-size": 0.12,
+          "icon-offset": [0,-100],
+          "icon-rotate": ['to-number', ['get', 'hdg']]
         }
       });
       map.addLayer({
@@ -248,34 +260,21 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
         type: "circle",
         source: "realtime",
         paint: {
-          "circle-radius": 8,
+          "circle-radius": 12,
           "circle-color": "rgba(189,189,189,0.97)",
           "circle-stroke-width": 2
         }
       });
       map.addLayer({
-        id: "realtime-icons",
+        id: "realtime-bus",
         type: "symbol",
         source: "realtime",
         layout: {
-          "icon-image": "arrow",
+          "icon-image": "bus",
           "icon-allow-overlap": true,
-          "icon-size": 0.1,
-          // "icon-offset": [0,-100],
-          "icon-rotate": ['to-number', ['get', 'hdg']]
+          "icon-size": 0.5,
         }
       });
-      // map.addLayer({
-      //   id: "realtime-icons",
-      //   type: "symbol",
-      //   source: "realtime",
-      //   layout: {
-      //     "icon-image": "bus",
-      //     "icon-allow-overlap": true,
-      //     "icon-size": 0.3,
-      //     "icon-offset": [0, -50]
-      //   }
-      // });
 
       map.on("click", "stop-points", e => {
         let stop = map.queryRenderedFeatures(e.point, {

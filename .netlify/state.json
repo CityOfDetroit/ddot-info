@@ -1,3 +1,20 @@
 {
-	"siteId": "7db3e317-7713-4cf0-8d43-fead35463f62"
+	"siteId": "7db3e317-7713-4cf0-8d43-fead35463f62",
+	"geolocation": {
+		"data": {
+			"city": "Carrara",
+			"country": {
+				"code": "IT",
+				"name": "Italy"
+			},
+			"subdivision": {
+				"code": "52",
+				"name": "Tuscany"
+			},
+			"timezone": "Europe/Rome",
+			"latitude": 44.0865,
+			"longitude": 10.102
+		},
+		"timestamp": 1725272168678
+	}
 }

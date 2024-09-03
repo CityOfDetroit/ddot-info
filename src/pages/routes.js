@@ -28,7 +28,7 @@ const RoutesPage = ({ data }) => {
 export const query = graphql`
   {
     postgres {
-      routes: allRoutesList(condition: {feedIndex: 33}, orderBy: ROUTE_SORT_ORDER_ASC) {
+      routes: allRoutesList(condition: {feedIndex: 44}, orderBy: ROUTE_SORT_ORDER_ASC) {
         short: routeShortName
         long: routeLongName
         color: routeColor

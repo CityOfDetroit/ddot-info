@@ -23,32 +23,49 @@ You will also need a [Netlify](https://www.netlify.com) account to deploy to pro
 
 ## Installation
 
-`yarn` will install the basic project dependencies.
+Clone the repository and install the dependencies.
+
+```bash
+git clone git@github.com:CityOfDetroit/ddot-info.git
+cd ddot-info
+
+# npm install should also work?
+yarn
+```
 
 You'll also want to install `gatsby-cli` and `netlify-cli`.
 
 ## Setting up the database
 
-We recommend installing Postgres 15 along with the latest PostGIS extension that works with your version of Postgres.
+Building the site relies on referencing a Postgres database. If you need to create one, we recommend installing Postgres 15 along with the latest PostGIS extension that works with your version of Postgres.
 
 We use [gtfs-sql-importer](https://github.com/fitnr/gtfs-sql-importer/tree/b3303d5537a4af099c2e1d1ddc2239e722891973) to import GTFS files into a database. (Note: this link to is to an earlier version of this package; the latest version performs stricter validation when ingesting GTFS data, that we prefer to avoid).
 
 The database structure is based on the one from **gtfs-sql-importer**, but we add a few helper SQL functions (defined in `functions.sql`) which make new fields and relationships in the GraphQL server, provided by [gatsby-source-pg](https://www.gatsbyjs.com/plugins/gatsby-source-pg/).
 
-### Start with a prepackaged database
+There are two options you can take to set up the necessary database
 
-Use the `gtfs.sql.bz2` file in the root of this project to create a database with the necessary tables and functions.
+### 1. Start with a prepackaged database
+
+Use the `gtfs.sql.bz2` file in the root of this project to create a database with the necessary data, tables, and functions.
 
 ```bash
-bunzip2 gtfs.sql.bz2
+# Create the database; here, we name it "transit"
 createdb transit
+
+# Create the PostGIS extension in the database
 psql -d transit -c 'CREATE EXTENSION postgis;'
+
+# unzip the database dump and load it into the database
+bunzip2 gtfs.sql.bz2
 psql -d transit < ./gtfs.sql
 ```
 
-This database comes preloaded with the latest DDOT data release as `feed_index = 1`.
+This database comes preloaded with the latest DDOT data release (2025-01-19) as `feed_index = 1`. From here, you can skip to the configuration section.
 
-### Create a database from scratch
+### 2. Create a local database from scratch
+
+Here, we'll create a brand new database and use the intialization function from the importer to create the necessary tables and relationships. We'll then download the GTFS data and load it in. Finally, we'll add the helper functions to the database.
 
 ```bash
 # Create the database; here, we name it "transit"
@@ -71,8 +88,9 @@ make init PGDATABASE=transit
 curl -o ddot_gtfs.zip "https://detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/ddot_gtfs.zip"
 make load GTFS=ddot_gtfs.zip PGDATABASE=transit
 
-# change back to the ddot-info root
+# change back to the ddot-info repo root
 cd ..
+
 # Create the functions in the database (only needs to happen once)
 psql -d transit < functions.sql
 ```
@@ -83,11 +101,11 @@ Create a `.env.development` file from the given `.env.example` file, filling in 
 
 ### Running the development server
 
-You should be able to run the development server with the `netlify dev` command.
+You can run the development server with the `netlify dev` command.
 
 This will run a local Functions server that mirrors how the serverless functions operate in production. 
 
-In order to deploy this site to production, you would need a Netlify account.
+You can also use `gatsby develop` to run the development server without the serverless functions (which support real-time data fetching).
 
 ### Per-release data fixes, to be performed with each release
 
@@ -107,12 +125,21 @@ update gtfs.routes set route_sort_order = route_short_name::integer where feed_i
 update gtfs.routes set route_color = '5f6369' where route_id = '11' and feed_index = 1;
 ```
 
-4. Update weekday/Saturday/Sunday service values: these will change from release to release and are still hardcoded in several files. Look in `gtfs.calendar` for these.
+4. Update weekday/Saturday/Sunday service values: these will change from release to release and are still hardcoded in several files. Look in the `gtfs.calendar` table for these.
 
 - `src/data/services.json`
 - `src/components/ServicePicker.js`
 - `src/components/TimeHere.js`
 - `src/components/route-schedule-page.js`
 
-5. Update `src/data/routeShapes.json` with the new route shapes, if they have changed. There's no real easy way to do this yet -- I have a QGIS project that I use for editing in the database, and then I export them to line-delimited GeoJSON.
+5. Update `src/data/routeShapes.json` with the new route shapes, if they have changed. Options for editing this: ArcGIS Online, [Placemark Play](https://play.placemark.io/), QGIS.
 
+### Deploying to Netlify
+
+0. Configure a `.env.production` file to be used for the build process.
+
+1. Build the site: `yarn build`; this will create the static site in the `public` directory.
+
+2. Deploy the site: `netlify deploy -d public`.
+
+3. This will deploy to a unique URL for testing; deploy the production site with `netlify deploy -d public --prod`.

@@ -15,7 +15,7 @@ export const Prediction = ({ prediction, vehicle, currentTrip, setCurrentTrip, r
   prediction.vehicle = vehicle
 
   let isLive = currentTrip ? currentTrip.vid === prediction.vid : false;
-  let route = routeFeatures.filter(r => r.properties.short === prediction.rt)[0]
+  let route = routeFeatures.filter(r => r.properties?.short === prediction.rt)[0]
 
   let baseStyle = "w-full px-4 py-2"
   let liveStyle = baseStyle + " bg-yellow-200"
@@ -26,6 +26,10 @@ export const Prediction = ({ prediction, vehicle, currentTrip, setCurrentTrip, r
       setCurrentTrip(prediction)
     }
   }, [vehicle, isLive, prediction, setCurrentTrip])
+
+  if (!route) {
+    return null
+  }
 
   return (
     <div className={
@@ -40,7 +44,7 @@ export const Prediction = ({ prediction, vehicle, currentTrip, setCurrentTrip, r
     >
 
       <div className="flex items-center justify-between">
-        <RouteTitle short={route.properties.short} color={route.properties.color} long={route.properties.long} size='small' />
+        <RouteTitle short={route.properties?.short} color={route.properties.color} long={route.properties.long} size='small' />
         <span className={prediction.prdctdn === 'DUE' ? 'font-bold' : ''}>
           {prediction.prdctdn === 'DUE' ? `Arriving now` : `in ${prediction.prdctdn} minutes`}
         </span>

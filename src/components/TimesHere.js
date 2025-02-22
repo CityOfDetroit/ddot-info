@@ -27,9 +27,9 @@ export const TimesHere = ({ currentRoute, times, routes }) => {
 
   let now = new Date()
   let dow = now.getDay()
-  let currentService = "3";
+  let currentService = "2";
   if (dow === 0 && services.length > 1) { currentService = "1" }
-  if (dow === 6 && services.length > 1) { currentService = "2" }
+  if (dow === 6 && services.length > 1) { currentService = "3" }
 
   const [service, setService] = useState(currentService);
   let timesToShow = times.filter(t => t.trip.serviceId === service && t.stopSequence < t.trip.stopTimesByFeedIndexAndTripId.totalCount);

@@ -1,5 +1,5 @@
-import { faArrowCircleRight, faBus, faCalendar, faMap, faRss } from '@fortawesome/free-solid-svg-icons';
-import { graphql } from 'gatsby';
+import { faArrowCircleRight, faBus, faCalendar, faFilePdf, faMap, faRss } from '@fortawesome/free-solid-svg-icons';
+import { graphql, Link } from 'gatsby';
 import React, { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
 import DirectionPicker from '../components/DirectionPicker';
@@ -11,6 +11,7 @@ import SiteButton from '../components/SiteButton';
 import SiteSection from '../components/SiteSection';
 import { Vehicle } from '../components/Vehicle';
 import ServiceSuspended from '../components/ServiceSuspended';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const RoutePage = ({ data, pageContext }) => {
 
@@ -106,6 +107,10 @@ const RoutePage = ({ data, pageContext }) => {
       </PageTitle>
       <SiteSection>
         <p className="text-sm text-left leading-tight">{ddotRt.description}</p>
+        <p className="text-sm text-left leading-tight">
+          <FontAwesomeIcon icon={faFilePdf} className="mr-2"/>
+          <Link to={`https://detroitmi.gov/document/${r.routeShortName}-${r.routeLongName.replace(' ', '-').replace("/", "")}`} target="_blank" rel="noopener noreferrer">Download schedule PDF</Link>
+        </p>
       </SiteSection>
       {trips.length === 0 && <ServiceSuspended at='route'/>}
       <SiteSection title={`Map`} subtitle={!tracked && vehicles ? "Tap the bus icon to show more information" : null} icon={faMap} fullWidth expands>
@@ -209,7 +214,7 @@ export const query = graphql`
     }
     postgres {
       route: allRoutesList(
-        condition: { routeShortName: $routeNo, feedIndex: 44 }
+        condition: { routeShortName: $routeNo, feedIndex: 1 }
       ) {
         agencyId
         routeShortName

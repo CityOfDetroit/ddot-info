@@ -28,7 +28,7 @@ const Layout = ({ gridClass=null, children }) => {
         }
       }
       postgres {
-        feed: allFeedInfosList(condition: {feedIndex: 44}) {
+        feed: allFeedInfosList(condition: {feedIndex: 1}) {
           feedStartDate
           feedEndDate
         }
@@ -42,7 +42,6 @@ const Layout = ({ gridClass=null, children }) => {
     gridArea: 'f'
   }
 
-  console.log(data)
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title}>

@@ -29,28 +29,53 @@ You'll also want to install `gatsby-cli` and `netlify-cli`.
 
 ## Setting up the database
 
-We recommend installing Postgres 12 along with the latest PostGIS extension that works with your version of Postgres.
+We recommend installing Postgres 15 along with the latest PostGIS extension that works with your version of Postgres.
 
-We use [gtfs-sql-importer](https://github.com/fitnr/gtfs-sql-importer) to import GTFS files into a database.
+We use [gtfs-sql-importer](https://github.com/fitnr/gtfs-sql-importer/tree/b3303d5537a4af099c2e1d1ddc2239e722891973) to import GTFS files into a database. (Note: this link to is to an earlier version of this package; the latest version performs stricter validation when ingesting GTFS data, that we prefer to avoid).
 
-The database structure is based on the one from **gtfs-sql-importer**, but we add a few helper SQL functions (defined in functions.sql) which make new fields and relationships in the GraphQL server, provided by [gatsby-source-pg](https://www.gatsbyjs.com/plugins/gatsby-source-pg/).
+The database structure is based on the one from **gtfs-sql-importer**, but we add a few helper SQL functions (defined in `functions.sql`) which make new fields and relationships in the GraphQL server, provided by [gatsby-source-pg](https://www.gatsbyjs.com/plugins/gatsby-source-pg/).
 
-You can create a database (here, named `transit`) and import the project database structure from the command line.
+### Start with a prepackaged database
+
+Use the `gtfs.sql.bz2` file in the root of this project to create a database with the necessary tables and functions.
 
 ```bash
+bunzip2 gtfs.sql.bz2
 createdb transit
 psql -d transit -c 'CREATE EXTENSION postgis;'
 psql -d transit < ./gtfs.sql
 ```
 
-Next, grab the latest version of DDOT's GTFS data and import it to this database using `make` from the **gtfs-sql-importer**:
+This database comes preloaded with the latest DDOT data release as `feed_index = 1`.
+
+### Create a database from scratch
 
 ```bash
-curl -o ddot_gtfs.zip "https://detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/ddot_gtfs.zip"
-export PGDATABASE=transit && make load GTFS=ddot_gtfs.zip
-```
+# Create the database; here, we name it "transit"
+createdb transit
 
-You should see the output from SQL insert commands. Importing the DDOT GTFS file typically takes about 2-3 minutes on a newer machine.
+# Create the PostGIS extension in the database
+psql -d transit -c 'CREATE EXTENSION postgis;'
+
+# Clone the sql-importer-repo (this will be ignored by git)
+git clone https://github.com/fitnr/gtfs-sql-importer.git
+
+# Check out the correct version
+cd gtfs-sql-importer
+git checkout b3303d5537a4af099c2e1d1ddc2239e722891973
+
+# intialize the database with the importer; this creates tables, triggers, and relationships
+make init PGDATABASE=transit
+
+# Download the GTFS data and load it in using the importer
+curl -o ddot_gtfs.zip "https://detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/ddot_gtfs.zip"
+make load GTFS=ddot_gtfs.zip PGDATABASE=transit
+
+# change back to the ddot-info root
+cd ..
+# Create the functions in the database (only needs to happen once)
+psql -d transit < functions.sql
+```
 
 ### Configuration
 
@@ -63,3 +88,31 @@ You should be able to run the development server with the `netlify dev` command.
 This will run a local Functions server that mirrors how the serverless functions operate in production. 
 
 In order to deploy this site to production, you would need a Netlify account.
+
+### Per-release data fixes, to be performed with each release
+
+There are a few manual changes (both in the database, as well as the codebase) still that need to happen with each GTFS release. All of these represent good issues to work on or areas to improve the overall data pipeline.
+
+1. Increment the `feed_index` value which is hardcoded: do a search for `feedIndex:` in the codebase and update the value to the new feed index. This should be an environment variable -- but Gatsby doesn't seem to support string interpolation in the graphql tags where these live.
+
+2. Assign `route_short_order`; the route display in the UI is sorted by this field which does not come prepopulated.
+
+```sql
+update gtfs.routes set route_sort_order = route_short_name::integer where feed_index = 1;
+```
+
+3. Update 11 Clairmount `route_color`; this is always slightly off?
+
+```sql
+update gtfs.routes set route_color = '5f6369' where route_id = '11' and feed_index = 1;
+```
+
+4. Update weekday/Saturday/Sunday service values: these will change from release to release and are still hardcoded in several files. Look in `gtfs.calendar` for these.
+
+- `src/data/services.json`
+- `src/components/ServicePicker.js`
+- `src/components/TimeHere.js`
+- `src/components/route-schedule-page.js`
+
+5. Update `src/data/routeShapes.json` with the new route shapes, if they have changed. There's no real easy way to do this yet -- I have a QGIS project that I use for editing in the database, and then I export them to line-delimited GeoJSON.
+

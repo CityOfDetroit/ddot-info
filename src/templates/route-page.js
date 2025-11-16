@@ -109,7 +109,7 @@ const RoutePage = ({ data, pageContext }) => {
         <p className="text-sm text-left leading-tight">{ddotRt.description}</p>
         <p className="text-sm text-left leading-tight">
           <FontAwesomeIcon icon={faFilePdf} className="mr-2"/>
-          <Link to={`https://detroitmi.gov/document/${r.routeShortName}-${r.routeLongName.replace(' ', '-').replace("/", "")}`} target="_blank" rel="noopener noreferrer">Download schedule PDF</Link>
+          <Link to={`https://detroitmi.gov/document/${r.routeShortName}-${r.routeLongName.replace('/', '').replace('-', '').replace(' ', '-').replace('MidCity','Mid-City')}`} target="_blank" rel="noopener noreferrer">Download schedule PDF</Link>
         </p>
       </SiteSection>
       {trips.length === 0 && <ServiceSuspended at='route'/>}

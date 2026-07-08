@@ -35,6 +35,8 @@ yarn
 
 You'll also want to install `gatsby-cli` and `netlify-cli`.
 
+This project targets Node 18 (see `.nvmrc`). If you use [nvm](https://github.com/nvm-sh/nvm), run `nvm use` before installing — newer Node versions crash Gatsby 4's native build.
+
 ## Setting up the database
 
 Building the site relies on referencing a Postgres database. If you need to create one, we recommend installing Postgres 15 along with the latest PostGIS extension that works with your version of Postgres.
@@ -43,29 +45,7 @@ We use [gtfs-sql-importer](https://github.com/fitnr/gtfs-sql-importer/tree/b3303
 
 The database structure is based on the one from **gtfs-sql-importer**, but we add a few helper SQL functions (defined in `functions.sql`) which make new fields and relationships in the GraphQL server, provided by [gatsby-source-pg](https://www.gatsbyjs.com/plugins/gatsby-source-pg/).
 
-There are two options you can take to set up the necessary database
-
-### 1. Start with a prepackaged database
-
-Use the `gtfs.sql.bz2` file in the root of this project to create a database with the necessary data, tables, and functions.
-
-```bash
-# Create the database; here, we name it "transit"
-createdb transit
-
-# Create the PostGIS extension in the database
-psql -d transit -c 'CREATE EXTENSION postgis;'
-
-# unzip the database dump and load it into the database
-bunzip2 gtfs.sql.bz2
-psql -d transit < ./gtfs.sql
-```
-
-This database comes preloaded with the latest DDOT data release (2025-01-19) as `feed_index = 1`. From here, you can skip to the configuration section.
-
-### 2. Create a local database from scratch
-
-Here, we'll create a brand new database and use the intialization function from the importer to create the necessary tables and relationships. We'll then download the GTFS data and load it in. Finally, we'll add the helper functions to the database.
+Create the database from a GTFS feed using the importer. A recent feed (`ddot_gtfs.zip`) is committed at the repo root; the steps below load it, or you can fetch the latest from DDOT with the `curl` line. This creates the tables and relationships, loads the data as `feed_index = 1`, and adds the helper functions.
 
 ```bash
 # Create the database; here, we name it "transit"
@@ -101,9 +81,7 @@ Create a `.env.development` file from the given `.env.example` file, filling in 
 
 ### Running the development server
 
-You can run the development server with the `netlify dev` command.
-
-This will run a local Functions server that mirrors how the serverless functions operate in production. 
+Make sure you're on Node 18 (`nvm use`), then run `netlify dev`. This serves the site together with the serverless functions at **http://localhost:3000** (functions are proxied under `/.netlify/functions/*`, mirroring how they operate in production).
 
 You can also use `gatsby develop` to run the development server without the serverless functions (which support real-time data fetching).
 
@@ -129,8 +107,8 @@ update gtfs.routes set route_color = '5f6369' where route_id = '11' and feed_ind
 
 - `src/data/services.json`
 - `src/components/ServicePicker.js`
-- `src/components/TimeHere.js`
-- `src/components/route-schedule-page.js`
+- `src/components/TimesHere.js`
+- `src/templates/route-schedule-page.js`
 
 5. Update `src/data/routeShapes.json` with the new route shapes, if they have changed. Options for editing this: ArcGIS Online, [Placemark Play](https://play.placemark.io/), QGIS.
 

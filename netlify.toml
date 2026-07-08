@@ -6,14 +6,20 @@
   
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/netlify-dev-plugin#project-detection
-[dev] 
-  command = "gatsby develop" # Command to start your dev server
-  port = 3000 # Port that the dev server will be listening on
-  publish = "." # Folder with the static content for _redirect file
+[dev]
+  # Gatsby's default port (8000) collides with other local projects, and Gatsby
+  # otherwise binds IPv6 (::1) only while Netlify Dev proxies over IPv4 (127.0.0.1) —
+  # so pin a dedicated port and bind IPv4 explicitly so the proxy can reach it.
+  command = "gatsby develop -H 127.0.0.1 -p 8010"
+  framework = "#custom"       # bypass Netlify's built-in Gatsby SSR/DSG adapter and just proxy
+  targetPort = 8010           # port gatsby develop listens on (must match -p above)
+  port = 3000                 # port Netlify Dev (site + functions) serves on
   
   ## more info on configuring this file: https://www.netlify.com/docs/netlify-toml-reference/ 
 
-[[redirects]]
-  from = "/*"
-  to = "/"
-  status = 200
+# NOTE: This site is a Gatsby SSG build — every route/stop page is generated as a
+# static file at build time, and Gatsby emits its own 404 page. A blanket SPA
+# rewrite (from = "/*", to = "/", status = 200) is therefore unnecessary in prod
+# (static files shadow it) and actively breaks `netlify dev`, where there is no
+# static publish dir to shadow it, so every page request collapses to "/" and 404s.
+# Leave it removed unless a genuine client-only route is added.

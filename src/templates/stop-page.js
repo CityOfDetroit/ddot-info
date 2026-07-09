@@ -1,4 +1,4 @@
-import { faBusAlt, faClock, faMap, faMapSigns } from "@fortawesome/free-solid-svg-icons";
+import { faBusAlt, faClock, faMap, faMapSigns, faRss } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from "gatsby";
 import React, { useEffect, useState } from "react";
 import Helmet from 'react-helmet';
@@ -33,6 +33,7 @@ const StopPage = ({ data }) => {
     return { ...route, properties: properties }
   })
 
+  // null = loading, false = none available, object = predictions
   const [predictions, setPredictions] = useState(null)
 
   const [currentRoute, setCurrentRoute] = useState(routes.length > 0 ? routes[0].short : null) 
@@ -55,8 +56,9 @@ const StopPage = ({ data }) => {
         if (d['bustime-response'].prd && d['bustime-response'].prd.length > 0) {
           setPredictions(d)
         }
-        else { return; }
+        else { setPredictions(false); }
       })
+      .catch(() => setPredictions(false))
   }, [s.stopId, s.stopCode, now])
 
   useEffect(() => {
@@ -82,7 +84,15 @@ const StopPage = ({ data }) => {
         <h2 className="text-base font-thin text-gray-700 bg-white py-0 px-2 m-0">#{s.stopCode}</h2>
       </PageTitle>
       {times.length === 0 && <ServiceSuspended at='stop' />}
-      {predictions && <NextArrivals {...{ routeFeatures, predictions, currentTrip, setCurrentTrip }} />}
+      {predictions ?
+        <NextArrivals {...{ routeFeatures, predictions, currentTrip, setCurrentTrip }} /> :
+        <SiteSection icon={faRss} title="Next buses at this stop" fullWidth expands>
+          <p className="text-sm text-gray-700 px-4 py-2">
+            {predictions === null ?
+              `Checking for buses headed to this stop…` :
+              `No live arrival predictions for this stop right now.`}
+          </p>
+        </SiteSection>}
       <SiteSection icon={faMap} title={`Stop map`} fullWidth expands>
         <StopMap {...{ stopLon, stopLat, stopName, routeFeatures, currentRoute, currentTrip, predictions }} />
       </SiteSection>

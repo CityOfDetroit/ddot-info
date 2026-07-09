@@ -16,8 +16,9 @@ export const NextArrivals = ({ routeFeatures, predictions, currentTrip, setCurre
         if (d['bustime-response'].vehicle && d['bustime-response'].vehicle.length > 0) {
           setData(d['bustime-response'].vehicle)
         }
-        else { return; }
+        else { setData([]); }
       })
+      .catch(() => setData([]))
   }, [predictions, nextBuses])
 
   return (

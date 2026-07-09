@@ -74,16 +74,17 @@ const RoutePage = ({ data, pageContext }) => {
       .then(d => {
         setPatterns(d["bustime-response"].ptr)
       })
+      .catch(() => setPatterns(null))
   }, [r.routeShortName])
 
-  // fetch vehicle data into this state object
+  // fetch vehicle data into this state object; null = loading, [] = none tracked
   let [vehicles, setVehicles] = useState(null)
   useEffect(() => {
     fetch(`/.netlify/functions/route?rt=${r.routeShortName}`)
       .then(r => r.json())
       .then(d => {
         if (d["bustime-response"]["error"]) {
-          setVehicles(null)
+          setVehicles([])
           return
         }
 
@@ -102,6 +103,7 @@ const RoutePage = ({ data, pageContext }) => {
         })
         setVehicles(vehicleFeatures)
       })
+      .catch(() => setVehicles([]))
   }, [r.routeShortName, now])
 
   let [tracked, setTracked] = useState(null)
@@ -174,37 +176,49 @@ const RoutePage = ({ data, pageContext }) => {
           {...{ tracked, setTracked }}
         />
       </SiteSection>
-      {vehicles && patterns && (
-        <SiteSection
-          title="Real-time bus locations"
-          subtitle={`Tap ${tracked ? `the` : `a`} bus to ${
-            tracked ? `stop` : `start`
-          } following the bus location`}
-          icon={faRss}
-          fullWidth
-          expands
-          startsClosed
-          isOpen={tracked}
-        >
-          {tracked
-            ? vehicles
-                .filter(v => v.properties.vid === tracked)
-                .map(v => (
-                  <Vehicle
-                    vehicle={v}
-                    key={v.properties.vid}
-                    {...{ patterns, tracked, setTracked }}
-                  />
-                ))
-            : vehicles.map(v => (
-                <Vehicle
-                  vehicle={v}
-                  key={v.properties.vid}
-                  {...{ patterns, tracked, setTracked }}
-                />
-              ))}
-        </SiteSection>
-      )}
+      <SiteSection
+        title="Real-time bus locations"
+        subtitle={
+          vehicles && vehicles.length > 0 && patterns
+            ? `Tap ${tracked ? `the` : `a`} bus to ${
+                tracked ? `stop` : `start`
+              } following the bus location`
+            : null
+        }
+        icon={faRss}
+        fullWidth
+        expands
+        startsClosed
+        isOpen={tracked}
+      >
+        {vehicles === null ? (
+          <p className="text-sm text-gray-700 px-4 py-2">
+            Looking for buses on this route…
+          </p>
+        ) : vehicles.length === 0 || !patterns ? (
+          <p className="text-sm text-gray-700 px-4 py-2">
+            No buses are being tracked on this route right now.
+          </p>
+        ) : tracked ? (
+          vehicles
+            .filter(v => v.properties.vid === tracked)
+            .map(v => (
+              <Vehicle
+                vehicle={v}
+                key={v.properties.vid}
+                {...{ patterns, tracked, setTracked }}
+              />
+            ))
+        ) : (
+          vehicles.map(v => (
+            <Vehicle
+              vehicle={v}
+              key={v.properties.vid}
+              {...{ patterns, tracked, setTracked }}
+            />
+          ))
+        )}
+      </SiteSection>
       {trips.length > 0 && (
         <SiteSection icon={faCalendar} title={`Schedule`} expands fullWidth>
           <table className="schedule-table">

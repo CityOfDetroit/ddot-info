@@ -75,6 +75,22 @@ h1, h2, h3, h4 {
   min-height: 200px;
 }
 
+/* shown behind the transparent Mapbox canvas until the style/tiles finish loading */
+#map, #system-map {
+  position: relative;
+  background-color: #e2e8f0;
+}
+
+#map::before, #system-map::before {
+  content: "Loading map…";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @apply text-gray-700;
+  @apply text-sm;
+}
+
 .schedule-table {
   font-family: "Gibson Detroit Regular";
   @apply w-full;

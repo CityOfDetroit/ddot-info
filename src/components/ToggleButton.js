@@ -10,7 +10,6 @@ export const ToggleButton = ({ onClick, title, active }) => {
     <button
       className={active ? activeStyle : inactiveStyle}
       onClick={onClick}
-      onKeyDown={(e) => e.keycode === 13 && onClick()}
     >
       <span>{title}</span>
     </button>

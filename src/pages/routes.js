@@ -9,7 +9,6 @@ const RoutesPage = ({ data }) => {
 
   let {routes} = data.postgres
 
-  let sortedRoutes = routes.sort((a, b) => {return parseInt(b.short) < parseInt(a.short)})
   return (
     <>
       <Helmet>
@@ -20,7 +19,7 @@ const RoutesPage = ({ data }) => {
         <meta property="og:description" content={`List of all DDOT bus routes, with links to their main page, along with stops and schedules.`} />
       </Helmet>
       <PageTitle text={'List of routes'} icon={faList} />
-      <RoutesList routes={sortedRoutes} title={null} scroll={false} />
+      <RoutesList routes={routes} title={null} scroll={false} />
     </>
   )
 }

@@ -138,13 +138,15 @@ const RoutePage = ({ data, pageContext }) => {
           content={`DDOT bus route ${r.routeShortName} ${r.routeLongName}: ${ddotRt.description}`}
         />
       </Helmet>
-      <PageTitle>
+      <PageTitle text={
         <RouteTitle
           long={r.routeLongName}
           short={r.routeShortName}
           color={r.routeColor}
           size="small"
+          link={false}
         />
+      }>
         <span className="text-sm font-thin text-gray-800 py-1">
           {ddotRt.RouteType} route
         </span>

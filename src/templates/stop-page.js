@@ -93,7 +93,7 @@ const StopPage = ({ data }) => {
       </Helmet>
       <PageTitle icon={faBusAlt}>
         <h1 className="m-0 font-thin">{s.stopName}</h1>
-        <h2 className="text-base font-thin text-gray-700 bg-white py-0 px-2 m-0">#{s.stopCode}</h2>
+        <span className="text-base font-thin text-gray-700 bg-white py-0 px-2 m-0">#{s.stopCode}</span>
       </PageTitle>
       {times.length === 0 && <ServiceSuspended at='stop' />}
       {predictions ?

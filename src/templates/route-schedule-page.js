@@ -72,9 +72,10 @@ const RouteSchedulePage = ({ data }) => {
         <meta property="og:title" content={`${r.routeShortName} ${r.routeLongName} schedule`} />
         <meta property="og:description" content={`Schedule for DDOT bus route ${r.routeShortName} ${r.routeLongName}. Service is provided on ${serviceDesc}, ${routeDesc}.`} />
       </Helmet>
-      <PageTitle icon={faClock} text={<RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />}>
-        <h2 className="m-0 font-thin">Schedule</h2>
-      </PageTitle>
+      <PageTitle icon={faClock} text={<>
+        <RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />
+        <span className="font-thin">Schedule</span>
+      </>} />
 
       {longTrips.length === 0 && <ServiceSuspended at='route'/>}
 

@@ -41,9 +41,10 @@ const RouteStopsPage = ({ data }) => {
         <meta property="og:title" content={`Stops for DDOT bus route:${r.routeShortName} ${r.routeLongName}`} />
         <meta property="og:description" content={`Stops for DDOT bus route ${r.routeShortName} ${r.routeLongName}.`} />
       </Helmet>
-      <PageTitle icon={faBus} text={<RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />}>
-        <h2 className="m-0 font-thin">All stops</h2>
-      </PageTitle>
+      <PageTitle icon={faBus} text={<>
+        <RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />
+        <span className="font-thin">All stops</span>
+      </>} />
       {longTrips.length === 0 && <ServiceSuspended at='route'/>}
       {longTrips.length > 0 && <><DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} />
         <div className="flex px-4">

@@ -60,7 +60,7 @@
     "RouteNum": 4,
     "RouteName": "Woodward",
     "Orientatio": "North - South",
-    "PeakFreq1": 15,
+    "PeakFreq1": 12,
     "BaseFreq1": 20,
     "NightFreq1": 60,
     "BaseFreq6": 20,
@@ -155,7 +155,7 @@
     "RouteNum": 9,
     "RouteName": "Jefferson",
     "Orientatio": "East - West",
-    "PeakFreq1": 15,
+    "PeakFreq1": 10,
     "BaseFreq1": 30,
     "NightFreq1": 60,
     "BaseFreq6": 25,
@@ -168,7 +168,7 @@
     "Span7": "4am-12:30am",
     "RouteType": "ConnectTen",
     "OperationD": "Monday - Sunday",
-    "Descriptio": "Eastside route that connects Detroit from Downtown Rosa Parks Transit Center to Grosse Pointe Park. The main street used is Jefferson."
+    "Descriptio": "Eastside route that connects Detroit from Downtown Rosa Parks Transit Center to Mack and Alter. The main streets used are Jefferson and Alter."
   },
   {
     "RouteNum": 10,
@@ -282,7 +282,7 @@
     "Span7": "24hr",
     "RouteType": "Key",
     "OperationD": "Monday - Sunday",
-    "Descriptio": "Connects Detroit from Downtown to Providence Hospital (JL Hudson & Greenfield). The main streets served are W Outer Drive, Cass, Dexter, W Grand Blvd and Greenfield. In addition to Detroit, this route also serves Southfield."
+    "Descriptio": "Connects Detroit from Downtown to Meijer Old Redford. The main streets served are Cass, W Grand Blvd., Dexter, Curtis, and W Outer Dr."
   },
   {
     "RouteNum": 17,

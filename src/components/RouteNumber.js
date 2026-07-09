@@ -1,7 +1,7 @@
 import React from "react";
 import { keyboardActivate } from './keyboardActivate';
 
-const RouteNumber = ({ number, color, textColor='#5f6369', size="base", active=true, onClick }) => {
+const RouteNumber = ({ number, color, size="base", active=true, onClick }) => {
 
   let widths = {
     "base": '2.25rem',
@@ -34,7 +34,14 @@ const RouteNumber = ({ number, color, textColor='#5f6369', size="base", active=t
 
   let round = number < 11;
 
-  textColor = ["46", "80", "89", "92", "95", "96"].indexOf(number) > -1 ? '#fff' : '#fff'
+  // pick black or white text based on the route color's luminance
+  let hex = color[0] === '#' ? color.slice(1) : color
+  let luminance = (
+    0.299 * parseInt(hex.slice(0, 2), 16) +
+    0.587 * parseInt(hex.slice(2, 4), 16) +
+    0.114 * parseInt(hex.slice(4, 6), 16)
+  ) / 255
+  let textColor = luminance > 0.6 ? '#1a202c' : '#fff'
 
   return (
     <div 

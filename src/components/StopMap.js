@@ -197,10 +197,10 @@ const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentRoute, curr
 
   useEffect(() => {
     if (theMap) {
-      let filteredRoutes = routeFeatures.filter(rf => rf.properties.short === currentRoute.toString())
+      let filteredRoutes = currentRoute ? routeFeatures.filter(rf => rf.properties.short === currentRoute.toString()) : routeFeatures
       theMap.getSource("routes").setData({ type: "FeatureCollection", features: filteredRoutes });
     }
-  }, [theMap])
+  }, [theMap, currentRoute])
 
   return (
     <div id="map" />

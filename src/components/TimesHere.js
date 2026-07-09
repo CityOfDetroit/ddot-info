@@ -35,10 +35,13 @@ export const TimesHere = ({ currentRoute, times, routes }) => {
   let timesToShow = times.filter(t => t.trip.serviceId === service && t.stopSequence < t.trip.stopTimesByFeedIndexAndTripId.totalCount);
   let timesByRoute = _.groupBy(timesToShow, (t) => t.trip.route.routeShortName)
 
+  // when a route is selected in the filter bar, only show its departures
+  let routesToShow = Object.keys(timesByRoute).filter(r => !currentRoute || r === currentRoute)
+
   return (
     <>
       <ServicePicker {...{ services, service, setService }} expands={false} startsClosed={false} className="mb-0" />
-      {Object.keys(timesByRoute).map(r => {
+      {routesToShow.map(r => {
         let groupedByDir = _.groupBy(timesByRoute[r], (t) => t.trip.directionId)
 
         if(Object.keys(groupedByDir).length === 1) {

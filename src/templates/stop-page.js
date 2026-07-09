@@ -36,7 +36,8 @@ const StopPage = ({ data }) => {
   // null = loading, false = none available, object = predictions
   const [predictions, setPredictions] = useState(null)
 
-  const [currentRoute, setCurrentRoute] = useState(routes.length > 0 ? routes[0].short : null) 
+  // null = show all routes at this stop
+  const [currentRoute, setCurrentRoute] = useState(null)
 
   const [currentTrip, setCurrentTrip] = useState(null)
 
@@ -108,10 +109,8 @@ const StopPage = ({ data }) => {
       <SiteSection icon={faMap} title={`Stop map`} fullWidth expands>
         <StopMap {...{ stopLon, stopLat, stopName, routeFeatures, currentRoute, currentTrip, predictions }} />
       </SiteSection>
-      <SiteSection fullWidth title='Routes at this stop' icon={faMapSigns} expands>
-        <RoutesHere {...{ routes, currentRoute, setCurrentRoute }} />
-      </SiteSection>
       <SiteSection fullWidth title='Scheduled departures' icon={faClock} expands className="mb-0">
+        <RoutesHere {...{ routes, currentRoute, setCurrentRoute }} />
         <TimesHere {...{ times, currentRoute, routes }} />
         {/* <StopTransfers /> */}
       </SiteSection>

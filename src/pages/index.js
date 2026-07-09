@@ -5,12 +5,12 @@ import React from "react";
 import Helmet from 'react-helmet';
 import PageTitle from "../components/PageTitle";
 import RoutesList from '../components/RoutesList';
-import SiteSection from "../components/SiteSection";
+import SearchBox from '../components/SearchBox';
 import '../css/app.css';
 
 const IndexPage = ({ data }) => {
 
-  let { routes, feed } = data.postgres
+  let { routes, stops } = data.postgres
 
   return (
     <>
@@ -21,8 +21,9 @@ const IndexPage = ({ data }) => {
         <meta property="og:title" content={`DDOT.info`} />
         <meta property="og:description" content={`Route pages, schedules, and real-time information for the city of Detroit's public transit system.`} />
       </Helmet>
-      <PageTitle text={'Welcome to ddot.info'} icon={faHome} />
-      <RoutesList routes={routes} />
+      <PageTitle text={'Detroit bus schedules and real-time info'} icon={faHome} />
+      <SearchBox routes={routes} stops={stops} />
+      <RoutesList routes={routes} title="All routes" />
     </>
   )
 }
@@ -40,29 +41,9 @@ export const query = graphql`
         routeId
         routeSortOrder
       }
-      stops: allStopsList(condition: { feedIndex: 1 }) {
-        stopId
+      stops: allStopsList(condition: { feedIndex: 1 }, orderBy: STOP_NAME_ASC) {
+        stopCode
         stopName
-      }
-    }
-    allDdotRoute {
-      edges {
-        node {
-          id
-          days
-          description
-          direction
-          orientation
-          RouteType: routeType
-          route {
-            geometry {
-              coordinates
-              type
-            }
-            type
-          }
-          short
-        }
       }
     }
   }

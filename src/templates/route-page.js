@@ -142,7 +142,11 @@ const RoutePage = ({ data, pageContext }) => {
           <Link
             to={`https://detroitmi.gov/document/${
               r.routeShortName
-            }-${r.routeLongName.replace(" ", "-").replace("/", "")}`}
+            }-${r.routeLongName
+              .replace("/", "")
+              .replace("-", "")
+              .replace(" ", "-")
+              .replace("MidCity", "Mid-City")}`}
             target="_blank"
             rel="noopener noreferrer"
           >

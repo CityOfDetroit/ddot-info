@@ -147,7 +147,7 @@ const RoutePage = ({ data, pageContext }) => {
           link={false}
         />
       }>
-        <span className="text-sm font-thin text-gray-800 py-1">
+        <span className="text-sm font-thin text-gray-300 py-1">
           {ddotRt.RouteType} route
         </span>
       </PageTitle>

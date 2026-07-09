@@ -92,7 +92,7 @@ const RouteSchedulePage = ({ data }) => {
       </SiteSection>
 
      <section className="">
-        <ServicePicker {...{services, service, setService}} />
+        <ServicePicker startsClosed={false} {...{services, service, setService}} />
         <DirectionPicker inline {...{directions, direction, setDirection, routeOrientation}} className="mr-4 bg-gray-100 px-3 text-sm" />
       </section>
 

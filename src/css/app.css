@@ -135,6 +135,11 @@ h1, h2, h3, h4 {
   @apply bg-spirit-green;
 }
 
+.menu-item-active {
+  @apply bg-spirit-green;
+  @apply font-semibold;
+}
+
 /* rules for mobile */
 @media only screen and (max-width: 600px) {
   #map {

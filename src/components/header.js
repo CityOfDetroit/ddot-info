@@ -1,4 +1,4 @@
-import { faInfoCircle, faList, faMapMarked, faHome, faSearch, faChevronCircleDown, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons"
+import { faInfoCircle, faList, faMapMarked, faSearch, faChevronCircleDown, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "gatsby"
 import React, { useState } from "react"
@@ -7,11 +7,6 @@ import AnimateHeight from 'react-animate-height';
 
 
 const items = [
-  {
-    title: `Home`,
-    icon: faHome,
-    link: `/`
-  },
   {
     title: `Search`,
     icon: faSearch,
@@ -38,7 +33,7 @@ const Dropdown = ({open, setOpen}) => {
   return (
     <div className="dropdown bg-city-green text-white p-2 max-container">
       {items.map(i => (
-        <Link key={i.title} to={i.link} className="menu-item" aria-label={i.title} onClick={() => setOpen(false)}>
+        <Link key={i.title} to={i.link} className="menu-item" activeClassName="menu-item-active" partiallyActive={true} aria-label={i.title} onClick={() => setOpen(false)}>
           <div className="w-8 text-right">
             <FontAwesomeIcon icon={i.icon} size={'lg'} />
           </div>

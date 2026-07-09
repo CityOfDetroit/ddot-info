@@ -12,6 +12,7 @@ import Helmet from "react-helmet"
 import DirectionPicker from "../components/DirectionPicker"
 import PageTitle from "../components/PageTitle"
 import RouteMap from "../components/RouteMap"
+import RouteSubnav from "../components/RouteSubnav"
 import { RouteStopsList } from "../components/RouteStopsList"
 import RouteTitle from "../components/RouteTitle"
 import SiteButton from "../components/SiteButton"
@@ -151,6 +152,7 @@ const RoutePage = ({ data, pageContext }) => {
           {ddotRt.RouteType} route
         </span>
       </PageTitle>
+      <RouteSubnav short={r.routeShortName} />
       <SiteSection>
         <p className="text-sm text-left leading-tight">{ddotRt.description}</p>
         <p className="text-sm text-left leading-tight">

@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import DirectionPicker from '../components/DirectionPicker';
 import PageTitle from "../components/PageTitle";
 import RouteNumber from "../components/RouteNumber";
+import RouteSubnav from "../components/RouteSubnav";
 import RouteTimetable from "../components/RouteTimetable";
 import ServicePicker from "../components/ServicePicker";
 import ServiceSuspended from '../components/ServiceSuspended';
@@ -76,6 +77,7 @@ const RouteSchedulePage = ({ data }) => {
         <RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />
         <span className="font-thin">Schedule</span>
       </>} />
+      <RouteSubnav short={r.routeShortName} />
 
       {longTrips.length === 0 && <ServiceSuspended at='route'/>}
 

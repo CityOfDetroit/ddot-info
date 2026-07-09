@@ -3,6 +3,7 @@ import {
   faBus,
   faCalendar,
   faFilePdf,
+  faInfoCircle,
   faMap,
   faRss,
 } from "@fortawesome/free-solid-svg-icons"
@@ -153,25 +154,6 @@ const RoutePage = ({ data, pageContext }) => {
         </span>
       </PageTitle>
       <RouteSubnav short={r.routeShortName} />
-      <SiteSection>
-        <p className="text-sm text-left leading-tight">{ddotRt.description}</p>
-        <p className="text-sm text-left leading-tight">
-          <FontAwesomeIcon icon={faFilePdf} className="mr-2" />
-          <Link
-            to={`https://detroitmi.gov/document/${
-              r.routeShortName
-            }-${r.routeLongName
-              .replace("/", "")
-              .replace("-", "")
-              .replace(" ", "-")
-              .replace("MidCity", "Mid-City")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Download schedule PDF
-          </Link>
-        </p>
-      </SiteSection>
       {trips.length === 0 && <ServiceSuspended at="route" />}
       <SiteSection
         title={`Map`}
@@ -204,7 +186,6 @@ const RoutePage = ({ data, pageContext }) => {
         icon={faRss}
         fullWidth
         expands
-        startsClosed
         isOpen={tracked}
       >
         {vehicles === null ? (
@@ -335,6 +316,26 @@ const RoutePage = ({ data, pageContext }) => {
           />
         </SiteSection>
       )}
+
+      <SiteSection icon={faInfoCircle} title={`About this route`} expands startsClosed>
+        <p className="text-sm text-left leading-tight">{ddotRt.description}</p>
+        <p className="text-sm text-left leading-tight">
+          <FontAwesomeIcon icon={faFilePdf} className="mr-2" />
+          <Link
+            to={`https://detroitmi.gov/document/${
+              r.routeShortName
+            }-${r.routeLongName
+              .replace("/", "")
+              .replace("-", "")
+              .replace(" ", "-")
+              .replace("MidCity", "Mid-City")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download schedule PDF
+          </Link>
+        </p>
+      </SiteSection>
     </div>
   )
 }

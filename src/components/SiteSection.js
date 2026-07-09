@@ -2,6 +2,7 @@ import { faChevronCircleDown, faChevronCircleRight, faWindowClose } from '@forta
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import AnimateHeight from 'react-animate-height';
+import { keyboardActivate } from './keyboardActivate';
 
 const SiteSection = ({ children, className = "", titleClassName = "", subtitle = null, icon = null, title = null, fullWidth = false, expands = false, startsClosed = false, isOpen = false, scroll = false, dismissable = false, onDismiss = null }) => {
 
@@ -11,7 +12,7 @@ const SiteSection = ({ children, className = "", titleClassName = "", subtitle =
   if (visible) {
     return (
       <section className={className}>
-        {(icon || title) && <div className={titleClassName + " flex justify-between items-center px-4 py-1 bg-city-green-muted"} onClick={expands ? () => setOpen(!open) : null} onKeyDown={expands ? () => setOpen(!open) : null} role="button" tabIndex={0}>
+        {(icon || title) && <div className={titleClassName + " flex justify-between items-center px-4 py-1 bg-city-green-muted"} onClick={expands ? () => setOpen(!open) : null} onKeyDown={expands ? keyboardActivate(() => setOpen(!open)) : null} role={expands ? "button" : null} tabIndex={expands ? 0 : null} aria-expanded={expands ? (open || isOpen) : null}>
           {icon &&
             <div className="w-8">
               <FontAwesomeIcon icon={icon} className={(open || isOpen) ? "mr-2" : "mr-2 text-gray-600"} />
@@ -23,8 +24,8 @@ const SiteSection = ({ children, className = "", titleClassName = "", subtitle =
               </h2>
             </div>
           }
-          {expands && <FontAwesomeIcon icon={(open || isOpen) ? faChevronCircleDown : faChevronCircleRight} size="lg" className={(open || isOpen) ? "text-black" : "text-gray-700"} onClick={() => setOpen(!open)} />}
-          {dismissable && <FontAwesomeIcon icon={faWindowClose} className={"text-black"} onClick={() => { setVisible(false); onDismiss() }} />}
+          {expands && <FontAwesomeIcon icon={(open || isOpen) ? faChevronCircleDown : faChevronCircleRight} size="lg" className={(open || isOpen) ? "text-black" : "text-gray-700"} />}
+          {dismissable && <button onClick={() => { setVisible(false); onDismiss() }} aria-label="Dismiss"><FontAwesomeIcon icon={faWindowClose} className={"text-black"} /></button>}
         </div>}
         <AnimateHeight duration={350} height={subtitle && (open || isOpen) ? 'auto' : 0 }>
           <div style={{ background: 'rgba(0, 68, 69, 0.25)' }} className="text-sm leading-none text-gray-700 w-full bg-gray-300 px-4 pt-0 pb-2"><span>{subtitle}</span></div>

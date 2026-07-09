@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import RouteNumber from "../components/RouteNumber";
 import routeTypes from '../data/routeTypes';
 import AnimateHeight from 'react-animate-height';
+import { keyboardActivate } from './keyboardActivate';
 
 
 const SystemMapRouteType = ({ routeType, filtered, clicked, setClicked, startsOpen = false }) => {
@@ -15,17 +16,21 @@ const SystemMapRouteType = ({ routeType, filtered, clicked, setClicked, startsOp
   return (
       <div key={routeType} >
         <div className="flex items-center justify-between px-2 py-2" style={{borderLeft: `5px solid #${routeTypes[routeType].color}`}}>
-          <div className="w-2/3" onClick={() => setOpen(!open)} onKeyDown={() => setOpen(!open)} role="button" tabIndex={0}>
+          <div className="w-2/3" onClick={() => setOpen(!open)} onKeyDown={keyboardActivate(() => setOpen(!open))} role="button" tabIndex={0} aria-expanded={open}>
             <h2 className="m-0 leading-tight">{routeType}</h2>
             <span className="text-xs font-thin leading-none">{routeTypes[routeType].desc}</span>
           </div>
           <div className="w-32 flex items-center justify-around">
-            <FontAwesomeIcon icon={allVisible ? faEye : faEyeSlash} className="mr-4" onClick={() => {
+            <button aria-label={allVisible ? `Hide ${routeType} routes on the map` : `Show ${routeType} routes on the map`} aria-pressed={allVisible} onClick={() => {
               let reduced = filtered.reduce((end, item) => { return { ...end, [item.short]: allVisible ? false : true } }, clicked)
               setClicked(reduced)
               setAllVisible(!allVisible)
-            }} />
-            <FontAwesomeIcon icon={open ? faChevronCircleDown :faChevronCircleRight} className="mr-3" size="lg" onClick={() => setOpen(!open)} />
+            }}>
+              <FontAwesomeIcon icon={allVisible ? faEye : faEyeSlash} className="mr-4" />
+            </button>
+            <button aria-label={`${open ? 'Collapse' : 'Expand'} ${routeType} route list`} aria-expanded={open} onClick={() => setOpen(!open)}>
+              <FontAwesomeIcon icon={open ? faChevronCircleDown :faChevronCircleRight} className="mr-3" size="lg" />
+            </button>
           </div>
         </div>
         <AnimateHeight duration={500} height={open ? 'auto' : 0 }>

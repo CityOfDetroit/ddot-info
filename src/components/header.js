@@ -77,10 +77,14 @@ const Header = ({ siteTitle, children }) => {
             </Link>
           </h1>
           <div className="flex items-center justify-between text-xl">
-            <div className="text-2xl">
-
-            <FontAwesomeIcon icon={open ? faChevronCircleDown : faChevronCircleRight} onClick={() => setOpen(!open)} className='header-icon mr-2' />
-            </div>
+            <button
+              className="text-2xl"
+              onClick={() => setOpen(!open)}
+              aria-label="Menu"
+              aria-expanded={open}
+            >
+              <FontAwesomeIcon icon={open ? faChevronCircleDown : faChevronCircleRight} className='header-icon mr-2' />
+            </button>
           </div>
         </div>
         {/* <CSSTransition

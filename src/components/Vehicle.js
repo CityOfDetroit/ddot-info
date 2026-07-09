@@ -1,6 +1,7 @@
 import React from 'react';
 import { faBus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { keyboardActivate } from './keyboardActivate';
 
 export const Vehicle = ({ vehicle, patterns, tracked, setTracked }) => {
 
@@ -40,10 +41,11 @@ export const Vehicle = ({ vehicle, patterns, tracked, setTracked }) => {
   return (
     <div className="flex items-center" 
       key={vehicle.properties.vid} 
-      onClick={() => { isLive ? setTracked(null) : setTracked(vehicle.properties.vid); }} 
-      onKeyDown={() => { isLive ? setTracked(null) : setTracked(vehicle.properties.vid); }}
-      role="button" 
+      onClick={() => { isLive ? setTracked(null) : setTracked(vehicle.properties.vid); }}
+      onKeyDown={keyboardActivate(() => { isLive ? setTracked(null) : setTracked(vehicle.properties.vid); })}
+      role="button"
       tabIndex={0}
+      aria-pressed={isLive}
     >
       <div className={isLive ? "bg-yellow-200 w-full p-3 border-b-2" : "bg-gray-100 w-full p-3 border-b-2"}>
         <div className="flex items-center justify-between">

@@ -7,21 +7,20 @@ export const RoutesHere = ({ routes, currentRoute, setCurrentRoute }) => {
   return (
     <div className="px-4 pt-2 pb-2">
       {routes.map(r => (
-        <div key={r.short} onClick={() => setCurrentRoute(r.short)} onKeyDown={() => setCurrentRoute(r.short)} role="button" tabIndex={0}>
-          <label className="inline-block flex items-center py-1">
+        <div key={r.short} className="flex items-center py-1">
+          <label className="flex items-center">
             <input
               type="radio"
               className="form-radio mr-2"
-              id={r.short}
-              name={r.long}
+              name="routes-here"
               value={r.short}
-              readOnly
+              onChange={() => setCurrentRoute(r.short)}
               checked={currentRoute === r.short} />
             <RouteNumber number={r.short} color={r.color} size="small" />
-            <Link aria-label={`${r.long} route page`} to={`/route/${r.short}`}>
-              <span className="">{r.long}</span>
-            </Link>
           </label>
+          <Link aria-label={`${r.long} route page`} to={`/route/${r.short}`}>
+            <span className="">{r.long}</span>
+          </Link>
         </div>
       ))}
     </div>

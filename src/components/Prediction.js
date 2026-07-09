@@ -2,6 +2,7 @@ import { faBus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect } from 'react';
 import RouteTitle from './RouteTitle';
+import { keyboardActivate } from './keyboardActivate';
 
 export const Prediction = ({ prediction, vehicle, currentTrip, setCurrentTrip, routeFeatures, last }) => {
 
@@ -38,9 +39,10 @@ export const Prediction = ({ prediction, vehicle, currentTrip, setCurrentTrip, r
         : isLive ? liveStyle : notLiveStyle
     }
       onClick={() => isLive ? setCurrentTrip(null) : setCurrentTrip(prediction)}
-      onKeyDown={() => isLive ? setCurrentTrip(null) : setCurrentTrip(prediction)}
+      onKeyDown={keyboardActivate(() => isLive ? setCurrentTrip(null) : setCurrentTrip(prediction))}
       role="button"
       tabIndex={0}
+      aria-pressed={isLive}
     >
 
       <div className="flex items-center justify-between">

@@ -1,4 +1,5 @@
 import React from "react";
+import { keyboardActivate } from './keyboardActivate';
 
 const RouteNumber = ({ number, color, textColor='#5f6369', size="base", active=true, onClick }) => {
 
@@ -44,9 +45,9 @@ const RouteNumber = ({ number, color, textColor='#5f6369', size="base", active=t
         } 
         style={numberStyle}
         onClick={onClick}
-        onKeyDown={onClick}
-        role="button"
-        tabIndex={0}
+        onKeyDown={onClick ? keyboardActivate(onClick) : null}
+        role={onClick ? "button" : null}
+        tabIndex={onClick ? 0 : null}
     >
       <span className="text-center gibson-bold no-underline" style={{color: textColor}}>
         {number}

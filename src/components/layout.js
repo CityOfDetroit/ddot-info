@@ -36,11 +36,7 @@ const Layout = ({ gridClass=null, children }) => {
     }
   `)
 
-  const maxWidthStyle = {
-    margin: `0 auto 0 auto`,
-    maxWidth: 960,
-    gridArea: 'f'
-  }
+  const gridAreaStyle = { gridArea: 'f' }
 
   return (
     <>
@@ -49,14 +45,14 @@ const Layout = ({ gridClass=null, children }) => {
         {showAlert.fare && <FareAlert {...{showAlert, setShowAlert}} />}
       </Header>
       <div
-        className="main-layout"
-        style={maxWidthStyle}
+        className="main-layout max-container"
+        style={gridAreaStyle}
       >
         <main className={gridClass}>
           {children}
         </main>
       </div>
-      <footer className="py-4 px-2 bg-gray-100 w-100 text-sm text-center border-t-4" style={maxWidthStyle}>
+      <footer className="py-4 px-2 bg-gray-100 w-100 text-sm text-center border-t-4 max-container" style={gridAreaStyle}>
         <span className="w-full text-center py-1 block">
           © {new Date().getFullYear()}, <a href="https://detroitmi.gov/departments/detroit-department-transportation">Detroit Department of Transportation.</a>
         </span>

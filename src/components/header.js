@@ -31,10 +31,7 @@ const items = [
 
 const Dropdown = ({open, setOpen}) => {
   return (
-    <div className="dropdown bg-city-green text-white p-2"           style={{
-      margin: `0 auto`,
-      maxWidth: 960,
-    }}>
+    <div className="dropdown bg-city-green text-white p-2 max-container">
       {items.map(i => (
         <Link key={i.title} to={i.link} className="menu-item" aria-label={i.title} onClick={() => setOpen(false)}>
           <div className="w-8 text-right">
@@ -60,11 +57,7 @@ const Header = ({ siteTitle, children }) => {
         }}
       >
         <div
-          className="px-3 py-2 flex items-center justify-between header"
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-          }}
+          className="px-3 py-2 flex items-center justify-between header max-container"
         >
           <h1 className="text-xl flex items-center" style={{ margin: 0 }}>
             <img src={logo} alt="DDOT logo" className="h-6 mr-3" />

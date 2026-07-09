@@ -65,10 +65,24 @@ h1, h2, h3, h4 {
   min-width: 6rem;
 }
 
+/* shared page-width container (header, alerts, main, footer) */
+.max-container {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
 .scroll {
   max-height: 45vh;
   height: 45vh;
   overflow-y: auto;
+}
+
+/* taller screens: let scrolling lists use the available height */
+@media only screen and (min-height: 700px) {
+  .scroll {
+    height: auto;
+    max-height: calc(100vh - 18rem);
+  }
 }
 
 #map {
@@ -143,6 +157,12 @@ h1, h2, h3, h4 {
 
   #system-map {
     height: 45vh;
+  }
+}
+
+@media only screen and (min-width: 601px) and (min-height: 700px) {
+  #map, #system-map {
+    height: 55vh;
   }
 }
 

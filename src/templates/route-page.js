@@ -234,7 +234,7 @@ const RoutePage = ({ data, pageContext }) => {
         )}
       </SiteSection>
       {trips.length > 0 && (
-        <SiteSection icon={faCalendar} title={`Schedule`} expands fullWidth>
+        <SiteSection icon={faCalendar} title={`Service frequency`} subtitle={`How often the bus comes`} expands fullWidth>
           <table className="schedule-table">
             <tbody>
               <tr className="bg-gray-200">
@@ -301,8 +301,8 @@ const RoutePage = ({ data, pageContext }) => {
           </table>
           <SiteButton
             link="./schedule"
-            ariaLabel="Schedule"
-            text="Schedule"
+            ariaLabel="View full timetable"
+            text="View full timetable"
             icon={faArrowCircleRight}
           />
         </SiteSection>

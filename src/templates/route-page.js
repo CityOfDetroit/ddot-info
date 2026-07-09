@@ -57,13 +57,25 @@ const RoutePage = ({ data, pageContext }) => {
     directions.length > 0 ? directions[0] : null
   )
 
-  // set up a 15s 'tick' using `now`
+  // set up a 15s 'tick' using `now`; pause while the tab is hidden and
+  // refresh immediately when it becomes visible again
   let [now, setNow] = useState(new Date())
   useEffect(() => {
     let tick = setInterval(() => {
-      setNow(new Date())
+      if (!document.hidden) {
+        setNow(new Date())
+      }
     }, 15000)
-    return () => clearInterval(tick)
+    let onVisible = () => {
+      if (!document.hidden) {
+        setNow(new Date())
+      }
+    }
+    document.addEventListener("visibilitychange", onVisible)
+    return () => {
+      clearInterval(tick)
+      document.removeEventListener("visibilitychange", onVisible)
+    }
   }, [])
 
   // fetch pattern data for the route

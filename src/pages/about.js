@@ -18,7 +18,7 @@ const About = () => {
 
       <SiteSection>
         <p>This app helps bus riders find schedules and real-time arrival information for all DDOT routes and bus stops.</p>
-        <p>You can browse routes, look up a bus stop, or find service near your current location.</p>
+        <p>You can browse routes, look up a bus stop, or search for routes and stops by name or number.</p>
       </SiteSection>
 
       <SiteSection title='Key features'>

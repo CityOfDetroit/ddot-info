@@ -1,4 +1,4 @@
-import { faInfoCircle, faList, faMapMarked, faHome, faChevronCircleDown, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons"
+import { faInfoCircle, faList, faMapMarked, faHome, faSearch, faChevronCircleDown, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "gatsby"
 import React, { useState } from "react"
@@ -11,6 +11,11 @@ const items = [
     title: `Home`,
     icon: faHome,
     link: `/`
+  },
+  {
+    title: `Search`,
+    icon: faSearch,
+    link: `/search`
   },
   {
     title: `System map`,

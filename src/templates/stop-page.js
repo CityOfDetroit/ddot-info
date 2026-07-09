@@ -1,7 +1,8 @@
-import { faBusAlt, faClock, faMap, faMapSigns, faRss } from "@fortawesome/free-solid-svg-icons";
+import { faBusAlt, faClock, faMap, faRss } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from "gatsby";
 import React, { useEffect, useState } from "react";
 import Helmet from 'react-helmet';
+import { NearbyStops } from "../components/NearbyStops";
 import { NextArrivals } from "../components/NextArrivals";
 import PageTitle from '../components/PageTitle';
 import { RoutesHere } from "../components/RoutesHere";
@@ -106,14 +107,15 @@ const StopPage = ({ data }) => {
               `No live arrival predictions for this stop right now.`}
           </p>
         </SiteSection>}
-      <SiteSection icon={faMap} title={`Stop map`} fullWidth expands>
-        <StopMap {...{ stopLon, stopLat, stopName, routeFeatures, currentRoute, currentTrip, predictions }} />
-      </SiteSection>
       <SiteSection fullWidth title='Scheduled departures' icon={faClock} expands className="mb-0">
         <RoutesHere {...{ routes, currentRoute, setCurrentRoute }} />
         <TimesHere {...{ times, currentRoute, routes }} />
         {/* <StopTransfers /> */}
       </SiteSection>
+      <SiteSection icon={faMap} title={`Stop map`} fullWidth expands>
+        <StopMap {...{ stopLon, stopLat, stopName, routeFeatures, currentRoute, currentTrip, predictions }} />
+      </SiteSection>
+      <NearbyStops nearby={s.nearby} stopLat={stopLat} stopLon={stopLon} />
     </>
   );
 };
@@ -157,6 +159,7 @@ export const query = graphql`
         }
         nearby: nearbyStopsList {
           stopId
+          stopCode
           stopName
           stopLat
           stopLon

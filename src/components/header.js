@@ -59,7 +59,7 @@ const Header = ({ siteTitle, children }) => {
         <div
           className="px-3 py-2 flex items-center justify-between header max-container"
         >
-          <div className="text-xl flex items-center" style={{ margin: 0 }}>
+          <h1 className="text-xl flex items-center" style={{ margin: 0 }}>
             <img src={logo} alt="DDOT logo" className="h-6 mr-3" />
             <Link
               to="/"
@@ -68,7 +68,7 @@ const Header = ({ siteTitle, children }) => {
             >
               {siteTitle.replace(".info", "")}
             </Link>
-          </div>
+          </h1>
           <div className="flex items-center justify-between text-xl">
             <button
               className="text-2xl"

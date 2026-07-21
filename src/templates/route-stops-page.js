@@ -5,7 +5,6 @@ import Helmet from 'react-helmet';
 import DirectionPicker from '../components/DirectionPicker';
 import PageTitle from '../components/PageTitle';
 import RouteNumber from '../components/RouteNumber';
-import RouteSubnav from '../components/RouteSubnav';
 import { RouteStopsList } from "../components/RouteStopsList";
 import ServiceSuspended from '../components/ServiceSuspended';
 
@@ -46,7 +45,6 @@ const RouteStopsPage = ({ data }) => {
         <RouteNumber number={r.routeShortName} size='small' color={r.routeColor} />
         <span className="font-thin">All stops</span>
       </>} />
-      <RouteSubnav short={r.routeShortName} />
       {longTrips.length === 0 && <ServiceSuspended at='route'/>}
       {longTrips.length > 0 && <><DirectionPicker {...{ directions, direction, setDirection, routeOrientation }} />
         <div className="flex px-4">

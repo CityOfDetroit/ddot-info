@@ -148,7 +148,7 @@ const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentRoute, curr
           "icon-allow-overlap": true,
           "icon-size": 0.1,
           // "icon-offset": [0,-100],
-          "icon-rotate": ['to-number', ['get', 'hdg']]
+          "icon-rotate": ['to-number', ['get', 'bearing']]
         }
       });
     });
@@ -157,16 +157,12 @@ const StopMap = ({ stopLon, stopLat, stopName, routeFeatures, currentRoute, curr
   useEffect(() => {
     if (theMap && currentTrip) {
       if (currentTrip.vehicle) {
+        // The vehicle from feed-vehicles is already a GeoJSON Feature with a Point
+        // geometry and a numeric bearing, so reuse it rather than rebuilding from
+        // stringly-typed lat/lon the way the BusTime shape required.
         let trackedFeature = {
-          type: "Feature",
-          properties: {
-            hdg: currentTrip.vehicle ? currentTrip.vehicle.hdg : '90',
-            ...currentTrip
-          },
-          geometry: {
-            type: "Point",
-            coordinates: [parseFloat(currentTrip.vehicle.lon), parseFloat(currentTrip.vehicle.lat)]
-          }
+          ...currentTrip.vehicle,
+          properties: { ...currentTrip.vehicle.properties, ...currentTrip },
         }
 
         theMap.getSource("realtime").setData({ type: "FeatureCollection", features: [trackedFeature]})

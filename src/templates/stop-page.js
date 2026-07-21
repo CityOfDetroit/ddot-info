@@ -1,9 +1,10 @@
 import { faBusAlt, faClock, faMap, faRss } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from "gatsby";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Helmet from 'react-helmet';
 import { NearbyStops } from "../components/NearbyStops";
 import { NextArrivals } from "../components/NextArrivals";
+import { cleanHeadsign } from "../components/cleanHeadsign";
 import PageTitle from '../components/PageTitle';
 import { RoutesHere } from "../components/RoutesHere";
 import ServiceSuspended from "../components/ServiceSuspended";
@@ -34,6 +35,28 @@ const StopPage = ({ data }) => {
     return { ...route, properties: properties }
   })
 
+  // trip_id -> { headsign, direction } for every trip scheduled through this stop.
+  // Swiftly's realtime tripIds are GTFS trip_ids (verified: 425/425 matched), so
+  // arrivals can be named from build-time data with no runtime lookup.
+  //   headsign  — what's on the front of the bus (replaces nothing; GTFS gives it)
+  //   direction — compass heading ("Eastbound"), recovered from route+directionId via
+  //               the DdotRoute shapes; this is what BusTime sent as rtdir.
+  const tripInfo = useMemo(() => {
+    const dirLabel = {} // `${short}|${directionId}` -> "Eastbound"
+    allRoutes.forEach(r => {
+      dirLabel[`${r.short}|${r.directionId}`] = r.direction
+    })
+    return Object.fromEntries(
+      times.map(t => [
+        t.trip.tripId,
+        {
+          headsign: cleanHeadsign(t.trip.tripHeadsign),
+          direction: dirLabel[`${t.trip.route.routeShortName}|${t.trip.directionId}`],
+        },
+      ])
+    )
+  }, [times, allRoutes])
+
   // null = loading, false = none available, object = predictions
   const [predictions, setPredictions] = useState(null)
 
@@ -63,21 +86,28 @@ const StopPage = ({ data }) => {
     };
   }, []);
 
+  // NOTE: stopId, not stopCode. They are disjoint ID spaces in this feed — the URL
+  // and title show stop_code (#2129) while Swiftly keys on stop_id (1431). Passing
+  // the wrong one returns another stop's buses silently instead of erroring.
   useEffect(() => {
-    fetch(`/.netlify/functions/stop?stopId=${s.stopCode}`)
-      .then(r => r.json())
+    let cancelled = false
+    fetch(`/.netlify/functions/stop?stopId=${s.stopId}`)
+      .then(r => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
       .then(d => {
-        if (d['bustime-response'].prd && d['bustime-response'].prd.length > 0) {
-          setPredictions(d)
-        }
-        else { setPredictions(false); }
+        if (cancelled) return
+        setPredictions(d.arrivals && d.arrivals.length > 0 ? d : false)
       })
-      .catch(() => setPredictions(false))
-  }, [s.stopId, s.stopCode, now])
+      .catch(() => {
+        if (!cancelled) setPredictions(false)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [s.stopId, now])
 
   useEffect(() => {
     if (currentTrip) {
-      setCurrentRoute(currentTrip.rt)
+      setCurrentRoute(currentTrip.routeId)
     }
     else {
       return;
@@ -99,7 +129,7 @@ const StopPage = ({ data }) => {
       </PageTitle>
       {times.length === 0 && <ServiceSuspended at='stop' />}
       {predictions ?
-        <NextArrivals {...{ routeFeatures, predictions, currentTrip, setCurrentTrip }} /> :
+        <NextArrivals {...{ routeFeatures, predictions, tripInfo, currentTrip, setCurrentTrip }} /> :
         <SiteSection icon={faRss} title="Next buses at this stop" fullWidth expands>
           <p className="text-sm text-gray-700 px-4 py-2">
             {predictions === null ?

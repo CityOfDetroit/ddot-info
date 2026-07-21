@@ -3,34 +3,44 @@ import React, { useEffect, useState } from "react";
 import Prediction from "./Prediction";
 import SiteSection from "./SiteSection";
 
-export const NextArrivals = ({ routeFeatures, predictions, currentTrip, setCurrentTrip }) => {
+export const NextArrivals = ({ routeFeatures, predictions, tripInfo, currentTrip, setCurrentTrip }) => {
 
-  let nextBuses = predictions['bustime-response'].prd;
+  let nextBuses = predictions.arrivals.slice(0, 4);
 
-  let [data, setData] = useState(null)
+  // null = loading, [] = no vehicle data
+  let [vehicles, setVehicles] = useState(null)
 
+  // The whole fleet on a parameterless URL (~4 KB gzipped, one CDN cache key), so
+  // looking up the buses for this stop is a local filter. This is what replaced the
+  // old per-vid vehicle.js call.
   useEffect(() => {
-    fetch(`/.netlify/functions/vehicle?vid=${nextBuses.slice(0,4).map(nb => nb.vid).toString()}`)
-      .then(r => r.json())
+    let cancelled = false
+    fetch(`/.netlify/functions/feed-vehicles`)
+      .then(r => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
       .then(d => {
-        if (d['bustime-response'].vehicle && d['bustime-response'].vehicle.length > 0) {
-          setData(d['bustime-response'].vehicle)
-        }
-        else { setData([]); }
+        if (!cancelled) setVehicles(d.features)
       })
-      .catch(() => setData([]))
-  }, [predictions, nextBuses])
+      .catch(() => {
+        if (!cancelled) setVehicles([])
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [predictions])
 
   return (
     <SiteSection icon={faRss} title="Next buses at this stop" subtitle={`Tap ${!currentTrip ? `to track this bus on the map` : `to stop tracking this bus`}`} fullWidth expands>
-      {data && nextBuses.slice(0, 4).map((nb, i) => {
-          return (<Prediction
-            prediction={nb}
-            last={i === nextBuses.length - 1}
-            key={nb.vid}
-            vehicle={data.filter(d => d.vid === nb.vid)[0]}
-            {...{ currentTrip, setCurrentTrip, routeFeatures }} />)
-        })}
+      {vehicles && nextBuses.map((arrival, i) => (
+        <Prediction
+          prediction={arrival}
+          trip={tripInfo[arrival.tripId]}
+          last={i === nextBuses.length - 1}
+          key={arrival.tripId}
+          // null when Swiftly is predicting a trip with no bus assigned yet — the
+          // arrival time is still real, so we show it without a bus to track.
+          vehicle={arrival.vid ? vehicles.find(v => v.properties.vid === arrival.vid) || null : null}
+          {...{ currentTrip, setCurrentTrip, routeFeatures }} />
+      ))}
     </SiteSection>
   );
 };

@@ -252,7 +252,7 @@ const RouteMap = ({ routes, timepoints, stops, vehicles, tracked, setTracked }) 
           "icon-allow-overlap": true,
           "icon-size": 0.12,
           "icon-offset": [0,-100],
-          "icon-rotate": ['to-number', ['get', 'hdg']]
+          "icon-rotate": ['to-number', ['get', 'bearing']]
         }
       });
       map.addLayer({

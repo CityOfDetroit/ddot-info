@@ -3,17 +3,15 @@ import {
   faBus,
   faCalendar,
   faFilePdf,
-  faInfoCircle,
   faMap,
   faRss,
 } from "@fortawesome/free-solid-svg-icons"
 import { graphql, Link } from "gatsby"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import Helmet from "react-helmet"
 import DirectionPicker from "../components/DirectionPicker"
 import PageTitle from "../components/PageTitle"
 import RouteMap from "../components/RouteMap"
-import RouteSubnav from "../components/RouteSubnav"
 import { RouteStopsList } from "../components/RouteStopsList"
 import RouteTitle from "../components/RouteTitle"
 import SiteButton from "../components/SiteButton"
@@ -22,11 +20,49 @@ import { Vehicle } from "../components/Vehicle"
 import ServiceSuspended from "../components/ServiceSuspended"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
+// GTFS-rt omits bearing on stationary buses (~38% of the fleet at any moment, but
+// only 3% of moving ones). BusTime always sent a heading, so a stopped bus kept
+// facing its last direction; without this the map snaps them all north. Reuse the
+// last bearing we saw for each vehicle.
+function carryBearing(features, prev) {
+  if (!prev) return features
+  let lastBearing = new Map(
+    prev
+      .filter(p => p.properties.bearing !== null)
+      .map(p => [p.properties.vid, p.properties.bearing])
+  )
+  return features.map(f => {
+    if (f.properties.bearing !== null) return f
+    let carried = lastBearing.get(f.properties.vid)
+    if (carried === undefined) return f
+    return { ...f, properties: { ...f.properties, bearing: carried } }
+  })
+}
+
 const RoutePage = ({ data, pageContext }) => {
   let r = data.postgres.route[0]
   let { trips, longTrips, routeColor } = r
+
+  // stop_id -> name, for naming the stop a bus reports. GTFS-rt gives us the stop
+  // directly, so this replaces walking BusTime's pattern geometry by distance.
+  let stopNames = useMemo(
+    () => Object.fromEntries((r.stopsList || []).map(s => [s.stopId, s.stopName])),
+    [r.stopsList]
+  )
   let info = data.allDdotRoute.edges.map(e => e.node)
   let ddotRt = info[0]
+
+  // directionId (0/1) -> compass label ("Eastbound"). GTFS-rt gives buses only the
+  // opaque directionId; DDOT's route shapes carry the compass direction keyed to the
+  // same id (verified to align with GTFS direction_id), so this recovers the heading
+  // BusTime used to send as rtdir.
+  let directionsById = useMemo(
+    () =>
+      Object.fromEntries(
+        info.filter(n => n.directionId != null).map(n => [n.directionId, n.direction])
+      ),
+    [info]
+  )
 
   let geojson = info.map(i => {
     let { route, ...properties } = i
@@ -80,44 +116,30 @@ const RoutePage = ({ data, pageContext }) => {
     }
   }, [])
 
-  // fetch pattern data for the route
-  let [patterns, setPatterns] = useState(null)
-  useEffect(() => {
-    fetch(`/.netlify/functions/pattern?rt=${r.routeShortName}`)
-      .then(r => r.json())
-      .then(d => {
-        setPatterns(d["bustime-response"].ptr)
-      })
-      .catch(() => setPatterns(null))
-  }, [r.routeShortName])
-
   // fetch vehicle data into this state object; null = loading, [] = none tracked
+  //
+  // feed-vehicles is the whole fleet (~4 KB gzipped) on a parameterless URL, so it
+  // stays a single CDN cache entry and Swiftly sees one call per 15s for the entire
+  // site. We filter to this route here rather than asking the server to.
   let [vehicles, setVehicles] = useState(null)
   useEffect(() => {
-    fetch(`/.netlify/functions/route?rt=${r.routeShortName}`)
-      .then(r => r.json())
+    let cancelled = false
+    fetch(`/.netlify/functions/feed-vehicles`)
+      .then(res => (res.ok ? res.json() : Promise.reject(new Error(res.status))))
       .then(d => {
-        if (d["bustime-response"]["error"]) {
-          setVehicles([])
-          return
-        }
-
-        let vehs = d["bustime-response"]["vehicle"]
-
-        let vehicleFeatures = vehs.map(v => {
-          let { lon, lat, ...extra } = v
-          return {
-            type: "Feature",
-            properties: extra,
-            geometry: {
-              type: "Point",
-              coordinates: [parseFloat(lon), parseFloat(lat)],
-            },
-          }
-        })
-        setVehicles(vehicleFeatures)
+        if (cancelled) return
+        // routeId is the GTFS route_id, identical to route_short_name in this feed.
+        let onRoute = d.features.filter(
+          f => f.properties.routeId === r.routeShortName
+        )
+        setVehicles(prev => carryBearing(onRoute, prev))
       })
-      .catch(() => setVehicles([]))
+      .catch(() => {
+        if (!cancelled) setVehicles([])
+      })
+    return () => {
+      cancelled = true
+    }
   }, [r.routeShortName, now])
 
   let [tracked, setTracked] = useState(null)
@@ -140,20 +162,29 @@ const RoutePage = ({ data, pageContext }) => {
           content={`DDOT bus route ${r.routeShortName} ${r.routeLongName}: ${ddotRt.description}`}
         />
       </Helmet>
-      <PageTitle text={
-        <RouteTitle
-          long={r.routeLongName}
-          short={r.routeShortName}
-          color={r.routeColor}
-          size="small"
-          link={false}
-        />
-      }>
-        <span className="text-sm font-thin text-gray-300 py-1">
-          {ddotRt.RouteType} route
-        </span>
+      <PageTitle>
+        <RouteTitle long={r.routeLongName} short={r.routeShortName} color={r.routeColor} size="small" />
+        <span className="text-sm font-thin text-gray-800 py-1">{ddotRt.RouteType} route</span>
       </PageTitle>
-      <RouteSubnav short={r.routeShortName} />
+      <SiteSection>
+        <p className="text-sm text-left leading-tight">{ddotRt.description}</p>
+        <p className="text-sm text-left leading-tight">
+          <FontAwesomeIcon icon={faFilePdf} className="mr-2" />
+          <Link
+            to={`https://detroitmi.gov/document/${
+              r.routeShortName
+            }-${r.routeLongName
+              .replace("/", "")
+              .replace("-", "")
+              .replace(" ", "-")
+              .replace("MidCity", "Mid-City")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download schedule PDF
+          </Link>
+        </p>
+      </SiteSection>
       {trips.length === 0 && <ServiceSuspended at="route" />}
       <SiteSection
         title={`Map`}
@@ -177,7 +208,7 @@ const RoutePage = ({ data, pageContext }) => {
       <SiteSection
         title="Real-time bus locations"
         subtitle={
-          vehicles && vehicles.length > 0 && patterns
+          vehicles && vehicles.length > 0
             ? `Tap ${tracked ? `the` : `a`} bus to ${
                 tracked ? `stop` : `start`
               } following the bus location`
@@ -186,13 +217,14 @@ const RoutePage = ({ data, pageContext }) => {
         icon={faRss}
         fullWidth
         expands
+        startsClosed
         isOpen={tracked}
       >
         {vehicles === null ? (
           <p className="text-sm text-gray-700 px-4 py-2">
             Looking for buses on this route…
           </p>
-        ) : vehicles.length === 0 || !patterns ? (
+        ) : vehicles.length === 0 ? (
           <p className="text-sm text-gray-700 px-4 py-2">
             No buses are being tracked on this route right now.
           </p>
@@ -203,7 +235,7 @@ const RoutePage = ({ data, pageContext }) => {
               <Vehicle
                 vehicle={v}
                 key={v.properties.vid}
-                {...{ patterns, tracked, setTracked }}
+                {...{ longTrips, stopNames, directionsById, tracked, setTracked }}
               />
             ))
         ) : (
@@ -211,7 +243,7 @@ const RoutePage = ({ data, pageContext }) => {
             <Vehicle
               vehicle={v}
               key={v.properties.vid}
-              {...{ patterns, tracked, setTracked }}
+              {...{ longTrips, stopNames, tracked, setTracked }}
             />
           ))
         )}
@@ -316,26 +348,6 @@ const RoutePage = ({ data, pageContext }) => {
           />
         </SiteSection>
       )}
-
-      <SiteSection icon={faInfoCircle} title={`About this route`} expands startsClosed>
-        <p className="text-sm text-left leading-tight">{ddotRt.description}</p>
-        <p className="text-sm text-left leading-tight">
-          <FontAwesomeIcon icon={faFilePdf} className="mr-2" />
-          <Link
-            to={`https://detroitmi.gov/document/${
-              r.routeShortName
-            }-${r.routeLongName
-              .replace("/", "")
-              .replace("-", "")
-              .replace(" ", "-")
-              .replace("MidCity", "Mid-City")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Download schedule PDF
-          </Link>
-        </p>
-      </SiteSection>
     </div>
   )
 }
@@ -348,6 +360,7 @@ export const query = graphql`
           id
           orientation
           direction
+          directionId
           description
           days
           short

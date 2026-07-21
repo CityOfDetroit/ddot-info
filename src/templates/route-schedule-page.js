@@ -1,5 +1,5 @@
 import { faClock } from "@fortawesome/free-solid-svg-icons";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import React, { useState } from "react";
 import Helmet from 'react-helmet';
 import DirectionPicker from '../components/DirectionPicker';
@@ -82,7 +82,7 @@ const RouteSchedulePage = ({ data }) => {
       {longTrips.length > 0 && <><SiteSection>
         <p>
           Major stops are shown in order in the top row; look down the column to see scheduled departure times from that bus stop.
-          Buses make additional stops between major stops; see a list of all stops on the <a href="../stops" className="text-underline">stops page</a>.
+          Buses make additional stops between major stops; see a list of all stops on the <Link to={`/route/${r.routeShortName}/stops`} className="text-underline">stops page</Link>.
         </p>
         <p className="text-sm">
           AM times are shown normally; <span className="font-semibold">PM times are in bold</span>.
